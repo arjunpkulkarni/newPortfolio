@@ -221,10 +221,10 @@ export const DATA = {
       active: true,
       description:
         "Working alongside Lav R. Varshney, White House Fellow, James Briscione, author of The Flavor Matrix, and UCSD Medicine & Keisuke Nakagawa, M.D. to build a medicinal culinary application.",
-      technologies: [],
+      technologies: ["Next.js", "LangChain", "Scrapy", "Direct Acyclic Graphs"],
       links: [
         {
-          type: "Website",
+          type: "Live Demo",
           href: "https://www.culin.net/",
           icon: <Icons.globe className="size-3" />,
         },
@@ -242,7 +242,7 @@ export const DATA = {
       technologies: ["Pinecone", "Next.js", "Python", "AI"],
       links: [
         {
-          type: "Website",
+          type: "Live Demo",
           href: "https://siramai.com/",
           icon: <Icons.globe className="size-3" />,
         },
@@ -260,7 +260,7 @@ export const DATA = {
       technologies: ["React", "Node.js", "MongoDB", "TestFlight"],
       links: [
         {
-          type: "Website",
+          type: "Live Demo",
           href: "https://www.fitcheck.live/",
           icon: <Icons.globe className="size-3" />,
         },
@@ -278,7 +278,7 @@ export const DATA = {
       technologies: ["React", "Python", "LangChain", "AI"],
       links: [
         {
-          type: "Website",
+          type: "Live Demo",
           href: "https://www.lumelabs.org/",
           icon: <Icons.globe className="size-3" />,
         },
@@ -296,7 +296,7 @@ export const DATA = {
       technologies: ["ReactJS", "Cloud Deployment", "User Auth"],
       links: [
         {
-          type: "Website",
+          type: "Live Demo",
           href: "https://medium.com/@arjunpkulkarni/story-of-djdoc-in-development-91e735e3d000",
           icon: <Icons.globe className="size-3" />,
         },
@@ -314,7 +314,7 @@ export const DATA = {
       technologies: ["NLP", "Sentiment Analysis", "Regression Modeling", "AWS"],
       links: [
         {
-          type: "Website",
+          type: "Live Demo",
           href: "https://medium.com/@arjunpkulkarni/stocklock-9ffa9d62aba9",
           icon: <Icons.globe className="size-3" />,
         },
@@ -350,7 +350,7 @@ export const DATA = {
       technologies: ["C++", "Multithreading", "Parallelization"],
       links: [
         {
-          type: "Source",
+          type: "Live Demo",
           href: "https://github.com/arjunpkulkarni/crypto",
           icon: <Icons.github className="size-3" />,
         },
@@ -368,7 +368,7 @@ export const DATA = {
       technologies: ["Python", "Excel", "Robinhood API"],
       links: [
         {
-          type: "Source",
+          type: "Live Demo",
           href: "https://github.com/arjunpkulkarni/InvestmentManagement",
           icon: <Icons.github className="size-3" />,
         },
@@ -386,7 +386,7 @@ export const DATA = {
       technologies: ["AI", "Chip Design"],
       links: [
         {
-          type: "Website",
+          type: "Live Demo",
           href: "https://drive.google.com/file/d/1cIw9EgpeKyzAbVeZG6P2DU4ySmb0g2T8/view",
           icon: <Icons.globe className="size-3" />,
         },
