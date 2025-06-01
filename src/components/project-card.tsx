@@ -112,7 +112,7 @@ export function ProjectCard({
             ))}
           </div>
         )}
-        {logo && logo !== "/placeholder-logo.png" && (
+        {/* {logo && logo !== "/placeholder-logo.png" && (
           <div className="absolute bottom-2 right-2">
             <Image
               src={logo}
@@ -122,7 +122,7 @@ export function ProjectCard({
               className="rounded-full"
             />
           </div>
-        )}
+        )} */}
       </CardFooter>
     </Card>
   );
