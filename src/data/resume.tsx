@@ -1,6 +1,5 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon, GraduationCapIcon, BriefcaseIcon, MailIcon,  } from "lucide-react";
-import { ReactNode } from "react";
 
 export const DATA = {
   name: "Arjun Kulkarni",
@@ -9,7 +8,7 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Develop AI-driven, full-stack products that turn data and engineering ingenuity into real-world gains for human health, sustainability, and everyday users.",
+    "Full Stack Developer and Materials Engineer",
   summary:
     "Collaborated with multiple research labs, startups, and companies to build AI-powered solutions end-to-end, merging full-stack engineering with machine-learning insight.",
   avatarUrl: "/pfp.jpeg",
@@ -48,7 +47,6 @@ export const DATA = {
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/work", icon: BriefcaseIcon, label: "Work" },
     { href: "/education", icon: GraduationCapIcon, label: "Education" },
-    { href: "/skills", icon: NotebookIcon, label: "Skills" },
     { href: "/projects", icon: NotebookIcon, label: "Projects" },
     { href: "/contact", icon: MailIcon, label: "Contact" },
   ],
@@ -171,6 +169,43 @@ export const DATA = {
       logoUrl: "/uiuc-logo.png",
       start: "Sep 2022",
       end: "May 2026",
+    },
+  ],
+  certifications: [
+    {
+      name: "Certified Cloud Practitioner",
+      issuer: "AWS",
+      date: "Jul 2024 – Jul 2027",
+    },
+    {
+      name: "MERN Stack",
+      issuer: "Udemy",
+      date: "May 2024",
+    },
+    {
+      name: "Medical Embedded Systems",
+      issuer: "MITRE Engenuity",
+      date: "May 2024",
+    },
+    {
+      name: "Supervised Machine Learning",
+      issuer: "Stanford",
+      date: "May 2024",
+    },
+    {
+      name: "Java w/ Spring Boot",
+      issuer: "LinkedIn",
+      date: "Jan 2024",
+    },
+    {
+      name: "Cloud Concepts",
+      issuer: "LinkedIn",
+      date: "Dec 2023",
+    },
+    {
+      name: "Problem Solving (Basic)",
+      issuer: "HackerRank",
+      date: "Aug 2023 – Aug 2027",
     },
   ],
   projects: [
