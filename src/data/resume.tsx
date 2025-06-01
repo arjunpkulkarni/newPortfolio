@@ -6,6 +6,7 @@ import LumeLabs from "../app/projects/pictures/lumelabs.png";
 import Siramai from "../app/projects/pictures/siramai.png";
 import DJDoc from "../app/projects/pictures/djdoc.png";
 import StockLock from "../app/projects/pictures/stocklock.png";
+import AMD from "../app/projects/pictures/neural.png";
 
 export const DATA = {
   name: "Arjun Kulkarni",
@@ -325,7 +326,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: StockLock,
       video: "",
     },
     {
