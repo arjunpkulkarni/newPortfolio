@@ -1,5 +1,11 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, GraduationCapIcon, BriefcaseIcon, MailIcon,  } from "lucide-react";
+import { HomeIcon, NotebookIcon, GraduationCapIcon, BriefcaseIcon } from "lucide-react";
+import Culin from "../app/projects/pictures/culin.png";
+import FitCheck from "../app/projects/pictures/fitcheck.png";
+import LumeLabs from "../app/projects/pictures/lumelabs.png";
+import Siramai from "../app/projects/pictures/siramai.png";
+import DJDoc from "../app/projects/pictures/djdoc.png";
+import StockLock from "../app/projects/pictures/stocklock.png";
 
 export const DATA = {
   name: "Arjun Kulkarni",
@@ -229,7 +235,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: Culin,
       video: "",
     },
     {
@@ -247,7 +253,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: Siramai,
       video: "",
     },
     {
@@ -265,7 +271,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: FitCheck,
       video: "",
     },
     {
@@ -283,7 +289,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: LumeLabs,
       video: "",
     },
     {
@@ -301,7 +307,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: DJDoc,
       video: "",
     },
     {
