@@ -9,9 +9,22 @@ import DJDoc from "../app/projects/pictures/djdoc.png";
 import StockLock from "../app/projects/pictures/stocklock.png";
 import AMD from "../app/projects/pictures/neural.png";
 
-import uiuc from "../app/education/pictures/uiuc.png";
+import hanger from "../app/work/pictures/hanger.png";
+import abbvie from "../app/work/pictures/abbvie.png";
 
+import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
+import siramaiLogo from "../app/projects/pictures/logos/siramaiLogo.png";
+import fitcheckLogo from "../app/projects/pictures/logos/fitcheckLogo.png";
+import lumeLogo from "../app/projects/pictures/logos/lumeLogo.png";
+
+import Stanford from "../app/education/pictures/stanford.png";
+import cloud from "../app/education/pictures/cloud.png";
+import java from "../app/education/pictures/java.png";
+import HackerRank from "../app/education/pictures/hackerrank.png";
+import AWS from "../app/education/pictures/aws.png";
+import uiuc from "../app/education/pictures/uiuc.png";
 import MITRE from "../app/education/pictures/mitre.png"; 
+import Udemy from "../app/education/pictures/udemy.png";
 
 export const DATA = {
   name: "Arjun Kulkarni",
@@ -99,7 +112,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Founding Engineer",
-      logoUrl: "/placeholder-logo.png",
+      logoUrl: hanger,
       start: "Jan 2023",
       end: "Present",
       description:
@@ -111,7 +124,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "Software Developer",
-      logoUrl: "/placeholder-logo.png",
+      logoUrl: abbvie,
       start: "Dec 2024",
       end: "Jun 2025",
       description:
@@ -123,7 +136,7 @@ export const DATA = {
       badges: [],
       location: "Remote",
       title: "IT Consultant",
-      logoUrl: "/placeholder-logo.png",
+      logoUrl: "",
       start: "Oct 2023",
       end: "Jan 2024",
       description:
@@ -193,10 +206,12 @@ export const DATA = {
       name: "Certified Cloud Practitioner",
       issuer: "AWS",
       date: "Jul 2024",
+      logoUrl: AWS,
     },
     {
       name: "MERN Stack",
       issuer: "Udemy",
+      logoUrl: Udemy,
       date: "May 2024",
     },
     {
@@ -208,22 +223,26 @@ export const DATA = {
     {
       name: "Supervised Machine Learning",
       issuer: "Stanford",
+      logoUrl: Stanford,
       date: "May 2024",
     },
     {
       name: "Java w/ Spring Boot",
       issuer: "LinkedIn",
       date: "Jan 2024",
+      logoUrl: java,
     },
     {
       name: "Cloud Concepts",
       issuer: "LinkedIn",
       date: "Dec 2023",
+      logoUrl: cloud,
     },
     {
       name: "Problem Solving (Basic)",
       issuer: "HackerRank",
       date: "Aug 2023",
+      logoUrl: HackerRank,
     },
   ],
   projects: [
@@ -243,6 +262,7 @@ export const DATA = {
         },
       ],
       image: Culin,
+      logo: culinLogo,
       video: "",
     },
     {
@@ -261,6 +281,7 @@ export const DATA = {
         },
       ],
       image: Siramai,
+      logo: siramaiLogo,
       video: "",
     },
     {
@@ -279,6 +300,7 @@ export const DATA = {
         },
       ],
       image: FitCheck,
+      logo: fitcheckLogo,
       video: "",
     },
     {
@@ -297,6 +319,7 @@ export const DATA = {
         },
       ],
       image: LumeLabs,
+      logo: lumeLogo,
       video: "",
     },
     {
@@ -315,6 +338,7 @@ export const DATA = {
         },
       ],
       image: DJDoc,
+      logo: "",
       video: "",
     },
     {
@@ -333,6 +357,7 @@ export const DATA = {
         },
       ],
       image: StockLock,
+      logo: "",
       video: "",
     },
     {
@@ -351,6 +376,7 @@ export const DATA = {
         },
       ],
       image: "",
+      logo: "/placeholder-logo.png",
       video: "",
     },
     {
@@ -369,6 +395,7 @@ export const DATA = {
         },
       ],
       image: "",
+      logo: "/placeholder-logo.png",
       video: "",
     },
     {
@@ -387,6 +414,7 @@ export const DATA = {
         },
       ],
       image: "",
+      logo: "/placeholder-logo.png",
       video: "",
     },
     {
@@ -405,6 +433,7 @@ export const DATA = {
         },
       ],
       image: "",
+      logo: "",
       video: "",
     },
   ],

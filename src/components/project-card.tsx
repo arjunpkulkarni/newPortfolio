@@ -7,7 +7,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
@@ -18,8 +18,9 @@ interface Props {
   dates: string;
   tags: readonly string[];
   link?: string;
-  image?: string;
+  image?: string | StaticImageData;
   video?: string;
+  logo?: string | StaticImageData;
   links?: readonly {
     icon: React.ReactNode;
     type: string;
@@ -37,6 +38,7 @@ export function ProjectCard({
   link,
   image,
   video,
+  logo,
   links,
   className,
 }: Props) {
@@ -97,7 +99,7 @@ export function ProjectCard({
           </div>
         )}
       </CardContent>
-      <CardFooter className="px-2 pb-2">
+      <CardFooter className="px-2 pb-2 relative">
         {links && links.length > 0 && (
           <div className="flex flex-row flex-wrap items-start gap-1">
             {links?.map((link, idx) => (
@@ -108,6 +110,17 @@ export function ProjectCard({
                 </Badge>
               </Link>
             ))}
+          </div>
+        )}
+        {logo && logo !== "/placeholder-logo.png" && (
+          <div className="absolute bottom-2 right-2">
+            <Image
+              src={logo}
+              alt={`${title} logo`}
+              width={40}
+              height={40}
+              className="rounded-full"
+            />
           </div>
         )}
       </CardFooter>
