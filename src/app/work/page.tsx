@@ -32,6 +32,56 @@ export default function WorkPage() {
           ))}
         </div>
       </section>
+      <section id="research" className="w-full max-w-5xl">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 7}>
+            <h2 className="text-xl font-bold">Research Experience</h2>
+          </BlurFade>
+          {DATA.research.map((researchItem, id) => (
+            <BlurFade
+              key={researchItem.company}
+              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+            >
+              <ResumeCard
+                key={researchItem.company}
+                logoUrl={researchItem.logoUrl}
+                altText={researchItem.company}
+                title={researchItem.company}
+                subtitle={researchItem.title}
+                href={researchItem.href}
+                badges={researchItem.badges}
+                period={`${researchItem.start} - ${researchItem.end ?? "Present"}`}
+                description={researchItem.description}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+      <section id="clubs" className="w-full max-w-5xl">
+        <div className="flex min-h-0 flex-col gap-y-3">
+          <BlurFade delay={BLUR_FADE_DELAY * 9}>
+            <h2 className="text-xl font-bold">Clubs & Organizations</h2>
+          </BlurFade>
+          {DATA.clubs.map((club, id) => (
+            <BlurFade
+              key={club.company}
+              delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+            >
+              <ResumeCard
+                key={club.company}
+                logoUrl={club.logoUrl}
+                altText={club.company}
+                title={club.company}
+                subtitle={club.title}
+                href={club.href}
+                badges={club.badges}
+                period={`${club.start} - ${club.end ?? "Present"}`}
+                description={club.description}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
     </main>
   );
 } 

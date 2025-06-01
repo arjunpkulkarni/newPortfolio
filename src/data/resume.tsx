@@ -11,6 +11,9 @@ import AMD from "../app/projects/pictures/neural.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
+import nobe from "../app/work/pictures/nobe.png";
+import ibc from "../app/work/pictures/ibc.png";
+import sigpwny from "../app/work/pictures/sigpwny.png";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import siramaiLogo from "../app/projects/pictures/logos/siramaiLogo.png";
@@ -116,7 +119,7 @@ export const DATA = {
       start: "Jan 2023",
       end: "Present",
       description:
-        "Developed mobile app interface for 50+ beta users using React Native and implemented Figma designs. Contributed to both frontend and backend development, including designing the website and deploying with AWS services.",
+        "Disrupting the $100B+ fashion industry by building a platform for centralized shopping. Currently working alongside Intel. Developed over 100k lines of code. Download now on the App Store.",
     },
     {
       company: "AbbVie",
@@ -130,49 +133,28 @@ export const DATA = {
       description:
         "Collaborating with pharmaceutical experts to develop machine learning models for analyzing drug efficacy and predicting patient responses. Leveraging tools like TensorFlow and Scikit-learn to build predictive systems, while utilizing real-world datasets to optimize clinical trial outcomes. Integrating Python-based solutions with cloud technologies for scalable and efficient analysis pipelines.",
     },
+    
+  ],
+  research: [
     {
-      company: "Illinois Business Consulting",
+      company: "Beckman Institute for Advanced Science and Technology",
       href: "#",
       badges: [],
-      location: "Remote",
-      title: "IT Consultant",
-      logoUrl: "",
-      start: "Oct 2023",
-      end: "Jan 2024",
+      location: "In-Person",
+      title: "Artificial Intelligence Research Assistant",
+      logoUrl: uiuc,
+      start: "Jan 2025",
+      end: "Mar 2025",
       description:
-        "Led projects for Lubrizol's market entry into the pipefitting industry and simplified insurance language for Equitable. Collaborated closely with CIOs and CTOs to deliver actionable insights and strategic recommendations.",
-    },
-    {
-      company: "NOBE Tech Lab",
-      href: "#",
-      badges: [],
-      location: "Remote",
-      title: "Frontend Developer",
-      logoUrl: "/placeholder-logo.png",
-      start: "Jul 2023",
-      end: "Dec 2023",
-      description:
-        "Implemented UI components for mobile applications using React Native and Bootstrap. Prototyped designs in Figma and integrated with Flask-based backend, ensuring smooth and responsive user interfaces.",
-    },
-    {
-      company: "sigPWNY Component Team",
-      href: "#",
-      badges: [],
-      location: "Remote",
-      title: "Software Engineer",
-      logoUrl: "/placeholder-logo.png",
-      start: "Dec 2023",
-      end: "Mar 2024",
-      description:
-        "Integrated UART functionality into medical devices for eCTF competitions. Enhanced security for x86 architectures using Rust and C, focusing on safe memory development and secure communication protocols.",
+        "Engineered experimental platform enabling structured evaluation of human-AI co-creativity using GPT-4 and Alternate Uses Test framework.",
     },
     {
       company: "UofI Information Department",
       href: "#",
       badges: [],
-      location: "Remote",
-      title: "Machine Learning Intern",
-      logoUrl: "/placeholder-logo.png",
+      location: "In-Person",
+      title: "Artificial Intelligence Research Assistant",
+      logoUrl: uiuc,
       start: "Jun 2023",
       end: "Aug 2023",
       description:
@@ -182,13 +164,51 @@ export const DATA = {
       company: "UofI Civil Department",
       href: "#",
       badges: [],
-      location: "Remote",
-      title: "Computational Materials Intern",
-      logoUrl: "/placeholder-logo.png",
+      location: "In-Person",
+      title: "Computational Materials Research Assistant",
+      logoUrl: uiuc,
       start: "Sep 2022",
       end: "Dec 2022",
       description:
         "Conducted data-driven research in material science, developing a new concrete mixture and predicting material durability using Random Forest models.",
+    },
+  ],
+  clubs: [
+    {
+      company: "Illinois Business Consulting",
+      href: "#",
+      badges: [],
+      location: "Remote",
+      title: "IT Consultant",
+      logoUrl: ibc,
+      start: "Oct 2023",
+      end: "Jan 2024",
+      description:
+        "Led projects for Lubrizol's market entry into the pipefitting industry and simplified insurance language for Equitable. Collaborated closely with CIOs and CTOs to deliver actionable insights and strategic recommendations.",
+    },
+    {
+      company: "sigPWNY Component Team",
+      href: "#",
+      badges: [],
+      location: "Remote",
+      title: "Software Engineer",
+      logoUrl: sigpwny,
+      start: "Dec 2023",
+      end: "Mar 2024",
+      description:
+        "Integrated UART functionality into medical devices for eCTF competitions. Enhanced security for x86 architectures using Rust and C, focusing on safe memory development and secure communication protocols.",
+    },
+    {
+      company: "NOBE Tech Lab",
+      href: "#",
+      badges: [],
+      location: "Remote",
+      title: "Frontend Developer",
+      logoUrl: nobe,
+      start: "Jul 2023",
+      end: "Dec 2023",
+      description:
+        "Implemented UI components for mobile applications using React Native and Bootstrap. Prototyped designs in Figma and integrated with Flask-based backend, ensuring smooth and responsive user interfaces.",
     },
   ],
   education: [
