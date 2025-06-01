@@ -16,7 +16,7 @@ export function Header() {
           flex
           h-14
           items-center // Vertically center icons within the header
-          rounded-full // Make the header fully rounded
+          rounded-2xl // Make the header fully rounded
           border
           border-border/40
           bg-background/95

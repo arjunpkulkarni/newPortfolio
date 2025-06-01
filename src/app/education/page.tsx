@@ -8,7 +8,7 @@ const BLUR_FADE_DELAY = 0.04;
 export default function EducationPage() {
   return (
     <main className="flex flex-col min-h-[100dvh] items-center space-y-10 p-4 md:p-8">
-      <section id="education" className="w-full max-w-5xl">
+      <section id="education" className="w-full max-w-5xl mt-16">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>
             <h2 className="text-xl font-bold">Education</h2>
@@ -35,16 +35,27 @@ export default function EducationPage() {
       {/* Skills Section */}
       <section id="skills" className="w-full max-w-5xl">
         <div className="flex min-h-0 flex-col gap-y-3">
-          <BlurFade delay={BLUR_FADE_DELAY * 9}>
-            <h2 className="text-xl font-bold">Skills</h2>
-          </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
+          
+          {Object.entries(DATA.skills).map(([category, skills], categoryIndex) => (
+            <div key={category} className="mb-4">
+              <BlurFade delay={BLUR_FADE_DELAY * (10 + categoryIndex * 0.5)}>
+                <h3 className="text-lg font-semibold mb-2">{category}</h3>
               </BlurFade>
-            ))}
-          </div>
+              <div className="flex flex-wrap gap-1">
+                {skills.map((skill, skillIndex) => (
+                  <BlurFade
+                    key={skill}
+                    delay={
+                      BLUR_FADE_DELAY * (10 + categoryIndex * 0.5 + 0.1) +
+                      skillIndex * 0.05
+                    }
+                  >
+                    <Badge key={skill}>{skill}</Badge>
+                  </BlurFade>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 

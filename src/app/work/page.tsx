@@ -7,7 +7,7 @@ const BLUR_FADE_DELAY = 0.04;
 export default function WorkPage() {
   return (
     <main className="flex flex-col min-h-[100dvh] items-center space-y-10 p-4 md:p-8">
-      <section id="work" className="w-full max-w-5xl">
+      <section id="work" className="w-full max-w-5xl mt-16">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 5}>
             <h2 className="text-xl font-bold">Work Experience</h2>
