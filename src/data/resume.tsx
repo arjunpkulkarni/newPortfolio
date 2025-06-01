@@ -1,5 +1,6 @@
 import { Icons } from "@/components/icons";
 import { HomeIcon, NotebookIcon, GraduationCapIcon, BriefcaseIcon } from "lucide-react";
+
 import Culin from "../app/projects/pictures/culin.png";
 import FitCheck from "../app/projects/pictures/fitcheck.png";
 import LumeLabs from "../app/projects/pictures/lumelabs.png";
@@ -7,6 +8,10 @@ import Siramai from "../app/projects/pictures/siramai.png";
 import DJDoc from "../app/projects/pictures/djdoc.png";
 import StockLock from "../app/projects/pictures/stocklock.png";
 import AMD from "../app/projects/pictures/neural.png";
+
+import uiuc from "../app/education/pictures/uiuc.png";
+
+import MITRE from "../app/education/pictures/mitre.png"; 
 
 export const DATA = {
   name: "Arjun Kulkarni",
@@ -178,7 +183,7 @@ export const DATA = {
       school: "University of Illinois at Urbana-Champaign",
       href: "https://illinois.edu",
       degree: "Materials Engineering and Computer Science",
-      logoUrl: "/uiuc-logo.png",
+      logoUrl: uiuc,
       start: "Sep 2022",
       end: "May 2026",
     },
@@ -187,7 +192,7 @@ export const DATA = {
     {
       name: "Certified Cloud Practitioner",
       issuer: "AWS",
-      date: "Jul 2024 – Jul 2027",
+      date: "Jul 2024",
     },
     {
       name: "MERN Stack",
@@ -197,6 +202,7 @@ export const DATA = {
     {
       name: "Medical Embedded Systems",
       issuer: "MITRE Engenuity",
+      logoUrl: MITRE,
       date: "May 2024",
     },
     {
@@ -217,7 +223,7 @@ export const DATA = {
     {
       name: "Problem Solving (Basic)",
       issuer: "HackerRank",
-      date: "Aug 2023 – Aug 2027",
+      date: "Aug 2023",
     },
   ],
   projects: [

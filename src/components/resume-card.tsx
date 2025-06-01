@@ -10,7 +10,7 @@ import Link from "next/link";
 import React from "react";
 
 interface ResumeCardProps {
-  logoUrl?: string;
+  logoUrl?: string | import('next/image').StaticImageData;
   altText: string;
   title: string;
   subtitle?: string;
@@ -49,7 +49,7 @@ export const ResumeCard = ({
           <Avatar className="border size-12 m-auto bg-muted-background dark:bg-foreground">
             {logoUrl && (
               <AvatarImage
-                src={logoUrl}
+                src={typeof logoUrl === 'string' ? logoUrl : logoUrl.src}
                 alt={altText}
                 className="object-contain"
               />

@@ -73,6 +73,7 @@ export default function EducationPage() {
               <ResumeCard
                 key={certification.name}
                 altText={certification.name}
+                logoUrl={certification.logoUrl}
                 title={certification.name}
                 subtitle={certification.issuer}
                 period={certification.date}
