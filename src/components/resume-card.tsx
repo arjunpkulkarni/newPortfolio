@@ -18,6 +18,10 @@ interface ResumeCardProps {
   badges?: readonly string[];
   period: string;
   description?: string;
+  tasks?: readonly {
+    readonly description: string;
+    readonly skills: readonly string[];
+  }[];
 }
 export const ResumeCard = ({
   logoUrl,
@@ -28,6 +32,7 @@ export const ResumeCard = ({
   badges,
   period,
   description,
+  tasks,
 }: ResumeCardProps) => {
   // const [isExpanded, setIsExpanded] = React.useState(false);
 
@@ -98,6 +103,27 @@ export const ResumeCard = ({
             >
               {description}
             </motion.div>
+          )}
+          {tasks && (
+            <div className="mt-2 text-xs sm:text-sm">
+              <ul className="space-y-2">
+                {tasks.map((task, index) => (
+                  <li key={index} className="flex">
+                    <span className="mr-2">→</span>
+                    <div>
+                      {task.description}
+                      <div className="mt-1 flex flex-wrap gap-1">
+                        {task.skills.map((skill, skillIndex) => (
+                          <Badge key={skillIndex} variant="secondary" className="text-xs">
+                            {skill}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
           )}
         </div>
       </Card>

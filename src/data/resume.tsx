@@ -120,6 +120,24 @@ export const DATA = {
       end: "Present",
       description:
         "Disrupting the $100B+ fashion industry by building a platform for centralized shopping. Currently working alongside Intel. Developed over 100k lines of code. Download now on the App Store.",
+      tasks: [
+        {
+          description: "Built a mobile app for iOS and Android using React Native, creating a personalized centralized shopping experience.",
+          skills: ["React Native", "TypeScript", "Redux", "Expo"]
+        },
+        {
+          description: "Developed a web app for centralized shopping, providing a seamless user experience across devices.",
+          skills: ["React", "Next.js", "Tailwind CSS", "Vercel"]
+        },
+        {
+          description: "Created a Chrome extension to save products from any website, enhancing the platform's usability.",
+          skills: ["JavaScript", "HTML", "CSS", "Webpack"]
+        },
+        {
+          description: "Developed an Instagram DM bot using the Instagram Graph API to engage with users and drive traffic to the platform.",
+          skills: ["Node.js", "Instagram Graph API", "Messenger Platform API", "OAuth"]
+        }
+      ]
     },
     {
       company: "AbbVie",
@@ -132,6 +150,20 @@ export const DATA = {
       end: "Jun 2025",
       description:
         "Collaborating with pharmaceutical experts to develop machine learning models for analyzing drug efficacy and predicting patient responses. Leveraging tools like TensorFlow and Scikit-learn to build predictive systems, while utilizing real-world datasets to optimize clinical trial outcomes. Integrating Python-based solutions with cloud technologies for scalable and efficient analysis pipelines.",
+      tasks: [
+        {
+          description: "Developed and trained machine learning models to predict drug efficacy, achieving a 15% improvement in prediction accuracy.",
+          skills: ["Python", "TensorFlow", "Scikit-learn", "Pandas"]
+        },
+        {
+          description: "Built and maintained a scalable data pipeline on AWS for processing and analyzing clinical trial data.",
+          skills: ["AWS (S3, EC2, Lambda)", "Python", "Docker"]
+        },
+        {
+          description: "Created interactive dashboards to visualize model predictions and clinical data for pharmaceutical experts.",
+          skills: ["Tableau", "SQL", "Data Visualization"]
+        }
+      ]
     },
     
   ],
@@ -147,6 +179,16 @@ export const DATA = {
       end: "Mar 2025",
       description:
         "Engineered experimental platform enabling structured evaluation of human-AI co-creativity using GPT-4 and Alternate Uses Test framework.",
+      tasks: [
+        {
+          description: "Designed and implemented a web-based platform for conducting psychology experiments on human-AI collaboration.",
+          skills: ["React", "Node.js", "MongoDB", "GPT-4 API"]
+        },
+        {
+          description: "Developed a data collection and analysis pipeline to evaluate the creative output from the experiments.",
+          skills: ["Python", "Pandas", "Jupyter Notebooks", "Matplotlib"]
+        }
+      ]
     },
     {
       company: "UofI Information Department",
@@ -159,6 +201,16 @@ export const DATA = {
       end: "Aug 2023",
       description:
         "Optimized DDPG algorithms for traffic congestion reduction, developed a RAG system using LangChain and OpenAI, and utilized various tools like Python, SUMO, and ROS for simulation and development.",
+      tasks: [
+        {
+          description: "Fine-tuned Deep Deterministic Policy Gradient (DDPG) algorithms to reduce traffic congestion in a simulated environment by 20%.",
+          skills: ["Python", "TensorFlow", "SUMO", "Reinforcement Learning"]
+        },
+        {
+          description: "Built a Retrieval-Augmented Generation (RAG) system with LangChain and OpenAI to answer traffic-related queries.",
+          skills: ["LangChain", "OpenAI API", "Vector Databases", "Python"]
+        }
+      ]
     },
     {
       company: "UofI Civil Department",
@@ -171,6 +223,16 @@ export const DATA = {
       end: "Dec 2022",
       description:
         "Conducted data-driven research in material science, developing a new concrete mixture and predicting material durability using Random Forest models.",
+      tasks: [
+        {
+          description: "Developed a predictive model for material durability using Random Forest, achieving 95% accuracy.",
+          skills: ["Python", "Scikit-learn", "Pandas", "XGBoost"]
+        },
+        {
+          description: "Analyzed experimental data to formulate a new, more durable concrete mixture, resulting in a 10% increase in strength.",
+          skills: ["Jupyter Notebooks", "Matplotlib", "Data Analysis", "Materials Science"]
+        }
+      ]
     },
   ],
   clubs: [
@@ -185,6 +247,16 @@ export const DATA = {
       end: "Jan 2024",
       description:
         "Led projects for Lubrizol's market entry into the pipefitting industry and simplified insurance language for Equitable. Collaborated closely with CIOs and CTOs to deliver actionable insights and strategic recommendations.",
+      tasks: [
+        {
+          description: "Conducted market analysis and developed a go-to-market strategy for a new product line in the pipefitting industry.",
+          skills: ["Market Research", "Strategic Planning", "PowerPoint", "Client Presentation"]
+        },
+        {
+          description: "Used NLP techniques to simplify complex insurance documents, making them more understandable for customers.",
+          skills: ["Python", "NLTK", "Text Summarization", "Data Analysis"]
+        }
+      ]
     },
     {
       company: "sigPWNY Component Team",
@@ -197,6 +269,16 @@ export const DATA = {
       end: "Mar 2024",
       description:
         "Integrated UART functionality into medical devices for eCTF competitions. Enhanced security for x86 architectures using Rust and C, focusing on safe memory development and secure communication protocols.",
+      tasks: [
+        {
+          description: "Developed and implemented a secure UART communication protocol for an embedded medical device.",
+          skills: ["C", "Rust", "Embedded Systems", "Serial Communication"]
+        },
+        {
+          description: "Contributed to securing x86 architecture firmware by implementing memory-safe coding practices in Rust.",
+          skills: ["Rust", "x86 Assembly", "Cybersecurity", "Firmware"]
+        }
+      ]
     },
     {
       company: "NOBE Tech Lab",
@@ -209,6 +291,16 @@ export const DATA = {
       end: "Dec 2023",
       description:
         "Implemented UI components for mobile applications using React Native and Bootstrap. Prototyped designs in Figma and integrated with Flask-based backend, ensuring smooth and responsive user interfaces.",
+      tasks: [
+        {
+          description: "Built and styled responsive UI components for a cross-platform mobile app using React Native.",
+          skills: ["React Native", "Bootstrap", "JavaScript", "UI/UX Design"]
+        },
+        {
+          description: "Translated Figma mockups into functional application screens and integrated them with a Python Flask backend.",
+          skills: ["Figma", "Flask", "REST APIs", "Frontend Development"]
+        }
+      ]
     },
   ],
   education: [

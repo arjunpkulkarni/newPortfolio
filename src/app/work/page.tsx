@@ -27,6 +27,7 @@ export default function WorkPage() {
                 badges={work.badges}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
+                tasks={work.tasks}
               />
             </BlurFade>
           ))}
@@ -52,6 +53,7 @@ export default function WorkPage() {
                 badges={researchItem.badges}
                 period={`${researchItem.start} - ${researchItem.end ?? "Present"}`}
                 description={researchItem.description}
+                tasks={researchItem.tasks}
               />
             </BlurFade>
           ))}
@@ -77,6 +79,7 @@ export default function WorkPage() {
                 badges={club.badges}
                 period={`${club.start} - ${club.end ?? "Present"}`}
                 description={club.description}
+                tasks={club.tasks}
               />
             </BlurFade>
           ))}
