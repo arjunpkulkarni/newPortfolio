@@ -49,6 +49,36 @@ export const DATA = {
       "C++",
       "Python",
     ],
+    "AI/ML & Deep Learning": [
+      "Foundation Models (GPT-4, LLaMA)",
+      "Large Language Models",
+      "Amazon Bedrock",
+      "Model Context Protocol",
+      "Transformer Architecture",
+      "Prompt Engineering",
+      "RAG Systems",
+      "Fine-tuning (LoRA)",
+      "PyTorch",
+      "TensorFlow",
+      "Hugging Face",
+      "LangChain",
+      "Vector Databases",
+      "Embedding Models",
+      "Attention Mechanisms",
+      "Neural Networks",
+    ],
+    "MLOps & Deployment": [
+      "Docker",
+      "Kubernetes",
+      "AWS SageMaker",
+      "Model Quantization",
+      "Inference Optimization",
+      "MLflow",
+      "Weights & Biases",
+      "Model Evaluation",
+      "A/B Testing",
+      "Monitoring & Logging",
+    ],
     "Frameworks/Libraries": [
       "MongoDB",
       "React",
@@ -119,23 +149,23 @@ export const DATA = {
       start: "Jan 2023",
       end: "Present",
       description:
-        "Disrupting the $100B+ fashion industry by building a platform for centralized shopping. Currently working alongside Intel. Developed over 100k lines of code. Download now on the App Store.",
+        "Disrupting the $100B+ fashion industry by building an AI-powered platform for centralized shopping. Developed recommendation systems and personalization models to enhance user experience. Currently working alongside Intel. Developed over 100k lines of code. Download now on the App Store.",
       tasks: [
         {
-          description: "Built a mobile app for iOS and Android using React Native, creating a personalized centralized shopping experience.",
-          skills: ["React Native", "TypeScript", "Redux", "Expo"]
+          description: "Built a mobile app for iOS and Android using React Native, implementing real-time personalization through collaborative filtering and content-based recommendation models.",
+          skills: ["React Native", "TypeScript", "TensorFlow", "Recommendation Systems"]
         },
         {
-          description: "Developed a web app for centralized shopping, providing a seamless user experience across devices.",
-          skills: ["React", "Next.js", "Tailwind CSS", "Vercel"]
+          description: "Developed a web app with Next.js, integrating a hybrid recommendation system combining user behavior analysis, product embeddings, and contextual features.",
+          skills: ["React", "Next.js", "PyTorch", "Vector Embeddings"]
         },
         {
-          description: "Created a Chrome extension to save products from any website, enhancing the platform's usability.",
-          skills: ["JavaScript", "HTML", "CSS", "Webpack"]
+          description: "Created a Chrome extension with ML-powered product classification and similarity matching, enabling intelligent product saving and categorization.",
+          skills: ["JavaScript", "TensorFlow.js", "Computer Vision", "Webpack"]
         },
         {
-          description: "Developed an Instagram DM bot using the Instagram Graph API to engage with users and drive traffic to the platform.",
-          skills: ["Node.js", "Instagram Graph API", "Messenger Platform API", "OAuth"]
+          description: "Implemented a backend system using Node.js and GPT-4 for natural language processing and personalization.",
+          skills: ["Node.js", "GPT-4", "NLP", "Personalization Models"]
         }
       ]
     },
@@ -149,23 +179,22 @@ export const DATA = {
       start: "Dec 2024",
       end: "Jun 2025",
       description:
-        "Collaborating with pharmaceutical experts to develop machine learning models for analyzing drug efficacy and predicting patient responses. Leveraging tools like TensorFlow and Scikit-learn to build predictive systems, while utilizing real-world datasets to optimize clinical trial outcomes. Integrating Python-based solutions with cloud technologies for scalable and efficient analysis pipelines.",
+        "Collaborating with pharmaceutical experts to develop advanced machine learning models for drug efficacy analysis and patient response prediction. Implementing RAG systems for medical literature analysis and fine-tuning foundation models for domain-specific applications. Building scalable ML pipelines for clinical trial optimization.",
       tasks: [
         {
-          description: "Developed and trained machine learning models to predict drug efficacy, achieving a 15% improvement in prediction accuracy.",
-          skills: ["Python", "TensorFlow", "Scikit-learn", "Pandas"]
+          description: "Developed and fine-tuned transformer-based models for drug efficacy prediction, achieving 15% improvement in accuracy through domain adaptation.",
+          skills: ["Python", "PyTorch", "Hugging Face", "LoRA"]
         },
         {
-          description: "Built and maintained a scalable data pipeline on AWS for processing and analyzing clinical trial data.",
-          skills: ["AWS (S3, EC2, Lambda)", "Python", "Docker"]
+          description: "Built a RAG system for medical literature analysis, enabling researchers to query and analyze clinical trial data with improved accuracy.",
+          skills: ["LangChain", "Vector DB", "GPT-4", "Medical NLP"]
         },
         {
-          description: "Created interactive dashboards to visualize model predictions and clinical data for pharmaceutical experts.",
-          skills: ["Tableau", "SQL", "Data Visualization"]
+          description: "Implemented a scalable ML pipeline on AWS for processing clinical trial data, including automated model evaluation and monitoring.",
+          skills: ["AWS SageMaker", "MLflow", "Docker", "Model Evaluation"]
         }
       ]
-    },
-    
+    }
   ],
   research: [
     {
