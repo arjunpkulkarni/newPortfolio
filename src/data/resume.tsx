@@ -179,24 +179,42 @@ export const DATA = {
       start: "Dec 2024",
       end: "Jun 2025",
       description:
-        "Collaborating with pharmaceutical experts to develop advanced machine learning models for drug efficacy analysis and patient response prediction. Implementing RAG systems for medical literature analysis and fine-tuning foundation models for domain-specific applications. Building scalable ML pipelines for clinical trial optimization.",
+        "Developed interactive dashboard with Streamlit, pandas and matplotlib to visualize document reuse across disease states. Improved transparency with overlap analysis for 30+ clients; automated data ingestion cut manual reporting by 50%.",
       tasks: [
         {
-          description: "Developed and fine-tuned transformer-based models for drug efficacy prediction, achieving 15% improvement in accuracy through domain adaptation.",
-          skills: ["Python", "PyTorch", "Hugging Face", "LoRA"]
+          description: "Developed interactive dashboard with Streamlit, pandas and matplotlib to visualize document reuse across disease states.",
+          skills: ["Python", "Streamlit", "Pandas", "Matplotlib"]
         },
         {
-          description: "Built a RAG system for medical literature analysis, enabling researchers to query and analyze clinical trial data with improved accuracy.",
-          skills: ["LangChain", "Vector DB", "GPT-4", "Medical NLP"]
-        },
-        {
-          description: "Implemented a scalable ML pipeline on AWS for processing clinical trial data, including automated model evaluation and monitoring.",
-          skills: ["AWS SageMaker", "MLflow", "Docker", "Model Evaluation"]
+          description: "Improved transparency with overlap analysis for 30+ clients; automated data ingestion cut manual reporting by 50%.",
+          skills: ["Data Analysis", "Automation", "Client Management"]
         }
       ]
     }
   ],
   research: [
+    {
+      company: "Coordinated Science Laboratory",
+      href: "#",
+      badges: [],
+      location: "In-Person",
+      title: "Software Developer",
+      logoUrl: uiuc,
+      start: "Jan 2025",
+      end: "Aug 2025",
+      description:
+        "Built end-to-end AI nutrition engine using Next.js, GPT-4o, QDrant vector database, and LangGraph to generate medicinal recipes. Working alongside Food Network Chef, James Briscione & White House Fellow, Lav Varshney, collaborating with UCSD Medicine.",
+      tasks: [
+        {
+          description: "Built end-to-end AI nutrition engine using Next.js, GPT-4o, QDrant vector database, and LangGraph to generate medicinal recipes.",
+          skills: ["Next.js", "GPT-4", "Vector Databases", "LangGraph"]
+        },
+        {
+          description: "Collaborated with Food Network Chef, James Briscione & White House Fellow, Lav Varshney, and UCSD Medicine.",
+          skills: ["Cross-functional Collaboration", "AI Development", "Healthcare Integration"]
+        }
+      ]
+    },
     {
       company: "Beckman Institute for Advanced Science and Technology",
       href: "#",
@@ -204,10 +222,10 @@ export const DATA = {
       location: "In-Person",
       title: "Artificial Intelligence Research Assistant",
       logoUrl: uiuc,
-      start: "Jan 2025",
+      start: "Jan 忡25",
       end: "Mar 2025",
       description:
-        "Engineered experimental platform enabling structured evaluation of human-AI co-creativity using GPT-4 and Alternate Uses Test framework.",
+        "Developed an experimental platform using React, Firebase, MongoDB, and OpenAI API to study human-AI creativity. Engineered a cooperative version of the Alternate Uses Test, enabling controlled testing of collective intelligence.",
       tasks: [
         {
           description: "Designed and implemented a web-based platform for conducting psychology experiments on human-AI collaboration.",
@@ -229,7 +247,7 @@ export const DATA = {
       start: "Jun 2023",
       end: "Aug 2023",
       description:
-        "Optimized DDPG algorithms for traffic congestion reduction, developed a RAG system using LangChain and OpenAI, and utilized various tools like Python, SUMO, and ROS for simulation and development.",
+        "Optimized DDPG algorithm to reduce traffic congestion for AVs by 25% via hyperparameter optimization and codebase refactoring. Developed a RAG system using LangChain to tackle traffic optimization, achieving 30% faster results than previous methods.",
       tasks: [
         {
           description: "Fine-tuned Deep Deterministic Policy Gradient (DDPG) algorithms to reduce traffic congestion in a simulated environment by 20%.",
@@ -251,15 +269,15 @@ export const DATA = {
       start: "Sep 2022",
       end: "Dec 2022",
       description:
-        "Conducted data-driven research in material science, developing a new concrete mixture and predicting material durability using Random Forest models.",
+        "Analyzed experimental data, resulting in development of a new concrete mixture, by reducing clinker in cement. Utilized Python & Random Forest models to predict the impact of composition on durability, reducing carbon emissions by 10%.",
       tasks: [
         {
-          description: "Developed a predictive model for material durability using Random Forest, achieving 95% accuracy.",
-          skills: ["Python", "Scikit-learn", "Pandas", "XGBoost"]
+          description: "Analyzed experimental data, resulting in development of a new concrete mixture, by reducing clinker in cement.",
+          skills: ["Materials Science", "Data Analysis", "Experimental Design"]
         },
         {
-          description: "Analyzed experimental data to formulate a new, more durable concrete mixture, resulting in a 10% increase in strength.",
-          skills: ["Jupyter Notebooks", "Matplotlib", "Data Analysis", "Materials Science"]
+          description: "Utilized Python & Random Forest models to predict the impact of composition on durability, reducing carbon emissions by 10%.",
+          skills: ["Python", "Random Forest", "Sustainability"]
         }
       ]
     },
@@ -319,7 +337,7 @@ export const DATA = {
       start: "Jul 2023",
       end: "Dec 2023",
       description:
-        "Implemented UI components for mobile applications using React Native and Bootstrap. Prototyped designs in Figma and integrated with Flask-based backend, ensuring smooth and responsive user interfaces.",
+        "Operate website for 30+ clients using React, Node.js, Vercel; built custom forms, pricing calculator, and artwork design tools.",
       tasks: [
         {
           description: "Built and styled responsive UI components for a cross-platform mobile app using React Native.",
@@ -412,7 +430,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Developed 3 AI APIs enabling semantic search and real-time personalization for eCommerce, driving retailer revenue, using Pinecone, Next.js, and Python, basically a vertical AI stack.",
+        "Built 3 AI agent APIs using Pinecone, Next.js, and Python; enabled semantic text + image search for eCommerce platforms. Deployed vertical AI stack with real-time personalization and data mining, enabling retailers to drive revenue growth easily.",
       technologies: ["Pinecone", "Next.js", "Python", "AI"],
       links: [
         {
@@ -577,5 +595,6 @@ export const DATA = {
       logo: "",
       video: "",
     },
+    
   ],
 } as const;
