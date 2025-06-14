@@ -468,7 +468,7 @@ export const DATA = {
             code: "MSE401",
             name: "Thermodynamics of Materials",
             description: "Thermodynamic principles in materials science"
-          }
+          } // hello
         ],
         "Electrical Engineering": [
           {
