@@ -354,10 +354,130 @@ export const DATA = {
     {
       school: "University of Illinois at Urbana-Champaign",
       href: "https://illinois.edu",
-      degree: "Materials Engineering and Computer Science",
+      degree: "Computer Science & Materials Engineering",
       logoUrl: uiuc,
       start: "Sep 2022",
       end: "May 2026",
+      classes: {
+        "Computer Science": [
+          {
+            code: "CS412",
+            name: "Data Mining",
+            description: "Advanced data mining techniques and applications"
+          },
+          {
+            code: "CS225",
+            name: "Data Structures",
+            description: "Implementation and analysis of fundamental data structures"
+          },
+          {
+            code: "CS416",
+            name: "Data Visualization",
+            description: "Principles and techniques of data visualization"
+          },
+          {
+            code: "CS411",
+            name: "Database Systems",
+            description: "Design and implementation of database systems"
+          },
+          {
+            code: "CS173",
+            name: "Discrete Structures",
+            description: "Mathematical foundations of computer science"
+          },
+          {
+            code: "CS128",
+            name: "Introduction to C++",
+            description: "Object-oriented programming with C++"
+          },
+          {
+            code: "CS124",
+            name: "Java Programming",
+            description: "Object-oriented programming with Java"
+          }
+        ],
+        "Mathematics": [
+          {
+            code: "MATH221",
+            name: "Differential Calculus",
+            description: "Single-variable calculus and applications"
+          },
+          {
+            code: "MATH285",
+            name: "Differential Equations",
+            description: "Ordinary differential equations and applications"
+          },
+          {
+            code: "MATH231",
+            name: "Integral Calculus",
+            description: "Integration techniques and applications"
+          },
+          {
+            code: "MATH257",
+            name: "Linear Algebra w/ Python",
+            description: "Linear algebra concepts with computational applications"
+          },
+          {
+            code: "MATH241",
+            name: "Multivariable Calculus",
+            description: "Calculus of several variables"
+          },
+          {
+            code: "STAT400",
+            name: "Statistics and Probability I",
+            description: "Probability theory and statistical inference"
+          }
+        ],
+        "Materials Science & Engineering": [
+          {
+            code: "MSE402",
+            name: "Kinetic Processes in Materials",
+            description: "Study of kinetic processes in materials systems"
+          },
+          {
+            code: "MSE308",
+            name: "Materials Lab II",
+            description: "Advanced materials characterization and analysis"
+          },
+          {
+            code: "MSE307",
+            name: "Materials Laboratory I",
+            description: "Introduction to materials characterization techniques"
+          },
+          {
+            code: "MSE206",
+            name: "Mechanics of Materials",
+            description: "Mechanical behavior of materials"
+          },
+          {
+            code: "MSE405",
+            name: "Microstructure Determination",
+            description: "Analysis of material microstructures"
+          },
+          {
+            code: "MSE201",
+            name: "Phase and Phase Diagrams",
+            description: "Phase equilibria and transformations in materials"
+          },
+          {
+            code: "MSE406",
+            name: "Thermal Mechanics of Materials",
+            description: "Thermal properties and mechanical behavior"
+          },
+          {
+            code: "MSE401",
+            name: "Thermodynamics of Materials",
+            description: "Thermodynamic principles in materials science"
+          }
+        ],
+        "Electrical Engineering": [
+          {
+            code: "ECE205",
+            name: "Electronic and Electrical Circuits",
+            description: "Analysis and design of electronic circuits"
+          }
+        ]
+      }
     },
   ],
   certifications: [
