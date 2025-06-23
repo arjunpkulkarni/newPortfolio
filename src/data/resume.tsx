@@ -583,17 +583,17 @@ export const DATA = {
       video: "",
     },
     {
-      title: "LumeLabs",
-      href: "https://www.lumelabs.org/",
+      title: "District Four",
+      href: "https://www.district-four.com/",
       dates: "",
       active: true,
       description:
-        "AI agents to find leads for B2B SaaS agency from local directories, then developing websites for them. Developed with React, Python, and LangChain.",
+        "Digital Marketing Agency that helps local businesses grow their online presence. Using AI agents to find leads for local businesses from local directories, then developing websites for them, and running ads to get more customers.",
       technologies: ["React", "Python", "LangChain", "AI"],
       links: [
         {
           type: "Live Demo",
-          href: "https://www.lumelabs.org/",
+          href: "https://www.district-four.com/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
