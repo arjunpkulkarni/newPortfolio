@@ -8,7 +8,8 @@ import Siramai from "../app/projects/pictures/siramai.png";
 import DJDoc from "../app/projects/pictures/djdoc.png";
 import StockLock from "../app/projects/pictures/stocklock.png";
 import AMD from "../app/projects/pictures/neural.png";
-import EVInsight from "../app/projects/pictures/evinsight.png";
+import EVInsight from "../app/projects/pictures/evInsight.png";
+
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
 import nobe from "../app/work/pictures/nobe.png";
