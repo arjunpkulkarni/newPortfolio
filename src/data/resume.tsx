@@ -640,23 +640,24 @@ export const DATA = {
       logo: "",
       video: "",
     },
+    
     {
-      title: "PsychAItrist",
-      href: "https://github.com/sumanthk123/NOBE-Tech-Project-Fall-2023",
+      title: "AMD Neural Layout",
+      href: "https://drive.google.com/file/d/1cIw9EgpeKyzAbVeZG6P2DU4ySmb0g2T8/view",
       dates: "",
       active: true,
       description:
-        "Developed an AI-based microexpression diagnosis app with TensorFlow for image classification, deployed to 3 psychiatric clinics.",
-      technologies: ["AI", "TensorFlow", "Image Classification"],
+        "Competed in KPMG Ideation Challenge, where we built a AI aided chip design tool with the objective of Transistor Layout Refinement.",
+      technologies: ["AI", "Chip Design"],
       links: [
         {
-          type: "Source",
-          href: "https://github.com/sumanthk123/NOBE-Tech-Project-Fall-2023",
-          icon: <Icons.github className="size-3" />,
+          type: "Live Demo",
+          href: "https://drive.google.com/file/d/1cIw9EgpeKyzAbVeZG6P2DU4ySmb0g2T8/view",
+          icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
-      logo: "/placeholder-logo.png",
+      image: AMD,
+      logo: "",
       video: "",
     },
     {
@@ -717,22 +718,22 @@ export const DATA = {
       video: "",
     },
     {
-      title: "AMD Neural Layout",
-      href: "https://drive.google.com/file/d/1cIw9EgpeKyzAbVeZG6P2DU4ySmb0g2T8/view",
+      title: "PsychAItrist",
+      href: "https://github.com/sumanthk123/NOBE-Tech-Project-Fall-2023",
       dates: "",
       active: true,
       description:
-        "Competed in KPMG Ideation Challenge, where we built a AI aided chip design tool with the objective of Transistor Layout Refinement.",
-      technologies: ["AI", "Chip Design"],
+        "Developed an AI-based microexpression diagnosis app with TensorFlow for image classification, deployed to 3 psychiatric clinics.",
+      technologies: ["AI", "TensorFlow", "Image Classification"],
       links: [
         {
-          type: "Live Demo",
-          href: "https://drive.google.com/file/d/1cIw9EgpeKyzAbVeZG6P2DU4ySmb0g2T8/view",
-          icon: <Icons.globe className="size-3" />,
+          type: "Source",
+          href: "https://github.com/sumanthk123/NOBE-Tech-Project-Fall-2023",
+          icon: <Icons.github className="size-3" />,
         },
       ],
-      image: AMD,
-      logo: "",
+      image: "",
+      logo: "/placeholder-logo.png",
       video: "",
     },
     
