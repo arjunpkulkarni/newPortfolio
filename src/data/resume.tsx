@@ -8,7 +8,7 @@ import Siramai from "../app/projects/pictures/siramai.png";
 import DJDoc from "../app/projects/pictures/djdoc.png";
 import StockLock from "../app/projects/pictures/stocklock.png";
 import AMD from "../app/projects/pictures/neural.png";
-
+import EVInsight from "../app/projects/pictures/evinsight.png";
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
 import nobe from "../app/work/pictures/nobe.png";
@@ -656,6 +656,25 @@ export const DATA = {
       ],
       image: "",
       logo: "/placeholder-logo.png",
+      video: "",
+    },
+    {
+      title: "EV Insight",
+      href: "https://public.tableau.com/app/profile/arjun.kulkarni/viz/EVDASHBOARD_17507097546940/Dashboard1#2",
+      dates: "",
+      active: true,
+      description:
+        "Compared different EV brands and models based on their range, battery life, and charging time.",
+      technologies: ["Tableau", "Data Analysis", "Data Visualization", "Data Cleaning", "Python"],
+      links: [
+        {
+          type: "Live Demo",
+          href: "https://public.tableau.com/app/profile/arjun.kulkarni/viz/EVDASHBOARD_17507097546940/Dashboard1#2",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: EVInsight,
+      logo: "",
       video: "",
     },
     {
