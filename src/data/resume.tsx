@@ -142,7 +142,7 @@ export const DATA = {
   work: [
     {
       company: "Hanger",
-      href: "#",
+      href: "https://www.hanger.live/",
       badges: [],
       location: "Remote",
       title: "Founding Engineer",
@@ -172,7 +172,7 @@ export const DATA = {
     },
     {
       company: "AbbVie",
-      href: "#",
+      href: "https://www.abbvie.com/",
       badges: [],
       location: "Remote",
       title: "Software Developer",
@@ -196,7 +196,7 @@ export const DATA = {
   research: [
     {
       company: "Coordinated Science Laboratory",
-      href: "#",
+      href: "https://csl.illinois.edu/",
       badges: [],
       location: "In-Person",
       title: "Software Developer",
@@ -218,7 +218,7 @@ export const DATA = {
     },
     {
       company: "Beckman Institute for Advanced Science and Technology",
-      href: "#",
+      href: "https://beckman.illinois.edu/",
       badges: [],
       location: "In-Person",
       title: "Artificial Intelligence Research Assistant",
@@ -240,7 +240,7 @@ export const DATA = {
     },
     {
       company: "UofI Information Department",
-      href: "#",
+      href: "https://ischool.illinois.edu/",
       badges: [],
       location: "In-Person",
       title: "Artificial Intelligence Research Assistant",
@@ -262,7 +262,7 @@ export const DATA = {
     },
     {
       company: "UofI Civil Department",
-      href: "#",
+      href: "https://cee.illinois.edu/",
       badges: [],
       location: "In-Person",
       title: "Computational Materials Research Assistant",
@@ -286,7 +286,7 @@ export const DATA = {
   clubs: [
     {
       company: "Illinois Business Consulting",
-      href: "#",
+      href: "https://giesbusiness.illinois.edu/experience/experiential-learning/illinois-business-consulting",
       badges: [],
       location: "Remote",
       title: "IT Consultant",
@@ -308,7 +308,7 @@ export const DATA = {
     },
     {
       company: "sigPWNY Component Team",
-      href: "#",
+      href: "https://sigpwny.com/",
       badges: [],
       location: "Remote",
       title: "Software Engineer",
@@ -330,7 +330,7 @@ export const DATA = {
     },
     {
       company: "NOBE Tech Lab",
-      href: "#",
+      href: "https://www.nobenational.org/",
       badges: [],
       location: "Remote",
       title: "Frontend Developer",
