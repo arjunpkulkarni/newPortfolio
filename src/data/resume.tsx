@@ -678,45 +678,7 @@ export const DATA = {
       image: EVInsight,
       logo: "",
       video: "",
-    },
-    {
-      title: "QuantSuite",
-      href: "https://github.com/arjunpkulkarni/crypto",
-      dates: "",
-      active: true,
-      description:
-        "Built a multithreaded, parallelized C++ quant engine for 10+ cryptocurrencies, slashing latency 25% and boosting fill rates.",
-      technologies: ["C++", "Multithreading", "Parallelization"],
-      links: [
-        {
-          type: "Live Demo",
-          href: "https://github.com/arjunpkulkarni/crypto",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      logo: "/placeholder-logo.png",
-      video: "",
-    },
-    {
-      title: "InvestIQ",
-      href: "https://github.com/arjunpkulkarni/InvestmentManagement",
-      dates: "",
-      active: true,
-      description:
-        "Investment Portfolio Management System developed with Python, connected to Excel files & Robinhood API, used by me to manage my own portfolio.",
-      technologies: ["Python", "Excel", "Robinhood API"],
-      links: [
-        {
-          type: "Live Demo",
-          href: "https://github.com/arjunpkulkarni/InvestmentManagement",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      logo: "/placeholder-logo.png",
-      video: "",
-    },
+    },    
     {
       title: "PsychAItrist",
       href: "https://github.com/sumanthk123/NOBE-Tech-Project-Fall-2023",
