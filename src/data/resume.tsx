@@ -37,7 +37,7 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Full Stack Developer and Materials Engineer",
+    "Building in New York City and Chicago",
   summary:
     "Collaborated with multiple research labs, startups, and companies to build AI-powered solutions end-to-end, merging full-stack engineering with machine-learning insight.",
   avatarUrl: "/pfp.jpeg",
