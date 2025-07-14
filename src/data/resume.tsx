@@ -9,6 +9,8 @@ import DJDoc from "../app/projects/pictures/djdoc.png";
 import StockLock from "../app/projects/pictures/stocklock.png";
 import AMD from "../app/projects/pictures/neural.png";
 import EVInsight from "../app/projects/pictures/evInsight.png";
+import Loophaus from "../app/projects/pictures/loophaus.png";
+import RealRoll from "../app/projects/pictures/realroll.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -679,6 +681,45 @@ export const DATA = {
       logo: "",
       video: "",
     },    
+    
+    {
+      title: "Loophaus",
+      href: "https://loophaus.com",
+      dates: "",
+      active: true,
+      description:
+        "AI music assistant using deep learning to analyze and augment MIDI files, generating novel musical patterns.",
+      technologies: ["AI", "Deep Learning", "RNNs", "GANs", "TensorFlow", "Python"],
+      links: [
+        {
+          type: "Live Demo",
+          href: "https://loophaus.com",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: Loophaus,
+      logo: "",
+      video: "",
+    },
+    {
+      title: "RealRoll",
+      href: "https://realroll.com",
+      dates: "",
+      active: true,
+      description:
+        "Content-based image retrieval (CBIR) system using AI to find images based on semantic features, deployed on AWS for efficient search.",
+      technologies: ["AI", "CLIP", "Image Embeddings", "Vector Search", "AWS", "FAISS"],
+      links: [
+        {
+          type: "Live Demo",
+          href: "https://realroll.com",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: RealRoll,
+      logo: "",
+      video: "",
+    },
     {
       title: "PsychAItrist",
       href: "https://github.com/sumanthk123/NOBE-Tech-Project-Fall-2023",
@@ -698,6 +739,5 @@ export const DATA = {
       logo: "/placeholder-logo.png",
       video: "",
     },
-    
   ],
 } as const;
