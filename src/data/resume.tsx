@@ -11,6 +11,8 @@ import AMD from "../app/projects/pictures/neural.png";
 import EVInsight from "../app/projects/pictures/evInsight.png";
 import Loophaus from "../app/projects/pictures/loophaus.png";
 import RealRoll from "../app/projects/pictures/realroll.png";
+import Materials from "../app/projects/pictures/materials.png";
+import psych from "../app/projects/pictures/psych.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -39,7 +41,7 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Building in New York City and Chicago",
+    "Full-Stack Developer & Materials Engineer",
   summary:
     "Collaborated with multiple research labs, startups, and companies to build AI-powered solutions end-to-end, merging full-stack engineering with machine-learning insight.",
   avatarUrl: "/pfp.jpeg",
@@ -684,7 +686,7 @@ export const DATA = {
     
     {
       title: "Loophaus",
-      href: "https://loophaus.com",
+      href: "https://loophaus1.lovable.app/",
       dates: "",
       active: true,
       description:
@@ -735,8 +737,27 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: "",
+      image: psych,
       logo: "/placeholder-logo.png",
+      video: "",
+    },
+    {
+      title: "MaterialsViz",
+      href: "https://arjunpkulkarni.github.io/materialsMech/",
+      dates: "",
+      active: true,
+      description:
+        "Narrative visualization exploring strength, stiffness, density across material classes.",
+      technologies: ["D3.js v7", "d3-annotation"],
+      links: [
+        {
+          type: "Live Demo",
+          href: "https://arjunpkulkarni.github.io/materialsMech/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: Materials,
+      logo: "",
       video: "",
     },
   ],
