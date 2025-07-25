@@ -13,6 +13,7 @@ import Loophaus from "../app/projects/pictures/loophaus.png";
 import RealRoll from "../app/projects/pictures/realroll.png";
 import Materials from "../app/projects/pictures/materials.png";
 import psych from "../app/projects/pictures/psych.png";
+import OpenField from "../app/projects/pictures/openfield.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -531,22 +532,22 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Culin",
-      href: "https://www.culin.net/",
+      title: "OpenField",
+      href: "https://www.openfield.live/",
       dates: "",
       active: true,
       description:
-        "Working alongside Lav R. Varshney, White House Fellow, James Briscione, author of The Flavor Matrix, and UCSD Medicine & Keisuke Nakagawa, M.D. to build a medicinal culinary application.",
-      technologies: ["Next.js", "LangChain", "Scrapy", "Direct Acyclic Graphs"],
+        "Connecting under-exposed athletes with life-changing NIL opportunities, bridging the gap between local businesses, athletes, and collegiate programs for mutual growth and success.",
+      technologies: ["React", "PostgreSQL", "Stripe", "Mercury"],
       links: [
         {
           type: "Live Demo",
-          href: "https://www.culin.net/",
+          href: "https://www.openfield.live/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: Culin,
-      logo: culinLogo,
+      image: OpenField,
+      logo: "",
       video: "",
     },
     {
@@ -555,7 +556,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Built 3 AI agent APIs using Pinecone, Next.js, and Python; enabled semantic text + image search for eCommerce platforms. Deployed vertical AI stack with real-time personalization and data mining, enabling retailers to drive revenue growth easily.",
+        "Developed AI agent APIs with Pinecone, Next.js, and Python, enabling semantic search for eCommerce. Deployed a vertical AI stack for real-time personalization and data mining.",
       technologies: ["Pinecone", "Next.js", "Python", "AI"],
       links: [
         {
@@ -574,7 +575,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Developed using React + NodeJS & MongoDB. Implemented FitCheck sharing & storing among 300+ beta users on TestFlight.",
+        "Developed a social fashion app with React, Node.js, and MongoDB. Implemented features for sharing and storing outfits, reaching over 300+ beta users on TestFlight.",
       technologies: ["React", "Node.js", "MongoDB", "TestFlight"],
       links: [
         {
@@ -593,7 +594,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Digital Marketing Agency that helps local businesses grow their online presence. Using AI agents to find leads for local businesses from local directories, then developing websites for them, and running ads to get more customers.",
+        "A digital marketing agency that boosts local businesses online. We use AI agents to find leads, develop websites, and run targeted advertising campaigns for new customers.",
       technologies: ["React", "Python", "LangChain", "AI"],
       links: [
         {
@@ -612,7 +613,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Used ReactJS to develop DJ platform integrating recommendations, cloud deployment, user auth, audio tools, and social features.",
+        "Developed a DJ platform with ReactJS, integrating music recommendations, cloud deployment, user auth, audio tools, and social features, helping DJs enhance their creative workflow.",
       technologies: ["ReactJS", "Cloud Deployment", "User Auth"],
       links: [
         {
@@ -631,7 +632,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Built a stock prediction system using NLP-based sentiment analysis, regression modeling, and AWS data pipeline for insights.",
+        "Engineered a stock prediction system using NLP for sentiment analysis, regression modeling, and an AWS data pipeline to generate actionable trading insights from financial news.",
       technologies: ["NLP", "Sentiment Analysis", "Regression Modeling", "AWS"],
       links: [
         {
@@ -651,7 +652,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Competed in KPMG Ideation Challenge, where we built a AI aided chip design tool with the objective of Transistor Layout Refinement.",
+        "Competed in the KPMG Ideation Challenge, building an AI-aided chip design tool with the objective of refining transistor layouts for better performance and efficiency.",
       technologies: ["AI", "Chip Design"],
       links: [
         {
@@ -670,7 +671,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Compared different EV brands and models based on their range, battery life, and charging time.",
+        "Created an interactive dashboard comparing EV brands and models based on key metrics like range, battery life, and charging time to help inform consumer decisions.",
       technologies: ["Tableau", "Data Analysis", "Data Visualization", "Data Cleaning", "Python"],
       links: [
         {
@@ -690,7 +691,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "AI music assistant using deep learning to analyze and augment MIDI files, generating novel musical patterns.",
+        "Developed an AI music assistant using deep learning to analyze and augment MIDI files, generating novel and complex musical patterns for artists and music producers.",
       technologies: ["AI", "Deep Learning", "RNNs", "GANs", "TensorFlow", "Python"],
       links: [
         {
@@ -709,7 +710,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Content-based image retrieval (CBIR) system using AI to find images based on semantic features, deployed on AWS for efficient search.",
+        "Built a content-based image retrieval (CBIR) system using AI to find images based on semantic features, deployed on AWS for fast and efficient searches.",
       technologies: ["AI", "CLIP", "Image Embeddings", "Vector Search", "AWS", "FAISS"],
       links: [
         {
@@ -728,7 +729,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Developed an AI-based microexpression diagnosis app with TensorFlow for image classification, deployed to 3 psychiatric clinics.",
+        "Developed an AI microexpression diagnosis app using TensorFlow for image classification, deployed in three psychiatric clinics to assist with patient assessment and improve care.",
       technologies: ["AI", "TensorFlow", "Image Classification"],
       links: [
         {
@@ -747,7 +748,7 @@ export const DATA = {
       dates: "",
       active: true,
       description:
-        "Narrative visualization exploring strength, stiffness, density across material classes.",
+        "Created an interactive narrative visualization exploring strength, stiffness, and density across material classes, making complex materials science data accessible and easily understandable for students.",
       technologies: ["D3.js v7", "d3-annotation"],
       links: [
         {
