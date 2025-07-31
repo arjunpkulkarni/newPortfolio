@@ -535,7 +535,7 @@ export const DATA = {
     {
       title: "KitGen",
       href: "https://media-ai-two.vercel.app/",
-      dates: "Jul 2024",
+      dates: "",
       active: true,
       description:
         "AI media pipeline built to streamline media kit development for creators. Features include real-time analytics, AI-crafted pitches, and customizable templates to land brand deals.",
