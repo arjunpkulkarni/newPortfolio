@@ -14,6 +14,7 @@ import RealRoll from "../app/projects/pictures/realroll.png";
 import Materials from "../app/projects/pictures/materials.png";
 import psych from "../app/projects/pictures/psych.png";
 import OpenField from "../app/projects/pictures/openfield.png";
+import KitGen from "../app/projects/pictures/kitgen.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -531,6 +532,25 @@ export const DATA = {
     },
   ],
   projects: [
+    {
+      title: "KitGen",
+      href: "https://media-ai-two.vercel.app/",
+      dates: "Jul 2024",
+      active: true,
+      description:
+        "AI media pipeline built to streamline media kit development for creators. Features include real-time analytics, AI-crafted pitches, and customizable templates to land brand deals.",
+      technologies: ["Apify", "OpenAI", "Vercel", "Next.js", "TikTok Graph API"],
+      links: [
+        {
+          type: "Live Demo",
+          href: "https://media-ai-two.vercel.app/",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: KitGen,
+      logo: "",
+      video: "",
+    },
     {
       title: "OpenField",
       href: "https://www.openfield.live/",
