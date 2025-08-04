@@ -15,6 +15,7 @@ import Materials from "../app/projects/pictures/materials.png";
 import psych from "../app/projects/pictures/psych.png";
 import OpenField from "../app/projects/pictures/openfield.png";
 import KitGen from "../app/projects/pictures/kitgen.png";
+import QuantDesk from "../app/projects/pictures/quantDesk.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -551,6 +552,7 @@ export const DATA = {
       logo: "",
       video: "",
     },
+    
     {
       title: "OpenField",
       href: "https://www.openfield.live/",
@@ -643,6 +645,25 @@ export const DATA = {
         },
       ],
       image: DJDoc,
+      logo: "",
+      video: "",
+    },
+    {
+      title: "QuantDesk",
+      href: "https://medium.com/@arjunpkulkarni/building-quantdesk-a-unified-investment-dashboard-8642957f25e2",
+      dates: "",
+      active: true,
+      description:
+        "A unified platform for managing stock and cryptocurrency portfolios, offering real-time analytics, performance metrics to help investors make informed decisions.",
+      technologies: ["MySQL", "Flask", "React", "Tailwind", "Pandas", "Plotly"],
+      links: [
+        {
+          type: "Article",
+          href: "https://medium.com/@arjunpkulkarni/building-quantdesk-a-unified-investment-dashboard-8642957f25e2",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: QuantDesk,
       logo: "",
       video: "",
     },
