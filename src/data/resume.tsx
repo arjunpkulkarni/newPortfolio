@@ -402,6 +402,11 @@ export const DATA = {
             code: "CS124",
             name: "Java Programming",
             description: "Object-oriented programming with Java"
+          },
+          {
+            code: "CS441",
+            name: "Applied Machine Learning",
+            description: "Application of machine learning techniques and algorithms"
           }
         ],
         "Mathematics": [
@@ -476,6 +481,26 @@ export const DATA = {
             code: "MSE401",
             name: "Thermodynamics of Materials",
             description: "Thermodynamic principles in materials science"
+          },
+          {
+            code: "MSE485",
+            name: "Atomic Scale Simulations",
+            description: "Simulation methods at the atomic scale in materials science"
+          },
+          {
+            code: "MSE404",
+            name: "Computational MSE - Macroscale",
+            description: "Computational modeling techniques for macroscale materials"
+          },
+          {
+            code: "MSE494",
+            name: "Materials Design Thinking",
+            description: "Design thinking approaches in materials engineering"
+          },
+          {
+            code: "MSE404",
+            name: "Thin Film Mechanical Properties",
+            description: "Mechanical properties of thin film materials"
           } // hello
         ],
         "Electrical Engineering": [
@@ -483,6 +508,16 @@ export const DATA = {
             code: "ECE205",
             name: "Electronic and Electrical Circuits",
             description: "Analysis and design of electronic circuits"
+          },
+          {
+            code: "ECE340",
+            name: "Semiconductor Electronics",
+            description: "Physics and design of semiconductor electronic devices"
+          },
+          {
+            code: "ECE405",
+            name: "Quantum Systems II",
+            description: "Advanced concepts in quantum systems for electrical engineering"
           }
         ]
       }
