@@ -16,6 +16,7 @@ import psych from "../app/projects/pictures/psych.png";
 import OpenField from "../app/projects/pictures/openfield.png";
 import KitGen from "../app/projects/pictures/kitgen.png";
 import QuantDesk from "../app/projects/pictures/quantDesk.png";
+import Purchasing from "../app/projects/pictures/purchasing.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -568,6 +569,25 @@ export const DATA = {
     },
   ],
   projects: [
+    {
+      title: "Purchase Order Processing App",
+      href: "https://medium.com/@arjunpkulkarni/building-a-full-stack-purchase-order-processing-app-with-ocr-and-product-matching-e4ce9e6fbd9e",
+      dates: "",
+      active: true,
+      description:
+        "Purchase order processing app with OCR + product catalog matching for rapid PO verification.",
+      technologies: ["React", "Vite", "TypeScript", "Tailwind CSS", "Flask", "Python", "PostgreSQL"],
+      links: [
+        {
+          type: "Article",
+          href: "https://medium.com/@arjunpkulkarni/building-a-full-stack-purchase-order-processing-app-with-ocr-and-product-matching-e4ce9e6fbd9e",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: Purchasing,
+      logo: "",
+      video: "",
+    },
     {
       title: "KitGen",
       href: "https://media-ai-two.vercel.app/",
