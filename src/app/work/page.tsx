@@ -33,6 +33,35 @@ export default function WorkPage() {
           ))}
         </div>
       </section>
+      {Array.isArray(DATA.partners) && DATA.partners.length > 0 && (
+        <section id="partners" className="w-full max-w-5xl">
+          <div className="flex min-h-0 flex-col">
+            <BlurFade delay={BLUR_FADE_DELAY * 7.5}>
+              <h2 className="text-xl font-bold">Partners & Investors</h2>
+            </BlurFade>
+            {DATA.partners.map((partner, id) => (
+              <BlurFade
+                key={partner.company}
+                delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+              >
+                <ResumeCard
+                  key={partner.company}
+                  logoUrl={partner.logoUrl}
+                  altText={partner.company}
+                  title={partner.company}
+                  subtitle={partner.title}
+                  href={partner.href}
+                  badges={partner.badges}
+                  period={`${partner.start || ""}${partner.end ? ` - ${partner.end}` : partner.start ? " - Present" : ""}`}
+                  description={partner.description}
+                  titleClassName="text-base sm:text-lg"
+                  cardClassName="py-4"
+                />
+              </BlurFade>
+            ))}
+          </div>
+        </section>
+      )}
       <section id="research" className="w-full max-w-5xl">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 7}>

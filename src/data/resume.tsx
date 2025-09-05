@@ -17,6 +17,8 @@ import OpenField from "../app/projects/pictures/openfield.png";
 import KitGen from "../app/projects/pictures/kitgen.png";
 import QuantDesk from "../app/projects/pictures/quantDesk.png";
 import Purchasing from "../app/projects/pictures/purchasing.png";
+import ucsd from "../app/projects/pictures/ucsd.png";
+import uphonest from "../app/projects/pictures/uphonest.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -357,6 +359,32 @@ export const DATA = {
           skills: ["Figma", "Flask", "REST APIs", "Frontend Development"]
         }
       ]
+    },
+  ],
+  partners: [
+    {
+      company: "UCSD Medicine",
+      href: "https://employment.ucsd.edu/",
+      badges: ["Partner"],
+      location: "",
+      title: "Partner with CulinAI (CSL)",
+      logoUrl: ucsd,
+      start: "2025",
+      end: "Present",
+      description:
+        "Partnered with CulinAI at UIUC CSL on the AI nutrition engine in collaboration with Chef James Briscione and Prof. Lav Varshney.",
+    },
+    {
+      company: "UpHonest Capital",
+      href: "https://www.uphonestcapital.com/",
+      badges: ["Investor"],
+      location: "",
+      title: "Investor in Hanger",
+      logoUrl: uphonest,
+      start: "",
+      end: "",
+      description:
+        "Investor supporting Hanger's AI-powered centralized shopping platform.",
     },
   ],
   education: [
