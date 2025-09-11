@@ -152,31 +152,49 @@ export const DATA = {
   work: [
     {
       company: "Hanger",
-      href: "https://www.hanger.live/",
+      href: "https://siramai.com/",
       badges: [],
-      location: "Remote",
+      location: "New York, NY",
       title: "Founding Engineer",
       logoUrl: hanger,
-      start: "Jan 2023",
+      start: "Jan 2024",
       end: "Present",
       description:
-        "Disrupting the $100B+ fashion industry by building an AI-powered platform for centralized shopping. Developed recommendation systems and personalization models to enhance user experience. Currently working alongside Intel. Developed over 100k lines of code. Download now on the App Store.",
+        "Intel & UpHonest Capital–backed. Launched an agentic e‑commerce OS with vector search and adaptive ranking, optimized infra for low latency, and shipped Gemini multimodal search for conversational and visual discovery.",
       tasks: [
         {
-          description: "Built a mobile app for iOS and Android using React Native, implementing real-time personalization through collaborative filtering and content-based recommendation models.",
-          skills: ["React Native", "TypeScript", "TensorFlow", "Recommendation Systems"]
+          description: "Launched agentic e‑commerce OS handling 2k+ daily queries with vector search and adaptive ranking.",
+          skills: ["Vector Search", "Retrieval", "Ranking", "Agents"]
         },
         {
-          description: "Developed a web app with Next.js, integrating a hybrid recommendation system combining user behavior analysis, product embeddings, and contextual features.",
-          skills: ["React", "Next.js", "PyTorch", "Vector Embeddings"]
+          description: "Optimized Postgres+Redis pipelines and caching layers, cutting p95 latency by 30%.",
+          skills: ["PostgreSQL", "Redis", "Caching", "Latency Optimization"]
         },
         {
-          description: "Created a Chrome extension with ML-powered product classification and similarity matching, enabling intelligent product saving and categorization.",
-          skills: ["JavaScript", "TensorFlow.js", "Computer Vision", "Webpack"]
+          description: "Deployed Gemini multimodal search enabling conversational and visual product discovery.",
+          skills: ["Gemini", "Multimodal", "Conversational Search", "Vision"]
+        }
+      ]
+    },
+    {
+      company: "UCSD Health",
+      href: "https://health.ucsd.edu/",
+      badges: [],
+      location: "San Diego, CA",
+      title: "Founding Engineer",
+      logoUrl: ucsd,
+      start: "Jan 2025",
+      end: "Aug 2025",
+      description:
+        "Designed and deployed a clinical‑grade AI dietician platform integrating into the hospital system with personalized nutrition models and vector search.",
+      tasks: [
+        {
+          description: "Designed and deployed a clinical‑grade AI dietician platform, integrating within the hospital system.",
+          skills: ["Healthcare", "Compliance", "Deployment", "Next.js"]
         },
         {
-          description: "Implemented a backend system using Node.js and GPT-4 for natural language processing and personalization.",
-          skills: ["Node.js", "GPT-4", "NLP", "Personalization Models"]
+          description: "Developed personalized nutrition models and vector search pipelines to deliver tailored diet plans at scale.",
+          skills: ["Personalization", "Vector Search", "ML Models", "Pipelines"]
         }
       ]
     },
@@ -184,21 +202,21 @@ export const DATA = {
       company: "AbbVie",
       href: "https://www.abbvie.com/",
       badges: [],
-      location: "Remote",
+      location: "Chicago, IL",
       title: "Software Developer",
       logoUrl: abbvie,
       start: "Dec 2024",
       end: "Jun 2025",
       description:
-        "Developed interactive dashboard with Streamlit, pandas and matplotlib to visualize document reuse across disease states. Improved transparency with overlap analysis for 30+ clients; automated data ingestion cut manual reporting by 50%.",
+        "Automated ETL for 120k+ regulatory documents and delivered interactive Tableau dashboards for R&D; added Streamlit monitoring and scaled pipelines 4× while cutting wrangling time 80%.",
       tasks: [
         {
-          description: "Developed interactive dashboard with Streamlit, pandas and matplotlib to visualize document reuse across disease states.",
-          skills: ["Python", "Streamlit", "Pandas", "Matplotlib"]
+          description: "Automated ETL workflows embedding 120k+ regulatory documents; built interactive Tableau dashboards for R&D.",
+          skills: ["ETL", "Tableau", "Python", "Embeddings"]
         },
         {
-          description: "Improved transparency with overlap analysis for 30+ clients; automated data ingestion cut manual reporting by 50%.",
-          skills: ["Data Analysis", "Automation", "Client Management"]
+          description: "Reduced document wrangling time by 80%, added Streamlit monitoring tools, and increased pipeline throughput 4×.",
+          skills: ["Streamlit", "Monitoring", "Performance", "Automation"]
         }
       ]
     }
@@ -230,43 +248,43 @@ export const DATA = {
       company: "Beckman Institute for Advanced Science and Technology",
       href: "https://beckman.illinois.edu/",
       badges: [],
-      location: "In-Person",
+      location: "Urbana, IL",
       title: "Artificial Intelligence Research Assistant",
       logoUrl: uiuc,
-      start: "Jan 忡25",
-      end: "Mar 2025",
+      start: "Feb 2025",
+      end: "Apr 2025",
       description:
-        "Developed an experimental platform using React, Firebase, MongoDB, and OpenAI API to study human-AI creativity. Engineered a cooperative version of the Alternate Uses Test, enabling controlled testing of collective intelligence.",
+        "Built a real‑time React+Flask experiment platform for 40‑subject human–AI interaction studies with resilient analytics and incident recovery.",
       tasks: [
         {
-          description: "Designed and implemented a web-based platform for conducting psychology experiments on human-AI collaboration.",
-          skills: ["React", "Node.js", "MongoDB", "GPT-4 API"]
+          description: "Built a real‑time React+Flask experiment platform for 40‑subject human–AI interaction studies.",
+          skills: ["React", "Flask", "Realtime", "WebSockets"]
         },
         {
-          description: "Developed a data collection and analysis pipeline to evaluate the creative output from the experiments.",
-          skills: ["Python", "Pandas", "Jupyter Notebooks", "Matplotlib"]
+          description: "Instrumented analytics pipelines and handled incident recovery without session loss across multi‑user runs.",
+          skills: ["Analytics", "Resilience", "Observability", "Data Pipelines"]
         }
       ]
     },
     {
-      company: "UofI Information Department",
-      href: "https://ischool.illinois.edu/",
+      company: "ECE Department, UIUC",
+      href: "https://ece.illinois.edu/",
       badges: [],
-      location: "In-Person",
+      location: "Urbana, IL",
       title: "Artificial Intelligence Research Assistant",
       logoUrl: uiuc,
-      start: "Jun 2023",
-      end: "Aug 2023",
+      start: "Jan 2024",
+      end: "Jan 2025",
       description:
-        "Optimized DDPG algorithm to reduce traffic congestion for AVs by 25% via hyperparameter optimization and codebase refactoring. Developed a RAG system using LangChain to tackle traffic optimization, achieving 30% faster results than previous methods.",
+        "Developed MPC+RL pipeline coordinating simulated autonomous vehicles in SUMO, achieving 18% lower traffic delay; refactored DDPG for 25% faster, more stable convergence.",
       tasks: [
         {
-          description: "Fine-tuned Deep Deterministic Policy Gradient (DDPG) algorithms to reduce traffic congestion in a simulated environment by 20%.",
-          skills: ["Python", "TensorFlow", "SUMO", "Reinforcement Learning"]
+          description: "Developed MPC+RL pipeline coordinating AVs in SUMO, achieving 18% lower traffic delay.",
+          skills: ["MPC", "Reinforcement Learning", "SUMO", "Python"]
         },
         {
-          description: "Built a Retrieval-Augmented Generation (RAG) system with LangChain and OpenAI to answer traffic-related queries.",
-          skills: ["LangChain", "OpenAI API", "Vector Databases", "Python"]
+          description: "Refactored DDPG algorithms, improving convergence speed by 25% and stability across experiments.",
+          skills: ["DDPG", "TensorFlow/PyTorch", "Optimization", "Experimentation"]
         }
       ]
     },
