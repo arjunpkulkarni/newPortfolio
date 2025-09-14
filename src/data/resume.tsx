@@ -223,6 +223,28 @@ export const DATA = {
   ],
   research: [
     {
+      company: "Nick Holonyak, Jr. Micro and Nanotechnology Laboratory",
+      href: "https://mntl.illinois.edu/",
+      badges: ["Apprenticeship"],
+      location: "Champaign, IL (On-site)",
+      title: "Nanotechnology Researcher",
+      logoUrl: uiuc,
+      start: "Sep 2025",
+      end: "Present",
+      description:
+        "Optimizing quantum material energy with carbon nanotubes, building on ionic Coulomb drag principles for nanofluidic semiconductor channels (Nano Energy, 2023; doi:10.1016/j.nanoen.2023.108860).",
+      tasks: [
+        {
+          description: "Modeled ion–electron Coulomb drag coupling to predict open‑circuit voltage and short‑circuit current in Si nanochannels.",
+          skills: ["Nanofluidics", "Coulomb Drag", "Device Physics"]
+        },
+        {
+          description: "Designed CNT‑integrated channel architectures targeting higher momentum transfer and energy harvesting efficiency.",
+          skills: ["Carbon Nanotubes", "Energy Harvesting", "Simulation"]
+        }
+      ]
+    },
+    {
       company: "Coordinated Science Laboratory",
       href: "https://csl.illinois.edu/",
       badges: [],
