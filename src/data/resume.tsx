@@ -151,12 +151,12 @@ export const DATA = {
 
   work: [
     {
-      company: "Hanger",
+      company: "Siramai",
       href: "https://siramai.com/",
       badges: [],
       location: "New York, NY",
       title: "Founding Engineer",
-      logoUrl: hanger,
+      logoUrl: siramaiLogo,
       start: "Jan 2024",
       end: "Present",
       description:
@@ -696,8 +696,8 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Siramai",
-      href: "https://siramai.com/",
+      title: "Hanger",
+      href: "",
       dates: "",
       active: true,
       description:
@@ -706,12 +706,12 @@ export const DATA = {
       links: [
         {
           type: "Live Demo",
-          href: "https://siramai.com/",
+          href: "#",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: Siramai,
-      logo: siramaiLogo,
+      image: hanger,
+      logo: "",
       video: "",
     },
     {
