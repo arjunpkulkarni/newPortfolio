@@ -30,6 +30,7 @@ import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import siramaiLogo from "../app/projects/pictures/logos/siramaiLogo.png";
 import fitcheckLogo from "../app/projects/pictures/logos/fitcheckLogo.png";
 import lumeLogo from "../app/projects/pictures/logos/lumeLogo.png";
+import rumorLogo from "../app/projects/pictures/logos/rumorLogo.png";
 
 import Stanford from "../app/education/pictures/stanford.png";
 import cloud from "../app/education/pictures/cloud.png";
@@ -151,6 +152,28 @@ export const DATA = {
 
   work: [
     {
+      company: "Rumor",
+      href: "https://www.therumor.com/",
+      badges: [],
+      location: "New York, NY",
+      title: "Software Engineer",
+      logoUrl: rumorLogo,
+      start: "Nov 2025",
+      end: "Present",
+      description:
+        "Building core mobile features and scalable event systems for Rumor’s 50k+ user event‑hosting platform.",
+      tasks: [
+        {
+          description: "Built core React Native features powering Rumor’s event‑hosting platform, improving mobile UX for 50k+ users.",
+          skills: ["React Native", "Mobile"]
+        },
+        {
+          description: "Developed scalable APIs and event workflows for RSVPs and guest lists supporting high‑volume events.",
+          skills: ["APIs", "Workflows", "Scalability"]
+        }
+      ]
+    },
+    {
       company: "Siramai",
       href: "https://siramai.com/",
       badges: [],
@@ -158,7 +181,7 @@ export const DATA = {
       title: "Founding Engineer",
       logoUrl: siramaiLogo,
       start: "Jan 2024",
-      end: "Present",
+      end: "Nov 2025",
       description:
         "Intel & UpHonest Capital–backed. Launched an agentic e‑commerce OS with vector search and adaptive ranking, optimized infra for low latency, and shipped Gemini multimodal search for conversational and visual discovery.",
       tasks: [
