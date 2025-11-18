@@ -594,6 +594,27 @@ export const DATA = {
             name: "Thin Film Mechanical Properties",
             description: "Mechanical properties of thin film materials"
           } // hello
+          ,
+          {
+            code: "MSE-304",
+            name: "Electronic Properties of Materials",
+            description: "Band structure, carriers, transport, and semiconductor device fundamentals"
+          },
+          {
+            code: "MSE-441",
+            name: "Metals Processing",
+            description: "Solidification, forming, heat treatment, and microstructure control in metals"
+          },
+          {
+            code: "MSE-495",
+            name: "Materials Design",
+            description: "Principles and practice of materials selection and performance-driven design"
+          },
+          {
+            code: "MSE-481",
+            name: "Electron Microscopy",
+            description: "SEM/TEM operation, diffraction, imaging, and microstructure analysis"
+          }
         ],
         "Electrical Engineering": [
           {
@@ -610,6 +631,16 @@ export const DATA = {
             code: "ECE405",
             name: "Quantum Systems II",
             description: "Advanced concepts in quantum systems for electrical engineering"
+          },
+          {
+            code: "ECE-404",
+            name: "Quantum Materials",
+            description: "Quantum phenomena in materials and implications for devices"
+          },
+          {
+            code: "ECE-404",
+            name: "Quantum States",
+            description: "Quantum state mechanics, measurement, and applications"
           }
         ]
       }
