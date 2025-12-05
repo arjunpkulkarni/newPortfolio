@@ -15,6 +15,7 @@ import Materials from "../app/projects/pictures/materials.png";
 import psych from "../app/projects/pictures/psych.png";
 import OpenField from "../app/projects/pictures/openfield.png";
 import KitGen from "../app/projects/pictures/kitgen.png";
+import rydberg from "../app/projects/pictures/rydberg.png";
 import QuantDesk from "../app/projects/pictures/quantDesk.png";
 import Purchasing from "../app/projects/pictures/purchasing.png";
 import ucsd from "../app/projects/pictures/ucsd.png";
@@ -633,12 +634,12 @@ export const DATA = {
             description: "Advanced concepts in quantum systems for electrical engineering"
           },
           {
-            code: "ECE-404",
+            code: "ECE404",
             name: "Quantum Materials",
             description: "Quantum phenomena in materials and implications for devices"
           },
           {
-            code: "ECE-404",
+            code: "ECE404",
             name: "Quantum States",
             description: "Quantum state mechanics, measurement, and applications"
           }
@@ -691,6 +692,30 @@ export const DATA = {
     },
   ],
   projects: [
+    {
+      title: "Rydberg Atom Cat States",
+      href: "/projects/pdfs/Rydberg%20Atom%20Cat%20States.pdf",
+      dates: "",
+      active: true,
+      description:
+        "Generated and analyzed Schrödinger (GHZ) cat states in Rydberg atom arrays using optimal‑control (RedCRAB) pulses; reported GHZ up to N=20 with ≥0.54 fidelity, phase characterization via parity oscillations, and coherence limits.",
+      technologies: ["Quantum", "Rydberg Atoms", "GHZ", "Optimal Control", "RedCRAB"],
+      links: [
+        {
+          type: "Slides",
+          href: "/projects/pdfs/Rydberg%20Atom%20Cat%20States.pdf",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Paper Summary",
+          href: "/projects/pdfs/Generation%20and%20Manipulation%20of%20Schr%C3%B6dinger%20Cat%20States%20in%20Rydberg%20Atom%20Arrays.pdf",
+          icon: <Icons.globe className="size-3" />,
+        },
+      ],
+      image: rydberg,
+      logo: "",
+      video: "",
+    },
     {
       title: "Purchase Order Processing App",
       href: "https://medium.com/@arjunpkulkarni/building-a-full-stack-purchase-order-processing-app-with-ocr-and-product-matching-e4ce9e6fbd9e",

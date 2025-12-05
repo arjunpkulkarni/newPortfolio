@@ -14,21 +14,24 @@ export function Header() {
         className="
           relative // For tooltips to be positioned correctly relative to this block
           flex
-          h-14
+          h-12 md:h-14
           items-center // Vertically center icons within the header
           rounded-2xl // Make the header fully rounded
           border
-          border-border/40
-          bg-background/95
-          px-4 // Horizontal padding inside the rounded header
-          shadow-lg // Add a subtle shadow for depth
-          backdrop-blur
-          supports-[backdrop-filter]:bg-background/60
+          border-border/40 ring-1 ring-border/30
+          bg-background/60
+          w-[55vw] sm:w-[50vw] md:w-[42vw] max-w-3xl
+          px-4 md:px-6 // Horizontal padding inside the rounded header
+          shadow-2xl // Add a stronger shadow for depth
+          backdrop-blur-2xl backdrop-saturate-150
+          supports-[backdrop-filter]:bg-background/40
+          transition-all duration-500 ease-out will-change-transform
+          hover:scale-[1.01]
           pointer-events-auto // Allow clicks on this header element and its children
         "
       >
         {/* Container for all icons, arranged in a row */}
-        <nav className="flex items-center space-x-1 sm:space-x-2">
+        <nav className="flex items-center justify-center space-x-2 sm:space-x-3 md:space-x-4 mx-auto">
           {/* Navigation icons from DATA.navbar */}
           {DATA.navbar.map((item) => {
             const IconComponent = item.icon as React.ElementType;
@@ -38,10 +41,10 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "flex items-center justify-center p-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                      "flex items-center justify-center rounded-full p-2.5 md:p-3 text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-110 active:scale-95"
                     )}
                   >
-                    <IconComponent className="h-5 w-5" />
+                    <IconComponent className="h-4 w-4 md:h-5 md:w-5 transition-transform duration-300" />
                     <span className="sr-only">{item.label}</span>
                   </Link>
                 </TooltipTrigger>
@@ -67,10 +70,10 @@ export function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      "flex items-center justify-center p-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary"
+                      "flex items-center justify-center rounded-full p-2.5 md:p-3 text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-110 active:scale-95"
                     )}
                   >
-                    <IconComponent className="h-5 w-5" />
+                    <IconComponent className="h-4 w-4 md:h-5 md:w-5 transition-transform duration-300" />
                     <span className="sr-only">{socialLink.name}</span>
                   </Link>
                 </TooltipTrigger>
