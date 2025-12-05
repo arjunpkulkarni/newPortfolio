@@ -20,7 +20,7 @@ export function Header() {
           border
           border-border/40 ring-1 ring-border/30
           bg-background/60
-          w-[55vw] sm:w-[50vw] md:w-[42vw] max-w-3xl
+          w-[40vw] sm:w-[36vw] md:w-[30vw] max-w-xl
           px-4 md:px-6 // Horizontal padding inside the rounded header
           shadow-2xl // Add a stronger shadow for depth
           backdrop-blur-2xl backdrop-saturate-150
