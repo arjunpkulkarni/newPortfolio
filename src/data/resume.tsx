@@ -20,6 +20,7 @@ import QuantDesk from "../app/projects/pictures/quantDesk.png";
 import Purchasing from "../app/projects/pictures/purchasing.png";
 import ucsd from "../app/projects/pictures/ucsd.png";
 import uphonest from "../app/projects/pictures/uphonest.png";
+import oof2 from "../app/projects/pictures/oof2.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -714,6 +715,25 @@ export const DATA = {
         },
       ],
       image: rydberg,
+      logo: "",
+      video: "",
+    },
+    {
+      title: "OOF2 Crack Analysis",
+      href: "https://github.com/arjunpkulkarni/OOF2",
+      dates: "",
+      active: true,
+      description:
+        "Developed FEM analysis scripts for crack propagation in aluminum microstructures using OOF2. Achieved mesh optimization with 25×25 element discretization, computed von Mises stress distributions, and predicted crack propagation based on yield stress criteria (11 MPa), integrating LAMMPS-derived material properties for high-fidelity structural analysis.",
+      technologies: ["OOF2", "Python", "FEM", "LAMMPS", "Materials Science", "Computational Physics"],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/arjunpkulkarni/OOF2",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: oof2,
       logo: "",
       video: "",
     },

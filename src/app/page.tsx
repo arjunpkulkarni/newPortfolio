@@ -90,65 +90,6 @@ export default function HomePage() {
               </BlurFade>
             </div>
           </div>
-          {/* Info grid */}
-          <div className="mt-10 space-y-4">
-            {/* About - Full Width */}
-            <BlurFade delay={BLUR_FADE_DELAY * 2.2} blur="12px">
-              <div className="rounded-xl border bg-background/60 backdrop-blur p-4">
-                <h3 className="text-sm font-medium mb-3">About</h3>
-                <div className="space-y-2">
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    Full-stack engineer with hands-on experience in <span className="text-foreground font-medium">AI infrastructure</span>, <span className="text-foreground font-medium">semiconductor materials</span>, and <span className="text-foreground font-medium">high-performance computing</span>.
-                  </p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    Built production systems handling 2k+ daily queries with GPU-accelerated vector search, optimized distributed caching layers (Redis/Postgres), and reduced p95 latency by 30% at scale.
-                  </p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">
-                    Researching nanofluidic energy harvesting and Coulomb drag in CNT-enhanced semiconductor channels at UIUC's Micro/Nano Lab — bridging materials physics with systems engineering.
-                  </p>
-                </div>
-              </div>
-            </BlurFade>
-
-            {/* Latest Writing & Contact - Side by Side */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <BlurFade delay={BLUR_FADE_DELAY * 2.4} blur="12px">
-                <Link href="/blog" className="block group h-full">
-                  <div className="rounded-xl border bg-background/60 backdrop-blur p-4 hover:shadow-lg transition-all duration-200 h-full">
-                    <h3 className="text-sm font-medium mb-3 group-hover:text-primary transition-colors">Latest Writing</h3>
-                    <ul className="text-xs text-muted-foreground space-y-2">
-                      <li className="group-hover:text-foreground transition-colors">
-                        <span className="font-medium">Redis Latency Optimization</span>
-                        <p className="text-[10px] mt-0.5">How I cut p95 latency by 30%</p>
-                      </li>
-                      <li className="group-hover:text-foreground transition-colors">
-                        <span className="font-medium">GPU Vector Search</span>
-                        <p className="text-[10px] mt-0.5">Building with FAISS + Triton</p>
-                      </li>
-                    </ul>
-                    <p className="text-[10px] text-primary mt-3 font-medium">View all posts →</p>
-                  </div>
-                </Link>
-              </BlurFade>
-              
-              <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
-                <div className="rounded-xl border bg-background/60 backdrop-blur p-4 h-full">
-                  <h3 className="text-sm font-medium mb-3">Contact</h3>
-                  <div className="flex flex-col gap-1.5 text-xs text-muted-foreground">
-                    <Link href={`mailto:${DATA.contact.email}`} className="hover:text-foreground transition-colors underline underline-offset-4">
-                      {DATA.contact.email}
-                    </Link>
-                    <Link href={DATA.contact.social.GitHub.url} target="_blank" className="hover:text-foreground transition-colors underline underline-offset-4">
-                      GitHub
-                    </Link>
-                    <Link href={DATA.contact.social.LinkedIn.url} target="_blank" className="hover:text-foreground transition-colors underline underline-offset-4">
-                      LinkedIn
-                    </Link>
-                  </div>
-                </div>
-              </BlurFade>
-            </div>
-          </div>
         </div>
       </div>
     </div>
