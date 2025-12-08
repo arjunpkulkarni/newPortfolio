@@ -21,9 +21,9 @@ export default function HomePage() {
 
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center w-full h-full">
         <div className="w-full max-w-7xl mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr] gap-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr] gap-12 md:gap-16 items-center">
             <div className="text-left">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium mb-4 tracking-tighter leading-[0.9] whitespace-nowrap">
+              <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-medium mb-6 tracking-tighter leading-[0.9] whitespace-nowrap">
                 {words.map((word: string, wordIndex: number) => (
                   <span key={wordIndex} className="inline-block mr-2 md:mr-4 last:mr-0">
                     {word.split("").map((letter: string, letterIndex: number) => (
@@ -45,33 +45,33 @@ export default function HomePage() {
                   </span>
                 ))}
               </h1>
-              <div className="space-y-4">
+              <div className="space-y-5">
                 <BlurFadeText
-                  className="text-xs md:text-sm max-w-3xl text-muted-foreground leading-relaxed"
+                  className="text-base md:text-lg max-w-3xl text-muted-foreground leading-relaxed"
                   delay={BLUR_FADE_DELAY * 2}
                   text={DATA.description}
                 />
-                <div className="flex flex-wrap items-center gap-1 text-[10px] -mt-1">
-                  <span className="rounded-full border px-2 py-1 bg-foreground text-background hover:bg-background hover:text-foreground transition-colors duration-200">
+                <div className="flex flex-wrap items-center gap-2 text-xs">
+                  <span className="rounded-full border px-3 py-1.5 bg-foreground text-background hover:bg-background hover:text-foreground transition-colors duration-200">
                     {DATA.location}
                   </span>
-                  <span className="rounded-full border px-2 py-1 bg-foreground text-background hover:bg-background hover:text-foreground transition-colors duration-200">
+                  <span className="rounded-full border px-3 py-1.5 bg-foreground text-background hover:bg-background hover:text-foreground transition-colors duration-200">
                     Software Engineer @ Rumor
                   </span>
                 </div>
                 <BlurFadeText
-                  className="text-[10px] md:text-xs text-muted-foreground mt-2"
+                  className="text-xs md:text-sm text-muted-foreground mt-3"
                   delay={BLUR_FADE_DELAY * 2.05}
                   text="Expertise in AI infrastructure, semiconductor materials, and high-performance computing — building systems at the intersection of software and hardware."
                 />
-                <div className="flex gap-2 pt-1">
+                <div className="flex gap-3 pt-2">
                   <Link href={DATA.contact.social.LinkedIn.url} target="_blank">
-                    <Button variant="outline" size="sm" className="h-8 px-3 font-normal">
+                    <Button variant="outline" size="default" className="h-10 px-5">
                       LinkedIn
                     </Button>
                   </Link>
                   <Link href={`mailto:${DATA.contact.email}`} target="_blank">
-                    <Button variant="secondary" size="sm" className="h-8 px-3 font-normal">
+                    <Button variant="secondary" size="default" className="h-10 px-5">
                       Email
                     </Button>
                   </Link>
@@ -83,9 +83,9 @@ export default function HomePage() {
                 <Image
                   alt={DATA.name}
                   src={DATA.avatarUrl}
-                  width={320}
-                  height={400}
-                  className="h-40 w-40 md:h-48 md:w-48 object-cover rounded-xl shadow-2xl ring-1 ring-white/10"
+                  width={400}
+                  height={500}
+                  className="h-56 w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 object-cover rounded-xl shadow-2xl ring-1 ring-white/10"
                 />
               </BlurFade>
             </div>
