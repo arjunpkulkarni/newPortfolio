@@ -115,9 +115,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="dark">
           <TooltipProvider delayDuration={0}>
             <Header />
-            <div className="container mx-auto px-4 py-8">
-              {children}
-            </div>
+            {children}
             
           </TooltipProvider>
         </ThemeProvider>

@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, GraduationCapIcon, BriefcaseIcon } from "lucide-react";
+import { HomeIcon, NotebookIcon, GraduationCapIcon, BriefcaseIcon, BookOpenIcon } from "lucide-react";
 
 import Culin from "../app/projects/pictures/culin.png";
 import FitCheck from "../app/projects/pictures/fitcheck.png";
@@ -49,9 +49,9 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Full-Stack Developer & Materials Engineer",
+    "Software Developer & Materials Engineer",
   summary:
-    "Collaborated with multiple research labs, startups, and companies to build AI-powered solutions end-to-end, merging full-stack engineering with machine-learning insight.",
+    "Software engineer with deep experience in AI infrastructure, semiconductor materials, and high-performance computing. Built production systems handling 2k+ daily queries with GPU-accelerated vector search, optimized distributed caching (Redis/Postgres) cutting p95 latency by 30%, and researched nanofluidic energy harvesting in CNT-enhanced semiconductor channels at UIUC's Micro/Nano Lab.",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Programming Languages": [
@@ -124,7 +124,8 @@ export const DATA = {
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/work", icon: BriefcaseIcon, label: "Work" },
     { href: "/education", icon: GraduationCapIcon, label: "Education" },
-    { href: "/projects", icon: NotebookIcon, label: "Projects" },    
+    { href: "/projects", icon: NotebookIcon, label: "Projects" },
+    { href: "/blog", icon: BookOpenIcon, label: "Blog" },
   ],
   contact: {
     email: "arjunpk2@illinois.edu",

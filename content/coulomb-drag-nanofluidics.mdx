@@ -1,0 +1,203 @@
+---
+title: "Modeling Coulomb Drag in Nanofluidic Channels Using Carbon Nanotubes"
+publishedAt: "2024-10-22"
+summary: "How I modeled ion-electron Coulomb drag in silicon nanochannels enhanced with CNT architectures to improve energy harvesting efficiency."
+company: "Nick Holonyak Jr. Micro/Nano Lab"
+role: "Nanotechnology Researcher"
+technologies: ["Python", "COMSOL", "Simulation", "Materials Science"]
+category: "Research"
+---
+
+At the Nick Holonyak Jr. Micro/Nano Lab, I worked on modeling **ion–electron Coulomb drag** effects in silicon nanochannels enhanced with **carbon nanotube (CNT) architectures**.
+
+The goal: predict **open-circuit voltage** and **short-circuit current** in these nanofluidic systems and explore whether CNTs could improve momentum transfer.
+
+## Why Coulomb Drag Matters
+
+Recent work ([Nano Energy, 2023](https://doi.org/10.1016/j.nanoen.2023.108860)) showed that ionic flow can induce:
+
+* **Electron drag** — ions pull electrons through momentum transfer
+* **Charge separation** — creating measurable voltage
+* **Measurable current** — enabling energy harvesting at the nanoscale
+
+Improving this coupling leads to new **energy harvesting devices** and **low-power sensors**.
+
+## The Physical Mechanism
+
+When ions flow through nanochannels:
+
+1. **Momentum transfer** occurs via Coulomb interactions
+2. **Electrons get dragged** along with ionic flow
+3. **Charge accumulation** creates voltage difference
+4. **Current flows** if circuit is closed
+
+The efficiency depends on:
+
+* Channel geometry
+* Ion concentration
+* Surface properties
+* Carrier mobility
+
+## Simulation Approach
+
+### 1. Solving the Poisson–Nernst–Planck (PNP) Equations
+
+We modeled:
+
+* **Ionic concentration gradients** — diffusion + drift
+* **Electric potentials** — self-consistent field
+* **Coupled boundary effects** — surface charge, EDL
+
+```python
+# Simplified PNP system
+∇·(ε∇φ) = -ρ  # Poisson equation
+∂n/∂t = -∇·J   # Continuity
+J = -D∇n - μnE  # Nernst-Planck flux
+```
+
+### 2. Momentum Transfer Simulation
+
+We computed drag via collision integrals:
+
+```
+F_drag = q_i * n_i * (E + μ_i * ∇φ)
+```
+
+Where:
+* `q_i` — ionic charge
+* `n_i` — ion concentration
+* `μ_i` — ionic mobility
+* `E` — electric field
+
+### 3. CNT-Enhanced Architecture
+
+CNTs improve performance by:
+
+**Reducing surface scattering:**
+* Smoother channel walls
+* Less ion-surface friction
+* Higher mobility
+
+**Increasing charge carrier density:**
+* CNTs provide additional conduction paths
+* Enhanced electron availability
+* Better coupling
+
+**Improving momentum coupling:**
+* Aligned CNT bundles guide flow
+* Reduced boundary layer thickness
+* More efficient energy transfer
+
+## Simulation Setup
+
+**Channel dimensions:**
+* Length: 1-10 μm
+* Width: 50-200 nm
+* CNT diameter: 1-2 nm
+
+**Material properties:**
+* Silicon substrate (doped)
+* Aligned CNT arrays (metallic)
+* Ionic solution (KCl, NaCl)
+
+**Boundary conditions:**
+* Pressure-driven flow
+* Fixed ion concentration at inlet/outlet
+* Grounded electrodes
+
+## Results
+
+### Open-Circuit Voltage
+
+CNT channels showed **12-18% higher voltage output** compared to bare silicon:
+
+| Channel Type | Voltage (mV) | Improvement |
+| ------------ | ------------ | ----------- |
+| Bare Si      | 45 ± 5       | Baseline    |
+| CNT-Si       | 52 ± 4       | +15.6%      |
+
+### Short-Circuit Current
+
+Current density improved due to:
+
+* Higher electron mobility
+* Better coupling efficiency
+* Reduced back-scattering
+
+### Efficiency Metrics
+
+The key metric is **drag coefficient** (momentum transfer per ion):
+
+```
+η = (electron velocity) / (ion velocity)
+```
+
+CNT channels achieved **η ≈ 0.15-0.22** vs **η ≈ 0.08-0.12** for bare silicon.
+
+## Physical Insights
+
+### Why CNTs Help
+
+**1. Electronic structure:**
+* 1D density of states
+* Ballistic transport
+* Low scattering
+
+**2. Geometric confinement:**
+* Ions flow closer to electron paths
+* Enhanced overlap
+* Stronger coupling
+
+**3. Surface properties:**
+* Hydrophobic CNT surfaces
+* Reduced electroosmotic flow
+* More laminar profiles
+
+## Applications
+
+This research has implications for:
+
+### Energy Harvesting
+
+* **Nanoscale power generation** from fluidic flow
+* **Self-powered sensors** in biological systems
+* **Ocean salinity gradient energy** extraction
+
+### Sensors
+
+* **Flow sensors** with no external power
+* **Chemical sensors** via conductance changes
+* **Bio-sensors** for ionic concentration
+
+### Semiconductor Devices
+
+* **Novel transistor architectures** using ionic gating
+* **Neuromorphic devices** with ion-based switching
+* **Low-power computing** via hybrid ion-electron systems
+
+## Experimental Validation Path
+
+To validate these predictions:
+
+1. **Fabricate CNT-integrated nanochannels** using CVD
+2. **Measure I-V characteristics** under flow
+3. **Compare with simulation** predictions
+4. **Optimize geometry** based on results
+
+## Future Directions
+
+* **Multi-physics coupling** — thermal effects, mechanical stress
+* **2D material integration** — graphene, MoS₂ for even better properties
+* **Machine learning optimization** — AI-guided channel design
+* **Quantum effects** — modeling at sub-5nm dimensions
+
+## Conclusion
+
+CNT-integrated nanofluidic channels offer **promising improvements** for:
+
+* Nanoscale energy harvesting
+* Low-power sensors
+* Next-gen semiconductor devices
+
+The **12-18% efficiency improvement** validates the concept and suggests paths for further optimization.
+

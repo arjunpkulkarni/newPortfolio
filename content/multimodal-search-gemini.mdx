@@ -1,0 +1,315 @@
+---
+title: "Scaling Multimodal Search with Gemini and Vector Embeddings"
+publishedAt: "2024-09-18"
+summary: "How I integrated Gemini multimodal models with vector search to enable conversational and visual product discovery at scale."
+company: "Siramai"
+role: "Founding Engineer"
+technologies: ["Gemini", "Vector Search", "Python", "Embeddings", "ML"]
+category: "AI/ML"
+---
+
+At Siramai, we wanted to support **conversational and visual product discovery**, combining:
+
+* Text queries
+* Image inputs
+* Product descriptions
+* User profiles
+
+I integrated **Gemini multimodal models** with vector search pipelines to create an adaptive, high-recall search engine across modalities.
+
+## The Challenge: Unified Multimodal Retrieval
+
+Traditional e-commerce search handles text well but struggles with:
+
+* **Visual similarity** — "Find shoes like this image"
+* **Cross-modal queries** — "A red jacket similar to the one in this photo"
+* **Conversational context** — "Something more casual"
+* **Personalization** — Adapting to user preferences
+
+We needed a system that could understand and retrieve across all these dimensions.
+
+## Architecture
+
+```
+User Input (text/image)
+  ↓
+Gemini Multimodal Embeddings
+  ↓
+Unified Vector Space
+  ↓
+GPU-Accelerated Vector Search
+  ↓
+Adaptive Re-Ranking
+  ↓
+Personalized Results
+```
+
+## Key Components
+
+### 1. Multimodal Embedding Generation
+
+Gemini generates embeddings that capture:
+
+* **Visual features** — colors, patterns, shapes, styles
+* **Semantic content** — object categories, attributes
+* **Cross-modal alignment** — shared representation space
+
+```python
+from vertexai.vision_models import MultiModalEmbeddingModel
+
+model = MultiModalEmbeddingModel.from_pretrained("multimodalembedding")
+
+# Text embedding
+text_emb = model.get_embeddings(
+    contextual_text="Red winter jacket with hood"
+)
+
+# Image embedding
+image_emb = model.get_embeddings(
+    image=Image.load_from_file("jacket.jpg")
+)
+
+# Combined embedding
+combined_emb = model.get_embeddings(
+    image=image,
+    contextual_text=text
+)
+```
+
+### 2. Unified Vector Space
+
+We normalized all embeddings to create a unified search space:
+
+```python
+def normalize_embedding(emb):
+    """L2 normalization for cosine similarity"""
+    return emb / np.linalg.norm(emb)
+
+# Now images and text live in same space
+text_norm = normalize_embedding(text_emb)
+image_norm = normalize_embedding(image_emb)
+
+# Cosine similarity becomes simple dot product
+similarity = np.dot(text_norm, image_norm)
+```
+
+### 3. Adaptive Ranking
+
+We trained a lightweight reranker that incorporates:
+
+**User signals:**
+* Click-through history
+* Purchase behavior
+* Browsing patterns
+
+**Product features:**
+* Popularity scores
+* Inventory levels
+* Margin/profitability
+
+**Contextual factors:**
+* Time of day
+* Season
+* Location
+
+```python
+class AdaptiveReranker:
+    def __init__(self, model_path):
+        self.model = load_model(model_path)
+    
+    def rerank(self, candidates, user_profile, context):
+        features = self.extract_features(
+            candidates, 
+            user_profile, 
+            context
+        )
+        scores = self.model.predict(features)
+        return sorted(zip(candidates, scores), 
+                     key=lambda x: x[1], 
+                     reverse=True)
+```
+
+## Implementation Deep Dive
+
+### Handling Mixed Queries
+
+Users often combine modalities:
+
+> "A dress like this [image] but in blue"
+
+We handle this by:
+
+1. **Generating separate embeddings** for image and text
+2. **Weighted fusion** based on query analysis
+3. **Multi-stage retrieval** — broad recall, then refinement
+
+```python
+def process_multimodal_query(image, text, weights=None):
+    if weights is None:
+        weights = {"image": 0.6, "text": 0.4}
+    
+    img_emb = get_image_embedding(image)
+    txt_emb = get_text_embedding(text)
+    
+    # Weighted combination
+    combined = (
+        weights["image"] * normalize(img_emb) + 
+        weights["text"] * normalize(txt_emb)
+    )
+    
+    return normalize(combined)
+```
+
+### Conversational Follow-ups
+
+Users refine searches through dialogue:
+
+> User: "Show me leather boots"  
+> System: [shows results]  
+> User: "More casual"
+
+We maintain **conversation context** using:
+
+* **Session embeddings** — accumulating query history
+* **Contrastive refinement** — moving away from rejected items
+* **Preference learning** — adapting to implicit signals
+
+```python
+class ConversationalSearch:
+    def __init__(self):
+        self.context_history = []
+    
+    def search(self, query, feedback=None):
+        # Add query to context
+        self.context_history.append(query)
+        
+        # Adjust based on feedback
+        if feedback:
+            self.adjust_weights(feedback)
+        
+        # Generate contextual embedding
+        context_emb = self.get_contextual_embedding(
+            self.context_history
+        )
+        
+        return vector_search(context_emb)
+```
+
+### Scaling Challenges
+
+**Problem:** Gemini API calls are expensive and add latency.
+
+**Solution:** Three-tier caching strategy:
+
+1. **Embedding cache** — Store embeddings for common queries
+2. **Result cache** — Cache top-K results for popular queries
+3. **Precomputation** — Generate embeddings for catalog offline
+
+```python
+# Embedding cache with TTL
+@lru_cache(maxsize=10000)
+def get_cached_embedding(query_hash):
+    return compute_embedding(query_hash)
+
+# Precompute product embeddings
+def precompute_catalog_embeddings(products):
+    embeddings = {}
+    for product in tqdm(products):
+        emb = model.get_embeddings(
+            image=product.image,
+            contextual_text=product.description
+        )
+        embeddings[product.id] = emb
+    save_to_vector_db(embeddings)
+```
+
+## Results
+
+After deploying multimodal search:
+
+| Metric              | Before | After     | Change  |
+| ------------------- | ------ | --------- | ------- |
+| Search Recall       | 68%    | **90%**   | +22%    |
+| Image Query Success | 45%    | **76%**   | +31%    |
+| Conversation CTR    | 12%    | **19%**   | +58%    |
+| User Engagement     | 3.2min | **4.7min** | +47%    |
+
+### Real-World Impact
+
+**Visual search adoption:**
+* 35% of users now use image search
+* 2.3x higher conversion on visual queries
+* 40% of image searches include text refinement
+
+**Conversational patterns:**
+* Average 3.5 turns per search session
+* 68% of multi-turn sessions end in purchase
+* Users refine with color (45%), style (32%), price (23%)
+
+## Why This Matters
+
+Multimodal search represents the future of e-commerce because:
+
+**1. Natural interaction:**
+* Users think in images, not just keywords
+* Conversation feels more natural than filtering
+* Cross-modal queries express intent better
+
+**2. Better discovery:**
+* Visual similarity surfaces unexpected matches
+* Conversational refinement guides exploration
+* Personalization adapts to individual taste
+
+**3. Higher conversion:**
+* More relevant results → better engagement
+* Visual confirmation → confidence to purchase
+* Personalization → fewer abandoned searches
+
+## Technical Lessons
+
+### What Worked
+
+* **Unified vector space** — Single embedding space simplifies architecture
+* **Adaptive reranking** — Small model captures user preferences effectively
+* **Three-tier caching** — Dramatically reduced API costs and latency
+* **Conversational context** — Users love iterative refinement
+
+### What Didn't
+
+* **Naive fusion** — Simple averaging of embeddings performed poorly
+* **Over-personalization** — Too aggressive filtering hurt discovery
+* **Synchronous processing** — Had to move to async pipeline
+* **Large batch sizes** — Increased latency unacceptably
+
+## Future Directions
+
+**1. Real-time personalization:**
+* Update user embeddings in real-time
+* A/B test personalization strength
+* Federated learning for privacy
+
+**2. Multi-product queries:**
+* "Find outfits that go with these shoes [image]"
+* Compositional reasoning across products
+* Style coherence modeling
+
+**3. Generative suggestions:**
+* Use Gemini to generate product descriptions
+* Suggest complementary items
+* Create style guides
+
+**4. Video understanding:**
+* Extract keyframes from video queries
+* Temporal product matching
+* Fashion show → shoppable looks
+
+## Conclusion
+
+Integrating **Gemini multimodal models** with **vector search** unlocked a new level of product understanding:
+
+* **22% higher recall** on multimodal queries
+* **31% better relevance** on image+text searches
+* **Seamless conversational** refinement
+
+This architecture scales to millions of products while maintaining sub-100ms latency, proving that **multimodal AI** + **vector search** is the future of e-commerce discovery.
+

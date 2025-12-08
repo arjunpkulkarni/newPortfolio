@@ -23,7 +23,7 @@ export default function HomePage() {
         <div className="w-full max-w-7xl mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-[1.25fr_0.75fr] gap-10 items-center">
             <div className="text-left">
-              <h1 className="text-5xl sm:text-7xl md:text-8xl font-medium mb-5 tracking-tighter leading-[0.9] whitespace-nowrap">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium mb-4 tracking-tighter leading-[0.9] whitespace-nowrap">
                 {words.map((word: string, wordIndex: number) => (
                   <span key={wordIndex} className="inline-block mr-2 md:mr-4 last:mr-0">
                     {word.split("").map((letter: string, letterIndex: number) => (
@@ -47,11 +47,11 @@ export default function HomePage() {
               </h1>
               <div className="space-y-4">
                 <BlurFadeText
-                  className="text-sm md:text-base lg:text-[17px] max-w-3xl text-muted-foreground leading-relaxed"
+                  className="text-xs md:text-sm max-w-3xl text-muted-foreground leading-relaxed"
                   delay={BLUR_FADE_DELAY * 2}
                   text={DATA.description}
                 />
-                <div className="flex flex-wrap items-center gap-1 text-xs -mt-1">
+                <div className="flex flex-wrap items-center gap-1 text-[10px] -mt-1">
                   <span className="rounded-full border px-2 py-1 bg-foreground text-background hover:bg-background hover:text-foreground transition-colors duration-200">
                     {DATA.location}
                   </span>
@@ -60,9 +60,9 @@ export default function HomePage() {
                   </span>
                 </div>
                 <BlurFadeText
-                  className="text-xs md:text-sm text-muted-foreground mt-2"
+                  className="text-[10px] md:text-xs text-muted-foreground mt-2"
                   delay={BLUR_FADE_DELAY * 2.05}
-                  text="Interested in AI hardware, semiconductor materials, and high-performance computing for systems."
+                  text="Expertise in AI infrastructure, semiconductor materials, and high-performance computing — building systems at the intersection of software and hardware."
                 />
                 <div className="flex gap-2 pt-1">
                   <Link href={DATA.contact.social.LinkedIn.url} target="_blank">
@@ -85,49 +85,69 @@ export default function HomePage() {
                   src={DATA.avatarUrl}
                   width={320}
                   height={400}
-                  className="h-48 w-48 md:h-64 md:w-64 object-cover rounded-xl md:rounded-2xl shadow-2xl ring-1 ring-white/10"
+                  className="h-40 w-40 md:h-48 md:w-48 object-cover rounded-xl shadow-2xl ring-1 ring-white/10"
                 />
               </BlurFade>
             </div>
           </div>
           {/* Info grid */}
-              <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="mt-10 space-y-4">
+            {/* About - Full Width */}
             <BlurFade delay={BLUR_FADE_DELAY * 2.2} blur="12px">
               <div className="rounded-xl border bg-background/60 backdrop-blur p-4">
-                    <h3 className="text-sm font-medium mb-2">About</h3>
-                <p className="text-xs text-muted-foreground leading-relaxed">
-                  {DATA.summary}
-                </p>
-              </div>
-            </BlurFade>
-            <BlurFade delay={BLUR_FADE_DELAY * 2.4} blur="12px">
-              <div className="rounded-xl border bg-background/60 backdrop-blur p-4">
-                    <h3 className="text-sm font-medium mb-2">Highlights</h3>
-                <ul className="text-xs text-muted-foreground space-y-1">
-                  {DATA.work.slice(0, 3).map((w) => (
-                    <li key={w.company}>
-                      <span className="font-medium text-foreground">{w.company}</span> — {w.title}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </BlurFade>
-            <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
-              <div className="rounded-xl border bg-background/60 backdrop-blur p-4">
-                    <h3 className="text-sm font-medium mb-2">Contact</h3>
-                <div className="flex flex-col gap-1 text-xs text-muted-foreground">
-                  <Link href={`mailto:${DATA.contact.email}`} className="underline underline-offset-4">
-                    {DATA.contact.email}
-                  </Link>
-                  <Link href={DATA.contact.social.GitHub.url} target="_blank" className="underline underline-offset-4">
-                    GitHub
-                  </Link>
-                  <Link href={DATA.contact.social.LinkedIn.url} target="_blank" className="underline underline-offset-4">
-                    LinkedIn
-                  </Link>
+                <h3 className="text-sm font-medium mb-3">About</h3>
+                <div className="space-y-2">
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Full-stack engineer with hands-on experience in <span className="text-foreground font-medium">AI infrastructure</span>, <span className="text-foreground font-medium">semiconductor materials</span>, and <span className="text-foreground font-medium">high-performance computing</span>.
+                  </p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Built production systems handling 2k+ daily queries with GPU-accelerated vector search, optimized distributed caching layers (Redis/Postgres), and reduced p95 latency by 30% at scale.
+                  </p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Researching nanofluidic energy harvesting and Coulomb drag in CNT-enhanced semiconductor channels at UIUC's Micro/Nano Lab — bridging materials physics with systems engineering.
+                  </p>
                 </div>
               </div>
             </BlurFade>
+
+            {/* Latest Writing & Contact - Side by Side */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <BlurFade delay={BLUR_FADE_DELAY * 2.4} blur="12px">
+                <Link href="/blog" className="block group h-full">
+                  <div className="rounded-xl border bg-background/60 backdrop-blur p-4 hover:shadow-lg transition-all duration-200 h-full">
+                    <h3 className="text-sm font-medium mb-3 group-hover:text-primary transition-colors">Latest Writing</h3>
+                    <ul className="text-xs text-muted-foreground space-y-2">
+                      <li className="group-hover:text-foreground transition-colors">
+                        <span className="font-medium">Redis Latency Optimization</span>
+                        <p className="text-[10px] mt-0.5">How I cut p95 latency by 30%</p>
+                      </li>
+                      <li className="group-hover:text-foreground transition-colors">
+                        <span className="font-medium">GPU Vector Search</span>
+                        <p className="text-[10px] mt-0.5">Building with FAISS + Triton</p>
+                      </li>
+                    </ul>
+                    <p className="text-[10px] text-primary mt-3 font-medium">View all posts →</p>
+                  </div>
+                </Link>
+              </BlurFade>
+              
+              <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
+                <div className="rounded-xl border bg-background/60 backdrop-blur p-4 h-full">
+                  <h3 className="text-sm font-medium mb-3">Contact</h3>
+                  <div className="flex flex-col gap-1.5 text-xs text-muted-foreground">
+                    <Link href={`mailto:${DATA.contact.email}`} className="hover:text-foreground transition-colors underline underline-offset-4">
+                      {DATA.contact.email}
+                    </Link>
+                    <Link href={DATA.contact.social.GitHub.url} target="_blank" className="hover:text-foreground transition-colors underline underline-offset-4">
+                      GitHub
+                    </Link>
+                    <Link href={DATA.contact.social.LinkedIn.url} target="_blank" className="hover:text-foreground transition-colors underline underline-offset-4">
+                      LinkedIn
+                    </Link>
+                  </div>
+                </div>
+              </BlurFade>
+            </div>
           </div>
         </div>
       </div>
