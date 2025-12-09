@@ -1,4 +1,5 @@
 import { DATA } from "@/data/resume";
+import { getPost } from "@/data/blog";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
@@ -52,6 +53,14 @@ export default async function ProjectPage({
 
   if (!project) {
     notFound();
+  }
+
+  // Try to load MDX content for this project
+  let mdxContent = null;
+  try {
+    mdxContent = await getPost(params.slug);
+  } catch (error) {
+    // No MDX content found, will show default placeholder
   }
 
   return (
@@ -153,24 +162,42 @@ export default async function ProjectPage({
         </div>
       )}
 
-      {/* Article Content - Placeholder for future detailed write-ups */}
-      <article className="prose prose-neutral dark:prose-invert max-w-none mb-20">
-        <h2>Overview</h2>
-        <p>{project.description}</p>
-        
-        <h2>Key Features</h2>
-        <ul>
-          <li>Built with modern tech stack</li>
-          <li>Focus on user experience and performance</li>
-          <li>Scalable architecture</li>
-        </ul>
+      {/* Article Content */}
+      {mdxContent ? (
+        <article
+          className="prose prose-neutral dark:prose-invert max-w-none mb-20
+          prose-headings:font-medium prose-headings:tracking-tight
+          prose-h2:text-2xl prose-h2:mt-16 prose-h2:mb-6
+          prose-h3:text-xl prose-h3:mt-12 prose-h3:mb-5
+          prose-p:leading-relaxed prose-p:text-base prose-p:mb-6
+          prose-ul:my-6 prose-ol:my-6 prose-li:my-2
+          prose-a:text-primary prose-a:no-underline hover:prose-a:underline
+          prose-pre:bg-muted prose-pre:border prose-pre:my-6 prose-pre:p-4
+          prose-code:text-foreground prose-code:bg-muted prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
+          prose-strong:text-foreground prose-strong:font-semibold
+          prose-table:text-sm prose-table:border prose-table:border-border prose-table:my-6
+          prose-blockquote:border-l-2 prose-blockquote:border-border prose-blockquote:bg-muted/30 prose-blockquote:py-2 prose-blockquote:my-6"
+          dangerouslySetInnerHTML={{ __html: mdxContent.source }}
+        />
+      ) : (
+        <article className="prose prose-neutral dark:prose-invert max-w-none mb-20">
+          <h2>Overview</h2>
+          <p>{project.description}</p>
+          
+          <h2>Key Features</h2>
+          <ul>
+            <li>Built with modern tech stack</li>
+            <li>Focus on user experience and performance</li>
+            <li>Scalable architecture</li>
+          </ul>
 
-        <h2>Technical Implementation</h2>
-        <p>
-          This project leverages {project.technologies?.[0]} and {project.technologies?.[1]} to create a robust solution.
-          More detailed write-up coming soon.
-        </p>
-      </article>
+          <h2>Technical Implementation</h2>
+          <p>
+            This project leverages {project.technologies?.[0]} and {project.technologies?.[1]} to create a robust solution.
+            More detailed write-up coming soon.
+          </p>
+        </article>
+      )}
     </section>
   );
 }

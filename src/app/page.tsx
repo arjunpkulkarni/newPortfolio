@@ -222,8 +222,8 @@ export default function HomePage() {
                   <Link href="/projects" className="block group">
                     <ul className="space-y-4">
                       <li className="group-hover:translate-x-1 transition-transform">
-                        <span className="font-semibold text-base block mb-1 group-hover:text-primary">DJDoc Platform</span>
-                        <p className="text-sm text-muted-foreground">ML-powered music recommendations with 170k+ songs</p>
+                        <span className="font-semibold text-base block mb-1 group-hover:text-primary">Training ML on 170k Songs</span>
+                        <p className="text-sm text-muted-foreground">Real-time DJ recommendations with AWS Sagemaker</p>
                       </li>
                       <li className="group-hover:translate-x-1 transition-transform">
                         <span className="font-semibold text-base block mb-1 group-hover:text-primary">Redis Latency Optimization</span>

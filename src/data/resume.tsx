@@ -810,7 +810,7 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Training ML Model on 170k Songs for Real-Time DJ Mix Recommendations",
+      title: "Training Regression Model on 170k Songs for Real-Time DJ Mix Recommendations",
       href: "https://medium.com/@arjunpkulkarni/story-of-djdoc-in-development-91e735e3d000",
       dates: "Dec 2023",
       active: true,
