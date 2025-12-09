@@ -67,7 +67,7 @@ function BlogContent({ post }: { post: any }) {
   return (
     <>
 
-      <section id="blog" className="relative container mx-auto px-4 max-w-4xl">
+      <section id="blog" className="relative container mx-auto px-4 max-w-7xl">
         {/* Hero Header */}
         <div className="relative mt-28 mb-6 pb-6 border-b">
           {/* Title */}

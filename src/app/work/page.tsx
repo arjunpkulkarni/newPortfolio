@@ -43,7 +43,7 @@ export default function WorkPage() {
   }, []);
 
   return (
-    <main className="container mx-auto px-4 py-8 max-w-5xl relative" ref={mainRef}>
+    <main className="container mx-auto px-4 py-8 max-w-7xl relative" ref={mainRef}>
       {/* Continuous Timeline - Right Side */}
       <div className="absolute right-4 top-32 bottom-8 w-px hidden md:block">
         {/* Background line */}

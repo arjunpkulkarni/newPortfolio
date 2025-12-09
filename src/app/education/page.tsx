@@ -10,7 +10,7 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function EducationPage() {
   return (
-    <main className="container mx-auto px-4 py-8 max-w-5xl">
+    <main className="container mx-auto px-4 py-8 max-w-7xl">
       <section id="education" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 7}>
           <div className="space-y-0.5 mb-6 mt-20">
@@ -41,7 +41,7 @@ export default function EducationPage() {
       {/* Classes Section */}
       <section id="classes" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 9}>
-          <div className="space-y-0.5 mb-6 mt-12">
+          <div className="space-y-0.5 mb-6 mt-8">
             <h2 className="text-2xl font-medium tracking-tighter">Coursework</h2>
             <p className="text-sm text-muted-foreground">Relevant academic courses across disciplines.</p>
           </div>
@@ -102,7 +102,7 @@ export default function EducationPage() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="w-full max-w-5xl">
+      <section id="skills" className="w-full max-w-7xl mt-8">
         <div className="flex min-h-0 flex-col gap-y-3">
           
           {Object.entries(DATA.skills).map(([category, skills], categoryIndex) => (
@@ -131,7 +131,7 @@ export default function EducationPage() {
       {/* Certifications Section */}
       <section id="certifications" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
-          <div className="space-y-0.5 mb-6 mt-12">
+          <div className="space-y-0.5 mb-6 mt-8">
             <h2 className="text-2xl font-medium tracking-tighter">Certifications</h2>
             <p className="text-sm text-muted-foreground">Professional certifications and achievements.</p>
           </div>

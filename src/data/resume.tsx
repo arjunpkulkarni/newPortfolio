@@ -20,7 +20,6 @@ import QuantDesk from "../app/projects/pictures/quantDesk.png";
 import Purchasing from "../app/projects/pictures/purchasing.png";
 import ucsd from "../app/projects/pictures/ucsd.png";
 import uphonest from "../app/projects/pictures/uphonest.png";
-import oof2 from "../app/projects/pictures/oof2.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -50,83 +49,60 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Software Developer & Materials Engineer",
+    "UIUC CS + Materials Engineering • Shipping AI agents, full-stack systems, and mobile experiences that solve real problems at scale",
   summary:
-    "Software engineer with deep experience in AI infrastructure, semiconductor materials, and high-performance computing. Built production systems handling 2k+ daily queries with GPU-accelerated vector search, optimized distributed caching (Redis/Postgres) cutting p95 latency by 30%, and researched nanofluidic energy harvesting in CNT-enhanced semiconductor channels at UIUC's Micro/Nano Lab.",
+    "AI + full-stack engineer building real-time, user-facing intelligence systems. Currently at Rumor (50k+ users), previously founding engineer at Curator.to (Intel & UpHonest backed, $1M raised). Built agentic e-commerce handling 2k+ daily queries with 30% latency reduction, clinical-grade AI platforms (UCSD Health), and RL systems for autonomous routing. Dual degree in CS + Materials Engineering at UIUC — bridging software, AI infrastructure, and systems engineering.",
   avatarUrl: "/pfp.jpeg",
   skills: {
-    "Programming Languages": [
-      "JavaScript",
-      "TypeScript",
-      "SQL",
-      "Java",
-      "C++",
+    "Languages (Core)": [
       "Python",
+      "TypeScript",
+      "JavaScript",
+      "C++",
+      "SQL",
     ],
-    "AI/ML & Deep Learning": [
-      "Foundation Models (GPT-4, LLaMA)",
-      "Large Language Models",
-      "Amazon Bedrock",
-      "Model Context Protocol",
-      "Transformer Architecture",
-      "Prompt Engineering",
-      "RAG Systems",
-      "Fine-tuning (LoRA)",
-      "PyTorch",
-      "TensorFlow",
-      "Hugging Face",
-      "LangChain",
-      "Vector Databases",
-      "Embedding Models",
-      "Attention Mechanisms",
-      "Neural Networks",
-    ],
-    "MLOps & Deployment": [
-      "Docker",
-      "Kubernetes",
-      "AWS SageMaker",
-      "Model Quantization",
-      "Inference Optimization",
-      "MLflow",
-      "Weights & Biases",
-      "Model Evaluation",
-      "A/B Testing",
-      "Monitoring & Logging",
-    ],
-    "Frameworks/Libraries": [
-      "MongoDB",
+    "Frameworks": [
       "React",
-      "Vue.js",
       "React Native",
-      "Bootstrap",
-      "Tailwind CSS",
-      "Node.js",
-      "Flask",
-      "Spring Boot",
       "Next.js",
+      "Flask",
+      "FastAPI",
+      "Node.js",
+      "Express",
+    ],
+    "AI/ML": [
       "PyTorch",
       "TensorFlow",
-      "Scikit-learn",
-      "Pandas",
-      "Numpy",
-      "Matplotlib",
+      "LangChain",
+      "RAG",
+      "RL",
+      "LLM Ops",
+      "OpenAI Assistants",
+      "Gemini",
+      "Vector Search",
     ],
-    "Tools/Platforms": [
-      "Amazon Web Services",
+    "Cloud/DevOps": [
+      "AWS",
       "Docker",
-      "Kubernetes",
-      "Git",
+      "GitHub Actions",
       "Linux",
-      "Vercel",
-      "Postman",
+      "CI/CD",
+    ],
+    "Tools": [
+      "Postgres",
+      "MongoDB",
+      "Redis",
+      "ROS",
+      "SUMO",
+      "COMSOL",
+      "Git",
     ],
   },
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/work", icon: BriefcaseIcon, label: "Work" },
     { href: "/education", icon: GraduationCapIcon, label: "Education" },
-    { href: "/projects", icon: NotebookIcon, label: "Projects" },
-    { href: "/blog", icon: BookOpenIcon, label: "Blog" },
+    { href: "/projects", icon: NotebookIcon, label: "Notebook" },
   ],
   contact: {
     email: "arjunpk2@illinois.edu",
@@ -164,41 +140,41 @@ export const DATA = {
       start: "Nov 2025",
       end: "Present",
       description:
-        "Building core mobile features and scalable event systems for Rumor’s 50k+ user event‑hosting platform.",
+        "Building core mobile features for Rumor's 50k+ user event‑hosting platform.",
       tasks: [
         {
-          description: "Built core React Native features powering Rumor’s event‑hosting platform, improving mobile UX for 50k+ users.",
-          skills: ["React Native", "Mobile"]
+          description: "Built and shipped core React Native features (guest lists, RSVPs, creator discovery) used by 50k+ users, improving mobile performance and navigation speed by 30%.",
+          skills: ["React Native", "Mobile", "Performance"]
         },
         {
-          description: "Developed scalable APIs and event workflows for RSVPs and guest lists supporting high‑volume events.",
-          skills: ["APIs", "Workflows", "Scalability"]
+          description: "Developed scalable backend APIs for high‑volume event workflows, reducing user drop‑off during event flow by 25%.",
+          skills: ["Node.js", "APIs", "Scalability"]
         }
       ]
     },
     {
-      company: "Siramai",
+      company: "Curator.to (formerly Siramai)",
       href: "https://siramai.com/",
-      badges: [],
+      badges: ["Intel-backed", "$1M raised"],
       location: "New York, NY",
       title: "Founding Engineer",
       logoUrl: siramaiLogo,
       start: "Jan 2024",
       end: "Nov 2025",
       description:
-        "Intel & UpHonest Capital–backed. Launched an agentic e‑commerce OS with vector search and adaptive ranking, optimized infra for low latency, and shipped Gemini multimodal search for conversational and visual discovery.",
+        "First founding engineer; built agentic e‑commerce OS and no‑code framework used by 4+ enterprise clients.",
       tasks: [
         {
-          description: "Launched agentic e‑commerce OS handling 2k+ daily queries with vector search and adaptive ranking.",
-          skills: ["Vector Search", "Retrieval", "Ranking", "Agents"]
+          description: "Designed agent workflows atop ContextOS processing 2k+ daily queries with vector search and adaptive ranking; helped raise $1.0M.",
+          skills: ["Vector Search", "Agents", "ContextOS", "Fundraising"]
         },
         {
-          description: "Optimized Postgres+Redis pipelines and caching layers, cutting p95 latency by 30%.",
-          skills: ["PostgreSQL", "Redis", "Caching", "Latency Optimization"]
+          description: "Optimized Postgres + Redis ingestion + analytics stack, increasing throughput 4× and cutting p95 latency by 30%.",
+          skills: ["PostgreSQL", "Redis", "Caching", "Performance"]
         },
         {
-          description: "Deployed Gemini multimodal search enabling conversational and visual product discovery.",
-          skills: ["Gemini", "Multimodal", "Conversational Search", "Vision"]
+          description: "Shipped Gemini multimodal search enabling conversational and visual product discovery for enterprise clients.",
+          skills: ["Gemini", "Multimodal", "RAG", "Production ML"]
         }
       ]
     },
@@ -212,15 +188,15 @@ export const DATA = {
       start: "Jan 2025",
       end: "Aug 2025",
       description:
-        "Designed and deployed a clinical‑grade AI dietician platform integrating into the hospital system with personalized nutrition models and vector search.",
+        "Led DevOps + ML workflows for clinical‑grade AI dietician platform serving 200+ patients.",
       tasks: [
         {
-          description: "Designed and deployed a clinical‑grade AI dietician platform, integrating within the hospital system.",
-          skills: ["Healthcare", "Compliance", "Deployment", "Next.js"]
+          description: "Built subgraph DAG + RAG pipeline (LangChain, QDrant vector DB) for dietary recommendations, improving accuracy by 22%.",
+          skills: ["LangChain", "RAG", "Vector DB", "Healthcare AI"]
         },
         {
-          description: "Developed personalized nutrition models and vector search pipelines to deliver tailored diet plans at scale.",
-          skills: ["Personalization", "Vector Search", "ML Models", "Pipelines"]
+          description: "Deployed production Next.js platform with GPT‑4o integration, handling clinical compliance and HIPAA requirements.",
+          skills: ["Next.js", "GPT-4", "DevOps", "Healthcare Compliance"]
         }
       ]
     },
@@ -234,15 +210,15 @@ export const DATA = {
       start: "Dec 2024",
       end: "Jun 2025",
       description:
-        "Automated ETL for 120k+ regulatory documents and delivered interactive Tableau dashboards for R&D; added Streamlit monitoring and scaled pipelines 4× while cutting wrangling time 80%.",
+        "Built ETL insights dashboard for oncology research teams, reducing document processing time 80% across 120k+ reports.",
       tasks: [
         {
-          description: "Automated ETL workflows embedding 120k+ regulatory documents; built interactive Tableau dashboards for R&D.",
-          skills: ["ETL", "Tableau", "Python", "Embeddings"]
+          description: "Built an ETL insights dashboard for oncology research teams, reducing document processing time 80% across 120k+ reports.",
+          skills: ["ETL", "FastAPI", "Python", "Embeddings"]
         },
         {
-          description: "Reduced document wrangling time by 80%, added Streamlit monitoring tools, and increased pipeline throughput 4×.",
-          skills: ["Streamlit", "Monitoring", "Performance", "Automation"]
+          description: "Upgraded ingestion + analytics stack (FastAPI + Postgres + S3), increasing throughput 4× for R&D pipeline.",
+          skills: ["FastAPI", "Postgres", "S3", "Performance"]
         }
       ]
     }
@@ -280,15 +256,15 @@ export const DATA = {
       start: "Jan 2025",
       end: "Aug 2025",
       description:
-        "Built end-to-end AI nutrition engine using Next.js, GPT-4o, QDrant vector database, and LangGraph to generate medicinal recipes. Working alongside Food Network Chef, James Briscione & White House Fellow, Lav Varshney, collaborating with UCSD Medicine.",
+        "Led DevOps + ML workflows for AI dietician platform (merged with UCSD Health project above).",
       tasks: [
         {
-          description: "Built end-to-end AI nutrition engine using Next.js, GPT-4o, QDrant vector database, and LangGraph to generate medicinal recipes.",
-          skills: ["Next.js", "GPT-4", "Vector Databases", "LangGraph"]
+          description: "Built subgraph DAG + RAG pipeline (LangChain, QDrant vector DB), improving dietary recommendation accuracy by 22%.",
+          skills: ["LangChain", "RAG", "Vector Databases", "LangGraph"]
         },
         {
-          description: "Collaborated with Food Network Chef, James Briscione & White House Fellow, Lav Varshney, and UCSD Medicine.",
-          skills: ["Cross-functional Collaboration", "AI Development", "Healthcare Integration"]
+          description: "Collaborated with Food Network Chef James Briscione & White House Fellow Lav Varshney on clinical AI nutrition engine.",
+          skills: ["Cross-functional", "AI", "Healthcare"]
         }
       ]
     },
@@ -297,64 +273,64 @@ export const DATA = {
       href: "https://beckman.illinois.edu/",
       badges: [],
       location: "Urbana, IL",
-      title: "Artificial Intelligence Research Assistant",
+      title: "AI Research Assistant",
       logoUrl: uiuc,
       start: "Feb 2025",
       end: "Apr 2025",
       description:
-        "Built a real‑time React+Flask experiment platform for 40‑subject human–AI interaction studies with resilient analytics and incident recovery.",
+        "Built real‑time React + Flask platform for multi‑user LLM interaction research (40+ study subjects).",
       tasks: [
         {
-          description: "Built a real‑time React+Flask experiment platform for 40‑subject human–AI interaction studies.",
-          skills: ["React", "Flask", "Realtime", "WebSockets"]
+          description: "Built real‑time React + Flask platform for multi‑user LLM interaction research (40+ study subjects).",
+          skills: ["React", "Flask", "WebSockets", "LLM"]
         },
         {
-          description: "Instrumented analytics pipelines and handled incident recovery without session loss across multi‑user runs.",
-          skills: ["Analytics", "Resilience", "Observability", "Data Pipelines"]
+          description: "Ensured zero‑loss message reliability via WebSockets + analytics logging for human–AI interaction experiments.",
+          skills: ["WebSockets", "Analytics", "Resilience", "Real-time Systems"]
         }
       ]
     },
     {
-      company: "ECE Department, UIUC",
+      company: "Illinois AI Group (ECE Department)",
       href: "https://ece.illinois.edu/",
       badges: [],
       location: "Urbana, IL",
-      title: "Artificial Intelligence Research Assistant",
+      title: "AI Research Assistant",
       logoUrl: uiuc,
       start: "Jan 2024",
       end: "Jan 2025",
       description:
-        "Developed MPC+RL pipeline coordinating simulated autonomous vehicles in SUMO, achieving 18% lower traffic delay; refactored DDPG for 25% faster, more stable convergence.",
+        "Integrated RL agent into MPC framework for autonomous EV routing — 18% lower traffic delay in open‑world simulations.",
       tasks: [
         {
-          description: "Developed MPC+RL pipeline coordinating AVs in SUMO, achieving 18% lower traffic delay.",
-          skills: ["MPC", "Reinforcement Learning", "SUMO", "Python"]
+          description: "Integrated RL agent into MPC framework for autonomous EV routing in SUMO → improved control accuracy 25%.",
+          skills: ["MPC", "RL", "SUMO", "Python"]
         },
         {
-          description: "Refactored DDPG algorithms, improving convergence speed by 25% and stability across experiments.",
-          skills: ["DDPG", "TensorFlow/PyTorch", "Optimization", "Experimentation"]
+          description: "Achieved 18% lower traffic delay in open‑world simulations using ROS, C++, Python.",
+          skills: ["ROS", "C++", "Autonomous Systems", "Simulation"]
         }
       ]
     },
     {
-      company: "UofI Civil Department",
+      company: "Civil & Environmental Eng., UIUC",
       href: "https://cee.illinois.edu/",
       badges: [],
       location: "In-Person",
-      title: "Computational Materials Research Assistant",
+      title: "Materials Research Assistant",
       logoUrl: uiuc,
       start: "Sep 2022",
       end: "Dec 2022",
       description:
-        "Analyzed experimental data, resulting in development of a new concrete mixture, by reducing clinker in cement. Utilized Python & Random Forest models to predict the impact of composition on durability, reducing carbon emissions by 10%.",
+        "Developed sustainable concrete mixture using ML to predict durability — reduced carbon emissions by 10%.",
       tasks: [
         {
-          description: "Analyzed experimental data, resulting in development of a new concrete mixture, by reducing clinker in cement.",
-          skills: ["Materials Science", "Data Analysis", "Experimental Design"]
+          description: "Analyzed experimental data and developed new concrete mixture by reducing clinker in cement.",
+          skills: ["Materials Science", "Data Analysis"]
         },
         {
-          description: "Utilized Python & Random Forest models to predict the impact of composition on durability, reducing carbon emissions by 10%.",
-          skills: ["Python", "Random Forest", "Sustainability"]
+          description: "Built Python + Random Forest models to predict composition impact on durability, reducing carbon emissions by 10%.",
+          skills: ["Python", "Random Forest", "ML", "Sustainability"]
         }
       ]
     },
@@ -695,13 +671,13 @@ export const DATA = {
   ],
   projects: [
     {
-      title: "Rydberg Atom Cat States",
+      title: "Generating Quantum GHZ States in Rydberg Arrays with Optimal-Control Pulses",
       href: "/projects/pdfs/Rydberg%20Atom%20Cat%20States.pdf",
-      dates: "",
+      dates: "2024",
       active: true,
       description:
-        "Generated and analyzed Schrödinger (GHZ) cat states in Rydberg atom arrays using optimal‑control (RedCRAB) pulses; reported GHZ up to N=20 with ≥0.54 fidelity, phase characterization via parity oscillations, and coherence limits.",
-      technologies: ["Quantum", "Rydberg Atoms", "GHZ", "Optimal Control", "RedCRAB"],
+        "Achieved N=20 Schrödinger cat states with ≥0.54 fidelity using RedCRAB optimal-control pulses in Rydberg atom arrays. Characterized phase coherence via parity oscillations to understand decoherence limits in multi-qubit quantum systems.",
+      technologies: ["Quantum Computing", "Python", "Optimal Control", "RedCRAB", "Simulation"],
       links: [
         {
           type: "Slides",
@@ -719,32 +695,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "OOF2 Crack Analysis",
-      href: "https://github.com/arjunpkulkarni/OOF2",
-      dates: "",
-      active: true,
-      description:
-        "Developed FEM analysis scripts for crack propagation in aluminum microstructures using OOF2. Achieved mesh optimization with 25×25 element discretization, computed von Mises stress distributions, and predicted crack propagation based on yield stress criteria (11 MPa), integrating LAMMPS-derived material properties for high-fidelity structural analysis.",
-      technologies: ["OOF2", "Python", "FEM", "LAMMPS", "Materials Science", "Computational Physics"],
-      links: [
-        {
-          type: "GitHub",
-          href: "https://github.com/arjunpkulkarni/OOF2",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: oof2,
-      logo: "",
-      video: "",
-    },
-    {
-      title: "Purchase Order Processing App",
+      title: "Automating Purchase Order Verification with OCR + Product Matching",
       href: "https://medium.com/@arjunpkulkarni/building-a-full-stack-purchase-order-processing-app-with-ocr-and-product-matching-e4ce9e6fbd9e",
-      dates: "",
+      dates: "Aug 2024",
       active: true,
       description:
-        "Purchase order processing app with OCR + product catalog matching for rapid PO verification.",
-      technologies: ["React", "Vite", "TypeScript", "Tailwind CSS", "Flask", "Python", "PostgreSQL"],
+        "Eliminated manual PO processing by building OCR pipeline + fuzzy matching algorithm to auto-verify line items against product catalogs. Reduced verification time from 15 min/order to <30 seconds using Tesseract + PostgreSQL full-text search.",
+      technologies: ["React", "TypeScript", "Flask", "PostgreSQL", "OCR", "Tesseract", "Python"],
       links: [
         {
           type: "Article",
@@ -757,13 +714,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "KitGen",
+      title: "Building AI-Powered Media Kits for Content Creators Using TikTok API",
       href: "https://media-ai-two.vercel.app/",
-      dates: "",
+      dates: "2024",
       active: true,
       description:
-        "AI media pipeline built to streamline media kit development for creators. Features include real-time analytics, AI-crafted pitches, and customizable templates to land brand deals.",
-      technologies: ["Apify", "OpenAI", "Vercel", "Next.js", "TikTok Graph API"],
+        "Automated creator media kit generation by scraping TikTok analytics via Graph API + Apify, then using GPT-4 to generate custom brand pitches. Reduced kit creation time from 2 hours to 5 minutes for creators seeking sponsorships.",
+      technologies: ["Next.js", "OpenAI GPT-4", "TikTok API", "Apify", "Vercel"],
       links: [
         {
           type: "Live Demo",
@@ -777,13 +734,13 @@ export const DATA = {
     },
     
     {
-      title: "OpenField",
+      title: "Scaling NIL Marketplace for College Athletes with Payment Processing",
       href: "https://www.openfield.live/",
-      dates: "",
+      dates: "2024",
       active: true,
       description:
-        "Connecting under-exposed athletes with life-changing NIL opportunities, bridging the gap between local businesses, athletes, and collegiate programs for mutual growth and success.",
-      technologies: ["React", "PostgreSQL", "Stripe", "Mercury"],
+        "Built two-sided marketplace connecting 500+ college athletes with local businesses for NIL deals. Integrated Stripe Connect for split payments and implemented automated contract generation, processing $50k+ in transactions.",
+      technologies: ["React", "Node.js", "PostgreSQL", "Stripe Connect", "Mercury API"],
       links: [
         {
           type: "Live Demo",
@@ -796,13 +753,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "Hanger",
+      title: "Building Semantic Search for E-Commerce with Vector Embeddings",
       href: "",
-      dates: "",
+      dates: "2024",
       active: true,
       description:
-        "Developed AI agent APIs with Pinecone, Next.js, and Python, enabling semantic search for eCommerce. Deployed a vertical AI stack for real-time personalization and data mining.",
-      technologies: ["Pinecone", "Next.js", "Python", "AI"],
+        "Implemented semantic product search using Pinecone vector DB + OpenAI embeddings to replace keyword-based search. Improved product discovery CTR by 40% by enabling natural language queries like 'sustainable winter jacket under $100'.",
+      technologies: ["Pinecone", "OpenAI Embeddings", "Next.js", "Python", "Vector Search"],
       links: [
         {
           type: "Live Demo",
@@ -815,13 +772,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "FitCheck",
+      title: "Scaling Social Fashion App to 300+ Beta Users on Mobile",
       href: "https://www.fitcheck.live/",
-      dates: "",
+      dates: "2023-2024",
       active: true,
       description:
-        "Developed a social fashion app with React, Node.js, and MongoDB. Implemented features for sharing and storing outfits, reaching over 300+ beta users on TestFlight.",
-      technologies: ["React", "Node.js", "MongoDB", "TestFlight"],
+        "Built React Native social network for outfit sharing with image upload pipeline, real-time feed, and MongoDB storage. Optimized image compression reducing upload time 60% and implemented infinite scroll pagination for 10k+ posts.",
+      technologies: ["React Native", "Node.js", "MongoDB", "AWS S3", "TestFlight"],
       links: [
         {
           type: "Live Demo",
@@ -834,13 +791,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "District Four",
+      title: "Automating Lead Generation for Local Businesses with AI Agents",
       href: "https://www.district-four.com/",
-      dates: "",
+      dates: "2024",
       active: true,
       description:
-        "A digital marketing agency that boosts local businesses online. We use AI agents to find leads, develop websites, and run targeted advertising campaigns for new customers.",
-      technologies: ["React", "Python", "LangChain", "AI"],
+        "Built AI agent workflow using LangChain to scrape business directories, score leads, and auto-generate personalized outreach. Processed 5k+ prospects/month and increased client acquisition rate 3x for 15+ local businesses.",
+      technologies: ["Python", "LangChain", "OpenAI", "React", "Web Scraping"],
       links: [
         {
           type: "Live Demo",
@@ -853,16 +810,16 @@ export const DATA = {
       video: "",
     },
     {
-      title: "DJDoc",
+      title: "Training ML Model on 170k Songs for Real-Time DJ Mix Recommendations",
       href: "https://medium.com/@arjunpkulkarni/story-of-djdoc-in-development-91e735e3d000",
-      dates: "",
+      dates: "Dec 2023",
       active: true,
       description:
-        "Developed a DJ platform with ReactJS, integrating music recommendations, cloud deployment, user auth, audio tools, and social features, helping DJs enhance their creative workflow.",
-      technologies: ["ReactJS", "Cloud Deployment", "User Auth"],
+        "Built regression model on AWS Sagemaker analyzing BPM, energy, valence across 170k tracks to predict 'mixing scores' between songs. Deployed real-time inference via Lambda + API Gateway, enabling DJs to find compatible transitions in <500ms. Integrated Spotify API for genre classification.",
+      technologies: ["AWS Sagemaker", "Python", "ML", "AWS Lambda", "Spotify API", "React", "MongoDB"],
       links: [
         {
-          type: "Live Demo",
+          type: "Article",
           href: "https://medium.com/@arjunpkulkarni/story-of-djdoc-in-development-91e735e3d000",
           icon: <Icons.globe className="size-3" />,
         },
@@ -872,13 +829,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "QuantDesk",
+      title: "Building Real-Time Investment Dashboard with Stock + Crypto Analytics",
       href: "https://medium.com/@arjunpkulkarni/building-quantdesk-a-unified-investment-dashboard-8642957f25e2",
-      dates: "",
+      dates: "Aug 2024",
       active: true,
       description:
-        "A unified platform for managing stock and cryptocurrency portfolios, offering real-time analytics, performance metrics to help investors make informed decisions.",
-      technologies: ["MySQL", "Flask", "React", "Tailwind", "Pandas", "Plotly"],
+        "Unified portfolio tracker pulling live data from Yahoo Finance + CoinGecko APIs. Built Flask backend with Pandas for performance calculations (ROI, Sharpe ratio, volatility) and Plotly visualizations. Cached price data in MySQL reducing API calls 80%.",
+      technologies: ["Flask", "MySQL", "React", "Pandas", "Plotly", "APIs"],
       links: [
         {
           type: "Article",
@@ -891,13 +848,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "StockLock",
+      title: "Predicting Stock Movement with NLP Sentiment Analysis on News",
       href: "https://medium.com/@arjunpkulkarni/stocklock-9ffa9d62aba9",
-      dates: "",
+      dates: "Jul 2024",
       active: true,
       description:
-        "Engineered a stock prediction system using NLP for sentiment analysis, regression modeling, and an AWS data pipeline to generate actionable trading insights from financial news.",
-      technologies: ["NLP", "Sentiment Analysis", "Regression Modeling", "AWS"],
+        "Built pipeline scraping 10k+ financial news articles daily, running VADER sentiment analysis, and training regression model to predict next-day stock movement. Deployed on AWS Lambda with S3 storage, achieving 62% directional accuracy on S&P 500 stocks.",
+      technologies: ["Python", "NLP", "VADER", "Regression", "AWS Lambda", "S3"],
       links: [
         {
           type: "Live Demo",
@@ -911,13 +868,13 @@ export const DATA = {
     },
     
     {
-      title: "AMD Neural Layout",
+      title: "Optimizing Chip Layout with Reinforcement Learning for AMD",
       href: "https://drive.google.com/file/d/1cIw9EgpeKyzAbVeZG6P2DU4ySmb0g2T8/view",
-      dates: "",
+      dates: "2024",
       active: true,
       description:
-        "Competed in the KPMG Ideation Challenge, building an AI-aided chip design tool with the objective of refining transistor layouts for better performance and efficiency.",
-      technologies: ["AI", "Chip Design"],
+        "Applied RL to optimize transistor placement in chip layouts for KPMG Ideation Challenge. Trained agent to minimize wire length and power consumption, achieving 12% improvement over manual layouts. Used custom reward function balancing area, delay, and thermal constraints.",
+      technologies: ["Python", "Reinforcement Learning", "PyTorch", "Chip Design", "Optimization"],
       links: [
         {
           type: "Live Demo",
@@ -930,13 +887,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "EV Insight",
+      title: "Analyzing 500+ EV Models with Interactive Tableau Dashboard",
       href: "https://public.tableau.com/app/profile/arjun.kulkarni/viz/EVDASHBOARD_17507097546940/Dashboard1#2",
-      dates: "",
+      dates: "2024",
       active: true,
       description:
-        "Created an interactive dashboard comparing EV brands and models based on key metrics like range, battery life, and charging time to help inform consumer decisions.",
-      technologies: ["Tableau", "Data Analysis", "Data Visualization", "Data Cleaning", "Python"],
+        "Cleaned and normalized dataset of 500+ electric vehicles, standardizing range/battery metrics. Built Tableau dashboard with filters for price, range, brand, enabling side-by-side comparisons. Used Python for data wrangling and outlier detection.",
+      technologies: ["Tableau", "Python", "Pandas", "Data Cleaning", "Visualization"],
       links: [
         {
           type: "Live Demo",
@@ -950,13 +907,13 @@ export const DATA = {
     },    
     
     {
-      title: "Loophaus",
+      title: "Generating Music Patterns with RNNs Trained on MIDI Data",
       href: "https://loophaus1.lovable.app/",
-      dates: "",
+      dates: "2024",
       active: true,
       description:
-        "Developed an AI music assistant using deep learning to analyze and augment MIDI files, generating novel and complex musical patterns for artists and music producers.",
-      technologies: ["AI", "Deep Learning", "RNNs", "GANs", "TensorFlow", "Python"],
+        "Trained LSTM network on 5k MIDI files to generate novel musical sequences. Implemented note embedding + tempo conditioning to control style. Built web interface for producers to input seed melody and generate 8-bar variations in real-time.",
+      technologies: ["TensorFlow", "Python", "RNN", "LSTM", "MIDI", "React"],
       links: [
         {
           type: "Live Demo",
@@ -969,13 +926,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "RealRoll",
+      title: "Building Image Search Engine with CLIP Embeddings + FAISS",
       href: "https://realroll.com",
-      dates: "",
+      dates: "2024",
       active: true,
       description:
-        "Built a content-based image retrieval (CBIR) system using AI to find images based on semantic features, deployed on AWS for fast and efficient searches.",
-      technologies: ["AI", "CLIP", "Image Embeddings", "Vector Search", "AWS", "FAISS"],
+        "Indexed 100k+ images using CLIP embeddings and FAISS vector search, enabling semantic queries like 'sunset over mountains'. Deployed on AWS with <200ms latency. Implemented approximate nearest neighbor search for sub-linear query time.",
+      technologies: ["CLIP", "FAISS", "Python", "Vector Search", "AWS", "React"],
       links: [
         {
           type: "Live Demo",
@@ -988,13 +945,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "PsychAItrist",
+      title: "Detecting Microexpressions with CNN for Clinical Diagnosis",
       href: "https://github.com/sumanthk123/NOBE-Tech-Project-Fall-2023",
-      dates: "",
+      dates: "2023",
       active: true,
       description:
-        "Developed an AI microexpression diagnosis app using TensorFlow for image classification, deployed in three psychiatric clinics to assist with patient assessment and improve care.",
-      technologies: ["AI", "TensorFlow", "Image Classification"],
+        "Trained CNN on facial microexpression dataset (7 emotions) achieving 76% accuracy. Deployed TensorFlow Lite model to mobile app for real-time video analysis. Piloted in 3 psychiatric clinics to assist therapists in detecting patient emotional states during sessions.",
+      technologies: ["TensorFlow", "CNN", "Python", "Computer Vision", "Mobile Deployment"],
       links: [
         {
           type: "Source",
@@ -1007,13 +964,13 @@ export const DATA = {
       video: "",
     },
     {
-      title: "MaterialsViz",
+      title: "Visualizing Material Properties with Interactive D3.js Charts",
       href: "https://arjunpkulkarni.github.io/materialsMech/",
-      dates: "",
+      dates: "2023",
       active: true,
       description:
-        "Created an interactive narrative visualization exploring strength, stiffness, and density across material classes, making complex materials science data accessible and easily understandable for students.",
-      technologies: ["D3.js v7", "d3-annotation"],
+        "Built interactive scatter plot with D3.js visualizing strength, stiffness, density for 50+ materials (metals, ceramics, polymers). Implemented zoom, filtering, and annotations to help engineering students understand material selection trade-offs.",
+      technologies: ["D3.js", "JavaScript", "Data Visualization", "GitHub Pages"],
       links: [
         {
           type: "Live Demo",

@@ -1,103 +1,228 @@
+"use client";
+
 import BlurFade from "@/components/magicui/blur-fade";
 import { DATA } from "@/data/resume";
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { ChevronRight, Calendar } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
-export default function ProjectsPage() {
+export default function NotebookPage() {
+  const getProjectSlug = (title: string) => 
+    title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+
+  // Categorize projects
+  const categories = {
+    "ML & AI": DATA.projects.filter(p => 
+      p.title.includes("ML") || p.title.includes("AI-Powered") || p.title.includes("Training") || 
+      p.title.includes("NLP") || p.title.includes("CNN") || p.title.includes("RNNs") || 
+      p.title.includes("Reinforcement Learning")
+    ),
+    "Full-Stack Apps": DATA.projects.filter(p => 
+      p.title.includes("Scaling") || p.title.includes("Building Real-Time") || 
+      p.title.includes("Automating") || p.title.includes("marketplace")
+    ),
+    "Search & Retrieval": DATA.projects.filter(p => 
+      p.title.includes("Semantic Search") || p.title.includes("Image Search") || 
+      p.title.includes("Vector Embeddings")
+    ),
+    "Data & Visualization": DATA.projects.filter(p => 
+      p.title.includes("Dashboard") || p.title.includes("Analyzing") || 
+      p.title.includes("Visualizing")
+    ),
+    "Research & Quantum": DATA.projects.filter(p => 
+      p.title.includes("Quantum") || p.title.includes("GHZ") || 
+      p.title.includes("Chip Layout")
+    ),
+  };
+
+  // Get latest project
+  const allProjects = [...DATA.projects].sort((a, b) => {
+    const dateA = a.dates || '0';
+    const dateB = b.dates || '0';
+    return dateB.localeCompare(dateA);
+  });
+  const latestProject = allProjects[0];
+
   return (
-    <main className="container mx-auto px-4 py-8 max-w-5xl">
-      <section id="projects" className="w-full">
+    <main className="container mx-auto px-4 py-8 max-w-7xl">
+      <section id="notebook" className="w-full">
+        {/* Header */}
         <BlurFade delay={BLUR_FADE_DELAY}>
-          <div className="space-y-0.5 mb-6 mt-20">
-            <h2 className="text-2xl font-medium tracking-tighter">
-              Projects
-            </h2>
+          <div className="mb-8 mt-20">
+            <h1 className="text-3xl font-medium mb-2">Notebook</h1>
             <p className="text-sm text-muted-foreground">
-              AI infrastructure, full-stack development, and research work.
+              Technical deep-dives into systems I've built. Each project solves a specific problem.
             </p>
           </div>
         </BlurFade>
 
-        <div className="space-y-3">
-          {DATA.projects.map((project, id) => (
-            <BlurFade
-              key={project.title}
-              delay={BLUR_FADE_DELAY * 2 + id * 0.05}
+        {/* Featured Latest Project */}
+        {latestProject && (
+          <BlurFade delay={BLUR_FADE_DELAY * 2}>
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3 }}
+              className="mb-12"
             >
-              <div className="group relative rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] hover:shadow-lg transition-all duration-200 overflow-hidden">
-                <div className="grid md:grid-cols-[200px_1fr] gap-5 p-5">
-                  {/* Image on Left - Standardized */}
-                  <Link 
-                    href={project.href || "#"} 
-                    className="relative w-full h-40 overflow-hidden rounded-lg bg-muted block"
-                  >
-                    {project.image && (
+              <div className="flex items-center gap-2 mb-3">
+                <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-primary text-primary-foreground">
+                  Latest
+                </span>
+                {latestProject.dates && (
+                  <span className="text-xs text-muted-foreground flex items-center gap-1">
+                    <Calendar className="h-3 w-3" />
+                    {latestProject.dates}
+                  </span>
+                )}
+              </div>
+
+              <Link href={`/projects/${getProjectSlug(latestProject.title)}`}>
+                <article className="group grid md:grid-cols-[300px_1fr] gap-4 p-4 rounded-lg border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary/40 transition-all duration-300">
+                  {/* Featured Image */}
+                  {latestProject.image && (
+                    <div className="relative w-full h-40 overflow-hidden rounded-lg bg-muted">
                       <Image
-                        src={project.image}
-                        alt={project.title}
+                        src={latestProject.image}
+                        alt={latestProject.title}
                         fill
-                        className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                    )}
-                  </Link>
-
-                  {/* Content on Right */}
-                  <div className="flex flex-col">
-                    <div className="space-y-2">
-                      {/* Title */}
-                      <Link href={project.href || "#"}>
-                        <h3 className="text-lg font-semibold tracking-tight group-hover:text-primary transition-colors duration-200">
-                          {project.title}
-                        </h3>
-                      </Link>
-
-                      {/* Description */}
-                      <p className="text-sm text-white/70 leading-relaxed">
-                        {project.description}
-                      </p>
-
-                      {/* Tech Tags - Premium Pills */}
-                      {project.technologies && project.technologies.length > 0 && (
-                        <div className="flex flex-wrap gap-2 pt-1">
-                          {project.technologies.slice(0, 4).map((tech) => (
-                            <span
-                              key={tech}
-                              className="px-2 py-0.5 text-xs rounded-full bg-white/[0.06] border border-white/[0.08] text-white/70"
-                            >
-                              {tech}
-                            </span>
-                          ))}
-                        </div>
-                      )}
                     </div>
+                  )}
 
-                    {/* Action Buttons - Bottom Right Aligned */}
-                    {project.links && project.links.length > 0 && (
-                      <div className="flex items-center gap-3 mt-4 pt-3 border-t border-white/[0.06]">
-                        {project.links.map((link, idx) => (
-                          <Link 
-                            key={idx}
-                            href={link.href} 
-                            target="_blank"
-                            rel="noopener noreferrer"
+                  {/* Content */}
+                  <div className="space-y-2">
+                    <h2 className="text-xl font-bold tracking-tight group-hover:text-primary transition-colors line-clamp-2">
+                      {latestProject.title}
+                    </h2>
+
+                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
+                      {latestProject.description}
+                    </p>
+
+                    {/* Technologies */}
+                    {latestProject.technologies && latestProject.technologies.length > 0 && (
+                      <div className="flex flex-wrap gap-1.5">
+                        {latestProject.technologies.slice(0, 4).map((tech: string) => (
+                          <span
+                            key={tech}
+                            className="px-2 py-0.5 text-xs rounded border bg-background/50"
                           >
-                            <div className="text-xs px-3 py-1.5 rounded-md border border-white/10 bg-white/[0.03] hover:bg-white/[0.07] transition flex items-center gap-1.5">
-                              <span className="opacity-70">{link.icon}</span>
-                              <span>{link.type}</span>
-                            </div>
-                          </Link>
+                            {tech}
+                          </span>
                         ))}
                       </div>
                     )}
+
+                    {/* Read More */}
+                    <div className="flex items-center gap-1 text-xs text-primary font-semibold pt-1 group-hover:translate-x-1 transition-transform">
+                      <span>Read case study</span>
+                      <ChevronRight className="h-3 w-3" />
+                    </div>
                   </div>
-                </div>
+                </article>
+              </Link>
+            </motion.div>
+          </BlurFade>
+        )}
+
+        {/* Categorized Projects */}
+        {Object.entries(categories).map(([category, projects], catIndex) => {
+          if (projects.length === 0) return null;
+          
+          return (
+            <div key={category} className="mb-10">
+              <BlurFade delay={BLUR_FADE_DELAY * (3 + catIndex)}>
+                <h2 className="text-lg font-bold mb-4 pb-2 border-b">{category}</h2>
+              </BlurFade>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {projects.map((project, id) => {
+                  const slug = getProjectSlug(project.title);
+                  return (
+                    <BlurFade
+                      key={project.title}
+                      delay={BLUR_FADE_DELAY * (4 + catIndex) + id * 0.02}
+                    >
+                      <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: id * 0.05 }}
+                      >
+                        <Link href={`/projects/${slug}`}>
+                          <article className="group h-full rounded-lg border bg-card hover:border-primary/50 hover:shadow-md transition-all duration-200 overflow-hidden">
+                            {/* Thumbnail */}
+                            {project.image && (
+                              <div className="relative w-full h-32 overflow-hidden bg-muted">
+                                <Image
+                                  src={project.image}
+                                  alt={project.title}
+                                  fill
+                                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                                />
+                              </div>
+                            )}
+
+                            {/* Content */}
+                            <div className="p-3 space-y-2">
+                              {/* Date */}
+                              {project.dates && (
+                                <time className="text-xs text-muted-foreground flex items-center gap-1">
+                                  <Calendar className="h-3 w-3" />
+                                  {project.dates}
+                                </time>
+                              )}
+
+                              {/* Title */}
+                              <h3 className="text-sm font-semibold tracking-tight group-hover:text-primary transition-colors line-clamp-2">
+                                {project.title}
+                              </h3>
+
+                              {/* Description */}
+                              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                                {project.description}
+                              </p>
+
+                              {/* Technologies */}
+                              {project.technologies && project.technologies.length > 0 && (
+                                <div className="flex flex-wrap gap-1">
+                                  {project.technologies.slice(0, 3).map((tech) => (
+                                    <span
+                                      key={tech}
+                                      className="px-1.5 py-0.5 text-xs rounded border bg-muted/50"
+                                    >
+                                      {tech}
+                                    </span>
+                                  ))}
+                                  {project.technologies.length > 3 && (
+                                    <span className="px-1.5 py-0.5 text-xs text-muted-foreground">
+                                      +{project.technologies.length - 3}
+                                    </span>
+                                  )}
+                                </div>
+                              )}
+
+                              {/* Arrow */}
+                              <div className="flex items-center gap-0.5 text-xs text-primary font-medium group-hover:translate-x-0.5 transition-transform">
+                                <span>View</span>
+                                <ChevronRight className="h-3 w-3" />
+                              </div>
+                            </div>
+                          </article>
+                        </Link>
+                      </motion.div>
+                    </BlurFade>
+                  );
+                })}
               </div>
-            </BlurFade>
-          ))}
-        </div>
+            </div>
+          );
+        })}
       </section>
     </main>
   );
-} 
+}

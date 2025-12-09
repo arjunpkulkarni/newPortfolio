@@ -13,7 +13,7 @@ export default async function BlogPage() {
   const posts = await getBlogPosts();
 
   return (
-    <section className="container mx-auto px-4 py-8 max-w-5xl">
+    <section className="container mx-auto px-4 py-8 max-w-7xl">
       <BlurFade delay={BLUR_FADE_DELAY}>
         <h1 className="font-medium text-2xl mb-2 mt-20 tracking-tighter">Technical Blog</h1>
         <p className="text-sm text-muted-foreground mb-8">
