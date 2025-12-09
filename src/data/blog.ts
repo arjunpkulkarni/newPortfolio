@@ -17,6 +17,7 @@ type Metadata = {
   role?: string;
   technologies?: string[];
   category?: string;
+  type?: string;
 };
 
 function getMDXFiles(dir: string) {
@@ -70,5 +71,7 @@ async function getAllPosts(dir: string) {
 }
 
 export async function getBlogPosts() {
-  return getAllPosts(path.join(process.cwd(), "content"));
+  const allPosts = await getAllPosts(path.join(process.cwd(), "content"));
+  // Filter out projects - only return actual blog posts
+  return allPosts.filter((post) => post.metadata.type !== "project");
 }
