@@ -163,7 +163,7 @@ export default function HomePage() {
                     My work spans <strong>agentic e-commerce</strong> (2k+ daily queries, 30% latency reduction), <strong>clinical AI</strong> (UCSD Health dietician platform), and <strong>autonomous systems</strong> (RL + MPC for traffic optimization). I thrive at the intersection of AI infrastructure, systems engineering, and product.
                   </p>
                   <p>
-                    Also researching nanofluidic energy harvesting at UIUC's Micro/Nano Lab — because the best software engineers understand hardware.
+                    Also researching nanofluidic energy harvesting at UIUC&apos;s Micro/Nano Lab — because the best software engineers understand hardware.
                   </p>
                 </div>
               </section>
@@ -172,7 +172,7 @@ export default function HomePage() {
             {/* What I'm Building Now Section */}
             <BlurFade delay={BLUR_FADE_DELAY * 2.3} blur="12px">
               <section className="mb-16">
-                <h2 className="text-3xl font-bold mb-6 pb-3 border-b-2">What I'm Building Now</h2>
+                <h2 className="text-3xl font-bold mb-6 pb-3 border-b-2">What I&apos;m Building Now</h2>
                 <div className="space-y-6">
                   <div>
                     <h3 className="text-lg font-semibold mb-2">→ Rumor mobile features</h3>
@@ -205,10 +205,10 @@ export default function HomePage() {
                     I believe the future belongs to engineers who can move between AI, systems, and real user problems without friction.
                   </p>
                   <p>
-                    Whether it's cutting latency by 30% for e-commerce search, building clinical-grade AI for hospitals, or optimizing autonomous vehicle routing — I build systems that solve real problems at scale.
+                    Whether it&apos;s cutting latency by 30% for e-commerce search, building clinical-grade AI for hospitals, or optimizing autonomous vehicle routing — I build systems that solve real problems at scale.
                   </p>
                   <p className="font-semibold text-lg">
-                    Let's build something meaningful together.
+                    Let&apos;s build something meaningful together.
                   </p>
                 </div>
               </section>

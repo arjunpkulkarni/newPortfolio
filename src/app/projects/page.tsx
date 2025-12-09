@@ -54,7 +54,7 @@ export default function NotebookPage() {
           <div className="mb-8 mt-20">
             <h1 className="text-3xl font-medium mb-2">Notebook</h1>
             <p className="text-sm text-muted-foreground">
-              Technical deep-dives into systems I've built. Each project solves a specific problem.
+              Technical deep-dives into systems I&apos;ve built. Each project solves a specific problem.
             </p>
           </div>
         </BlurFade>
