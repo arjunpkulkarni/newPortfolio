@@ -76,7 +76,7 @@ export default function HomePage() {
               <BlurFade delay={BLUR_FADE_DELAY * 2.5} blur="12px">
                 <div className="mb-6 space-y-2">
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Currently at <span className="text-foreground font-medium">Rumor</span> shipping mobile features for 50k+ users. Previously founding engineer at <span className="text-foreground font-medium">Curator.to</span> (Intel-backed, $1M raised).
+                    Currently at <span className="text-foreground font-medium">Rumor</span> shipping mobile features for 50k+ users.
                   </p>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                     Interested in AI agents, real-time systems, and building things that actually matter.
