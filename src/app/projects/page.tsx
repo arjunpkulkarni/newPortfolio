@@ -57,79 +57,8 @@ export default function NotebookPage() {
               Technical deep-dives into systems I&apos;ve built. Each project solves a specific problem.
             </p>
           </div>
-        </BlurFade>
-
-        {/* Featured Latest Project */}
-        {latestProject && (
-          <BlurFade delay={BLUR_FADE_DELAY * 2}>
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.3 }}
-              className="mb-12"
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="px-2 py-0.5 text-xs font-semibold rounded-full bg-primary text-primary-foreground">
-                  Latest
-                </span>
-                {latestProject.dates && (
-                  <span className="text-xs text-muted-foreground flex items-center gap-1">
-                    <Calendar className="h-3 w-3" />
-                    {latestProject.dates}
-                  </span>
-                )}
-              </div>
-
-              <Link href={`/projects/${getProjectSlug(latestProject.title)}`}>
-                <article className="group grid md:grid-cols-[300px_1fr] gap-4 p-4 rounded-lg border-2 border-primary/20 bg-gradient-to-br from-primary/5 to-transparent hover:border-primary/40 transition-all duration-300">
-                  {/* Featured Image */}
-                  {latestProject.image && (
-                    <div className="relative w-full h-40 overflow-hidden rounded-lg bg-muted">
-                      <Image
-                        src={latestProject.image}
-                        alt={latestProject.title}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                    </div>
-                  )}
-
-                  {/* Content */}
-                  <div className="space-y-2">
-                    <h2 className="text-xl font-bold tracking-tight group-hover:text-primary transition-colors line-clamp-2">
-                      {latestProject.title}
-                    </h2>
-
-                    <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
-                      {latestProject.description}
-                    </p>
-
-                    {/* Technologies */}
-                    {latestProject.technologies && latestProject.technologies.length > 0 && (
-                      <div className="flex flex-wrap gap-1.5">
-                        {latestProject.technologies.slice(0, 4).map((tech: string) => (
-                          <span
-                            key={tech}
-                            className="px-2 py-0.5 text-xs rounded border bg-background/50"
-                          >
-                            {tech}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-
-                    {/* Read More */}
-                    <div className="flex items-center gap-1 text-xs text-primary font-semibold pt-1 group-hover:translate-x-1 transition-transform">
-                      <span>Read case study</span>
-                      <ChevronRight className="h-3 w-3" />
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            </motion.div>
-          </BlurFade>
-        )}
-
+        </BlurFade>        
+        
         {/* Categorized Projects */}
         {Object.entries(categories).map(([category, projects], catIndex) => {
           if (projects.length === 0) return null;
