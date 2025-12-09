@@ -179,13 +179,7 @@ export default function HomePage() {
                     <p className="text-muted-foreground leading-relaxed">
                       React Native guest lists, RSVPs, and creator discovery for 50k+ event platform
                     </p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">→ Real-time LLM interaction platform</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      WebSockets + Flask for multi-user AI research at Beckman Institute
-                    </p>
-                  </div>
+                  </div>                 
                   <div>
                     <h3 className="text-lg font-semibold mb-2">→ Nanofluidic energy systems</h3>
                     <p className="text-muted-foreground leading-relaxed">
