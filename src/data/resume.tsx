@@ -575,22 +575,22 @@ export const DATA = {
           } // hello
           ,
           {
-            code: "MSE-304",
+            code: "MSE304",
             name: "Electronic Properties of Materials",
             description: "Band structure, carriers, transport, and semiconductor device fundamentals"
           },
           {
-            code: "MSE-441",
+            code: "MSE441",
             name: "Metals Processing",
             description: "Solidification, forming, heat treatment, and microstructure control in metals"
           },
           {
-            code: "MSE-495",
+            code: "MSE495",
             name: "Materials Design",
             description: "Principles and practice of materials selection and performance-driven design"
           },
           {
-            code: "MSE-481",
+            code: "MSE481",
             name: "Electron Microscopy",
             description: "SEM/TEM operation, diffraction, imaging, and microstructure analysis"
           }
