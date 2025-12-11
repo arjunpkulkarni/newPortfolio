@@ -197,10 +197,7 @@ export default function HomePage() {
                 <div className="space-y-4 text-base leading-relaxed">
                   <p>
                     I believe the future belongs to engineers who can move between AI, systems, and real user problems without friction.
-                  </p>
-                  <p>
-                    Whether it&apos;s cutting latency by 30% for e-commerce search, building clinical-grade AI for hospitals, or optimizing autonomous vehicle routing — I build systems that solve real problems at scale.
-                  </p>
+                  </p>                  
                   <p className="font-semibold text-lg">
                     Let&apos;s build something meaningful together.
                   </p>
@@ -210,24 +207,7 @@ export default function HomePage() {
 
             {/* Latest Writing & Contact Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 not-prose">
-              <BlurFade delay={BLUR_FADE_DELAY * 2.4} blur="12px">
-                <section>
-                  <h2 className="text-3xl font-bold mb-6 pb-3 border-b-2">Latest Work</h2>
-                  <Link href="/projects" className="block group">
-                    <ul className="space-y-4">
-                      <li className="group-hover:translate-x-1 transition-transform">
-                        <span className="font-semibold text-base block mb-1 group-hover:text-primary">Training ML on 170k Songs</span>
-                        <p className="text-sm text-muted-foreground">Real-time DJ recommendations with AWS Sagemaker</p>
-                      </li>
-                      <li className="group-hover:translate-x-1 transition-transform">
-                        <span className="font-semibold text-base block mb-1 group-hover:text-primary">Redis Latency Optimization</span>
-                        <p className="text-sm text-muted-foreground">How I cut p95 latency by 30%</p>
-                      </li>
-                    </ul>
-                    <p className="text-sm text-primary mt-4 font-medium group-hover:underline">View all work →</p>
-                  </Link>
-                </section>
-              </BlurFade>
+              
               
               <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
                 <section>

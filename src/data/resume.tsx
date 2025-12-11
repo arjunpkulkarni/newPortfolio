@@ -438,190 +438,201 @@ export const DATA = {
       start: "Sep 2022",
       end: "May 2026",
       classes: {
-        "Computer Science": [
-          {
-            code: "CS412",
-            name: "Data Mining",
-            description: "Advanced data mining techniques and applications"
-          },
-          {
-            code: "CS225",
-            name: "Data Structures",
-            description: "Implementation and analysis of fundamental data structures"
-          },
-          {
-            code: "CS416",
-            name: "Data Visualization",
-            description: "Principles and techniques of data visualization"
-          },
-          {
-            code: "CS411",
-            name: "Database Systems",
-            description: "Design and implementation of database systems"
-          },
-          {
-            code: "CS173",
-            name: "Discrete Structures",
-            description: "Mathematical foundations of computer science"
-          },
-          {
-            code: "CS128",
-            name: "Introduction to C++",
-            description: "Object-oriented programming with C++"
-          },
-          {
-            code: "CS124",
-            name: "Java Programming",
-            description: "Object-oriented programming with Java"
-          },
-          {
-            code: "CS441",
-            name: "Applied Machine Learning",
-            description: "Application of machine learning techniques and algorithms"
-          }
-        ],
-        "Mathematics": [
-          {
-            code: "MATH221",
-            name: "Differential Calculus",
-            description: "Single-variable calculus and applications"
-          },
-          {
-            code: "MATH285",
-            name: "Differential Equations",
-            description: "Ordinary differential equations and applications"
-          },
-          {
-            code: "MATH231",
-            name: "Integral Calculus",
-            description: "Integration techniques and applications"
-          },
-          {
-            code: "MATH257",
-            name: "Linear Algebra w/ Python",
-            description: "Linear algebra concepts with computational applications"
-          },
-          {
-            code: "MATH241",
-            name: "Multivariable Calculus",
-            description: "Calculus of several variables"
-          },
-          {
-            code: "STAT400",
-            name: "Statistics and Probability I",
-            description: "Probability theory and statistical inference"
-          }
-        ],
-        "Materials Science & Engineering": [
-          {
-            code: "MSE402",
-            name: "Kinetic Processes in Materials",
-            description: "Study of kinetic processes in materials systems"
-          },
-          {
-            code: "MSE308",
-            name: "Materials Lab II",
-            description: "Advanced materials characterization and analysis"
-          },
-          {
-            code: "MSE307",
-            name: "Materials Laboratory I",
-            description: "Introduction to materials characterization techniques"
-          },
-          {
-            code: "MSE206",
-            name: "Mechanics of Materials",
-            description: "Mechanical behavior of materials"
-          },
-          {
-            code: "MSE405",
-            name: "Microstructure Determination",
-            description: "Analysis of material microstructures"
-          },
-          {
-            code: "MSE201",
-            name: "Phase and Phase Diagrams",
-            description: "Phase equilibria and transformations in materials"
-          },
-          {
-            code: "MSE406",
-            name: "Thermal Mechanics of Materials",
-            description: "Thermal properties and mechanical behavior"
-          },
-          {
-            code: "MSE401",
-            name: "Thermodynamics of Materials",
-            description: "Thermodynamic principles in materials science"
-          },
-          {
-            code: "MSE485",
-            name: "Atomic Scale Simulations",
-            description: "Simulation methods at the atomic scale in materials science"
-          },
-          {
-            code: "MSE404",
-            name: "Computational MSE - Macroscale",
-            description: "Computational modeling techniques for macroscale materials"
-          },
-          {
-            code: "MSE494",
-            name: "Materials Design Thinking",
-            description: "Design thinking approaches in materials engineering"
-          },
-          {
-            code: "MSE404",
-            name: "Thin Film Mechanical Properties",
-            description: "Mechanical properties of thin film materials"
-          } // hello
-          ,
-          {
-            code: "MSE304",
-            name: "Electronic Properties of Materials",
-            description: "Band structure, carriers, transport, and semiconductor device fundamentals"
-          },
-          {
-            code: "MSE441",
-            name: "Metals Processing",
-            description: "Solidification, forming, heat treatment, and microstructure control in metals"
-          },
-          {
-            code: "MSE495",
-            name: "Materials Design",
-            description: "Principles and practice of materials selection and performance-driven design"
-          },
-          {
-            code: "MSE481",
-            name: "Electron Microscopy",
-            description: "SEM/TEM operation, diffraction, imaging, and microstructure analysis"
-          }
-        ],
-        "Electrical Engineering": [
-          {
-            code: "ECE205",
-            name: "Electronic and Electrical Circuits",
-            description: "Analysis and design of electronic circuits"
-          },
-          {
-            code: "ECE340",
-            name: "Semiconductor Electronics",
-            description: "Physics and design of semiconductor electronic devices"
-          },
-          {
-            code: "ECE405",
-            name: "Quantum Systems II",
-            description: "Advanced concepts in quantum systems for electrical engineering"
-          },
-          {
-            code: "ECE404",
-            name: "Quantum Materials",
-            description: "Quantum phenomena in materials and implications for devices"
-          },
-          {
-            code: "ECE404",
-            name: "Quantum States",
-            description: "Quantum state mechanics, measurement, and applications"
-          }
-        ]
+        "Computer Science": {
+          "100-level": [
+            {
+              code: "CS128",
+              name: "Introduction to C++",
+              description: "Object-oriented programming with C++"
+            },
+            {
+              code: "CS124",
+              name: "Java Programming",
+              description: "Object-oriented programming with Java"
+            },
+            {
+              code: "CS173",
+              name: "Discrete Structures",
+              description: "Mathematical foundations of computer science"
+            }
+          ],
+          "200-level": [
+            {
+              code: "CS225",
+              name: "Data Structures",
+              description: "Implementation and analysis of fundamental data structures"
+            }
+          ],
+          "400-level": [
+            {
+              code: "CS412",
+              name: "Data Mining",
+              description: "Advanced data mining techniques and applications"
+            },
+            {
+              code: "CS416",
+              name: "Data Visualization",
+              description: "Principles and techniques of data visualization"
+            },
+            {
+              code: "CS411",
+              name: "Database Systems",
+              description: "Design and implementation of database systems"
+            },
+            {
+              code: "CS441",
+              name: "Applied Machine Learning",
+              description: "Application of machine learning techniques and algorithms"
+            }
+          ]
+        },
+        "Mathematics": {
+          "200-level": [
+            {
+              code: "MATH221",
+              name: "Differential Calculus",
+              description: "Single-variable calculus and applications"
+            },
+            {
+              code: "MATH285",
+              name: "Differential Equations",
+              description: "Ordinary differential equations and applications"
+            },
+            {
+              code: "MATH231",
+              name: "Integral Calculus",
+              description: "Integration techniques and applications"
+            },
+            {
+              code: "MATH257",
+              name: "Linear Algebra w/ Python",
+              description: "Linear algebra concepts with computational applications"
+            },
+            {
+              code: "MATH241",
+              name: "Multivariable Calculus",
+              description: "Calculus of several variables"
+            }
+          ],
+          "400-level": [
+            {
+              code: "STAT400",
+              name: "Statistics and Probability I",
+              description: "Probability theory and statistical inference"
+            }
+          ]
+        },
+        "Materials Science & Engineering": {
+          "200-level": [
+            {
+              code: "MSE206",
+              name: "Mechanics of Materials",
+              description: "Mechanical behavior of materials"
+            },
+            {
+              code: "MSE201",
+              name: "Phase and Phase Diagrams",
+              description: "Phase equilibria and transformations in materials"
+            }
+          ],
+          "300-level": [
+            {
+              code: "MSE308",
+              name: "Materials Lab II",
+              description: "Advanced materials characterization and analysis"
+            },
+            {
+              code: "MSE307",
+              name: "Materials Laboratory I",
+              description: "Introduction to materials characterization techniques"
+            },
+            {
+              code: "MSE304",
+              name: "Electronic Properties of Materials",
+              description: "Band structure, carriers, transport, and semiconductor device fundamentals"
+            }
+          ],
+          "400-level": [
+            {
+              code: "MSE402",
+              name: "Kinetic Processes in Materials",
+              description: "Study of kinetic processes in materials systems"
+            },
+            {
+              code: "MSE405",
+              name: "Microstructure Determination",
+              description: "Analysis of material microstructures"
+            },
+            {
+              code: "MSE406",
+              name: "Thermal Mechanics of Materials",
+              description: "Thermal properties and mechanical behavior"
+            },
+            {
+              code: "MSE401",
+              name: "Thermodynamics of Materials",
+              description: "Thermodynamic principles in materials science"
+            },
+            {
+              code: "MSE485",
+              name: "Atomic Scale Simulations",
+              description: "Simulation methods at the atomic scale in materials science"
+            },
+            {
+              code: "MSE404",
+              name: "Computational MSE - Macroscale",
+              description: "Computational modeling techniques for macroscale materials"
+            },
+            {
+              code: "MSE494",
+              name: "Materials Design Thinking",
+              description: "Design thinking approaches in materials engineering"
+            },
+            {
+              code: "MSE441",
+              name: "Metals Processing",
+              description: "Solidification, forming, heat treatment, and microstructure control in metals"
+            },
+            {
+              code: "MSE495",
+              name: "Materials Design",
+              description: "Principles and practice of materials selection and performance-driven design"
+            },
+            {
+              code: "MSE481",
+              name: "Electron Microscopy",
+              description: "SEM/TEM operation, diffraction, imaging, and microstructure analysis"
+            }
+          ]
+        },
+        "Electrical Engineering": {
+          "200-level": [
+            {
+              code: "ECE205",
+              name: "Electronic and Electrical Circuits",
+              description: "Analysis and design of electronic circuits"
+            }
+          ],
+          "300-level": [
+            {
+              code: "ECE340",
+              name: "Semiconductor Electronics",
+              description: "Physics and design of semiconductor electronic devices"
+            }
+          ],
+          "400-level": [
+            {
+              code: "ECE405",
+              name: "Quantum Systems II",
+              description: "Advanced concepts in quantum systems for electrical engineering"
+            },
+            {
+              code: "ECE404",
+              name: "Quantum Materials",
+              description: "Quantum phenomena in materials and implications for devices"
+            }
+          ]
+        }
       }
     },
   ],
@@ -690,7 +701,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: rydberg,
+      image: "",
       logo: "",
       video: "",
     },
@@ -709,7 +720,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: Purchasing,
+      image: "",
       logo: "",
       video: "",
     },
@@ -728,11 +739,10 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: KitGen,
+      image: "",
       logo: "",
       video: "",
     },
-    
     {
       title: "Scaling NIL Marketplace for College Athletes with Payment Processing",
       href: "https://www.openfield.live/",
@@ -748,7 +758,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: OpenField,
+      image: "",
       logo: "",
       video: "",
     },
@@ -767,7 +777,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: hanger,
+      image: "",
       logo: "",
       video: "",
     },
@@ -786,8 +796,8 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: FitCheck,
-      logo: fitcheckLogo,
+      image: "",
+      logo: "",
       video: "",
     },
     {
@@ -805,8 +815,8 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: LumeLabs,
-      logo: lumeLogo,
+      image: "",
+      logo: "",
       video: "",
     },
     {
@@ -824,7 +834,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: DJDoc,
+      image: "",
       logo: "",
       video: "",
     },
@@ -843,7 +853,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: QuantDesk,
+      image: "",
       logo: "",
       video: "",
     },
@@ -862,7 +872,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: StockLock,
+      image: "",
       logo: "",
       video: "",
     },
@@ -881,11 +891,10 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: StockLock,  // Using StockLock image as placeholder
+      image: "",
       logo: "",
       video: "",
     },
-    
     {
       title: "Optimizing Chip Layout with Reinforcement Learning for AMD",
       href: "https://drive.google.com/file/d/1cIw9EgpeKyzAbVeZG6P2DU4ySmb0g2T8/view",
@@ -901,7 +910,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: AMD,
+      image: "",
       logo: "",
       video: "",
     },
@@ -920,11 +929,10 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: EVInsight,
+      image: "",
       logo: "",
       video: "",
     },    
-    
     {
       title: "Generating Music Patterns with RNNs Trained on MIDI Data",
       href: "https://loophaus1.lovable.app/",
@@ -940,7 +948,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: Loophaus,
+      image: "",
       logo: "",
       video: "",
     },
@@ -959,7 +967,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: RealRoll,
+      image: "",
       logo: "",
       video: "",
     },
@@ -978,8 +986,8 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
-      image: psych,
-      logo: "/placeholder-logo.png",
+      image: "",
+      logo: "",
       video: "",
     },
     {
@@ -997,7 +1005,7 @@ export const DATA = {
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: Materials,
+      image: "",
       logo: "",
       video: "",
     },

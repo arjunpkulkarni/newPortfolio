@@ -18,7 +18,7 @@ export default function NotebookPage() {
     "ML & AI": DATA.projects.filter(p => 
       p.title.includes("ML") || p.title.includes("AI-Powered") || p.title.includes("Training") || 
       p.title.includes("NLP") || p.title.includes("CNN") || p.title.includes("RNNs") || 
-      p.title.includes("Reinforcement Learning")
+      p.title.includes("Reinforcement Learning") || p.title.includes("Generating Music")
     ),
     "Full-Stack Apps": DATA.projects.filter(p => 
       p.title.includes("Scaling") || p.title.includes("Building Real-Time") || 
@@ -26,7 +26,7 @@ export default function NotebookPage() {
     ),
     "Search & Retrieval": DATA.projects.filter(p => 
       p.title.includes("Semantic Search") || p.title.includes("Image Search") || 
-      p.title.includes("Vector Embeddings")
+      p.title.includes("Vector Embeddings") || p.title.includes("CLIP")
     ),
     "Data & Visualization": DATA.projects.filter(p => 
       p.title.includes("Dashboard") || p.title.includes("Analyzing") || 
@@ -35,6 +35,9 @@ export default function NotebookPage() {
     "Research & Quantum": DATA.projects.filter(p => 
       p.title.includes("Quantum") || p.title.includes("GHZ") || 
       p.title.includes("Chip Layout")
+    ),
+    "Systems & Infrastructure": DATA.projects.filter(p => 
+      p.title.includes("High-Performance") || p.title.includes("Crypto Trading")
     ),
   };
 

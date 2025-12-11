@@ -1,14 +1,120 @@
+"use client";
+
+import { useState } from "react";
 import BlurFade from "@/components/magicui/blur-fade";
 import { ResumeCard } from "@/components/resume-card";
 import { DATA } from "@/data/resume";
 import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { GraduationCap, Code2, Calculator, Microscope, Cpu } from "lucide-react";
+import { Code2, Calculator, Microscope, Cpu } from "lucide-react";
+import Image from "next/image";
 
 const BLUR_FADE_DELAY = 0.04;
 
+const subjectIcons: Record<string, any> = {
+  "Computer Science": Code2,
+  "Mathematics": Calculator,
+  "Materials Science & Engineering": Microscope,
+  "Electrical Engineering": Cpu,
+};
+
+const subjectShortNames: Record<string, string> = {
+  "Computer Science": "CS",
+  "Mathematics": "Math",
+  "Materials Science & Engineering": "MSE",
+  "Electrical Engineering": "ECE",
+};
+
+function CertificationsCarousel({ certifications }: { certifications: readonly any[] }) {
+  // Duplicate certifications for seamless infinite loop
+  const duplicatedCerts = [...certifications, ...certifications];
+
+  return (
+    <div className="relative w-full overflow-hidden py-4">
+      {/* Infinite scrolling container */}
+      <div className="flex gap-6 animate-scroll">
+        {duplicatedCerts.map((cert, index) => (
+          <div
+            key={`${cert.name}-${index}`}
+            className="flex-shrink-0 w-80"
+          >
+            <Card className="p-6 flex flex-col items-center text-center h-full hover:shadow-lg transition-all duration-300 hover:scale-105">
+              <div className="relative w-20 h-20 mb-4 flex items-center justify-center">
+                <Image
+                  src={cert.logoUrl}
+                  alt={cert.issuer}
+                  width={80}
+                  height={80}
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="font-semibold text-base mb-1">{cert.name}</h3>
+              <p className="text-sm text-muted-foreground mb-1">{cert.issuer}</p>
+              <p className="text-xs text-muted-foreground">{cert.date}</p>
+            </Card>
+          </div>
+        ))}
+      </div>
+
+      {/* Gradient overlays for smooth edges */}
+      <div className="absolute top-0 left-0 bottom-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
+      <div className="absolute top-0 right-0 bottom-0 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
+
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+
+        .animate-scroll {
+          animation: scroll 30s linear infinite;
+        }
+
+        .animate-scroll:hover {
+          animation-play-state: paused;
+        }
+      `}</style>
+    </div>
+  );
+}
+
 export default function EducationPage() {
+  const classes = DATA.education[0].classes || {};
+  const subjects = Object.keys(classes);
+
+  // Get all unique levels across all subjects
+  const allLevels = Array.from(
+    new Set(
+      subjects.flatMap(subject => Object.keys(classes[subject as keyof typeof classes]))
+    )
+  ).sort();
+
+  const [selectedSubject, setSelectedSubject] = useState<string>(subjects[0] || "");
+  const [selectedLevel, setSelectedLevel] = useState<string>("all");
+
+  // Get courses based on selected filters
+  const getFilteredCourses = () => {
+    if (!selectedSubject) return [];
+
+    const subjectData = classes[selectedSubject as keyof typeof classes];
+    if (!subjectData) return [];
+
+    if (selectedLevel === "all") {
+      return Object.entries(subjectData).flatMap(([level, courses]) =>
+        courses.map((course: any) => ({ ...course, level }))
+      );
+    }
+
+    const levelCourses = subjectData[selectedLevel as keyof typeof subjectData];
+    return levelCourses ? levelCourses.map((course: any) => ({ ...course, level: selectedLevel })) : [];
+  };
+
+  const filteredCourses = getFilteredCourses();
+
   return (
     <main className="container mx-auto px-4 py-8 max-w-7xl">
       <section id="education" className="w-full">
@@ -46,65 +152,141 @@ export default function EducationPage() {
             <p className="text-sm text-muted-foreground">Relevant academic courses across disciplines.</p>
           </div>
         </BlurFade>
-        <div className="flex min-h-0 flex-col gap-y-3">
-          
-          <Tabs defaultValue="Computer Science" className="w-full">
-            <BlurFade delay={BLUR_FADE_DELAY * 9.5}>
-              <TabsList className="grid w-full grid-cols-4 mb-4">
-                <TabsTrigger value="Computer Science" className="flex items-center gap-2">
-                  <Code2 className="h-4 w-4" />
-                  <span className="hidden sm:inline">Computer Science</span>
-                </TabsTrigger>
-                <TabsTrigger value="Mathematics" className="flex items-center gap-2">
-                  <Calculator className="h-4 w-4" />
-                  <span className="hidden sm:inline">Mathematics</span>
-                </TabsTrigger>
-                <TabsTrigger value="Materials Science & Engineering" className="flex items-center gap-2">
-                  <Microscope className="h-4 w-4" />
-                  <span className="hidden sm:inline">Materials Science</span>
-                </TabsTrigger>
-                <TabsTrigger value="Electrical Engineering" className="flex items-center gap-2">
-                  <Cpu className="h-4 w-4" />
-                  <span className="hidden sm:inline">Electrical</span>
-                </TabsTrigger>
-              </TabsList>
-            </BlurFade>
 
-            {DATA.education[0].classes && Object.entries(DATA.education[0].classes).map(([category, courses]) => (
-              <TabsContent key={category} value={category}>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {courses.map((course, courseIndex) => (
-                    <BlurFade
-                      key={course.code}
-                      delay={BLUR_FADE_DELAY * (10 + courseIndex * 0.05)}
+        {/* Filter Bars Container */}
+        <BlurFade delay={BLUR_FADE_DELAY * 9.5}>
+          <div className="w-full mb-5">
+            <div className="flex flex-col gap-2">
+              {/* Subject Filter Bar */}
+              <div className="inline-flex flex-wrap gap-2">
+                {subjects.map((subject) => {
+                  const Icon = subjectIcons[subject];
+                  const selected = selectedSubject === subject;
+
+                  return (
+                    <button
+                      key={subject}
+                      onClick={() => setSelectedSubject(subject)}
+                      className={`
+                        inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-md
+                        transition-all duration-200 border
+                        ${selected
+                          ? "bg-primary text-primary-foreground border-primary"
+                          : "border-border hover:bg-accent"
+                        }
+                      `}
                     >
-                      <Card className="p-4 hover:shadow-lg transition-shadow duration-200">
-                        <div className="flex justify-between items-start mb-2">
-                          <div>
-                            <h3 className="font-semibold text-lg">{course.name}</h3>
-                            <p className="text-sm text-muted-foreground">{course.code}</p>
-                          </div>
-                          <Badge variant="secondary" className="ml-2">
-                            {category}
-                          </Badge>
-                        </div>
-                        <p className="text-sm text-muted-foreground mt-2">
-                          {course.description}
-                        </p>
-                      </Card>
-                    </BlurFade>
-                  ))}
+                      <Icon className="h-3.5 w-3.5" />
+                      <span className="hidden sm:inline">{subject}</span>
+                      <span className="sm:hidden">{subjectShortNames[subject]}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Level Filter Bar */}
+              <div className="inline-flex flex-wrap gap-2">
+                <button
+                  onClick={() => setSelectedLevel("all")}
+                  className={`
+                    px-3 py-1 text-xs font-medium rounded-md transition-all duration-200 border
+                    ${selectedLevel === "all"
+                      ? "bg-primary text-primary-foreground border-primary"
+                      : "border-border hover:bg-accent"
+                    }
+                  `}
+                >
+                  All Levels
+                </button>
+
+                {allLevels.map((level) => {
+                  const subjectData = classes[selectedSubject as keyof typeof classes];
+                  if (!subjectData?.[level as keyof typeof subjectData]) return null;
+
+                  return (
+                    <button
+                      key={level}
+                      onClick={() => setSelectedLevel(level)}
+                      className={`
+                        px-3 py-1 capitalize text-xs font-medium rounded-md
+                        transition-all duration-200 border
+                        ${selectedLevel === level
+                          ? "bg-primary text-primary-foreground border-primary"
+                          : "border-border hover:bg-accent"
+                        }
+                      `}
+                    >
+                      {level}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </BlurFade>
+
+        {/* Courses Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filteredCourses.map((course: any, index: number) => (
+            <div
+              key={course.code}
+              className="animate-fadeIn"
+              style={{
+                animationDelay: `${index * 30}ms`,
+                animationFillMode: 'backwards'
+              }}
+            >
+              <Card className="p-4 h-full hover:shadow-lg transition-all duration-300">
+                <div className="flex justify-between items-start mb-2">
+                  <div>
+                    <h3 className="font-semibold text-base">{course.name}</h3>
+                    <p className="text-xs text-muted-foreground">{course.code}</p>
+                  </div>
+                  <Badge variant="secondary" className="ml-2 text-xs capitalize">
+                    {course.level}
+                  </Badge>
                 </div>
-              </TabsContent>
-            ))}
-          </Tabs>
+                <p className="text-xs text-muted-foreground mt-2">
+                  {course.description}
+                </p>
+              </Card>
+            </div>
+          ))}
         </div>
       </section>
+
+      <style jsx>{`
+        @keyframes slideIn {
+          from {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(10px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fadeIn {
+          animation: fadeIn 0.4s ease-out;
+        }
+      `}</style>
 
       {/* Skills Section */}
       <section id="skills" className="w-full max-w-7xl mt-8">
         <div className="flex min-h-0 flex-col gap-y-3">
-          
+
           {Object.entries(DATA.skills).map(([category, skills], categoryIndex) => (
             <div key={category} className="mb-4">
               <BlurFade delay={BLUR_FADE_DELAY * (10 + categoryIndex * 0.5)}>
@@ -136,23 +318,7 @@ export default function EducationPage() {
             <p className="text-sm text-muted-foreground">Professional certifications and achievements.</p>
           </div>
         </BlurFade>
-        <div className="flex min-h-0 flex-col gap-y-3">
-          {DATA.certifications.map((certification, id) => (
-            <BlurFade
-              key={certification.name}
-              delay={BLUR_FADE_DELAY * 12 + id * 0.05}
-            >
-              <ResumeCard
-                key={certification.name}
-                altText={certification.name}
-                logoUrl={certification.logoUrl}
-                title={certification.name}
-                subtitle={certification.issuer}
-                period={certification.date}
-              />
-            </BlurFade>
-          ))}
-        </div>
+        <CertificationsCarousel certifications={DATA.certifications} />
       </section>
     </main>
   );
