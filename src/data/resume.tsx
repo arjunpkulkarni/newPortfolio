@@ -767,16 +767,16 @@ export const DATA = {
     },
     {
       title: "Building Semantic Search for E-Commerce with Vector Embeddings",
-      href: "",
+      href: "/projects/building-semantic-search-for-e-commerce-with-vector-embeddings",
       dates: "2024",
       active: true,
       description:
         "Implemented semantic product search using Pinecone vector DB + OpenAI embeddings to replace keyword-based search. Improved product discovery CTR by 40% by enabling natural language queries like 'sustainable winter jacket under $100'.",
-      technologies: ["Pinecone", "OpenAI Embeddings", "Next.js", "Python", "Vector Search"],
+      technologies: ["Pinecone", "OpenAI Embeddings", "Next.js", "Python", "Vector Search", "TypeScript", "Redis", "PostgreSQL"],
       links: [
         {
-          type: "Live Demo",
-          href: "#",
+          type: "Live Platform",
+          href: "https://www.siramai.com/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
@@ -890,11 +890,7 @@ export const DATA = {
         "Built high-frequency trading engine in C++ with sub-millisecond order execution (18.5μs latency), options strategies (covered calls, straddles), and backtesting. Achieved 54k orders/second throughput with StreamLit dashboard for real-time portfolio analytics and market data visualization.",
       technologies: ["C++17", "Multi-threading", "STL", "Python", "StreamLit", "Options Trading", "Docker"],
       links: [
-        {
-          type: "Technical Deep Dive",
-          href: "/projects/building-high-performance-crypto-trading-engine-in-cpp",
-          icon: <Icons.globe className="size-3" />,
-        },
+
         {
           type: "Article",
           href: "https://medium.com/@arjunpkulkarni/crypto-trading-platform-in-c-a5e2baf62aba",
@@ -971,13 +967,14 @@ export const DATA = {
     },
     {
       title: "Building Image Search Engine with CLIP Embeddings + FAISS",
-      href: "https://realroll.com",
+      href: "/projects/building-image-search-engine-with-clip-embeddings--faiss",
       dates: "2024",
       active: true,
       description:
         "Indexed 100k+ images using CLIP embeddings and FAISS vector search, enabling semantic queries like 'sunset over mountains'. Deployed on AWS with <200ms latency. Implemented approximate nearest neighbor search for sub-linear query time.",
-      technologies: ["CLIP", "FAISS", "Python", "Vector Search", "AWS", "React"],
+      technologies: ["CLIP", "FAISS", "Python", "Vector Search", "AWS", "React", "PyTorch", "Lambda"],
       links: [
+
         {
           type: "Live Demo",
           href: "https://realroll.com",
