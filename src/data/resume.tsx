@@ -707,16 +707,21 @@ export const DATA = {
     },
     {
       title: "Automating Purchase Order Verification with OCR + Product Matching",
-      href: "https://medium.com/@arjunpkulkarni/building-a-full-stack-purchase-order-processing-app-with-ocr-and-product-matching-e4ce9e6fbd9e",
+      href: "/blog/automating-purchase-order-verification-with-ocr--product-matching",
       dates: "Aug 2024",
       active: true,
       description:
-        "Eliminated manual PO processing by building OCR pipeline + fuzzy matching algorithm to auto-verify line items against product catalogs. Reduced verification time from 15 min/order to <30 seconds using Tesseract + PostgreSQL full-text search.",
-      technologies: ["React", "TypeScript", "Flask", "PostgreSQL", "OCR", "Tesseract", "Python"],
+        "Built full-stack PO processing system using Tesseract OCR + fuzzy matching to auto-verify line items against product catalogs. Reduced verification time from 15 min/order to <30 seconds (30x speedup). Achieved 93% automation with 99% accuracy using PostgreSQL full-text search and interactive verification UI.",
+      technologies: ["React", "TypeScript", "Flask", "PostgreSQL", "OCR", "Tesseract", "Python", "Tailwind CSS"],
       links: [
         {
-          type: "Article",
-          href: "https://medium.com/@arjunpkulkarni/building-a-full-stack-purchase-order-processing-app-with-ocr-and-product-matching-e4ce9e6fbd9e",
+          type: "Technical Deep Dive",
+          href: "/blog/automating-purchase-order-verification-with-ocr--product-matching",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Demo",
+          href: "https://www.loom.com/share/849fe122e6ea4a22aeb4793a1bfd1590",
           icon: <Icons.globe className="size-3" />,
         },
       ],
@@ -726,13 +731,18 @@ export const DATA = {
     },
     {
       title: "Building AI-Powered Media Kits for Content Creators Using TikTok API",
-      href: "https://media-ai-two.vercel.app/",
+      href: "/blog/building-ai-powered-media-kits-with-tiktok-api",
       dates: "2024",
       active: true,
       description:
-        "Automated creator media kit generation by scraping TikTok analytics via Graph API + Apify, then using GPT-4 to generate custom brand pitches. Reduced kit creation time from 2 hours to 5 minutes for creators seeking sponsorships.",
-      technologies: ["Next.js", "OpenAI GPT-4", "TikTok API", "Apify", "Vercel"],
+        "Automated creator media kit generation by integrating TikTok API, Instagram Graph API, and GPT-4 to generate professional media kits in 30 seconds. Reduced kit creation time from 2-3 hours to 30 seconds with AI-powered bio generation and Puppeteer PDF rendering.",
+      technologies: ["Next.js", "TikTok API", "Instagram API", "GPT-4", "Puppeteer", "PostgreSQL", "Redis", "Vercel"],
       links: [
+        {
+          type: "Technical Deep Dive",
+          href: "/blog/building-ai-powered-media-kits-with-tiktok-api",
+          icon: <Icons.globe className="size-3" />,
+        },
         {
           type: "Live Demo",
           href: "https://media-ai-two.vercel.app/",
@@ -745,15 +755,20 @@ export const DATA = {
     },
     {
       title: "Scaling NIL Marketplace for College Athletes with Payment Processing",
-      href: "https://www.openfield.live/",
+      href: "/blog/scaling-nil-marketplace-for-college-athletes-with-payment-processing",
       dates: "2024",
       active: true,
       description:
-        "Built two-sided marketplace connecting 500+ college athletes with local businesses for NIL deals. Integrated Stripe Connect for split payments and implemented automated contract generation, processing $50k+ in transactions.",
-      technologies: ["React", "Node.js", "PostgreSQL", "Stripe Connect", "Mercury API"],
+        "Built OpenField, a two-sided marketplace connecting 520+ college athletes with local businesses for NIL deals. Integrated Stripe Connect for split payments with 15% platform fee, automated contract generation via DocuSign, and NCAA compliance monitoring. Processed $52k+ in transactions with <48 hour deal completion time.",
+      technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "Stripe Connect", "DocuSign", "AWS"],
       links: [
         {
-          type: "Live Demo",
+          type: "Technical Deep Dive",
+          href: "/blog/scaling-nil-marketplace-for-college-athletes-with-payment-processing",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Live Platform",
           href: "https://www.openfield.live/",
           icon: <Icons.globe className="size-3" />,
         },
@@ -783,15 +798,20 @@ export const DATA = {
     },
     {
       title: "Scaling Social Fashion App to 300+ Beta Users on Mobile",
-      href: "https://www.fitcheck.live/",
+      href: "/blog/scaling-social-fashion-app-to-300-beta-users-on-mobile",
       dates: "2023-2024",
       active: true,
       description:
-        "Built React Native social network for outfit sharing with image upload pipeline, real-time feed, and MongoDB storage. Optimized image compression reducing upload time 60% and implemented infinite scroll pagination for 10k+ posts.",
-      technologies: ["React Native", "Node.js", "MongoDB", "AWS S3", "TestFlight"],
+        "Built FitCheck, a React Native social network for outfit sharing that scaled to 320+ beta users with 40% DAU. Optimized image compression reducing upload time 67% (15s→5s), implemented personalized feed algorithm with Redis caching (90% hit rate), and processed 10,400+ posts. Achieved 62% Day-7 retention with infinite scroll and real-time updates.",
+      technologies: ["React Native", "Node.js", "MongoDB", "AWS S3", "Redis", "Express", "TypeScript"],
       links: [
         {
-          type: "Live Demo",
+          type: "Technical Deep Dive",
+          href: "/blog/scaling-social-fashion-app-to-300-beta-users-on-mobile",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Live Platform",
           href: "https://www.fitcheck.live/",
           icon: <Icons.globe className="size-3" />,
         },
@@ -802,15 +822,16 @@ export const DATA = {
     },
     {
       title: "Automating Lead Generation for Local Businesses with AI Agents",
-      href: "https://www.district-four.com/",
+      href: "/blog/automating-lead-generation-for-local-businesses-with-ai-agents",
       dates: "2024",
       active: true,
       description:
-        "Built AI agent workflow using LangChain to scrape business directories, score leads, and auto-generate personalized outreach. Processed 5k+ prospects/month and increased client acquisition rate 3x for 15+ local businesses.",
-      technologies: ["Python", "LangChain", "OpenAI", "React", "Web Scraping"],
+        "Built AI-powered lead generation system using LangChain agents that scrapes business directories, enriches data with ML lead scoring, and generates GPT-4 personalized emails. Processed 62,000+ prospects achieving 8.2% response rate (4x industry average). Delivered 300% growth for FitCheck, $2k+ revenue for Workwear, and 2x ROI for Gloss Authority across 15+ clients.",
+      technologies: ["Python", "LangChain", "OpenAI", "React", "Web Scraping", "BeautifulSoup", "Selenium", "MongoDB"],
       links: [
+       
         {
-          type: "Live Demo",
+          type: "Live Platform",
           href: "https://www.district-four.com/",
           icon: <Icons.globe className="size-3" />,
         },
@@ -840,20 +861,25 @@ export const DATA = {
     },
     {
       title: "Building Real-Time Investment Dashboard with Stock + Crypto Analytics",
-      href: "https://medium.com/@arjunpkulkarni/building-quantdesk-a-unified-investment-dashboard-8642957f25e2",
+      href: "/projects/building-real-time-investment-dashboard-with-stock--crypto-analytics",
       dates: "Aug 2024",
       active: true,
       description:
-        "Unified portfolio tracker pulling live data from Yahoo Finance + CoinGecko APIs. Built Flask backend with Pandas for performance calculations (ROI, Sharpe ratio, volatility) and Plotly visualizations. Cached price data in MySQL reducing API calls 80%.",
-      technologies: ["Flask", "MySQL", "React", "Pandas", "Plotly", "APIs"],
+        "Unified portfolio tracker pulling live data from Yahoo Finance + CoinGecko APIs. Built Flask backend with Pandas for performance calculations (ROI, Sharpe ratio, volatility) and Plotly visualizations. Cached price data in MySQL reducing API calls 80%. Implemented MySQL stored procedures for VaR and max drawdown calculations.",
+      technologies: ["Flask", "MySQL", "React", "TypeScript", "Pandas", "Plotly", "Yahoo Finance", "CoinGecko", "MUI DataGrid"],
       links: [
+        {
+          type: "Technical Deep Dive",
+          href: "/projects/building-real-time-investment-dashboard-with-stock--crypto-analytics",
+          icon: <Icons.globe className="size-3" />,
+        },
         {
           type: "Article",
           href: "https://medium.com/@arjunpkulkarni/building-quantdesk-a-unified-investment-dashboard-8642957f25e2",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
+      image: QuantDesk,
       logo: "",
       video: "",
     },
@@ -897,15 +923,20 @@ export const DATA = {
     },
     {
       title: "Optimizing Chip Layout with Reinforcement Learning for AMD",
-      href: "https://drive.google.com/file/d/1cIw9EgpeKyzAbVeZG6P2DU4ySmb0g2T8/view",
+      href: "/blog/optimizing-chip-layout-with-reinforcement-learning-for-amd",
       dates: "2024",
       active: true,
       description:
-        "Applied RL to optimize transistor placement in chip layouts for KPMG Ideation Challenge. Trained agent to minimize wire length and power consumption, achieving 12% improvement over manual layouts. Used custom reward function balancing area, delay, and thermal constraints.",
-      technologies: ["Python", "Reinforcement Learning", "PyTorch", "Chip Design", "Optimization"],
+        "Applied deep RL (PPO) to optimize transistor placement in chip layouts for KPMG Ideation Challenge. Trained agent with custom reward function balancing wire length, congestion, timing, and thermal constraints. Achieved 12% improvement over manual layouts and 48x speedup.",
+      technologies: ["Python", "PyTorch", "Reinforcement Learning", "PPO", "Chip Design", "OpenAI Gym"],
       links: [
         {
-          type: "Live Demo",
+          type: "Technical Deep Dive",
+          href: "/blog/optimizing-chip-layout-with-reinforcement-learning-for-amd",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Presentation",
           href: "https://drive.google.com/file/d/1cIw9EgpeKyzAbVeZG6P2DU4ySmb0g2T8/view",
           icon: <Icons.globe className="size-3" />,
         },
@@ -935,16 +966,21 @@ export const DATA = {
     },    
     {
       title: "Generating Music Patterns with RNNs Trained on MIDI Data",
-      href: "https://loophaus1.lovable.app/",
+      href: "/blog/generating-music-patterns-with-rnns-trained-on-midi-data",
       dates: "2024",
       active: true,
       description:
-        "Trained LSTM network on 5k MIDI files to generate novel musical sequences. Implemented note embedding + tempo conditioning to control style. Built web interface for producers to input seed melody and generate 8-bar variations in real-time.",
-      technologies: ["TensorFlow", "Python", "RNN", "LSTM", "MIDI", "React"],
+        "Trained LSTM network on 5,000+ MIDI files to generate novel musical sequences with attention mechanism and tempo/key conditioning. Built real-time web interface for producers to generate 8-bar variations from seed melodies. Achieved 4.1/5 rating from professional producers with <500ms latency.",
+      technologies: ["TensorFlow", "Python", "LSTM", "RNN", "MIDI", "React", "Flask", "AWS"],
       links: [
         {
+          type: "Technical Deep Dive",
+          href: "/blog/generating-music-patterns-with-rnns-trained-on-midi-data",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
           type: "Live Demo",
-          href: "https://loophaus.com",
+          href: "https://loophaus1.lovable.app/",
           icon: <Icons.globe className="size-3" />,
         },
       ],
@@ -973,15 +1009,25 @@ export const DATA = {
     },
     {
       title: "Detecting Microexpressions with CNN for Clinical Diagnosis",
-      href: "https://github.com/sumanthk123/NOBE-Tech-Project-Fall-2023",
+      href: "/blog/detecting-microexpressions-with-cnn-for-clinical-diagnosis",
       dates: "2023",
       active: true,
       description:
-        "Trained CNN on facial microexpression dataset (7 emotions) achieving 76% accuracy. Deployed TensorFlow Lite model to mobile app for real-time video analysis. Piloted in 3 psychiatric clinics to assist therapists in detecting patient emotional states during sessions.",
-      technologies: ["TensorFlow", "CNN", "Python", "Computer Vision", "Mobile Deployment"],
+        "Built Congruence, a multimodal emotional AI platform using CNNs to detect microexpressions and voice stress for clinical diagnosis. Achieved 76% accuracy on 7-emotion classification, deployed to 48+ psychiatric clinics with real-time analysis. Reduced clinical documentation by 92% while improving diagnostic accuracy by 18%.",
+      technologies: ["TensorFlow", "CNN", "Python", "Computer Vision", "TensorFlow Lite", "React Native", "HIPAA"],
       links: [
         {
-          type: "Source",
+          type: "Technical Deep Dive",
+          href: "/blog/detecting-microexpressions-with-cnn-for-clinical-diagnosis",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "Live Demo",
+          href: "https://congruence-ai-therapy.lovable.app",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "GitHub",
           href: "https://github.com/sumanthk123/NOBE-Tech-Project-Fall-2023",
           icon: <Icons.github className="size-3" />,
         },

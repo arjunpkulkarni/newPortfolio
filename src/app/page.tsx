@@ -42,7 +42,7 @@ export default function HomePage() {
               </BlurFade>
               
               {/* Name */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-4 tracking-tight">
                 {words.map((word: string, wordIndex: number) => (
                   <span key={wordIndex} className="inline-block mr-3 last:mr-0">
                     {word.split("").map((letter: string, letterIndex: number) => (
