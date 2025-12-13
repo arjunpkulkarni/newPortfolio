@@ -883,7 +883,7 @@ export const DATA = {
     },
     {
       title: "Building High-Performance Crypto Trading Engine in C++",
-      href: "https://medium.com/@arjunpkulkarni/crypto-trading-platform-in-c-a5e2baf62aba",
+      href: "/projects/building-high-performance-crypto-trading-engine-in-cpp",
       dates: "Sep 2024",
       active: true,
       description:
@@ -891,9 +891,19 @@ export const DATA = {
       technologies: ["C++17", "Multi-threading", "STL", "Python", "StreamLit", "Options Trading", "Docker"],
       links: [
         {
+          type: "Technical Deep Dive",
+          href: "/projects/building-high-performance-crypto-trading-engine-in-cpp",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
           type: "Article",
           href: "https://medium.com/@arjunpkulkarni/crypto-trading-platform-in-c-a5e2baf62aba",
           icon: <Icons.globe className="size-3" />,
+        },
+        {
+          type: "GitHub",
+          href: "https://github.com/arjunpkulkarni/Crypto-Trading-Platform",
+          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
