@@ -714,11 +714,7 @@ export const DATA = {
         "Built full-stack PO processing system using Tesseract OCR + fuzzy matching to auto-verify line items against product catalogs. Reduced verification time from 15 min/order to <30 seconds (30x speedup). Achieved 93% automation with 99% accuracy using PostgreSQL full-text search and interactive verification UI.",
       technologies: ["React", "TypeScript", "Flask", "PostgreSQL", "OCR", "Tesseract", "Python", "Tailwind CSS"],
       links: [
-        {
-          type: "Technical Deep Dive",
-          href: "/blog/automating-purchase-order-verification-with-ocr--product-matching",
-          icon: <Icons.globe className="size-3" />,
-        },
+
         {
           type: "Demo",
           href: "https://www.loom.com/share/849fe122e6ea4a22aeb4793a1bfd1590",
@@ -738,11 +734,7 @@ export const DATA = {
         "Automated creator media kit generation by integrating TikTok API, Instagram Graph API, and GPT-4 to generate professional media kits in 30 seconds. Reduced kit creation time from 2-3 hours to 30 seconds with AI-powered bio generation and Puppeteer PDF rendering.",
       technologies: ["Next.js", "TikTok API", "Instagram API", "GPT-4", "Puppeteer", "PostgreSQL", "Redis", "Vercel"],
       links: [
-        {
-          type: "Technical Deep Dive",
-          href: "/blog/building-ai-powered-media-kits-with-tiktok-api",
-          icon: <Icons.globe className="size-3" />,
-        },
+
         {
           type: "Live Demo",
           href: "https://media-ai-two.vercel.app/",
@@ -762,11 +754,7 @@ export const DATA = {
         "Built OpenField, a two-sided marketplace connecting 520+ college athletes with local businesses for NIL deals. Integrated Stripe Connect for split payments with 15% platform fee, automated contract generation via DocuSign, and NCAA compliance monitoring. Processed $52k+ in transactions with <48 hour deal completion time.",
       technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "Stripe Connect", "DocuSign", "AWS"],
       links: [
-        {
-          type: "Technical Deep Dive",
-          href: "/blog/scaling-nil-marketplace-for-college-athletes-with-payment-processing",
-          icon: <Icons.globe className="size-3" />,
-        },
+
         {
           type: "Live Platform",
           href: "https://www.openfield.live/",
@@ -805,11 +793,7 @@ export const DATA = {
         "Built FitCheck, a React Native social network for outfit sharing that scaled to 320+ beta users with 40% DAU. Optimized image compression reducing upload time 67% (15s→5s), implemented personalized feed algorithm with Redis caching (90% hit rate), and processed 10,400+ posts. Achieved 62% Day-7 retention with infinite scroll and real-time updates.",
       technologies: ["React Native", "Node.js", "MongoDB", "AWS S3", "Redis", "Express", "TypeScript"],
       links: [
-        {
-          type: "Technical Deep Dive",
-          href: "/blog/scaling-social-fashion-app-to-300-beta-users-on-mobile",
-          icon: <Icons.globe className="size-3" />,
-        },
+
         {
           type: "Live Platform",
           href: "https://www.fitcheck.live/",
@@ -869,11 +853,6 @@ export const DATA = {
       technologies: ["Flask", "MySQL", "React", "TypeScript", "Pandas", "Plotly", "Yahoo Finance", "CoinGecko", "MUI DataGrid"],
       links: [
         {
-          type: "Technical Deep Dive",
-          href: "/projects/building-real-time-investment-dashboard-with-stock--crypto-analytics",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
           type: "Article",
           href: "https://medium.com/@arjunpkulkarni/building-quantdesk-a-unified-investment-dashboard-8642957f25e2",
           icon: <Icons.globe className="size-3" />,
@@ -930,11 +909,7 @@ export const DATA = {
         "Applied deep RL (PPO) to optimize transistor placement in chip layouts for KPMG Ideation Challenge. Trained agent with custom reward function balancing wire length, congestion, timing, and thermal constraints. Achieved 12% improvement over manual layouts and 48x speedup.",
       technologies: ["Python", "PyTorch", "Reinforcement Learning", "PPO", "Chip Design", "OpenAI Gym"],
       links: [
-        {
-          type: "Technical Deep Dive",
-          href: "/blog/optimizing-chip-layout-with-reinforcement-learning-for-amd",
-          icon: <Icons.globe className="size-3" />,
-        },
+
         {
           type: "Presentation",
           href: "https://drive.google.com/file/d/1cIw9EgpeKyzAbVeZG6P2DU4ySmb0g2T8/view",
@@ -947,15 +922,16 @@ export const DATA = {
     },
     {
       title: "Analyzing 500+ EV Models with Interactive Tableau Dashboard",
-      href: "https://public.tableau.com/app/profile/arjun.kulkarni/viz/EVDASHBOARD_17507097546940/Dashboard1#2",
+      href: "/projects/analyzing-500-ev-models-with-interactive-tableau-dashboard",
       dates: "2024",
       active: true,
       description:
-        "Cleaned and normalized dataset of 500+ electric vehicles, standardizing range/battery metrics. Built Tableau dashboard with filters for price, range, brand, enabling side-by-side comparisons. Used Python for data wrangling and outlier detection.",
-      technologies: ["Tableau", "Python", "Pandas", "Data Cleaning", "Visualization"],
+        "Cleaned and normalized dataset of 500+ electric vehicles, standardizing range/battery metrics across EPA, WLTP, and NEDC standards. Built interactive Tableau dashboard with dynamic filters for price, range, brand comparisons. Implemented Python outlier detection identifying 12% data quality issues. Revealed key insights: $45k/300mi sweet spot, Korean manufacturers best value.",
+      technologies: ["Tableau", "Python", "Pandas", "NumPy", "Data Cleaning", "Statistical Analysis", "Visualization", "sklearn"],
       links: [
+
         {
-          type: "Live Demo",
+          type: "Live Dashboard",
           href: "https://public.tableau.com/app/profile/arjun.kulkarni/viz/EVDASHBOARD_17507097546940/Dashboard1#2",
           icon: <Icons.globe className="size-3" />,
         },
@@ -973,11 +949,6 @@ export const DATA = {
         "Trained LSTM network on 5,000+ MIDI files to generate novel musical sequences with attention mechanism and tempo/key conditioning. Built real-time web interface for producers to generate 8-bar variations from seed melodies. Achieved 4.1/5 rating from professional producers with <500ms latency.",
       technologies: ["TensorFlow", "Python", "LSTM", "RNN", "MIDI", "React", "Flask", "AWS"],
       links: [
-        {
-          type: "Technical Deep Dive",
-          href: "/blog/generating-music-patterns-with-rnns-trained-on-midi-data",
-          icon: <Icons.globe className="size-3" />,
-        },
         {
           type: "Live Demo",
           href: "https://loophaus1.lovable.app/",
@@ -1017,11 +988,6 @@ export const DATA = {
       technologies: ["TensorFlow", "CNN", "Python", "Computer Vision", "TensorFlow Lite", "React Native", "HIPAA"],
       links: [
         {
-          type: "Technical Deep Dive",
-          href: "/blog/detecting-microexpressions-with-cnn-for-clinical-diagnosis",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
           type: "Live Demo",
           href: "https://congruence-ai-therapy.lovable.app",
           icon: <Icons.globe className="size-3" />,
@@ -1038,12 +1004,12 @@ export const DATA = {
     },
     {
       title: "Visualizing Material Properties with Interactive D3.js Charts",
-      href: "https://arjunpkulkarni.github.io/materialsMech/",
+      href: "/projects/visualizing-material-properties-with-interactive-d3js-charts",
       dates: "2023",
       active: true,
       description:
-        "Built interactive scatter plot with D3.js visualizing strength, stiffness, density for 50+ materials (metals, ceramics, polymers). Implemented zoom, filtering, and annotations to help engineering students understand material selection trade-offs.",
-      technologies: ["D3.js", "JavaScript", "Data Visualization", "GitHub Pages"],
+        "Built interactive Ashby-style scatter plot with D3.js visualizing mechanical properties (strength, stiffness, density, cost) for 50+ materials across metals, ceramics, polymers, and composites. Implemented log-scale axes, zoom/pan, category filtering, and hover tooltips. Calculates performance indices (strength-to-weight, specific modulus) for material selection. 1,000+ student views.",
+      technologies: ["D3.js", "JavaScript", "SVG", "Data Visualization", "GitHub Pages", "HTML5", "CSS3"],
       links: [
         {
           type: "Live Demo",
