@@ -706,6 +706,44 @@ export const DATA = {
       video: "",
     },
     {
+      title: "Engineering Steel Microstructures with Computational Thermodynamics",
+      href: "https://github.com/arjunpkulkarni/thermocalc",
+      dates: "2024",
+      active: true,
+      description:
+        "Built computational tool using pycalphad for phase diagram generation and steel microstructure prediction. Designed Fe-C carbon steels and Fe-Cr-C martensitic stainless steels (Type 410) through binary and ternary phase diagram calculations. Implemented eutectic/eutectoid identification, phase fraction calculations via lever rule, and polynomial fitting for phase boundaries.",
+      technologies: ["Python", "pycalphad", "NumPy", "Matplotlib", "Computational Thermodynamics", "Materials Science"],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/arjunpkulkarni/thermocalc",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      logo: "",
+      video: "",
+    },
+    {
+      title: "DRAM Reliability Analysis Under Thermal and Mechanical Stress",
+      href: "https://github.com/arjunpkulkarni/dram-reliability-test",
+      dates: "2024",
+      active: true,
+      description:
+        "Performed computational reliability analysis of DRAM devices under thermal and mechanical stress conditions. Built Python simulation framework to model temperature fields, stress distributions, and scaling trends in semiconductor memory. Generated visualization of geometry, temperature fields, stress fields, and device scaling trends for reliability assessment.",
+      technologies: ["Python", "NumPy", "Matplotlib", "FEM", "Thermal Analysis", "Semiconductor Physics", "Materials Science"],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/arjunpkulkarni/dram-reliability-test",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      logo: "",
+      video: "",
+    },
+    {
       title: "Automating Purchase Order Verification with OCR + Product Matching",
       href: "/blog/automating-purchase-order-verification-with-ocr--product-matching",
       dates: "Aug 2024",

@@ -42,7 +42,7 @@ export default function HomePage() {
               </BlurFade>
               
               {/* Name */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-4 tracking-tight">
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal mb-4 tracking-tight">
                 {words.map((word: string, wordIndex: number) => (
                   <span key={wordIndex} className="inline-block mr-3 last:mr-0">
                     {word.split("").map((letter: string, letterIndex: number) => (
@@ -67,7 +67,7 @@ export default function HomePage() {
 
               {/* Tagline */}
               <BlurFadeText
-                className="text-lg md:text-xl font-medium mb-6 leading-relaxed text-muted-foreground"
+                className="text-lg md:text-xl font-normal mb-6 leading-relaxed text-muted-foreground"
                 delay={BLUR_FADE_DELAY * 2}
                 text="AI + full-stack engineer building real-time, user-facing intelligence systems."
               />
@@ -126,8 +126,8 @@ export default function HomePage() {
                 }}
                 className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
               >
-                <div className="flex flex-col items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
-                  <span className="text-sm text-muted-foreground font-medium">Scroll to explore</span>
+                 <div className="flex flex-col items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
+                   <span className="text-sm text-muted-foreground">Scroll to explore</span>
                   <svg
                     className="w-6 h-6 text-primary"
                     fill="none"
@@ -151,17 +151,17 @@ export default function HomePage() {
         <div className="w-full max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
           {/* Article Content */}
           <article className="prose prose-lg prose-neutral dark:prose-invert max-w-none">
-            {/* About Section */}
-            <BlurFade delay={BLUR_FADE_DELAY * 2.2} blur="12px">
-              <section className="mb-16">
-                <h2 className="text-3xl font-bold mb-6 pb-3 border-b-2">About</h2>
-                <div className="space-y-4 text-base leading-relaxed">
-                  <p>
-                    I build real-time intelligent systems — AI agents, full-stack apps, and high-velocity mobile experiences. Currently shipping features at <strong>Rumor</strong> (50k+ users), previously founding engineer at <strong>Curator.to</strong> (Intel & UpHonest backed, $1M raised).
-                  </p>
-                  <p>
-                    My work spans <strong>agentic e-commerce</strong> (2k+ daily queries, 30% latency reduction), <strong>clinical AI</strong> (UCSD Health dietician platform), and <strong>autonomous systems</strong> (RL + MPC for traffic optimization). I thrive at the intersection of AI infrastructure, systems engineering, and product.
-                  </p>
+             {/* About Section */}
+             <BlurFade delay={BLUR_FADE_DELAY * 2.2} blur="12px">
+               <section className="mb-16">
+                 <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">About</h2>
+                 <div className="space-y-4 text-base leading-relaxed">
+                   <p>
+                     I build real-time intelligent systems — AI agents, full-stack apps, and high-velocity mobile experiences. Currently shipping features at Rumor (50k+ users), previously founding engineer at Curator.to (Intel & UpHonest backed, $1M raised).
+                   </p>
+                   <p>
+                     My work spans agentic e-commerce (2k+ daily queries, 30% latency reduction), clinical AI (UCSD Health dietician platform), and autonomous systems (RL + MPC for traffic optimization). I thrive at the intersection of AI infrastructure, systems engineering, and product.
+                   </p>
                   <p>
                     Also researching nanofluidic energy harvesting at UIUC&apos;s Micro/Nano Lab — because the best software engineers understand hardware.
                   </p>
@@ -169,19 +169,19 @@ export default function HomePage() {
               </section>
             </BlurFade>
 
-            {/* What I'm Building Now Section */}
-            <BlurFade delay={BLUR_FADE_DELAY * 2.3} blur="12px">
-              <section className="mb-16">
-                <h2 className="text-3xl font-bold mb-6 pb-3 border-b-2">What I&apos;m Building Now</h2>
-                <div className="space-y-6">
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">→ Rumor mobile features</h3>
+             {/* What I'm Building Now Section */}
+             <BlurFade delay={BLUR_FADE_DELAY * 2.3} blur="12px">
+               <section className="mb-16">
+                 <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">What I&apos;m Building Now</h2>
+                 <div className="space-y-6">
+                   <div>
+                     <h3 className="text-lg font-normal mb-2">→ Rumor mobile features</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       React Native guest lists, RSVPs, and creator discovery for 50k+ event platform
                     </p>
-                  </div>                 
-                  <div>
-                    <h3 className="text-lg font-semibold mb-2">→ Nanofluidic energy systems</h3>
+                   </div>                 
+                   <div>
+                     <h3 className="text-lg font-normal mb-2">→ Nanofluidic energy systems</h3>
                     <p className="text-muted-foreground leading-relaxed">
                       CNT-enhanced semiconductors for next-gen energy harvesting
                     </p>
@@ -190,17 +190,17 @@ export default function HomePage() {
               </section>
             </BlurFade>
 
-            {/* Why I Build Section */}
-            <BlurFade delay={BLUR_FADE_DELAY * 2.35} blur="12px">
-              <section className="mb-16">
-                <h2 className="text-3xl font-bold mb-6 pb-3 border-b-2">Why I Build</h2>
-                <div className="space-y-4 text-base leading-relaxed">
-                  <p>
-                    I believe the future belongs to engineers who can move between AI, systems, and real user problems without friction.
-                  </p>                  
-                  <p className="font-semibold text-lg">
-                    Let&apos;s build something meaningful together.
-                  </p>
+             {/* Why I Build Section */}
+             <BlurFade delay={BLUR_FADE_DELAY * 2.35} blur="12px">
+               <section className="mb-16">
+                 <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">Why I Build</h2>
+                 <div className="space-y-4 text-base leading-relaxed">
+                   <p>
+                     I believe the future belongs to engineers who can move between AI, systems, and real user problems without friction.
+                   </p>                  
+                   <p className="text-lg">
+                     Let&apos;s build something meaningful together.
+                   </p>
                 </div>
               </section>
             </BlurFade>
@@ -209,9 +209,9 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 not-prose">
               
               
-              <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
-                <section>
-                  <h2 className="text-3xl font-bold mb-6 pb-3 border-b-2">Contact</h2>
+               <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
+                 <section>
+                   <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">Contact</h2>
                   <div className="flex flex-col gap-3 text-base">
                     <Link href={`mailto:${DATA.contact.email}`} className="hover:text-primary transition-colors underline underline-offset-4">
                       {DATA.contact.email}

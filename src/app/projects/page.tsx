@@ -5,7 +5,7 @@ import { DATA } from "@/data/resume";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ChevronRight, Calendar } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -13,30 +13,47 @@ export default function NotebookPage() {
   const getProjectSlug = (title: string) => 
     title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
 
-  // Categorize projects
+  // Track which projects have been categorized to prevent duplicates
+  const categorizedProjects = new Set<string>();
+
+  // Helper to filter and track projects
+  const filterProjects = (filterFn: (p: any) => boolean) => {
+    return DATA.projects.filter(p => {
+      if (categorizedProjects.has(p.title)) return false;
+      if (filterFn(p)) {
+        categorizedProjects.add(p.title);
+        return true;
+      }
+      return false;
+    });
+  };
+
+  // Categorize projects (in order of priority - first match wins)
   const categories = {
-    "ML & AI": DATA.projects.filter(p => 
+    "Research & Quantum": filterProjects(p => 
+      p.title.includes("Quantum") || p.title.includes("GHZ") || p.title.includes("Rydberg") ||
+      p.title.includes("Steel") || p.title.includes("DRAM") || 
+      p.title.includes("Thermodynamics") || p.title.includes("Reliability Analysis")
+    ),
+    "ML & AI": filterProjects(p => 
       p.title.includes("ML") || p.title.includes("AI-Powered") || p.title.includes("Training") || 
       p.title.includes("NLP") || p.title.includes("CNN") || p.title.includes("RNNs") || 
-      p.title.includes("Reinforcement Learning") || p.title.includes("Generating Music")
+      p.title.includes("Reinforcement Learning") || p.title.includes("Generating Music") ||
+      p.title.includes("Chip Layout")
     ),
-    "Full-Stack Apps": DATA.projects.filter(p => 
+    "Full-Stack Apps": filterProjects(p => 
       p.title.includes("Scaling") || p.title.includes("Building Real-Time") || 
       p.title.includes("Automating") || p.title.includes("marketplace")
     ),
-    "Search & Retrieval": DATA.projects.filter(p => 
+    "Search & Retrieval": filterProjects(p => 
       p.title.includes("Semantic Search") || p.title.includes("Image Search") || 
       p.title.includes("Vector Embeddings") || p.title.includes("CLIP")
     ),
-    "Data & Visualization": DATA.projects.filter(p => 
+    "Data & Visualization": filterProjects(p => 
       p.title.includes("Dashboard") || p.title.includes("Analyzing") || 
       p.title.includes("Visualizing")
     ),
-    "Research & Quantum": DATA.projects.filter(p => 
-      p.title.includes("Quantum") || p.title.includes("GHZ") || 
-      p.title.includes("Chip Layout")
-    ),
-    "Systems & Infrastructure": DATA.projects.filter(p => 
+    "Systems & Infrastructure": filterProjects(p => 
       p.title.includes("High-Performance") || p.title.includes("Crypto Trading")
     ),
   };
@@ -101,14 +118,6 @@ export default function NotebookPage() {
 
                             {/* Content */}
                             <div className="p-3 space-y-2">
-                              {/* Date */}
-                              {project.dates && (
-                                <time className="text-xs text-muted-foreground flex items-center gap-1">
-                                  <Calendar className="h-3 w-3" />
-                                  {project.dates}
-                                </time>
-                              )}
-
                               {/* Title */}
                               <h3 className="text-sm font-semibold tracking-tight group-hover:text-primary transition-colors line-clamp-2">
                                 {project.title}
