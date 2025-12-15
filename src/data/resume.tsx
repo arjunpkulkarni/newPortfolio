@@ -940,7 +940,7 @@ export const DATA = {
         },
         {
           type: "GitHub",
-          href: "https://github.com/arjunpkulkarni/Crypto-Trading-Platform",
+          href: "https://github.com/arjunpkulkarni/crypto",
           icon: <Icons.github className="size-3" />,
         },
       ],
