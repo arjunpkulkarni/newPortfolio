@@ -84,32 +84,8 @@ export default async function ProjectPage({
         </div>
       )}
 
-      {/* Stats Bar */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
-        {/* Date Card */}
-        {project.dates && (
-          <div className="flex items-center gap-4 p-5 rounded-lg border bg-card hover:border-primary/30 transition-colors duration-300">
-            <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
-              <Calendar className="h-5 w-5 text-muted-foreground" />
-            </div>
-            <div className="flex-1">
-              <p className="text-xs text-muted-foreground mb-1.5">Timeline</p>
-              <p className="text-sm font-medium">{project.dates}</p>
-            </div>
-          </div>
-        )}
-
-        {/* Status */}
-        <div className="flex items-center gap-4 p-5 rounded-lg border bg-card hover:border-primary/30 transition-colors duration-300">
-          <div className="w-12 h-12 rounded-lg bg-muted flex items-center justify-center flex-shrink-0">
-            <Code2 className="h-5 w-5 text-muted-foreground" />
-          </div>
-          <div className="flex-1">
-            <p className="text-xs text-muted-foreground mb-1.5">Status</p>
-            <p className="text-sm font-medium">{project.active ? "Active" : "Completed"}</p>
-          </div>
-        </div>
-      </div>
+      
+      
 
       {/* Tech Stack */}
       {project.technologies && project.technologies.length > 0 && (

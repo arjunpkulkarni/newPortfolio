@@ -926,17 +926,16 @@ export const DATA = {
     },
     {
       title: "Building High-Performance Crypto Trading Engine in C++",
-      href: "/projects/building-high-performance-crypto-trading-engine-in-cpp",
+      href: "/projects/building-high-performance-crypto-trading-engine-in-c",
       dates: "Sep 2024",
       active: true,
       description:
         "Built high-frequency trading engine in C++ with sub-millisecond order execution (18.5μs latency), options strategies (covered calls, straddles), and backtesting. Achieved 54k orders/second throughput with StreamLit dashboard for real-time portfolio analytics and market data visualization.",
       technologies: ["C++17", "Multi-threading", "STL", "Python", "StreamLit", "Options Trading", "Docker"],
       links: [
-
         {
           type: "Article",
-          href: "https://medium.com/@arjunpkulkarni/crypto-trading-platform-in-c-a5e2baf62aba",
+          href: "https://medium.com/@arjunpkulkarni/crypto-trading-platform-in-c-67c842c6e991",
           icon: <Icons.globe className="size-3" />,
         },
         {
