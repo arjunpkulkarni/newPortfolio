@@ -9,19 +9,19 @@ import {
 
 export function Header() {
   return (
-    <header className="fixed inset-x-0 top-5 z-50 flex justify-center pointer-events-none">
+    <header className="fixed inset-x-0 top-3 sm:top-5 z-50 flex justify-center pointer-events-none px-2 sm:px-4">
       <div
         className="
           relative // For tooltips to be positioned correctly relative to this block
           flex
-          h-12 md:h-14
+          h-14 sm:h-12 md:h-14
           items-center // Vertically center icons within the header
           rounded-2xl // Make the header fully rounded
           border
           border-border/40 ring-1 ring-border/30
           bg-background/60
-          w-[40vw] sm:w-[36vw] md:w-[30vw] max-w-xl
-          px-4 md:px-6 // Horizontal padding inside the rounded header
+          w-[95vw] sm:w-[70vw] md:w-[45vw] lg:w-[35vw] xl:w-[33vw] max-w-lg
+          px-3 sm:px-4 md:px-5 // Horizontal padding inside the rounded header
           shadow-2xl // Add a stronger shadow for depth
           backdrop-blur-2xl backdrop-saturate-150
           supports-[backdrop-filter]:bg-background/40
@@ -31,7 +31,7 @@ export function Header() {
         "
       >
         {/* Container for all icons, arranged in a row */}
-        <nav className="flex items-center justify-center space-x-2 sm:space-x-3 md:space-x-4 mx-auto">
+        <nav className="flex items-center justify-between sm:justify-center space-x-1 sm:space-x-2 md:space-x-3 lg:space-x-4 w-full mx-auto">
           {/* Navigation icons from DATA.navbar */}
           {DATA.navbar.map((item) => {
             const IconComponent = item.icon as React.ElementType;
@@ -41,10 +41,10 @@ export function Header() {
                   <Link
                     href={item.href}
                     className={cn(
-                      "flex items-center justify-center rounded-full p-2.5 md:p-3 text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-110 active:scale-95"
+                      "flex items-center justify-center rounded-full p-2 sm:p-2.5 md:p-3 text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-110 active:scale-95"
                     )}
                   >
-                    <IconComponent className="h-4 w-4 md:h-5 md:w-5 transition-transform duration-300" />
+                    <IconComponent className="h-4 w-4 sm:h-4 sm:w-4 md:h-5 md:w-5 transition-transform duration-300" />
                     <span className="sr-only">{item.label}</span>
                   </Link>
                 </TooltipTrigger>
@@ -56,7 +56,7 @@ export function Header() {
           })}
 
           {/* Separator */}
-          <div className="h-6 w-px bg-muted-foreground/50 mx-2"></div>
+          <div className="h-6 w-px bg-muted-foreground/50 mx-0.5 sm:mx-1 md:mx-2"></div>
 
           {/* Social icons (only the ones with navbar: true) */}
           {Object.values(DATA.contact.social).map((socialLink) => {
@@ -70,10 +70,10 @@ export function Header() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={cn(
-                      "flex items-center justify-center rounded-full p-2.5 md:p-3 text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-110 active:scale-95"
+                      "flex items-center justify-center rounded-full p-2 sm:p-2.5 md:p-3 text-sm font-medium text-muted-foreground transition-all duration-300 hover:text-primary hover:scale-110 active:scale-95"
                     )}
                   >
-                    <IconComponent className="h-4 w-4 md:h-5 md:w-5 transition-transform duration-300" />
+                    <IconComponent className="h-4 w-4 sm:h-4 sm:w-4 md:h-5 md:w-5 transition-transform duration-300" />
                     <span className="sr-only">{socialLink.name}</span>
                   </Link>
                 </TooltipTrigger>
