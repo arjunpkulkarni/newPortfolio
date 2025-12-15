@@ -734,6 +734,11 @@ export const DATA = {
       technologies: ["Python", "NumPy", "Matplotlib", "FEM", "Thermal Analysis", "Semiconductor Physics", "Materials Science"],
       links: [
         {
+          type: "Paper",
+          href: "/projects/pdfs/DRAM%20PAPER.pdf",
+          icon: <Icons.globe className="size-3" />,
+        },
+        {
           type: "GitHub",
           href: "https://github.com/arjunpkulkarni/dram-reliability-test",
           icon: <Icons.github className="size-3" />,
