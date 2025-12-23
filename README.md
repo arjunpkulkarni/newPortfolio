@@ -60,6 +60,37 @@ Built with [shadcn/ui](https://ui.shadcn.com/) and [magic ui](https://magicui.de
 
    Navigate to [http://localhost:3000](http://localhost:3000) to see your portfolio.
 
+## 🎨 Color Scheme
+
+This template features a modern **blue accent color scheme** with excellent contrast in both light and dark modes. The colors are carefully selected for:
+
+- 🎯 Professional appearance
+- ♿ Accessibility (WCAG AA compliant)
+- 🌓 Seamless light/dark mode transitions
+- 💎 Modern, clean aesthetic
+
+### Customizing Colors
+
+Colors are defined in [`src/app/globals.css`](./src/app/globals.css) using CSS custom properties:
+
+```css
+:root {
+  --primary: 221.2 83.2% 53.3%;     /* Blue accent color */
+  --background: 0 0% 100%;           /* White background */
+  --foreground: 222.2 84% 4.9%;      /* Dark text */
+  /* ... more colors */
+}
+```
+
+**Popular color schemes to try:**
+
+- **Purple**: `--primary: 262.1 83.3% 57.8%;`
+- **Green**: `--primary: 142.1 76.2% 36.3%;`
+- **Orange**: `--primary: 24.6 95% 53.1%;`
+- **Pink**: `--primary: 346.8 77.2% 49.8%;`
+
+Use [UI Colors](https://uicolors.app/) or [Coolors](https://coolors.co/) to generate custom color palettes.
+
 ## 🎨 Customization
 
 ### 1. Update Your Information
