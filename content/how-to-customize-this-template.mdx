@@ -1,0 +1,269 @@
+---
+title: "How to Customize This Portfolio Template"
+publishedAt: "2024-01-01"
+summary: "A step-by-step guide to customizing this portfolio template and making it your own. Learn how to update content, add projects, and deploy your site."
+---
+
+# How to Customize This Portfolio Template
+
+Welcome to your new portfolio! This guide will walk you through customizing this template to showcase your unique work and personality.
+
+## 📝 Step 1: Update Your Personal Information
+
+The main configuration file is located at `src/data/resume.tsx`. This is where you'll update most of your personal information.
+
+### Basic Information
+
+```typescript
+export const DATA = {
+  name: "Your Full Name",
+  initials: "YN",
+  url: "https://yourwebsite.com",
+  location: "Your City, State/Country",
+  description: "Your professional title or tagline",
+  summary: "A brief summary about yourself...",
+  avatarUrl: "/your-photo.jpg",
+  // ...
+}
+```
+
+### Contact Information
+
+Update your email and social media links:
+
+```typescript
+contact: {
+  email: "your.email@example.com",
+  social: {
+    GitHub: {
+      url: "https://github.com/yourusername",
+      // ...
+    },
+    LinkedIn: {
+      url: "https://linkedin.com/in/yourusername",
+      // ...
+    },
+  },
+}
+```
+
+## 🎨 Step 2: Add Your Photo
+
+1. Replace the file at `/public/pfp.jpeg` with your own photo
+2. Make sure it's a square image (recommended: 400x400px or larger)
+3. Supported formats: JPG, PNG, or WEBP
+
+## 💼 Step 3: Update Work Experience
+
+In the `work` array, add your work experiences:
+
+```typescript
+work: [
+  {
+    company: "Company Name",
+    href: "https://company.com",
+    badges: ["Full-time", "Remote"],
+    location: "City, Country",
+    title: "Your Job Title",
+    logoUrl: companyLogo, // or use a path to logo
+    start: "Jan 2023",
+    end: "Present",
+    description: "Brief description of your role...",
+    tasks: [
+      {
+        description: "Key achievement or responsibility",
+        skills: ["React", "Node.js", "AWS"]
+      },
+      // Add more tasks
+    ]
+  },
+  // Add more work experiences
+]
+```
+
+## 🎓 Step 4: Add Education
+
+Update the `education` array with your academic background:
+
+```typescript
+education: [
+  {
+    school: "University Name",
+    href: "https://university.edu",
+    degree: "Bachelor of Science in Computer Science",
+    logoUrl: universityLogo,
+    start: "2019",
+    end: "2023",
+  },
+]
+```
+
+## 🚀 Step 5: Showcase Your Projects
+
+This is where you shine! Add your projects to the `projects` array:
+
+```typescript
+projects: [
+  {
+    title: "Project Name",
+    href: "https://github.com/yourusername/project",
+    dates: "2024",
+    active: true,
+    description:
+      "Detailed description of what your project does and the problem it solves.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Node.js",
+      "PostgreSQL",
+    ],
+    links: [
+      {
+        type: "Website",
+        href: "https://yourproject.com",
+        icon: <Icons.globe className="size-3" />,
+      },
+      {
+        type: "GitHub",
+        href: "https://github.com/yourusername/project",
+        icon: <Icons.github className="size-3" />,
+      },
+    ],
+    image: "/projects/project-screenshot.png", // optional
+  },
+]
+```
+
+### Project Tips
+
+- **Be specific**: Include metrics and results (e.g., "Improved performance by 40%")
+- **Show impact**: Explain what problem your project solves
+- **Add links**: GitHub repos, live demos, or case studies
+- **Use keywords**: Include relevant technologies for SEO
+
+## ✍️ Step 6: Write Blog Posts
+
+Create MDX files in the `content/` directory:
+
+### Creating a New Post
+
+1. Create a new file: `content/your-post-title.mdx`
+2. Add frontmatter:
+
+```mdx
+---
+title: "Your Blog Post Title"
+publishedAt: "2024-01-15"
+summary: "A brief summary of your post for preview cards"
+---
+
+# Your Blog Post Title
+
+Your content here...
+
+## Section Headers
+
+Regular markdown content works great!
+
+### Code Examples
+
+```javascript
+function hello() {
+  console.log("Hello, world!")
+}
+```
+```
+
+### Blog Post Ideas
+
+- Technical tutorials
+- Project case studies
+- Things you learned
+- Industry insights
+- Tools and resources you love
+
+## 🎨 Step 7: Customize Styling (Optional)
+
+### Colors
+
+Modify `src/app/globals.css` to change the color scheme:
+
+```css
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --primary: 221.2 83.2% 53.3%;
+  /* ... other colors */
+}
+```
+
+### Fonts
+
+Update fonts in `src/app/layout.tsx`:
+
+```typescript
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
+```
+
+## 🚢 Step 8: Deploy Your Portfolio
+
+### Deploy to Vercel (Recommended)
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Click "New Project"
+4. Import your GitHub repository
+5. Vercel will automatically detect Next.js and deploy!
+
+### Custom Domain
+
+1. Purchase a domain from a registrar
+2. In Vercel dashboard, go to your project settings
+3. Add your custom domain
+4. Update DNS records as instructed
+
+### Environment Variables
+
+If you add any API keys or secrets:
+
+1. Create a `.env.local` file (never commit this!)
+2. Add the same variables in Vercel project settings
+
+## ✅ Final Checklist
+
+Before launching, make sure you've:
+
+- [ ] Updated all personal information
+- [ ] Added your photo
+- [ ] Listed your work experience
+- [ ] Showcased your best projects
+- [ ] Written at least one blog post
+- [ ] Updated social media links
+- [ ] Tested on mobile devices
+- [ ] Checked for spelling/grammar
+- [ ] Removed placeholder content
+- [ ] Tested all links
+
+## 🆘 Need Help?
+
+- Check the [GitHub repository](https://github.com/yourusername/portfolio-template) for issues
+- Review the [Next.js documentation](https://nextjs.org/docs)
+- Join the community Discord (if available)
+
+## 🎉 You're All Set!
+
+Your portfolio is now ready to impress potential employers, clients, and collaborators. Remember to:
+
+- Keep it updated with new projects
+- Write blog posts regularly
+- Share your work on social media
+- Continuously improve and iterate
+
+Good luck, and happy building! 🚀
+
+---
+
+*This template is open source and free to use. If you found it helpful, consider giving it a star on GitHub!*
+

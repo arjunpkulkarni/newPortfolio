@@ -1,0 +1,348 @@
+---
+title: "Building a REST API with Node.js and Express"
+publishedAt: "2024-02-01"
+summary: "Learn how to build a scalable RESTful API using Node.js, Express, and MongoDB. Complete with authentication, error handling, and best practices."
+---
+
+# Building a REST API with Node.js and Express
+
+Building a RESTful API is a fundamental skill for any backend developer. In this guide, we'll create a complete API using Node.js, Express, and MongoDB.
+
+## What We'll Build
+
+We're going to create a simple Task Management API with the following features:
+
+- User authentication with JWT
+- CRUD operations for tasks
+- Error handling
+- Input validation
+- MongoDB integration
+
+## Prerequisites
+
+Make sure you have the following installed:
+
+- Node.js (v18 or higher)
+- MongoDB (or use MongoDB Atlas)
+- Postman or similar API testing tool
+
+## Project Setup
+
+First, let's set up our project:
+
+```bash
+mkdir task-api
+cd task-api
+npm init -y
+npm install express mongoose dotenv bcryptjs jsonwebtoken
+npm install --save-dev nodemon typescript @types/node @types/express
+```
+
+## Project Structure
+
+Here's how we'll organize our code:
+
+```
+task-api/
+├── src/
+│   ├── models/
+│   │   ├── User.ts
+│   │   └── Task.ts
+│   ├── routes/
+│   │   ├── auth.ts
+│   │   └── tasks.ts
+│   ├── middleware/
+│   │   └── auth.ts
+│   └── index.ts
+├── .env
+└── package.json
+```
+
+## Creating the Server
+
+Let's start with our main server file:
+
+```typescript
+// src/index.ts
+import express from 'express'
+import mongoose from 'mongoose'
+import dotenv from 'dotenv'
+
+dotenv.config()
+
+const app = express()
+const PORT = process.env.PORT || 3000
+
+// Middleware
+app.use(express.json())
+
+// Routes
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to Task API' })
+})
+
+// Database connection
+mongoose.connect(process.env.MONGODB_URI!)
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.error('MongoDB connection error:', err))
+
+// Start server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+})
+```
+
+## Defining Models
+
+### User Model
+
+```typescript
+// src/models/User.ts
+import mongoose from 'mongoose'
+import bcrypt from 'bcryptjs'
+
+const userSchema = new mongoose.Schema({
+  email: {
+    type: String,
+    required: true,
+    unique: true,
+    lowercase: true
+  },
+  password: {
+    type: String,
+    required: true
+  },
+  name: {
+    type: String,
+    required: true
+  }
+}, { timestamps: true })
+
+// Hash password before saving
+userSchema.pre('save', async function(next) {
+  if (!this.isModified('password')) return next()
+  this.password = await bcrypt.hash(this.password, 10)
+  next()
+})
+
+export const User = mongoose.model('User', userSchema)
+```
+
+### Task Model
+
+```typescript
+// src/models/Task.ts
+import mongoose from 'mongoose'
+
+const taskSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  description: String,
+  completed: {
+    type: Boolean,
+    default: false
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'User',
+    required: true
+  }
+}, { timestamps: true })
+
+export const Task = mongoose.model('Task', taskSchema)
+```
+
+## Authentication Middleware
+
+```typescript
+// src/middleware/auth.ts
+import jwt from 'jsonwebtoken'
+import { Request, Response, NextFunction } from 'express'
+
+export const authenticate = (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const token = req.header('Authorization')?.replace('Bearer ', '')
+    
+    if (!token) {
+      throw new Error()
+    }
+    
+    const decoded = jwt.verify(token, process.env.JWT_SECRET!)
+    req.user = decoded
+    next()
+  } catch (error) {
+    res.status(401).json({ error: 'Please authenticate' })
+  }
+}
+```
+
+## Creating Routes
+
+### Authentication Routes
+
+```typescript
+// src/routes/auth.ts
+import express from 'express'
+import jwt from 'jsonwebtoken'
+import { User } from '../models/User'
+
+const router = express.Router()
+
+router.post('/register', async (req, res) => {
+  try {
+    const user = new User(req.body)
+    await user.save()
+    
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET!)
+    
+    res.status(201).json({ user, token })
+  } catch (error) {
+    res.status(400).json({ error: 'Registration failed' })
+  }
+})
+
+router.post('/login', async (req, res) => {
+  try {
+    const { email, password } = req.body
+    const user = await User.findOne({ email })
+    
+    if (!user || !(await bcrypt.compare(password, user.password))) {
+      throw new Error()
+    }
+    
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET!)
+    
+    res.json({ user, token })
+  } catch (error) {
+    res.status(401).json({ error: 'Login failed' })
+  }
+})
+
+export default router
+```
+
+### Task Routes
+
+```typescript
+// src/routes/tasks.ts
+import express from 'express'
+import { Task } from '../models/Task'
+import { authenticate } from '../middleware/auth'
+
+const router = express.Router()
+
+// All routes require authentication
+router.use(authenticate)
+
+// Create task
+router.post('/', async (req, res) => {
+  try {
+    const task = new Task({
+      ...req.body,
+      user: req.user.userId
+    })
+    await task.save()
+    res.status(201).json(task)
+  } catch (error) {
+    res.status(400).json({ error: 'Failed to create task' })
+  }
+})
+
+// Get all tasks
+router.get('/', async (req, res) => {
+  try {
+    const tasks = await Task.find({ user: req.user.userId })
+    res.json(tasks)
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to fetch tasks' })
+  }
+})
+
+// Update task
+router.patch('/:id', async (req, res) => {
+  try {
+    const task = await Task.findOneAndUpdate(
+      { _id: req.params.id, user: req.user.userId },
+      req.body,
+      { new: true }
+    )
+    
+    if (!task) {
+      return res.status(404).json({ error: 'Task not found' })
+    }
+    
+    res.json(task)
+  } catch (error) {
+    res.status(400).json({ error: 'Failed to update task' })
+  }
+})
+
+// Delete task
+router.delete('/:id', async (req, res) => {
+  try {
+    const task = await Task.findOneAndDelete({
+      _id: req.params.id,
+      user: req.user.userId
+    })
+    
+    if (!task) {
+      return res.status(404).json({ error: 'Task not found' })
+    }
+    
+    res.json({ message: 'Task deleted successfully' })
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to delete task' })
+  }
+})
+
+export default router
+```
+
+## Testing the API
+
+Use Postman or curl to test your endpoints:
+
+### Register a user
+```bash
+POST http://localhost:3000/api/auth/register
+{
+  "name": "John Doe",
+  "email": "john@example.com",
+  "password": "password123"
+}
+```
+
+### Create a task
+```bash
+POST http://localhost:3000/api/tasks
+Headers: Authorization: Bearer <your-token>
+{
+  "title": "Learn Node.js",
+  "description": "Complete the REST API tutorial"
+}
+```
+
+## Best Practices
+
+1. **Environment Variables** - Never commit secrets to version control
+2. **Error Handling** - Always handle errors gracefully
+3. **Validation** - Validate user input before processing
+4. **Authentication** - Secure your routes with proper authentication
+5. **Documentation** - Document your API endpoints
+
+## Conclusion
+
+You now have a fully functional REST API with authentication, CRUD operations, and proper error handling. This foundation can be extended with additional features like:
+
+- Rate limiting
+- Pagination
+- File uploads
+- Email notifications
+- Advanced filtering
+
+The complete code is available on [GitHub](https://github.com/yourusername/task-api).
+
+Happy coding! 🎉
+

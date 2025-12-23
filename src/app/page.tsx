@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 const BLUR_FADE_DELAY = 0.04;
 
 export default function HomePage() {
-  const words = ["Arjun", "Kulkarni"];
+  const words = ["Your", "Name"];
   return (
     <div className="relative w-full">
       {/* Hero Section with Background */}
@@ -69,17 +69,17 @@ export default function HomePage() {
               <BlurFadeText
                 className="text-lg md:text-xl font-normal mb-6 leading-relaxed text-muted-foreground"
                 delay={BLUR_FADE_DELAY * 2}
-                text="AI + full-stack engineer building real-time, user-facing intelligence systems."
+                text={DATA.description}
               />
 
               {/* Subtitle - Article style */}
               <BlurFade delay={BLUR_FADE_DELAY * 2.5} blur="12px">
                 <div className="mb-6 space-y-2">
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Currently at <span className="text-foreground font-medium">Rumor</span> shipping mobile features for 50k+ users.
+                    Currently working on exciting projects and exploring new technologies.
                   </p>
                   <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Interested in AI agents, real-time systems, and building things that actually matter.
+                    Passionate about building innovative solutions that solve real problems.
                   </p>
                 </div>
               </BlurFade>
@@ -91,10 +91,10 @@ export default function HomePage() {
                     {DATA.location}
                   </span>
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
-                    Software Engineer @ Rumor
+                    Software Engineer
                   </span>
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
-                    Open to remote + NYC + SF
+                    Open to Opportunities
                   </span>
                 </div>
               </BlurFade>
@@ -157,13 +157,13 @@ export default function HomePage() {
                  <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">About</h2>
                  <div className="space-y-4 text-base leading-relaxed">
                    <p>
-                     I build real-time intelligent systems — AI agents, full-stack apps, and high-velocity mobile experiences. Currently shipping features at Rumor (50k+ users), previously founding engineer at Curator.to (Intel & UpHonest backed, $1M raised).
+                     {DATA.summary}
                    </p>
                    <p>
-                     My work spans agentic e-commerce (2k+ daily queries, 30% latency reduction), clinical AI (UCSD Health dietician platform), and autonomous systems (RL + MPC for traffic optimization). I thrive at the intersection of AI infrastructure, systems engineering, and product.
+                     I&apos;m passionate about leveraging technology to create innovative solutions that make a positive impact. My interests span across software development, system design, and emerging technologies.
                    </p>
                   <p>
-                    Also researching nanofluidic energy harvesting at UIUC&apos;s Micro/Nano Lab — because the best software engineers understand hardware.
+                    Always eager to learn new technologies and collaborate on exciting projects that push the boundaries of what&apos;s possible.
                   </p>
                 </div>
               </section>
@@ -175,15 +175,15 @@ export default function HomePage() {
                  <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">What I&apos;m Building Now</h2>
                  <div className="space-y-6">
                    <div>
-                     <h3 className="text-lg font-normal mb-2">→ Rumor mobile features</h3>
+                     <h3 className="text-lg font-normal mb-2">→ Current Project</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      React Native guest lists, RSVPs, and creator discovery for 50k+ event platform
+                      Working on exciting new features and technologies
                     </p>
                    </div>                 
                    <div>
-                     <h3 className="text-lg font-normal mb-2">→ Nanofluidic energy systems</h3>
+                     <h3 className="text-lg font-normal mb-2">→ Learning & Growth</h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      CNT-enhanced semiconductors for next-gen energy harvesting
+                      Continuously expanding my skillset and exploring new domains
                     </p>
                   </div>
                 </div>
@@ -196,10 +196,10 @@ export default function HomePage() {
                  <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">Why I Build</h2>
                  <div className="space-y-4 text-base leading-relaxed">
                    <p>
-                     I believe the future belongs to engineers who can move between AI, systems, and real user problems without friction.
+                     I believe technology has the power to transform lives and solve real-world problems. My goal is to create solutions that make a meaningful difference.
                    </p>                  
                    <p className="text-lg">
-                     Let&apos;s build something meaningful together.
+                     Let&apos;s collaborate and build something amazing together.
                    </p>
                 </div>
               </section>
