@@ -157,14 +157,8 @@ export default function HomePage() {
                  <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">About</h2>
                  <div className="space-y-4 text-base leading-relaxed">
                    <p>
-                     I build real-time intelligent systems — AI agents, full-stack apps, and high-velocity mobile experiences. Currently shipping features at Rumor (50k+ users), previously founding engineer at Curator.to (Intel & UpHonest backed, $1M raised).
-                   </p>
-                   <p>
-                     My work spans agentic e-commerce (2k+ daily queries, 30% latency reduction), clinical AI (UCSD Health dietician platform), and autonomous systems (RL + MPC for traffic optimization). I thrive at the intersection of AI infrastructure, systems engineering, and product.
-                   </p>
-                  <p>
-                    Also researching nanofluidic energy harvesting at UIUC&apos;s Micro/Nano Lab — because the best software engineers understand hardware.
-                  </p>
+                     I build real-time intelligent systems — AI agents, full-stack apps, and high-velocity mobile experiences. Currently shipping features at Rumor.
+                   </p>                           
                 </div>
               </section>
             </BlurFade>
