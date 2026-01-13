@@ -135,7 +135,7 @@ export const DATA = {
       href: "https://www.therumor.com/",
       badges: [],
       location: "New York, NY",
-      title: "Software Engineer",
+      title: "Software Engineer Intern",
       logoUrl: rumorLogo,
       start: "Nov 2025",
       end: "Jan 2026",

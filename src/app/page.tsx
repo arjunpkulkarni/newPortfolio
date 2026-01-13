@@ -77,8 +77,7 @@ export default function HomePage() {
                 <div className="flex flex-wrap items-center gap-2 mb-6">
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
                     {DATA.location}
-                  </span>
-                 
+                  </span>                 
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
                     Open to remote + NYC + SF
                   </span>
