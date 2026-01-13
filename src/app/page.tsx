@@ -78,9 +78,7 @@ export default function HomePage() {
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
                     {DATA.location}
                   </span>
-                  <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
-                    Software Engineer @ Rumor
-                  </span>
+                 
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
                     Open to remote + NYC + SF
                   </span>
