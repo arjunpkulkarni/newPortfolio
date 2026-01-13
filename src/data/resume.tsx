@@ -51,7 +51,7 @@ export const DATA = {
   description:
     "UIUC CS + Materials Engineering • Shipping AI agents, full-stack systems, and mobile experiences that solve real problems at scale",
   summary:
-    "AI + full-stack engineer building real-time, user-facing intelligence systems. Currently at Rumor (50k+ users), previously founding engineer at Curator.to (Intel & UpHonest backed, $1M raised). Built agentic e-commerce handling 2k+ daily queries with 30% latency reduction, clinical-grade AI platforms (UCSD Health), and RL systems for autonomous routing. Dual degree in CS + Materials Engineering at UIUC — bridging software, AI infrastructure, and systems engineering.",
+    "AI + full-stack engineer building real-time, user-facing intelligence systems. ",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [
@@ -138,7 +138,7 @@ export const DATA = {
       title: "Software Engineer",
       logoUrl: rumorLogo,
       start: "Nov 2025",
-      end: "Present",
+      end: "Jan 2026",
       description:
         "Building core mobile features for Rumor's 50k+ user event‑hosting platform.",
       tasks: [

@@ -70,19 +70,7 @@ export default function HomePage() {
                 className="text-lg md:text-xl font-normal mb-6 leading-relaxed text-muted-foreground"
                 delay={BLUR_FADE_DELAY * 2}
                 text="AI + full-stack engineer building real-time, user-facing intelligence systems."
-              />
-
-              {/* Subtitle - Article style */}
-              <BlurFade delay={BLUR_FADE_DELAY * 2.5} blur="12px">
-                <div className="mb-6 space-y-2">
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Currently at <span className="text-foreground font-medium">Rumor</span> shipping mobile features for 50k+ users.
-                  </p>
-                  <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
-                    Interested in AI agents, real-time systems, and building things that actually matter.
-                  </p>
-                </div>
-              </BlurFade>
+              />              
 
               {/* Badges */}
               <BlurFade delay={BLUR_FADE_DELAY * 3} blur="12px">
