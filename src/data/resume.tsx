@@ -227,12 +227,12 @@ export const DATA = {
     {
       company: "Nick Holonyak, Jr. Micro and Nanotechnology Laboratory",
       href: "https://mntl.illinois.edu/",
-      badges: ["Apprenticeship"],
+      badges: null,
       location: "Champaign, IL (On-site)",
       title: "Nanotechnology Researcher",
       logoUrl: uiuc,
       start: "Sep 2025",
-      end: "Present",
+      end: "Jan 2026",
       description:
         "Optimizing quantum material energy with carbon nanotubes, building on ionic Coulomb drag principles for nanofluidic semiconductor channels (Nano Energy, 2023; doi:10.1016/j.nanoen.2023.108860).",
       tasks: [
