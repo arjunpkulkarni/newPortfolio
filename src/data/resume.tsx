@@ -205,7 +205,7 @@ export const DATA = {
       href: "https://www.abbvie.com/",
       badges: [],
       location: "Chicago, IL",
-      title: "Software Developer",
+      title: "Software Engineer Intern",
       logoUrl: abbvie,
       start: "Dec 2024",
       end: "Jun 2025",
