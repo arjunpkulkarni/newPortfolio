@@ -227,7 +227,7 @@ export const DATA = {
     {
       company: "Nick Holonyak, Jr. Micro and Nanotechnology Laboratory",
       href: "https://mntl.illinois.edu/",
-      badges: null,
+      badges: [],
       location: "Champaign, IL (On-site)",
       title: "Nanotechnology Researcher",
       logoUrl: uiuc,
