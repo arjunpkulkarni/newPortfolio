@@ -51,7 +51,7 @@ export const DATA = {
   description:
     "UIUC CS + Materials Engineering • Shipping AI agents, full-stack systems, and mobile experiences that solve real problems at scale",
   summary:
-    "AI + full-stack engineer building real-time, user-facing intelligence systems. ",
+    "",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [

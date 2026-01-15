@@ -69,7 +69,7 @@ export default function HomePage() {
               <BlurFadeText
                 className="text-lg md:text-xl font-normal mb-6 leading-relaxed text-muted-foreground"
                 delay={BLUR_FADE_DELAY * 2}
-                text={null as unknown as string}
+                text={DATA.description}
               />              
 
               {/* Badges */}
