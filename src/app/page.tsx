@@ -69,7 +69,7 @@ export default function HomePage() {
               <BlurFadeText
                 className="text-lg md:text-xl font-normal mb-6 leading-relaxed text-muted-foreground"
                 delay={BLUR_FADE_DELAY * 2}
-                text="AI + full-stack engineer building real-time, user-facing intelligence systems."
+                text={null as unknown as string}
               />              
 
               {/* Badges */}
@@ -148,26 +148,7 @@ export default function HomePage() {
               </section>
             </BlurFade>
 
-             {/* What I'm Building Now Section */}
-             <BlurFade delay={BLUR_FADE_DELAY * 2.3} blur="12px">
-               <section className="mb-16">
-                 <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">What I&apos;m Building Now</h2>
-                 <div className="space-y-6">
-                   <div>
-                     <h3 className="text-lg font-normal mb-2">→ Rumor mobile features</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      React Native guest lists, RSVPs, and creator discovery for 50k+ event platform
-                    </p>
-                   </div>                 
-                   <div>
-                     <h3 className="text-lg font-normal mb-2">→ Nanofluidic energy systems</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      CNT-enhanced semiconductors for next-gen energy harvesting
-                    </p>
-                  </div>
-                </div>
-              </section>
-            </BlurFade>
+             
 
              {/* Why I Build Section */}
              <BlurFade delay={BLUR_FADE_DELAY * 2.35} blur="12px">
