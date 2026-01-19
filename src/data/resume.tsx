@@ -49,7 +49,7 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "UIUC CS + Materials Engineering • Shipping AI agents, full-stack systems, and mobile experiences that solve real problems at scale",
+    "Shipping AI agents, full-stack systems, and mobile experiences that solve real problems at scale",
   summary:
     "",
   avatarUrl: "/pfp.jpeg",
