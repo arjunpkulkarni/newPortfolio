@@ -313,7 +313,7 @@ export const DATA = {
       ]
     },
     {
-      company: "Civil & Environmental Eng., UIUC",
+      company: "Civil & Environmental Engineering Department",
       href: "https://cee.illinois.edu/",
       badges: [],
       location: "In-Person",
