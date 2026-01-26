@@ -602,6 +602,11 @@ export const DATA = {
               code: "MSE481",
               name: "Electron Microscopy",
               description: "SEM/TEM operation, diffraction, imaging, and microstructure analysis"
+            },
+            {
+              code: "MSE487",
+              name: "Materials for Nanotechnology",
+              description: "Nanoscale materials synthesis, characterization, and applications in nanotechnology"
             }
           ]
         },
