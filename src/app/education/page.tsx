@@ -128,7 +128,7 @@ export default function EducationPage() {
           {DATA.education.map((education, id) => (
             <BlurFade
               key={education.school}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+              delay={BLUR_FADE_DELAY * 8 + id * 0.2}
             >
               <ResumeCard
                 key={education.school}
