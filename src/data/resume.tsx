@@ -60,6 +60,7 @@ export const DATA = {
       "JavaScript",
       "C++",
       "SQL",
+      "Java",
     ],
     "Frameworks": [
       "React",
@@ -69,6 +70,9 @@ export const DATA = {
       "FastAPI",
       "Node.js",
       "Express",
+      "Django",
+      "FastAPI",
+      "Spring Boot",
     ],
     "AI/ML": [
       "PyTorch",
@@ -80,6 +84,7 @@ export const DATA = {
       "OpenAI Assistants",
       "Gemini",
       "Vector Search",
+      "LangGraph",
     ],
     "Cloud/DevOps": [
       "AWS",
@@ -87,6 +92,9 @@ export const DATA = {
       "GitHub Actions",
       "Linux",
       "CI/CD",
+      "Kubernetes",
+      "Jenkins",
+      "GitLab CI/CD",
     ],
     "Tools": [
       "Postgres",
@@ -96,6 +104,9 @@ export const DATA = {
       "SUMO",
       "COMSOL",
       "Git",
+      "Jira",
+      "Linear",
+      "Asana",      
     ],
   },
   navbar: [
