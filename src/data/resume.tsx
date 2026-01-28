@@ -49,9 +49,9 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Shipping ML, AI, and full-stack systems that solve real problems at scale",
+    "Developing scalable systems at the intersection of AI and full-stack engineering.",
   summary:
-    "",
+  "Interested in algorithms and applied ML, shipping production AI tools, real time infrastructure and high-scale web platforms.",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [
