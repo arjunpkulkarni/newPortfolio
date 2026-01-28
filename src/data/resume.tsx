@@ -153,8 +153,8 @@ export const DATA = {
       ]
     },
     {
-      company: "Curator.to (formerly Siramai)",
-      href: "https://siramai.com/",
+      company: "Curator.to",
+      href: "https://curator.to/",
       badges: ["Intel-backed", "$1M raised"],
       location: "New York, NY",
       title: "Founding Engineer",
