@@ -155,7 +155,7 @@ export const DATA = {
     {
       company: "Curator.to",
       href: "https://curator.to/",
-      badges: ["Intel-backed", "$1M raised"],
+      badges: ["Intel & UpHonest Capital-backed"],
       location: "New York, NY",
       title: "Founding Engineer",
       logoUrl: siramaiLogo,
