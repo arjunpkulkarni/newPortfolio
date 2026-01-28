@@ -66,14 +66,14 @@ export default function HomePage() {
               </h1>
 
               {/* Tagline */}
-              {/* <BlurFadeText
+              <BlurFadeText
                 className="text-lg md:text-xl font-normal mb-6 leading-relaxed text-muted-foreground"
                 delay={BLUR_FADE_DELAY * 2}
                 text={DATA.description}
-              />               */}
+              />              
 
               {/* Badges */}
-              {/* <BlurFade delay={BLUR_FADE_DELAY * 3} blur="12px">
+              <BlurFade delay={BLUR_FADE_DELAY * 3} blur="12px">
                 <div className="flex flex-wrap items-center gap-2 mb-6">
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
                     {DATA.location}
@@ -82,7 +82,7 @@ export default function HomePage() {
                     Open to remote + NYC + SF
                   </span>
                 </div>
-              </BlurFade> */}
+              </BlurFade>
 
               {/* CTA Buttons */}
               <BlurFade delay={BLUR_FADE_DELAY * 3.5} blur="12px">

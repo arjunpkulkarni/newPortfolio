@@ -228,13 +228,9 @@ export default function EducationPage() {
         {/* Courses Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {filteredCourses.map((course: any, index: number) => (
-            <div
+            <BlurFade
               key={course.code}
-              className="animate-fadeIn"
-              style={{
-                animationDelay: `${index * 30}ms`,
-                animationFillMode: 'backwards'
-              }}
+              delay={BLUR_FADE_DELAY * 10 + index * 0.05}
             >
               <Card className="p-4 h-full hover:shadow-lg transition-all duration-300">
                 <div className="flex justify-between items-start mb-2">
@@ -250,38 +246,11 @@ export default function EducationPage() {
                   {course.description}
                 </p>
               </Card>
-            </div>
+            </BlurFade>
           ))}
         </div>
       </section>
 
-      <style jsx>{`
-        @keyframes slideIn {
-          from {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fadeIn {
-          animation: fadeIn 0.4s ease-out;
-        }
-      `}</style>
 
       {/* Skills Section */}
       <section id="skills" className="w-full max-w-7xl mt-8">
@@ -289,7 +258,7 @@ export default function EducationPage() {
 
           {Object.entries(DATA.skills).map(([category, skills], categoryIndex) => (
             <div key={category} className="mb-4">
-              <BlurFade delay={BLUR_FADE_DELAY * (10 + categoryIndex * 0.5)}>
+              <BlurFade delay={BLUR_FADE_DELAY * (15 + categoryIndex * 2)}>
                 <h3 className="text-lg font-semibold mb-2">{category}</h3>
               </BlurFade>
               <div className="flex flex-wrap gap-1">
@@ -297,7 +266,7 @@ export default function EducationPage() {
                   <BlurFade
                     key={skill}
                     delay={
-                      BLUR_FADE_DELAY * (10 + categoryIndex * 0.5 + 0.1) +
+                      BLUR_FADE_DELAY * (15 + categoryIndex * 2 + 0.5) +
                       skillIndex * 0.05
                     }
                   >
@@ -312,7 +281,7 @@ export default function EducationPage() {
 
       {/* Certifications Section */}
       <section id="certifications" className="w-full">
-        <BlurFade delay={BLUR_FADE_DELAY * 11}>
+        <BlurFade delay={BLUR_FADE_DELAY * 20}>
           <div className="space-y-0.5 mb-6 mt-8">
             <h2 className="text-2xl font-medium tracking-tighter">Certifications</h2>
             <p className="text-sm text-muted-foreground">Professional certifications and achievements.</p>

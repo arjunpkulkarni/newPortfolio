@@ -49,7 +49,7 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Shipping AI agents, full-stack systems, and mobile experiences that solve real problems at scale",
+    "Shipping ML, AI, and full-stack systems that solve real problems at scale",
   summary:
     "",
   avatarUrl: "/pfp.jpeg",
