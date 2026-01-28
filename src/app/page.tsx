@@ -67,12 +67,18 @@ export default function HomePage() {
 
               {/* Tagline */}
               <BlurFadeText
-                className="text-lg md:text-xl font-normal mb-6 leading-relaxed text-muted-foreground"
+                className="text-lg md:text-xl font-semibold mb-6 leading-relaxed text-muted-foreground"
                 delay={BLUR_FADE_DELAY * 2}
                 text={DATA.description}
               />              
 
-              {/* Badges */}
+              {/* Summary Badge */}
+              <BlurFadeText
+                className="text-md md:text-lg font-normal mb-6 leading-relaxed text-gray-500"
+                delay={BLUR_FADE_DELAY * 2}
+                text={DATA.summary}
+              />     
+              
               <BlurFade delay={BLUR_FADE_DELAY * 3} blur="12px">
                 <div className="flex flex-wrap items-center gap-2 mb-6">
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
