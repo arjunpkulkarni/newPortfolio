@@ -66,11 +66,11 @@ export function ProductCard({ product, index }: ProductCardProps) {
           </div>
 
           {/* Right Side - Content */}
-          <div className="flex-1 flex flex-col space-y-2.5 p-3.5">
+          <div className="flex-1 flex flex-col space-y-1 p-3.5">
             {/* Header */}
-            <div className="space-y-1.5">
-              <div className="flex items-center justify-between gap-4">
-                <h3 className="text-lg md:text-xl font-bold tracking-tight leading-tight group-hover:text-primary transition-colors">
+            <div className="space-y-1">
+              <div className="flex items-center justify-between">
+                <h3 className="text-lg md:text-xl font-bold mt-[-2] tracking-tight leading-tight group-hover:text-primary transition-colors">
                   {product.name}
                 </h3>
                 {/* Metrics Summary - Inline */}

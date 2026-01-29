@@ -71,8 +71,8 @@ export default function NotebookPage() {
       <section id="notebook" className="w-full">
         {/* Header */}
         <BlurFade delay={BLUR_FADE_DELAY}>
-          <div className="mb-8 mt-20">
-            <h1 className="text-3xl font-medium mb-2">Notebook</h1>
+          <div className="space-y-0.5 mb-8 mt-20">
+            <h2 className="text-2xl font-medium tracking-tighter">Notebook</h2>
             <p className="text-sm text-muted-foreground">
               Technical deep-dives into systems I&apos;ve built. Each project solves a specific problem.
             </p>

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import BlurFade from "@/components/magicui/blur-fade";
 import { ProductCard } from "@/components/product-card";
 import { PRODUCTS } from "@/data/products";
@@ -11,25 +10,12 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Centered container with consistent max-width */}
-      <div className="max-w-7xl mx-auto px-6 py-12 md:py-12">
+      <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header Section */}
         <BlurFade delay={BLUR_FADE_DELAY}>
-          <div className="mb-12 mt-16">
-            <motion.h1
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl md:text-5xl font-bold mb-4 tracking-tight"
-            >
-              Products
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 }}
-              className="text-lg text-muted-foreground leading-relaxed max-w-2xl"
-            >
-              Products I&apos;ve built and shipped to production with real users.
-            </motion.p>
+          <div className="space-y-0.5 mb-8 mt-20">
+            <h2 className="text-2xl font-medium tracking-tighter">Products</h2>
+            <p className="text-sm text-muted-foreground">Products I&apos;ve built and shipped to production with real users.</p>
           </div>
         </BlurFade>
 
