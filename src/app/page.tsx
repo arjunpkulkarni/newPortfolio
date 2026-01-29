@@ -65,14 +65,12 @@ export default function HomePage() {
                 ))}
               </h1>
 
-              {/* Tagline */}
               <BlurFadeText
-                className="text-lg md:text-xl font-semibold mb-6 leading-relaxed text-muted-foreground"
+                className="text-lg md:text-xl font-normal mb-2 leading-relaxed text-muted-foreground"
                 delay={BLUR_FADE_DELAY * 2}
                 text={DATA.description}
               />              
 
-              {/* Summary Badge */}
               <BlurFadeText
                 className="text-md md:text-lg font-normal mb-6 leading-relaxed text-gray-500"
                 delay={BLUR_FADE_DELAY * 2}
