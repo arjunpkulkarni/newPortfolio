@@ -89,7 +89,7 @@ export default function NotebookPage() {
                 <h2 className="text-lg font-bold mb-4 pb-2 border-b">{category}</h2>
               </BlurFade>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                 {projects.map((project, id) => {
                   const slug = getProjectSlug(project.title);
                   return (
@@ -103,10 +103,10 @@ export default function NotebookPage() {
                         transition={{ delay: id * 0.05 }}
                       >
                         <Link href={`/projects/${slug}`}>
-                          <article className="group h-full rounded-lg border bg-card hover:border-primary/50 hover:shadow-md transition-all duration-200 overflow-hidden">
+                          <article className="group rounded-lg border bg-card hover:border-primary/50 hover:shadow-md transition-all duration-200 overflow-hidden flex">
                             {/* Thumbnail */}
                             {project.image && (
-                              <div className="relative w-full h-32 overflow-hidden bg-muted">
+                              <div className="relative w-32 h-20 flex-shrink-0 overflow-hidden bg-muted">
                                 <Image
                                   src={project.image}
                                   alt={project.title}
@@ -117,21 +117,21 @@ export default function NotebookPage() {
                             )}
 
                             {/* Content */}
-                            <div className="p-3 space-y-2">
+                            <div className="p-3 space-y-1 flex-1 min-w-0">
                               {/* Title */}
-                              <h3 className="text-sm font-semibold tracking-tight group-hover:text-primary transition-colors line-clamp-2">
+                              <h3 className="text-sm font-semibold tracking-tight group-hover:text-primary transition-colors line-clamp-1">
                                 {project.title}
                               </h3>
 
                               {/* Description */}
-                              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-2">
+                              <p className="text-xs text-muted-foreground leading-relaxed line-clamp-1">
                                 {project.description}
                               </p>
 
                               {/* Technologies */}
                               {project.technologies && project.technologies.length > 0 && (
                                 <div className="flex flex-wrap gap-1">
-                                  {project.technologies.slice(0, 3).map((tech) => (
+                                  {project.technologies.slice(0, 4).map((tech) => (
                                     <span
                                       key={tech}
                                       className="px-1.5 py-0.5 text-xs rounded border bg-muted/50"
@@ -139,19 +139,18 @@ export default function NotebookPage() {
                                       {tech}
                                     </span>
                                   ))}
-                                  {project.technologies.length > 3 && (
+                                  {project.technologies.length > 4 && (
                                     <span className="px-1.5 py-0.5 text-xs text-muted-foreground">
-                                      +{project.technologies.length - 3}
+                                      +{project.technologies.length - 4}
                                     </span>
                                   )}
                                 </div>
                               )}
+                            </div>
 
-                              {/* Arrow */}
-                              <div className="flex items-center gap-0.5 text-xs text-primary font-medium group-hover:translate-x-0.5 transition-transform">
-                                <span>View</span>
-                                <ChevronRight className="h-3 w-3" />
-                              </div>
+                            {/* Arrow on the right */}
+                            <div className="flex items-center pr-3">
+                              <ChevronRight className="h-4 w-4 text-primary group-hover:translate-x-0.5 transition-transform" />
                             </div>
                           </article>
                         </Link>

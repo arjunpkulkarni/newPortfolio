@@ -1,5 +1,5 @@
 import { Icons } from "@/components/icons";
-import { HomeIcon, NotebookIcon, GraduationCapIcon, BriefcaseIcon, BookOpenIcon } from "lucide-react";
+import { HomeIcon, NotebookIcon, GraduationCapIcon, BriefcaseIcon, BookOpenIcon, PackageIcon } from "lucide-react";
 
 import Culin from "../app/projects/pictures/culin.png";
 import FitCheck from "../app/projects/pictures/fitcheck.png";
@@ -113,6 +113,7 @@ export const DATA = {
     { href: "/", icon: HomeIcon, label: "Home" },
     { href: "/work", icon: BriefcaseIcon, label: "Work" },
     { href: "/education", icon: GraduationCapIcon, label: "Education" },
+    { href: "/products", icon: PackageIcon, label: "Products" },
     { href: "/projects", icon: NotebookIcon, label: "Notebook" },
   ],
   contact: {
@@ -1054,13 +1055,8 @@ export const DATA = {
       links: [
         {
           type: "Live Demo",
-          href: "https://congruence-ai-therapy.lovable.app",
+          href: "https://congruenceinsights.com",
           icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "GitHub",
-          href: "https://github.com/sumanthk123/NOBE-Tech-Project-Fall-2023",
-          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
