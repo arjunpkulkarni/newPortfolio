@@ -570,6 +570,11 @@ export const DATA = {
               description: "Study of kinetic processes in materials systems"
             },
             {
+              code: "MSE404",
+              name: "Quantum States",
+              description: "Quantum mechanical principles and states in materials science"
+            },
+            {
               code: "MSE405",
               name: "Microstructure Determination",
               description: "Analysis of material microstructures"
@@ -588,11 +593,6 @@ export const DATA = {
               code: "MSE485",
               name: "Atomic Scale Simulations",
               description: "Simulation methods at the atomic scale in materials science"
-            },
-            {
-              code: "MSE404",
-              name: "Computational MSE - Macroscale",
-              description: "Computational modeling techniques for macroscale materials"
             },
             {
               code: "MSE494",
