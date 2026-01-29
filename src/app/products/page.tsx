@@ -11,7 +11,7 @@ export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-background">
       {/* Centered container with consistent max-width */}
-      <div className="max-w-7xl mx-auto px-6 py-12 md:py-16">
+      <div className="max-w-7xl mx-auto px-6 py-12 md:py-12">
         {/* Header Section */}
         <BlurFade delay={BLUR_FADE_DELAY}>
           <div className="mb-12 mt-16">

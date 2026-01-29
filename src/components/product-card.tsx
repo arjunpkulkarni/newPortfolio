@@ -66,21 +66,16 @@ export function ProductCard({ product, index }: ProductCardProps) {
           </div>
 
           {/* Right Side - Content */}
-          <div className="flex-1 flex flex-col space-y-3 p-4">
+          <div className="flex-1 flex flex-col space-y-2.5 p-3.5">
             {/* Header */}
             <div className="space-y-1.5">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-lg md:text-xl font-bold tracking-tight leading-tight group-hover:text-primary transition-colors">
-                    {product.name}
-                  </h3>
-                  <p className="text-[10px] text-muted-foreground mt-0.5">
-                    {product.role}
-                  </p>
-                </div>
+              <div className="flex items-center justify-between gap-4">
+                <h3 className="text-lg md:text-xl font-bold tracking-tight leading-tight group-hover:text-primary transition-colors">
+                  {product.name}
+                </h3>
                 {/* Metrics Summary - Inline */}
-                <div className="flex flex-col items-end gap-0.5 text-right">
-                  <div className="text-lg md:text-xl font-bold text-foreground">
+                <div className="flex flex-col items-end gap-0.5 text-right flex-shrink-0">
+                  <div className="text-lg md:text-xl font-bold text-foreground leading-none">
                     {product.primaryMetric.value}
                   </div>
                   <div className="text-[9px] text-muted-foreground uppercase tracking-wide">
@@ -111,7 +106,7 @@ export function ProductCard({ product, index }: ProductCardProps) {
             )}
 
             {/* Bottom Row: Metrics, Stack, and CTA */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 pt-1">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2.5 pt-1">
               <div className="flex flex-col gap-2 flex-1">
                 {/* Secondary Metrics Row */}
                 {product.secondaryMetrics && product.secondaryMetrics.length > 0 && (
