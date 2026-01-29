@@ -146,7 +146,7 @@ export default function HomePage() {
                  <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">About</h2>
                  <div className="space-y-4 text-base leading-relaxed">
                    <p>
-                     I build real-time intelligent systems — AI agents, full-stack apps, and high-velocity mobile experiences. Currently shipping features at Rumor.
+                     I build real-time intelligent systems — AI agents, full-stack apps, and high-velocity mobile experiences.
                    </p>                           
                 </div>
               </section>
