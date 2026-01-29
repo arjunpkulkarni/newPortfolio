@@ -101,6 +101,7 @@ export default function WorkPage() {
                 badges={work.badges}
                 period={`${work.start} - ${work.end ?? "Present"}`}
                 description={work.description}
+                tasks={work.tasks}
               />
             </BlurFade>
           ))}
@@ -130,6 +131,7 @@ export default function WorkPage() {
                   badges={partner.badges}
                   period={`${partner.start || ""}${partner.end ? ` - ${partner.end}` : partner.start ? " - Present" : ""}`}
                   description={partner.description}
+                  tasks={partner.tasks}
                   titleClassName="text-base sm:text-lg"
                   cardClassName="py-4"
                 />
@@ -161,6 +163,7 @@ export default function WorkPage() {
                 badges={researchItem.badges}
                 period={`${researchItem.start} - ${researchItem.end ?? "Present"}`}
                 description={researchItem.description}
+                tasks={researchItem.tasks}
               />
             </BlurFade>
           ))}
@@ -189,6 +192,7 @@ export default function WorkPage() {
                 badges={club.badges}
                 period={`${club.start} - ${club.end ?? "Present"}`}
                 description={club.description}
+                tasks={club.tasks}
               />
             </BlurFade>
           ))}
