@@ -49,9 +49,9 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Developing scalable systems at the intersection of AI and full-stack engineering.",
+    "Building scalable systems that operationalize AI: data pipelines, retrieval, and low-latency services.",
   summary:
-  "Interested in algorithms and applied ML, shipping production AI tools, real time infrastructure and high-scale web platforms.",
+    "Interested in algorithms + applied ML with systems execution: robust backend APIs, agent services, and high-scale web services.",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [
