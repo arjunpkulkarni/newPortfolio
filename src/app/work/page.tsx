@@ -131,7 +131,6 @@ export default function WorkPage() {
                   badges={partner.badges}
                   period={`${partner.start || ""}${partner.end ? ` - ${partner.end}` : partner.start ? " - Present" : ""}`}
                   description={partner.description}
-                  tasks={partner.tasks}
                   titleClassName="text-base sm:text-lg"
                   cardClassName="py-4"
                 />
