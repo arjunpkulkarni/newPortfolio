@@ -35,6 +35,8 @@ export interface Product {
   };
   featured: boolean;
   highlights?: string[];
+  date?: string;
+  client?: string;
 }
 
 export const PRODUCTS: Product[] = [

@@ -13,7 +13,7 @@ export default function ProductsPage() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header Section */}
         <BlurFade delay={BLUR_FADE_DELAY}>
-          <div className="space-y-0.5 mb-8 mt-20">
+          <div className="space-y-0.5 mb-4 mt-20">
             <h2 className="text-2xl font-medium tracking-tighter">Products</h2>
             <p className="text-sm text-muted-foreground">Products I&apos;ve built and shipped to production with real users.</p>
           </div>
