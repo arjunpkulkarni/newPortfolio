@@ -72,13 +72,22 @@ export default function HomePage() {
               />              
 
               <BlurFadeText
-                className="text-md md:text-lg font-normal mb-6 leading-relaxed text-gray-500"
+                className="text-md md:text-lg font-normal mb-2 leading-relaxed text-gray-500"
                 delay={BLUR_FADE_DELAY * 2}
                 text={DATA.summary}
               />     
               
+              <BlurFadeText
+                className="text-md md:text-lg font-normal mb-6 leading-relaxed text-gray-500"
+                delay={BLUR_FADE_DELAY * 2.5}
+                text="Focused on electronic materials research, hardware optimization, and quantum computing systems."
+              />
+              
               <BlurFade delay={BLUR_FADE_DELAY * 3} blur="12px">
                 <div className="flex flex-wrap items-center gap-2 mb-6">
+                  <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
+                    MSE & CS @ UIUC
+                  </span>
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
                     {DATA.location}
                   </span>                 
