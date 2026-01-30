@@ -49,9 +49,9 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Building scalable systems that operationalize AI: data pipelines, retrieval, and low-latency services.",
+    "Backend + ML Systems Engineer building scalable AI pipelines.",
   summary:
-    "Interested in algorithms + applied ML with systems execution: robust backend APIs, agent services, and high-scale web services.",
+    "I build reliable data + retrieval systems powering production ML—optimized for latency, cost, and scale.",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [
@@ -110,7 +110,7 @@ export const DATA = {
     ],
   },
   navbar: [
-    { href: "/", icon: HomeIcon, label: "Home" },
+    { href: "/", icon: HomeIcon, label: "About" },
     { href: "/work", icon: BriefcaseIcon, label: "Work" },
     { href: "/education", icon: GraduationCapIcon, label: "Education" },
     { href: "/products", icon: PackageIcon, label: "Products" },

@@ -20,12 +20,14 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0">
           <BackgroundPaths />
         </div>
-        {/* Gradient overlays for depth */}
+        {/* Gradient overlays for depth and readability */}
         <div className="absolute inset-0 z-5 bg-gradient-to-b from-background/5 via-transparent to-background/80"></div>
+        {/* Improved contrast overlay for text readability */}
+        <div className="absolute inset-0 z-8 bg-gradient-to-r from-background/85 via-background/40 to-transparent"></div>
         {/* Soft blur overlay above BG, keeps BG intact */}
         <div className="absolute inset-0 z-10 backdrop-blur-sm"></div>
 
-        <div className="relative z-20 w-full max-w-3xl mx-auto px-6 md:px-8 py-20">
+        <div className="relative z-20 w-full max-w-6xl mx-auto px-6 md:px-8 py-20">
           <header>
             <div className="flex flex-col">
               {/* Profile Image */}
@@ -65,51 +67,84 @@ export default function HomePage() {
                 ))}
               </h1>
 
+              {/* Headline - Specific & Outcome-Driven */}
               <BlurFadeText
-                className="text-lg md:text-xl font-normal mb-2 leading-relaxed text-muted-foreground"
+                className="text-lg md:text-xl font-normal mb-3 leading-relaxed text-foreground"
                 delay={BLUR_FADE_DELAY * 2}
                 text={DATA.description}
               />              
 
+              {/* Subline - Value Proposition */}
               <BlurFadeText
-                className="text-md md:text-lg font-normal mb-2 leading-relaxed text-gray-500"
-                delay={BLUR_FADE_DELAY * 2}
+                className="text-md md:text-lg font-normal mb-6 leading-relaxed text-muted-foreground"
+                delay={BLUR_FADE_DELAY * 2.2}
                 text={DATA.summary}
               />     
               
-              <BlurFadeText
-                className="text-md md:text-lg font-normal mb-6 leading-relaxed text-gray-500"
-                delay={BLUR_FADE_DELAY * 2.5}
-                text="Focused on electronic materials research, hardware optimization, and quantum computing systems."
-              />
+              {/* Capabilities - Bullet Points */}
+              <BlurFade delay={BLUR_FADE_DELAY * 2.4} blur="12px">
+                <div className="mb-6 space-y-2 text-sm md:text-base text-muted-foreground">
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>RAG pipelines + vector search (Pinecone, FAISS, QDrant) + intelligent caching</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Distributed services: APIs, message queues, real-time systems + observability</span>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <span className="text-primary mt-1">•</span>
+                    <span>Performance + cost optimization at scale (Redis, Postgres, cloud infra)</span>
+                  </div>
+                </div>
+              </BlurFade>
               
-              <BlurFade delay={BLUR_FADE_DELAY * 3} blur="12px">
-                <div className="flex flex-wrap items-center gap-2 mb-6">
+              {/* Availability & Education */}
+              <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
+                <div className="flex flex-wrap items-center gap-2 mb-4">
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
-                    MSE & CS @ UIUC
+                    CS & MSE @ UIUC
                   </span>
+                                 
                   <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
-                    {DATA.location}
-                  </span>                 
-                  <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
-                    Open to remote + NYC + SF
+                    Open to Remote / SF / NYC
                   </span>
+                  
                 </div>
               </BlurFade>
 
+              {/* Research Background */}
+              <BlurFade delay={BLUR_FADE_DELAY * 2.8} blur="12px">
+                <p className="text-xs text-muted-foreground/70 mb-6">
+                  Previously: Electronic materials + hardware optimization + quantum computing research—strong systems intuition from physics background.
+                </p>
+              </BlurFade>
+
               {/* CTA Buttons */}
-              <BlurFade delay={BLUR_FADE_DELAY * 3.5} blur="12px">
-                <div className="flex gap-3 mb-16">
+              <BlurFade delay={BLUR_FADE_DELAY * 3} blur="12px">
+                <div className="flex gap-3 mb-4">
+                  <Link href="/RESUME_ARJUNK_SEPT25.pdf" target="_blank">
+                    <Button size="sm">
+                      View Resume
+                    </Button>
+                  </Link>
                   <Link href={DATA.contact.social.LinkedIn.url} target="_blank">
                     <Button variant="outline" size="sm">
                       LinkedIn
                     </Button>
                   </Link>
-                  <Link href={`mailto:${DATA.contact.email}`} target="_blank">
-                    <Button size="sm">
-                      Get in Touch
+                  <Link href={`mailto:${DATA.contact.email}`}>
+                    <Button variant="outline" size="sm">
+                      Email
                     </Button>
                   </Link>
+                </div>
+              </BlurFade>
+
+              {/* Tech Stack Strip */}
+              <BlurFade delay={BLUR_FADE_DELAY * 3.2} blur="12px">
+                <div className="text-xs text-muted-foreground/60 font-mono">
+                  Python • TypeScript • C++ • Postgres • Redis • Pinecone • Docker • AWS • LangChain • FastAPI • React
                 </div>
               </BlurFade>
 
@@ -118,7 +153,6 @@ export default function HomePage() {
           </header>
         </div>
       </div>
-
       
     </div>
   );
