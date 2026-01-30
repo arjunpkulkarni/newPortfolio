@@ -113,95 +113,13 @@ export default function HomePage() {
                 </div>
               </BlurFade>
 
-              {/* Scroll Indicator */}
-              <motion.div
-                initial={{ opacity: 1, y: 0 }}
-                animate={{ y: [0, 10, 0] }}
-                transition={{
-                  duration: 1.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-              >
-                 <div className="flex flex-col items-center gap-2 cursor-pointer" onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}>
-                   <span className="text-sm text-muted-foreground">Scroll to explore</span>
-                  <svg
-                    className="w-6 h-6 text-primary"
-                    fill="none"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                  </svg>
-                </div>
-              </motion.div>
+              
             </div>
           </header>
         </div>
       </div>
 
-      {/* Content Section - Clean Background */}
-      <div className="w-full bg-background">
-        <div className="w-full max-w-7xl mx-auto px-6 md:px-8 py-16 md:py-20">
-          {/* Article Content */}
-          <article className="prose prose-lg prose-neutral dark:prose-invert max-w-none">
-             {/* About Section */}
-             <BlurFade delay={BLUR_FADE_DELAY * 2.2} blur="12px">
-               <section className="mb-16">
-                 <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">About</h2>
-                 <div className="space-y-4 text-base leading-relaxed">
-                   <p>
-                     I build real-time intelligent systems — AI agents, full-stack apps, and high-velocity mobile experiences.
-                   </p>                           
-                </div>
-              </section>
-            </BlurFade>
-
-             
-
-             {/* Why I Build Section */}
-             <BlurFade delay={BLUR_FADE_DELAY * 2.35} blur="12px">
-               <section className="mb-16">
-                 <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">Why I Build</h2>
-                 <div className="space-y-4 text-base leading-relaxed">
-                   <p>
-                     I believe the future belongs to engineers who can move between AI, systems, and real user problems without friction.
-                   </p>                  
-                   <p className="text-lg">
-                     Let&apos;s build something meaningful together.
-                   </p>
-                </div>
-              </section>
-            </BlurFade>
-
-            {/* Latest Writing & Contact Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 not-prose">
-              
-              
-               <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
-                 <section>
-                   <h2 className="text-3xl font-normal mb-6 pb-3 border-b-2">Contact</h2>
-                  <div className="flex flex-col gap-3 text-base">
-                    <Link href={`mailto:${DATA.contact.email}`} className="hover:text-primary transition-colors underline underline-offset-4">
-                      {DATA.contact.email}
-                    </Link>
-                    <Link href={DATA.contact.social.GitHub.url} target="_blank" className="hover:text-primary transition-colors underline underline-offset-4">
-                      GitHub
-                    </Link>
-                    <Link href={DATA.contact.social.LinkedIn.url} target="_blank" className="hover:text-primary transition-colors underline underline-offset-4">
-                      LinkedIn
-                    </Link>
-                  </div>
-                </section>
-              </BlurFade>
-            </div>
-          </article>
-        </div>
-      </div>
+      
     </div>
   );
 }
