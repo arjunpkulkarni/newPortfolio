@@ -116,7 +116,7 @@ export default function HomePage() {
               {/* Research Background */}
               <BlurFade delay={BLUR_FADE_DELAY * 2.8} blur="12px">
                 <p className="text-xs text-muted-foreground/70 mb-6">
-                  Previously: Electronic materials + hardware optimization + quantum computing research—strong systems intuition from physics background.
+                  Research Experience: Electronic materials + hardware optimization + quantum computing research—strong systems intuition from physics background.
                 </p>
               </BlurFade>
 
