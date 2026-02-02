@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import { Product } from "@/data/products";
 import { ExternalLink } from "lucide-react";
+import { useState } from "react";
 
 interface ProductCardProps {
   product: Product;
@@ -13,6 +14,10 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product, index }: ProductCardProps) {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = product.images || (product.image ? [product.image] : []);
+  const hasMultipleImages = images.length > 1;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -40,21 +45,62 @@ export function ProductCard({ product, index }: ProductCardProps) {
         )}
 
         {/* Left Side - Device Mockup */}
-        <div className="relative w-full max-w-[300px]">
-          <div className="relative bg-zinc-900/50 rounded-lg p-1.5 shadow-lg">
-            <div className="relative aspect-[4/3] rounded overflow-hidden bg-black">
-              {product.image && (
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  className="object-cover object-top"
-                  priority={index < 2}
-                />
-              )}
+        {product.id === "hanger" && images.length > 0 ? (
+          /* Special iPhone Display for Hanger */
+          <div className="relative w-full max-w-[350px] h-[400px]">
+            {/* iPhone Mockup - Centered */}
+            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-[200px] z-10">
+              <div className="relative bg-zinc-900 rounded-[2.5rem] p-2 shadow-2xl border-4 border-zinc-800">
+                {/* iPhone Notch */}
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-zinc-900 rounded-b-2xl z-20"></div>
+                <div className="relative aspect-[9/19.5] rounded-[2rem] overflow-hidden bg-black">
+                  <Image
+                    src={images[0]}
+                    alt={product.name}
+                    fill
+                    className="object-cover object-top"
+                    priority={index < 2}
+                  />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          /* Default Display for Other Products */
+          <div className="relative w-full max-w-[300px] space-y-3">
+            <div className="relative bg-zinc-900/50 rounded-lg p-1.5 shadow-lg">
+              <div className="relative aspect-[4/3] rounded overflow-hidden bg-black">
+                {images.length > 0 && (
+                  <Image
+                    src={images[currentImageIndex]}
+                    alt={`${product.name} ${currentImageIndex + 1}`}
+                    fill
+                    className="object-cover object-top transition-opacity duration-300"
+                    priority={index < 2}
+                  />
+                )}
+              </div>
+            </div>
+            
+            {/* Image Navigation Dots - Only for non-Hanger products with multiple images */}
+            {hasMultipleImages && (
+              <div className="flex gap-2 justify-center">
+                {images.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setCurrentImageIndex(idx)}
+                    className={`h-2 rounded-full transition-all ${
+                      idx === currentImageIndex 
+                        ? 'bg-primary w-8' 
+                        : 'bg-muted-foreground/30 hover:bg-muted-foreground/50 w-2'
+                    }`}
+                    aria-label={`View image ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Right Side - Content */}
         <div className="space-y-5 pr-32">

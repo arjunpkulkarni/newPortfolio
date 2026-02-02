@@ -7,6 +7,7 @@ import Siramai from "../app/projects/pictures/siramai.png";
 import psych from "../app/projects/pictures/psych.png";
 import OpenField from "../app/projects/pictures/openfield.png";
 import Hanger from "../app/projects/pictures/hanger.png";
+import Hanger2 from "../app/projects/pictures/hanger2.png";
 import LumeLabs from "../app/projects/pictures/lumelabs.png";
 import Congruence from "../app/projects/pictures/congruence.png";
 
@@ -29,6 +30,7 @@ export interface Product {
   categories: ProductCategory[];
   stack: string[];
   image?: StaticImageData | string;
+  images?: (StaticImageData | string)[];
   ctas: {
     primary?: { label: string; href: string };
     secondary?: { label: string; href: string };
@@ -141,7 +143,8 @@ export const PRODUCTS: Product[] = [
     ],
     categories: ["Consumer", "Platform", "AI/Health"],
     stack: ["Pinecone", "OpenAI", "Next.js", "Redis", "Vector Search", "Docker", "Vercel"],
-    image: Hanger,
+    image: Hanger2,
+    images: [Hanger2],
     ctas: {
       primary: { label: "Live Site", href: "https://www.siramai.com/" },
     },
