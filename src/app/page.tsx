@@ -13,6 +13,7 @@ const BLUR_FADE_DELAY = 0.04;
 
 export default function HomePage() {
   const words = ["Arjun", "Kulkarni"];
+
   return (
     <div className="relative w-full">
       {/* Hero Section with Background */}
@@ -27,24 +28,26 @@ export default function HomePage() {
         {/* Soft blur overlay above BG, keeps BG intact */}
         <div className="absolute inset-0 z-10 backdrop-blur-sm"></div>
 
-        <div className="relative z-20 w-full max-w-6xl mx-auto px-6 md:px-8 py-20">
+        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-16 lg:px-24 py-16 md:py-20">
           <header>
-            <div className="flex flex-col">
-              {/* Profile Image */}
+            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-24 lg:gap-32 items-start md:items-center">
+              {/* Profile Image - Left */}
               <BlurFade delay={BLUR_FADE_DELAY * 1} blur="12px" duration={0.6}>
-                <div className="relative mb-6">
+                <div className="relative md:ml-12 lg:ml-16">
                   <Image
                     alt={DATA.name}
                     src={DATA.avatarUrl}
-                    width={80}
-                    height={80}
-                    className="h-16 w-16 md:h-20 md:w-20 object-cover rounded-full shadow-lg ring-2 ring-border"
+                    width={200}
+                    height={200}
+                    className="h-36 w-36 md:h-48 md:w-48 lg:h-56 lg:w-56 object-cover rounded-2xl shadow-lg ring-2 ring-border"
                   />
                 </div>
               </BlurFade>
               
-              {/* Name */}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal mb-8 tracking-tight">
+              {/* Content - Right */}
+              <div className="flex flex-col">
+                {/* Name */}
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal mb-6 tracking-tight">
                 {words.map((word: string, wordIndex: number) => (
                   <span key={wordIndex} className="inline-block mr-3 last:mr-0">
                     {word.split("").map((letter: string, letterIndex: number) => (
@@ -65,95 +68,75 @@ export default function HomePage() {
                     ))}
                   </span>
                 ))}
-              </h1>
+                </h1>
 
-              {/* Headline - Specific & Outcome-Driven */}
-              <BlurFadeText
-                className="text-lg md:text-xl font-normal mb-3 leading-relaxed text-foreground"
-                delay={BLUR_FADE_DELAY * 2}
-                text={DATA.description}
-              />              
+                {/* Headline - Sharp & Authoritative */}
+                <BlurFadeText
+                  className="text-xl md:text-2xl font-medium mb-3 leading-relaxed text-foreground tracking-tight"
+                  delay={BLUR_FADE_DELAY * 2}
+                  text="I architect and deploy production AI systems."
+                />              
 
-              {/* Subline - Value Proposition */}
-              <BlurFadeText
-                className="text-md md:text-lg font-normal mb-6 leading-relaxed text-muted-foreground"
-                delay={BLUR_FADE_DELAY * 2.2}
-                text={DATA.summary}
-              />     
-              
-              {/* Capabilities - Bullet Points */}
-              <BlurFade delay={BLUR_FADE_DELAY * 2.4} blur="12px">
-                <div className="mb-6 space-y-2 text-sm md:text-base text-muted-foreground">
-                  <div className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>RAG pipelines + vector search (Pinecone, FAISS, QDrant) + intelligent caching</span>
+                {/* System Capabilities - 3 High-Level Bullets */}
+                <BlurFade delay={BLUR_FADE_DELAY * 2.2} blur="12px">
+                  <div className="mb-6 space-y-2 text-sm md:text-base text-foreground/80">
+                    <div className="flex items-start gap-2.5">
+                      <span className="text-primary mt-1 text-base">•</span>
+                      <span>Retrieval and inference systems</span>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <span className="text-primary mt-1 text-base">•</span>
+                      <span>Distributed APIs with real observability</span>
+                    </div>
+                    <div className="flex items-start gap-2.5">
+                      <span className="text-primary mt-1 text-base">•</span>
+                      <span>Performance and cost discipline in production</span>
+                    </div>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Distributed services: APIs, message queues, real-time systems + observability</span>
+                </BlurFade>
+
+                {/* Research Background - Inline */}
+                <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
+                  <p className="text-xs leading-relaxed text-muted-foreground/85 mb-6 max-w-2xl">
+                    Background in electronic materials, hardware optimization, and quantum systems research—building intuition for physical constraints and system reliability that I now apply to production AI infrastructure.
+                  </p>
+                </BlurFade>
+
+                {/* CTA Buttons - Products First */}
+                <BlurFade delay={BLUR_FADE_DELAY * 3} blur="12px">
+                  <div className="flex flex-wrap gap-3 mb-5">
+                    <Link href="/products">
+                      <Button size="default" className="font-medium">
+                        View Products
+                      </Button>
+                    </Link>
+                    <Link href="/RESUME_ARJUNK_SEPT25.pdf" target="_blank">
+                      <Button variant="outline" size="default">
+                        Resume
+                      </Button>
+                    </Link>
+                    <Link href={DATA.contact.social.GitHub.url} target="_blank">
+                      <Button variant="outline" size="default">
+                        GitHub
+                      </Button>
+                    </Link>
                   </div>
-                  <div className="flex items-start gap-2">
-                    <span className="text-primary mt-1">•</span>
-                    <span>Performance + cost optimization at scale (Redis, Postgres, cloud infra)</span>
+                </BlurFade>
+
+                {/* Availability & Education - Minimal */}
+                <BlurFade delay={BLUR_FADE_DELAY * 3.4} blur="12px">
+                  <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground/75">
+                    <span>CS & MSE @ UIUC</span>
+                    <span className="text-muted-foreground/40">•</span>
+                    <span>Open to Remote / SF / NYC</span>
                   </div>
-                </div>
-              </BlurFade>
-              
-              {/* Availability & Education */}
-              <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
-                <div className="flex flex-wrap items-center gap-2 mb-4">
-                  <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
-                    CS & MSE @ UIUC
-                  </span>
-                                 
-                  <span className="text-xs px-2.5 py-1 rounded-md border bg-muted/30">
-                    Open to Remote / SF / NYC
-                  </span>
-                  
-                </div>
-              </BlurFade>
-
-              {/* Research Background */}
-              <BlurFade delay={BLUR_FADE_DELAY * 2.8} blur="12px">
-                <p className="text-xs text-muted-foreground/70 mb-6">
-                  Research Experience: Electronic materials + hardware optimization + quantum computing research—strong systems intuition from physics background.
-                </p>
-              </BlurFade>
-
-              {/* CTA Buttons */}
-              <BlurFade delay={BLUR_FADE_DELAY * 3} blur="12px">
-                <div className="flex gap-3 mb-4">
-                  <Link href="/RESUME_ARJUNK_SEPT25.pdf" target="_blank">
-                    <Button size="sm">
-                      View Resume
-                    </Button>
-                  </Link>
-                  <Link href={DATA.contact.social.LinkedIn.url} target="_blank">
-                    <Button variant="outline" size="sm">
-                      LinkedIn
-                    </Button>
-                  </Link>
-                  <Link href={`mailto:${DATA.contact.email}`}>
-                    <Button variant="outline" size="sm">
-                      Email
-                    </Button>
-                  </Link>
-                </div>
-              </BlurFade>
-
-              {/* Tech Stack Strip */}
-              <BlurFade delay={BLUR_FADE_DELAY * 3.2} blur="12px">
-                <div className="text-xs text-muted-foreground/60 font-mono">
-                  Python • TypeScript • C++ • Postgres • Redis • Pinecone • Docker • AWS • LangChain • FastAPI • React
-                </div>
-              </BlurFade>
-
-              
+                </BlurFade>
+              </div>
             </div>
           </header>
         </div>
       </div>
-      
+
     </div>
   );
 }

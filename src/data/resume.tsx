@@ -49,7 +49,7 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Backend + ML Systems Engineer building scalable AI pipelines.",
+    "AI Systems Engineer building production-grade intelligence infrastructure.",
   summary:
     "I build reliable data + retrieval systems powering production ML—optimized for latency, cost, and scale.",
   avatarUrl: "/pfp.jpeg",
