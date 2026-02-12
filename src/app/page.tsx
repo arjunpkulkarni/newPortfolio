@@ -30,7 +30,7 @@ export default function HomePage() {
 
         <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-16 lg:px-24 py-16 md:py-20">
           <header>
-            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-24 lg:gap-32 items-start md:items-center">
+            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-12 lg:gap-16 items-start md:items-center">
               {/* Profile Image - Left */}
               <BlurFade delay={BLUR_FADE_DELAY * 1} blur="12px" duration={0.6}>
                 <div className="relative md:ml-12 lg:ml-16">

@@ -229,9 +229,9 @@ export const PRODUCTS: Product[] = [
     id: "openfield",
     slug: "openfield",
     name: "OpenField",
-    oneLiner: "NIL marketplace for college athletes—520+ athletes, $52K+ GMV, <48h deal completion.",
+    oneLiner: "NIL marketplace for college athletes—30+ athletes, $3.5K+ GMV, <48h deal completion.",
     proof: [
-      { label: "Athletes", value: "520+" },
+      { label: "Athletes", value: "30+" },
       { label: "GMV", value: "$3.5K+" },
       { label: "Deal Time", value: "<48h" },
     ],
