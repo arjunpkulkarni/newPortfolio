@@ -147,10 +147,10 @@ export const DATA = {
       href: "https://www.therumor.com/",
       badges: [],
       location: "New York, NY",
-      title: "Software Engineer Intern",
+      title: "Software Engineer",
       logoUrl: rumorLogo,
-      start: "Nov 2025",
-      end: "Jan 2026",
+      start: "Oct 2025",
+      end: "Feb 2026",
       description:
         "Building core mobile features for Rumor's 50k+ user event‑hosting platform.",
       tasks: [
@@ -169,6 +169,66 @@ export const DATA = {
       ]
     },
     {
+      company: "UC San Diego Health",
+      href: "https://health.ucsd.edu/",
+      badges: [],
+      location: "San Diego, CA",
+      title: "Senior Software Engineer",
+      logoUrl: ucsd,
+      start: "Aug 2025",
+      end: "Jan 2026",
+      description:
+        "Run DevOps and ML infrastructure for clinical‑grade AI dietician platform serving 200+ patients.",
+      tasks: [
+        {
+          description: "Led infrastructure scaling and optimization, implementing advanced caching strategies and database tuning that reduced API latency by 40% under peak load.",
+          skills: ["DevOps", "Infrastructure", "Performance", "Scaling"]
+        },
+        {
+          description: "Architected ML pipeline orchestration with Airflow and MLflow, automating model retraining and deployment workflows for continuous improvement.",
+          skills: ["MLOps", "Airflow", "MLflow", "CI/CD"]
+        },
+        {
+          description: "Implemented comprehensive monitoring and alerting system using Prometheus and Grafana, achieving 99.9% uptime for production ML services.",
+          skills: ["Monitoring", "Prometheus", "Grafana", "SRE"]
+        },
+        {
+          description: "Mentored junior engineers on best practices for ML infrastructure, DevOps workflows, and production system design.",
+          skills: ["Leadership", "Mentorship", "System Design", "Best Practices"]
+        }
+      ]
+    },
+    {
+      company: "UC San Diego Health",
+      href: "https://health.ucsd.edu/",
+      badges: [],
+      location: "San Diego, CA",
+      title: "Software Engineer",
+      logoUrl: ucsd,
+      start: "Jan 2025",
+      end: "Aug 2025",
+      description:
+        "Built clinical‑grade AI dietician platform serving 200+ patients with RAG pipeline and agentic workflows.",
+      tasks: [
+        {
+          description: "Built clinical AI nutrition platform serving 200+ patients with subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
+          skills: ["LangChain", "RAG", "QDrant", "Healthcare AI"]
+        },
+        {
+          description: "Collaborated with Food Network Chef James Briscione and White House Fellow Prof. Lav Varshney to integrate culinary expertise into AI recommendation engine.",
+          skills: ["Cross-functional Collaboration", "Product Development", "Healthcare"]
+        },
+        {
+          description: "Deployed HIPAA-compliant Next.js platform with GPT-4o integration, implementing encryption, audit logging, and secure PHI handling, passing UCSD Health IT security review.",
+          skills: ["Next.js", "GPT-4", "HIPAA Compliance", "Security"]
+        },
+        {
+          description: "Built agentic workflow with LangGraph for multi-step reasoning (medical history, allergies, meal generation), reducing manual dietician review time by 65%.",
+          skills: ["LangGraph", "AI Agents", "Workflow Automation", "Python"]
+        }
+      ]
+    },
+    {
       company: "Curator.to",
       href: "https://curator.to/",
       badges: ["Intel & UpHonest Capital-backed"],
@@ -176,7 +236,7 @@ export const DATA = {
       title: "Founding Engineer",
       logoUrl: siramaiLogo,
       start: "Jan 2024",
-      end: "Nov 2025",
+      end: "Dec 2025",
       description:
         "First founding engineer; built agentic e‑commerce OS and no‑code framework used by 4+ enterprise clients.",
       tasks: [
@@ -199,36 +259,6 @@ export const DATA = {
         {
           description: "Shipped Gemini multimodal search enabling conversational and visual product discovery, improving conversion rates by 40% for enterprise clients.",
           skills: ["Gemini", "Multimodal AI", "RAG", "Production ML"]
-        }
-      ]
-    },
-    {
-      company: "UCSD Health",
-      href: "https://health.ucsd.edu/",
-      badges: [],
-      location: "San Diego, CA",
-      title: "Founding Engineer",
-      logoUrl: ucsd,
-      start: "Jan 2025",
-      end: "Aug 2025",
-      description:
-        "Led DevOps + ML workflows for clinical‑grade AI dietician platform serving 200+ patients.",
-      tasks: [
-        {
-          description: "Built clinical AI nutrition platform serving 200+ patients with subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
-          skills: ["LangChain", "RAG", "QDrant", "Healthcare AI"]
-        },
-        {
-          description: "Collaborated with Food Network Chef James Briscione and White House Fellow Prof. Lav Varshney to integrate culinary expertise into AI recommendation engine.",
-          skills: ["Cross-functional Collaboration", "Product Development", "Healthcare"]
-        },
-        {
-          description: "Deployed HIPAA-compliant Next.js platform with GPT-4o integration, implementing encryption, audit logging, and secure PHI handling, passing UCSD Health IT security review.",
-          skills: ["Next.js", "GPT-4", "HIPAA Compliance", "Security"]
-        },
-        {
-          description: "Built agentic workflow with LangGraph for multi-step reasoning (medical history, allergies, meal generation), reducing manual dietician review time by 65%.",
-          skills: ["LangGraph", "AI Agents", "Workflow Automation", "Python"]
         }
       ]
     },
@@ -265,14 +295,14 @@ export const DATA = {
   ],
   research: [
     {
-      company: "Nick Holonyak, Jr. Micro and Nanotechnology Laboratory",
+      company: "Illinois Quantum Information Science and Technology Center",
       href: "https://mntl.illinois.edu/",
       badges: [],
       location: "Champaign, IL (On-site)",
-      title: "Nanotechnology Researcher",
+      title: "Machine Learning Researcher",
       logoUrl: uiuc,
       start: "Sep 2025",
-      end: "Jan 2026",
+      end: "Dec 2025",
       description:
         "Optimizing quantum material energy with carbon nanotubes, building on ionic Coulomb drag principles for nanofluidic semiconductor channels (Nano Energy, 2023; doi:10.1016/j.nanoen.2023.108860).",
       tasks: [
@@ -287,14 +317,14 @@ export const DATA = {
       ]
     },
     {
-      company: "Coordinated Science Laboratory",
+      company: "Coordinated Science Laboratory at University of Illinois",
       href: "https://csl.illinois.edu/",
       badges: [],
       location: "In-Person",
-      title: "Software Developer",
+      title: "Software Engineer Intern",
       logoUrl: uiuc,
-      start: "Jan 2025",
-      end: "Aug 2025",
+      start: "Jan 2024",
+      end: "Jan 2025",
       description:
         "Led DevOps + ML workflows for AI dietician platform (merged with UCSD Health project above).",
       tasks: [
@@ -353,14 +383,14 @@ export const DATA = {
       ]
     },
     {
-      company: "Civil & Environmental Engineering Department",
+      company: "Civil and Environmental Engineering at Illinois",
       href: "https://cee.illinois.edu/",
       badges: [],
       location: "In-Person",
-      title: "Materials Research Assistant",
+      title: "Machine Learning Engineer Intern",
       logoUrl: uiuc,
-      start: "Sep 2022",
-      end: "Dec 2022",
+      start: "Jan 2024",
+      end: "May 2024",
       description:
         "Developed sustainable concrete mixture using ML to predict durability — reduced carbon emissions by 10%.",
       tasks: [
@@ -371,6 +401,28 @@ export const DATA = {
         {
           description: "Built Python + Random Forest models to predict composition impact on durability, reducing carbon emissions by 10%.",
           skills: ["Python", "Random Forest", "ML", "Sustainability"]
+        }
+      ]
+    },
+    {
+      company: "Siebel School of Computing and Data Science",
+      href: "https://cs.illinois.edu/",
+      badges: [],
+      location: "Urbana, IL",
+      title: "Undergraduate Teaching Assistant",
+      logoUrl: uiuc,
+      start: "Jan 2023",
+      end: "Apr 2023",
+      description:
+        "Teaching assistant for computer science courses, helping students with coursework and projects.",
+      tasks: [
+        {
+          description: "Held office hours and provided one-on-one support for students in computer science courses.",
+          skills: ["Teaching", "Mentorship", "Computer Science"]
+        },
+        {
+          description: "Graded assignments and provided detailed feedback to help students improve their programming skills.",
+          skills: ["Code Review", "Feedback", "Education"]
         }
       ]
     },

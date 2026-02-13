@@ -2,14 +2,27 @@
 
 import BlurFade from "@/components/magicui/blur-fade";
 import { ResumeCard } from "@/components/resume-card";
+import { PromotionCard } from "@/components/promotion-card";
 import { DATA } from "@/data/resume";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function WorkPage() {
   const [scrollProgress, setScrollProgress] = useState(0);
   const mainRef = useRef<HTMLElement>(null);
+
+  // Group work experiences by company to handle promotions
+  const groupedWork = useMemo(() => {
+    const groups: { [key: string]: typeof DATA.work } = {};
+    DATA.work.forEach((work) => {
+      if (!groups[work.company]) {
+        groups[work.company] = [];
+      }
+      groups[work.company].push(work);
+    });
+    return groups;
+  }, []);
 
   // Calculate total items for timeline
   const allItems = [
@@ -86,25 +99,52 @@ export default function WorkPage() {
         </BlurFade>
         
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
-          {DATA.work.map((work, id) => (
-            <BlurFade
-              key={work.company}
-              delay={BLUR_FADE_DELAY * 6 + id * 0.05}
-            >
-              <ResumeCard
-                key={work.company}
-                logoUrl={work.logoUrl}
-                altText={work.company}
-                title={work.company}
-                subtitle={work.title}
-                href={work.href}
-                badges={work.badges}
-                period={`${work.start} - ${work.end ?? "Present"}`}
-                description={work.description}
-                tasks={work.tasks}
-              />
-            </BlurFade>
-          ))}
+          {Object.entries(groupedWork).map(([company, roles], groupIndex) => {
+            // If multiple roles at same company, use PromotionCard
+            if (roles.length > 1) {
+              return (
+                <BlurFade
+                  key={`${company}-group-${groupIndex}`}
+                  delay={BLUR_FADE_DELAY * 6 + groupIndex * 0.05}
+                >
+                  <PromotionCard
+                    logoUrl={roles[0].logoUrl}
+                    altText={company}
+                    company={company}
+                    href={roles[0].href}
+                    badges={roles[0].badges}
+                    roles={roles.map(role => ({
+                      title: role.title,
+                      period: `${role.start} - ${role.end ?? "Present"}`,
+                      description: role.description,
+                      tasks: role.tasks,
+                    }))}
+                  />
+                </BlurFade>
+              );
+            }
+            
+            // Single role, use regular ResumeCard
+            const work = roles[0];
+            return (
+              <BlurFade
+                key={`${company}-single-${groupIndex}`}
+                delay={BLUR_FADE_DELAY * 6 + groupIndex * 0.05}
+              >
+                <ResumeCard
+                  logoUrl={work.logoUrl}
+                  altText={work.company}
+                  title={work.company}
+                  subtitle={work.title}
+                  href={work.href}
+                  badges={work.badges}
+                  period={`${work.start} - ${work.end ?? "Present"}`}
+                  description={work.description}
+                  tasks={work.tasks}
+                />
+              </BlurFade>
+            );
+          })}
         </div>
       </section>
       {Array.isArray(DATA.partners) && DATA.partners.length > 0 && (
@@ -118,11 +158,11 @@ export default function WorkPage() {
           <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
             {DATA.partners.map((partner, id) => (
               <BlurFade
-                key={partner.company}
+                key={`${partner.company}-${partner.title}-${id}`}
                 delay={BLUR_FADE_DELAY * 8 + id * 0.05}
               >
                 <ResumeCard
-                  key={partner.company}
+                  key={`${partner.company}-${partner.title}-${id}`}
                   logoUrl={partner.logoUrl}
                   altText={partner.company}
                   title={partner.company}
@@ -149,11 +189,11 @@ export default function WorkPage() {
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
           {DATA.research.map((researchItem, id) => (
             <BlurFade
-              key={researchItem.company}
+              key={`${researchItem.company}-${researchItem.title}-${id}`}
               delay={BLUR_FADE_DELAY * 8 + id * 0.05}
             >
               <ResumeCard
-                key={researchItem.company}
+                key={`${researchItem.company}-${researchItem.title}-${id}`}
                 logoUrl={researchItem.logoUrl}
                 altText={researchItem.company}
                 title={researchItem.company}
@@ -178,11 +218,11 @@ export default function WorkPage() {
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
           {DATA.clubs.map((club, id) => (
             <BlurFade
-              key={club.company}
+              key={`${club.company}-${club.title}-${id}`}
               delay={BLUR_FADE_DELAY * 10 + id * 0.05}
             >
               <ResumeCard
-                key={club.company}
+                key={`${club.company}-${club.title}-${id}`}
                 logoUrl={club.logoUrl}
                 altText={club.company}
                 title={club.company}

@@ -318,7 +318,7 @@ export const PRODUCTS: Product[] = [
     ],
     tags: ["Marketplace", "Product", "Infra"],
     type: "Full-stack",
-    status: "Live",
+    status: "Archived",
     domain: "Marketplace",
     links: {
       live: "https://www.openfield.live/",
@@ -327,7 +327,7 @@ export const PRODUCTS: Product[] = [
     featured: false,
     impactScore: 80,
     date: "2024-03-12",
-    isCurrentlyLive: true,
+    isCurrentlyLive: false,
   },
 ];
 
