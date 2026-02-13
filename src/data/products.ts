@@ -159,7 +159,7 @@ export const PRODUCTS: Product[] = [
       "Designed semantic product discovery: OpenAI embeddings + Pinecone vector DB → 40% CTR improvement over keyword search",
       "Deployed on Vercel with edge caching + serverless functions—handling 2K+ users with <100ms p50 latency",
       "Optimized vector indexing strategy (HNSW) for 1M+ product catalog, reducing search latency by 35%",
-      "Search product outcompeted $35M+ funded competitor (Daydream), leading to us securing $1.0M funding from Uphonest Capital",
+      "Search product outcompeted $35M+ funded competitor (Daydream)",
     ],
     tags: ["Vector Search", "Product", "Mobile"],
     type: "Full-stack",
