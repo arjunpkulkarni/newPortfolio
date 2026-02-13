@@ -24,7 +24,7 @@ export default function ProductsPage() {
           <div className="space-y-0.5 mb-8 mt-20">
             <h2 className="text-2xl font-medium tracking-tighter">Products</h2>
             <p className="text-sm text-muted-foreground">
-              Production systems I've built and shipped. Focus on measurable impact.
+              Production systems I&apos;ve built and shipped. Focus on measurable impact.
             </p>
           </div>
         </BlurFade>

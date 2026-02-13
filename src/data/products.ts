@@ -23,7 +23,7 @@ export type ProductTag =
   | "Mobile";
 
 export type ProductType = "AI/ML" | "Infra" | "Full-stack";
-export type ProductStatus = "Live" | "Pilot" | "Prototype";
+export type ProductStatus = "Live" | "Pilot" | "Prototype" | "Archived";
 export type ProductDomain = "Healthcare" | "E-comm" | "Fashion" | "Growth" | "Marketplace";
 
 export interface ProductMetric {
@@ -348,5 +348,5 @@ export const PRODUCT_TAGS: ProductTag[] = [
 ];
 
 export const PRODUCT_TYPES: ProductType[] = ["AI/ML", "Infra", "Full-stack"];
-export const PRODUCT_STATUSES: ProductStatus[] = ["Live", "Pilot", "Prototype"];
+export const PRODUCT_STATUSES: ProductStatus[] = ["Live", "Pilot", "Prototype", "Archived"];
 export const PRODUCT_DOMAINS: ProductDomain[] = ["Healthcare", "E-comm", "Fashion", "Growth", "Marketplace"];

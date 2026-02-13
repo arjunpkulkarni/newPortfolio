@@ -76,7 +76,7 @@ export default function WorkPage() {
           </div>
         </BlurFade>
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
-          {DATA.work.map((work, id) => {
+          {DATA.work.map((work: any, id) => {
             const roles = work.roles || [{
               title: work.title || "",
               period: work.start && work.end ? `${work.start} - ${work.end}` : "",
@@ -112,7 +112,7 @@ export default function WorkPage() {
           </div>
         </BlurFade>
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
-          {DATA.partners.map((partner, id) => (
+          {DATA.partners.map((partner: any, id) => (
             <BlurFade
               key={partner.company}
               delay={BLUR_FADE_DELAY * 10 + id * 0.2}
@@ -126,7 +126,7 @@ export default function WorkPage() {
                 badges={partner.badges}
                 roles={[{
                   title: partner.title,
-                  period: partner.period,
+                  period: partner.period || (partner.start && partner.end ? `${partner.start} - ${partner.end}` : ""),
                   description: partner.description
                 }]}
               />
@@ -144,7 +144,7 @@ export default function WorkPage() {
           </div>
         </BlurFade>
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
-          {DATA.research.map((research, id) => (
+          {DATA.research.map((research: any, id) => (
             <BlurFade
               key={research.company}
               delay={BLUR_FADE_DELAY * 12 + id * 0.2}
@@ -177,7 +177,7 @@ export default function WorkPage() {
           </div>
         </BlurFade>
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
-          {DATA.clubs.map((club, id) => (
+          {DATA.clubs.map((club: any, id) => (
             <BlurFade
               key={club.company}
               delay={BLUR_FADE_DELAY * 14 + id * 0.2}
