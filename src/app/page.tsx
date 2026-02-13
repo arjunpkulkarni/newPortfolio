@@ -98,7 +98,7 @@ export default function HomePage() {
                 {/* Research Background - Inline */}
                 <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
                   <p className="text-xs leading-relaxed text-muted-foreground/85 mb-6 max-w-2xl">
-                    Background in electronic materials, hardware optimization, and quantum systems research—building intuition for physical constraints and system reliability that I now apply to production AI infrastructure.
+                    Research background in electronic materials, hardware optimization, and quantum systems research—building intuition for physical constraints and system reliability that I now apply to production AI infrastructure.
                   </p>
                 </BlurFade>
 
