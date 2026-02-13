@@ -154,7 +154,7 @@ export const PRODUCTS: Product[] = [
       { label: "Users", value: "2K+" },
       { label: "CTR Gain", value: "+40%" },
     ],
-    system: ["Next.js", "OpenAI", "Pinecone", "Redis", "Docker", "AWS ECS, S3 & SQS"],
+    system: ["Next.js", "OpenAI", "Pinecone", "Redis", "Docker", "AWS ECS + S3"],
     bullets: [
       "Designed semantic product discovery: OpenAI embeddings + Pinecone vector DB → 40% CTR improvement over keyword search",
       "Deployed on Vercel with edge caching + serverless functions—handling 2K+ users with <100ms p50 latency",
