@@ -96,7 +96,6 @@ export const PRODUCTS: Product[] = [
     proof: [
       { label: "Patients", value: "200+" },
       { label: "Accuracy Gain", value: "+22%" },
-      { label: "Partnership", value: "UCSD Health" },
     ],
     system: ["Next.js", "LangChain", "GPT-4", "QDrant", "Docker", "AWS ECS", "CloudWatch"],
     bullets: [
