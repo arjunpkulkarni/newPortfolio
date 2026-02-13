@@ -1,89 +1,67 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import BlurFade from "@/components/magicui/blur-fade";
-import { ResumeCard } from "@/components/resume-card";
 import { PromotionCard } from "@/components/promotion-card";
 import { DATA } from "@/data/resume";
-import { useEffect, useRef, useState, useMemo } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function WorkPage() {
   const [scrollProgress, setScrollProgress] = useState(0);
-  const mainRef = useRef<HTMLElement>(null);
-
-  // Group work experiences by company to handle promotions
-  const groupedWork = useMemo(() => {
-    const groups: { [key: string]: typeof DATA.work } = {};
-    DATA.work.forEach((work) => {
-      if (!groups[work.company]) {
-        groups[work.company] = [];
-      }
-      groups[work.company].push(work);
-    });
-    return groups;
-  }, []);
 
   // Calculate total items for timeline
   const allItems = [
     ...DATA.work,
-    ...(Array.isArray(DATA.partners) ? DATA.partners : []),
+    ...DATA.partners,
     ...DATA.research,
     ...DATA.clubs,
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!mainRef.current) return;
-      
-      const main = mainRef.current;
-      const rect = main.getBoundingClientRect();
-      const mainHeight = main.offsetHeight;
-      const viewportHeight = window.innerHeight;
-      
-      // Calculate how much of the page has been scrolled through
-      const scrolled = Math.max(0, -rect.top);
-      const maxScroll = mainHeight - viewportHeight;
-      const progress = Math.min(100, Math.max(0, (scrolled / maxScroll) * 100));
-      
-      setScrollProgress(progress);
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollTop = window.scrollY;
+      const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
+      setScrollProgress(Math.min(progress, 100));
     };
 
-    window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Initial calculation
-    
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
-    <main className="container mx-auto px-4 py-8 max-w-7xl relative" ref={mainRef}>
-      {/* Continuous Timeline - Right Side */}
+    <main className="container mx-auto px-4 py-8 max-w-7xl relative">
+      {/* Single Timeline for entire page */}
       <div className="absolute right-4 top-32 bottom-8 w-px hidden md:block">
         {/* Background line */}
-        <div className="absolute inset-0 bg-border/40" />
-        {/* Animated progress line */}
+        <div className="absolute inset-0 bg-border/40"></div>
+        
+        {/* Animated line that grows with scroll */}
         <div 
           className="absolute top-0 left-0 w-full bg-primary transition-all duration-700 ease-out"
           style={{ height: `${scrollProgress}%` }}
-        />
+        ></div>
         
-        {/* Timeline dots for all items */}
+        {/* Dots for all items */}
         {allItems.map((_, index) => {
-          const dotProgress = (index / (allItems.length - 1)) * 100;
-          const isActive = scrollProgress >= dotProgress;
+          const isFirst = index === 0;
+          const dotPosition = (index / (allItems.length - 1)) * 100;
+          const isPassed = scrollProgress >= dotPosition;
           
           return (
             <div
               key={index}
               className="absolute left-1/2 transform -translate-x-1/2 transition-all duration-700"
-              style={{ top: `${(index / (allItems.length - 1)) * 100}%` }}
+              style={{ top: `${dotPosition}%` }}
             >
               <div 
                 className={`w-3 h-3 rounded-full border-2 transition-all duration-700 ${
-                  isActive 
-                    ? 'bg-primary border-primary scale-125' 
+                  isPassed
+                    ? 'bg-primary border-primary'
                     : 'bg-background border-border/40'
-                }`}
+                } ${isFirst ? 'scale-125' : ''}`}
               />
             </div>
           );
@@ -91,125 +69,108 @@ export default function WorkPage() {
       </div>
 
       <section id="work" className="w-full">
-        <BlurFade delay={BLUR_FADE_DELAY * 5}>
+        <BlurFade delay={BLUR_FADE_DELAY * 7}>
           <div className="space-y-0.5 mb-8 mt-20">
             <h2 className="text-2xl font-medium tracking-tighter">Work Experience</h2>
             <p className="text-sm text-muted-foreground">Professional experience and contributions.</p>
           </div>
         </BlurFade>
-        
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
-          {Object.entries(groupedWork).map(([company, roles], groupIndex) => {
-            // If multiple roles at same company, use PromotionCard
-            if (roles.length > 1) {
-              return (
-                <BlurFade
-                  key={`${company}-group-${groupIndex}`}
-                  delay={BLUR_FADE_DELAY * 6 + groupIndex * 0.05}
-                >
-                  <PromotionCard
-                    logoUrl={roles[0].logoUrl}
-                    altText={company}
-                    company={company}
-                    href={roles[0].href}
-                    badges={roles[0].badges}
-                    roles={roles.map(role => ({
-                      title: role.title,
-                      period: `${role.start} - ${role.end ?? "Present"}`,
-                      description: role.description,
-                      tasks: role.tasks,
-                    }))}
-                  />
-                </BlurFade>
-              );
-            }
+          {DATA.work.map((work, id) => {
+            const roles = work.roles || [{
+              title: work.title || "",
+              period: work.start && work.end ? `${work.start} - ${work.end}` : "",
+              description: work.description,
+              tasks: work.tasks
+            }];
             
-            // Single role, use regular ResumeCard
-            const work = roles[0];
             return (
               <BlurFade
-                key={`${company}-single-${groupIndex}`}
-                delay={BLUR_FADE_DELAY * 6 + groupIndex * 0.05}
+                key={`${work.company}-${id}`}
+                delay={BLUR_FADE_DELAY * 8 + id * 0.2}
               >
-                <ResumeCard
+                <PromotionCard
                   logoUrl={work.logoUrl}
                   altText={work.company}
-                  title={work.company}
-                  subtitle={work.title}
+                  company={work.company}
                   href={work.href}
                   badges={work.badges}
-                  period={`${work.start} - ${work.end ?? "Present"}`}
-                  description={work.description}
-                  tasks={work.tasks}
+                  roles={roles}
                 />
               </BlurFade>
             );
           })}
         </div>
       </section>
-      {Array.isArray(DATA.partners) && DATA.partners.length > 0 && (
-        <section id="partners" className="w-full">
-          <BlurFade delay={BLUR_FADE_DELAY * 7.5}>
-            <div className="space-y-0.5 mb-8 mt-16">
-              <h2 className="text-2xl font-medium tracking-tighter">Partners & Investors</h2>
-              <p className="text-sm text-muted-foreground">Collaborations and backing.</p>
-            </div>
-          </BlurFade>
-          <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
-            {DATA.partners.map((partner, id) => (
-              <BlurFade
-                key={`${partner.company}-${partner.title}-${id}`}
-                delay={BLUR_FADE_DELAY * 8 + id * 0.05}
-              >
-                <ResumeCard
-                  key={`${partner.company}-${partner.title}-${id}`}
-                  logoUrl={partner.logoUrl}
-                  altText={partner.company}
-                  title={partner.company}
-                  subtitle={partner.title}
-                  href={partner.href}
-                  badges={partner.badges}
-                  period={`${partner.start || ""}${partner.end ? ` - ${partner.end}` : partner.start ? " - Present" : ""}`}
-                  description={partner.description}
-                  titleClassName="text-base sm:text-lg"
-                  cardClassName="py-4"
-                />
-              </BlurFade>
-            ))}
+
+      {/* Partners & Investors */}
+      <section id="partners" className="w-full">
+        <BlurFade delay={BLUR_FADE_DELAY * 9}>
+          <div className="space-y-0.5 mb-8 mt-16">
+            <h2 className="text-2xl font-medium tracking-tighter">Partners & Investors</h2>
+            <p className="text-sm text-muted-foreground">Collaborations and backing.</p>
           </div>
-        </section>
-      )}
+        </BlurFade>
+        <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
+          {DATA.partners.map((partner, id) => (
+            <BlurFade
+              key={partner.company}
+              delay={BLUR_FADE_DELAY * 10 + id * 0.2}
+            >
+              <PromotionCard
+                key={partner.company}
+                logoUrl={partner.logoUrl}
+                altText={partner.company}
+                company={partner.company}
+                href={partner.href}
+                badges={partner.badges}
+                roles={[{
+                  title: partner.title,
+                  period: partner.period,
+                  description: partner.description
+                }]}
+              />
+            </BlurFade>
+          ))}
+        </div>
+      </section>
+
+      {/* Research */}
       <section id="research" className="w-full">
-        <BlurFade delay={BLUR_FADE_DELAY * 7}>
+        <BlurFade delay={BLUR_FADE_DELAY * 11}>
           <div className="space-y-0.5 mb-8 mt-16">
             <h2 className="text-2xl font-medium tracking-tighter">Research Experience</h2>
             <p className="text-sm text-muted-foreground">Academic and laboratory research work.</p>
           </div>
         </BlurFade>
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
-          {DATA.research.map((researchItem, id) => (
+          {DATA.research.map((research, id) => (
             <BlurFade
-              key={`${researchItem.company}-${researchItem.title}-${id}`}
-              delay={BLUR_FADE_DELAY * 8 + id * 0.05}
+              key={research.company}
+              delay={BLUR_FADE_DELAY * 12 + id * 0.2}
             >
-              <ResumeCard
-                key={`${researchItem.company}-${researchItem.title}-${id}`}
-                logoUrl={researchItem.logoUrl}
-                altText={researchItem.company}
-                title={researchItem.company}
-                subtitle={researchItem.title}
-                href={researchItem.href}
-                badges={researchItem.badges}
-                period={`${researchItem.start} - ${researchItem.end ?? "Present"}`}
-                description={researchItem.description}
-                tasks={researchItem.tasks}
+              <PromotionCard
+                key={research.company}
+                logoUrl={research.logoUrl}
+                altText={research.company}
+                company={research.company}
+                href={research.href}
+                badges={research.badges}
+                roles={[{
+                  title: research.title,
+                  period: `${research.start} - ${research.end}`,
+                  description: research.description,
+                  tasks: research.tasks
+                }]}
               />
             </BlurFade>
           ))}
         </div>
       </section>
+
+      {/* Clubs */}
       <section id="clubs" className="w-full">
-        <BlurFade delay={BLUR_FADE_DELAY * 9}>
+        <BlurFade delay={BLUR_FADE_DELAY * 13}>
           <div className="space-y-0.5 mb-8 mt-16">
             <h2 className="text-2xl font-medium tracking-tighter">Clubs & Organizations</h2>
             <p className="text-sm text-muted-foreground">Student organizations and teams.</p>
@@ -218,20 +179,22 @@ export default function WorkPage() {
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
           {DATA.clubs.map((club, id) => (
             <BlurFade
-              key={`${club.company}-${club.title}-${id}`}
-              delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+              key={club.company}
+              delay={BLUR_FADE_DELAY * 14 + id * 0.2}
             >
-              <ResumeCard
-                key={`${club.company}-${club.title}-${id}`}
+              <PromotionCard
+                key={club.company}
                 logoUrl={club.logoUrl}
                 altText={club.company}
-                title={club.company}
-                subtitle={club.title}
+                company={club.company}
                 href={club.href}
                 badges={club.badges}
-                period={`${club.start} - ${club.end ?? "Present"}`}
-                description={club.description}
-                tasks={club.tasks}
+                roles={[{
+                  title: club.title,
+                  period: `${club.start} - ${club.end}`,
+                  description: club.description,
+                  tasks: club.tasks
+                }]}
               />
             </BlurFade>
           ))}
@@ -239,4 +202,4 @@ export default function WorkPage() {
       </section>
     </main>
   );
-} 
+}

@@ -156,9 +156,9 @@ export default function EducationPage() {
         {/* Filter Bars Container */}
         <BlurFade delay={BLUR_FADE_DELAY * 9.5}>
           <div className="w-full mb-5">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-2 items-center">
               {/* Subject Filter Bar */}
-              <div className="inline-flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {subjects.map((subject) => {
                   const Icon = subjectIcons[subject];
                   const selected = selectedSubject === subject;
@@ -185,7 +185,7 @@ export default function EducationPage() {
               </div>
 
               {/* Level Filter Bar */}
-              <div className="inline-flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center">
                 <button
                   onClick={() => setSelectedLevel("all")}
                   className={`

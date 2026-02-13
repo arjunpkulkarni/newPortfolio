@@ -1,122 +1,98 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { PRODUCTS } from "@/data/products";
+import { MinimalProductCard } from "@/components/minimal-product-card";
 import BlurFade from "@/components/magicui/blur-fade";
-import { ProductCard } from "@/components/product-card";
-import { ProofStrip } from "@/components/proof-strip";
-import { PRODUCTS, PRODUCT_TYPES, PRODUCT_STATUSES, PRODUCT_DOMAINS, ProductType, ProductStatus, ProductDomain } from "@/data/products";
-import { Badge } from "@/components/ui/badge";
 
 const BLUR_FADE_DELAY = 0.04;
 
-type SortOption = "impact" | "recent";
-
 export default function ProductsPage() {
-  const [filterType, setFilterType] = useState<ProductType | "all">("all");
-  const [filterStatus, setFilterStatus] = useState<ProductStatus | "all">("all");
-  const [filterDomain, setFilterDomain] = useState<ProductDomain | "all">("all");
-  const [sortBy, setSortBy] = useState<SortOption>("impact");
-
-  // Calculate aggregated proof stats
-  const proofStats = useMemo(() => {
-    return [
-      { label: "Products Shipped", value: "7" },
-      { label: "Total Users", value: "3K+" },
-      { label: "Enterprise Customers", value: "8+" },
-      { label: "Total GMV/MRR", value: "$5.5K+" },
-      { label: "Avg Accuracy Gain", value: "+27%" },
-      { label: "Funding Raised", value: "$1.0M" },
-    ];
-  }, []);
-
-  // Filter and sort products
-  const filteredProducts = useMemo(() => {
-    let filtered = PRODUCTS.filter((product) => {
-      const typeMatch = filterType === "all" || product.type === filterType;
-      const statusMatch = filterStatus === "all" || product.status === filterStatus;
-      const domainMatch = filterDomain === "all" || product.domain === filterDomain;
-      return typeMatch && statusMatch && domainMatch;
-    });
-
-    // Sort
-    if (sortBy === "impact") {
-      filtered.sort((a, b) => b.impactScore - a.impactScore);
-    } else if (sortBy === "recent") {
-      filtered.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-    }
-
-    return filtered;
-  }, [filterType, filterStatus, filterDomain, sortBy]);
-
-  // Split into currently live and past projects
-  const currentlyLiveProducts = useMemo(() => {
-    return filteredProducts.filter((product) => product.isCurrentlyLive);
-  }, [filteredProducts]);
-
-  const pastProjects = useMemo(() => {
-    return filteredProducts.filter((product) => !product.isCurrentlyLive);
-  }, [filteredProducts]);
+  // Separate live and archived products
+  const liveProducts = PRODUCTS
+    .filter(p => p.status === "Live")
+    .sort((a, b) => b.impactScore - a.impactScore);
+  
+  const archivedProducts = PRODUCTS
+    .filter(p => p.status === "Archived")
+    .sort((a, b) => b.impactScore - a.impactScore);
 
   return (
-    <main className="min-h-screen bg-background">
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        {/* Header Section */}
+    <main className="container mx-auto px-4 py-8 max-w-7xl">
+      <section id="products" className="w-full">
+        {/* Header */}
         <BlurFade delay={BLUR_FADE_DELAY}>
-          <div className="space-y-1 mb-8 mt-20">
-            <h2 className="text-2xl font-medium tracking-tight">Products</h2>
-            <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">
-              Building production-grade ML systems from scratch—real users, real metrics, real infra. 
+          <div className="space-y-0.5 mb-8 mt-20">
+            <h2 className="text-2xl font-medium tracking-tighter">Products</h2>
+            <p className="text-sm text-muted-foreground">
+              Production systems I've built and shipped. Focus on measurable impact.
             </p>
           </div>
-        </BlurFade>        
+        </BlurFade>
 
-
-
-        {/* Currently Live Section */}
-        {currentlyLiveProducts.length > 0 && (
-          <section className="mb-16">
+        {/* Live Products Section */}
+        {liveProducts.length > 0 && (
+          <div className="mb-16">
             <BlurFade delay={BLUR_FADE_DELAY * 2}>
-              <div className="mb-4">
-                <div className="flex items-center gap-2 mb-1">
-                  <p className="text-xs font-medium text-muted-foreground uppercase tracking-wider">Live</p>
-                  <span className="relative flex h-2 w-2">
-                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+              <div className="mb-6 flex items-center gap-3">
+                <div className="flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1.5 border border-green-500/20">
+                  <div className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+                  </div>
+                  <span className="text-xs font-medium text-green-600 dark:text-green-400">
+                    Active
                   </span>
                 </div>
               </div>
             </BlurFade>
-            <div className="flex flex-col gap-6">
-              {currentlyLiveProducts.map((product, index) => (
-                <ProductCard key={product.id} product={product} index={index} />
+
+            <div className="space-y-6">
+              {liveProducts.map((product, index) => (
+                <BlurFade
+                  key={product.id}
+                  delay={BLUR_FADE_DELAY * 3 + index * 0.05}
+                >
+                  <MinimalProductCard product={product} index={index} />
+                </BlurFade>
               ))}
             </div>
-          </section>
-        )}
-
-        {/* Past Projects Section */}
-        {pastProjects.length > 0 && (
-          <section className="mb-16">
-            <BlurFade delay={BLUR_FADE_DELAY * 3}>
-              <div className="mb-8 border-t border-border pt-8">
-                <h3 className="text-lg font-normal text-muted-foreground tracking-wide uppercase">Past Projects</h3>
-              </div>
-            </BlurFade>
-            <div className="flex flex-col gap-6">
-              {pastProjects.map((product, index) => (
-                <ProductCard key={product.id} product={product} index={index + currentlyLiveProducts.length} />
-              ))}
-            </div>
-          </section>
-        )}
-
-        {/* No results message */}
-        {filteredProducts.length === 0 && (
-          <div className="text-center py-12 text-muted-foreground">
-            No products match the selected filters.
           </div>
         )}
-      </div>
+
+        {/* Past Products Section */}
+        {archivedProducts.length > 0 && (
+          <div>
+            <BlurFade delay={BLUR_FADE_DELAY * 4}>
+              <div className="mb-6">
+                <h3 className="text-lg font-medium tracking-tight text-muted-foreground">Past Projects</h3>
+                <p className="mt-1 text-sm text-muted-foreground/70">
+                  Previous work and experiments
+                </p>
+              </div>
+            </BlurFade>
+
+            <div className="space-y-6">
+              {archivedProducts.map((product, index) => (
+                <BlurFade
+                  key={product.id}
+                  delay={BLUR_FADE_DELAY * 5 + index * 0.05}
+                >
+                  <MinimalProductCard product={product} index={index} />
+                </BlurFade>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Empty State */}
+        {PRODUCTS.length === 0 && (
+          <div className="flex flex-col items-center justify-center py-20 text-center">
+            <p className="text-lg text-muted-foreground">
+              Product showcase coming soon...
+            </p>
+          </div>
+        )}
+      </section>
     </main>
   );
 }

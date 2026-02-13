@@ -173,58 +173,53 @@ export const DATA = {
       href: "https://health.ucsd.edu/",
       badges: [],
       location: "San Diego, CA",
-      title: "Senior Software Engineer",
       logoUrl: ucsd,
-      start: "Aug 2025",
-      end: "Jan 2026",
-      description:
-        "Run DevOps and ML infrastructure for clinical‑grade AI dietician platform serving 200+ patients.",
-      tasks: [
+      roles: [
         {
-          description: "Led infrastructure scaling and optimization, implementing advanced caching strategies and database tuning that reduced API latency by 40% under peak load.",
-          skills: ["DevOps", "Infrastructure", "Performance", "Scaling"]
+          title: "Senior Software Engineer",
+          period: "Aug 2025 - Jan 2026",
+          description: "Run DevOps and ML infrastructure for clinical‑grade AI dietician platform serving 200+ patients.",
+          tasks: [
+            {
+              description: "Led infrastructure scaling and optimization, implementing advanced caching strategies and database tuning that reduced API latency by 40% under peak load.",
+              skills: ["DevOps", "Infrastructure", "Performance", "Scaling"]
+            },
+            {
+              description: "Architected ML pipeline orchestration with Airflow and MLflow, automating model retraining and deployment workflows for continuous improvement.",
+              skills: ["MLOps", "Airflow", "MLflow", "CI/CD"]
+            },
+            {
+              description: "Implemented comprehensive monitoring and alerting system using Prometheus and Grafana, achieving 99.9% uptime for production ML services.",
+              skills: ["Monitoring", "Prometheus", "Grafana", "SRE"]
+            },
+            {
+              description: "Mentored junior engineers on best practices for ML infrastructure, DevOps workflows, and production system design.",
+              skills: ["Leadership", "Mentorship", "System Design", "Best Practices"]
+            }
+          ]
         },
         {
-          description: "Architected ML pipeline orchestration with Airflow and MLflow, automating model retraining and deployment workflows for continuous improvement.",
-          skills: ["MLOps", "Airflow", "MLflow", "CI/CD"]
-        },
-        {
-          description: "Implemented comprehensive monitoring and alerting system using Prometheus and Grafana, achieving 99.9% uptime for production ML services.",
-          skills: ["Monitoring", "Prometheus", "Grafana", "SRE"]
-        },
-        {
-          description: "Mentored junior engineers on best practices for ML infrastructure, DevOps workflows, and production system design.",
-          skills: ["Leadership", "Mentorship", "System Design", "Best Practices"]
-        }
-      ]
-    },
-    {
-      company: "UC San Diego Health",
-      href: "https://health.ucsd.edu/",
-      badges: [],
-      location: "San Diego, CA",
-      title: "Software Engineer",
-      logoUrl: ucsd,
-      start: "Jan 2025",
-      end: "Aug 2025",
-      description:
-        "Built clinical‑grade AI dietician platform serving 200+ patients with RAG pipeline and agentic workflows.",
-      tasks: [
-        {
-          description: "Built clinical AI nutrition platform serving 200+ patients with subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
-          skills: ["LangChain", "RAG", "QDrant", "Healthcare AI"]
-        },
-        {
-          description: "Collaborated with Food Network Chef James Briscione and White House Fellow Prof. Lav Varshney to integrate culinary expertise into AI recommendation engine.",
-          skills: ["Cross-functional Collaboration", "Product Development", "Healthcare"]
-        },
-        {
-          description: "Deployed HIPAA-compliant Next.js platform with GPT-4o integration, implementing encryption, audit logging, and secure PHI handling, passing UCSD Health IT security review.",
-          skills: ["Next.js", "GPT-4", "HIPAA Compliance", "Security"]
-        },
-        {
-          description: "Built agentic workflow with LangGraph for multi-step reasoning (medical history, allergies, meal generation), reducing manual dietician review time by 65%.",
-          skills: ["LangGraph", "AI Agents", "Workflow Automation", "Python"]
+          title: "Software Engineer",
+          period: "Jan 2025 - Aug 2025",
+          description: "Built clinical‑grade AI dietician platform serving 200+ patients with RAG pipeline and agentic workflows.",
+          tasks: [
+            {
+              description: "Built clinical AI nutrition platform serving 200+ patients with subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
+              skills: ["LangChain", "RAG", "QDrant", "Healthcare AI"]
+            },
+            {
+              description: "Collaborated with Food Network Chef James Briscione and White House Fellow Prof. Lav Varshney to integrate culinary expertise into AI recommendation engine.",
+              skills: ["Cross-functional Collaboration", "Product Development", "Healthcare"]
+            },
+            {
+              description: "Deployed HIPAA-compliant Next.js platform with GPT-4o integration, implementing encryption, audit logging, and secure PHI handling, passing UCSD Health IT security review.",
+              skills: ["Next.js", "GPT-4", "HIPAA Compliance", "Security"]
+            },
+            {
+              description: "Built agentic workflow with LangGraph for multi-step reasoning (medical history, allergies, meal generation), reducing manual dietician review time by 65%.",
+              skills: ["LangGraph", "AI Agents", "Workflow Automation", "Python"]
+            }
+          ]
         }
       ]
     },
