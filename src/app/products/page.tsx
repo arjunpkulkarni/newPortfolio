@@ -62,10 +62,10 @@ export default function ProductsPage() {
       <div className="max-w-7xl mx-auto px-4 py-8">
         {/* Header Section */}
         <BlurFade delay={BLUR_FADE_DELAY}>
-          <div className="space-y-1 mb-6 mt-20">
+          <div className="space-y-1 mb-8 mt-20">
             <h2 className="text-2xl font-medium tracking-tight">Products</h2>
-            <p className="text-sm text-muted-foreground">
-              Systems I&apos;ve architected and shipped—real users, real metrics, real infra. End to end.
+            <p className="text-sm text-muted-foreground max-w-2xl leading-relaxed">
+              Building production-grade ML systems from scratch—real users, real metrics, real infra. 
             </p>
           </div>
         </BlurFade>        

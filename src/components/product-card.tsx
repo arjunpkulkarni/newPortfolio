@@ -124,12 +124,36 @@ export function ProductCard({ product, index }: ProductCardProps) {
             </p>
           </div>
 
-          {/* Proof Row */}
-          <div className="flex flex-wrap gap-x-5 gap-y-1.5">
+          {/* Impact First Format */}
+          {(product.problem || product.solution || product.impact) && (
+            <div className="bg-muted/30 border border-border/50 rounded-lg p-4 space-y-3 text-sm">
+              {product.problem && (
+                <div>
+                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground/60 font-medium mb-1">Problem</p>
+                  <p className="text-foreground/90 leading-relaxed">{product.problem}</p>
+                </div>
+              )}
+              {product.solution && (
+                <div>
+                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground/60 font-medium mb-1">Solution</p>
+                  <p className="text-foreground/90 leading-relaxed">{product.solution}</p>
+                </div>
+              )}
+              {product.impact && (
+                <div>
+                  <p className="text-[10px] uppercase tracking-wider text-muted-foreground/60 font-medium mb-1">Impact</p>
+                  <p className="text-foreground/90 leading-relaxed">{product.impact}</p>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Proof Metrics */}
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 py-2">
             {product.proof.map((metric, idx) => (
-              <div key={idx} className="flex items-baseline gap-1.5">
-                <span className="text-lg font-semibold tabular-nums">{metric.value}</span>
-                <span className="text-xs text-muted-foreground">{metric.label}</span>
+              <div key={idx} className="flex flex-col items-center text-center">
+                <span className="text-xl font-medium tabular-nums">{metric.value}</span>
+                <span className="text-[10px] text-muted-foreground/60 uppercase tracking-wider mt-1">{metric.label}</span>
               </div>
             ))}
           </div>
@@ -137,15 +161,18 @@ export function ProductCard({ product, index }: ProductCardProps) {
           {/* Architecture Diagram */}
           <ArchitectureDiagram system={product.system} productName={product.name} />
 
-          {/* 3 Bullets */}
-          <ul className="space-y-1.5 text-xs text-muted-foreground/80 leading-relaxed">
-            {product.bullets.map((bullet, idx) => (
-              <li key={idx} className="flex gap-2">
-                <span className="text-muted-foreground/40 mt-0.5 flex-shrink-0">•</span>
-                <span>{bullet}</span>
-              </li>
-            ))}
-          </ul>
+          {/* Technical Details */}
+          <div className="space-y-2">
+            <p className="text-[10px] uppercase tracking-wider text-muted-foreground/60 font-medium">Technical Details</p>
+            <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed">
+              {product.bullets.map((bullet, idx) => (
+                <li key={idx} className="flex gap-2.5">
+                  <span className="text-muted-foreground/30 mt-0.5 flex-shrink-0">•</span>
+                  <span>{bullet}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
 
           {/* Links Row */}
           <div className="flex flex-wrap gap-3 pt-2 border-t border-border/50">
@@ -153,10 +180,10 @@ export function ProductCard({ product, index }: ProductCardProps) {
               <Link
                 href={product.links.live}
                 target="_blank"
-                className="inline-flex items-center gap-1.5 text-xs text-foreground hover:text-primary transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-all shadow-sm hover:shadow"
               >
                 <ExternalLink className="h-3 w-3" />
-                Live
+                View Live
               </Link>
             )}
             {product.links.demo && (
@@ -187,6 +214,16 @@ export function ProductCard({ product, index }: ProductCardProps) {
               >
                 <FileText className="h-3 w-3" />
                 Case Study
+              </Link>
+            )}
+            {product.links.techBlog && (
+              <Link
+                href={product.links.techBlog}
+                target="_blank"
+                className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <FileText className="h-3 w-3" />
+                Tech Blog
               </Link>
             )}
           </div>
