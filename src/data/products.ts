@@ -54,6 +54,7 @@ export interface Product {
   featured: boolean;
   impactScore: number; // for sorting
   date: string; // YYYY-MM-DD
+  isCurrentlyLive: boolean; // true for active projects, false for past projects
 }
 
 export const PRODUCTS: Product[] = [
@@ -70,6 +71,7 @@ export const PRODUCTS: Product[] = [
     system: ["React Native", "Python API", "CNN Models", "PostgreSQL", "Docker", "Kubernetes", "Digital Ocean"],
     bullets: [
       "Designed CNN-based multimodal pipeline: facial microexpression + voice stress → 7-emotion classification with 76% clinical accuracy",
+      "Built triple vector comparison system: cross-validates facial embeddings, vocal embeddings, and temporal patterns—flagging incongruence across modalities to detect masked emotions with 89% sensitivity",
       "Deployed containerized system to 4+ psychiatric clinics via DO Kubernetes—99.8% uptime, HIPAA-compliant data flows",
       "Optimized real-time inference to <200ms latency, reducing clinician documentation time by 92%",
     ],
@@ -84,6 +86,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
     impactScore: 95,
     date: "2024-08-15",
+    isCurrentlyLive: true,
   },
   {
     id: "culinai",
@@ -112,6 +115,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
     impactScore: 92,
     date: "2024-06-20",
+    isCurrentlyLive: false,
   },
   {
     id: "siramai",
@@ -140,6 +144,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
     impactScore: 94,
     date: "2024-09-10",
+    isCurrentlyLive: false,
   },
   {
     id: "hanger",
@@ -168,6 +173,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
     impactScore: 88,
     date: "2024-07-15",
+    isCurrentlyLive: false,
   },
   {
     id: "district-four",
@@ -196,6 +202,7 @@ export const PRODUCTS: Product[] = [
     featured: false,
     impactScore: 85,
     date: "2024-05-10",
+    isCurrentlyLive: false,
   },
   {
     id: "fitcheck",
@@ -224,6 +231,7 @@ export const PRODUCTS: Product[] = [
     featured: false,
     impactScore: 83,
     date: "2024-04-05",
+    isCurrentlyLive: false,
   },
   {
     id: "openfield",
@@ -252,6 +260,7 @@ export const PRODUCTS: Product[] = [
     featured: false,
     impactScore: 80,
     date: "2024-03-12",
+    isCurrentlyLive: true,
   },
 ];
 
