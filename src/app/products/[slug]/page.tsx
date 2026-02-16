@@ -228,18 +228,18 @@ export default function ProductDetailPage({
         {product.screenshots && product.screenshots.length > 0 && (
           <div className="mb-16">
             <h2 className="mb-6 text-2xl font-medium">Product Screenshots</h2>
-            <div className="grid gap-6 md:grid-cols-2">
+            <div className="flex gap-4 justify-center flex-wrap">
               {product.screenshots.map((screenshot, idx) => (
                 <div
                   key={idx}
-                  className="relative overflow-hidden rounded-xl border bg-card"
+                  className="relative overflow-hidden rounded-lg w-64"
                 >
                   <Image
                     src={screenshot}
                     alt={`${product.name} screenshot ${idx + 1}`}
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-cover"
+                    width={256}
+                    height={512}
+                    className="w-full h-auto object-contain"
                   />
                 </div>
               ))}
