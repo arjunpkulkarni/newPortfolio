@@ -8,6 +8,8 @@ import psych from "../app/projects/pictures/psych.png";
 import OpenField from "../app/projects/pictures/openfield.png";
 import Hanger from "../app/projects/pictures/hanger.png";
 import Hanger2 from "../app/projects/pictures/hanger2.png";
+import HangerPreview1 from "../app/projects/pictures/preview1.webp";
+import HangerPreview2 from "../app/projects/pictures/preview2.webp";
 import LumeLabs from "../app/projects/pictures/lumelabs.png";
 import Congruence from "../app/projects/pictures/congruence.png";
 
@@ -143,7 +145,7 @@ export const PRODUCTS: Product[] = [
     },
     image: Culin,
     featured: true,
-    impactScore: 92,
+    impactScore: 89,
     date: "2024-06-20",
     isCurrentlyLive: false,
   },
@@ -181,7 +183,7 @@ export const PRODUCTS: Product[] = [
     },
     image: Siramai,
     featured: true,
-    impactScore: 94,
+    impactScore: 90,
     date: "2024-09-10",
     isCurrentlyLive: false,
   },
@@ -189,26 +191,32 @@ export const PRODUCTS: Product[] = [
     id: "hanger",
     slug: "hanger",
     name: "Hanger",
-    oneLiner: "AI shopping layer for fashion—2K+ users, +40% CTR via semantic product discovery.",
-    problem: "Fashion shoppers search by aesthetic vibes, but keyword search can't understand style intent.",
-    solution: "Semantic discovery using OpenAI embeddings for natural language queries across 1M+ products.",
-    impact: "2K+ users, 40% CTR improvement, 28% conversion increase. Outcompeted $35M+ funded competitor.",
-    whyBuilt: "Frustrated by endless scrolling. Built search by vibe ('indie sleaze') instead of keywords—how people actually think about style.",
+    oneLiner: "AI fashion discovery engine—2K+ users, +40% CTR, 22% relevance gain vs $50M+ competitor via CLIP fine-tuning + hybrid retrieval.",
+    problem: "Fashion shoppers search by vibe ('winter formal but casual streetwear'), not keywords.\n\nTraditional systems fail:\n• Keyword matching misses semantic intent\n• Collaborative filtering can't handle cold-start\n• Daydream spent $50M+ but still couldn't solve this",
+    solution: "Three technical optimizations beat their infrastructure:\n\n1. Better Representation\n• Fine-tuned CLIP on fashion data\n• Multi-vector embeddings per product\n• Attribute-aware layers (materials, seasonality, fit, occasion)\n\n2. Hybrid Retrieval\n• PostgreSQL → structured filters (price, size, inventory)\n• Pinecone → semantic search (HNSW indexing)\n• Merge + rerank for best results\n\n3. Context-Aware Reasoning\n• FastAPI agents reason across dimensions\n• Weather vs materials, occasion vs dress code\n• Budget + inventory constraints\n• Handles queries like 'cold NYC rooftop party under $200'",
+    impact: "Outcompeted $50M+ competitor with $500/month infrastructure:\n\n• 2K+ users\n• +40% CTR improvement\n• +28% conversion increase\n• +22% relevance vs baseline\n• 15% faster with sub-second latency\n• Production-ready in 3 months",
+    whyBuilt: "Frustrated by endless scrolling through keyword search that didn't understand style intent. Built Hanger to match how people actually think about fashion—by vibe, context, and aesthetic—not just product attributes. Wanted to prove you could beat well-funded competitors through smarter technical choices, not just scale.",
     proof: [
       { label: "Users", value: "2K+" },
       { label: "CTR Gain", value: "+40%" },
+      { label: "Relevance ↑", value: "+22%" },
+      { label: "Latency ↓", value: "15%" },
+      { label: "Infra Cost", value: "$500/mo" },
     ],
-    system: ["Next.js", "OpenAI", "Pinecone", "Redis", "Docker", "AWS ECS + S3"],
+    system: ["CLIP (Fine-tuned)", "FastAPI", "PostgreSQL", "Pinecone", "Redis", "Docker", "Vercel Edge"],
     bullets: [
-      "Designed semantic product discovery: OpenAI embeddings + Pinecone vector DB → 40% CTR improvement over keyword search",
-      "Deployed on Vercel with edge caching + serverless functions—handling 2K+ users with <100ms p50 latency",
-      "Optimized vector indexing strategy (HNSW) for 1M+ product catalog, reducing search latency by 35%",
-      "Search product outcompeted $35M+ funded competitor (Daydream)",
+      "Fine-tuned CLIP embeddings on fashion-specific data with multi-vector representations per product (materials, seasonality, fit, occasion) → 22% relevance improvement over baseline",
+      "Built hybrid retrieval pipeline: PostgreSQL structured filters (price, size, inventory) + Pinecone semantic search (HNSW indexing) + merge/rerank → 15% latency reduction, sub-second recommendations",
+      "Designed context-aware reasoning layer with FastAPI agents: reasons across weather vs materials, color palettes vs seasonality, occasion vs dress code, budget constraints → handles queries like 'cold NYC rooftop party under $200'",
+      "Optimized for lean production: cached embeddings, query batching, reduced vector dimensions with minimal accuracy loss → $500/month infrastructure vs Daydream's $50M+ spend",
+      "Deployed on Vercel Edge with Redis caching—handling 2K+ users with <100ms p50 latency across 1M+ product catalog",
     ],
     resumeBullets: [
-      "Built semantic fashion search engine serving 2K+ users with 40% CTR improvement and 28% conversion increase",
-      "Architected hybrid vector search system using OpenAI embeddings + Pinecone HNSW indices across 1M+ product catalog",
-      "Deployed serverless infrastructure on Vercel Edge with <100ms p50 latency and zero cold starts",
+      "Built semantic fashion discovery engine serving 2K+ users with 40% CTR improvement and 28% conversion increase, outcompeting $50M+ funded competitor (Daydream) with $500/month infrastructure",
+      "Fine-tuned CLIP embeddings on fashion-specific data with attribute-aware layers (materials, seasonality, fit, occasion) achieving 22% relevance improvement over baseline collaborative filtering",
+      "Architected hybrid retrieval pipeline combining PostgreSQL structured filters + Pinecone semantic search (HNSW) + LLM reranking, reducing latency 15% with sub-second real-time recommendations",
+      "Designed context-aware reasoning layer using FastAPI agents to match semantic intent across dimensions (weather, occasion, budget, inventory), enabling queries like 'winter formal but casual streetwear vibe'",
+      "Deployed production-grade system in 3 months with cached embeddings, query batching, and optimized vector dimensions—achieving comparable quality to heavily funded competitor at 1/100th the cost",
     ],
     testimonials: [
       {
@@ -217,17 +225,18 @@ export const PRODUCTS: Product[] = [
         role: "Early User, Fashion Designer"
       }
     ],
-    tags: ["Vector Search", "Product", "Mobile"],
-    type: "Full-stack",
+    tags: ["Vector Search", "ML/Agents", "Product"],
+    type: "AI/ML",
     status: "Archived",
     domain: "Fashion",
     links: {
       demo: "https://www.hanger.live/",
     },
     image: Hanger2,
-    images: [Hanger2],
+    images: [Hanger2, HangerPreview1, HangerPreview2],
+    screenshots: [HangerPreview1, HangerPreview2],
     featured: true,
-    impactScore: 88,
+    impactScore: 94,
     date: "2024-07-15",
     isCurrentlyLive: false,
   },
@@ -256,7 +265,7 @@ export const PRODUCTS: Product[] = [
     },
     image: LumeLabs,
     featured: false,
-    impactScore: 85,
+    impactScore: 86,
     date: "2024-05-10",
     isCurrentlyLive: false,
   },
@@ -285,7 +294,7 @@ export const PRODUCTS: Product[] = [
     },
     image: FitCheck,
     featured: false,
-    impactScore: 83,
+    impactScore: 87,
     date: "2024-04-05",
     isCurrentlyLive: false,
   },

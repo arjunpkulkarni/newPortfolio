@@ -91,7 +91,7 @@ export default function ProductDetailPage({
               {product.name}
             </h1>
 
-            {product.links.live && (
+            {product.links.live ? (
               <Link
                 href={product.links.live}
                 target="_blank"
@@ -100,7 +100,16 @@ export default function ProductDetailPage({
                 <ExternalLink className="h-4 w-4" />
                 View Live
               </Link>
-            )}
+            ) : product.links.demo ? (
+              <Link
+                href={product.links.demo}
+                target="_blank"
+                className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                <Play className="h-4 w-4" />
+                View Demo
+              </Link>
+            ) : null}
           </div>
         </div>
       </section>
@@ -133,18 +142,8 @@ export default function ProductDetailPage({
           </div>
 
           {/* Action Links */}
-          <div className="flex flex-wrap gap-3">
-            {product.links.demo && (
-              <Link
-                href={product.links.demo}
-                target="_blank"
-                className="inline-flex items-center gap-2 rounded-lg border bg-card px-6 py-3 text-sm font-medium transition-colors hover:bg-muted"
-              >
-                <Play className="h-4 w-4" />
-                Demo
-              </Link>
-            )}
-            {product.links.github && (
+          {product.links.github && (
+            <div className="flex flex-wrap gap-3">
               <Link
                 href={product.links.github}
                 target="_blank"
@@ -153,8 +152,8 @@ export default function ProductDetailPage({
                 <Github className="h-4 w-4" />
                 GitHub
               </Link>
-            )}
-          </div>
+            </div>
+          )}
         </div>
 
         {/* Problem, Solution, Impact */}
@@ -163,25 +162,25 @@ export default function ProductDetailPage({
             {product.problem && (
               <div className="rounded-xl border bg-card p-8">
                 <h2 className="mb-4 text-lg font-medium">Problem</h2>
-                <p className="leading-relaxed text-muted-foreground">
+                <div className="leading-relaxed text-muted-foreground whitespace-pre-line">
                   {product.problem}
-                </p>
+                </div>
               </div>
             )}
             {product.solution && (
               <div className="rounded-xl border bg-card p-8">
                 <h2 className="mb-4 text-lg font-medium">Solution</h2>
-                <p className="leading-relaxed text-muted-foreground">
+                <div className="leading-relaxed text-muted-foreground whitespace-pre-line">
                   {product.solution}
-                </p>
+                </div>
               </div>
             )}
             {product.impact && (
               <div className="rounded-xl border bg-card p-8">
                 <h2 className="mb-4 text-lg font-medium">Impact</h2>
-                <p className="leading-relaxed text-muted-foreground">
+                <div className="leading-relaxed text-muted-foreground whitespace-pre-line">
                   {product.impact}
-                </p>
+                </div>
               </div>
             )}
           </div>
@@ -225,6 +224,28 @@ export default function ProductDetailPage({
           </div>
         </div>
 
+        {/* Screenshots */}
+        {product.screenshots && product.screenshots.length > 0 && (
+          <div className="mb-16">
+            <h2 className="mb-6 text-2xl font-medium">Product Screenshots</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {product.screenshots.map((screenshot, idx) => (
+                <div
+                  key={idx}
+                  className="relative overflow-hidden rounded-xl border bg-card"
+                >
+                  <Image
+                    src={screenshot}
+                    alt={`${product.name} screenshot ${idx + 1}`}
+                    width={800}
+                    height={600}
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Tags */}
         <div className="mb-16">
