@@ -39,6 +39,7 @@ import java from "../app/education/pictures/java.png";
 import HackerRank from "../app/education/pictures/hackerrank.png";
 import AWS from "../app/education/pictures/aws.png";
 import uiuc from "../app/education/pictures/uiuc.png";
+import gt from "../app/education/pictures/gt.png";
 import MITRE from "../app/education/pictures/mitre.png"; 
 import Udemy from "../app/education/pictures/udemy.png";
 
@@ -518,9 +519,17 @@ export const DATA = {
   ],
   education: [
     {
+      school: "Georgia Institute of Technology",
+      href: "https://www.gatech.edu",
+      degree: "M.S. Computer Science - Distributed AI Infrastructure",
+      logoUrl: gt,
+      start: "Jun 2026",
+      end: "Jan 2027",
+    },
+    {
       school: "University of Illinois at Urbana-Champaign",
       href: "https://illinois.edu",
-      degree: "Computer Science & Materials Engineering",
+      degree: "B.S. Computer Science & Materials Engineering",
       logoUrl: uiuc,
       start: "Sep 2022",
       end: "May 2026",
