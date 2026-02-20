@@ -521,7 +521,7 @@ export const DATA = {
     {
       school: "Georgia Institute of Technology",
       href: "https://www.gatech.edu",
-      degree: "M.S. Computer Science - Distributed AI Infrastructure",
+      degree: "M.S. Computer Science",
       logoUrl: gt,
       start: "Jun 2026",
       end: "Jan 2027",
