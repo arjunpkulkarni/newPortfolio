@@ -126,8 +126,6 @@ export default function HomePage() {
                 {/* Availability & Education - Minimal */}
                 <BlurFade delay={BLUR_FADE_DELAY * 3.4} blur="12px">
                   <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground/75">
-                    <span>CS & MSE @ UIUC</span>
-                    <span className="text-muted-foreground/40">•</span>
                     <span>Open to Remote / SF / NYC</span>
                   </div>
                 </BlurFade>
