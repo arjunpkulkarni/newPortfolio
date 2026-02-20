@@ -83,7 +83,9 @@ function CertificationsCarousel({ certifications }: { certifications: readonly a
 }
 
 export default function EducationPage() {
-  const classes = DATA.education[0].classes || {};
+  // Find the education entry that has classes (UIUC)
+  const educationWithClasses = DATA.education.find(edu => 'classes' in edu);
+  const classes = educationWithClasses?.classes || {};
   const subjects = Object.keys(classes);
 
   // Get all unique levels across all subjects
@@ -105,12 +107,12 @@ export default function EducationPage() {
 
     if (selectedLevel === "all") {
       return Object.entries(subjectData).flatMap(([level, courses]) =>
-        courses.map((course: any) => ({ ...course, level }))
+        (courses as any[]).map((course: any) => ({ ...course, level }))
       );
     }
 
     const levelCourses = subjectData[selectedLevel as keyof typeof subjectData];
-    return levelCourses ? levelCourses.map((course: any) => ({ ...course, level: selectedLevel })) : [];
+    return levelCourses ? (levelCourses as any[]).map((course: any) => ({ ...course, level: selectedLevel })) : [];
   };
 
   const filteredCourses = getFilteredCourses();
