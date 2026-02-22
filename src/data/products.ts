@@ -330,7 +330,7 @@ export const PRODUCTS: Product[] = [
     testimonials: [],
     tags: ["Marketplace", "Product", "Infra"],
     type: "Full-stack",
-    status: "Live",
+    status: "Archived",
     domain: "Marketplace",
     links: {
       live: "https://www.openfield.live/",
@@ -340,7 +340,7 @@ export const PRODUCTS: Product[] = [
     featured: true,
     impactScore: 88,
     date: "2024-03-12",
-    isCurrentlyLive: true,
+    isCurrentlyLive: false,
   },
 ];
 
