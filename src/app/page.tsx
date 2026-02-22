@@ -110,11 +110,6 @@ export default function HomePage() {
                         View Products
                       </Button>
                     </Link>
-                    <Link href="/RESUME_ARJUNK_SEPT25.pdf" target="_blank">
-                      <Button variant="outline" size="default">
-                        Resume
-                      </Button>
-                    </Link>
                     <Link href={DATA.contact.social.GitHub.url} target="_blank">
                       <Button variant="outline" size="default">
                         GitHub
