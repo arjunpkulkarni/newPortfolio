@@ -26,6 +26,7 @@ import abbvie from "../app/work/pictures/abbvie.png";
 import nobe from "../app/work/pictures/nobe.png";
 import ibc from "../app/work/pictures/ibc.png";
 import sigpwny from "../app/work/pictures/sigpwny.png";
+import curator from "../app/work/pictures/curator.png";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import siramaiLogo from "../app/projects/pictures/logos/siramaiLogo.png";
@@ -230,7 +231,7 @@ export const DATA = {
       badges: ["Intel & UpHonest Capital-backed"],
       location: "New York, NY",
       title: "Founding Engineer",
-      logoUrl: siramaiLogo,
+      logoUrl: curator,
       start: "Jan 2024",
       end: "Dec 2025",
       description:
