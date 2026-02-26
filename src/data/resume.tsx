@@ -20,6 +20,7 @@ import QuantDesk from "../app/projects/pictures/quantDesk.png";
 import Purchasing from "../app/projects/pictures/purchasing.png";
 import ucsd from "../app/projects/pictures/ucsd.png";
 import uphonest from "../app/projects/pictures/uphonest.png";
+import upscale from "../app/work/pictures/upscale.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -516,6 +517,18 @@ export const DATA = {
       end: "",
       description:
         "Investor supporting Hanger's AI-powered centralized shopping platform.",
+    },
+    {
+      company: "UpScaleX",
+      href: "https://www.upscalex.ai/",
+      badges: ["Investor"],
+      location: "",
+      title: "Investor in Curator",
+      logoUrl: upscale,
+      start: "",
+      end: "",
+      description:
+        "AI-native seed fund supporting Curator's agentic e-commerce platform, providing co-building approach and strategic growth acceleration.",
     },
   ],
   education: [
