@@ -17,6 +17,8 @@ interface Role {
     readonly description: string;
     readonly skills: readonly string[];
   }[];
+  start?: string;
+  end?: string;
 }
 
 interface PromotionCardProps {
@@ -30,6 +32,38 @@ interface PromotionCardProps {
   cardClassName?: string;
 }
 
+// Helper function to calculate duration from date strings
+function calculateDuration(start: string, end: string): string {
+  if (!start || !end) return "";
+  
+  const parseDate = (dateStr: string) => {
+    const [month, year] = dateStr.split(" ");
+    const monthMap: { [key: string]: number } = {
+      Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5,
+      Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11
+    };
+    return new Date(parseInt(year), monthMap[month] || 0);
+  };
+  
+  const startDate = parseDate(start);
+  const endDate = parseDate(end);
+  
+  const diffMs = endDate.getTime() - startDate.getTime();
+  const diffMonths = Math.round(diffMs / (1000 * 60 * 60 * 24 * 30.44));
+  
+  if (diffMonths < 12) {
+    return `${diffMonths} ${diffMonths === 1 ? 'month' : 'months'}`;
+  } else {
+    const years = Math.floor(diffMonths / 12);
+    const months = diffMonths % 12;
+    if (months === 0) {
+      return `${years} ${years === 1 ? 'year' : 'years'}`;
+    } else {
+      return `${years} ${years === 1 ? 'year' : 'years'}, ${months} ${months === 1 ? 'month' : 'months'}`;
+    }
+  }
+}
+
 export const PromotionCard = ({
   logoUrl,
   altText,
@@ -40,6 +74,33 @@ export const PromotionCard = ({
   titleClassName,
   cardClassName,
 }: PromotionCardProps) => {
+  // Get date range across all roles
+  const getDateRange = () => {
+    if (roles.length === 0) return "";
+    
+    // Find earliest start and latest end across all roles
+    let earliestStart = roles[0]?.start;
+    let latestEnd = roles[0]?.end;
+    
+    roles.forEach(role => {
+      if (role.start && role.end) {
+        if (!earliestStart || new Date(role.start) < new Date(earliestStart)) {
+          earliestStart = role.start;
+        }
+        if (!latestEnd || new Date(role.end) > new Date(latestEnd)) {
+          latestEnd = role.end;
+        }
+      }
+    });
+    
+    if (earliestStart && latestEnd) {
+      return `${earliestStart} - ${latestEnd}`;
+    }
+    return "";
+  };
+
+  const dateRange = getDateRange();
+
   return (
     <div className="block">
       <Card className={cn("flex flex-col transition-all duration-300 ease-out hover:shadow-lg", cardClassName)}>
@@ -83,6 +144,11 @@ export const PromotionCard = ({
                     </span>
                   )}
                 </h3>
+                {dateRange && (
+                  <div className="text-xs sm:text-sm tabular-nums text-muted-foreground text-right whitespace-nowrap">
+                    {dateRange}
+                  </div>
+                )}
               </div>
               {/* All roles on same line - matching ResumeCard subtitle placement */}
               <div className="font-sans text-xs">

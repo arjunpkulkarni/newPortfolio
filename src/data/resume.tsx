@@ -159,15 +159,15 @@ export const DATA = {
       tasks: [
         {
           description: "Built and shipped core React Native features (guest lists, RSVPs, creator discovery) used by 50k+ users, improving mobile performance and navigation speed by 30% through optimized rendering.",
-          skills: ["React Native", "Mobile Development", "Performance", "State Management"]
+          skills: ["React Native", "TypeScript", "Redux", "React Navigation"]
         },
         {
           description: "Developed scalable Node.js backend APIs for high‑volume event workflows, reducing user drop‑off during event flow by 25% with improved validation and error handling.",
-          skills: ["Node.js", "Express", "APIs", "Backend Development"]
+          skills: ["Node.js", "Express", "PostgreSQL", "TypeScript"]
         },
         {
           description: "Optimized database queries and implemented Redis caching for event search, reducing API response times from 800ms to 120ms (85% improvement) and supporting 500+ concurrent users.",
-          skills: ["Redis", "Caching", "PostgreSQL", "Query Optimization"]
+          skills: ["Redis", "PostgreSQL", "SQL", "Node.js"]
         }
       ]
     },
@@ -185,7 +185,7 @@ export const DATA = {
           tasks: [
             {
               description: "Led infrastructure scaling and optimization, implementing advanced caching strategies and database tuning that reduced API latency by 40% under peak load.",
-              skills: ["DevOps", "Infrastructure", "Performance", "Scaling"]
+              skills: ["Docker", "Kubernetes", "PostgreSQL", "Redis"]
             },
             {
               description: "Architected ML pipeline orchestration with Airflow and MLflow, automating model retraining and deployment workflows for continuous improvement.",
@@ -197,7 +197,7 @@ export const DATA = {
             },
             {
               description: "Mentored junior engineers on best practices for ML infrastructure, DevOps workflows, and production system design.",
-              skills: ["Leadership", "Mentorship", "System Design", "Best Practices"]
+              skills: ["Python", "Airflow", "MLflow", "Docker"]
             }
           ]
         },
@@ -208,19 +208,19 @@ export const DATA = {
           tasks: [
             {
               description: "Built clinical AI nutrition platform serving 200+ patients with subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
-              skills: ["LangChain", "RAG", "QDrant", "Healthcare AI"]
+              skills: ["LangChain", "RAG", "QDrant", "Python"]
             },
             {
               description: "Collaborated with Food Network Chef James Briscione and White House Fellow Prof. Lav Varshney to integrate culinary expertise into AI recommendation engine.",
-              skills: ["Cross-functional Collaboration", "Product Development", "Healthcare"]
+              skills: ["Python", "OpenAI", "Flask", "PostgreSQL"]
             },
             {
               description: "Deployed HIPAA-compliant Next.js platform with GPT-4o integration, implementing encryption, audit logging, and secure PHI handling, passing UCSD Health IT security review.",
-              skills: ["Next.js", "GPT-4", "HIPAA Compliance", "Security"]
+              skills: ["Next.js", "GPT-4", "PostgreSQL", "AWS"]
             },
             {
               description: "Built agentic workflow with LangGraph for multi-step reasoning (medical history, allergies, meal generation), reducing manual dietician review time by 65%.",
-              skills: ["LangGraph", "AI Agents", "Workflow Automation", "Python"]
+              skills: ["LangGraph", "Python", "OpenAI", "QDrant"]
             }
           ]
         }
@@ -240,23 +240,23 @@ export const DATA = {
       tasks: [
         {
           description: "As first founding engineer, architected complete agentic e-commerce OS from ground up, scaling to 4+ enterprise clients processing $2M+ GMV. Helped raise $1.0M seed round from Intel Capital and UpHonest Capital.",
-          skills: ["System Architecture", "Founding Engineering", "Fundraising", "Leadership"]
+          skills: ["Python", "TypeScript", "React", "PostgreSQL"]
         },
         {
           description: "Designed agent workflows processing 2,000+ daily queries with vector search (Pinecone) and adaptive ranking, achieving 92% relevance accuracy and <200ms query latency.",
-          skills: ["Vector Search", "AI Agents", "Pinecone", "OpenAI Embeddings"]
+          skills: ["Pinecone", "Python", "OpenAI Embeddings", "Redis"]
         },
         {
           description: "Built no-code framework reducing client onboarding time by 90%, enabling non-technical teams to deploy custom search experiences in <2 hours.",
-          skills: ["No-Code Platform", "React", "TypeScript", "Product Development"]
+          skills: ["React", "TypeScript", "Next.js", "API Design"]
         },
         {
           description: "Optimized Postgres + Redis stack with connection pooling and intelligent caching, increasing throughput 4× (250 to 1,000 ops/sec) and cutting p95 latency by 30%.",
-          skills: ["PostgreSQL", "Redis", "Caching", "Performance Engineering"]
+          skills: ["PostgreSQL", "Redis", "Python", "SQL"]
         },
         {
           description: "Shipped Gemini multimodal search enabling conversational and visual product discovery, improving conversion rates by 40% for enterprise clients.",
-          skills: ["Gemini", "Multimodal AI", "RAG", "Production ML"]
+          skills: ["Gemini", "Python", "RAG", "Pinecone"]
         }
       ]
     },
@@ -274,19 +274,19 @@ export const DATA = {
       tasks: [
         {
           description: "Built full-stack ETL dashboard processing 120k+ clinical trial reports, reducing document analysis time from 4 hours to 45 minutes per batch (80% reduction) with automated extraction.",
-          skills: ["ETL", "FastAPI", "Python", "Full-stack"]
+          skills: ["FastAPI", "Python", "React", "PostgreSQL"]
         },
         {
           description: "Implemented semantic search using OpenAI embeddings and FAISS vector database, improving R&D team productivity by 3x for finding relevant trials and adverse event reports.",
-          skills: ["OpenAI Embeddings", "FAISS", "Vector Search", "NLP"]
+          skills: ["OpenAI Embeddings", "FAISS", "Python", "PostgreSQL"]
         },
         {
           description: "Built FastAPI backend with async processing for large-scale ingestion, implementing multi-threaded PDF parsing and OCR (Tesseract) for scanned documents.",
-          skills: ["FastAPI", "Async Python", "OCR", "Multi-threading"]
+          skills: ["FastAPI", "Python", "Tesseract", "PostgreSQL"]
         },
         {
           description: "Upgraded PostgreSQL + AWS S3 stack with database optimization and indexing, increasing throughput 4× (500 to 2,000 documents/hour) for R&D pipeline.",
-          skills: ["PostgreSQL", "AWS S3", "Database Optimization", "Performance"]
+          skills: ["PostgreSQL", "AWS S3", "SQL", "Python"]
         }
       ]
     }
@@ -310,7 +310,7 @@ export const DATA = {
         },
         {
           description: "Designed CNT‑integrated channel architectures targeting higher momentum transfer and energy harvesting efficiency.",
-          skills: ["Carbon Nanotubes", "Energy Harvesting", "Simulation"]
+          skills: ["Python", "COMSOL", "MATLAB"]
         }
       ]
     },
@@ -332,7 +332,7 @@ export const DATA = {
         },
         {
           description: "Collaborated with Food Network Chef James Briscione & White House Fellow Lav Varshney on clinical AI nutrition engine.",
-          skills: ["Cross-functional", "AI", "Healthcare"]
+          skills: ["Python", "OpenAI", "Flask"]
         }
       ]
     },
@@ -354,7 +354,7 @@ export const DATA = {
         },
         {
           description: "Ensured zero‑loss message reliability via WebSockets + analytics logging for human–AI interaction experiments.",
-          skills: ["WebSockets", "Analytics", "Resilience", "Real-time Systems"]
+          skills: ["WebSockets", "React", "Flask", "PostgreSQL"]
         }
       ]
     },
@@ -376,7 +376,7 @@ export const DATA = {
         },
         {
           description: "Achieved 18% lower traffic delay in open‑world simulations using ROS, C++, Python.",
-          skills: ["ROS", "C++", "Autonomous Systems", "Simulation"]
+          skills: ["ROS", "C++", "Python", "SUMO"]
         }
       ]
     },
@@ -394,11 +394,11 @@ export const DATA = {
       tasks: [
         {
           description: "Analyzed experimental data and developed new concrete mixture by reducing clinker in cement.",
-          skills: ["Materials Science", "Data Analysis"]
+          skills: ["Python", "NumPy", "Pandas"]
         },
         {
           description: "Built Python + Random Forest models to predict composition impact on durability, reducing carbon emissions by 10%.",
-          skills: ["Python", "Random Forest", "ML", "Sustainability"]
+          skills: ["Python", "Random Forest", "Scikit-learn", "Pandas"]
         }
       ]
     },
@@ -416,11 +416,11 @@ export const DATA = {
       tasks: [
         {
           description: "Held office hours and provided one-on-one support for students in computer science courses.",
-          skills: ["Teaching", "Mentorship", "Computer Science"]
+          skills: ["C++", "Java", "Data Structures", "Algorithms"]
         },
         {
           description: "Graded assignments and provided detailed feedback to help students improve their programming skills.",
-          skills: ["Code Review", "Feedback", "Education"]
+          skills: ["Code Review", "C++", "Java"]
         }
       ]
     },
@@ -440,11 +440,11 @@ export const DATA = {
       tasks: [
         {
           description: "Conducted market analysis and developed a go-to-market strategy for a new product line in the pipefitting industry.",
-          skills: ["Market Research", "Strategic Planning", "PowerPoint", "Client Presentation"]
+          skills: ["Python", "Data Analysis", "Excel", "SQL"]
         },
         {
           description: "Used NLP techniques to simplify complex insurance documents, making them more understandable for customers.",
-          skills: ["Python", "NLTK", "Text Summarization", "Data Analysis"]
+          skills: ["Python", "NLTK", "Pandas", "NumPy"]
         }
       ]
     },
@@ -484,11 +484,11 @@ export const DATA = {
       tasks: [
         {
           description: "Built and styled responsive UI components for a cross-platform mobile app using React Native.",
-          skills: ["React Native", "Bootstrap", "JavaScript", "UI/UX Design"]
+          skills: ["React Native", "Bootstrap", "JavaScript", "CSS"]
         },
         {
           description: "Translated Figma mockups into functional application screens and integrated them with a Python Flask backend.",
-          skills: ["Figma", "Flask", "REST APIs", "Frontend Development"]
+          skills: ["React", "Flask", "REST APIs", "Python"]
         }
       ]
     },

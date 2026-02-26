@@ -77,11 +77,26 @@ export default function WorkPage() {
         </BlurFade>
         <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
           {DATA.work.map((work: any, id) => {
-            const roles = work.roles || [{
+            // Handle both single role and multiple roles format
+            const roles = work.roles ? work.roles.map((role: any) => {
+              // Parse period string if it exists (format: "Month Year - Month Year")
+              let start = "";
+              let end = "";
+              if (role.period && role.period.includes(" - ")) {
+                [start, end] = role.period.split(" - ").map((s: string) => s.trim());
+              }
+              return {
+                ...role,
+                start: start || role.start,
+                end: end || role.end
+              };
+            }) : [{
               title: work.title || "",
               period: work.start && work.end ? `${work.start} - ${work.end}` : "",
               description: work.description,
-              tasks: work.tasks
+              tasks: work.tasks,
+              start: work.start,
+              end: work.end
             }];
             
             return (
