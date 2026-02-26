@@ -231,7 +231,7 @@ export const DATA = {
       href: "https://curator.to/",
       badges: ["Intel & UpHonest Capital-backed"],
       location: "New York, NY",
-      title: "Founding Engineer",
+      title: "Head of Engineering / Founding Engineer",
       logoUrl: curator,
       start: "Jan 2024",
       end: "Dec 2025",
