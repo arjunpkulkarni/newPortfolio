@@ -2,6 +2,8 @@ import { StaticImageData } from "next/image";
 
 // Import product images
 import Culin from "../app/projects/pictures/culin.png";
+import Culin1 from "../app/projects/pictures/culin1.png";
+import Culin2 from "../app/projects/pictures/culin2.png";
 import FitCheck from "../app/projects/pictures/fitcheck.png";
 import Siramai from "../app/projects/pictures/siramai.png";
 import psych from "../app/projects/pictures/psych.png";
@@ -61,6 +63,7 @@ export interface Product {
   image?: StaticImageData | string;
   images?: (StaticImageData | string)[];
   screenshots?: (StaticImageData | string)[];
+  screenshotDescriptions?: string[];
   featured: boolean;
   impactScore: number; // for sorting
   date: string; // YYYY-MM-DD
@@ -138,16 +141,22 @@ export const PRODUCTS: Product[] = [
     ],
     tags: ["RAG", "ML/Agents", "Product"],
     type: "AI/ML",
-    status: "Archived",
+    status: "Live",
     domain: "Healthcare",
     links: {
+      live: "https://www.culin.ai",
       demo: "https://www.culin.ai",
     },
     image: Culin,
+    screenshots: [Culin1, Culin2],
+    screenshotDescriptions: [
+      "Personalized meal planning interface—generates recipes tailored to dietary restrictions, allergies, and nutritional goals using multi-layer RAG retrieval.",
+      "Real-time nutritional analysis dashboard—tracks patient progress with visualized macro breakdowns and LLM-powered recommendations."
+    ],
     featured: true,
     impactScore: 89,
     date: "2024-06-20",
-    isCurrentlyLive: false,
+    isCurrentlyLive: true,
   },
   {
     id: "siramai",
