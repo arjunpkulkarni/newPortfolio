@@ -128,27 +128,45 @@ export const PRODUCTS: Product[] = [
     id: "culinai",
     slug: "culinai",
     name: "CulinAI",
-    oneLiner: "Multi-Layer Nutrition Intelligence Engine for UCSD Health—200+ patients, +22% recommendation accuracy via RAG + subgraph DAG.",
-    problem: "Nutritionists spend hours researching personalized meal plans, leading to generic recommendations.",
-    solution: "Hierarchical RAG system with 3-layer embeddings (nutrition DB → patient history → research papers).",
-    impact: "200+ patients served, 22% accuracy improvement over GPT-4, zero PHI breaches in 6 months.",
-    whyBuilt: "Nutritionists manually cross-referenced dozens of sources per patient. Built this to automate research while keeping human expertise.",
+    oneLiner: "Real-Time Nutrition Decision Engine — decides what you eat next (Order or Cook) in seconds using hierarchical RAG across nutrition data, patient history, and research evidence. Deployed in a UCSD Health pilot.",
+    problem: "Nutrition planning fails at the moment of decision:\n\n• Nutrition data is fragmented across recipes, macros, menus, and medical guidelines\n• Meal planners are static and ignore real-time constraints (time, budget, pantry, location)\n• Patients don't follow plans due to decision fatigue\n\nNutritionists spend hours researching meals — and patients still don't eat what was planned.",
+    solution: "Built the CulinAI Decision Engine — a real-time system that:\n\n• Learns taste, time, macro targets, allergies, and budget\n• Chooses Order vs Cook automatically using binary optimization\n• Generates a grocery cart or restaurant action instantly\n• Improves recommendations from real eating behavior via weekly retraining\n\nInstead of planning meals, CulinAI decides the next one.",
+    impact: "200+ UCSD pilot patients served\n+22% recommendation accuracy over GPT-4 baseline\n<3s P95 latency on all queries\nZero PHI breaches over 6 months\nSignificant reduction in meal decision time vs traditional planning",
+    whyBuilt: "I track macros daily (~1800 kcal / 150g protein) and realized meal apps fail because they don't decide in real life — they hand you a plan and walk away. CulinAI automates the hardest part: choosing. Built this to prove real-time decision intelligence beats static planning.",
     proof: [
       { label: "Patients", value: "200+" },
       { label: "Accuracy Gain", value: "+22%" },
+      { label: "P95 Latency", value: "<3s" },
+      { label: "PHI Breaches", value: "0" },
     ],
-    system: ["Next.js", "LangChain", "GPT-4", "QDrant", "Docker", "AWS ECS", "CloudWatch"],
+    system: [
+      "Python Ingestion Pipelines",
+      "Postgres + Supabase RLS",
+      "AWS S3",
+      "QDrant Vector DB",
+      "LangChain Agents",
+      "OpenAI GPT-4",
+      "FastAPI",
+      "Next.js",
+      "Docker",
+      "AWS ECS + App Runner",
+      "CloudWatch",
+    ],
     bullets: [
-      "Designed subgraph DAG retrieval system: LangChain + QDrant vector store → 22% accuracy improvement over baseline GPT-4 outputs",
-      "Deployed HIPAA-compliant platform on AWS ECS with auto-scaling—200+ patients, zero data breach incidents",
-      "Optimized LangChain agent latency to <3s (95th %ile) using caching layer + QDrant indexing strategy",
+      "Designed 3-layer hierarchical RAG retrieval DAG: Nutrition DB → Patient History → Research Evidence — each query runs patient context embedding, constraint filtering (allergies, macros, budget), and subgraph retrieval across all layers before LLM reasoning → +22% accuracy over baseline GPT-4",
+      "Built binary decision engine selecting Order OR Cook, taking macro targets, taste preferences, budget, time, nearby restaurants, and pantry inventory as inputs — outputs either a recipe + grocery cart or restaurant choice + macro estimate in <3s P95",
+      "Integrated 5 structured + unstructured nutrition sources: USDA DB, recipe datasets, OpenMenu restaurant data + scraping pipelines, patient diet logs, and clinical research papers — ingested via Python pipelines into Postgres + QDrant",
+      "Deployed HIPAA-ready infrastructure on AWS ECS + App Runner with Supabase Postgres (RLS-enforced), Dockerized services, and CloudWatch monitoring — zero PHI breaches across 6 months and 200+ patients",
+      "Built feedback learning loop collecting post-meal signals (eaten, macro deviation, rating, time-to-eat) — used to retrain ranking model weekly, compounding accuracy gains over time",
     ],
     resumeBullets: [
-      "Architected RAG-based nutrition intelligence system serving 200+ patients with 22% accuracy improvement over baseline LLM",
-      "Deployed HIPAA-compliant infrastructure on AWS ECS with auto-scaling, Aurora PostgreSQL, and encrypted data flows",
-      "Optimized LangChain agent latency to <3s (95th percentile) using semantic caching and QDrant vector indexing",
+      "Architected real-time nutrition decision engine serving 200+ UCSD Health pilot patients, achieving +22% recommendation accuracy over GPT-4 baseline via 3-layer hierarchical RAG (Nutrition DB → Patient History → Research Evidence)",
+      "Designed binary optimization decision model selecting Order vs Cook from macro targets, taste preferences, budget, time, pantry inventory, and nearby restaurants — returning full next action in <3s P95",
+      "Ingested 5 structured + unstructured nutrition data sources (USDA, OpenMenu, patient logs, clinical papers) into Postgres + QDrant via Python pipelines; built custom retrieval DAG with constraint filtering across all layers",
+      "Deployed HIPAA-compliant production infrastructure on AWS ECS + App Runner with Supabase Postgres (RLS), CloudWatch monitoring — zero PHI breaches over 6 months",
+      "Built weekly feedback retraining loop from real eating signals (macro deviation, ratings, time-to-eat) continuously improving recommendation ranking",
     ],
-    tags: ["RAG", "ML/Agents", "Product"],
+    tags: ["RAG", "ML/Agents", "Real-time Inference"],
     type: "AI/ML",
     status: "Live",
     domain: "Healthcare",
@@ -159,8 +177,141 @@ export const PRODUCTS: Product[] = [
     image: Culin,
     screenshots: [Culin1, Culin2],
     screenshotDescriptions: [
-      "Personalized meal planning interface—generates recipes tailored to dietary restrictions, allergies, and nutritional goals using multi-layer RAG retrieval.",
-      "Real-time nutritional analysis dashboard—tracks patient progress with visualized macro breakdowns and LLM-powered recommendations."
+      "Real-time decision interface — CulinAI analyzes your constraints and instantly outputs Order or Cook with the exact next action: a recipe + grocery cart or a restaurant recommendation with macro estimate.",
+      "Nutritional intelligence dashboard — tracks macro adherence, eating patterns, and recommendation history, with the RAG engine continuously refining suggestions from real behavior signals.",
+    ],
+    technicalDeepDive: [
+      {
+        sectionTitle: "Data Layer",
+        intro: "Integrated structured + unstructured nutrition sources into a unified retrieval foundation.",
+        subsections: [
+          {
+            title: "Nutrition Data Sources",
+            bullets: [
+              "USDA nutrition database — ground truth macro + micronutrient values",
+              "Recipe datasets — ingredient lists, prep time, cooking instructions",
+              "Restaurant menus via OpenMenu API + custom scraping pipelines — real menu items with macro estimates",
+              "Patient diet logs and macro history — personalized eating behavior patterns",
+              "Clinical nutrition research papers — evidence-based dietary guidelines",
+            ],
+          },
+          {
+            title: "Ingestion & Storage Stack",
+            bullets: [
+              "Python ingestion pipelines normalize and validate all incoming data across source formats",
+              "Postgres + Supabase with Row Level Security (RLS) for patient data isolation and HIPAA compliance",
+              "AWS S3 for raw data archiving and document storage",
+              "QDrant vector DB for embedding-based retrieval across all data layers",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Multi-Layer RAG Engine",
+        intro: "A 3-layer retrieval DAG that combines nutrition science, personal history, and research evidence — every query traverses all three layers before reaching the LLM.",
+        subsections: [
+          {
+            title: "Retrieval DAG Architecture",
+            bullets: [
+              "Layer 1 — Nutrition DB: retrieves macro-matched food options from USDA + recipe + restaurant data",
+              "Layer 2 — Patient History: filters by personal taste preferences, past meals, allergies, and macro adherence patterns",
+              "Layer 3 — Research Evidence: surfaces clinical guidelines relevant to the patient's diet context",
+            ],
+          },
+          {
+            title: "Query Execution Flow",
+            bullets: [
+              "Patient context embedding: encodes current constraints (time, budget, location, macro targets)",
+              "Constraint filtering: eliminates options violating allergies, budget, or macro hard limits",
+              "Subgraph retrieval: pulls candidates from each layer in the DAG using QDrant semantic search",
+              "Large-model reasoning: GPT-4 synthesizes cross-layer candidates into a final ranked recommendation",
+            ],
+          },
+          {
+            title: "Stack",
+            bullets: [
+              "LangChain agents orchestrate the multi-layer retrieval DAG",
+              "QDrant vector indexing with namespace isolation per data layer",
+              "OpenAI GPT-4 for final reasoning and recommendation generation",
+              "Custom retrieval DAG logic for subgraph traversal and constraint propagation",
+              "Result: +22% recommendation accuracy vs baseline GPT-4 meal generation",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Decision Engine",
+        intro: "Binary optimization model that outputs a single, actionable next meal decision — not a plan.",
+        subsections: [
+          {
+            title: "Inputs",
+            bullets: [
+              "Macro targets (calories, protein, carbs, fat remaining for the day)",
+              "Taste preferences and cuisine history",
+              "Budget available for this meal",
+              "Time available (prep time vs ordering time)",
+              "Nearby restaurants (location-aware with menu data pre-indexed)",
+              "Pantry inventory (what's available to cook with)",
+            ],
+          },
+          {
+            title: "Outputs",
+            bullets: [
+              "Order → specific restaurant + dish recommendation with macro estimate",
+              "Cook → specific recipe + generated grocery cart with exact items",
+              "Decision rendered in <3s P95 latency end-to-end",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Feedback Learning Loop",
+        intro: "The system retrains from real eating behavior weekly, compounding accuracy gains over time.",
+        subsections: [
+          {
+            title: "Signals Collected",
+            bullets: [
+              "Did user eat the suggestion (acceptance signal)",
+              "Macro deviation — actual macros vs recommended",
+              "Explicit rating feedback (1–5 stars)",
+              "Time-to-eat — how fast the user acted on the recommendation",
+            ],
+          },
+          {
+            title: "Retraining Pipeline",
+            bullets: [
+              "Signals aggregated weekly per patient and across cohort",
+              "Used to retrain ranking model: upweight accepted recommendations, downweight rejected patterns",
+              "Preference embeddings updated in QDrant for tighter personalization on next cycle",
+              "Result: continuous accuracy improvement compounding over the 6-month pilot",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Production Infrastructure",
+        intro: "HIPAA-ready backend built for healthcare deployment with auto-scaling and zero PHI exposure.",
+        subsections: [
+          {
+            title: "Stack",
+            bullets: [
+              "FastAPI backend — async inference workers with auto-scaling",
+              "Next.js frontend — patient-facing decision interface",
+              "Dockerized services deployed on AWS ECS + App Runner",
+              "Supabase Postgres with RLS — row-level security enforcing patient data isolation",
+              "CloudWatch monitoring — latency, error rates, and inference throughput dashboards",
+            ],
+          },
+          {
+            title: "Performance",
+            bullets: [
+              "<3s P95 latency across all recommendation requests",
+              "Auto-scaling inference workers handle peak meal-time traffic",
+              "Zero PHI breaches over 6 months of production operation",
+            ],
+          },
+        ],
+      },
     ],
     featured: true,
     impactScore: 89,
