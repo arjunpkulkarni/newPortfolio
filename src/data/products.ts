@@ -574,11 +574,11 @@ export const PRODUCTS: Product[] = [
     id: "openfield",
     slug: "openfield",
     name: "OpenField",
-    oneLiner: "NIL marketplace for college athletes",
-    problem: "500K+ college athletes gained NIL rights but had no infrastructure to monetize them. Manual deal negotiations took 2-4 weeks via DMs. Legal paperwork required attorneys ($500-2K per contract). Existing agencies took 25-40% cuts and ignored 95% of athletes.",
-    solution: "Built a two-sided marketplace with verified athlete profiles, automated matching, and NCAA-compliant contract generation. Stripe Connect handles escrow payments (85/15 split). DocuSign API generates state-specific contracts for 19 different NIL laws.",
-    impact: "Onboarded 30+ athletes across 5 universities. Facilitated $3.5K+ GMV. Reduced deal time from 2 weeks → 42 hours (93% reduction). 78% of athletes get offers within first week.",
-    whyBuilt: "My D1 wrestler roommate couldn't afford textbooks despite training 40+ hours weekly. Built OpenField to democratize NIL for all athletes, not just stars.",
+    oneLiner: "Live NIL marketplace connecting college athletes with brands — automated matching, contracts, and payments under NCAA + state NIL laws.",
+    problem: "500K+ college athletes gained NIL rights but had no infrastructure to monetize them:\n\n• Deals happened through DMs over 2–4 weeks\n• Contracts required lawyers ($500–$2K each)\n• Agencies took 25–40% cuts\n• 95% of athletes were ignored\n\nThere was no scalable platform for small and mid-tier athletes.",
+    solution: "Built OpenField, a live two-sided marketplace that:\n\n• Matches athletes to brands using collaborative filtering across sport, follower count, location, and brand category\n• Generates NCAA-compliant contracts automatically via DocuSign across 19 state NIL laws\n• Handles escrow payments with Stripe Connect (85/15 split) and milestone payouts\n• Tracks deals, deliverables, and compliance in one platform\n\nAthletes get offers in days instead of weeks.",
+    impact: "30+ athletes across 5 universities\n12 brands onboarded\n$3.5K+ GMV processed\nDeal time reduced 2 weeks → 42 hours (93% reduction)\n78% of athletes receive offers in their first week",
+    whyBuilt: "My D1 wrestler roommate couldn't afford textbooks despite training 40+ hours a week. I built OpenField so NIL isn't only for star athletes — any college athlete with an audience deserves a shot at monetization.",
     proof: [
       { label: "Athletes", value: "30+" },
       { label: "Brands", value: "12" },
@@ -586,18 +586,20 @@ export const PRODUCTS: Product[] = [
       { label: "Deal Time", value: "42h" },
       { label: "Offer Rate", value: "78%" },
     ],
-    system: ["Next.js", "Node.js", "PostgreSQL", "Redis", "Stripe Connect", "DocuSign API", "AWS ECS", "S3"],
+    system: ["Next.js", "Node.js", "PostgreSQL", "Redis", "Stripe Connect", "DocuSign API", "Docker", "AWS ECS", "S3"],
     bullets: [
-      "Built two-sided marketplace with collaborative filtering → 67% match-to-deal conversion",
-      "Automated NCAA-compliant contract generation for 19 state-specific NIL laws via DocuSign",
-      "Stripe Connect escrow system (85/15 split) → zero payment disputes",
-      "Deployed on AWS ECS with PostgreSQL + Redis caching (88% hit rate)",
+      "Designed normalized relational schema for a live marketplace — Athletes ↔ Deals ↔ Contracts ↔ Deliverables ↔ Payments with referential integrity — enabled automated contract generation, escrow payment states, and race-condition-free marketplace queries",
+      "Built collaborative filtering matching engine across sport, follower count, location, brand category, and NIL state law compliance → 67% match-to-deal conversion rate",
+      "Implemented NCAA + state NIL compliance engine across 19 state laws via DocuSign API — automatically selects correct contract template per athlete university and state",
+      "Stripe Connect escrow pipeline with 85/15 split and milestone payouts — zero payment disputes across all processed deals",
+      "Redis caching layer (88% hit rate) on marketplace search queries — fast athlete discovery across concurrent brand sessions",
     ],
     resumeBullets: [
-      "Built and launched two-sided NIL marketplace serving 30+ college athletes and 12 brands, facilitating $3.5K+ GMV and reducing deal completion time by 93% (2 weeks → 42 hours)",
-      "Architected automated contract generation system with NCAA compliance validation for 19 state-specific NIL laws, integrated DocuSign API for e-signatures and Stripe Connect for escrow payments",
-      "Designed collaborative filtering matching algorithm achieving 67% match-to-deal conversion rate by analyzing 25+ athlete/brand signals including audience demographics and historical deal performance",
-      "Deployed production infrastructure on AWS ECS with PostgreSQL, Redis caching, and Stripe Connect handling split payments with 15% platform fee and automatic 1099 generation",
+      "Built and launched live two-sided NIL marketplace serving 30+ college athletes and 12 brands, processing $3.5K+ GMV and reducing deal time 93% (2 weeks → 42 hours)",
+      "Designed normalized relational schema (Athletes, Brands, Campaigns, Deals, Contracts, Deliverables, Payments, ComplianceRules, StateLaws) enabling automated contract generation and escrow payment state management",
+      "Architected NCAA compliance engine with DocuSign API generating state-specific contracts across 19 NIL state laws, enforcing eligibility constraints at schema level to prevent illegal deals",
+      "Implemented collaborative filtering matching engine → 67% match-to-deal conversion; Stripe Connect escrow (85/15 split) with milestone payouts → zero payment disputes",
+      "Deployed Dockerized services on AWS ECS with PostgreSQL + Redis caching (88% hit rate) and S3 document storage",
     ],
     testimonials: [],
     tags: ["Marketplace", "Product", "Infra"],
@@ -609,6 +611,134 @@ export const PRODUCTS: Product[] = [
       demo: "https://www.openfield.live/demo",
     },
     image: OpenField,
+    technicalDeepDive: [
+      {
+        sectionTitle: "Marketplace Data Model",
+        intro: "The hardest part of OpenField wasn't the UI — it was designing a relational schema that could support a live marketplace with compliance, escrow, and contract state all enforced at the data layer.",
+        subsections: [
+          {
+            title: "The Problem with Marketplace Schemas",
+            body: "Marketplace logic required handling many-to-many athlete ↔ brand relationships, multiple deals per athlete, deliverables per contract, state-specific NIL rules, escrow payment flows, and contract revisions + signatures. A bad schema would break compliance or payments.",
+          },
+          {
+            title: "Core Tables",
+            bullets: [
+              "Athletes — profile, university, sport, follower counts, state",
+              "Brands — category, campaign budget, targeting criteria",
+              "Campaigns — brand-owned, with eligibility filters and deliverable specs",
+              "Deals — join between Athlete ↔ Campaign, with status state machine",
+              "Contracts — 1-to-1 with Deal, stores DocuSign envelope ID and template used",
+              "Deliverables — 1-to-many with Deal, tracks submission + approval",
+              "Payments — 1-to-many with Deal, mirrors Stripe Connect payment intents",
+              "ComplianceRules — 1-to-many with University, enforces school-specific NIL policies",
+              "StateLaws — 1-to-many with ContractTemplates, maps state → correct DocuSign template",
+            ],
+          },
+          {
+            title: "Key Relationships",
+            bullets: [
+              "Athlete ↔ Deals (1-to-many) — one athlete can run multiple active deals",
+              "Brand ↔ Campaigns (1-to-many) — one brand runs multiple campaigns simultaneously",
+              "Campaign ↔ Deals (1-to-many) — one campaign can match many athletes",
+              "Deal ↔ Contract (1-to-1) — every deal has exactly one binding contract",
+              "Deal ↔ Deliverables (1-to-many) — contract can require multiple deliverables",
+              "Deal ↔ Payments (1-to-many) — milestone-based escrow releases",
+              "University ↔ ComplianceRules (1-to-many) — school-specific eligibility constraints",
+              "StateLaw ↔ ContractTemplates (1-to-many) — 19 state NIL laws mapped to DocuSign templates",
+            ],
+          },
+          {
+            title: "Why This Mattered",
+            bullets: [
+              "Enabled automated contract generation — state + university determines template, no manual selection",
+              "Supported escrow payment states — payments locked to deal status transitions",
+              "Prevented illegal NIL deals — compliance rules enforced as foreign key constraints, not app logic",
+              "Allowed live marketplace queries without race conditions — deal state machine uses row-level locking",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Matching Engine",
+        intro: "Collaborative filtering with hard eligibility filters to surface relevant athletes to brands and relevant campaigns to athletes.",
+        subsections: [
+          {
+            title: "Matching Signals",
+            bullets: [
+              "Sport — brand category alignment (e.g. apparel brands prioritize team sport athletes)",
+              "Follower count — brand campaign tier requirements (micro, mid, macro)",
+              "Location — geo-targeted campaigns, state law compliance gate",
+              "Brand category — athlete audience demographic fit",
+              "NIL state law compliance — hard filter, ineligible athletes excluded before ranking",
+            ],
+          },
+          {
+            title: "Result",
+            bullets: [
+              "67% match-to-deal conversion rate across all brand campaigns",
+              "78% of athletes receive at least one offer in their first week on the platform",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Contracts & Compliance",
+        intro: "DocuSign API generates legally binding, state-specific NIL contracts automatically — no lawyer required.",
+        subsections: [
+          {
+            title: "How It Works",
+            bullets: [
+              "19 state NIL law templates pre-authored and stored in DocuSign template library",
+              "On deal acceptance, system looks up athlete's university → state → correct template",
+              "Populates dynamic fields: athlete name, brand, deliverables, payment terms, exclusivity clauses",
+              "Sends envelope via DocuSign API to both parties for e-signature",
+              "Contract status synced back to Deal table via DocuSign webhook",
+            ],
+          },
+          {
+            title: "Compliance Enforcement",
+            bullets: [
+              "NCAA eligibility rules and university-specific policies stored in ComplianceRules table",
+              "Checked at match time — non-compliant athletes never surface to brands",
+              "Schema-level enforcement prevents deal creation for ineligible athletes regardless of app logic",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Payments",
+        intro: "Stripe Connect escrow with milestone-based releases and automatic platform fee splits.",
+        subsections: [
+          {
+            title: "Escrow Flow",
+            bullets: [
+              "Brand funds deal upfront — Stripe payment intent created, held in escrow",
+              "Funds released to athlete Stripe Connect account on deliverable approval",
+              "85/15 split: 85% to athlete, 15% platform fee retained automatically",
+              "Milestone deals: multiple payment intents per deal, each tied to a Deliverable row",
+              "Zero payment disputes across all processed deals",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Infrastructure",
+        intro: "Dockerized services on AWS ECS with PostgreSQL, Redis caching, and S3 for contract document storage.",
+        subsections: [
+          {
+            title: "Stack",
+            bullets: [
+              "Next.js frontend — athlete profiles, campaign browsing, contract status, payment tracking",
+              "Node.js API — marketplace logic, deal state machine, DocuSign + Stripe integrations",
+              "PostgreSQL — normalized relational schema with referential integrity",
+              "Redis — marketplace search query caching (88% hit rate)",
+              "Docker + AWS ECS — containerized services with auto-scaling",
+              "S3 — signed contract PDF storage and deliverable asset uploads",
+            ],
+          },
+        ],
+      },
+    ],
     featured: true,
     impactScore: 88,
     date: "2024-03-12",
