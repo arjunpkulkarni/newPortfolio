@@ -40,7 +40,7 @@ export default function ProductsPage() {
                     <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
                   </div>
                   <span className="text-xs font-medium text-green-600 dark:text-green-400">
-                    Active
+                    Active / Finished
                   </span>
                 </div>
               </div>

@@ -224,6 +224,57 @@ export default function ProductDetailPage({
           </div>
         </div>
 
+        {/* Technical Deep Dive */}
+        {product.technicalDeepDive && product.technicalDeepDive.length > 0 && (
+          <div className="mb-16">
+            <h2 className="mb-10 text-2xl font-medium">How We Built It</h2>
+            <div className="space-y-16">
+              {product.technicalDeepDive.map((section, sIdx) => (
+                <div key={sIdx}>
+                  {/* Section header */}
+                  <div className="mb-6 flex items-center gap-4">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                      {sIdx + 1}
+                    </span>
+                    <h3 className="text-xl font-medium">{section.sectionTitle}</h3>
+                  </div>
+
+                  {section.intro && (
+                    <p className="mb-8 ml-12 text-muted-foreground leading-relaxed max-w-3xl">
+                      {section.intro}
+                    </p>
+                  )}
+
+                  <div className="ml-12 space-y-6">
+                    {section.subsections.map((sub, subIdx) => (
+                      <div key={subIdx} className="rounded-xl border bg-card p-6">
+                        <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                          {sub.title}
+                        </h4>
+                        {sub.body && (
+                          <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
+                            {sub.body}
+                          </p>
+                        )}
+                        {sub.bullets && sub.bullets.length > 0 && (
+                          <ul className="space-y-2">
+                            {sub.bullets.map((bullet, bIdx) => (
+                              <li key={bIdx} className="flex gap-3 text-sm text-muted-foreground">
+                                <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                                <span className="leading-relaxed">{bullet}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Screenshots */}
         {product.screenshots && product.screenshots.length > 0 && (
           <div className="mb-16">
@@ -234,12 +285,12 @@ export default function ProductDetailPage({
                   key={idx}
                   className="space-y-3"
                 >
-                  <div className="relative overflow-hidden rounded-lg border bg-muted/30 aspect-video">
+                  <div className="relative overflow-hidden min-h-[400px] flex items-center justify-center">
                     <Image
                       src={screenshot}
                       alt={`${product.name} screenshot ${idx + 1}`}
                       fill
-                      className="object-cover"
+                      className="object-contain"
                     />
                   </div>
                   {product.screenshotDescriptions && product.screenshotDescriptions[idx] && (
