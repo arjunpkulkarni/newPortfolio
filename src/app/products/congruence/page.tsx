@@ -422,6 +422,382 @@ export default function CongruencePage() {
           </div>
         </div>
 
+        {/* ── HOW WE BUILT IT ─────────────────────────────────────────── */}
+        <div className="mb-16">
+          <h2 className="mb-10 text-2xl font-medium">How We Built It</h2>
+          <div className="space-y-16">
+            
+            {/* 1. Multi-Tenant Architecture */}
+            <div>
+              <div className="mb-6 flex items-center gap-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                  1
+                </span>
+                <h3 className="text-xl font-medium">Multi-Tenant Architecture with RLS</h3>
+              </div>
+              <p className="mb-8 ml-12 text-muted-foreground leading-relaxed max-w-3xl">
+                Designed a clinic-scoped multi-tenant architecture where every database table enforces Row Level Security (RLS) to isolate clinic data and prevent cross-tenant leakage.
+              </p>
+              <div className="ml-12 space-y-6">
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    3-Tier RBAC System
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><strong>Super Admin:</strong> Manages all clinics, bulk onboarding (50+ users), audit logs, global settings</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><strong>Admin:</strong> Clinic management, clinician oversight, supervision dashboards, billing controls</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><strong>Clinician:</strong> Patient management, session documentation, AI analysis access, client forms</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    RLS Enforcement Across 40+ Tables
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Every table has a <code className="text-xs bg-muted px-1.5 py-0.5 rounded">clinic_id</code> column enforcing data isolation at the database level</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Policies check both <code className="text-xs bg-muted px-1.5 py-0.5 rounded">auth.uid()</code> and <code className="text-xs bg-muted px-1.5 py-0.5 rounded">active_status</code> to prevent access from deactivated users</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Service role access only for unauthenticated endpoints (client forms, booking links) with SHA-256 token validation</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Invite-Only Onboarding
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Single-use invite tokens with email, role, and clinic pre-assigned</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Invite redemption handled via Deno Edge Function with atomic status update</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Supports bulk invite generation for large clinic onboarding (tested with 50 users)</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* 2. 5-Stage Patient Workflow */}
+            <div>
+              <div className="mb-6 flex items-center gap-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                  2
+                </span>
+                <h3 className="text-xl font-medium">5-Stage Clinical Workflow Engine</h3>
+              </div>
+              <p className="mb-8 ml-12 text-muted-foreground leading-relaxed max-w-3xl">
+                Built a structured patient workspace that transforms unstructured therapy into audit-ready clinical documentation through five gated stages.
+              </p>
+              <div className="ml-12 space-y-6">
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Stage 1: Intake Forms
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Schema-driven form system with 10 field types (text, textarea, select, radio, checkbox, date, file, signature, consent, multi-step wizard)</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">SHA-256 token-hashed secure links for client form submissions (no login required)</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Document upload to Supabase Storage with virus scanning and MIME type validation</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Consent checklist gate — patients cannot proceed until all required consents are signed</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Stage 2: Session Recording
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">In-browser MediaRecorder API capturing video/audio streams with real-time preview</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Chunked upload to Supabase Storage with resumable upload support</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Session metadata tracked: duration, recording quality, storage path, clinician notes</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Stage 3: AI Analysis
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">DeepFace emotion detection generating timestamped affect patterns across the session</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Gemini 2.5 Flash processes transcript + emotion timeline to generate clinical summary, risk flags, and therapeutic recommendations</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">No-hallucination policy: AI uses <code className="text-xs bg-muted px-1.5 py-0.5 rounded">[BRACKETED PLACEHOLDERS]</code> for missing data instead of inventing clinical information</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Affect-language incongruence scoring flags masked emotions and potential misalignment between verbal and non-verbal signals</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Stage 4: Progress Tracking
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Patient progress timeline visualizing clinical metrics, risk levels, and therapeutic goals across sessions</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Trend arrows showing improvement/decline in key indicators</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Triage strip with risk-level color coding for quick supervision visibility</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Stage 5: Insurance Documentation
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Payer profile management with insurance details, authorization periods, and claim tracking</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">AI-generated CMS-1500 reauthorization packets pulling session summaries, progress notes, and clinical justification</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Automated insurance claim generation reducing manual packet assembly from hours to minutes</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* 3. Deno Edge Functions (11 Functions) */}
+            <div>
+              <div className="mb-6 flex items-center gap-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                  3
+                </span>
+                <h3 className="text-xl font-medium">11 Deno Edge Functions</h3>
+              </div>
+              <p className="mb-8 ml-12 text-muted-foreground leading-relaxed max-w-3xl">
+                Built a serverless backend layer handling authentication, AI proxying, external integrations, and compliance workflows using Supabase Edge Functions on Deno runtime.
+              </p>
+              <div className="ml-12 space-y-6">
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Invite System
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">create-invite</code> — generates single-use tokens with pre-assigned role and clinic</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">redeem-invite</code> — atomic status update preventing duplicate redemptions</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">bulk-invite</code> — batch generation for large clinic onboarding</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Client Forms
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">generate-form-link</code> — creates SHA-256 token-hashed secure links for client form packets</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">submit-form</code> — server-side validation and submission handler using service role for unauthenticated clients</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Booking & Scheduling
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">check-availability</code> — queries clinician calendar and runs <code className="text-xs bg-muted px-1.5 py-0.5 rounded">has_time_conflict()</code> DB function</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">create-booking</code> — approval-gated booking creation with double-booking prevention</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Billing & Payments
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">stripe-webhook</code> — handles Stripe Connect payment events with signature verification</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">create-invoice</code> — generates invoices with line items, commission splits, and CSV export</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    AI Proxy & Analysis
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">ai-analysis</code> — proxies video/audio to FastAPI backend for emotion detection + clinical summary generation</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed"><code className="text-xs bg-muted px-1.5 py-0.5 rounded">generate-cms1500</code> — AI-assisted CMS-1500 insurance packet generation using Gemini</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            {/* 4. Super Admin Portal */}
+            <div>
+              <div className="mb-6 flex items-center gap-4">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
+                  4
+                </span>
+                <h3 className="text-xl font-medium">Super Admin Operations Portal</h3>
+              </div>
+              <p className="mb-8 ml-12 text-muted-foreground leading-relaxed max-w-3xl">
+                Built a platform management layer for multi-clinic oversight, user management, and operational analytics.
+              </p>
+              <div className="ml-12 space-y-6">
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Clinic Management
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Create/edit/deactivate clinics with separate data isolation</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Assign clinicians and admins to specific clinics</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Visual assignment map showing user-to-clinic relationships</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Bulk Onboarding
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">CSV upload for bulk user creation (tested with 50 users)</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Automatic invite generation with email notifications</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Role/clinic assignment validation before batch processing</span>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="rounded-xl border bg-card p-6">
+                  <h4 className="mb-3 text-sm font-semibold uppercase tracking-wider text-primary">
+                    Audit Logs & Analytics
+                  </h4>
+                  <ul className="space-y-2">
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">All critical operations logged: user actions, role changes, data access, status updates</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Usage analytics dashboard showing sessions per clinic, AI analysis volume, form completion rates</span>
+                    </li>
+                    <li className="flex gap-3 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" />
+                      <span className="leading-relaxed">Filterable audit log UI with search, date range, user/clinic filters</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
         {/* ── SECURITY ────────────────────────────────────────────────── */}
         <div className="mb-16">
           <div className="rounded-xl border bg-card p-6">
