@@ -71,7 +71,7 @@ export default function WorkPage() {
       <section id="work" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 7}>
           <div className="space-y-0.5 mb-8 mt-20">
-            <h2 className="text-2xl font-medium tracking-tighter">Work Experience</h2>
+            <h2 className="text-2xl font-medium tracking-tighter">Experience</h2>
             <p className="text-sm text-muted-foreground">Professional experience and contributions.</p>
           </div>
         </BlurFade>
