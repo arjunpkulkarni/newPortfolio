@@ -84,7 +84,7 @@ export const PRODUCTS: Product[] = [
     id: "congruence",
     slug: "congruence",
     name: "Congruence",
-    oneLiner: "Multimodal emotion AI for psychiatrists",
+    oneLiner: "Automatic Psychotherapy and Insurance Notes Generation using our Multi-Modal AI",
     problem: "Psychiatrists spend 4+ hours/day on notes, interrupting therapy and missing non-verbal emotional cues. Existing EHR tools add admin work without clinical insight. Burnout exceeds 50%.",
     solution: "Built a real-time multimodal AI pipeline combining facial microexpressions, voice stress, and transcripts to auto-generate SOAP notes. Runs during sessions with <200ms latency. HIPAA-compliant deployment across clinics.",
     impact: "Deployed to 4+ clinics / 200+ patients. Cut documentation from 45 min → 3.5 min (92% reduction). Improved diagnostic insight with multimodal emotion detection.",
