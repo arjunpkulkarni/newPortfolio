@@ -28,6 +28,7 @@ import nobe from "../app/work/pictures/nobe.png";
 import ibc from "../app/work/pictures/ibc.png";
 import sigpwny from "../app/work/pictures/sigpwny.png";
 import curator from "../app/work/pictures/curator.png";
+import ieee from "../app/work/pictures/ieee.png";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import siramaiLogo from "../app/projects/pictures/logos/siramaiLogo.png";
@@ -426,6 +427,28 @@ export const DATA = {
     },
   ],
   clubs: [
+    {
+      company: "Institute of Electrical and Electronics Engineers",
+      href: "https://www.ieee.org/",
+      badges: [],
+      location: "Remote",
+      title: "Technical Member",
+      logoUrl: ieee,
+      start: "Jan 2025",
+      end: "Jan 2026",
+      description:
+        "Active technical member contributing to the advancement of electrical engineering and technology. Present on technical hardware, materials, quantum computing, and machine learning topics while working on circuitry and embedded systems projects.",
+      tasks: [
+        {
+          description: "Present technical presentations on hardware design, quantum computing, and machine learning applications in engineering.",
+          skills: ["Technical Presentation", "Hardware Design", "Quantum Computing", "Machine Learning"]
+        },
+        {
+          description: "Collaborate on circuitry and embedded systems projects with fellow IEEE members and technical communities.",
+          skills: ["Circuit Design", "Embedded Systems", "Hardware Engineering", "Project Management"]
+        }
+      ]
+    },
     {
       company: "Illinois Business Consulting",
       href: "https://giesbusiness.illinois.edu/experience/experiential-learning/illinois-business-consulting",
