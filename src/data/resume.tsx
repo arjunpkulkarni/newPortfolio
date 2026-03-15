@@ -1203,5 +1203,24 @@ export const DATA = {
       logo: "",
       video: "",
     },
+    {
+      title: "Sponsorship Marketplace Platform",
+      href: "/projects/anvara-marketplace-platform",
+      dates: "2024",
+      active: false,
+      description:
+        "Full-stack sponsorship marketplace connecting brands with publishers for advertising placements. Built end-to-end booking flow with campaign management dashboard, secure API endpoints, and analytics instrumentation. Implemented TypeScript stability fixes and server-side data fetching for optimal performance.",
+      technologies: ["Next.js", "React", "TailwindCSS", "Express.js", "Prisma", "PostgreSQL", "TypeScript", "Docker", "PNPM"],
+      links: [
+        {
+          type: "GitHub",
+          href: "https://github.com/arjunpkulkarni/anvaraTakeHome",
+          icon: <Icons.github className="size-3" />,
+        },
+      ],
+      image: "",
+      logo: "",
+      video: "",
+    },
   ],
 } as const;

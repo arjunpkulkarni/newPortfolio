@@ -14,6 +14,11 @@ import HangerPreview1 from "../app/projects/pictures/preview1.webp";
 import HangerPreview2 from "../app/projects/pictures/preview2.webp";
 import LumeLabs from "../app/projects/pictures/lumelabs.png";
 import Congruence from "../app/projects/pictures/congruence.png";
+import AnvaraMarketplace from "../app/projects/pictures/anvara/marketplace.png";
+import AnvaraCampaigns from "../app/projects/pictures/anvara/campaigns.png";
+import AnvaraCreateCampaign from "../app/projects/pictures/anvara/create_campaign.png";
+import AnvaraListings from "../app/projects/pictures/anvara/listings.png";
+import AnvaraAdSlot from "../app/projects/pictures/anvara/ad_slot.png";
 
 export type ProductTag = 
   | "Infra" 
@@ -910,6 +915,52 @@ export const PRODUCTS: Product[] = [
     impactScore: 88,
     date: "2024-03-12",
     isCurrentlyLive: true,
+  },
+  {
+    id: "anvara",
+    slug: "anvara-marketplace-platform",
+    name: "Sponsorship Marketplace Platform",
+    oneLiner: "Marketplace connecting brands with publishers for advertising placements—campaign management and secure booking flow.",
+    problem: "Brands struggle to discover and book advertising placements from publishers efficiently. Manual processes lead to missed opportunities, complex negotiations, and poor campaign tracking.",
+    solution: "Built a comprehensive marketplace platform with automated booking flow, campaign management dashboard, and real-time analytics. Streamlined sponsor-publisher relationships with secure API endpoints and TypeScript stability.",
+    impact: "Delivered production-ready marketplace with end-to-end booking flow, campaign management, and analytics instrumentation. Solved TypeScript stability issues and implemented server-side data fetching for optimal performance.",
+    whyBuilt: "Wanted to solve the inefficiencies in digital advertising marketplace by creating a seamless platform that connects sponsors with publishers while providing comprehensive campaign management tools.",
+    proof: [
+      { label: "Features", value: "9-Feature" },
+      { label: "Features", value: "6-Core" },
+      { label: "Architecture", value: "4-Layer" },
+    ],
+    system: ["Next.js", "React", "TailwindCSS", "Express.js", "Prisma", "PostgreSQL", "TypeScript", "Docker", "PNPM"],
+    bullets: [
+      "Designed full-stack marketplace with Next.js + React frontend and Express.js API backend—complete booking flow with campaign management",
+      "Built secure API endpoints with Prisma ORM and PostgreSQL database—CRUD operations for campaigns and advertising placements",
+      "Implemented TypeScript stability fixes and server-side data fetching—optimized performance with analytics instrumentation",
+    ],
+    resumeBullets: [
+      "Built full-stack sponsorship marketplace connecting brands with publishers—Next.js frontend, Express.js API, PostgreSQL database with Prisma ORM",
+      "Implemented end-to-end booking flow with campaign management dashboard—secure API endpoints, CRUD operations, and analytics instrumentation",
+      "Fixed TypeScript stability issues across monorepo and optimized performance with server-side data fetching—deployed with Docker containerization",
+    ],
+    tags: ["Marketplace", "Product", "Infra"],
+    type: "Full-stack",
+    status: "Archived",
+    domain: "Marketplace",
+    links: {
+      github: "https://github.com/arjunpkulkarni/anvaraTakeHome",
+    },
+    image: AnvaraMarketplace,
+    images: [AnvaraMarketplace, AnvaraCampaigns, AnvaraCreateCampaign, AnvaraListings, AnvaraAdSlot],
+    screenshots: [AnvaraListings, AnvaraCampaigns, AnvaraCreateCampaign, AnvaraAdSlot],
+    screenshotDescriptions: [
+      "Marketplace listings page with advertising placements and detailed metrics",
+      "Campaign management dashboard with performance tracking and analytics",
+      "Campaign creation flow with form validation and real-time feedback",
+      "Ad slot details view with audience insights and booking options",
+    ],
+    featured: false,
+    impactScore: 75,
+    date: "2024-11-15",
+    isCurrentlyLive: false,
   },
 ];
 
