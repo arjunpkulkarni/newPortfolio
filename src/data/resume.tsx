@@ -823,7 +823,7 @@ export const DATA = {
       title: "Generating Quantum GHZ States in Rydberg Arrays with Optimal-Control Pulses",
       href: "/projects/pdfs/Rydberg%20Atom%20Cat%20States.pdf",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Achieved N=20 Schrödinger cat states with ≥0.54 fidelity using RedCRAB optimal-control pulses in Rydberg atom arrays. Characterized phase coherence via parity oscillations to understand decoherence limits in multi-qubit quantum systems.",
       technologies: ["Quantum Computing", "Python", "Optimal Control", "RedCRAB", "Simulation"],
@@ -847,7 +847,7 @@ export const DATA = {
       title: "Engineering Steel Microstructures with Computational Thermodynamics",
       href: "https://github.com/arjunpkulkarni/thermocalc",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Built computational tool using pycalphad for phase diagram generation and steel microstructure prediction. Designed Fe-C carbon steels and Fe-Cr-C martensitic stainless steels (Type 410) through binary and ternary phase diagram calculations. Implemented eutectic/eutectoid identification, phase fraction calculations via lever rule, and polynomial fitting for phase boundaries.",
       technologies: ["Python", "pycalphad", "NumPy", "Matplotlib", "Computational Thermodynamics", "Materials Science"],
@@ -866,7 +866,7 @@ export const DATA = {
       title: "DRAM Reliability Analysis Under Thermal and Mechanical Stress",
       href: "https://github.com/arjunpkulkarni/dram-reliability-test",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Performed computational reliability analysis of DRAM devices under thermal and mechanical stress conditions. Built Python simulation framework to model temperature fields, stress distributions, and scaling trends in semiconductor memory. Generated visualization of geometry, temperature fields, stress fields, and device scaling trends for reliability assessment.",
       technologies: ["Python", "NumPy", "Matplotlib", "FEM", "Thermal Analysis", "Semiconductor Physics", "Materials Science"],
@@ -890,7 +890,7 @@ export const DATA = {
       title: "Automating Purchase Order Verification with OCR + Product Matching",
       href: "/blog/automating-purchase-order-verification-with-ocr--product-matching",
       dates: "Aug 2024",
-      active: true,
+      active: false,
       description:
         "Built full-stack PO processing system using Tesseract OCR + fuzzy matching to auto-verify line items against product catalogs. Reduced verification time from 15 min/order to <30 seconds (30x speedup). Achieved 93% automation with 99% accuracy using PostgreSQL full-text search and interactive verification UI.",
       technologies: ["React", "TypeScript", "Flask", "PostgreSQL", "OCR", "Tesseract", "Python", "Tailwind CSS"],
@@ -910,7 +910,7 @@ export const DATA = {
       title: "Building AI-Powered Media Kits for Content Creators Using TikTok API",
       href: "/blog/building-ai-powered-media-kits-with-tiktok-api",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Automated creator media kit generation by integrating TikTok API, Instagram Graph API, and GPT-4 to generate professional media kits in 30 seconds. Reduced kit creation time from 2-3 hours to 30 seconds with AI-powered bio generation and Puppeteer PDF rendering.",
       technologies: ["Next.js", "TikTok API", "Instagram API", "GPT-4", "Puppeteer", "PostgreSQL", "Redis", "Vercel"],
@@ -930,7 +930,7 @@ export const DATA = {
       title: "Scaling NIL Marketplace for College Athletes with Payment Processing",
       href: "/blog/scaling-nil-marketplace-for-college-athletes-with-payment-processing",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Built OpenField, a two-sided marketplace connecting 520+ college athletes with local businesses for NIL deals. Integrated Stripe Connect for split payments with 15% platform fee, automated contract generation via DocuSign, and NCAA compliance monitoring. Processed $52k+ in transactions with <48 hour deal completion time.",
       technologies: ["React", "Node.js", "TypeScript", "PostgreSQL", "Stripe Connect", "DocuSign", "AWS"],
@@ -950,7 +950,7 @@ export const DATA = {
       title: "Building Semantic Search for E-Commerce with Vector Embeddings",
       href: "/projects/building-semantic-search-for-e-commerce-with-vector-embeddings",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Implemented semantic product search using Pinecone vector DB + OpenAI embeddings to replace keyword-based search. Improved product discovery CTR by 40% by enabling natural language queries like 'sustainable winter jacket under $100'.",
       technologies: ["Pinecone", "OpenAI Embeddings", "Next.js", "Python", "Vector Search", "TypeScript", "Redis", "PostgreSQL"],
@@ -969,7 +969,7 @@ export const DATA = {
       title: "Scaling Social Fashion App to 300+ Beta Users on Mobile",
       href: "/blog/scaling-social-fashion-app-to-300-beta-users-on-mobile",
       dates: "2023-2024",
-      active: true,
+      active: false,
       description:
         "Built FitCheck, a React Native social network for outfit sharing that scaled to 320+ beta users with 40% DAU. Optimized image compression reducing upload time 67% (15s→5s), implemented personalized feed algorithm with Redis caching (90% hit rate), and processed 10,400+ posts. Achieved 62% Day-7 retention with infinite scroll and real-time updates.",
       technologies: ["React Native", "Node.js", "MongoDB", "AWS S3", "Redis", "Express", "TypeScript"],
@@ -989,7 +989,7 @@ export const DATA = {
       title: "Automating Lead Generation for Local Businesses with AI Agents",
       href: "/blog/automating-lead-generation-for-local-businesses-with-ai-agents",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Built AI-powered lead generation system using LangChain agents that scrapes business directories, enriches data with ML lead scoring, and generates GPT-4 personalized emails. Processed 62,000+ prospects achieving 8.2% response rate (4x industry average). Delivered 300% growth for FitCheck, $2k+ revenue for Workwear, and 2x ROI for Gloss Authority across 15+ clients.",
       technologies: ["Python", "LangChain", "OpenAI", "React", "Web Scraping", "BeautifulSoup", "Selenium", "MongoDB"],
@@ -1009,7 +1009,7 @@ export const DATA = {
       title: "Training Regression Model on 170k Songs for Real-Time DJ Mix Recommendations",
       href: "https://medium.com/@arjunpkulkarni/story-of-djdoc-in-development-91e735e3d000",
       dates: "Dec 2023",
-      active: true,
+      active: false,
       description:
         "Built regression model on AWS Sagemaker analyzing BPM, energy, valence across 170k tracks to predict 'mixing scores' between songs. Deployed real-time inference via Lambda + API Gateway, enabling DJs to find compatible transitions in <500ms. Integrated Spotify API for genre classification.",
       technologies: ["AWS Sagemaker", "Python", "ML", "AWS Lambda", "Spotify API", "React", "MongoDB"],
@@ -1028,7 +1028,7 @@ export const DATA = {
       title: "Building Real-Time Investment Dashboard with Stock + Crypto Analytics",
       href: "/projects/building-real-time-investment-dashboard-with-stock--crypto-analytics",
       dates: "Aug 2024",
-      active: true,
+      active: false,
       description:
         "Unified portfolio tracker pulling live data from Yahoo Finance + CoinGecko APIs. Built Flask backend with Pandas for performance calculations (ROI, Sharpe ratio, volatility) and Plotly visualizations. Cached price data in MySQL reducing API calls 80%. Implemented MySQL stored procedures for VaR and max drawdown calculations.",
       technologies: ["Flask", "MySQL", "React", "TypeScript", "Pandas", "Plotly", "Yahoo Finance", "CoinGecko", "MUI DataGrid"],
@@ -1047,7 +1047,7 @@ export const DATA = {
       title: "Predicting Stock Movement with NLP Sentiment Analysis on News",
       href: "https://medium.com/@arjunpkulkarni/stocklock-9ffa9d62aba9",
       dates: "Jul 2024",
-      active: true,
+      active: false,
       description:
         "Built pipeline scraping 10k+ financial news articles daily, running VADER sentiment analysis, and training regression model to predict next-day stock movement. Deployed on AWS Lambda with S3 storage, achieving 62% directional accuracy on S&P 500 stocks.",
       technologies: ["Python", "NLP", "VADER", "Regression", "AWS Lambda", "S3"],
@@ -1066,7 +1066,7 @@ export const DATA = {
       title: "Building High-Performance Crypto Trading Engine in C++",
       href: "/projects/building-high-performance-crypto-trading-engine-in-c",
       dates: "Sep 2024",
-      active: true,
+      active: false,
       description:
         "Built high-frequency trading engine in C++ with sub-millisecond order execution (18.5μs latency), options strategies (covered calls, straddles), and backtesting. Achieved 54k orders/second throughput with StreamLit dashboard for real-time portfolio analytics and market data visualization.",
       technologies: ["C++17", "Multi-threading", "STL", "Python", "StreamLit", "Options Trading", "Docker"],
@@ -1090,7 +1090,7 @@ export const DATA = {
       title: "Optimizing Chip Layout with Reinforcement Learning for AMD",
       href: "/blog/optimizing-chip-layout-with-reinforcement-learning-for-amd",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Applied deep RL (PPO) to optimize transistor placement in chip layouts for KPMG Ideation Challenge. Trained agent with custom reward function balancing wire length, congestion, timing, and thermal constraints. Achieved 12% improvement over manual layouts and 48x speedup.",
       technologies: ["Python", "PyTorch", "Reinforcement Learning", "PPO", "Chip Design", "OpenAI Gym"],
@@ -1110,7 +1110,7 @@ export const DATA = {
       title: "Analyzing 500+ EV Models with Interactive Tableau Dashboard",
       href: "/projects/analyzing-500-ev-models-with-interactive-tableau-dashboard",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Cleaned and normalized dataset of 500+ electric vehicles, standardizing range/battery metrics across EPA, WLTP, and NEDC standards. Built interactive Tableau dashboard with dynamic filters for price, range, brand comparisons. Implemented Python outlier detection identifying 12% data quality issues. Revealed key insights: $45k/300mi sweet spot, Korean manufacturers best value.",
       technologies: ["Tableau", "Python", "Pandas", "NumPy", "Data Cleaning", "Statistical Analysis", "Visualization", "sklearn"],
@@ -1130,7 +1130,7 @@ export const DATA = {
       title: "Generating Music Patterns with RNNs Trained on MIDI Data",
       href: "/blog/generating-music-patterns-with-rnns-trained-on-midi-data",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Trained LSTM network on 5,000+ MIDI files to generate novel musical sequences with attention mechanism and tempo/key conditioning. Built real-time web interface for producers to generate 8-bar variations from seed melodies. Achieved 4.1/5 rating from professional producers with <500ms latency.",
       technologies: ["TensorFlow", "Python", "LSTM", "RNN", "MIDI", "React", "Flask", "AWS"],
@@ -1149,7 +1149,7 @@ export const DATA = {
       title: "Building Image Search Engine with CLIP Embeddings + FAISS",
       href: "/projects/building-image-search-engine-with-clip-embeddings--faiss",
       dates: "2024",
-      active: true,
+      active: false,
       description:
         "Indexed 100k+ images using CLIP embeddings and FAISS vector search, enabling semantic queries like 'sunset over mountains'. Deployed on AWS with <200ms latency. Implemented approximate nearest neighbor search for sub-linear query time.",
       technologies: ["CLIP", "FAISS", "Python", "Vector Search", "AWS", "React", "PyTorch", "Lambda"],
@@ -1188,7 +1188,7 @@ export const DATA = {
       title: "Visualizing Material Properties with Interactive D3.js Charts",
       href: "/projects/visualizing-material-properties-with-interactive-d3js-charts",
       dates: "2023",
-      active: true,
+      active: false,
       description:
         "Built interactive Ashby-style scatter plot with D3.js visualizing mechanical properties (strength, stiffness, density, cost) for 50+ materials across metals, ceramics, polymers, and composites. Implemented log-scale axes, zoom/pan, category filtering, and hover tooltips. Calculates performance indices (strength-to-weight, specific modulus) for material selection. 1,000+ student views.",
       technologies: ["D3.js", "JavaScript", "SVG", "Data Visualization", "GitHub Pages", "HTML5", "CSS3"],

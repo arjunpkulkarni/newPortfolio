@@ -179,7 +179,7 @@ export const PRODUCTS: Product[] = [
     ],
     tags: ["RAG", "ML/Agents", "Real-time Inference"],
     type: "AI/ML",
-    status: "Live",
+    status: "Archived",
     domain: "Healthcare",
     links: {
       live: "https://www.culin.ai",
@@ -563,7 +563,7 @@ export const PRODUCTS: Product[] = [
     ],
     tags: ["Vector Search", "ML/Agents", "Product"],
     type: "AI/ML",
-    status: "Live",
+    status: "Archived",
     domain: "Fashion",
     links: {
       demo: "https://www.hanger.live/",
@@ -771,7 +771,7 @@ export const PRODUCTS: Product[] = [
     testimonials: [],
     tags: ["Marketplace", "Product", "Infra"],
     type: "Full-stack",
-    status: "Live",
+    status: "Archived",
     domain: "Marketplace",
     links: {
       live: "https://www.openfield.live/",
