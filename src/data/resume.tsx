@@ -151,7 +151,7 @@ export const DATA = {
       href: "https://www.therumor.com/",
       badges: [],
       location: "New York, NY",
-      title: "Software Engineer",
+      title: "Founding Engineer",
       logoUrl: rumorLogo,
       start: "Oct 2025",
       end: "Feb 2026",
@@ -180,7 +180,7 @@ export const DATA = {
       logoUrl: ucsd,
       roles: [
         {
-          title: "Senior Software Engineer",
+          title: "Software Engineer",
           period: "Aug 2025 - Jan 2026",
           description: "Run DevOps and ML infrastructure for clinical‑grade AI dietician platform serving 200+ patients.",
           tasks: [
@@ -203,7 +203,7 @@ export const DATA = {
           ]
         },
         {
-          title: "Software Engineer",
+          title: "Software Engineer Intern",
           period: "Jan 2025 - Aug 2025",
           description: "Built clinical‑grade AI dietician platform serving 200+ patients with RAG pipeline and agentic workflows.",
           tasks: [
@@ -298,7 +298,7 @@ export const DATA = {
       href: "https://mntl.illinois.edu/",
       badges: [],
       location: "Champaign, IL (On-site)",
-      title: "Machine Learning Researcher",
+      title: "Software Engineer Intern",
       logoUrl: uiuc,
       start: "Sep 2025",
       end: "Dec 2025",
@@ -342,7 +342,7 @@ export const DATA = {
       href: "https://beckman.illinois.edu/",
       badges: [],
       location: "Urbana, IL",
-      title: "AI Research Assistant",
+      title: "Software Engineer Intern",
       logoUrl: uiuc,
       start: "Feb 2025",
       end: "Apr 2025",
@@ -364,7 +364,7 @@ export const DATA = {
       href: "https://ece.illinois.edu/",
       badges: [],
       location: "Urbana, IL",
-      title: "AI Research Assistant",
+      title: "Software Engineer Intern",
       logoUrl: uiuc,
       start: "Jan 2024",
       end: "Jan 2025",
@@ -386,7 +386,7 @@ export const DATA = {
       href: "https://cee.illinois.edu/",
       badges: [],
       location: "In-Person",
-      title: "Machine Learning Engineer Intern",
+      title: "Software Engineer Intern",
       logoUrl: uiuc,
       start: "Jan 2024",
       end: "May 2024",
