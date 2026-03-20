@@ -2,7 +2,7 @@ import { PRODUCTS } from "@/data/products";
 import { notFound } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, Github, FileText, Play } from "lucide-react";
+import { ArrowLeft, ExternalLink, Github, FileText, Play, MessageSquare } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { ArchitectureDiagram } from "@/components/architecture-diagram";
 import type { Metadata } from "next";
@@ -142,8 +142,8 @@ export default function ProductDetailPage({
           </div>
 
           {/* Action Links */}
-          {product.links.github && (
-            <div className="flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3">
+            {product.links.github && (
               <Link
                 href={product.links.github}
                 target="_blank"
@@ -152,9 +152,44 @@ export default function ProductDetailPage({
                 <Github className="h-4 w-4" />
                 GitHub
               </Link>
-            </div>
-          )}
+            )}
+            {product.slug === "hanger" && (
+              <Link
+                href="/products/hanger/chat-agent"
+                className="inline-flex items-center gap-2 rounded-lg border bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                <MessageSquare className="h-4 w-4" />
+                Chat Agent Deep Dive
+              </Link>
+            )}
+          </div>
         </div>
+
+        {/* Screenshots - Moved to top for Hanger */}
+        {product.screenshots && product.screenshots.length > 0 && (
+          <div className="mb-16 flex justify-center">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-2xl">
+              {product.screenshots.map((screenshot, idx) => (
+                <div key={idx} className="space-y-2">
+                  <div className="relative overflow-hidden rounded-lg">
+                    <Image
+                      src={screenshot}
+                      alt={`${product.name} screenshot ${idx + 1}`}
+                      width={300}
+                      height={225}
+                      className="w-full h-auto"
+                    />
+                  </div>
+                  {product.screenshotDescriptions && product.screenshotDescriptions[idx] && (
+                    <p className="text-xs text-muted-foreground leading-relaxed text-center">
+                      {product.screenshotDescriptions[idx]}
+                    </p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Problem, Solution, Impact */}
         {(product.problem || product.solution || product.impact) && (
@@ -269,35 +304,6 @@ export default function ProductDetailPage({
                       </div>
                     ))}
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Screenshots */}
-        {product.screenshots && product.screenshots.length > 0 && (
-          <div className="mb-16">
-            <h2 className="mb-8 text-2xl font-medium">Product Screenshots</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {product.screenshots.map((screenshot, idx) => (
-                <div
-                  key={idx}
-                  className="space-y-3"
-                >
-                  <div className="relative overflow-hidden min-h-[400px] flex items-center justify-center">
-                    <Image
-                      src={screenshot}
-                      alt={`${product.name} screenshot ${idx + 1}`}
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                  {product.screenshotDescriptions && product.screenshotDescriptions[idx] && (
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {product.screenshotDescriptions[idx]}
-                    </p>
-                  )}
                 </div>
               ))}
             </div>
