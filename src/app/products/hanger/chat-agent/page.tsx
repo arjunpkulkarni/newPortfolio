@@ -6,6 +6,7 @@ import { ArrowLeft, MessageSquare, Sparkles, Zap, Brain } from "lucide-react";
 import BlurFade from "@/components/magicui/blur-fade";
 import { Badge } from "@/components/ui/badge";
 import { ArchitectureDiagram } from "@/components/architecture-diagram";
+import { useState, useEffect } from "react";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -27,6 +28,12 @@ const systemArchitecture = [
 ];
 
 export default function HangerChatAgentPage() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -35,27 +42,29 @@ export default function HangerChatAgentPage() {
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-background to-primary/10" />
         
         {/* Animated particles effect */}
-        <div className="absolute inset-0 overflow-hidden">
-          {[...Array(20)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute h-1 w-1 rounded-full bg-primary/20"
-              initial={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-              }}
-              animate={{
-                x: Math.random() * window.innerWidth,
-                y: Math.random() * window.innerHeight,
-              }}
-              transition={{
-                duration: 10 + Math.random() * 20,
-                repeat: Infinity,
-                repeatType: "reverse",
-              }}
-            />
-          ))}
-        </div>
+        {mounted && (
+          <div className="absolute inset-0 overflow-hidden">
+            {[...Array(20)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute h-1 w-1 rounded-full bg-primary/20"
+                initial={{
+                  x: Math.random() * window.innerWidth,
+                  y: Math.random() * window.innerHeight,
+                }}
+                animate={{
+                  x: Math.random() * window.innerWidth,
+                  y: Math.random() * window.innerHeight,
+                }}
+                transition={{
+                  duration: 10 + Math.random() * 20,
+                  repeat: Infinity,
+                  repeatType: "reverse",
+                }}
+              />
+            ))}
+          </div>
+        )}
 
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 py-16 max-w-5xl">
