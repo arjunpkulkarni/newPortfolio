@@ -360,7 +360,7 @@ export const DATA = {
       ]
     },
     {
-      company: "Illinois AI Group (ECE Department)",
+      company: "Illinois Artificial Intelligence Group (ECE Department)",
       href: "https://ece.illinois.edu/",
       badges: [],
       location: "Urbana, IL",
@@ -517,18 +517,6 @@ export const DATA = {
     },
   ],
   partners: [
-    {
-      company: "UCSD Medicine",
-      href: "https://employment.ucsd.edu/",
-      badges: ["Partner"],
-      location: "",
-      title: "Partner with CulinAI (CSL)",
-      logoUrl: ucsd,
-      start: "2025",
-      end: "Present",
-      description:
-        "Partnered with CulinAI at UIUC CSL on the AI nutrition engine in collaboration with Chef James Briscione and Prof. Lav Varshney.",
-    },
     {
       company: "UpHonest Capital",
       href: "https://www.uphonestcapital.com/",

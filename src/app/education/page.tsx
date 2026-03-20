@@ -283,13 +283,28 @@ export default function EducationPage() {
 
       {/* Certifications Section */}
       <section id="certifications" className="w-full">
-        <BlurFade delay={BLUR_FADE_DELAY * 20}>
-          <div className="space-y-0.5 mb-6 mt-8">
-            <h2 className="text-2xl font-medium tracking-tighter">Certifications</h2>
-            <p className="text-sm text-muted-foreground">Professional certifications and achievements.</p>
-          </div>
-        </BlurFade>
-        <CertificationsCarousel certifications={DATA.certifications} />
+        <div className="space-y-0.5 mb-6 mt-8">
+          <h2 className="text-2xl font-medium tracking-tighter">Certifications</h2>
+          <p className="text-sm text-muted-foreground">Professional certifications and achievements.</p>
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {DATA.certifications.map((cert, index) => (
+            <Card key={index} className="p-6 flex flex-col items-center text-center">
+              <div className="relative w-16 h-16 mb-3 flex items-center justify-center">
+                <Image
+                  src={cert.logoUrl}
+                  alt={cert.issuer}
+                  width={64}
+                  height={64}
+                  className="object-contain"
+                />
+              </div>
+              <h3 className="font-medium text-sm mb-1">{cert.name}</h3>
+              <p className="text-xs text-muted-foreground mb-1">{cert.issuer}</p>
+              <p className="text-xs text-muted-foreground">{cert.date}</p>
+            </Card>
+          ))}
+        </div>
       </section>
     </main>
   );

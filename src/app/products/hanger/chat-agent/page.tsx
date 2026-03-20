@@ -172,7 +172,7 @@ export default function HangerChatAgentPage() {
                 Why We Built This
               </h2>
               <p className="leading-relaxed text-muted-foreground">
-                Shopping for fashion is inherently exploratory—users rarely know exactly what they want upfront. They think in vibes, occasions, and context. Traditional search forces them to commit to specific terms too early. We built progressive refinement to mirror how people actually discover style: starting broad, then narrowing through guided questions that surface options they didn't know to ask for.
+                Shopping for fashion is inherently exploratory—users rarely know exactly what they want upfront. They think in vibes, occasions, and context. Traditional search forces them to commit to specific terms too early. We built progressive refinement to mirror how people actually discover style: starting broad, then narrowing through guided questions that surface options they didn&apos;t know to ask for.
               </p>
             </motion.div>
           </div>
@@ -221,15 +221,15 @@ export default function HangerChatAgentPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span>Automatic filter extraction: "Nike shoes under $150" → brand_filter: Nike, max_price: 150, taxonomy: Shoes</span>
+                    <span>Automatic filter extraction: &quot;Nike shoes under $150&quot; → brand_filter: Nike, max_price: 150, taxonomy: Shoes</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span>Style descriptor accumulation: "professional tops" → "v-neck" → "silk" builds enhanced query over conversation</span>
+                    <span>Style descriptor accumulation: &quot;professional tops&quot; → &quot;v-neck&quot; → &quot;silk&quot; builds enhanced query over conversation</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span>Product context support: users can click "Compare Similar" or "Pair With" on any product card</span>
+                    <span>Product context support: users can click &quot;Compare Similar&quot; or &quot;Pair With&quot; on any product card</span>
                   </li>
                 </ul>
               </motion.div>
@@ -254,11 +254,11 @@ export default function HangerChatAgentPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span>Example flow: "professional tops" → "What neckline?" → "v-neck" → "What sleeve length?" → "long sleeves"</span>
+                    <span>Example flow: &quot;professional tops&quot; → &quot;What neckline?&quot; → &quot;v-neck&quot; → &quot;What sleeve length?&quot; → &quot;long sleeves&quot;</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
-                    <span>Query evolution: "professional tops" → "professional tops v-neck" → "professional tops v-neck long sleeves silk"</span>
+                    <span>Query evolution: &quot;professional tops&quot; → &quot;professional tops v-neck&quot; → &quot;professional tops v-neck long sleeves silk&quot;</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
@@ -358,7 +358,7 @@ export default function HangerChatAgentPage() {
                   <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                   <div>
                     <span className="text-foreground">Visual descriptors matter:</span>{" "}
-                    Terms like "v-neck", "silk", "midi length" significantly improve CLIP embedding matches compared to generic style terms
+                    Terms like &quot;v-neck&quot;, &quot;silk&quot;, &quot;midi length&quot; significantly improve CLIP embedding matches compared to generic style terms
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
