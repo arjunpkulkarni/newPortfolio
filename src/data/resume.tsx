@@ -154,7 +154,7 @@ export const DATA = {
       title: "Founding Engineer",
       logoUrl: rumorLogo,
       start: "Oct 2025",
-      end: "Feb 2026",
+      end: "Jan 2026",
       description:
         "Building core mobile features for Rumor's 50k+ user event‑hosting platform.",
       tasks: [
