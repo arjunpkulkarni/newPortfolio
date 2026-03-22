@@ -107,7 +107,7 @@ export default function HomePage() {
                   <div className="mb-6">
                     <h3 className="text-xs font-medium text-muted-foreground/70 mb-2.5 uppercase tracking-wider">Tech Stack</h3>
                     <div className="flex flex-wrap gap-2">
-                      {["Node.js", "TypeScript", "Python", "FastAPI", "React", "PostgreSQL", "Redis", "AWS", "Docker", "Kubernetes", "REST APIs", "WebSockets"].map((tech) => (
+                      {["Node.js", "TypeScript", "Python", "React", "PostgreSQL", "Redis", "AWS", "Docker", "Kubernetes"].map((tech) => (
                         <span
                           key={tech}
                           className="px-2.5 py-1 text-xs font-medium bg-secondary/50 text-foreground/80 rounded-md border border-border/50 hover:bg-secondary/70 transition-colors"
