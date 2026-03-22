@@ -231,7 +231,7 @@ export const DATA = {
     {
       company: "Curator.to",
       href: "https://curator.to/",
-      badges: ["Intel & UpHonest Capital-backed"],
+      badges: [],
       location: "New York, NY",
       title: "Head of Engineering / Founding Engineer",
       logoUrl: curator,
@@ -294,7 +294,7 @@ export const DATA = {
     },
     {
       company: "Handshake AI",
-      href: "",
+      href: "https://joinhandshake.com/ai",
       badges: [],
       location: "Remote",
       title: "Software Engineer Intern",
