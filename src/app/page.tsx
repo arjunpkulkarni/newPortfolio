@@ -102,8 +102,25 @@ export default function HomePage() {
                   </p>
                 </BlurFade>
 
+                {/* Tech Stack */}
+                <BlurFade delay={BLUR_FADE_DELAY * 2.8} blur="12px">
+                  <div className="mb-6">
+                    <h3 className="text-xs font-medium text-muted-foreground/70 mb-2.5 uppercase tracking-wider">Tech Stack</h3>
+                    <div className="flex flex-wrap gap-2">
+                      {["Node.js", "TypeScript", "Python", "FastAPI", "React", "PostgreSQL", "Redis", "AWS", "Docker", "Kubernetes", "REST APIs", "WebSockets"].map((tech) => (
+                        <span
+                          key={tech}
+                          className="px-2.5 py-1 text-xs font-medium bg-secondary/50 text-foreground/80 rounded-md border border-border/50 hover:bg-secondary/70 transition-colors"
+                        >
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </BlurFade>
+
                 {/* CTA Buttons - Products First */}
-                <BlurFade delay={BLUR_FADE_DELAY * 3} blur="12px">
+                <BlurFade delay={BLUR_FADE_DELAY * 3.2} blur="12px">
                   <div className="flex flex-wrap gap-3 mb-5">
                     <Link href="/products">
                       <Button size="default" className="font-medium">
@@ -119,7 +136,7 @@ export default function HomePage() {
                 </BlurFade>
 
                 {/* Availability & Education - Minimal */}
-                <BlurFade delay={BLUR_FADE_DELAY * 3.4} blur="12px">
+                <BlurFade delay={BLUR_FADE_DELAY * 3.6} blur="12px">
                   <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground/75">
                     <span>Open to NYC / SF / Remote</span>
                   </div>

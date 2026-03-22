@@ -21,6 +21,7 @@ import Purchasing from "../app/projects/pictures/purchasing.png";
 import ucsd from "../app/projects/pictures/ucsd.png";
 import uphonest from "../app/projects/pictures/uphonest.png";
 import upscale from "../app/work/pictures/upscale.png";
+import handshake from "../app/projects/pictures/handshake.png";
 
 import hanger from "../app/work/pictures/hanger.png";
 import abbvie from "../app/work/pictures/abbvie.png";
@@ -288,6 +289,32 @@ export const DATA = {
         {
           description: "Upgraded PostgreSQL + AWS S3 stack with database optimization and indexing, increasing throughput 4× (500 to 2,000 documents/hour) for R&D pipeline.",
           skills: ["PostgreSQL", "AWS S3", "SQL", "Python"]
+        }
+      ]
+    },
+    {
+      company: "Handshake AI",
+      href: "",
+      badges: [],
+      location: "Remote",
+      title: "Data Systems Engineer",
+      logoUrl: handshake,
+      start: "Apr 2024",
+      end: "Oct 2024",
+      description:
+        "Developed benchmark datasets for long-context video understanding, testing multimodal AI systems on complex reasoning tasks.",
+      tasks: [
+        {
+          description: "Created 50+ high-complexity prompts testing long-context video understanding across summarization, Q&A, and action detection tasks.",
+          skills: ["Prompt Engineering", "Video Understanding", "AI Evaluation"]
+        },
+        {
+          description: "Evaluated model performance and systematically identified failure modes (hallucination, miscounting, temporal errors), improving dataset quality.",
+          skills: ["Model Evaluation", "Error Analysis", "Quality Assurance"]
+        },
+        {
+          description: "Generated timestamped ground-truth annotations to train and benchmark multimodal AI systems on real-world video reasoning tasks.",
+          skills: ["Data Annotation", "Benchmarking", "Multimodal AI"]
         }
       ]
     }
