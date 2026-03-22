@@ -297,24 +297,28 @@ export const DATA = {
       href: "",
       badges: [],
       location: "Remote",
-      title: "Data Systems Engineer",
+      title: "Software Engineer Intern",
       logoUrl: handshake,
       start: "Apr 2024",
       end: "Oct 2024",
       description:
-        "Developed benchmark datasets for long-context video understanding, testing multimodal AI systems on complex reasoning tasks.",
+        "Built Python automation for LLM evaluation workflows and benchmark datasets for long-context video understanding.",
       tasks: [
         {
-          description: "Created 50+ high-complexity prompts testing long-context video understanding across summarization, Q&A, and action detection tasks.",
-          skills: ["Prompt Engineering", "Video Understanding", "AI Evaluation"]
+          description: "Built Python scripts to automate LLM evaluation workflows, batching prompt execution and structuring outputs for analysis across 50+ long-context video tasks.",
+          skills: ["Python", "LLM Evaluation", "Automation", "Data Engineering"]
         },
         {
-          description: "Evaluated model performance and systematically identified failure modes (hallucination, miscounting, temporal errors), improving dataset quality.",
-          skills: ["Model Evaluation", "Error Analysis", "Quality Assurance"]
+          description: "Developed benchmark datasets for multimodal AI systems, designing adversarial prompts spanning summarization, Q&A, and action detection on 60+ minute video inputs.",
+          skills: ["Prompt Engineering", "Multimodal AI", "Benchmark Design"]
         },
         {
-          description: "Generated timestamped ground-truth annotations to train and benchmark multimodal AI systems on real-world video reasoning tasks.",
-          skills: ["Data Annotation", "Benchmarking", "Multimodal AI"]
+          description: "Implemented evaluation logic to compare model outputs against timestamped ground-truth annotations, identifying failure modes including hallucination, miscounting, and temporal errors.",
+          skills: ["Python", "Model Evaluation", "Error Analysis", "Quality Assurance"]
+        },
+        {
+          description: "Generated high-quality supervision data for long-context video understanding, improving model benchmarking and enabling more reliable multimodal reasoning evaluation.",
+          skills: ["Data Annotation", "Benchmarking", "Video Understanding"]
         }
       ]
     }
