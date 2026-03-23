@@ -65,9 +65,6 @@ export default function ProductsPage() {
             <BlurFade delay={BLUR_FADE_DELAY * 4}>
               <div className="mb-6">
                 <h3 className="text-lg font-medium tracking-tight text-muted-foreground">Past Projects</h3>
-                <p className="mt-1 text-sm text-muted-foreground/70">
-                  Previous work and experiments
-                </p>
               </div>
             </BlurFade>
 
