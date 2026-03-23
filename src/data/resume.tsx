@@ -178,53 +178,28 @@ export const DATA = {
       href: "https://health.ucsd.edu/",
       badges: [],
       location: "San Diego, CA",
+      title: "Software Engineer Intern",
       logoUrl: ucsd,
-      roles: [
+      start: "Jan 2025",
+      end: "Aug 2025",
+      description:
+        "Built clinical‑grade AI dietician platform serving 200+ patients with RAG pipeline and agentic workflows.",
+      tasks: [
         {
-          title: "Software Engineer",
-          period: "Aug 2025 - Jan 2026",
-          description: "Run DevOps and ML infrastructure for clinical‑grade AI dietician platform serving 200+ patients.",
-          tasks: [
-            {
-              description: "Led infrastructure scaling and optimization, implementing advanced caching strategies and database tuning that reduced API latency by 40% under peak load.",
-              skills: ["Docker", "Kubernetes", "PostgreSQL", "Redis"]
-            },
-            {
-              description: "Architected ML pipeline orchestration with Airflow and MLflow, automating model retraining and deployment workflows for continuous improvement.",
-              skills: ["MLOps", "Airflow", "MLflow", "CI/CD"]
-            },
-            {
-              description: "Implemented comprehensive monitoring and alerting system using Prometheus and Grafana, achieving 99.9% uptime for production ML services.",
-              skills: ["Monitoring", "Prometheus", "Grafana", "SRE"]
-            },
-            {
-              description: "Mentored junior engineers on best practices for ML infrastructure, DevOps workflows, and production system design.",
-              skills: ["Python", "Airflow", "MLflow", "Docker"]
-            }
-          ]
+          description: "Built clinical AI nutrition platform serving 200+ patients with subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
+          skills: ["LangChain", "RAG", "QDrant", "Python"]
         },
         {
-          title: "Software Engineer Intern",
-          period: "Jan 2025 - Aug 2025",
-          description: "Built clinical‑grade AI dietician platform serving 200+ patients with RAG pipeline and agentic workflows.",
-          tasks: [
-            {
-              description: "Built clinical AI nutrition platform serving 200+ patients with subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
-              skills: ["LangChain", "RAG", "QDrant", "Python"]
-            },
-            {
-              description: "Collaborated with Food Network Chef James Briscione and White House Fellow Prof. Lav Varshney to integrate culinary expertise into AI recommendation engine.",
-              skills: ["Python", "OpenAI", "Flask", "PostgreSQL"]
-            },
-            {
-              description: "Deployed HIPAA-compliant Next.js platform with GPT-4o integration, implementing encryption, audit logging, and secure PHI handling, passing UCSD Health IT security review.",
-              skills: ["Next.js", "GPT-4", "PostgreSQL", "AWS"]
-            },
-            {
-              description: "Built agentic workflow with LangGraph for multi-step reasoning (medical history, allergies, meal generation), reducing manual dietician review time by 65%.",
-              skills: ["LangGraph", "Python", "OpenAI", "QDrant"]
-            }
-          ]
+          description: "Collaborated with Food Network Chef James Briscione and White House Fellow Prof. Lav Varshney to integrate culinary expertise into AI recommendation engine.",
+          skills: ["Python", "OpenAI", "Flask", "PostgreSQL"]
+        },
+        {
+          description: "Deployed HIPAA-compliant Next.js platform with GPT-4o integration, implementing encryption, audit logging, and secure PHI handling, passing UCSD Health IT security review.",
+          skills: ["Next.js", "GPT-4", "PostgreSQL", "AWS"]
+        },
+        {
+          description: "Built agentic workflow with LangGraph for multi-step reasoning (medical history, allergies, meal generation), reducing manual dietician review time by 65%.",
+          skills: ["LangGraph", "Python", "OpenAI", "QDrant"]
         }
       ]
     },
