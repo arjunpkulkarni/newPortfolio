@@ -30,6 +30,7 @@ import ibc from "../app/work/pictures/ibc.png";
 import sigpwny from "../app/work/pictures/sigpwny.png";
 import curator from "../app/work/pictures/curator.png";
 import ieee from "../app/work/pictures/ieee.png";
+import intel from "../app/work/pictures/intel.jpg";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import siramaiLogo from "../app/projects/pictures/logos/siramaiLogo.png";
@@ -554,6 +555,18 @@ export const DATA = {
       end: "",
       description:
         "AI-native seed fund supporting Curator's agentic e-commerce platform, providing co-building approach and strategic growth acceleration.",
+    },
+    {
+      company: "Intel",
+      href: "https://www.intel.com/",
+      badges: ["Investor"],
+      location: "",
+      title: "Investor in Curator",
+      logoUrl: intel,
+      start: "",
+      end: "",
+      description:
+        "Strategic investor supporting Curator's multi-tenant business operations platform and agentic e-commerce technology.",
     },
   ],
   education: [
