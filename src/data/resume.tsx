@@ -160,7 +160,7 @@ export const DATA = {
         "Building core mobile features for Rumor's 50k+ user event‑hosting platform.",
       tasks: [
         {
-          description: "Built and shipped core React Native features (guest lists, RSVPs, creator discovery) used by 50k+ users, improving mobile performance and navigation speed by 30% through optimized rendering.",
+          description: "Built and shipped core React Native features (guest lists, RSVPs, creator discovery) used by 50k+ users, improving mobile performance by 30% through optimized rendering.",
           skills: ["React Native", "TypeScript", "Redux", "React Navigation"]
         },
         {
@@ -170,6 +170,10 @@ export const DATA = {
         {
           description: "Optimized database queries and implemented Redis caching for event search, reducing API response times from 800ms to 120ms (85% improvement) and supporting 500+ concurrent users.",
           skills: ["Redis", "PostgreSQL", "SQL", "Node.js"]
+        },
+        {
+          description: "Deployed and scaled backend services on AWS (EC2, RDS), enabling reliable handling of high-concurrency traffic and improving system uptime.",
+          skills: ["AWS", "EC2", "RDS", "DevOps", "Scaling"]
         }
       ]
     },
@@ -216,24 +220,28 @@ export const DATA = {
         "First founding engineer; built agentic e‑commerce OS and no‑code framework used by 4+ enterprise clients.",
       tasks: [
         {
-          description: "As first founding engineer, architected complete agentic e-commerce OS from ground up, scaling to 4+ enterprise clients processing $2M+ GMV. Helped raise $1.0M seed round from Intel Capital and UpHonest Capital.",
-          skills: ["Python", "TypeScript", "React", "PostgreSQL"]
+          description: "Built TypeScript backend (Bun + Hono + Postgres) with unified data layer, multi-tenant model with gateway-enforced tenantId, and source-native JSONB storage.",
+          skills: ["TypeScript", "Bun", "Hono", "PostgreSQL", "Multi-tenancy"]
         },
         {
-          description: "Designed agent workflows processing 2,000+ daily queries with vector search (Pinecone) and adaptive ranking, achieving 92% relevance accuracy and <200ms query latency.",
-          skills: ["Pinecone", "Python", "OpenAI Embeddings", "Redis"]
+          description: "Designed provider abstraction layer with incremental sync pipelines using async generators, centralized upsert system (upsertEntity), and scheduler with concurrency control.",
+          skills: ["Shopify API", "QuickBooks API", "Gmail API", "Async Generators", "Concurrency"]
         },
         {
-          description: "Built no-code framework reducing client onboarding time by 90%, enabling non-technical teams to deploy custom search experiences in <2 hours.",
-          skills: ["React", "TypeScript", "Next.js", "API Design"]
+          description: "Implemented source-of-truth cache with entities table (tenant, source, entity_type, external_id), checksum-based diffing, and webhook ingestion with provider validation.",
+          skills: ["JSONB", "Webhooks", "HMAC Validation", "Event-Driven Architecture"]
         },
         {
-          description: "Optimized Postgres + Redis stack with connection pooling and intelligent caching, increasing throughput 4× (250 to 1,000 ops/sec) and cutting p95 latency by 30%.",
-          skills: ["PostgreSQL", "Redis", "Python", "SQL"]
+          description: "Built tool-based agent system with per-session isolation, WebSocket streaming for real-time responses, and context compaction for large token windows.",
+          skills: ["OpenAI", "WebSocket", "Tool Calling", "Context Management", "AI Agents"]
         },
         {
-          description: "Shipped Gemini multimodal search enabling conversational and visual product discovery, improving conversion rates by 40% for enterprise clients.",
-          skills: ["Gemini", "Python", "RAG", "Pinecone"]
+          description: "Implemented core primitives: Jobs (long-running agent tasks), Alerts/Triggers (event-driven notifications), Pins (persistent visualizations), and Workspaces combining all three.",
+          skills: ["Job Scheduling", "Event Systems", "Data Visualization", "Workflow Automation"]
+        },
+        {
+          description: "Enabled 4+ enterprise clients processing $2M+ GMV, helped raise $1.0M seed round, and created extensible system for cross-tool automation.",
+          skills: ["System Design", "Scalability", "Enterprise Architecture", "Business Impact"]
         }
       ]
     },
