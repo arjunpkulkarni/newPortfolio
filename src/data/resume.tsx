@@ -573,7 +573,7 @@ export const DATA = {
     {
       school: "Georgia Institute of Technology",
       href: "https://www.gatech.edu",
-      degree: "M.S. Computer Science (Artificial Intelligence)",
+      degree: "M.S. Computer Science & Artificial Intelligence",
       logoUrl: gt,
       start: "Jun 2026",
       end: "Jan 2027",
