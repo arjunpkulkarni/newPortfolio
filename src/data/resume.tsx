@@ -149,6 +149,36 @@ export const DATA = {
 
   work: [
     {
+      company: "Handshake AI",
+      href: "https://joinhandshake.com/ai",
+      badges: [],
+      location: "Remote",
+      title: "Software Engineer Intern",
+      logoUrl: handshake,
+      start: "Feb 2026",
+      end: "May 2026",
+      description:
+        "Built Kubricks, a multimodal AI evaluation platform for long-context video understanding tasks.",
+      tasks: [
+        {
+          description: "Built Kubricks — a React/TypeScript + Flask evaluation platform for multimodal AI video tasks, with Celery/Redis async pipelines handling video ingestion, frame extraction, and Whisper-based transcription.",
+          skills: ["React", "TypeScript", "Flask", "Celery", "Redis", "Whisper"]
+        },
+        {
+          description: "Constructed multimodal LLM prompts combining transcripts, extracted frames, and task instructions; invoked models via LangChain with retry/batching logic and parsed structured JSON outputs.",
+          skills: ["LangChain", "Python", "LLM", "Prompt Engineering"]
+        },
+        {
+          description: "Developed automated evaluation pipeline comparing model responses against gold annotations, detecting hallucinations and temporal errors, with results stored in PostgreSQL for analytics dashboards.",
+          skills: ["Python", "PostgreSQL", "Model Evaluation", "Data Engineering"]
+        },
+        {
+          description: "Implemented token usage and latency tracing with replay functionality for rerunning tasks under modified prompts or model configurations.",
+          skills: ["Observability", "Python", "PostgreSQL", "DevOps"]
+        }
+      ]
+    },
+    {
       company: "Rumor",
       href: "https://www.therumor.com/",
       badges: [],
@@ -276,36 +306,6 @@ export const DATA = {
         }
       ]
     },
-    {
-      company: "Handshake AI",
-      href: "https://joinhandshake.com/ai",
-      badges: [],
-      location: "Remote",
-      title: "Software Engineer Intern",
-      logoUrl: handshake,
-      start: "Apr 2024",
-      end: "Oct 2024",
-      description:
-        "Built Python automation for LLM evaluation workflows and benchmark datasets for long-context video understanding.",
-      tasks: [
-        {
-          description: "Built Python scripts to automate LLM evaluation workflows, batching prompt execution and structuring outputs for analysis across 50+ long-context video tasks.",
-          skills: ["Python", "LLM Evaluation", "Automation", "Data Engineering"]
-        },
-        {
-          description: "Developed benchmark datasets for multimodal AI systems, designing adversarial prompts spanning summarization, Q&A, and action detection on 60+ minute video inputs.",
-          skills: ["Prompt Engineering", "Multimodal AI", "Benchmark Design"]
-        },
-        {
-          description: "Implemented evaluation logic to compare model outputs against timestamped ground-truth annotations, identifying failure modes including hallucination, miscounting, and temporal errors.",
-          skills: ["Python", "Model Evaluation", "Error Analysis", "Quality Assurance"]
-        },
-        {
-          description: "Generated high-quality supervision data for long-context video understanding, improving model benchmarking and enabling more reliable multimodal reasoning evaluation.",
-          skills: ["Data Annotation", "Benchmarking", "Video Understanding"]
-        }
-      ]
-    }
   ],
   research: [
     {
