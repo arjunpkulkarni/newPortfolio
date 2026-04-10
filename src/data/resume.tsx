@@ -169,7 +169,7 @@ export const DATA = {
           skills: ["LangChain", "Gemini", "Python", "Prompt Engineering"]
         },
         {
-          description: "Developed automated evaluation pipeline comparing model responses against gold annotations, detecting hallucinations and temporal errors, with results stored in PostgreSQL for analytics dashboards.",
+          description: "Developed automated evaluation pipeline comparing model responses against gold annotations, detecting hallucinations and temporal errors with PostgreSQL analytics dashboards.",
           skills: ["Python", "PostgreSQL", "Model Evaluation", "Data Engineering"]
         },
         {

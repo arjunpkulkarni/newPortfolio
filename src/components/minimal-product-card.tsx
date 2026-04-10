@@ -68,20 +68,6 @@ export function MinimalProductCard({ product, index }: MinimalProductCardProps) 
                 </p>
               </div>
 
-              {/* Metrics */}
-              <div className="flex flex-wrap gap-x-6 gap-y-2 mb-4">
-                {product.proof.map((metric, idx) => (
-                  <div key={idx} className="flex flex-col">
-                    <span className="text-base font-semibold text-primary tabular-nums">
-                      {metric.value}
-                    </span>
-                    <span className="text-[10px] text-muted-foreground uppercase tracking-wider">
-                      {metric.label}
-                    </span>
-                  </div>
-                ))}
-              </div>
-
               {/* View Details - Always visible at bottom right */}
               <div className="mt-auto flex justify-end">
                 <div className="flex items-center gap-1.5 text-xs text-muted-foreground group-hover:text-primary transition-colors">
