@@ -81,15 +81,15 @@ export default function HomePage() {
                 <BlurFade delay={BLUR_FADE_DELAY * 2.2} blur="12px">
                   <div className="mb-6 space-y-2 text-sm md:text-base text-foreground/80">
                     <div className="flex items-start gap-2.5">
-                      <span className="text-primary mt-1 text-base">•</span>
+                      <span className="text-primary text-base leading-none">•</span>
                       <span>Retrieval and inference systems</span>
                     </div>
                     <div className="flex items-start gap-2.5">
-                      <span className="text-primary mt-1 text-base">•</span>
+                      <span className="text-primary text-base leading-none">•</span>
                       <span>Distributed APIs with real observability</span>
                     </div>
                     <div className="flex items-start gap-2.5">
-                      <span className="text-primary mt-1 text-base">•</span>
+                      <span className="text-primary text-base leading-none">•</span>
                       <span>Performance and cost discipline in production</span>
                     </div>
                   </div>

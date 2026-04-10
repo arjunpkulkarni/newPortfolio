@@ -561,7 +561,7 @@ export const DATA = {
       href: "https://www.intel.com/",
       badges: ["Investor"],
       location: "",
-      title: "Investor in Curator",
+      title: "Investor in Hanger",
       logoUrl: intel,
       start: "",
       end: "",
