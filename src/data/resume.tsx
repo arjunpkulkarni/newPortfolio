@@ -428,7 +428,7 @@ export const DATA = {
       start: "Jan 2023",
       end: "Apr 2023",
       description:
-        "Teaching assistant for computer science courses, helping students with coursework and projects.",
+        "Teaching assistant for CS124 (Java Programming) and CS128 (Introduction to C++), helping students with coursework and projects.",
       tasks: [
         {
           description: "Held office hours and provided one-on-one support for students in computer science courses.",
