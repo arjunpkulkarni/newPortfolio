@@ -161,12 +161,12 @@ export const DATA = {
         "Built Kubricks, a multimodal AI evaluation platform for long-context video understanding tasks.",
       tasks: [
         {
-          description: "Built Kubricks — a React/TypeScript + Flask evaluation platform for multimodal AI video tasks, with Celery/Redis async pipelines handling video ingestion, frame extraction, and Whisper-based transcription.",
-          skills: ["React", "TypeScript", "Flask", "Celery", "Redis", "Whisper"]
+          description: "Built Kubricks, a React/TypeScript + Flask platform for evaluating multimodal AI video tasks with Celery/Redis async pipelines for video ingestion, frame extraction, and Whisper transcription.",
+          skills: ["React", "TypeScript", "Flask", "Celery", "Redis", "Whisper", "Gemini"]
         },
         {
-          description: "Constructed multimodal LLM prompts combining transcripts, extracted frames, and task instructions; invoked models via LangChain with retry/batching logic and parsed structured JSON outputs.",
-          skills: ["LangChain", "Python", "LLM", "Prompt Engineering"]
+          description: "Constructed multimodal prompts combining transcripts, extracted frames, and task instructions, invoking Gemini via LangChain with retry/batching logic and structured JSON output parsing.",
+          skills: ["LangChain", "Gemini", "Python", "Prompt Engineering"]
         },
         {
           description: "Developed automated evaluation pipeline comparing model responses against gold annotations, detecting hallucinations and temporal errors, with results stored in PostgreSQL for analytics dashboards.",
