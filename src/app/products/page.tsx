@@ -7,7 +7,6 @@ import BlurFade from "@/components/magicui/blur-fade";
 const BLUR_FADE_DELAY = 0.04;
 
 export default function ProductsPage() {
-  // Separate live and archived products
   const liveProducts = PRODUCTS
     .filter(p => p.status === "Live")
     .sort((a, b) => b.impactScore - a.impactScore);
@@ -29,57 +28,25 @@ export default function ProductsPage() {
           </div>
         </BlurFade>
 
-        {/* Live Products Section */}
-        {liveProducts.length > 0 && (
-          <div className="mb-16">
-            <BlurFade delay={BLUR_FADE_DELAY * 2}>
-              <div className="mb-6 flex items-center gap-3">
-                <div className="flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1.5 border border-green-500/20">
-                  <div className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-                  </div>
-                  <span className="text-xs font-medium text-green-600 dark:text-green-400">
-                    Active
-                  </span>
-                </div>
-              </div>
+        {/* All Products — single list, no section headers */}
+        <div className="space-y-6">
+          {liveProducts.map((product, index) => (
+            <BlurFade
+              key={product.id}
+              delay={BLUR_FADE_DELAY * 2 + index * 0.05}
+            >
+              <MinimalProductCard product={product} index={index} />
             </BlurFade>
-
-            <div className="space-y-6">
-              {liveProducts.map((product, index) => (
-                <BlurFade
-                  key={product.id}
-                  delay={BLUR_FADE_DELAY * 3 + index * 0.05}
-                >
-                  <MinimalProductCard product={product} index={index} />
-                </BlurFade>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* Past Products Section */}
-        {archivedProducts.length > 0 && (
-          <div>
-            <BlurFade delay={BLUR_FADE_DELAY * 4}>
-              <div className="mb-6">
-                <h3 className="text-lg font-medium tracking-tight text-muted-foreground">Past Projects</h3>
-              </div>
+          ))}
+          {archivedProducts.map((product, index) => (
+            <BlurFade
+              key={product.id}
+              delay={BLUR_FADE_DELAY * 3 + index * 0.05}
+            >
+              <MinimalProductCard product={product} index={index} />
             </BlurFade>
-
-            <div className="space-y-6">
-              {archivedProducts.map((product, index) => (
-                <BlurFade
-                  key={product.id}
-                  delay={BLUR_FADE_DELAY * 5 + index * 0.05}
-                >
-                  <MinimalProductCard product={product} index={index} />
-                </BlurFade>
-              ))}
-            </div>
-          </div>
-        )}
+          ))}
+        </div>
 
         {/* Empty State */}
         {PRODUCTS.length === 0 && (

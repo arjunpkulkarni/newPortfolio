@@ -33,7 +33,8 @@ export default function NotebookPage() {
     "Research & Quantum": filterProjects(p => 
       p.title.includes("Quantum") || p.title.includes("GHZ") || p.title.includes("Rydberg") ||
       p.title.includes("Steel") || p.title.includes("DRAM") || 
-      p.title.includes("Thermodynamics") || p.title.includes("Reliability Analysis")
+      p.title.includes("Thermodynamics") || p.title.includes("Reliability Analysis") ||
+      p.title.includes("CTEPrevent")
     ),
     "ML & AI": filterProjects(p => 
       p.title.includes("ML") || p.title.includes("AI-Powered") || p.title.includes("Training") || 

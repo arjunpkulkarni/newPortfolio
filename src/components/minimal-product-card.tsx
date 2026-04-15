@@ -13,6 +13,8 @@ interface MinimalProductCardProps {
 }
 
 export function MinimalProductCard({ product, index }: MinimalProductCardProps) {
+  const isActive = product.status === "Live";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -40,17 +42,27 @@ export function MinimalProductCard({ product, index }: MinimalProductCardProps) 
                   No preview
                 </div>
               )}
-              
             </div>
 
             {/* Right: Content */}
             <div className="p-6 flex flex-col h-full">
               {/* Header */}
-              <div className="space-y-1 mb-3">
+              <div className="space-y-1.5 mb-3">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">
-                    {product.name}
-                  </h3>
+                  <div className="flex items-center gap-2.5">
+                    <h3 className="text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">
+                      {product.name}
+                    </h3>
+                    {isActive && (
+                      <div className="flex items-center gap-1.5 rounded-full bg-green-500/10 px-2 py-0.5 border border-green-500/20">
+                        <span className="relative flex h-1.5 w-1.5">
+                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+                          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500"></span>
+                        </span>
+                        <span className="text-[10px] font-medium text-green-600 dark:text-green-400">Active</span>
+                      </div>
+                    )}
+                  </div>
                   <div className="flex gap-1.5 flex-shrink-0">
                     {product.tags.slice(0, 2).map((tag) => (
                       <Badge
@@ -68,7 +80,26 @@ export function MinimalProductCard({ product, index }: MinimalProductCardProps) 
                 </p>
               </div>
 
-              {/* View Details - Always visible at bottom right */}
+              {/* Tech Stack */}
+              {product.system && product.system.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {product.system.slice(0, 6).map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-0.5 text-[10px] font-medium rounded bg-muted text-muted-foreground"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                  {product.system.length > 6 && (
+                    <span className="px-2 py-0.5 text-[10px] text-muted-foreground">
+                      +{product.system.length - 6}
+                    </span>
+                  )}
+                </div>
+              )}
+
+              {/* View Details */}
               <div className="mt-auto flex justify-end">
                 <div className="flex items-center gap-1.5 text-xs text-muted-foreground group-hover:text-primary transition-colors">
                   View Details

@@ -31,6 +31,7 @@ import sigpwny from "../app/work/pictures/sigpwny.png";
 import curator from "../app/work/pictures/curator.png";
 import ieee from "../app/work/pictures/ieee.png";
 import intel from "../app/work/pictures/intel.jpg";
+import ucsf from "../app/work/pictures/ucsf.png";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import siramaiLogo from "../app/projects/pictures/logos/siramaiLogo.png";
@@ -149,7 +150,7 @@ export const DATA = {
 
   work: [
     {
-      company: "Handshake AI",
+      company: "Handshake",
       href: "https://joinhandshake.com/ai",
       badges: [],
       location: "Remote",
@@ -568,6 +569,18 @@ export const DATA = {
       description:
         "Strategic investor supporting Curator's multi-tenant business operations platform and agentic e-commerce technology.",
     },
+    {
+      company: "UCSF Health",
+      href: "https://www.ucsfhealth.org/",
+      badges: ["Partner"],
+      location: "",
+      title: "Clinical Partner for Congruence",
+      logoUrl: ucsf,
+      start: "",
+      end: "",
+      description:
+        "Clinical partnership with UCSF Health supporting Congruence's multimodal AI platform for psychiatric documentation and emotion detection in clinical settings.",
+    },
   ],
   education: [
     {
@@ -897,6 +910,19 @@ export const DATA = {
           icon: <Icons.github className="size-3" />,
         },
       ],
+      image: "",
+      logo: "",
+      video: "",
+    },
+    {
+      title: "CTEPrevent Reducing Concussion and CTE Risk via Advanced Helmet Liner Design",
+      href: "/projects/cteprevent-reducing-concussion-and-cte-risk-via-advanced-helmet-liner-design",
+      dates: "2024",
+      active: false,
+      description:
+        "Designed and prototyped a multi-layer energy-damping helmet liner system to reduce concussion and CTE risk in football. Combined laser-cut PETG honeycomb lattice, polycarbonate shell, silicone foam, EVA foam, and polyurethane foam layers. Validated via ANSYS Mechanical simulations (1000 J impacts at 20 m/s) and ASTM D1037 physical drop tests. Achieved a safety score of 23.6 with optimal PC-PETG-Si-EVA-PC configuration — absorbing more energy than current NFL outer helmet liners.",
+      technologies: ["ANSYS Mechanical", "Materials Science", "FEA Simulation", "PETG", "Polycarbonate", "Silicone", "ASTM Testing", "CAD", "Prototyping"],
+      links: [],
       image: "",
       logo: "",
       video: "",
