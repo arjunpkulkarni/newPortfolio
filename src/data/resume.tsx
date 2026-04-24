@@ -58,7 +58,7 @@ export const DATA = {
   description:
     "AI Systems Engineer building production-grade intelligence infrastructure.",
   summary:
-    "I build reliable data + retrieval systems powering production ML—optimized for latency, cost, and scale.",
+    "I build reliable data + retrieval systems powering production ML - optimized for latency, cost, and scale.",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [
@@ -385,7 +385,7 @@ export const DATA = {
       start: "Jan 2024",
       end: "Jan 2025",
       description:
-        "Integrated RL agent into MPC framework for autonomous EV routing — 18% lower traffic delay in open‑world simulations.",
+        "Integrated RL agent into MPC framework for autonomous EV routing  -  18% lower traffic delay in open‑world simulations.",
       tasks: [
         {
           description: "Integrated RL agent into MPC framework for autonomous EV routing in SUMO → improved control accuracy 25%.",
@@ -407,7 +407,7 @@ export const DATA = {
       start: "Jan 2024",
       end: "May 2024",
       description:
-        "Developed sustainable concrete mixture using ML to predict durability — reduced carbon emissions by 10%.",
+        "Developed sustainable concrete mixture using ML to predict durability  -  reduced carbon emissions by 10%.",
       tasks: [
         {
           description: "Analyzed experimental data and developed new concrete mixture by reducing clinker in cement.",
@@ -920,7 +920,7 @@ export const DATA = {
       dates: "2024",
       active: false,
       description:
-        "Designed and prototyped a multi-layer energy-damping helmet liner system to reduce concussion and CTE risk in football. Combined laser-cut PETG honeycomb lattice, polycarbonate shell, silicone foam, EVA foam, and polyurethane foam layers. Validated via ANSYS Mechanical simulations (1000 J impacts at 20 m/s) and ASTM D1037 physical drop tests. Achieved a safety score of 23.6 with optimal PC-PETG-Si-EVA-PC configuration — absorbing more energy than current NFL outer helmet liners.",
+        "Designed and prototyped a multi-layer energy-damping helmet liner system to reduce concussion and CTE risk in football. Combined laser-cut PETG honeycomb lattice, polycarbonate shell, silicone foam, EVA foam, and polyurethane foam layers. Validated via ANSYS Mechanical simulations (1000 J impacts at 20 m/s) and ASTM D1037 physical drop tests. Achieved a safety score of 23.6 with optimal PC-PETG-Si-EVA-PC configuration  -  absorbing more energy than current NFL outer helmet liners.",
       technologies: ["ANSYS Mechanical", "Materials Science", "FEA Simulation", "PETG", "Polycarbonate", "Silicone", "ASTM Testing", "CAD", "Prototyping"],
       links: [],
       image: "",

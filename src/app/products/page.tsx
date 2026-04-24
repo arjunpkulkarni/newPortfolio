@@ -23,12 +23,12 @@ export default function ProductsPage() {
           <div className="space-y-0.5 mb-8 mt-20">
             <h2 className="text-2xl font-medium tracking-tighter">Products</h2>
             <p className="text-sm text-muted-foreground">
-              Production systems I&apos;ve built and shipped. Focus on measurable impact.
+              Production systems I&apos;ve built and shipped end-to-end with complete ownership. Focus on measurable impact.
             </p>
           </div>
         </BlurFade>
 
-        {/* All Products — single list, no section headers */}
+        {/* All Products  -  single list, no section headers */}
         <div className="space-y-6">
           {liveProducts.map((product, index) => (
             <BlurFade

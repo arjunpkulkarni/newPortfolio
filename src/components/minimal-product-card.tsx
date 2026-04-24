@@ -27,15 +27,15 @@ export function MinimalProductCard({ product, index }: MinimalProductCardProps) 
     >
       <Link href={`/products/${product.slug}`}>
         <div className="group relative overflow-hidden rounded-xl border bg-card transition-all duration-300 hover:shadow-lg hover:border-primary/50">
-          <div className="grid grid-cols-1 md:grid-cols-[240px_1fr] gap-0">
+          <div className="grid grid-cols-1 md:grid-cols-[140px_1fr] gap-0">
             {/* Left: Image */}
-            <div className="relative bg-muted/30 aspect-video md:aspect-auto md:h-full min-h-[180px]">
+            <div className="relative bg-white aspect-square md:aspect-auto md:h-full min-h-[120px]">
               {product.image ? (
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-contain p-4 transition-transform duration-300 group-hover:scale-105"
                 />
               ) : (
                 <div className="absolute inset-0 flex items-center justify-center text-muted-foreground/30 text-sm">

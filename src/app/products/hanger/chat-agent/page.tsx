@@ -181,7 +181,7 @@ export default function HangerChatAgentPage() {
                 Why We Built This
               </h2>
               <p className="leading-relaxed text-muted-foreground">
-                Shopping for fashion is inherently exploratory—users rarely know exactly what they want upfront. They think in vibes, occasions, and context. Traditional search forces them to commit to specific terms too early. We built progressive refinement to mirror how people actually discover style: starting broad, then narrowing through guided questions that surface options they didn&apos;t know to ask for.
+                Shopping for fashion is inherently exploratory - users rarely know exactly what they want upfront. They think in vibes, occasions, and context. Traditional search forces them to commit to specific terms too early. We built progressive refinement to mirror how people actually discover style: starting broad, then narrowing through guided questions that surface options they didn&apos;t know to ask for.
               </p>
             </motion.div>
           </div>
@@ -381,7 +381,7 @@ export default function HangerChatAgentPage() {
                   <div className="mt-1 h-1.5 w-1.5 rounded-full bg-primary flex-shrink-0" />
                   <div>
                     <span className="text-foreground">Category-specific refinements:</span>{" "}
-                    Different product types need different questions—clothing focuses on fit and fabric, shoes on heel height and style
+                    Different product types need different questions - clothing focuses on fit and fabric, shoes on heel height and style
                   </div>
                 </li>
               </ul>

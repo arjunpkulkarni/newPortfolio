@@ -7,6 +7,7 @@ import React, { PropsWithChildren, useRef } from "react";
 
 export interface DockProps extends VariantProps<typeof dockVariants> {
   className?: string;
+  style?: React.CSSProperties;
   magnification?: number;
   distance?: number;
   children: React.ReactNode;
@@ -16,7 +17,7 @@ const DEFAULT_MAGNIFICATION = 60;
 const DEFAULT_DISTANCE = 140;
 
 const dockVariants = cva(
-  "mx-auto w-max h-full p-2 flex items-end rounded-full border"
+  "mx-auto w-max flex items-center gap-1 rounded-full"
 );
 
 const Dock = React.forwardRef<HTMLDivElement, DockProps>(

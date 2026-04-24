@@ -38,16 +38,16 @@ export default function CTEPreventPage() {
   ];
 
   const layers = [
-    { name: "Polycarbonate Shell", thickness: '1/8"', role: "Rigid outer layer — distributes impact load across a wider area" },
-    { name: "PETG Honeycomb Lattice", thickness: '3/4"', role: "Laser-cut hexagonal lattice — dissipates force through controlled deformation" },
-    { name: "Silicone Foam", thickness: '3/4"', role: "High-stiffness foam — best safety score (23.6), optimal balance of absorption and compression" },
-    { name: "EVA Foam", thickness: '1/4"', role: "Mid-range foam — moderate energy absorption, cushioning transition layer" },
-    { name: "Polyurethane Foam", thickness: '3/4"', role: "Soft inner foam — highest raw energy absorption (~43 kJ), contacts the head" },
+    { name: "Polycarbonate Shell", thickness: '1/8"', role: "Rigid outer layer  -  distributes impact load across a wider area" },
+    { name: "PETG Honeycomb Lattice", thickness: '3/4"', role: "Laser-cut hexagonal lattice  -  dissipates force through controlled deformation" },
+    { name: "Silicone Foam", thickness: '3/4"', role: "High-stiffness foam  -  best safety score (23.6), optimal balance of absorption and compression" },
+    { name: "EVA Foam", thickness: '1/4"', role: "Mid-range foam  -  moderate energy absorption, cushioning transition layer" },
+    { name: "Polyurethane Foam", thickness: '3/4"', role: "Soft inner foam  -  highest raw energy absorption (~43 kJ), contacts the head" },
   ];
 
   const keyFindings = [
     { stat: "68.7%", label: "Material stiffness influence on safety performance" },
-    { stat: "23.6", label: "Best safety score — Silicone foam optimal configuration" },
+    { stat: "23.6", label: "Best safety score  -  Silicone foam optimal configuration" },
     { stat: "43 kJ", label: "Peak energy absorbed by polyurethane layer" },
     { stat: "234 kPa", label: "Optimal Young's Modulus (silicone-type)" },
   ];
@@ -59,14 +59,14 @@ export default function CTEPreventPage() {
       <div className="relative mt-32 mb-16">
         <div className="text-center max-w-3xl mx-auto">
           <Badge variant="secondary" className="mb-6 text-xs">
-            University of Illinois at Urbana-Champaign — Materials Engineering
+            University of Illinois at Urbana-Champaign  -  Materials Engineering
           </Badge>
           <h1 className="title font-medium text-4xl md:text-5xl tracking-tight mb-8 leading-tight">
             CTEPrevent: Reducing Concussion &amp; CTE Risk Through Advanced Helmet Liner Design
           </h1>
           <p className="text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
             A multi-layer energy-damping helmet liner combining laser-cut PETG honeycomb lattice, 
-            polycarbonate, and graded foam layers — validated through FEA simulation and physical impact testing.
+            polycarbonate, and graded foam layers  -  validated through FEA simulation and physical impact testing.
           </p>
           <p className="text-sm text-muted-foreground/70">
             Andrew Scarnavack, Arjun Kulkarni, Jackson Cole &mdash; Department of Materials Engineering, College of Engineering
@@ -89,7 +89,7 @@ export default function CTEPreventPage() {
       <div className="mb-20 max-w-3xl mx-auto">
         <h2 className="text-2xl md:text-3xl font-medium tracking-tight mb-6">Problem</h2>
         <p className="text-base md:text-lg leading-relaxed text-muted-foreground mb-5">
-          Repeated head impacts in football — including sub-concussive hits — are strongly linked to long-term 
+          Repeated head impacts in football  -  including sub-concussive hits  -  are strongly linked to long-term 
           brain injuries like CTE. Current helmets are good at reducing linear acceleration but poor at reducing 
           rotational acceleration, which drives the large pressure gradients in brain tissue that cause injury.
         </p>
@@ -159,7 +159,7 @@ export default function CTEPreventPage() {
               <Image src={SiliconeImg} alt="Silicone foam layer" fill className="object-cover" />
             </div>
             <h3 className="font-semibold text-sm pt-1">Silicone Foam</h3>
-            <p className="text-xs text-muted-foreground leading-relaxed">Highest stiffness foam — achieved the best safety score of 23.6 in testing.</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Highest stiffness foam  -  achieved the best safety score of 23.6 in testing.</p>
           </div>
 
           <div className="space-y-3">
@@ -167,7 +167,7 @@ export default function CTEPreventPage() {
               <Image src={PolyurethaneEvaImg} alt="Polyurethane and EVA foam layers" fill className="object-cover" />
             </div>
             <h3 className="font-semibold text-sm pt-1">Polyurethane + EVA Foam</h3>
-            <p className="text-xs text-muted-foreground leading-relaxed">Inner foam layers — polyurethane absorbs the most energy (~43 kJ), EVA provides mid-range cushioning.</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Inner foam layers  -  polyurethane absorbs the most energy (~43 kJ), EVA provides mid-range cushioning.</p>
           </div>
 
           <div className="space-y-3">
@@ -183,7 +183,7 @@ export default function CTEPreventPage() {
               <Image src={SideViewImg} alt="Side view of all layers" fill className="object-cover" />
             </div>
             <h3 className="font-semibold text-sm pt-1">Assembled Prototype (Side View)</h3>
-            <p className="text-xs text-muted-foreground leading-relaxed">Cross-section showing distinct layer boundaries — PC, PETG lattice, silicone, EVA, and polyurethane.</p>
+            <p className="text-xs text-muted-foreground leading-relaxed">Cross-section showing distinct layer boundaries  -  PC, PETG lattice, silicone, EVA, and polyurethane.</p>
           </div>
         </div>
       </div>
@@ -293,13 +293,13 @@ export default function CTEPreventPage() {
                 <td className="p-4 font-medium">Silicone Foam</td>
                 <td className="p-4">~14 kJ</td>
                 <td className="p-4 text-primary font-semibold">23.6 (Best)</td>
-                <td className="p-4 text-muted-foreground">Best balance — lowest stress + compression</td>
+                <td className="p-4 text-muted-foreground">Best balance  -  lowest stress + compression</td>
               </tr>
               <tr>
                 <td className="p-4 font-medium">EVA Foam</td>
                 <td className="p-4">~8.3 J</td>
                 <td className="p-4">Moderate</td>
-                <td className="p-4 text-muted-foreground">Middle performance — good cushioning layer</td>
+                <td className="p-4 text-muted-foreground">Middle performance  -  good cushioning layer</td>
               </tr>
               <tr>
                 <td className="p-4 font-medium">Polyurethane Foam</td>
@@ -348,11 +348,11 @@ export default function CTEPreventPage() {
         <div className="space-y-4 max-w-3xl mx-auto">
           <div className="flex items-start gap-4 p-6 rounded-lg border bg-card">
             <Lightbulb className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-            <p className="text-base leading-relaxed">Higher-stiffness foams perform best in simulation — the optimal helmet liner system is <strong>PC → PETG → Silicone → EVA → PC</strong>.</p>
+            <p className="text-base leading-relaxed">Higher-stiffness foams perform best in simulation  -  the optimal helmet liner system is <strong>PC → PETG → Silicone → EVA → PC</strong>.</p>
           </div>
           <div className="flex items-start gap-4 p-6 rounded-lg border bg-card">
             <ShieldCheck className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-            <p className="text-base leading-relaxed">Our prototype absorbs more energy than the outer helmet liner of current NFL helmets — a promising direction for next-generation head protection.</p>
+            <p className="text-base leading-relaxed">Our prototype absorbs more energy than the outer helmet liner of current NFL helmets  -  a promising direction for next-generation head protection.</p>
           </div>
           <div className="flex items-start gap-4 p-6 rounded-lg border bg-card">
             <Layers className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />

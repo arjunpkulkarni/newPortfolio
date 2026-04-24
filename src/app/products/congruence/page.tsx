@@ -39,7 +39,7 @@ import TeamManagementImg from "@/app/projects/pictures/congruence/TeamManagement
 import AgentImg from "@/app/projects/pictures/congruence/Agent.png";
 
 export const metadata: Metadata = {
-  title: "Congruence — Documentation OS for Therapy Practices",
+  title: "Congruence  -  Documentation OS for Therapy Practices",
   description:
     "AI-powered clinical documentation platform that standardizes psychotherapy notes, supervision workflows, booking, billing, and insurance claims.",
 };
@@ -116,7 +116,7 @@ const archLanes = [
     items: ["Supabase Postgres", "Row-Level Security", "Supabase Storage", "Auth + RLS"],
   },
   {
-    label: "Edge — 11 Functions",
+    label: "Edge  -  11 Functions",
     items: ["Deno Runtime", "Invites + Booking", "Client Forms", "Billing + Webhooks", "AI Proxy"],
   },
   {
@@ -204,7 +204,7 @@ export default function CongruencePage() {
           </div>
           <p className="max-w-2xl text-lg text-muted-foreground leading-relaxed">
             Standardized psychotherapy notes. Insurance-ready progress notes. Real-time supervision
-            visibility — for 5–25 clinician practices that need audit-ready ops, not another EHR.
+            visibility  -  for 5–25 clinician practices that need audit-ready ops, not another EHR.
           </p>
         </div>
 
@@ -238,7 +238,7 @@ export default function CongruencePage() {
           <div className="rounded-xl border bg-card p-6">
             <h2 className="mb-3 text-sm font-medium text-muted-foreground uppercase tracking-wide">Solution</h2>
             <p className="text-sm leading-relaxed text-muted-foreground">
-              A Documentation OS — not a note-taking app. Every session is structured into a compliant,
+              A Documentation OS  -  not a note-taking app. Every session is structured into a compliant,
               reviewable workflow with AI-generated notes, supervision dashboards, and an integrated
               billing + insurance pipeline.
             </p>
@@ -291,7 +291,7 @@ export default function CongruencePage() {
         {/* ── FEATURE GRID ────────────────────────────────────────────── */}
         <div className="mb-16">
           <h2 className="mb-2 text-xl font-medium">Key Features I Built</h2>
-          <p className="mb-8 text-sm text-muted-foreground">Full clinical operations — one platform.</p>
+          <p className="mb-8 text-sm text-muted-foreground">Full clinical operations  -  one platform.</p>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {features.map((f) => (
               <div key={f.title} className="rounded-xl border bg-card p-5">
@@ -394,10 +394,10 @@ export default function CongruencePage() {
           <div className="mb-8 rounded-xl border bg-card p-6">
             <h3 className="mb-4 text-lg font-medium">Why We Built It This Way</h3>
             <p className="mb-4 text-sm text-muted-foreground leading-relaxed">
-              Traditional therapy documentation is reactive — clinicians write notes after the session ends, relying on memory and missing critical non-verbal cues. We needed an AI system that could process multimodal signals in real-time, detect emotional incongruence that humans miss, and generate clinically grounded documentation without hallucinating.
+              Traditional therapy documentation is reactive  -  clinicians write notes after the session ends, relying on memory and missing critical non-verbal cues. We needed an AI system that could process multimodal signals in real-time, detect emotional incongruence that humans miss, and generate clinically grounded documentation without hallucinating.
             </p>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              The agent architecture solves three core challenges: <strong>(1) Multimodal fusion</strong> — combining video, audio, and text into a unified emotional timeline; <strong>(2) Clinical grounding</strong> — ensuring every insight is traceable to actual session data with timestamps; <strong>(3) Real-time performance</strong> — processing 60 FPS video + 16kHz audio with &lt;200ms latency for live session support.
+              The agent architecture solves three core challenges: <strong>(1) Multimodal fusion</strong>  -  combining video, audio, and text into a unified emotional timeline; <strong>(2) Clinical grounding</strong>  -  ensuring every insight is traceable to actual session data with timestamps; <strong>(3) Real-time performance</strong>  -  processing 60 FPS video + 16kHz audio with &lt;200ms latency for live session support.
             </p>
           </div>
 
@@ -460,15 +460,15 @@ export default function CongruencePage() {
                 <h3 className="text-lg font-medium">Multimodal Fusion Engine</h3>
               </div>
               <p className="mb-6 text-sm text-muted-foreground leading-relaxed">
-                The fusion engine synchronizes all three data streams into a unified emotional state representation. This is where we detect incongruence — when facial expressions, voice stress, and language sentiment don&apos;t align.
+                The fusion engine synchronizes all three data streams into a unified emotional state representation. This is where we detect incongruence  -  when facial expressions, voice stress, and language sentiment don&apos;t align.
               </p>
               <div className="grid gap-4 md:grid-cols-2">
                 <div className="space-y-4">
                   <div>
                     <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary">Temporal Alignment</h4>
                     <ul className="space-y-2">
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>All streams aligned to 10-second windows — video emotions averaged per window, audio stress aggregated, transcript sentiment mapped to overlapping utterances</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Redis stores synchronized timeline during processing — enables real-time progress updates to frontend</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>All streams aligned to 10-second windows  -  video emotions averaged per window, audio stress aggregated, transcript sentiment mapped to overlapping utterances</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Redis stores synchronized timeline during processing  -  enables real-time progress updates to frontend</span></li>
                       <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Final timeline stored as JSON: <code className="text-xs bg-muted px-1 py-0.5 rounded">[&#123;window_start, video_emotion, audio_stress, text_sentiment, congruence_score&#125;]</code></span></li>
                     </ul>
                   </div>
@@ -476,8 +476,8 @@ export default function CongruencePage() {
                     <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary">Incongruence Detection</h4>
                     <ul className="space-y-2">
                       <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Congruence score (0–100) computed per window: measures alignment between facial affect, voice stress, and language sentiment</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Low scores (&lt;60) flag &quot;masked emotion&quot; — e.g., patient says &quot;I&apos;m fine&quot; (positive sentiment) while showing sad facial affect + high voice stress</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Flagged windows stored as <code className="text-xs bg-muted px-1 py-0.5 rounded">incongruence_flags</code> with severity level — surfaced to clinicians in Analysis Review tab</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Low scores (&lt;60) flag &quot;masked emotion&quot;  -  e.g., patient says &quot;I&apos;m fine&quot; (positive sentiment) while showing sad facial affect + high voice stress</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Flagged windows stored as <code className="text-xs bg-muted px-1 py-0.5 rounded">incongruence_flags</code> with severity level  -  surfaced to clinicians in Analysis Review tab</span></li>
                     </ul>
                   </div>
                 </div>
@@ -487,15 +487,15 @@ export default function CongruencePage() {
                     <ul className="space-y-2">
                       <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Gemini 2.5 Flash receives: full transcript, emotion timeline, voice stress markers, incongruence flags</span></li>
                       <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Generates structured clinical report: session themes, behavioral observations, risk indicators, recommendations</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Every claim in the report must cite a timestamp range — forces grounding in actual session data</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Every claim in the report must cite a timestamp range  -  forces grounding in actual session data</span></li>
                     </ul>
                   </div>
                   <div>
                     <h4 className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary">Performance Optimization</h4>
                     <ul className="space-y-2">
                       <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Parallel processing: video, audio, and text streams processed concurrently on separate workers</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>GPU acceleration for DeepFace CNN inference — batch processing 60 frames at once reduces latency from 800ms to &lt;200ms per window</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Redis fusion cache stores intermediate results — if processing fails mid-session, we resume from last checkpoint instead of restarting</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>GPU acceleration for DeepFace CNN inference  -  batch processing 60 frames at once reduces latency from 800ms to &lt;200ms per window</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Redis fusion cache stores intermediate results  -  if processing fails mid-session, we resume from last checkpoint instead of restarting</span></li>
                     </ul>
                   </div>
                 </div>
@@ -516,20 +516,20 @@ export default function CongruencePage() {
                   <div>
                     <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Session Data Tables</h4>
                     <ul className="space-y-2">
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">sessions</code> — core metadata: patient_id, clinician_id, condition_tag, duration, recording_url, analysis_status</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">transcripts</code> — full text transcript with word-level timestamps and sentiment scores</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">video_analysis</code> — emotion timeline JSON array with per-window dominant emotion + confidence</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">audio_analysis</code> — voice stress markers with timestamp ranges and stress type (pitch shift, pause, tremor)</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">clinical_reports</code> — structured Gemini output: themes, observations, risk flags, recommendations</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">sessions</code>  -  core metadata: patient_id, clinician_id, condition_tag, duration, recording_url, analysis_status</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">transcripts</code>  -  full text transcript with word-level timestamps and sentiment scores</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">video_analysis</code>  -  emotion timeline JSON array with per-window dominant emotion + confidence</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">audio_analysis</code>  -  voice stress markers with timestamp ranges and stress type (pitch shift, pause, tremor)</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">clinical_reports</code>  -  structured Gemini output: themes, observations, risk flags, recommendations</span></li>
                     </ul>
                   </div>
                   <div>
                     <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Why This Schema Design</h4>
                     <ul className="space-y-2">
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Separation of concerns:</strong> video, audio, and text analysis stored in separate tables — allows independent reprocessing if a model improves</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Audit trail:</strong> every analysis result is immutable — new analysis creates new rows, old rows never deleted</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Query efficiency:</strong> session-level aggregates (congruence score, flag count) precomputed and stored on <code className="text-xs bg-muted px-1 py-0.5 rounded">sessions</code> row — no runtime joins for dashboard queries</span></li>
-                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>HIPAA compliance:</strong> all tables protected by Supabase RLS — clinicians can only access sessions for their assigned patients within their clinic</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Separation of concerns:</strong> video, audio, and text analysis stored in separate tables  -  allows independent reprocessing if a model improves</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Audit trail:</strong> every analysis result is immutable  -  new analysis creates new rows, old rows never deleted</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Query efficiency:</strong> session-level aggregates (congruence score, flag count) precomputed and stored on <code className="text-xs bg-muted px-1 py-0.5 rounded">sessions</code> row  -  no runtime joins for dashboard queries</span></li>
+                      <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>HIPAA compliance:</strong> all tables protected by Supabase RLS  -  clinicians can only access sessions for their assigned patients within their clinic</span></li>
                     </ul>
                   </div>
                 </div>
@@ -566,7 +566,7 @@ export default function CongruencePage() {
                 <div className="rounded-lg border bg-muted/30 p-4">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Why DeepFace for Emotion Detection?</h4>
                   <p className="mb-3 text-sm text-muted-foreground leading-relaxed">
-                    Tested 5+ facial emotion models (FER+, AffectNet, EmotiW). DeepFace achieved 76% accuracy on our clinical validation set — 23% better than GPT-4 Vision baseline. Critical advantage: runs on CPU with acceptable latency, no expensive GPU inference per frame.
+                    Tested 5+ facial emotion models (FER+, AffectNet, EmotiW). DeepFace achieved 76% accuracy on our clinical validation set  -  23% better than GPT-4 Vision baseline. Critical advantage: runs on CPU with acceptable latency, no expensive GPU inference per frame.
                   </p>
                   <p className="text-xs text-muted-foreground">
                     <strong>Trade-off:</strong> DeepFace misses subtle microexpressions but catches major affect shifts (sad → neutral masking). Good enough for clinical triage, not research-grade.
@@ -575,7 +575,7 @@ export default function CongruencePage() {
                 <div className="rounded-lg border bg-muted/30 p-4">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Why Gemini Over GPT-4?</h4>
                   <p className="mb-3 text-sm text-muted-foreground leading-relaxed">
-                    Gemini 2.5 Flash has native multimodal understanding and 1M token context window — lets us pass entire session transcript + emotion timeline + audio markers in one prompt. GPT-4 would require chunking and multiple API calls.
+                    Gemini 2.5 Flash has native multimodal understanding and 1M token context window  -  lets us pass entire session transcript + emotion timeline + audio markers in one prompt. GPT-4 would require chunking and multiple API calls.
                   </p>
                   <p className="text-xs text-muted-foreground">
                     <strong>Cost:</strong> Gemini Flash is 10x cheaper than GPT-4 Turbo for long-context tasks. At 200+ sessions/week, this saves $800+/month.
@@ -584,7 +584,7 @@ export default function CongruencePage() {
                 <div className="rounded-lg border bg-muted/30 p-4">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Why Redis for Fusion Cache?</h4>
                   <p className="mb-3 text-sm text-muted-foreground leading-relaxed">
-                    Video and audio processing happen in parallel on separate workers. Redis acts as the synchronization point — each worker writes its results to a shared key, and the fusion engine reads all streams once complete.
+                    Video and audio processing happen in parallel on separate workers. Redis acts as the synchronization point  -  each worker writes its results to a shared key, and the fusion engine reads all streams once complete.
                   </p>
                   <p className="text-xs text-muted-foreground">
                     <strong>Resilience:</strong> If a worker crashes mid-processing, Redis cache preserves completed work. We resume from the last successful window instead of restarting the entire session.
@@ -617,7 +617,7 @@ export default function CongruencePage() {
                 <div className="rounded-lg border bg-muted/30 p-4">
                   <h4 className="mb-2 text-sm font-medium">Throughput</h4>
                   <p className="mb-2 text-2xl font-bold text-primary">60 FPS</p>
-                  <p className="text-xs text-muted-foreground">Video processing rate. DeepFace CNN runs on GPU with batch size 60 — processes 1 second of video in &lt;200ms.</p>
+                  <p className="text-xs text-muted-foreground">Video processing rate. DeepFace CNN runs on GPU with batch size 60  -  processes 1 second of video in &lt;200ms.</p>
                 </div>
                 <div className="rounded-lg border bg-muted/30 p-4">
                   <h4 className="mb-2 text-sm font-medium">Accuracy</h4>
@@ -630,7 +630,7 @@ export default function CongruencePage() {
                 <ul className="space-y-2">
                   <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>FastAPI backend deployed on Digital Ocean Kubernetes with GPU-enabled nodes for DeepFace inference</span></li>
                   <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Auto-scaling worker pool: 2 workers at baseline, scales to 8 during peak clinic hours (9am–5pm)</span></li>
-                  <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Redis cluster with 3 replicas for high availability — no single point of failure in fusion cache</span></li>
+                  <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Redis cluster with 3 replicas for high availability  -  no single point of failure in fusion cache</span></li>
                   <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Monitoring: Prometheus + Grafana dashboards track inference latency, worker queue depth, GPU utilization, error rates</span></li>
                   <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>99.8% uptime over 6 months of production operation across 4 clinics</span></li>
                 </ul>
@@ -665,7 +665,7 @@ export default function CongruencePage() {
                 <div>
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Real-Time Processing is Non-Negotiable</h4>
                   <p className="mb-3 text-sm text-muted-foreground leading-relaxed">
-                    Early prototype took 5 minutes to process a 45-minute session. Clinicians wouldn&apos;t wait — they&apos;d write manual notes instead. We optimized to &lt;200ms per window so analysis feels instant.
+                    Early prototype took 5 minutes to process a 45-minute session. Clinicians wouldn&apos;t wait  -  they&apos;d write manual notes instead. We optimized to &lt;200ms per window so analysis feels instant.
                   </p>
                   <p className="text-xs text-muted-foreground">
                     <strong>How we did it:</strong> GPU batch processing, parallel workers, Redis checkpointing, and aggressive caching. Latency is a product feature, not just a performance metric.
@@ -763,7 +763,7 @@ export default function CongruencePage() {
                 <h3 className="text-xl font-medium">Patient Dashboard</h3>
               </div>
               <p className="mb-6 ml-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-                The central command center. Every active patient is listed with their real-time risk level, clinical trend tags, session count, and last-contact timestamp — giving clinicians a triage strip at a glance without opening a single chart.
+                The central command center. Every active patient is listed with their real-time risk level, clinical trend tags, session count, and last-contact timestamp  -  giving clinicians a triage strip at a glance without opening a single chart.
               </p>
               <div className="ml-12 mb-8 overflow-hidden rounded-xl border shadow-sm">
                 <Image src={DashboardImg} alt="Patient Dashboard" className="w-full h-auto" />
@@ -772,17 +772,17 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Risk & Trend Scoring</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Risk level (HIGH / MODERATE / LOW) computed after every AI session analysis and stored on the patient row — no runtime computation</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Risk level (HIGH / MODERATE / LOW) computed after every AI session analysis and stored on the patient row  -  no runtime computation</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Trend tags (ANXIETY, ENGAGEMENT) derived from dominant themes in Gemini session summaries, stored as a tagged array per patient</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Color-coded risk column uses CSS class switching — HIGH triggers red, MODERATE orange, LOW green</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Color-coded risk column uses CSS class switching  -  HIGH triggers red, MODERATE orange, LOW green</span></li>
                   </ul>
                 </div>
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Table Architecture</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Sessions column distinguishes &quot;X analyzed&quot; vs &quot;X recorded&quot; — DB join across patients → sessions → analysis tables</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Sessions column distinguishes &quot;X analyzed&quot; vs &quot;X recorded&quot;  -  DB join across patients → sessions → analysis tables</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Last Contact timestamp pulled from most recent session or booking, formatted as relative time (e.g. &quot;4d ago&quot;)</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Pinned patient concept — per-clinician preference stored in DB, pinned rows float to the top with a pin icon</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Pinned patient concept  -  per-clinician preference stored in DB, pinned rows float to the top with a pin icon</span></li>
                   </ul>
                 </div>
               </div>
@@ -794,10 +794,10 @@ export default function CongruencePage() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                   2
                 </span>
-                <h3 className="text-xl font-medium">Patient Workspace — Intake</h3>
+                <h3 className="text-xl font-medium">Patient Workspace  -  Intake</h3>
               </div>
               <p className="mb-6 ml-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-                Every patient has a 5-stage workspace (Intake → Recordings → Analysis Review → Progress → Insurance). The Intake tab enforces document gates before the clinician can proceed to session analysis — HIPAA authorization, treatment consent, and clinical background must all be on file.
+                Every patient has a 5-stage workspace (Intake → Recordings → Analysis Review → Progress → Insurance). The Intake tab enforces document gates before the clinician can proceed to session analysis  -  HIPAA authorization, treatment consent, and clinical background must all be on file.
               </p>
               <div className="ml-12 mb-8 overflow-hidden rounded-xl border shadow-sm">
                 <Image src={PatientIntakeImg} alt="Patient Intake" className="w-full h-auto" />
@@ -806,16 +806,16 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Gated Stage System</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Stage status computed from DB requirement checks — &quot;Intake requirements met&quot; banner unlocks the Recordings tab</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Stage status computed from DB requirement checks  -  &quot;Intake requirements met&quot; banner unlocks the Recordings tab</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>5-stage progress bar rendered as a tab row with ✓ checkmarks for completed stages, &quot;Current&quot; for active, &quot;Pending&quot; for locked</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Required vs Optional documentation distinguished in UI and enforced in DB — optional docs can be added anytime</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Required vs Optional documentation distinguished in UI and enforced in DB  -  optional docs can be added anytime</span></li>
                   </ul>
                 </div>
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">File Handling</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Files uploaded to Supabase Storage with MIME type validation — only PDFs and images accepted for clinical documents</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Supabase RLS enforces clinic-scoped storage paths — clinicians can only access their own patient documents</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Files uploaded to Supabase Storage with MIME type validation  -  only PDFs and images accepted for clinical documents</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Supabase RLS enforces clinic-scoped storage paths  -  clinicians can only access their own patient documents</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Document records in DB store bucket path, upload date, and document type for audit trail</span></li>
                   </ul>
                 </div>
@@ -828,7 +828,7 @@ export default function CongruencePage() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                   3
                 </span>
-                <h3 className="text-xl font-medium">Patient Workspace — Session Recordings</h3>
+                <h3 className="text-xl font-medium">Patient Workspace  -  Session Recordings</h3>
               </div>
               <p className="mb-6 ml-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
                 Clinicians can upload existing recordings or record directly in the browser. Each session is tagged by condition (ANXIETY, OCD, DEPRESSION, BIPOLAR, SUICIDE, ANGER) and gets an &quot;Analyzed&quot; badge once the AI pipeline has finished processing.
@@ -840,8 +840,8 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Recording & Upload</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>In-browser recording via the MediaRecorder API — video and audio captured simultaneously with live preview</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Chunked upload to Supabase Storage with resumable support — large session files handled without timeout</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>In-browser recording via the MediaRecorder API  -  video and audio captured simultaneously with live preview</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Chunked upload to Supabase Storage with resumable support  -  large session files handled without timeout</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Session metadata stored: condition tag, recording date, duration, storage path, analysis status</span></li>
                   </ul>
                 </div>
@@ -850,7 +850,7 @@ export default function CongruencePage() {
                   <ul className="space-y-2">
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>On upload completion, a Deno Edge Function triggers the FastAPI AI backend with the session&apos;s storage URL</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>DeepFace processes video frames for emotion timeline; Whisper transcribes audio to text; Gemini synthesizes both</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Session row status updates from &quot;uploaded&quot; → &quot;processing&quot; → &quot;analyzed&quot; — UI polls for status change</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Session row status updates from &quot;uploaded&quot; → &quot;processing&quot; → &quot;analyzed&quot;  -  UI polls for status change</span></li>
                   </ul>
                 </div>
               </div>
@@ -862,10 +862,10 @@ export default function CongruencePage() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                   4
                 </span>
-                <h3 className="text-xl font-medium">Patient Workspace — Analysis Review</h3>
+                <h3 className="text-xl font-medium">Patient Workspace  -  Analysis Review</h3>
               </div>
               <p className="mb-6 ml-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-                Each analyzed session surfaces a proprietary <strong>Congruence Index</strong> (0–100) and a count of flagged moments. Low scores mean high incongruence — the patient&apos;s verbal and non-verbal signals don&apos;t match. Clinicians review flagged sessions before proceeding.
+                Each analyzed session surfaces a proprietary <strong>Congruence Index</strong> (0–100) and a count of flagged moments. Low scores mean high incongruence  -  the patient&apos;s verbal and non-verbal signals don&apos;t match. Clinicians review flagged sessions before proceeding.
               </p>
               <div className="ml-12 mb-8 overflow-hidden rounded-xl border shadow-sm">
                 <Image src={PatientReviewImg} alt="Analysis Review" className="w-full h-auto" />
@@ -874,7 +874,7 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Congruence Index</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Score derived from alignment between DeepFace emotion timeline and Whisper transcript sentiment — computed per 10-second window, averaged to session score</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Score derived from alignment between DeepFace emotion timeline and Whisper transcript sentiment  -  computed per 10-second window, averaged to session score</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Low (≤60) = significant affect-language incongruence, commonly masked depression or suppressed emotion</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Moderate (61–80) and Low severity labels allow quick triage without reading full reports first</span></li>
                   </ul>
@@ -882,8 +882,8 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Flagged Moments</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Flagged moments = timestamp windows where incongruence spike exceeded threshold — stored as JSON array of <code className="text-xs bg-muted px-1 py-0.5 rounded">[start_s, end_s, type]</code></span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>&quot;Needs review&quot; status blocks progression to Progress tab — clinician must open the full report and acknowledge</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Flagged moments = timestamp windows where incongruence spike exceeded threshold  -  stored as JSON array of <code className="text-xs bg-muted px-1 py-0.5 rounded">[start_s, end_s, type]</code></span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>&quot;Needs review&quot; status blocks progression to Progress tab  -  clinician must open the full report and acknowledge</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Session sorted newest-first; session number and condition tag shown for quick orientation across multiple visits</span></li>
                   </ul>
                 </div>
@@ -899,7 +899,7 @@ export default function CongruencePage() {
                 <h3 className="text-xl font-medium">AI Clinical Documentation Report</h3>
               </div>
               <p className="mb-6 ml-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-                The core clinical artifact. Gemini 2.5 Flash generates a fully structured report per session: clinical summary, session themes with timestamped transcript quotes, behavioral observations, risk indicators, and clinical recommendations — all grounded in the actual session data with no invented content.
+                The core clinical artifact. Gemini 2.5 Flash generates a fully structured report per session: clinical summary, session themes with timestamped transcript quotes, behavioral observations, risk indicators, and clinical recommendations  -  all grounded in the actual session data with no invented content.
               </p>
               <div className="ml-12 mb-4 overflow-hidden rounded-xl border shadow-sm">
                 <Image src={ClinicalDocReport1Img} alt="Clinical Documentation Report - Page 1" className="w-full h-auto" />
@@ -912,7 +912,7 @@ export default function CongruencePage() {
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Report Structure</h4>
                   <ul className="space-y-2">
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Clinical Summary:</strong> session duration, observed affect (from DeepFace), patient engagement level</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Session Themes:</strong> up to 5 themes with supporting evidence — each quote is timestamped to the exact [start–end] second in the recording</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Session Themes:</strong> up to 5 themes with supporting evidence  -  each quote is timestamped to the exact [start–end] second in the recording</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Risk Indicators:</strong> flagged observations with severity (Pending Clinical Assessment) and status (Requires Review)</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Clinical Recommendations:</strong> future session topics, therapeutic interventions, follow-up actions</span></li>
                   </ul>
@@ -920,10 +920,10 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">No-Hallucination Policy</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Disclaimer header on every report: <em>&quot;AUTOMATED OBSERVATIONS — FOR CLINICAL REVIEW ONLY. Not for independent diagnostic use.&quot;</em></span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Gemini prompt instructs bracketed placeholders <code className="text-xs bg-muted px-1 py-0.5 rounded">[UNKNOWN]</code> for missing info — AI never invents clinical data</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Timestamps in quotes ([20–30s], [40–50s]) are extracted from transcript alignment — grounded in actual session time</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Report stored as structured JSON in DB — sections are individually addressable for insurance packet generation</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Disclaimer header on every report: <em>&quot;AUTOMATED OBSERVATIONS  -  FOR CLINICAL REVIEW ONLY. Not for independent diagnostic use.&quot;</em></span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Gemini prompt instructs bracketed placeholders <code className="text-xs bg-muted px-1 py-0.5 rounded">[UNKNOWN]</code> for missing info  -  AI never invents clinical data</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Timestamps in quotes ([20–30s], [40–50s]) are extracted from transcript alignment  -  grounded in actual session time</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Report stored as structured JSON in DB  -  sections are individually addressable for insurance packet generation</span></li>
                   </ul>
                 </div>
               </div>
@@ -938,7 +938,7 @@ export default function CongruencePage() {
                 <h3 className="text-xl font-medium">Appointments Calendar</h3>
               </div>
               <p className="mb-6 ml-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-                A per-clinician weekly calendar showing all scheduled appointments. Clinicians set availability rules, blocked days, and can generate shareable booking links — all backed by a database-level conflict check that prevents double-booking.
+                A per-clinician weekly calendar showing all scheduled appointments. Clinicians set availability rules, blocked days, and can generate shareable booking links  -  all backed by a database-level conflict check that prevents double-booking.
               </p>
               <div className="ml-12 mb-8 overflow-hidden rounded-xl border shadow-sm">
                 <Image src={AppointmentsImg} alt="Appointments Calendar" className="w-full h-auto" />
@@ -948,16 +948,16 @@ export default function CongruencePage() {
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Scheduling Logic</h4>
                   <ul className="space-y-2">
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Per-clinician availability rules stored in DB: available days, start/end hours, appointment duration defaults</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">has_time_conflict(clinician_id, start, end)</code> PostgreSQL function — runs on every booking creation to prevent overlaps with row-level locking</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><code className="text-xs bg-muted px-1 py-0.5 rounded">has_time_conflict(clinician_id, start, end)</code> PostgreSQL function  -  runs on every booking creation to prevent overlaps with row-level locking</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Blocked-day exceptions table allows ad-hoc unavailability (vacations, emergencies) separate from regular schedule</span></li>
                   </ul>
                 </div>
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Booking Links</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Shareable booking links generated via Deno Edge Function — URL contains signed token scoped to clinician + time window</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Approval-gated: patient books a slot, clinician confirms or declines — no auto-confirmation by default</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Day/Week toggle; calendar built with CSS grid — time slots are 15-min intervals mapped to grid rows</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Shareable booking links generated via Deno Edge Function  -  URL contains signed token scoped to clinician + time window</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Approval-gated: patient books a slot, clinician confirms or declines  -  no auto-confirmation by default</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Day/Week toggle; calendar built with CSS grid  -  time slots are 15-min intervals mapped to grid rows</span></li>
                   </ul>
                 </div>
               </div>
@@ -981,15 +981,15 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Invoice State Machine</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>States: <code className="text-xs bg-muted px-1 py-0.5 rounded">draft → sent → viewed → paid</code> — &quot;Overdue&quot; computed if due_date passed and status ≠ paid</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Outstanding / Paid This Month / Overdue totals computed with aggregate SQL queries on the invoices table — not runtime arithmetic</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Searchable invoice table with status filter dropdown — DB-level filtering, not client-side</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>States: <code className="text-xs bg-muted px-1 py-0.5 rounded">draft → sent → viewed → paid</code>  -  &quot;Overdue&quot; computed if due_date passed and status ≠ paid</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Outstanding / Paid This Month / Overdue totals computed with aggregate SQL queries on the invoices table  -  not runtime arithmetic</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Searchable invoice table with status filter dropdown  -  DB-level filtering, not client-side</span></li>
                   </ul>
                 </div>
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Stripe Connect Integration</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Clinicians connect their bank account via Stripe Connect OAuth — each clinician is a Stripe Connect account on the platform</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Clinicians connect their bank account via Stripe Connect OAuth  -  each clinician is a Stripe Connect account on the platform</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Commissions endpoint configures platform fee split; payouts go directly to clinician&apos;s bank on invoice payment</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Export CSV outputs all invoices in a format compatible with QuickBooks and standard accounting tools</span></li>
                   </ul>
@@ -1006,7 +1006,7 @@ export default function CongruencePage() {
                 <h3 className="text-xl font-medium">Team Management</h3>
               </div>
               <p className="mb-6 ml-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-                Supervisors manage their clinic&apos;s clinician roster here — inviting new members, assigning roles, monitoring active status, and disabling access when needed. Every role change is audit-logged.
+                Supervisors manage their clinic&apos;s clinician roster here  -  inviting new members, assigning roles, monitoring active status, and disabling access when needed. Every role change is audit-logged.
               </p>
               <div className="ml-12 mb-8 overflow-hidden rounded-xl border shadow-sm">
                 <Image src={TeamManagementImg} alt="Team Management" className="w-full h-auto" />
@@ -1015,17 +1015,17 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">3-Tier RBAC</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Role dropdown changes the clinician&apos;s role in the <code className="text-xs bg-muted px-1 py-0.5 rounded">profiles</code> table — RLS policies re-evaluate on next request</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Disable sets <code className="text-xs bg-muted px-1 py-0.5 rounded">active_status = false</code> — RLS policies block all table access for inactive users, no token invalidation needed</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Team stats (Total Members / Therapists / Supervisors) from DB aggregate — no client-side counting</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Role dropdown changes the clinician&apos;s role in the <code className="text-xs bg-muted px-1 py-0.5 rounded">profiles</code> table  -  RLS policies re-evaluate on next request</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Disable sets <code className="text-xs bg-muted px-1 py-0.5 rounded">active_status = false</code>  -  RLS policies block all table access for inactive users, no token invalidation needed</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Team stats (Total Members / Therapists / Supervisors) from DB aggregate  -  no client-side counting</span></li>
                   </ul>
                 </div>
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Invite System</h4>
                   <ul className="space-y-2">
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>&quot;Invite Member&quot; triggers Deno Edge Function → generates a single-use UUID token tied to email + role + clinic_id</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Token stored in invites table with <code className="text-xs bg-muted px-1 py-0.5 rounded">used_at</code> field — atomic update on redemption prevents reuse</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Invite email sent via Resend with magic-link style URL containing the token — no password required to join</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Token stored in invites table with <code className="text-xs bg-muted px-1 py-0.5 rounded">used_at</code> field  -  atomic update on redemption prevents reuse</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Invite email sent via Resend with magic-link style URL containing the token  -  no password required to join</span></li>
                   </ul>
                 </div>
               </div>
@@ -1037,10 +1037,10 @@ export default function CongruencePage() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                   9
                 </span>
-                <h3 className="text-xl font-medium">AI Insurance Packet — Generation</h3>
+                <h3 className="text-xl font-medium">AI Insurance Packet  -  Generation</h3>
               </div>
               <p className="mb-6 ml-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-                One click triggers the full insurance packet generation pipeline. Gemini 2.5 Flash synthesizes every analyzed session — pulling clinical summaries, risk indicators, and progress notes — into a structured reauthorization document. The UI shows live progress as each step completes.
+                One click triggers the full insurance packet generation pipeline. Gemini 2.5 Flash synthesizes every analyzed session  -  pulling clinical summaries, risk indicators, and progress notes  -  into a structured reauthorization document. The UI shows live progress as each step completes.
               </p>
               <div className="ml-12 mb-8 overflow-hidden rounded-xl border shadow-sm">
                 <Image src={GenerateInsuranceImg} alt="Generating Insurance Packet" className="w-full h-auto" />
@@ -1049,8 +1049,8 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Generation Pipeline</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Step 1: Patient demographics loaded — pulls DOB, Patient ID, clinician NPI, practice name from DB</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Step 2: Session data analyzed — aggregates all JSON clinical reports for the patient across N sessions</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Step 1: Patient demographics loaded  -  pulls DOB, Patient ID, clinician NPI, practice name from DB</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Step 2: Session data analyzed  -  aggregates all JSON clinical reports for the patient across N sessions</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Step 3: Gemini 2.5 Flash synthesizes data into insurance packet sections: Progress, Medical Necessity, Diagnoses, Treatment Plan</span></li>
                   </ul>
                 </div>
@@ -1058,8 +1058,8 @@ export default function CongruencePage() {
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Edge Function Architecture</h4>
                   <ul className="space-y-2">
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Deno Edge Function <code className="text-xs bg-muted px-1 py-0.5 rounded">generate-insurance-packet</code> proxies to FastAPI AI backend with streaming response</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Progress steps sent as SSE (Server-Sent Events) — frontend updates loading state in real time as each step completes</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Generated packet saved to <code className="text-xs bg-muted px-1 py-0.5 rounded">insurance_packets</code> table — immutable draft, all edits stored as new version rows</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Progress steps sent as SSE (Server-Sent Events)  -  frontend updates loading state in real time as each step completes</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Generated packet saved to <code className="text-xs bg-muted px-1 py-0.5 rounded">insurance_packets</code> table  -  immutable draft, all edits stored as new version rows</span></li>
                   </ul>
                 </div>
               </div>
@@ -1071,7 +1071,7 @@ export default function CongruencePage() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                   10
                 </span>
-                <h3 className="text-xl font-medium">AI Insurance Packet — ICD-10 Codes & Diagnosis</h3>
+                <h3 className="text-xl font-medium">AI Insurance Packet  -  ICD-10 Codes & Diagnosis</h3>
               </div>
               <p className="mb-6 ml-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
                 After generation, the AI recommends the appropriate ICD-10 diagnostic codes based on the session themes and risk indicators. Clinicians review the AI-recommended codes, can browse the full ICD-10 database, and edit the diagnosis narrative before signing.
@@ -1083,17 +1083,17 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">ICD-10 Code Recommendation</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Gemini maps session themes to ICD-10 codes — e.g. ANXIETY sessions → F41.1 (Generalized Anxiety), F32.A (Major Depressive Disorder)</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Recommended codes displayed as badge chips — clinician can remove codes or add new ones from the ICD-10 browser</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>ICD-10 browser searches a local DB of all current codes — no external API call, full dataset preloaded</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Gemini maps session themes to ICD-10 codes  -  e.g. ANXIETY sessions → F41.1 (Generalized Anxiety), F32.A (Major Depressive Disorder)</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Recommended codes displayed as badge chips  -  clinician can remove codes or add new ones from the ICD-10 browser</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>ICD-10 browser searches a local DB of all current codes  -  no external API call, full dataset preloaded</span></li>
                   </ul>
                 </div>
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">Editable Sections & Validation</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>All packet sections are editable textareas — auto-saved to DB every 30s with &quot;Saved Xs ago&quot; timestamp</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>All packet sections are editable textareas  -  auto-saved to DB every 30s with &quot;Saved Xs ago&quot; timestamp</span></li>
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Placeholder count badge (⚠ 1 placeholder) tracks how many <code className="text-xs bg-muted px-1 py-0.5 rounded">[BRACKETED]</code> items remain unfilled before signing is allowed</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Tip bar reminds clinicians to replace placeholders — sign button stays disabled until all required placeholders are resolved</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>Tip bar reminds clinicians to replace placeholders  -  sign button stays disabled until all required placeholders are resolved</span></li>
                   </ul>
                 </div>
               </div>
@@ -1105,10 +1105,10 @@ export default function CongruencePage() {
                 <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-xs font-bold text-primary-foreground">
                   11
                 </span>
-                <h3 className="text-xl font-medium">AI Insurance Packet — Review & Sign</h3>
+                <h3 className="text-xl font-medium">AI Insurance Packet  -  Review & Sign</h3>
               </div>
               <p className="mb-6 ml-12 text-sm text-muted-foreground leading-relaxed max-w-3xl">
-                A 3-step wizard (Required Info → Review Sections → Sign &amp; Submit) walks the clinician through completing the packet. The AI has already written the Progress Since Last Authorization and Medical Necessity Statement — the clinician fills in missing profile fields, reviews, and signs.
+                A 3-step wizard (Required Info → Review Sections → Sign &amp; Submit) walks the clinician through completing the packet. The AI has already written the Progress Since Last Authorization and Medical Necessity Statement  -  the clinician fills in missing profile fields, reviews, and signs.
               </p>
               <div className="ml-12 mb-8 overflow-hidden rounded-xl border shadow-sm">
                 <Image src={ReviewInsuranceImg} alt="Review and Sign Insurance Packet" className="w-full h-auto" />
@@ -1117,17 +1117,17 @@ export default function CongruencePage() {
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">3-Step Wizard</h4>
                   <ul className="space-y-2">
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Step 1 — Required Info:</strong> checklist of missing profile fields (NPI, Practice Name, Address, Insurance Link) with deep-links to fix them</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Step 2 — Review Sections:</strong> full packet content with editable textareas — Progress Since Auth, Medical Necessity, Diagnoses, Treatment Goals</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Step 3 — Sign &amp; Submit:</strong> checkbox confirmation + &quot;I confirm this is accurate&quot; gate before Preview PDF or Sign &amp; Submit</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Step 1  -  Required Info:</strong> checklist of missing profile fields (NPI, Practice Name, Address, Insurance Link) with deep-links to fix them</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Step 2  -  Review Sections:</strong> full packet content with editable textareas  -  Progress Since Auth, Medical Necessity, Diagnoses, Treatment Goals</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span><strong>Step 3  -  Sign &amp; Submit:</strong> checkbox confirmation + &quot;I confirm this is accurate&quot; gate before Preview PDF or Sign &amp; Submit</span></li>
                   </ul>
                 </div>
                 <div className="rounded-xl border bg-card p-5">
                   <h4 className="mb-3 text-xs font-semibold uppercase tracking-wider text-primary">AI-Generated Content Quality</h4>
                   <ul className="space-y-2">
                     <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>&quot;Progress Since Last Authorization&quot; written by Gemini citing session-by-session arc, Congruence Index trends, and specific clinical observations</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>&quot;Medical Necessity Statement&quot; cites specific symptoms, functional impairments, and clinical justification for continued treatment — all sourced from session data</span></li>
-                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>&quot;Based on 6 sessions&quot; — packet scope dynamically set to the number of sessions analyzed since last authorization date</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>&quot;Medical Necessity Statement&quot; cites specific symptoms, functional impairments, and clinical justification for continued treatment  -  all sourced from session data</span></li>
+                    <li className="flex gap-3 text-sm text-muted-foreground"><span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary/60" /><span>&quot;Based on 6 sessions&quot;  -  packet scope dynamically set to the number of sessions analyzed since last authorization date</span></li>
                   </ul>
                 </div>
               </div>
