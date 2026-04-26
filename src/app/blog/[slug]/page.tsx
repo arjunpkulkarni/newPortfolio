@@ -146,7 +146,7 @@ function BlogContent({ post }: { post: any }) {
             <div className="p-5 rounded-lg border bg-card">
               <div className="flex items-center gap-2 mb-4">
                 <Code2 className="h-4 w-4 text-muted-foreground" />
-                <p className="text-sm font-medium">Tech Stack</p>
+                <p className="text-sm font-medium">Core Stack</p>
               </div>
               <div className="flex flex-wrap gap-2">
                 {post.metadata.technologies.map((tech: string) => (
