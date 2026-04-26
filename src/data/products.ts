@@ -33,6 +33,12 @@ import FitFo3 from "../app/projects/pictures/fitfo/IMG_4968.PNG";
 import FitFo4 from "../app/projects/pictures/fitfo/IMG_4969.PNG";
 import FitFo5 from "../app/projects/pictures/fitfo/IMG_4970.PNG";
 import FitFo6 from "../app/projects/pictures/fitfo/IMG_4971.PNG";
+import CulinLogo from "../app/projects/pictures/culin/culinAI.png";
+import Culin1 from "../app/projects/pictures/culin/image1.png";
+import Culin2 from "../app/projects/pictures/culin/image2.png";
+import Culin3 from "../app/projects/pictures/culin/image3.png";
+import Culin4 from "../app/projects/pictures/culin/image4.png";
+import Culin5 from "../app/projects/pictures/culin/image5.png";
 
 export type ProductTag = 
   | "Infra" 
@@ -99,6 +105,47 @@ export interface Product {
 }
 
 export const PRODUCTS: Product[] = [
+  {
+    id: "culin",
+    slug: "culin",
+    name: "Culin",
+    oneLiner: "A food decision engine that combines macro tracking, nutrition intelligence, and next-meal generation so users stop scrolling and start eating.",
+    problem: "People know their nutrition goals, but the hardest moment is deciding what to eat next. Macro trackers require logging after the fact, food delivery apps create endless choice, and meal planners do not react to schedule, budget, cravings, or what is nearby.",
+    solution: "Built Culin v1 as MyFitnessPal plus ChatGPT with a real nutrition layer: users bring macro goals and preferences, then Culin generates one next meal across order or cook paths with macro estimates, grocery or restaurant context, and a clear action.",
+    impact: "Active product build focused on busy students, gym and macro trackers, professionals, meal preppers, parents, and anyone who hates deciding what to eat.",
+    whyBuilt: "I wanted a nutrition app that helps at the actual decision point. Instead of another tracker that asks you to log what already happened, Culin helps decide the next best meal in seconds.",
+    proof: [
+      { label: "Decision", value: "1" },
+      { label: "Paths", value: "2" },
+      { label: "Focus", value: "Macros" },
+    ],
+    system: ["React Native", "Expo Router", "TypeScript", "Next.js API Routes", "FastAPI", "PostgreSQL", "OpenAI", "USDA/FatSecret Data"],
+    bullets: [
+      "Built a mobile-first nutrition decision flow that turns macro targets, preferences, schedule, and food context into one recommended next meal",
+      "Designed a nutrition layer around structured food data, fuzzy matching, macro estimation, and AI-generated meal reasoning instead of generic chatbot responses",
+      "Integrated full-stack app patterns across React Native/Expo, Next.js APIs, FastAPI services, Cognito/OIDC auth, PostgreSQL data work, and Dockerized deployment",
+    ],
+    tags: ["Mobile", "ML/Agents", "Product"],
+    type: "Full-stack",
+    status: "Live",
+    domain: "Fitness",
+    links: {
+      live: "https://culin.ai",
+    },
+    image: CulinLogo,
+    screenshots: [Culin1, Culin2, Culin3, Culin4, Culin5],
+    screenshotDescriptions: [
+      "Mobile nutrition experience designed around fast meal decisions and macro clarity",
+      "Next-meal generation flow that converts user context into one actionable recommendation",
+      "Food and nutrition surfaces built with calm wellness visuals and high-contrast macro data",
+      "Preference and goal inputs that help the engine understand taste, budget, and diet constraints",
+      "Decision-oriented UI that moves users from uncertainty to eating without app hopping",
+    ],
+    featured: true,
+    impactScore: 93,
+    date: "2026-04-26",
+    isCurrentlyLive: true,
+  },
   {
     id: "fitfo",
     slug: "fitfo",

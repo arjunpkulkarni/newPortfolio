@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { Badge } from "@/components/ui/badge";
 import { Product } from "@/data/products";
 import { ArrowRight } from "lucide-react";
 
@@ -53,26 +52,17 @@ export function MinimalProductCard({ product, index }: MinimalProductCardProps) 
                     <h3 className="text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">
                       {product.name}
                     </h3>
+                  </div>
+                  <div className="flex flex-shrink-0">
                     {isActive && (
-                      <div className="flex items-center gap-1.5 rounded-full bg-green-500/10 px-2 py-0.5 border border-green-500/20">
-                        <span className="relative flex h-1.5 w-1.5">
+                      <div className="flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1 border border-green-500/20">
+                        <span className="relative flex h-2 w-2">
                           <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-                          <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-green-500"></span>
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
                         </span>
-                        <span className="text-[10px] font-medium text-green-600 dark:text-green-400">Active</span>
+                        <span className="text-xs font-medium text-green-600 dark:text-green-400">Active</span>
                       </div>
                     )}
-                  </div>
-                  <div className="flex gap-1.5 flex-shrink-0">
-                    {product.tags.slice(0, 2).map((tag) => (
-                      <Badge
-                        key={tag}
-                        variant="outline"
-                        className="text-[10px] px-2 py-0.5 font-normal"
-                      >
-                        {tag}
-                      </Badge>
-                    ))}
                   </div>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
