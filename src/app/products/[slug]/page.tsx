@@ -7,10 +7,14 @@ import { Badge } from "@/components/ui/badge";
 import { ArchitectureDiagram } from "@/components/architecture-diagram";
 import type { Metadata } from "next";
 
+const CUSTOM_PRODUCT_SLUGS = new Set(["culin", "fitfo", "settld", "congruence"]);
+
 export async function generateStaticParams() {
-  return PRODUCTS.map((product) => ({
-    slug: product.slug,
-  }));
+  return PRODUCTS
+    .filter((product) => !CUSTOM_PRODUCT_SLUGS.has(product.slug))
+    .map((product) => ({
+      slug: product.slug,
+    }));
 }
 
 export async function generateMetadata({
