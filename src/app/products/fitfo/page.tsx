@@ -12,6 +12,10 @@ import {
   BarChart3,
   Smartphone,
   Users,
+  Bot,
+  Database,
+  Search,
+  ShieldCheck,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import type { Metadata } from "next";
@@ -23,6 +27,7 @@ import ScheduleAgain from "@/app/projects/pictures/fitfo/IMG_4969.PNG";
 import ImportWorkout from "@/app/projects/pictures/fitfo/IMG_4970.PNG";
 import ScheduledWorkouts from "@/app/projects/pictures/fitfo/IMG_4971.PNG";
 import FitFoLogo from "@/app/projects/pictures/fitfo/fitfo-logo-dark.png";
+import FitFoCoach from "@/app/projects/pictures/fitfo/fitfoCoach.png";
 
 export const metadata: Metadata = {
   title: "FitFo  -  Turn Fitness Videos into Real Workouts",
@@ -69,6 +74,47 @@ const features = [
     tag: "Train",
     title: "Edit, follow, log  -  no friction",
     desc: "Tap any field to change reps, weights, or notes. Start a session, log every set, and the next one opens automatically.",
+  },
+];
+
+const coachPipeline = [
+  {
+    phase: "Discover",
+    detail: "Apify crawls a creator's TikTok profile and upserts videos by platform ID for deduped ingestion.",
+  },
+  {
+    phase: "Transcribe",
+    detail: "TikWM, ffmpeg, and Whisper turn each source video into reusable transcript text with capped async concurrency.",
+  },
+  {
+    phase: "Chunk",
+    detail: "gpt-4.1-mini splits transcripts into self-contained training snippets and strips sponsor reads or pure CTAs.",
+  },
+  {
+    phase: "Tag",
+    detail: "A batched LLM pass assigns locked muscle, goal, exercise, and equipment tags that match SQL constraints.",
+  },
+  {
+    phase: "Embed",
+    detail: "text-embedding-3-small vectors land in pgvector with the model stored per row for future re-embedding.",
+  },
+];
+
+const coachDecisions = [
+  {
+    icon: Database,
+    title: "Postgres-native retrieval",
+    desc: "Supabase Postgres + pgvector keeps storage, tag filters, approval status, HNSW cosine search, and citations in one source of truth.",
+  },
+  {
+    icon: Search,
+    title: "Filter before ranking",
+    desc: "The match_content_chunks RPC narrows by creator, approval status, muscle groups, and goals before ranking top-K chunks by vector distance.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Grounded generation",
+    desc: "Weak matches are dropped, empty retrieval skips the LLM, and every coaching claim must cite a retrieved chunk like [1].",
   },
 ];
 
@@ -284,6 +330,102 @@ export default function FitFoPage() {
               </div>
             </div>
 
+          </div>
+        </div>
+
+        {/* ── FITFO COACH ───────────────────────────────────────────── */}
+        <div className="mb-20">
+          <div className="mb-8">
+            <div className="mb-3 inline-flex items-center gap-2 rounded-full border bg-card px-3 py-1 text-xs font-medium text-[#ea580c]">
+              <Bot className="h-3.5 w-3.5" />
+              FitFo Coach
+            </div>
+            <h2 className="mb-3 text-2xl font-medium tracking-tight">
+              A RAG-grounded, single-creator fitness coach chatbot.
+            </h2>
+            <p className="max-w-3xl text-sm leading-relaxed text-muted-foreground">
+              FitFo Coach answers training questions in one coach&apos;s actual voice, grounded in their TikTok corpus instead of generic model memory. Inline citations let users verify any cue, claim, or programming recommendation against the original source video.
+            </p>
+          </div>
+
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <div className="rounded-3xl border bg-card p-4 shadow-lg">
+              <div className="overflow-hidden rounded-2xl border bg-muted">
+                <Image
+                  src={FitFoCoach}
+                  alt="FitFo Coach chatbot with cited training guidance"
+                  className="h-auto w-full"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <div className="rounded-xl border bg-card p-6">
+                <p className="mb-2 text-xs font-medium uppercase tracking-wide text-[#ea580c]">The problem</p>
+                <h3 className="mb-3 text-lg font-medium">A coach bot that cannot hallucinate the coach.</h3>
+                <div className="grid gap-3 text-sm leading-relaxed text-muted-foreground md:grid-cols-2">
+                  {[
+                    "Speaks like Jacob, not ChatGPT.",
+                    "Answers from actual videos with link-backed citations.",
+                    "Refuses anything outside training scope.",
+                    "Uses the active workout to answer set-aware questions.",
+                  ].map((item) => (
+                    <div key={item} className="rounded-lg border bg-muted/30 px-3 py-2">
+                      {item}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="rounded-xl border bg-card p-6">
+                <p className="mb-2 text-xs font-medium uppercase tracking-wide text-[#ea580c]">Architecture</p>
+                <p className="font-mono text-xs leading-relaxed text-muted-foreground">
+                  TikTok profile -&gt; Apify crawl -&gt; Whisper transcript -&gt; LLM chunker -&gt; LLM tagger -&gt; OpenAI embeddings -&gt; pgvector HNSW search -&gt; grounded LLM synthesis -&gt; cited markdown answer
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-8 grid gap-4 lg:grid-cols-5">
+            {coachPipeline.map((step, index) => (
+              <div key={step.phase} className="rounded-xl border bg-card p-5">
+                <div className="mb-3 flex items-center gap-2">
+                  <span className="flex h-7 w-7 items-center justify-center rounded-full bg-[#ea580c]/10 text-xs font-medium text-[#ea580c]">
+                    {index + 1}
+                  </span>
+                  <h3 className="text-sm font-medium">{step.phase}</h3>
+                </div>
+                <p className="text-xs leading-relaxed text-muted-foreground">{step.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3">
+            {coachDecisions.map((decision) => (
+              <div key={decision.title} className="rounded-xl border bg-card p-6">
+                <div className="mb-3 inline-flex rounded-lg border bg-muted/50 p-2">
+                  <decision.icon className="h-4 w-4 text-muted-foreground" />
+                </div>
+                <h3 className="mb-2 text-sm font-medium">{decision.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{decision.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-8 rounded-xl border bg-card p-6">
+            <h3 className="mb-3 text-sm font-medium">What makes it production-ready</h3>
+            <div className="grid gap-3 text-sm leading-relaxed text-muted-foreground md:grid-cols-2">
+              {[
+                "Five idempotent ingestion phases advance rows from pending to embedded, so crashes resume cleanly.",
+                "Per-chunk approval status lets strong clips ship while bad snippets stay out of retrieval.",
+                "SQL CHECK constraints enforce locked taxonomies for muscle groups and training goals.",
+                "The mobile sheet sends active workout context with every message for set-aware coaching answers.",
+              ].map((item) => (
+                <div key={item} className="rounded-lg border bg-muted/30 p-3">
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
