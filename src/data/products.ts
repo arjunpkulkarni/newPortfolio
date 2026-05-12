@@ -39,6 +39,7 @@ import Culin2 from "../app/projects/pictures/culin/image2.png";
 import Culin3 from "../app/projects/pictures/culin/image3.png";
 import Culin4 from "../app/projects/pictures/culin/image4.png";
 import Culin5 from "../app/projects/pictures/culin/image5.png";
+import VmaxLogo from "../app/work/pictures/vmax.png";
 
 export type ProductTag = 
   | "Infra" 
@@ -272,6 +273,52 @@ export const PRODUCTS: Product[] = [
     featured: true,
     impactScore: 95,
     date: "2024-08-15",
+    isCurrentlyLive: true,
+  },
+  {
+    id: "vmax",
+    slug: "vmax",
+    name: "Vmax",
+    oneLiner:
+      "Manager for coding agents: Claude, Codex, and Cursor in one local-first macOS workspace — live logs, human gates, isolated worktrees, and a written recap after every run.",
+    problem:
+      "Teams run multiple coding agents across terminals, editors, and browsers. Context fragments, risky Git moves lack a consistent approval path, and understanding what actually shipped means manual log and diff archaeology.",
+    solution:
+      "Vmax is a local-first macOS app that routes Claude, Codex, and Cursor through one workspace: live run output, policy-driven human approvals, dedicated Git worktrees per run, and structured recaps with intent, pipeline, files touched, and cost. Bring your own provider keys — orchestration is the product surface.",
+    impact:
+      "Private beta (macOS). Public marketing site with download and waitlist; built for engineers running several agents without tab sprawl.",
+    whyBuilt:
+      "Multi-agent setups usually break on coordination, not raw model quality. Vmax treats routing, gates, isolation, and accountability as first-class product UX.",
+    proof: [
+      { label: "Agents", value: "3" },
+      { label: "Ship target", value: "macOS" },
+      { label: "Stack", value: "Local" },
+    ],
+    system: [
+      "macOS",
+      "Desktop",
+      "TypeScript",
+      "Git worktrees",
+      "Agent routing",
+      "Human-in-the-loop",
+      "Local-first",
+    ],
+    bullets: [
+      "Built a single workspace for Claude, Codex, and Cursor with live logs and cross-agent routing instead of juggling disconnected CLIs and browser tabs",
+      "Implemented human-in-the-loop gates and worktree isolation so destructive or experimental runs stay quarantined until explicitly promoted",
+      "Shipped structured post-run recaps (intent, pipeline, files, economics) so reviews and handoffs read like engineering reality, not patch dumps",
+    ],
+    tags: ["ML/Agents", "Product", "Infra"],
+    type: "Infra",
+    status: "Pilot",
+    domain: "Growth",
+    links: {
+      live: "https://vmax-d23m.vercel.app/",
+    },
+    image: VmaxLogo,
+    featured: true,
+    impactScore: 92,
+    date: "2026-05-12",
     isCurrentlyLive: true,
   },
   // --- Archived products commented out ---

@@ -7,8 +7,8 @@ import BlurFade from "@/components/magicui/blur-fade";
 const BLUR_FADE_DELAY = 0.04;
 
 export default function ProductsPage() {
-  const liveProducts = PRODUCTS
-    .filter(p => p.status === "Live")
+  const shippedProducts = PRODUCTS
+    .filter((p) => p.status === "Live" || p.status === "Pilot")
     .sort((a, b) => b.impactScore - a.impactScore);
   
   const archivedProducts = PRODUCTS
@@ -30,7 +30,7 @@ export default function ProductsPage() {
 
         {/* All Products  -  single list, no section headers */}
         <div className="space-y-6">
-          {liveProducts.map((product, index) => (
+          {shippedProducts.map((product, index) => (
             <BlurFade
               key={product.id}
               delay={BLUR_FADE_DELAY * 2 + index * 0.05}

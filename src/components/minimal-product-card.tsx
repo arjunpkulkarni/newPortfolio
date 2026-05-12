@@ -13,6 +13,7 @@ interface MinimalProductCardProps {
 
 export function MinimalProductCard({ product, index }: MinimalProductCardProps) {
   const isActive = product.status === "Live";
+  const isPilot = product.status === "Pilot";
 
   return (
     <motion.div
@@ -61,6 +62,16 @@ export function MinimalProductCard({ product, index }: MinimalProductCardProps) 
                           <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
                         </span>
                         <span className="text-xs font-medium text-green-600 dark:text-green-400">Active</span>
+                      </div>
+                    )}
+                    {isPilot && (
+                      <div className="flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/10 px-3 py-1">
+                        <span className="relative flex h-2 w-2">
+                          <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500"></span>
+                        </span>
+                        <span className="text-xs font-medium text-amber-700 dark:text-amber-400">
+                          Pilot
+                        </span>
                       </div>
                     )}
                   </div>

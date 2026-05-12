@@ -35,7 +35,6 @@ import ucsf from "../app/work/pictures/ucsf.png";
 import sideshift from "../app/work/pictures/sideshift.jpeg";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
-import siramaiLogo from "../app/projects/pictures/logos/siramaiLogo.png";
 import fitcheckLogo from "../app/projects/pictures/logos/fitcheckLogo.png";
 import lumeLogo from "../app/projects/pictures/logos/lumeLogo.png";
 import rumorLogo from "../app/projects/pictures/logos/rumorLogo.png";
