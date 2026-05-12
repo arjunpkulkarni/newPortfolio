@@ -32,6 +32,7 @@ import curator from "../app/work/pictures/curator.png";
 import ieee from "../app/work/pictures/ieee.png";
 import intel from "../app/work/pictures/intel.jpg";
 import ucsf from "../app/work/pictures/ucsf.png";
+import sideshift from "../app/work/pictures/sideshift.jpeg";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import siramaiLogo from "../app/projects/pictures/logos/siramaiLogo.png";
@@ -149,6 +150,54 @@ export const DATA = {
   },
 
   work: [
+    {
+      company: "UCSF Health",
+      href: "https://www.ucsfhealth.org/",
+      badges: [],
+      location: "San Francisco, CA",
+      title: "Software Engineer Intern",
+      logoUrl: ucsf,
+      start: "May 2026",
+      end: "Jun 2026",
+      description:
+        "Built Congruence, an agentic EHR system supporting therapist workflows and daily clinical operations.",
+      tasks: [
+        {
+          description:
+            "Built Congruence, an agentic EHR system supporting 20+ daily patients and orchestrating therapist workflows.",
+          skills: ["Python", "Clinical AI", "LangChain", "EHR", "HIPAA"]
+        },
+        {
+          description:
+            "Built Flask workflows for SOAP note generation and patient context storage using LangChain, Redis, and Celery.",
+          skills: ["Flask", "LangChain", "Redis", "Celery", "Python"]
+        }
+      ]
+    },
+    {
+      company: "SideShift",
+      href: "https://sideshift.app",
+      badges: [],
+      location: "New York, NY",
+      title: "Software Engineer Intern",
+      logoUrl: sideshift,
+      start: "Apr 2026",
+      end: "May 2026",
+      description:
+        "Implemented caching layers for a production messaging system, cutting database load through Redis and client-side query caching.",
+      tasks: [
+        {
+          description:
+            "Implemented Redis server-side caching and TanStack Query client-side caching for a production messaging system.",
+          skills: ["Redis", "TanStack Query", "TypeScript", "Performance"]
+        },
+        {
+          description:
+            "Reduced database reads and writes by 95% by optimizing cache TTLs and debugging stale-cache issues.",
+          skills: ["Redis", "Caching", "Observability", "PostgreSQL"]
+        }
+      ]
+    },
     {
       company: "Handshake",
       href: "https://joinhandshake.com/ai",
@@ -568,18 +617,6 @@ export const DATA = {
       end: "",
       description:
         "Strategic investor supporting Curator's multi-tenant business operations platform and agentic e-commerce technology.",
-    },
-    {
-      company: "UCSF Health",
-      href: "https://www.ucsfhealth.org/",
-      badges: ["Partner"],
-      location: "",
-      title: "Clinical Partner for Congruence",
-      logoUrl: ucsf,
-      start: "",
-      end: "",
-      description:
-        "Clinical partnership with UCSF Health supporting Congruence's multimodal AI platform for psychiatric documentation and emotion detection in clinical settings.",
     },
   ],
   education: [
