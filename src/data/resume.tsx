@@ -183,7 +183,7 @@ export const DATA = {
       start: "Apr 2026",
       end: "May 2026",
       description:
-        "Implemented caching layers for a production messaging system, cutting database load through Redis and client-side query caching.",
+        "Implemented Redis and TanStack Query caching for a production messaging system (~95% fewer DB reads/writes). Built an in-app contract platform so teams send agreements and collect signatures inside the product; SideShift engineering adopted Cursor for agent-assisted delivery.",
       tasks: [
         {
           description:
@@ -194,6 +194,11 @@ export const DATA = {
           description:
             "Reduced database reads and writes by 95% by optimizing cache TTLs and debugging stale-cache issues.",
           skills: ["Redis", "Caching", "Observability", "PostgreSQL"]
+        },
+        {
+          description:
+            "Built an in-app contract platform for authoring and sending agreements with embedded signing flows so counterparties execute contracts inside the product.",
+          skills: ["TypeScript", "React", "E-signatures", "Product"]
         }
       ]
     },
