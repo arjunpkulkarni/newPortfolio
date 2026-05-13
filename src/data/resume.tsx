@@ -150,37 +150,13 @@ export const DATA = {
 
   work: [
     {
-      company: "UCSF Health",
-      href: "https://www.ucsfhealth.org/",
-      badges: [],
-      location: "San Francisco, CA",
-      title: "Software Engineer Intern",
-      logoUrl: ucsf,
-      start: "May 2026",
-      end: "Jun 2026",
-      description:
-        "Built Congruence, an agentic EHR system supporting therapist workflows and daily clinical operations.",
-      tasks: [
-        {
-          description:
-            "Built Congruence, an agentic EHR system supporting 20+ daily patients and orchestrating therapist workflows.",
-          skills: ["Python", "Clinical AI", "LangChain", "EHR", "HIPAA"]
-        },
-        {
-          description:
-            "Built Flask workflows for SOAP note generation and patient context storage using LangChain, Redis, and Celery.",
-          skills: ["Flask", "LangChain", "Redis", "Celery", "Python"]
-        }
-      ]
-    },
-    {
       company: "SideShift",
       href: "https://sideshift.app",
       badges: [],
       location: "New York, NY",
       title: "Software Engineer Contractor",
       logoUrl: sideshift,
-      start: "Apr 2026",
+      start: "",
       end: "May 2026",
       description:
         "Shipped Redis/TanStack Query caching cutting messaging DB load ~95%, built in-app contract signing, and rolled out Cursor-backed agent-assisted delivery across SideShift engineering.",
@@ -202,6 +178,31 @@ export const DATA = {
         }
       ]
     },
+    {
+      company: "UCSF Health",
+      href: "https://www.ucsfhealth.org/",
+      badges: [],
+      location: "San Francisco, CA",
+      title: "Software Engineer Intern",
+      logoUrl: ucsf,
+      start: "Apr 2026",
+      end: "May 2026",
+      description:
+        "Built Congruence, an agentic EHR system supporting therapist workflows and daily clinical operations.",
+      tasks: [
+        {
+          description:
+            "Built Congruence, an agentic EHR system supporting 20+ daily patients and orchestrating therapist workflows.",
+          skills: ["Python", "Clinical AI", "LangChain", "EHR", "HIPAA"]
+        },
+        {
+          description:
+            "Built Flask workflows for SOAP note generation and patient context storage using LangChain, Redis, and Celery.",
+          skills: ["Flask", "LangChain", "Redis", "Celery", "Python"]
+        }
+      ]
+    },
+    
     {
       company: "Handshake",
       href: "https://joinhandshake.com/ai",
