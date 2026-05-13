@@ -183,7 +183,7 @@ export const DATA = {
       start: "Apr 2026",
       end: "May 2026",
       description:
-        "Implemented Redis and TanStack Query caching for a production messaging system (~95% fewer DB reads/writes). Built an in-app contract platform so teams send agreements and collect signatures inside the product; SideShift engineering adopted Cursor for agent-assisted delivery.",
+        "Shipped Redis/TanStack Query caching cutting messaging DB load ~95%, built in-app contract signing, and rolled out Cursor-backed agent-assisted delivery across SideShift engineering.",
       tasks: [
         {
           description:
