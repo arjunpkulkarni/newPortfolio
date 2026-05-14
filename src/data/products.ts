@@ -39,7 +39,7 @@ import Culin2 from "../app/projects/pictures/culin/image2.png";
 import Culin3 from "../app/projects/pictures/culin/image3.png";
 import Culin4 from "../app/projects/pictures/culin/image4.png";
 import Culin5 from "../app/projects/pictures/culin/image5.png";
-import VmaxLogo from "../app/work/pictures/vmax.png";
+// import VmaxLogo from "../app/work/pictures/vmax.png";
 
 export type ProductTag = 
   | "Infra" 
@@ -275,6 +275,7 @@ export const PRODUCTS: Product[] = [
     date: "2024-08-15",
     isCurrentlyLive: true,
   },
+  /*
   {
     id: "vmax",
     slug: "vmax",
@@ -321,6 +322,7 @@ export const PRODUCTS: Product[] = [
     date: "2026-05-12",
     isCurrentlyLive: true,
   },
+  */
   // --- Archived products commented out ---
   /*
   {
