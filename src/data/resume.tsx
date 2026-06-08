@@ -152,7 +152,7 @@ export const DATA = {
   work: [
     {
       company: "Sisu (FitFo)",
-      href: "https://www.fitfo.app/",
+      href: "https://sisu.site/",
       badges: [],
       location: "Remote",
       title: "Founding Engineer",
