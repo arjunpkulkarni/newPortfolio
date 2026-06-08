@@ -33,6 +33,7 @@ import ieee from "../app/work/pictures/ieee.png";
 import intel from "../app/work/pictures/intel.jpg";
 import ucsf from "../app/work/pictures/ucsf.png";
 import sideshift from "../app/work/pictures/sideshift.jpeg";
+import sisu from "../app/work/pictures/sisu.png";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import fitcheckLogo from "../app/projects/pictures/logos/fitcheckLogo.png";
@@ -149,6 +150,30 @@ export const DATA = {
   },
 
   work: [
+    {
+      company: "Sisu (FitFo)",
+      href: "https://www.fitfo.app/",
+      badges: [],
+      location: "Remote",
+      title: "Founding Engineer",
+      logoUrl: sisu,
+      start: "Feb 2026",
+      end: "June 2026",
+      description:
+        "Founding engineer at Sisu; shipped FitFo v2 in 4 weeks and scaled the app to 5.8k+ active customers with 500+ active trials, growing week over week.",
+      tasks: [
+        {
+          description:
+            "Built and launched FitFo v2 in 4 weeks, redesigning core architecture, onboarding, and RevenueCat subscription systems.",
+          skills: ["Swift", "iOS", "RevenueCat", "Architecture"]
+        },
+        {
+          description:
+            "Scaled FitFo to 5,850+ active customers, 532 active trials, and 130 paid subscriptions ($765 MRR) by shipping features daily and iterating quickly.",
+          skills: ["Product", "Growth", "Subscriptions", "Mobile"]
+        }
+      ]
+    },
     {
       company: "SideShift",
       href: "https://sideshift.app",
