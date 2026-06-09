@@ -169,7 +169,7 @@ export const DATA = {
         },
         {
           description:
-            "Scaled FitFo to 5,850+ active customers, 532 active trials, and 130 paid subscriptions ($765 MRR) by shipping features daily and iterating quickly.",
+            "Scaled FitFo to 5,850+ active customers, 532 active trials, and 130 paid subscriptions by shipping features daily and iterating quickly.",
           skills: ["Product", "Growth", "Subscriptions", "Mobile"]
         }
       ]
