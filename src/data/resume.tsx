@@ -34,6 +34,7 @@ import intel from "../app/work/pictures/intel.jpg";
 import ucsf from "../app/work/pictures/ucsf.png";
 import sideshift from "../app/work/pictures/sideshift.jpeg";
 import sisu from "../app/work/pictures/sisu.png";
+import ibm from "../app/work/pictures/ibm.png";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import fitcheckLogo from "../app/projects/pictures/logos/fitcheckLogo.png";
@@ -150,6 +151,40 @@ export const DATA = {
   },
 
   work: [
+    {
+      company: "IBM",
+      href: "https://research.ibm.com/",
+      badges: [],
+      location: "IBM Thomas J. Watson Research Center",
+      title: "Applied AI Intern",
+      logoUrl: ibm,
+      start: "May 2026",
+      end: "",
+      description:
+        "Applied AI on IBM's Mellea platform — building reusable agent skills, workflow orchestration, and marketplace infrastructure for composable enterprise agentic apps.",
+      tasks: [
+        {
+          description:
+            "Building reusable AI workflows and skills with the Mellea Skills Compiler, enabling agents to compose multi-step tool-calling, planning, and execution chains into larger agentic applications.",
+          skills: ["Agentic AI", "LLM Systems", "Workflow Orchestration", "Python"]
+        },
+        {
+          description:
+            "Designing skill lifecycle infrastructure — publish, discover, version, evaluate, and deploy AI-native capabilities across models and agents, like a registry for composable agent skills.",
+          skills: ["AI Infrastructure", "API Design", "Distributed Systems", "TypeScript"]
+        },
+        {
+          description:
+            "Engineering backend services for skill execution and orchestration in Python and TypeScript, with microservice-style APIs that let agents invoke reusable capabilities across enterprise workflows.",
+          skills: ["Backend Engineering", "Microservices", "Python", "TypeScript"]
+        },
+        {
+          description:
+            "Running applied AI research on benchmarking, evaluation, and reliability for multi-agent systems — experiment design, performance testing, and human-AI interaction in enterprise settings.",
+          skills: ["Applied Research", "Evaluation Systems", "Enterprise AI", "Multi-agent Systems"]
+        }
+      ]
+    },
     {
       company: "Sisu (FitFo)",
       href: "https://sisu.site/",

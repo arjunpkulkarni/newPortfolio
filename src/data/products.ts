@@ -10,10 +10,10 @@ import Congruence from "../app/projects/pictures/congruence/congruence-logo.png"
 // import Siramai from "../app/projects/pictures/siramai.png";
 // import psych from "../app/projects/pictures/psych.png";
 // import OpenField from "../app/projects/pictures/openfield.png";
-// import Hanger from "../app/projects/pictures/hanger.png";
-// import Hanger2 from "../app/projects/pictures/hanger2.png";
-// import HangerPreview1 from "../app/projects/pictures/preview1.webp";
-// import HangerPreview2 from "../app/projects/pictures/preview2.webp";
+import Hanger from "../app/projects/pictures/hanger.png";
+import Hanger2 from "../app/projects/pictures/hanger2.png";
+import HangerPreview1 from "../app/projects/pictures/preview1.webp";
+import HangerPreview2 from "../app/projects/pictures/preview2.webp";
 // import LumeLabs from "../app/projects/pictures/lumelabs.png";
 // import AnvaraMarketplace from "../app/projects/pictures/anvara/marketplace.png";
 // import AnvaraCampaigns from "../app/projects/pictures/anvara/campaigns.png";
@@ -273,6 +273,162 @@ export const PRODUCTS: Product[] = [
     featured: true,
     impactScore: 95,
     date: "2024-08-15",
+    isCurrentlyLive: true,
+  },
+  {
+    id: "hanger",
+    slug: "hanger",
+    name: "Hanger",
+    oneLiner: "AI fashion discovery engine - 2K+ users, +40% CTR, 22% relevance gain vs $50M+ competitor via CLIP fine-tuning + hybrid retrieval.",
+    problem: "Fashion shoppers search by vibe ('winter formal but casual streetwear'), not keywords.\n\nTraditional systems fail:\n• Keyword matching misses semantic intent\n• Collaborative filtering can't handle cold-start\n• Daydream spent $50M+ but still couldn't replicate this",
+    solution: "Three technical optimizations beat their infrastructure:\n\n1. Better Representation\n• Fine-tuned CLIP on fashion data\n• Multi-vector embeddings per product\n• Attribute-aware layers (materials, seasonality, fit, occasion)\n\n2. Hybrid Retrieval\n• PostgreSQL → structured filters (price, size, inventory)\n• Pinecone → semantic search (HNSW indexing)\n• Merge + rerank for best results\n\n3. Context-Aware Reasoning\n• FastAPI agents reason across dimensions\n• Weather vs materials, occasion vs dress code\n• Budget + inventory constraints\n• Handles queries like 'cold NYC rooftop party under $200'",
+    impact: "Outcompeted $50M+ competitor with $500/month infrastructure:\n\n• 2K+ users\n• +40% CTR improvement\n• +28% conversion increase\n• +22% relevance vs baseline\n• 15% faster with sub-second latency\n• Production-ready in 3 months",
+    whyBuilt: "Frustrated by endless scrolling through keyword search that didn't understand style intent. Built Hanger to match how people actually think about fashion, by vibe, context, and aesthetic, not just product attributes. Wanted to prove you could beat well-funded competitors through smarter technical choices, not just scale.",
+    proof: [
+      { label: "Users", value: "2K+" },
+      { label: "CTR Gain", value: "+40%" },
+      { label: "Relevance ↑", value: "+22%" },
+      { label: "Latency ↓", value: "15%" },
+      { label: "Infra Cost", value: "$500/mo" },
+    ],
+    system: ["CLIP (Fine-tuned)", "FastAPI", "PostgreSQL", "Pinecone", "Redis", "Docker", "Vercel Edge"],
+    bullets: [
+      "Fine-tuned CLIP embeddings on fashion-specific data with multi-vector representations per product (materials, seasonality, fit, occasion) → 22% relevance improvement over baseline",
+      "Built hybrid retrieval pipeline: PostgreSQL structured filters (price, size, inventory) + Pinecone semantic search (HNSW indexing) + merge/rerank → 15% latency reduction, sub-second recommendations",
+      "Designed context-aware reasoning layer with FastAPI agents: reasons across weather vs materials, color palettes vs seasonality, occasion vs dress code, budget constraints → handles queries like 'cold NYC rooftop party under $200'",
+      "Optimized for lean production: cached embeddings, query batching, reduced vector dimensions with minimal accuracy loss → $500/month infrastructure vs Daydream's $50M+ spend",
+      "Deployed on Vercel Edge with Redis caching - handling 2K+ users with <100ms p50 latency across 1M+ product catalog",
+    ],
+    resumeBullets: [
+      "Built semantic fashion discovery engine serving 2K+ users with 40% CTR improvement and 28% conversion increase, outcompeting $50M+ funded competitor (Daydream) with $500/month infrastructure",
+      "Fine-tuned CLIP embeddings on fashion-specific data with attribute-aware layers (materials, seasonality, fit, occasion) achieving 22% relevance improvement over baseline collaborative filtering",
+      "Architected hybrid retrieval pipeline combining PostgreSQL structured filters + Pinecone semantic search (HNSW) + LLM reranking, reducing latency 15% with sub-second real-time recommendations",
+      "Designed context-aware reasoning layer using FastAPI agents to match semantic intent across dimensions (weather, occasion, budget, inventory), enabling queries like 'winter formal but casual streetwear vibe'",
+      "Deployed production-grade system in 3 months with cached embeddings, query batching, and optimized vector dimensions - achieving comparable quality to heavily funded competitor at 1/100th the cost",
+    ],
+    testimonials: [
+      {
+        quote: "Finally, a search that gets my style. I found pieces I'd never discover through normal browsing.",
+        author: "Emma Rodriguez",
+        role: "Early User, Fashion Designer"
+      }
+    ],
+    tags: ["Vector Search", "ML/Agents", "Product"],
+    type: "AI/ML",
+    status: "Archived",
+    domain: "Fashion",
+    links: {
+      demo: "https://www.hanger.live/",
+    },
+    image: Hanger2,
+    images: [Hanger2, HangerPreview1, HangerPreview2],
+    screenshots: [HangerPreview1, HangerPreview2],
+    technicalDeepDive: [
+      {
+        sectionTitle: "Ingestion + Catalog Pipeline",
+        intro: "We built Hanger's product catalog as a daily-refresh system that could ingest thousands of SKUs across retailers and keep availability + pricing current.",
+        subsections: [
+          {
+            title: "Retailer Scraping with Puppeteer",
+            body: "Used Puppeteer to crawl retailer category pages and product pages with normalized field extraction and per-retailer parsing modules so one site change didn't break the entire pipeline.",
+            bullets: [
+              "Extracted normalized fields: title, brand, price, sale_price, currency, images, sizes, color, material, category, product_url, retailer, SKU/variant IDs",
+              "Anti-breakage patterns: retry logic, exponential backoff, selector fallbacks",
+              "Per-retailer parsing modules isolated failures to individual crawlers",
+            ],
+          },
+          {
+            title: "Scraping at Scale",
+            bullets: [
+              "Distributed scrape jobs batched by retailer/category with controlled concurrency to avoid rate limits",
+              "Stored raw HTML snapshots + parsed payloads for debugging and diffing when retailers changed page structure",
+              "Predictable run durations with worker pool limiting and per-domain throttles",
+            ],
+          },
+          {
+            title: "Admin Interface + Cron-Controlled Refresh",
+            body: "Built an admin dashboard for full operational control over the ingestion pipeline.",
+            bullets: [
+              "Enable/disable retailers, categories, or individual crawlers on the fly",
+              "Set scrape frequency per crawler (e.g., 1×/day or more for fast-moving inventory)",
+              "Trigger manual re-runs and view job health: success %, failures, last run, duration",
+              "Upserts on each run; missing items marked 'inactive' instead of hard-deleted for churn tracking + recovery",
+            ],
+          },
+          {
+            title: "Embeddings + Vector Indexing (CLIP + Pinecone)",
+            body: "For every product we precomputed embeddings at ingestion time so nothing ran on the user query path.",
+            bullets: [
+              "Generated CLIP image embedding + text embedding per product at ingestion",
+              "Stored in Pinecone: vector = CLIP embedding, metadata = retailer, price range, category, size availability, gender, color",
+              "Precomputing kept search fast and latency predictable  -  no embedding generation at query time",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Search Agent",
+        intro: "Goal: 'show me items like this' and 'find me a [style] outfit'  -  fast, relevant, and filterable.",
+        subsections: [
+          {
+            title: "Query → Retrieval → Rerank",
+            bullets: [
+              "Parse intent + constraints from user query (e.g. 'black mini dress under $120' → color=black, category=dress, price<120)",
+              "Retrieve candidates from Pinecone via semantic vector search (CLIP text embedding of query, or image embedding for inspo images) + hard metadata filters (price, retailer, category, in-stock sizes)",
+              "Re-rank with blended score: vector similarity distance + inventory confidence (in-stock at last refresh) + preference boosts (brands saved, liked styles)",
+              "Return paginated results with stable sorting so items don't shuffle between pages",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Recommendation Engine",
+        intro: "A personalization loop built on implicit + explicit signals, continuously updating a per-user preference profile.",
+        subsections: [
+          {
+            title: "Signals",
+            bullets: [
+              "Implicit: clicks, dwell time, add-to-collection, 'more like this'",
+              "Explicit: likes/dislikes, brands to follow/avoid, price comfort range, preferred categories",
+            ],
+          },
+          {
+            title: "Recommendation Flow",
+            bullets: [
+              "Maintain a user preference profile: embedding centroid from liked items, negative centroid from disliked items, structured constraints (price, categories)",
+              "Periodically query Pinecone with the user's preference embedding + apply metadata filters",
+              "Diversify results using clustering + similarity thresholds to avoid 20 near-identical black tops",
+              "Delivered as: 'For You' feed, 'Because you liked X', 'New in your style' (items scraped in last 24h prioritized)",
+            ],
+          },
+        ],
+      },
+      {
+        sectionTitle: "Frontend Architecture",
+        intro: "A React search + feed UI built for stability on a large, constantly-changing catalog.",
+        subsections: [
+          {
+            title: "React + Server-Driven Pagination",
+            bullets: [
+              "Consistent product card component + skeleton loaders across all views",
+              "Cursor-based pagination preferred over offset  -  prevents duplicates when inventory changes mid-scroll",
+              "API returns items + nextCursor; frontend requests next page on scroll or 'Load more'",
+              "Cached results per query so back/forward navigation is instant",
+              "Debounced query input to avoid firing on every keystroke",
+              "Optimistic UI for likes/saves with rollback on failure",
+              "Search filters wired directly to backend metadata filters  -  no expensive client-side re-processing",
+            ],
+          },
+          {
+            title: "Why This Mattered",
+            body: "The catalog is large and constantly changing  -  stock and pricing update daily. Stable pagination + caching + consistent ranking prevented duplicated items across pages, missing items when new inventory ingests mid-scroll, and jarring reshuffles when toggling filters.",
+          },
+        ],
+      },
+    ],
+    featured: true,
+    impactScore: 94,
+    date: "2024-07-15",
     isCurrentlyLive: true,
   },
   /*
@@ -725,166 +881,10 @@ export const PRODUCTS: Product[] = [
     isCurrentlyLive: false,
   },
   {
-    id: "hanger",
-    slug: "hanger",
-    name: "Hanger",
-    oneLiner: "AI fashion discovery engine - 2K+ users, +40% CTR, 22% relevance gain vs $50M+ competitor via CLIP fine-tuning + hybrid retrieval.",
-    problem: "Fashion shoppers search by vibe ('winter formal but casual streetwear'), not keywords.\n\nTraditional systems fail:\n• Keyword matching misses semantic intent\n• Collaborative filtering can't handle cold-start\n• Daydream spent $50M+ but still couldn't solve this",
-    solution: "Three technical optimizations beat their infrastructure:\n\n1. Better Representation\n• Fine-tuned CLIP on fashion data\n• Multi-vector embeddings per product\n• Attribute-aware layers (materials, seasonality, fit, occasion)\n\n2. Hybrid Retrieval\n• PostgreSQL → structured filters (price, size, inventory)\n• Pinecone → semantic search (HNSW indexing)\n• Merge + rerank for best results\n\n3. Context-Aware Reasoning\n• FastAPI agents reason across dimensions\n• Weather vs materials, occasion vs dress code\n• Budget + inventory constraints\n• Handles queries like 'cold NYC rooftop party under $200'",
-    impact: "Outcompeted $50M+ competitor with $500/month infrastructure:\n\n• 2K+ users\n• +40% CTR improvement\n• +28% conversion increase\n• +22% relevance vs baseline\n• 15% faster with sub-second latency\n• Production-ready in 3 months",
-    whyBuilt: "Frustrated by endless scrolling through keyword search that didn't understand style intent. Built Hanger to match how people actually think about fashion, by vibe, context, and aesthetic, not just product attributes. Wanted to prove you could beat well-funded competitors through smarter technical choices, not just scale.",
-    proof: [
-      { label: "Users", value: "2K+" },
-      { label: "CTR Gain", value: "+40%" },
-      { label: "Relevance ↑", value: "+22%" },
-      { label: "Latency ↓", value: "15%" },
-      { label: "Infra Cost", value: "$500/mo" },
-    ],
-    system: ["CLIP (Fine-tuned)", "FastAPI", "PostgreSQL", "Pinecone", "Redis", "Docker", "Vercel Edge"],
-    bullets: [
-      "Fine-tuned CLIP embeddings on fashion-specific data with multi-vector representations per product (materials, seasonality, fit, occasion) → 22% relevance improvement over baseline",
-      "Built hybrid retrieval pipeline: PostgreSQL structured filters (price, size, inventory) + Pinecone semantic search (HNSW indexing) + merge/rerank → 15% latency reduction, sub-second recommendations",
-      "Designed context-aware reasoning layer with FastAPI agents: reasons across weather vs materials, color palettes vs seasonality, occasion vs dress code, budget constraints → handles queries like 'cold NYC rooftop party under $200'",
-      "Optimized for lean production: cached embeddings, query batching, reduced vector dimensions with minimal accuracy loss → $500/month infrastructure vs Daydream's $50M+ spend",
-      "Deployed on Vercel Edge with Redis caching - handling 2K+ users with <100ms p50 latency across 1M+ product catalog",
-    ],
-    resumeBullets: [
-      "Built semantic fashion discovery engine serving 2K+ users with 40% CTR improvement and 28% conversion increase, outcompeting $50M+ funded competitor (Daydream) with $500/month infrastructure",
-      "Fine-tuned CLIP embeddings on fashion-specific data with attribute-aware layers (materials, seasonality, fit, occasion) achieving 22% relevance improvement over baseline collaborative filtering",
-      "Architected hybrid retrieval pipeline combining PostgreSQL structured filters + Pinecone semantic search (HNSW) + LLM reranking, reducing latency 15% with sub-second real-time recommendations",
-      "Designed context-aware reasoning layer using FastAPI agents to match semantic intent across dimensions (weather, occasion, budget, inventory), enabling queries like 'winter formal but casual streetwear vibe'",
-      "Deployed production-grade system in 3 months with cached embeddings, query batching, and optimized vector dimensions - achieving comparable quality to heavily funded competitor at 1/100th the cost",
-    ],
-    testimonials: [
-      {
-        quote: "Finally, a search that gets my style. I found pieces I'd never discover through normal browsing.",
-        author: "Emma Rodriguez",
-        role: "Early User, Fashion Designer"
-      }
-    ],
-    tags: ["Vector Search", "ML/Agents", "Product"],
-    type: "AI/ML",
-    status: "Archived",
-    domain: "Fashion",
-    links: {
-      demo: "https://www.hanger.live/",
-    },
-    image: Hanger2,
-    images: [Hanger2, HangerPreview1, HangerPreview2],
-    screenshots: [HangerPreview1, HangerPreview2],
-    technicalDeepDive: [
-      {
-        sectionTitle: "Ingestion + Catalog Pipeline",
-        intro: "We built Hanger's product catalog as a daily-refresh system that could ingest thousands of SKUs across retailers and keep availability + pricing current.",
-        subsections: [
-          {
-            title: "Retailer Scraping with Puppeteer",
-            body: "Used Puppeteer to crawl retailer category pages and product pages with normalized field extraction and per-retailer parsing modules so one site change didn't break the entire pipeline.",
-            bullets: [
-              "Extracted normalized fields: title, brand, price, sale_price, currency, images, sizes, color, material, category, product_url, retailer, SKU/variant IDs",
-              "Anti-breakage patterns: retry logic, exponential backoff, selector fallbacks",
-              "Per-retailer parsing modules isolated failures to individual crawlers",
-            ],
-          },
-          {
-            title: "Scraping at Scale",
-            bullets: [
-              "Distributed scrape jobs batched by retailer/category with controlled concurrency to avoid rate limits",
-              "Stored raw HTML snapshots + parsed payloads for debugging and diffing when retailers changed page structure",
-              "Predictable run durations with worker pool limiting and per-domain throttles",
-            ],
-          },
-          {
-            title: "Admin Interface + Cron-Controlled Refresh",
-            body: "Built an admin dashboard for full operational control over the ingestion pipeline.",
-            bullets: [
-              "Enable/disable retailers, categories, or individual crawlers on the fly",
-              "Set scrape frequency per crawler (e.g., 1×/day or more for fast-moving inventory)",
-              "Trigger manual re-runs and view job health: success %, failures, last run, duration",
-              "Upserts on each run; missing items marked 'inactive' instead of hard-deleted for churn tracking + recovery",
-            ],
-          },
-          {
-            title: "Embeddings + Vector Indexing (CLIP + Pinecone)",
-            body: "For every product we precomputed embeddings at ingestion time so nothing ran on the user query path.",
-            bullets: [
-              "Generated CLIP image embedding + text embedding per product at ingestion",
-              "Stored in Pinecone: vector = CLIP embedding, metadata = retailer, price range, category, size availability, gender, color",
-              "Precomputing kept search fast and latency predictable  -  no embedding generation at query time",
-            ],
-          },
-        ],
-      },
-      {
-        sectionTitle: "Search Agent",
-        intro: "Goal: 'show me items like this' and 'find me a [style] outfit'  -  fast, relevant, and filterable.",
-        subsections: [
-          {
-            title: "Query → Retrieval → Rerank",
-            bullets: [
-              "Parse intent + constraints from user query (e.g. 'black mini dress under $120' → color=black, category=dress, price<120)",
-              "Retrieve candidates from Pinecone via semantic vector search (CLIP text embedding of query, or image embedding for inspo images) + hard metadata filters (price, retailer, category, in-stock sizes)",
-              "Re-rank with blended score: vector similarity distance + inventory confidence (in-stock at last refresh) + preference boosts (brands saved, liked styles)",
-              "Return paginated results with stable sorting so items don't shuffle between pages",
-            ],
-          },
-        ],
-      },
-      {
-        sectionTitle: "Recommendation Engine",
-        intro: "A personalization loop built on implicit + explicit signals, continuously updating a per-user preference profile.",
-        subsections: [
-          {
-            title: "Signals",
-            bullets: [
-              "Implicit: clicks, dwell time, add-to-collection, 'more like this'",
-              "Explicit: likes/dislikes, brands to follow/avoid, price comfort range, preferred categories",
-            ],
-          },
-          {
-            title: "Recommendation Flow",
-            bullets: [
-              "Maintain a user preference profile: embedding centroid from liked items, negative centroid from disliked items, structured constraints (price, categories)",
-              "Periodically query Pinecone with the user's preference embedding + apply metadata filters",
-              "Diversify results using clustering + similarity thresholds to avoid 20 near-identical black tops",
-              "Delivered as: 'For You' feed, 'Because you liked X', 'New in your style' (items scraped in last 24h prioritized)",
-            ],
-          },
-        ],
-      },
-      {
-        sectionTitle: "Frontend Architecture",
-        intro: "A React search + feed UI built for stability on a large, constantly-changing catalog.",
-        subsections: [
-          {
-            title: "React + Server-Driven Pagination",
-            bullets: [
-              "Consistent product card component + skeleton loaders across all views",
-              "Cursor-based pagination preferred over offset  -  prevents duplicates when inventory changes mid-scroll",
-              "API returns items + nextCursor; frontend requests next page on scroll or 'Load more'",
-              "Cached results per query so back/forward navigation is instant",
-              "Debounced query input to avoid firing on every keystroke",
-              "Optimistic UI for likes/saves with rollback on failure",
-              "Search filters wired directly to backend metadata filters  -  no expensive client-side re-processing",
-            ],
-          },
-          {
-            title: "Why This Mattered",
-            body: "The catalog is large and constantly changing  -  stock and pricing update daily. Stable pagination + caching + consistent ranking prevented duplicated items across pages, missing items when new inventory arrived mid-scroll, and jarring reshuffles when toggling filters.",
-          },
-        ],
-      },
-    ],
-    featured: true,
-    impactScore: 94,
-    date: "2024-07-15",
-    isCurrentlyLive: true,
-  },
-  {
     id: "district-four",
     slug: "district-four",
     name: "District Four",
-    oneLiner: "AI-powered lead gen agency - $2K MRR, 62K+ prospects processed, 8.2% response rate (4x industry avg).",
+    oneLiner: "AI-powered lead gen agency- $2K MRR, 62K+ prospects processed, 8.2% response rate (4x industry avg).",
     proof: [
       { label: "MRR", value: "$2K" },
       { label: "Prospects", value: "62K+" },
