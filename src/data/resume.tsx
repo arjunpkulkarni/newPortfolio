@@ -161,7 +161,7 @@ export const DATA = {
       start: "May 2026",
       end: "",
       description:
-        "Applied AI on IBM's Mellea platform — building reusable agent skills, workflow orchestration, and marketplace infrastructure for composable enterprise agentic apps.",
+        "Applied AI on IBM's Mellea platform, building reusable agent skills, workflow orchestration, and marketplace infrastructure for composable enterprise agentic apps.",
       tasks: [
         {
           description:
@@ -170,7 +170,7 @@ export const DATA = {
         },
         {
           description:
-            "Designing skill lifecycle infrastructure — publish, discover, version, evaluate, and deploy AI-native capabilities across models and agents, like a registry for composable agent skills.",
+            "Designing skill lifecycle infrastructure to publish, discover, version, evaluate, and deploy AI-native capabilities across models and agents, like a registry for composable agent skills.",
           skills: ["AI Infrastructure", "API Design", "Distributed Systems", "TypeScript"]
         },
         {
@@ -180,7 +180,7 @@ export const DATA = {
         },
         {
           description:
-            "Running applied AI research on benchmarking, evaluation, and reliability for multi-agent systems — experiment design, performance testing, and human-AI interaction in enterprise settings.",
+            "Running applied AI research on benchmarking, evaluation, and reliability for multi-agent systems, including experiment design, performance testing, and human-AI interaction in enterprise settings.",
           skills: ["Applied Research", "Evaluation Systems", "Enterprise AI", "Multi-agent Systems"]
         }
       ]
@@ -303,14 +303,14 @@ export const DATA = {
       start: "Oct 2025",
       end: "Jan 2026",
       description:
-        "Building core mobile features for Rumor's 50k+ user event‑hosting platform.",
+        "Building core mobile features for Rumor's 50k+ user event-hosting platform.",
       tasks: [
         {
           description: "Built and shipped core React Native features (guest lists, RSVPs, creator discovery) used by 50k+ users, improving mobile performance by 30% through optimized rendering.",
           skills: ["React Native", "TypeScript", "Redux", "React Navigation"]
         },
         {
-          description: "Developed scalable Node.js backend APIs for high‑volume event workflows, reducing user drop‑off during event flow by 25% with improved validation and error handling.",
+          description: "Developed scalable Node.js backend APIs for high-volume event workflows, reducing user drop-off during event flow by 25% with improved validation and error handling.",
           skills: ["Node.js", "Express", "PostgreSQL", "TypeScript"]
         },
         {
@@ -333,7 +333,7 @@ export const DATA = {
       start: "Jan 2025",
       end: "Aug 2025",
       description:
-        "Built clinical‑grade AI dietician platform serving 200+ patients with RAG pipeline and agentic workflows.",
+        "Built clinical-grade AI dietician platform serving 200+ patients with RAG pipeline and agentic workflows.",
       tasks: [
         {
           description: "Built clinical AI nutrition platform serving 200+ patients with subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
@@ -363,7 +363,7 @@ export const DATA = {
       start: "Jan 2024",
       end: "Dec 2025",
       description:
-        "First founding engineer; built agentic e‑commerce OS and no‑code framework used by 4+ enterprise clients.",
+        "First founding engineer; built agentic e-commerce OS and no-code framework used by 4+ enterprise clients.",
       tasks: [
         {
           description: "Built TypeScript backend (Bun + Hono + Postgres) with unified data layer, multi-tenant model with gateway-enforced tenantId, and source-native JSONB storage.",
@@ -436,11 +436,11 @@ export const DATA = {
         "Optimizing quantum material energy with carbon nanotubes, building on ionic Coulomb drag principles for nanofluidic semiconductor channels (Nano Energy, 2023; doi:10.1016/j.nanoen.2023.108860).",
       tasks: [
         {
-          description: "Modeled ion–electron Coulomb drag coupling to predict open‑circuit voltage and short‑circuit current in Si nanochannels.",
+          description: "Modeled ion-electron Coulomb drag coupling to predict open-circuit voltage and short-circuit current in Si nanochannels.",
           skills: ["Nanofluidics", "Coulomb Drag", "Device Physics"]
         },
         {
-          description: "Designed CNT‑integrated channel architectures targeting higher momentum transfer and energy harvesting efficiency.",
+          description: "Designed CNT-integrated channel architectures targeting higher momentum transfer and energy harvesting efficiency.",
           skills: ["Python", "COMSOL", "MATLAB"]
         }
       ]
@@ -477,14 +477,14 @@ export const DATA = {
       start: "Feb 2025",
       end: "Apr 2025",
       description:
-        "Built real‑time React + Flask platform for multi‑user LLM interaction research (40+ study subjects).",
+        "Built real-time React + Flask platform for multi-user LLM interaction research (40+ study subjects).",
       tasks: [
         {
-          description: "Built real‑time React + Flask platform for multi‑user LLM interaction research (40+ study subjects).",
+          description: "Built real-time React + Flask platform for multi-user LLM interaction research (40+ study subjects).",
           skills: ["React", "Flask", "WebSockets", "LLM"]
         },
         {
-          description: "Ensured zero‑loss message reliability via WebSockets + analytics logging for human–AI interaction experiments.",
+          description: "Ensured zero-loss message reliability via WebSockets + analytics logging for human-AI interaction experiments.",
           skills: ["WebSockets", "React", "Flask", "PostgreSQL"]
         }
       ]
@@ -499,14 +499,14 @@ export const DATA = {
       start: "Jan 2024",
       end: "Jan 2025",
       description:
-        "Integrated RL agent into MPC framework for autonomous EV routing  -  18% lower traffic delay in open‑world simulations.",
+        "Integrated RL agent into MPC framework for autonomous EV routing, achieving 18% lower traffic delay in open-world simulations.",
       tasks: [
         {
           description: "Integrated RL agent into MPC framework for autonomous EV routing in SUMO → improved control accuracy 25%.",
           skills: ["MPC", "RL", "SUMO", "Python"]
         },
         {
-          description: "Achieved 18% lower traffic delay in open‑world simulations using ROS, C++, Python.",
+          description: "Achieved 18% lower traffic delay in open-world simulations using ROS, C++, Python.",
           skills: ["ROS", "C++", "Python", "SUMO"]
         }
       ]
@@ -521,7 +521,7 @@ export const DATA = {
       start: "Jan 2024",
       end: "May 2024",
       description:
-        "Developed sustainable concrete mixture using ML to predict durability  -  reduced carbon emissions by 10%.",
+        "Developed sustainable concrete mixture using ML to predict durability and reduced carbon emissions by 10%.",
       tasks: [
         {
           description: "Analyzed experimental data and developed new concrete mixture by reducing clinker in cement.",
