@@ -10,7 +10,7 @@ import Congruence from "../app/projects/pictures/congruence/congruence-logo.png"
 // import Siramai from "../app/projects/pictures/siramai.png";
 // import psych from "../app/projects/pictures/psych.png";
 // import OpenField from "../app/projects/pictures/openfield.png";
-import Hanger from "../app/projects/pictures/hanger.png";
+import HangerLogo from "../app/work/pictures/hanger.png";
 import Hanger2 from "../app/projects/pictures/hanger2.png";
 import HangerPreview1 from "../app/projects/pictures/preview1.webp";
 import HangerPreview2 from "../app/projects/pictures/preview2.webp";
@@ -320,7 +320,7 @@ export const PRODUCTS: Product[] = [
     links: {
       demo: "https://www.hanger.live/",
     },
-    image: Hanger2,
+    image: HangerLogo,
     images: [Hanger2, HangerPreview1, HangerPreview2],
     screenshots: [HangerPreview1, HangerPreview2],
     technicalDeepDive: [
