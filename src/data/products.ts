@@ -14,6 +14,9 @@ import HangerLogo from "../app/work/pictures/hanger.png";
 import Hanger2 from "../app/projects/pictures/hanger2.png";
 import HangerPreview1 from "../app/projects/pictures/preview1.webp";
 import HangerPreview2 from "../app/projects/pictures/preview2.webp";
+import HangerChat from "../app/projects/pictures/hanger/chat.jpg";
+import HangerDiscovery from "../app/projects/pictures/hanger/discovery.jpg";
+import HangerVisual from "../app/projects/pictures/hanger/visual.jpg";
 // import LumeLabs from "../app/projects/pictures/lumelabs.png";
 // import AnvaraMarketplace from "../app/projects/pictures/anvara/marketplace.png";
 // import AnvaraCampaigns from "../app/projects/pictures/anvara/campaigns.png";
@@ -321,8 +324,13 @@ export const PRODUCTS: Product[] = [
       demo: "https://www.hanger.live/",
     },
     image: HangerLogo,
-    images: [Hanger2, HangerPreview1, HangerPreview2],
-    screenshots: [HangerPreview1, HangerPreview2],
+    images: [HangerDiscovery, HangerChat, HangerVisual],
+    screenshots: [HangerDiscovery, HangerChat, HangerVisual],
+    screenshotDescriptions: [
+      "Discovery feed - semantic, vibe-based browsing across a live multi-retailer catalog",
+      "Chat agent - natural-language styling that reasons across occasion, weather, and budget",
+      "Visual search - find pieces from an inspo image via CLIP image embeddings",
+    ],
     technicalDeepDive: [
       {
         sectionTitle: "Ingestion + Catalog Pipeline",

@@ -41,6 +41,7 @@ import paretoHoldings from "../app/work/pictures/venture-capital/paretoHoldings.
 import pearVC from "../app/work/pictures/venture-capital/pearVC.png";
 import zFellows from "../app/work/pictures/venture-capital/zFellows.png";
 import collectiveGlobal from "../app/work/pictures/venture-capital/collectiveGlobal.png";
+import coryLevy from "../app/work/pictures/venture-capital/coryLevy.jpg";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import fitcheckLogo from "../app/projects/pictures/logos/fitcheckLogo.png";
@@ -172,7 +173,7 @@ export const DATA = {
         { name: "Pareto Holdings", logoUrl: paretoHoldings },
         { name: "Pear VC", logoUrl: pearVC, href: "https://pear.vc/" },
         { name: "Z Fellows", logoUrl: zFellows, href: "https://www.zfellows.com/" },
-        { name: "Cory Levy" },
+        { name: "Cory Levy", logoUrl: coryLevy, href: "https://www.corylevy.com/" },
         { name: "Collective Global", logoUrl: collectiveGlobal },
       ],
       tasks: [
@@ -743,6 +744,66 @@ export const DATA = {
       end: "",
       description:
         "Strategic investor supporting Curator's multi-tenant business operations platform and agentic e-commerce technology.",
+    },
+    {
+      company: "Pareto Holdings",
+      href: "https://www.pareto.holdings/",
+      badges: ["Investor"],
+      location: "",
+      title: "Investor in Brekfuz",
+      logoUrl: paretoHoldings,
+      start: "",
+      end: "",
+      description:
+        "Investor backing Brekfuz's infrastructure for institutional intelligence.",
+    },
+    {
+      company: "Pear VC",
+      href: "https://pear.vc/",
+      badges: ["Investor"],
+      location: "",
+      title: "Investor in Brekfuz",
+      logoUrl: pearVC,
+      start: "",
+      end: "",
+      description:
+        "Early-stage venture firm backing Brekfuz's retrieval, observability, and agent-access layer.",
+    },
+    {
+      company: "Cory Levy",
+      href: "https://www.corylevy.com/",
+      badges: ["Investor"],
+      location: "",
+      title: "Investor in Brekfuz",
+      logoUrl: coryLevy,
+      start: "",
+      end: "",
+      description:
+        "Angel investor and founder of Z Fellows, backing Brekfuz.",
+    },
+    {
+      company: "Z Fellows",
+      href: "https://www.zfellows.com/",
+      badges: ["Investor"],
+      location: "",
+      title: "Investor in Brekfuz",
+      logoUrl: zFellows,
+      start: "",
+      end: "",
+      description:
+        "Fellowship and investor program backing Brekfuz.",
+    },
+    {
+      company: "Collective Global",
+      href: "https://www.collective.global/",
+      badges: ["Investor"],
+      location: "",
+      title: "Investor in Brekfuz",
+      logoUrl: collectiveGlobal,
+      start: "",
+      end: "",
+      description:
+        "Investor supporting Brekfuz's build-out of institutional intelligence infrastructure.",
     },
   ],
   education: [

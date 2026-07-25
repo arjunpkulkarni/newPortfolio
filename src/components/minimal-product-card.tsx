@@ -12,9 +12,6 @@ interface MinimalProductCardProps {
 }
 
 export function MinimalProductCard({ product, index }: MinimalProductCardProps) {
-  const isActive = product.status === "Live";
-  const isPilot = product.status === "Pilot";
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -48,33 +45,10 @@ export function MinimalProductCard({ product, index }: MinimalProductCardProps) 
             <div className="p-6 flex flex-col h-full">
               {/* Header */}
               <div className="space-y-1.5 mb-3">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex items-center gap-2.5">
-                    <h3 className="text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">
-                      {product.name}
-                    </h3>
-                  </div>
-                  <div className="flex flex-shrink-0">
-                    {isActive && (
-                      <div className="flex items-center gap-2 rounded-full bg-green-500/10 px-3 py-1 border border-green-500/20">
-                        <span className="relative flex h-2 w-2">
-                          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
-                          <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
-                        </span>
-                        <span className="text-xs font-medium text-green-600 dark:text-green-400">Active</span>
-                      </div>
-                    )}
-                    {isPilot && (
-                      <div className="flex items-center gap-2 rounded-full border border-amber-500/25 bg-amber-500/10 px-3 py-1">
-                        <span className="relative flex h-2 w-2">
-                          <span className="relative inline-flex h-2 w-2 rounded-full bg-amber-500"></span>
-                        </span>
-                        <span className="text-xs font-medium text-amber-700 dark:text-amber-400">
-                          Pilot
-                        </span>
-                      </div>
-                    )}
-                  </div>
+                <div className="flex items-center gap-2.5">
+                  <h3 className="text-lg font-semibold tracking-tight group-hover:text-primary transition-colors">
+                    {product.name}
+                  </h3>
                 </div>
                 <p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">
                   {product.oneLiner}
