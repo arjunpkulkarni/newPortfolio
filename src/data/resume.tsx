@@ -34,7 +34,9 @@ import intel from "../app/work/pictures/intel.jpg";
 import ucsf from "../app/work/pictures/ucsf.png";
 import sideshift from "../app/work/pictures/sideshift.jpeg";
 import sisu from "../app/work/pictures/sisu.png";
+import fitfoLogo from "../app/projects/pictures/fitfo/fitfo-logo-dark.png";
 import ibm from "../app/work/pictures/ibm.png";
+import brekfuz from "../app/work/pictures/brekfuz.png";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import fitcheckLogo from "../app/projects/pictures/logos/fitcheckLogo.png";
@@ -152,50 +154,74 @@ export const DATA = {
 
   work: [
     {
-      company: "IBM",
-      href: "https://research.ibm.com/",
-      badges: [],
-      location: "IBM Thomas J. Watson Research Center",
-      title: "Applied AI Intern",
-      logoUrl: ibm,
-      start: "May 2026",
-      end: "",
+      company: "Brekfuz",
+      href: "https://brekfuz.com/",
+      badges: ["Backed by Pear VC"],
+      location: "New York, NY",
+      title: "Head of Engineering",
+      logoUrl: brekfuz,
+      start: "Aug 2026",
+      end: "Present",
       description:
-        "Applied AI on IBM's Mellea platform, building reusable agent skills, workflow orchestration, and marketplace infrastructure for composable enterprise agentic apps.",
+        "Head of Engineering at Brekfuz, building infrastructure for institutional intelligence - the retrieval, observability, and agent-access layer that makes an entire organization legible. Backed by Pareto Holdings, Pear VC, Cory Levy, Z Fellows, and Collective Global.",
       tasks: [
         {
           description:
-            "Building reusable AI workflows and skills with the Mellea Skills Compiler, enabling agents to compose multi-step tool-calling, planning, and execution chains into larger agentic applications.",
-          skills: ["Agentic AI", "LLM Systems", "Workflow Orchestration", "Python"]
+            "Built the extraction engine that answers from what a company already knows and routes unwritten questions to the person who holds the answer, capturing it so no one has to ask twice.",
+          skills: ["Go", "RAG", "Retrieval", "Vector Search", "Distributed Systems"]
         },
         {
           description:
-            "Designing skill lifecycle infrastructure to publish, discover, version, evaluate, and deploy AI-native capabilities across models and agents, like a registry for composable agent skills.",
-          skills: ["AI Infrastructure", "API Design", "Distributed Systems", "TypeScript"]
+            "Built the observability layer that reads org knowledge like a balance sheet - surfacing single points of failure, question surges, and where senior hours go, measured from live traffic.",
+          skills: ["Go", "PostgreSQL", "Event-Driven Architecture", "Analytics"]
         },
         {
           description:
-            "Engineering backend services for skill execution and orchestration in Python and TypeScript, with microservice-style APIs that let agents invoke reusable capabilities across enterprise workflows.",
-          skills: ["Backend Engineering", "Microservices", "Python", "TypeScript"]
+            "Designed an MCP endpoint that lets any agent query company knowledge under the same ACLs as people - permission-checked, source-attributed, and fully audit-logged.",
+          skills: ["MCP", "Go", "Access Control", "Agentic AI"]
         },
         {
           description:
-            "Running applied AI research on benchmarking, evaluation, and reliability for multi-agent systems, including experiment design, performance testing, and human-AI interaction in enterprise settings.",
-          skills: ["Applied Research", "Evaluation Systems", "Enterprise AI", "Multi-agent Systems"]
+            "Built permission-aware, zero-retention infrastructure with per-tenant isolation, fail-closed source ACLs, SSO/SCIM sync, and an append-only audit log (SOC 2 Type II in progress).",
+          skills: ["Terraform", "Security", "SSO / SCIM", "TLS 1.3", "AES-256", "Multi-tenancy"]
         }
       ]
     },
     {
-      company: "Sisu (FitFo)",
-      href: "https://sisu.site/",
+      company: "IBM",
+      href: "https://research.ibm.com/",
       badges: [],
+      location: "Thomas J. Watson Research Center",
+      title: "Applied AI Research",
+      logoUrl: ibm,
+      start: "June 2026",
+      end: "Aug 2026",
+      description:
+        "Applied AI research under Dr. Kush R. Varshney, IBM Fellow, on agentic workflows and composable skills with the Mellea Skills Compiler.",
+      tasks: [
+        {
+          description:
+            "Conducting AI research under Dr. Kush R. Varshney, IBM Fellow, on workflows for agentic systems.",
+          skills: ["Agentic AI", "Applied Research", "Workflow Orchestration", "Enterprise AI"]
+        },
+        {
+          description:
+            "Building composable AI skills with Mellea Skills Compiler to accelerate reliable agentic application development.",
+          skills: ["Mellea", "AI Skills", "LLM Systems", "Python", "TypeScript"]
+        }
+      ]
+    },
+    {
+      company: "Sisu",
+      href: "https://sisu.site/",
+      badges: ["Incubator"],
       location: "Remote",
       title: "Founding Engineer",
       logoUrl: sisu,
       start: "Feb 2026",
       end: "June 2026",
       description:
-        "Founding engineer at Sisu; shipped FitFo v2 in 4 weeks and scaled the app to 5.8k+ active customers with 500+ active trials, growing week over week.",
+        "Founding engineer in the Sisu incubator, building and shipping products from zero to launch.",
       tasks: [
         {
           description:
@@ -204,8 +230,32 @@ export const DATA = {
         },
         {
           description:
-            "Scaled FitFo to 5,850+ active customers, 532 active trials, and 130 paid subscriptions by shipping features daily and iterating quickly.",
+            "Scaled FitFo to 5,850+ active customers and 532 active trials by shipping features daily and iterating quickly.",
           skills: ["Product", "Growth", "Subscriptions", "Mobile"]
+        }
+      ]
+    },
+    {
+      company: "FitFo",
+      href: "https://www.fitfo.app/",
+      badges: [],
+      location: "New York, NY",
+      title: "Head of Engineering",
+      logoUrl: fitfoLogo,
+      start: "Feb 2026",
+      end: "June 2026",
+      description:
+        "Head of Engineering at FitFo; shipped an agentic platform for coaches and raised $500K from strategic investors.",
+      tasks: [
+        {
+          description:
+            "Shipped agentic platform for coaches with Flask, DigitalOcean, and TypeScript, reaching 27K users and $200K ARR.",
+          skills: ["Flask", "DigitalOcean", "TypeScript", "Agentic AI", "Product"]
+        },
+        {
+          description:
+            "Raised $500K from Airbnb's CMO, Credit Acceptance's CEO, and an a16z angel investor.",
+          skills: ["Fundraising", "Leadership", "Go-to-Market", "Product"]
         }
       ]
     },
