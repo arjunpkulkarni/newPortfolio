@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { BackedBy, type Investor } from "@/components/backed-by";
 
 interface Role {
   title: string;
@@ -28,6 +29,7 @@ interface PromotionCardProps {
   href?: string;
   badges?: readonly string[];
   roles: Role[];
+  backedBy?: readonly Investor[];
   titleClassName?: string;
   cardClassName?: string;
 }
@@ -71,6 +73,7 @@ export const PromotionCard = ({
   href,
   badges,
   roles,
+  backedBy,
   titleClassName,
   cardClassName,
 }: PromotionCardProps) => {
@@ -222,6 +225,14 @@ export const PromotionCard = ({
             )}
           </React.Fragment>
         ))}
+
+        {backedBy && backedBy.length > 0 && (
+          <CardContent className="pt-0 pb-4">
+            <div className="border-t pt-3">
+              <BackedBy investors={backedBy} />
+            </div>
+          </CardContent>
+        )}
       </Card>
     </div>
   );

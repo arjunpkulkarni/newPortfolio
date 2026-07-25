@@ -37,6 +37,10 @@ import sisu from "../app/work/pictures/sisu.png";
 import fitfoLogo from "../app/projects/pictures/fitfo/fitfo-logo-dark.png";
 import ibm from "../app/work/pictures/ibm.png";
 import brekfuz from "../app/work/pictures/brekfuz.png";
+import paretoHoldings from "../app/work/pictures/venture-capital/paretoHoldings.png";
+import pearVC from "../app/work/pictures/venture-capital/pearVC.png";
+import zFellows from "../app/work/pictures/venture-capital/zFellows.png";
+import collectiveGlobal from "../app/work/pictures/venture-capital/collectiveGlobal.png";
 
 import culinLogo from "../app/projects/pictures/logos/culinLogo.png";
 import fitcheckLogo from "../app/projects/pictures/logos/fitcheckLogo.png";
@@ -163,7 +167,14 @@ export const DATA = {
       start: "Aug 2026",
       end: "Present",
       description:
-        "Head of Engineering at Brekfuz, building infrastructure for institutional intelligence - the retrieval, observability, and agent-access layer that makes an entire organization legible. Backed by Pareto Holdings, Pear VC, Cory Levy, Z Fellows, and Collective Global.",
+        "Head of Engineering at Brekfuz, building infrastructure for institutional intelligence - the retrieval, observability, and agent-access layer that makes an entire organization legible.",
+      backedBy: [
+        { name: "Pareto Holdings", logoUrl: paretoHoldings },
+        { name: "Pear VC", logoUrl: pearVC, href: "https://pear.vc/" },
+        { name: "Z Fellows", logoUrl: zFellows, href: "https://www.zfellows.com/" },
+        { name: "Cory Levy" },
+        { name: "Collective Global", logoUrl: collectiveGlobal },
+      ],
       tasks: [
         {
           description:

@@ -111,6 +111,7 @@ export default function WorkPage() {
                   href={work.href}
                   badges={work.badges}
                   roles={roles}
+                  backedBy={work.backedBy}
                 />
               </BlurFade>
             );
