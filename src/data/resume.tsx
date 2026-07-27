@@ -426,6 +426,11 @@ export const DATA = {
       end: "Dec 2025",
       description:
         "First founding engineer; built agentic e-commerce OS and no-code framework used by 4+ enterprise clients.",
+      backedBy: [
+        { name: "Intel", logoUrl: intel, href: "https://www.intel.com/" },
+        { name: "UpHonest Capital", logoUrl: uphonest, href: "https://www.uphonestcapital.com/" },
+        { name: "UpScaleX", logoUrl: upscale, href: "https://www.upscalex.ai/" },
+      ],
       tasks: [
         {
           description: "Built TypeScript backend (Bun + Hono + Postgres) with unified data layer, multi-tenant model with gateway-enforced tenantId, and source-native JSONB storage.",

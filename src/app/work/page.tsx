@@ -13,7 +13,6 @@ export default function WorkPage() {
   // Calculate total items for timeline
   const allItems = [
     ...DATA.work,
-    ...DATA.partners,
     ...DATA.research,
     ...DATA.clubs,
   ];
@@ -116,38 +115,6 @@ export default function WorkPage() {
               </BlurFade>
             );
           })}
-        </div>
-      </section>
-
-      {/* Partners & Investors */}
-      <section id="partners" className="w-full">
-        <BlurFade delay={BLUR_FADE_DELAY * 9}>
-          <div className="space-y-0.5 mb-8 mt-16">
-            <h2 className="text-2xl font-medium tracking-tighter">Partners & Investors</h2>
-            <p className="text-sm text-muted-foreground">Collaborations and backing.</p>
-          </div>
-        </BlurFade>
-        <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
-          {DATA.partners.map((partner: any, id) => (
-            <BlurFade
-              key={partner.company}
-              delay={BLUR_FADE_DELAY * 10 + id * 0.2}
-            >
-              <PromotionCard
-                key={partner.company}
-                logoUrl={partner.logoUrl}
-                altText={partner.company}
-                company={partner.company}
-                href={partner.href}
-                badges={partner.badges}
-                roles={[{
-                  title: partner.title,
-                  period: partner.period || (partner.start && partner.end ? `${partner.start} - ${partner.end}` : ""),
-                  description: partner.description
-                }]}
-              />
-            </BlurFade>
-          ))}
         </div>
       </section>
 
