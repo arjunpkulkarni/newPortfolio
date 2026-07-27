@@ -161,7 +161,7 @@ export const DATA = {
     {
       company: "Brekfuz",
       href: "https://brekfuz.com/",
-      badges: ["Backed by Pear VC"],
+      badges: [],
       location: "New York, NY",
       title: "Head of Engineering",
       logoUrl: brekfuz,
