@@ -335,7 +335,7 @@ export const DATA = {
       start: "Feb 2026",
       end: "May 2026",
       description:
-        "Built Kubricks, a multimodal AI evaluation platform for long-context video understanding tasks.",
+        "Built Kubricks, a multimodal AI evaluation platform for long-context video understanding, and ran SOTA vision model training data QA and evaluation.",
       tasks: [
         {
           description: "Built Kubricks, a React/TypeScript + Flask platform for evaluating multimodal AI video tasks with Celery/Redis async pipelines for video ingestion, frame extraction, and Whisper transcription.",
@@ -344,6 +344,10 @@ export const DATA = {
         {
           description: "Constructed multimodal prompts combining transcripts, extracted frames, and task instructions, invoking Gemini via LangChain with retry/batching logic and structured JSON output parsing.",
           skills: ["LangChain", "Gemini", "Python", "Prompt Engineering"]
+        },
+        {
+          description: "Ran SOTA vision model training data QA and evaluation — auditing datasets, scoring model outputs against gold annotations, and surfacing hallucinations and temporal errors.",
+          skills: ["Vision Models", "Data QA", "Model Evaluation", "Python"]
         },
         {
           description: "Developed automated evaluation pipeline comparing model responses against gold annotations, detecting hallucinations and temporal errors with PostgreSQL analytics dashboards.",
