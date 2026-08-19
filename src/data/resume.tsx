@@ -36,6 +36,7 @@ import sideshift from "../app/work/pictures/sideshift.jpeg";
 import sisu from "../app/work/pictures/sisu.png";
 import fitfoLogo from "../app/projects/pictures/fitfo/fitfo-logo-dark.png";
 import ibm from "../app/work/pictures/ibm.png";
+import nestle from "../app/work/pictures/nestle.png";
 import brekfuz from "../app/work/pictures/brekfuz.png";
 import paretoHoldings from "../app/work/pictures/venture-capital/paretoHoldings.png";
 import pearVC from "../app/work/pictures/venture-capital/pearVC.png";
@@ -220,6 +221,30 @@ export const DATA = {
           description:
             "Building composable AI skills with Mellea Skills Compiler to accelerate reliable agentic application development.",
           skills: ["Mellea", "AI Skills", "LLM Systems", "Python", "TypeScript"]
+        }
+      ]
+    },
+    {
+      company: "Nestlé",
+      href: "https://www.nestle.com/",
+      badges: [],
+      location: "Vevey, Switzerland",
+      title: "Applied AI Research",
+      logoUrl: nestle,
+      start: "June 2026",
+      end: "Aug 2026",
+      description:
+        "Building an R&D platform and LLM retrieval pipelines for Nestlé pilots in product ideation and formulation.",
+      tasks: [
+        {
+          description:
+            "Building R&D platform combining flavor compounds, regional cuisine, and 2M+ recipe co-occurrence data.",
+          skills: ["Python", "RAG", "Knowledge Graphs", "Data Engineering"]
+        },
+        {
+          description:
+            "Architecting LLM retrieval and data pipelines for Nestlé pilots, enabling adaptive product ideation and formulation.",
+          skills: ["LLM Systems", "Retrieval", "Python", "Applied Research"]
         }
       ]
     },
