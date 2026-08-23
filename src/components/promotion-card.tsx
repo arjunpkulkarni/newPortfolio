@@ -9,6 +9,8 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { BackedBy, type Investor } from "@/components/backed-by";
+import { ExperienceTag } from "@/components/experience-tag";
+import { PartneredWith, type Partner } from "@/components/partnered-with";
 
 interface Role {
   title: string;
@@ -29,6 +31,8 @@ interface PromotionCardProps {
   href?: string;
   badges?: readonly string[];
   roles: Role[];
+  tag?: string;
+  partneredWith?: readonly Partner[];
   backedBy?: readonly Investor[];
   titleClassName?: string;
   cardClassName?: string;
@@ -73,6 +77,8 @@ export const PromotionCard = ({
   href,
   badges,
   roles,
+  tag,
+  partneredWith,
   backedBy,
   titleClassName,
   cardClassName,
@@ -162,6 +168,7 @@ export const PromotionCard = ({
                   </span>
                 ))}
               </div>
+              {tag && <ExperienceTag tag={tag} />}
             </CardHeader>
           </div>
         </div>
@@ -190,6 +197,12 @@ export const PromotionCard = ({
               </CardContent>
             )}
 
+            {roleIndex === 0 && partneredWith && partneredWith.length > 0 && (
+              <CardContent className="pt-0 pb-2">
+                <PartneredWith partners={partneredWith} />
+              </CardContent>
+            )}
+
             {/* Tasks Section - matches ResumeCard */}
             {role.tasks && role.tasks.length > 0 && (
               <CardContent className="pt-2 pb-4">
@@ -200,22 +213,9 @@ export const PromotionCard = ({
                       <li key={taskIndex} className="text-xs sm:text-sm">
                         <div className="flex gap-2">
                           <span className="text-primary">•</span>
-                          <div className="flex-1">
-                            <p className="text-foreground leading-relaxed mb-2">
-                              {task.description}
-                            </p>
-                            <div className="flex flex-wrap gap-1.5">
-                              {task.skills.map((skill, skillIndex) => (
-                                <Badge
-                                  key={skillIndex}
-                                  variant="outline"
-                                  className="text-[10px] sm:text-xs px-2 py-0.5"
-                                >
-                                  {skill}
-                                </Badge>
-                              ))}
-                            </div>
-                          </div>
+                          <p className="flex-1 text-foreground leading-relaxed">
+                            {task.description}
+                          </p>
                         </div>
                       </li>
                     ))}
@@ -228,9 +228,7 @@ export const PromotionCard = ({
 
         {backedBy && backedBy.length > 0 && (
           <CardContent className="pt-0 pb-4">
-            <div className="border-t pt-3">
-              <BackedBy investors={backedBy} />
-            </div>
+            <BackedBy investors={backedBy} />
           </CardContent>
         )}
       </Card>

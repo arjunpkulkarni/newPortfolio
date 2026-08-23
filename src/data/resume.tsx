@@ -163,6 +163,7 @@ export const DATA = {
       company: "Brekfuz",
       href: "https://brekfuz.com/",
       badges: [],
+      tag: "organizational knowledge + retrieval infrastructure",
       location: "New York, NY",
       title: "Head of Engineering",
       logoUrl: brekfuz,
@@ -170,6 +171,10 @@ export const DATA = {
       end: "Present",
       description:
         "Head of Engineering at Brekfuz, building infrastructure for institutional intelligence - the retrieval, observability, and agent-access layer that makes an entire organization legible.",
+      partneredWith: [
+        { name: "Whop", href: "https://whop.com/" },
+        { name: "Terac API", href: "https://terac.com/" },
+      ],
       backedBy: [
         { name: "Pareto Holdings", logoUrl: paretoHoldings },
         { name: "Pear VC", logoUrl: pearVC, href: "https://pear.vc/" },
@@ -185,18 +190,8 @@ export const DATA = {
         },
         {
           description:
-            "Built the observability layer that reads org knowledge like a balance sheet - surfacing single points of failure, question surges, and where senior hours go, measured from live traffic.",
-          skills: ["Go", "PostgreSQL", "Event-Driven Architecture", "Analytics"]
-        },
-        {
-          description:
             "Designed an MCP endpoint that lets any agent query company knowledge under the same ACLs as people - permission-checked, source-attributed, and fully audit-logged.",
           skills: ["MCP", "Go", "Access Control", "Agentic AI"]
-        },
-        {
-          description:
-            "Built permission-aware, zero-retention infrastructure with per-tenant isolation, fail-closed source ACLs, SSO/SCIM sync, and an append-only audit log (SOC 2 Type II in progress).",
-          skills: ["Terraform", "Security", "SSO / SCIM", "TLS 1.3", "AES-256", "Multi-tenancy"]
         }
       ]
     },
@@ -204,6 +199,7 @@ export const DATA = {
       company: "IBM",
       href: "https://research.ibm.com/",
       badges: [],
+      tag: "agent reliability + structured generation + MCP",
       location: "Thomas J. Watson Research Center",
       title: "Applied AI Research",
       logoUrl: ibm,
@@ -228,6 +224,7 @@ export const DATA = {
       company: "Nestlé",
       href: "https://www.nestle.com/",
       badges: [],
+      tag: "vector retrieval + food discovery + co-occurrence data",
       location: "Vevey, Switzerland",
       title: "Applied AI Research",
       logoUrl: nestle,
@@ -251,7 +248,8 @@ export const DATA = {
     {
       company: "Sisu",
       href: "https://sisu.site/",
-      badges: ["Incubator"],
+      badges: [],
+      tag: "founding engineering + zero-to-launch + product velocity",
       location: "Remote",
       title: "Founding Engineer",
       logoUrl: sisu,
@@ -276,6 +274,7 @@ export const DATA = {
       company: "FitFo",
       href: "https://www.fitfo.app/",
       badges: [],
+      tag: "agentic product engineering + scale + business impact",
       location: "New York, NY",
       title: "Head of Engineering",
       logoUrl: fitfoLogo,
@@ -300,6 +299,7 @@ export const DATA = {
       company: "SideShift",
       href: "https://sideshift.app",
       badges: [],
+      tag: "caching + database performance + frontend state",
       location: "New York, NY",
       title: "Software Engineer Contractor",
       logoUrl: sideshift,
@@ -310,13 +310,8 @@ export const DATA = {
       tasks: [
         {
           description:
-            "Implemented Redis server-side caching and TanStack Query client-side caching for a production messaging system.",
+            "Implemented Redis server-side caching and TanStack Query client-side caching for a production messaging system, cutting database reads and writes by 95%.",
           skills: ["Redis", "TanStack Query", "TypeScript", "Performance"]
-        },
-        {
-          description:
-            "Reduced database reads and writes by 95% by optimizing cache TTLs and debugging stale-cache issues.",
-          skills: ["Redis", "Caching", "Observability", "PostgreSQL"]
         },
         {
           description:
@@ -329,6 +324,7 @@ export const DATA = {
       company: "UCSF Health",
       href: "https://www.ucsfhealth.org/",
       badges: [],
+      tag: "production clinical agents + EHR automation",
       location: "San Francisco, CA",
       title: "Software Engineer Intern",
       logoUrl: ucsf,
@@ -354,6 +350,7 @@ export const DATA = {
       company: "Handshake",
       href: "https://joinhandshake.com/ai",
       badges: [],
+      tag: "multimodal AI + vision-model evaluation",
       location: "Remote",
       title: "Software Engineer Contractor",
       logoUrl: handshake,
@@ -367,20 +364,8 @@ export const DATA = {
           skills: ["React", "TypeScript", "Flask", "Celery", "Redis", "Whisper", "Gemini"]
         },
         {
-          description: "Constructed multimodal prompts combining transcripts, extracted frames, and task instructions, invoking Gemini via LangChain with retry/batching logic and structured JSON output parsing.",
-          skills: ["LangChain", "Gemini", "Python", "Prompt Engineering"]
-        },
-        {
           description: "Ran SOTA vision model training data QA and evaluation — auditing datasets, scoring model outputs against gold annotations, and surfacing hallucinations and temporal errors.",
           skills: ["Vision Models", "Data QA", "Model Evaluation", "Python"]
-        },
-        {
-          description: "Developed automated evaluation pipeline comparing model responses against gold annotations, detecting hallucinations and temporal errors with PostgreSQL analytics dashboards.",
-          skills: ["Python", "PostgreSQL", "Model Evaluation", "Data Engineering"]
-        },
-        {
-          description: "Implemented token usage and latency tracing with replay functionality for rerunning tasks under modified prompts or model configurations.",
-          skills: ["Observability", "Python", "PostgreSQL", "DevOps"]
         }
       ]
     },
@@ -388,6 +373,7 @@ export const DATA = {
       company: "Rumor",
       href: "https://www.therumor.com/",
       badges: [],
+      tag: "real-time systems + recommendations + event infrastructure",
       location: "New York, NY",
       title: "Software Engineer Intern",
       logoUrl: rumorLogo,
@@ -401,16 +387,8 @@ export const DATA = {
           skills: ["React Native", "TypeScript", "Redux", "React Navigation"]
         },
         {
-          description: "Developed scalable Node.js backend APIs for high-volume event workflows, reducing user drop-off during event flow by 25% with improved validation and error handling.",
-          skills: ["Node.js", "Express", "PostgreSQL", "TypeScript"]
-        },
-        {
           description: "Optimized database queries and implemented Redis caching for event search, reducing API response times from 800ms to 120ms (85% improvement) and supporting 500+ concurrent users.",
           skills: ["Redis", "PostgreSQL", "SQL", "Node.js"]
-        },
-        {
-          description: "Deployed and scaled backend services on AWS (EC2, RDS), enabling reliable handling of high-concurrency traffic and improving system uptime.",
-          skills: ["AWS", "EC2", "RDS", "DevOps", "Scaling"]
         }
       ]
     },
@@ -418,6 +396,7 @@ export const DATA = {
       company: "UC San Diego Health",
       href: "https://health.ucsd.edu/",
       badges: [],
+      tag: "RAG + medical nutrition + clinical retrieval",
       location: "San Diego, CA",
       title: "Software Engineer Intern",
       logoUrl: ucsd,
@@ -431,14 +410,6 @@ export const DATA = {
           skills: ["LangChain", "RAG", "QDrant", "Python"]
         },
         {
-          description: "Collaborated with Food Network Chef James Briscione and White House Fellow Prof. Lav Varshney to integrate culinary expertise into AI recommendation engine.",
-          skills: ["Python", "OpenAI", "Flask", "PostgreSQL"]
-        },
-        {
-          description: "Deployed HIPAA-compliant Next.js platform with GPT-4o integration, implementing encryption, audit logging, and secure PHI handling, passing UCSD Health IT security review.",
-          skills: ["Next.js", "GPT-4", "PostgreSQL", "AWS"]
-        },
-        {
           description: "Built agentic workflow with LangGraph for multi-step reasoning (medical history, allergies, meal generation), reducing manual dietician review time by 65%.",
           skills: ["LangGraph", "Python", "OpenAI", "QDrant"]
         }
@@ -448,6 +419,7 @@ export const DATA = {
       company: "Curator.to",
       href: "https://curator.to/",
       badges: [],
+      tag: "agentic retrieval + data ingestion + e-commerce infrastructure",
       location: "New York, NY",
       title: "Head of Engineering / Founding Engineer",
       logoUrl: curator,
@@ -462,24 +434,8 @@ export const DATA = {
       ],
       tasks: [
         {
-          description: "Built TypeScript backend (Bun + Hono + Postgres) with unified data layer, multi-tenant model with gateway-enforced tenantId, and source-native JSONB storage.",
-          skills: ["TypeScript", "Bun", "Hono", "PostgreSQL", "Multi-tenancy"]
-        },
-        {
-          description: "Designed provider abstraction layer with incremental sync pipelines using async generators, centralized upsert system (upsertEntity), and scheduler with concurrency control.",
-          skills: ["Shopify API", "QuickBooks API", "Gmail API", "Async Generators", "Concurrency"]
-        },
-        {
-          description: "Implemented source-of-truth cache with entities table (tenant, source, entity_type, external_id), checksum-based diffing, and webhook ingestion with provider validation.",
-          skills: ["JSONB", "Webhooks", "HMAC Validation", "Event-Driven Architecture"]
-        },
-        {
-          description: "Built tool-based agent system with per-session isolation, WebSocket streaming for real-time responses, and context compaction for large token windows.",
-          skills: ["OpenAI", "WebSocket", "Tool Calling", "Context Management", "AI Agents"]
-        },
-        {
-          description: "Implemented core primitives: Jobs (long-running agent tasks), Alerts/Triggers (event-driven notifications), Pins (persistent visualizations), and Workspaces combining all three.",
-          skills: ["Job Scheduling", "Event Systems", "Data Visualization", "Workflow Automation"]
+          description: "Built TypeScript backend (Bun + Hono + Postgres) with unified data layer, multi-tenant model, and tool-based agent system with WebSocket streaming.",
+          skills: ["TypeScript", "Bun", "Hono", "PostgreSQL", "AI Agents"]
         },
         {
           description: "Enabled 4+ enterprise clients processing $2M+ GMV, helped raise $1.0M seed round, and created extensible system for cross-tool automation.",
@@ -491,6 +447,7 @@ export const DATA = {
       company: "AbbVie",
       href: "https://www.abbvie.com/",
       badges: [],
+      tag: "large-scale ETL + research data pipelines",
       location: "Chicago, IL",
       title: "Software Engineer Intern",
       logoUrl: abbvie,
@@ -506,14 +463,6 @@ export const DATA = {
         {
           description: "Implemented semantic search using OpenAI embeddings and FAISS vector database, improving R&D team productivity by 3x for finding relevant trials and adverse event reports.",
           skills: ["OpenAI Embeddings", "FAISS", "Python", "PostgreSQL"]
-        },
-        {
-          description: "Built FastAPI backend with async processing for large-scale ingestion, implementing multi-threaded PDF parsing and OCR (Tesseract) for scanned documents.",
-          skills: ["FastAPI", "Python", "Tesseract", "PostgreSQL"]
-        },
-        {
-          description: "Upgraded PostgreSQL + AWS S3 stack with database optimization and indexing, increasing throughput 4× (500 to 2,000 documents/hour) for R&D pipeline.",
-          skills: ["PostgreSQL", "AWS S3", "SQL", "Python"]
         }
       ]
     },
@@ -523,6 +472,7 @@ export const DATA = {
       company: "Illinois Quantum Information Science and Technology Center",
       href: "https://mntl.illinois.edu/",
       badges: [],
+      tag: "quantum materials + nanofluidics + energy harvesting",
       location: "Champaign, IL (On-site)",
       title: "Software Engineer Intern",
       logoUrl: uiuc,
@@ -545,6 +495,7 @@ export const DATA = {
       company: "Coordinated Science Laboratory at University of Illinois",
       href: "https://csl.illinois.edu/",
       badges: [],
+      tag: "RAG pipelines + clinical AI + DevOps",
       location: "In-Person",
       title: "Software Engineer Intern",
       logoUrl: uiuc,
@@ -567,6 +518,7 @@ export const DATA = {
       company: "Beckman Institute for Advanced Science and Technology",
       href: "https://beckman.illinois.edu/",
       badges: [],
+      tag: "real-time LLM platforms + human-AI interaction",
       location: "Urbana, IL",
       title: "Software Engineer Intern",
       logoUrl: uiuc,
@@ -589,6 +541,7 @@ export const DATA = {
       company: "Illinois Artificial Intelligence Group (ECE Department)",
       href: "https://ece.illinois.edu/",
       badges: [],
+      tag: "reinforcement learning + MPC + autonomous routing",
       location: "Urbana, IL",
       title: "Software Engineer Intern",
       logoUrl: uiuc,
@@ -611,6 +564,7 @@ export const DATA = {
       company: "Civil and Environmental Engineering at Illinois",
       href: "https://cee.illinois.edu/",
       badges: [],
+      tag: "ML materials + sustainability + predictive modeling",
       location: "In-Person",
       title: "Software Engineer Intern",
       logoUrl: uiuc,
@@ -633,6 +587,7 @@ export const DATA = {
       company: "Siebel School of Computing and Data Science",
       href: "https://cs.illinois.edu/",
       badges: [],
+      tag: "teaching + systems programming + mentorship",
       location: "Urbana, IL",
       title: "Undergraduate Teaching Assistant",
       logoUrl: uiuc,
@@ -657,6 +612,7 @@ export const DATA = {
       company: "Institute of Electrical and Electronics Engineers",
       href: "https://www.ieee.org/",
       badges: [],
+      tag: "hardware + embedded systems + technical talks",
       location: "Urbana-Champaign",
       title: "Technical Member",
       logoUrl: ieee,
@@ -679,6 +635,7 @@ export const DATA = {
       company: "Illinois Business Consulting",
       href: "https://giesbusiness.illinois.edu/experience/experiential-learning/illinois-business-consulting",
       badges: [],
+      tag: "tech consulting + market analysis + NLP",
       location: "Urbana-Champaign",
       title: "Tech Consultant",
       logoUrl: ibc,
@@ -701,6 +658,7 @@ export const DATA = {
       company: "sigPWNY Component Team",
       href: "https://sigpwny.com/",
       badges: [],
+      tag: "embedded security + firmware + memory safety",
       location: "Urbana-Champaign",
       title: "Software Engineer",
       logoUrl: sigpwny,
@@ -723,6 +681,7 @@ export const DATA = {
       company: "NOBE Tech Lab",
       href: "https://www.nobenational.org/",
       badges: [],
+      tag: "full-stack web + client delivery + product tooling",
       location: "Urbana-Champaign",
       title: "Software Engineer",
       logoUrl: nobe,

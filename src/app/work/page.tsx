@@ -74,7 +74,7 @@ export default function WorkPage() {
             <p className="text-sm text-muted-foreground">Professional experience and contributions.</p>
           </div>
         </BlurFade>
-        <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
+        <div className="flex min-h-0 flex-col divide-y divide-border/60 md:pr-16">
           {DATA.work.map((work: any, id) => {
             // Handle both single role and multiple roles format
             const roles = work.roles ? work.roles.map((role: any) => {
@@ -102,6 +102,7 @@ export default function WorkPage() {
               <BlurFade
                 key={`${work.company}-${id}`}
                 delay={BLUR_FADE_DELAY * 8 + id * 0.2}
+                className="py-6 first:pt-0 last:pb-0"
               >
                 <PromotionCard
                   logoUrl={work.logoUrl}
@@ -110,6 +111,8 @@ export default function WorkPage() {
                   href={work.href}
                   badges={work.badges}
                   roles={roles}
+                  tag={work.tag}
+                  partneredWith={work.partneredWith}
                   backedBy={work.backedBy}
                 />
               </BlurFade>
@@ -126,11 +129,12 @@ export default function WorkPage() {
             <p className="text-sm text-muted-foreground">Academic and laboratory research work.</p>
           </div>
         </BlurFade>
-        <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
+        <div className="flex min-h-0 flex-col divide-y divide-border/60 md:pr-16">
           {DATA.research.map((research: any, id) => (
             <BlurFade
               key={research.company}
               delay={BLUR_FADE_DELAY * 12 + id * 0.2}
+              className="py-6 first:pt-0 last:pb-0"
             >
               <PromotionCard
                 key={research.company}
@@ -139,6 +143,7 @@ export default function WorkPage() {
                 company={research.company}
                 href={research.href}
                 badges={research.badges}
+                tag={research.tag}
                 roles={[{
                   title: research.title,
                   period: `${research.start} - ${research.end}`,
@@ -159,11 +164,12 @@ export default function WorkPage() {
             <p className="text-sm text-muted-foreground">Student organizations and teams.</p>
           </div>
         </BlurFade>
-        <div className="flex min-h-0 flex-col gap-y-6 md:pr-16">
+        <div className="flex min-h-0 flex-col divide-y divide-border/60 md:pr-16">
           {DATA.clubs.map((club: any, id) => (
             <BlurFade
               key={club.company}
               delay={BLUR_FADE_DELAY * 14 + id * 0.2}
+              className="py-6 first:pt-0 last:pb-0"
             >
               <PromotionCard
                 key={club.company}
@@ -172,6 +178,7 @@ export default function WorkPage() {
                 company={club.company}
                 href={club.href}
                 badges={club.badges}
+                tag={club.tag}
                 roles={[{
                   title: club.title,
                   period: `${club.start} - ${club.end}`,
