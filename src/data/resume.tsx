@@ -33,7 +33,6 @@ import ieee from "../app/work/pictures/ieee.png";
 import intel from "../app/work/pictures/intel.jpg";
 import ucsf from "../app/work/pictures/ucsf.png";
 import sideshift from "../app/work/pictures/sideshift.jpeg";
-import sisu from "../app/work/pictures/sisu.png";
 import fitfoLogo from "../app/projects/pictures/fitfo/fitfo-logo-dark.png";
 import ibm from "../app/work/pictures/ibm.png";
 import nestle from "../app/work/pictures/nestle.png";
@@ -66,9 +65,9 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "AI Systems Engineer building production-grade intelligence infrastructure.",
+    "AI Systems Engineer building production agent infrastructure: retrieval, permissions, orchestration, and reliability.",
   summary:
-    "I build reliable data + retrieval systems powering production ML - optimized for latency, cost, and scale.",
+    "I build production AI systems at the intersection of retrieval, agent orchestration, and backend infrastructure - spanning ACL-aware knowledge agents, multimodal evaluation, and clinical/enterprise RAG optimized for latency, correctness, and scale.",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [
@@ -165,12 +164,12 @@ export const DATA = {
       badges: [],
       tag: "enterprise AI agents + retrieval + permissions + orchestration",
       location: "New York, NY",
-      title: "Head of Engineering / Agent Infrastructure",
+      title: "Agent Infrastructure Engineer / Engineering Lead",
       logoUrl: brekfuz,
       start: "Aug 2026",
       end: "Present",
       description:
-        "Built retrieval, permissions, and orchestration for Brekfuz's enterprise knowledge agent across Slack, GitHub, Linear, Gmail, calendar, and internal memory with source-level ACLs.",
+        "Production enterprise knowledge agent with ACL-aware retrieval and tool orchestration across Slack, GitHub, Linear, Gmail, calendar, and internal memory.",
       partneredWith: [
         { name: "Whop", href: "https://whop.com/" },
         { name: "Terac API", href: "https://terac.com/" },
@@ -188,13 +187,18 @@ export const DATA = {
       tasks: [
         {
           description:
-            "Built ACL-aware retrieval across workspace tools with vector/lexical search, graph context, reranking, and conversation memory.",
+            "Architected ACL-aware retrieval over workspace sources using vector + lexical search, graph context, reranking, and conversation memory.",
           skills: ["Go", "RAG", "Vector Search", "Graph Context", "ACL", "Agentic AI"]
         },
         {
           description:
-            "Owned agent orchestration and production stack: tool routing, bounded loops, citations, grounding checks, and end-to-end request tracing on Node, Redis, and Postgres.",
-          skills: ["Agent Orchestration", "Node.js", "Redis", "PostgreSQL", "Observability", "Production Systems"]
+            "Designed agent orchestration for intent routing, tool selection, bounded loops, evidence packing, citations, and grounding checks.",
+          skills: ["Agent Orchestration", "Tool Routing", "Citations", "Grounding"]
+        },
+        {
+          description:
+            "Owned production reliability of the agent stack (Node, Redis, Postgres) with end-to-end request tracing across workers, queues, and LLM execution.",
+          skills: ["Node.js", "Redis", "PostgreSQL", "Observability", "Production Systems"]
         }
       ]
     },
@@ -204,22 +208,22 @@ export const DATA = {
       badges: [],
       tag: "agent reliability + structured generation + MCP",
       location: "Thomas J. Watson Research Center",
-      title: "Applied AI Research",
+      title: "Software Engineer, Applied AI",
       logoUrl: ibm,
       start: "June 2026",
       end: "Aug 2026",
       description:
-        "Applied AI research under Dr. Kush R. Varshney, IBM Fellow, on agentic workflows and composable skills with the Mellea Skills Compiler.",
+        "Agentic workflow research under Dr. Kush R. Varshney (IBM Fellow) on composable skills and reliable agent execution.",
       tasks: [
         {
           description:
-            "Conducting AI research under Dr. Kush R. Varshney, IBM Fellow, on workflows for agentic systems.",
-          skills: ["Agentic AI", "Applied Research", "Workflow Orchestration", "Enterprise AI"]
+            "Developed composable AI skills with the Mellea Skills Compiler for structured agentic application development.",
+          skills: ["Mellea", "AI Skills", "LLM Systems", "Python", "TypeScript"]
         },
         {
           description:
-            "Building composable AI skills with Mellea Skills Compiler to accelerate reliable agentic application development.",
-          skills: ["Mellea", "AI Skills", "LLM Systems", "Python", "TypeScript"]
+            "Prototyped agent workflow patterns focused on reliability and reusable skill composition for enterprise agent systems.",
+          skills: ["Agentic AI", "Workflow Orchestration", "Applied Research"]
         }
       ]
     },
@@ -229,47 +233,22 @@ export const DATA = {
       badges: [],
       tag: "vector retrieval + food discovery + co-occurrence data",
       location: "Vevey, Switzerland",
-      title: "Applied AI Research",
+      title: "Software Engineer, AI Systems",
       logoUrl: nestle,
       start: "June 2026",
       end: "Aug 2026",
       description:
-        "Building an R&D platform and LLM retrieval pipelines for Nestlé pilots in product ideation and formulation.",
+        "LLM retrieval and R&D data platform for product ideation and formulation over flavor compounds, regional cuisine, and 2M+ recipe co-occurrence data.",
       tasks: [
         {
           description:
-            "Building R&D platform combining flavor compounds, regional cuisine, and 2M+ recipe co-occurrence data.",
-          skills: ["Python", "RAG", "Knowledge Graphs", "Data Engineering"]
-        },
-        {
-          description:
-            "Architecting LLM retrieval and data pipelines for Nestlé pilots, enabling adaptive product ideation and formulation.",
+            "Designed LLM retrieval pipelines over large co-occurrence corpora for adaptive product ideation pilots.",
           skills: ["LLM Systems", "Retrieval", "Python", "Applied Research"]
-        }
-      ]
-    },
-    {
-      company: "Sisu",
-      href: "https://sisu.site/",
-      badges: [],
-      tag: "founding engineering + zero-to-launch + product velocity",
-      location: "Remote",
-      title: "Founding Engineer",
-      logoUrl: sisu,
-      start: "Feb 2026",
-      end: "June 2026",
-      description:
-        "Founding engineer in the Sisu incubator, building and shipping products from zero to launch.",
-      tasks: [
-        {
-          description:
-            "Built and launched FitFo v2 in 4 weeks, redesigning core architecture, onboarding, and RevenueCat subscription systems.",
-          skills: ["Swift", "iOS", "RevenueCat", "Architecture"]
         },
         {
           description:
-            "Scaled FitFo to 5,850+ active customers and 532 active trials by shipping features daily and iterating quickly.",
-          skills: ["Product", "Growth", "Subscriptions", "Mobile"]
+            "Implemented data pipelines combining structured food and formulation signals with semantic retrieval for R&D workflows.",
+          skills: ["Python", "RAG", "Knowledge Graphs", "Data Engineering"]
         }
       ]
     },
@@ -279,17 +258,22 @@ export const DATA = {
       badges: [],
       tag: "agentic product engineering + scale + business impact",
       location: "New York, NY",
-      title: "Head of Engineering",
+      title: "Founding Engineer / AI Systems",
       logoUrl: fitfoLogo,
       start: "Feb 2026",
       end: "June 2026",
       description:
-        "Head of Engineering at FitFo; shipped an agentic platform for coaches and raised $500K from strategic investors.",
+        "Agentic coaching platform (Flask, DigitalOcean, TypeScript) from architecture through production scale. Built in the Sisu incubator.",
       tasks: [
         {
           description:
-            "Shipped agentic platform for coaches with Flask, DigitalOcean, and TypeScript, reaching 27K users and $200K ARR.",
+            "Shipped an agentic coaching platform to 27K users and $200K ARR on Flask + TypeScript.",
           skills: ["Flask", "DigitalOcean", "TypeScript", "Agentic AI", "Product"]
+        },
+        {
+          description:
+            "Redesigned core architecture, onboarding, and RevenueCat subscription systems; scaled to 5,850+ active customers and 532 trials.",
+          skills: ["Swift", "iOS", "RevenueCat", "Architecture", "Growth"]
         },
         {
           description:
@@ -299,26 +283,51 @@ export const DATA = {
       ]
     },
     {
+      company: "Handshake",
+      href: "https://joinhandshake.com/ai",
+      badges: [],
+      tag: "multimodal AI + vision-model evaluation",
+      location: "Remote",
+      title: "Software Engineer, AI Evaluation",
+      logoUrl: handshake,
+      start: "Feb 2026",
+      end: "May 2026",
+      description:
+        "Multimodal evaluation platform for long-context video understanding and SOTA vision-model training-data QA.",
+      tasks: [
+        {
+          description:
+            "Developed Kubricks (React/TypeScript + Flask) with Celery/Redis pipelines for video ingestion, frame extraction, and Whisper transcription.",
+          skills: ["React", "TypeScript", "Flask", "Celery", "Redis", "Whisper", "Gemini"]
+        },
+        {
+          description:
+            "Ran SOTA vision-model training-data QA and evaluation against gold annotations to catch hallucinations and temporal errors.",
+          skills: ["Vision Models", "Data QA", "Model Evaluation", "Python"]
+        }
+      ]
+    },
+    {
       company: "SideShift",
       href: "https://sideshift.app",
       badges: [],
       tag: "caching + database performance + frontend state",
       location: "New York, NY",
-      title: "Software Engineer Contractor",
+      title: "Software Engineer",
       logoUrl: sideshift,
       start: "",
       end: "May 2026",
       description:
-        "Shipped Redis/TanStack Query caching cutting messaging DB load ~95%, built in-app contract signing, and rolled out Cursor-backed agent-assisted delivery across SideShift engineering.",
+        "Production messaging performance and product infrastructure (Redis, TanStack Query, TypeScript).",
       tasks: [
         {
           description:
-            "Implemented Redis server-side caching and TanStack Query client-side caching for a production messaging system, cutting database reads and writes by 95%.",
+            "Implemented Redis + TanStack Query caching for messaging, cutting DB reads and writes ~95%.",
           skills: ["Redis", "TanStack Query", "TypeScript", "Performance"]
         },
         {
           description:
-            "Built an in-app contract platform for authoring and sending agreements with embedded signing flows so counterparties execute contracts inside the product.",
+            "Developed in-app contract authoring and embedded signing so counterparties execute agreements in-product.",
           skills: ["TypeScript", "React", "E-signatures", "Product"]
         }
       ]
@@ -334,64 +343,47 @@ export const DATA = {
       start: "Apr 2026",
       end: "May 2026",
       description:
-        "Built Congruence, an agentic EHR system supporting therapist workflows and daily clinical operations.",
+        "Agentic EHR workflows for therapist operations (LangChain, Redis, Celery, Flask).",
       tasks: [
         {
           description:
-            "Built Congruence, an agentic EHR system supporting 20+ daily patients and orchestrating therapist workflows.",
+            "Implemented Congruence, an agentic EHR system supporting 20+ daily patients and therapist workflow orchestration.",
           skills: ["Python", "Clinical AI", "LangChain", "EHR", "HIPAA"]
         },
         {
           description:
-            "Built Flask workflows for SOAP note generation and patient context storage using LangChain, Redis, and Celery.",
+            "Developed Flask pipelines for SOAP note generation and patient-context storage with LangChain, Redis, and Celery.",
           skills: ["Flask", "LangChain", "Redis", "Celery", "Python"]
         }
       ]
     },
-    
     {
-      company: "Handshake",
-      href: "https://joinhandshake.com/ai",
+      company: "Curator.to",
+      href: "https://curator.to/",
       badges: [],
-      tag: "multimodal AI + vision-model evaluation",
-      location: "Remote",
-      title: "Software Engineer Contractor",
-      logoUrl: handshake,
-      start: "Feb 2026",
-      end: "May 2026",
-      description:
-        "Built Kubricks, a multimodal AI evaluation platform for long-context video understanding, and ran SOTA vision model training data QA and evaluation.",
-      tasks: [
-        {
-          description: "Built Kubricks, a React/TypeScript + Flask platform for evaluating multimodal AI video tasks with Celery/Redis async pipelines for video ingestion, frame extraction, and Whisper transcription.",
-          skills: ["React", "TypeScript", "Flask", "Celery", "Redis", "Whisper", "Gemini"]
-        },
-        {
-          description: "Ran SOTA vision model training data QA and evaluation — auditing datasets, scoring model outputs against gold annotations, and surfacing hallucinations and temporal errors.",
-          skills: ["Vision Models", "Data QA", "Model Evaluation", "Python"]
-        }
-      ]
-    },
-    {
-      company: "Rumor",
-      href: "https://www.therumor.com/",
-      badges: [],
-      tag: "real-time systems + recommendations + event infrastructure",
+      tag: "agentic retrieval + data ingestion + e-commerce infrastructure",
       location: "New York, NY",
-      title: "Software Engineer Intern",
-      logoUrl: rumorLogo,
-      start: "Oct 2025",
-      end: "Jan 2026",
+      title: "Founding Engineer",
+      logoUrl: curator,
+      start: "Jan 2024",
+      end: "Dec 2025",
       description:
-        "Building core mobile features for Rumor's 50k+ user event-hosting platform.",
+        "Multi-tenant agentic e-commerce OS with ingestion, retrieval, and tool-based agents (Bun, Hono, Postgres).",
+      backedBy: [
+        { name: "Intel", logoUrl: intel, href: "https://www.intel.com/" },
+        { name: "UpHonest Capital", logoUrl: uphonest, href: "https://www.uphonestcapital.com/" },
+        { name: "UpScaleX", logoUrl: upscale, href: "https://www.upscalex.ai/" },
+      ],
       tasks: [
         {
-          description: "Built and shipped core React Native features (guest lists, RSVPs, creator discovery) used by 50k+ users, improving mobile performance by 30% through optimized rendering.",
-          skills: ["React Native", "TypeScript", "Redux", "React Navigation"]
+          description:
+            "Architected TypeScript backend (Bun + Hono + Postgres) with multi-tenant data layer and tool-based agents over WebSocket streaming.",
+          skills: ["TypeScript", "Bun", "Hono", "PostgreSQL", "AI Agents"]
         },
         {
-          description: "Optimized database queries and implemented Redis caching for event search, reducing API response times from 800ms to 120ms (85% improvement) and supporting 500+ concurrent users.",
-          skills: ["Redis", "PostgreSQL", "SQL", "Node.js"]
+          description:
+            "Scaled system to 4+ enterprise clients processing $2M+ GMV with extensible cross-tool automation; helped raise $1.0M seed.",
+          skills: ["System Design", "Scalability", "Enterprise Architecture", "Fundraising"]
         }
       ]
     },
@@ -406,43 +398,17 @@ export const DATA = {
       start: "Jan 2025",
       end: "Aug 2025",
       description:
-        "Built clinical-grade AI dietician platform serving 200+ patients with RAG pipeline and agentic workflows.",
+        "Clinical RAG + agentic nutrition system (LangChain, QDrant, LangGraph) serving 200+ patients.",
       tasks: [
         {
-          description: "Built clinical AI nutrition platform serving 200+ patients with subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
+          description:
+            "Designed subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
           skills: ["LangChain", "RAG", "QDrant", "Python"]
         },
         {
-          description: "Built agentic workflow with LangGraph for multi-step reasoning (medical history, allergies, meal generation), reducing manual dietician review time by 65%.",
+          description:
+            "Implemented LangGraph multi-step clinical reasoning (history, allergies, meal generation), reducing manual review time by 65%.",
           skills: ["LangGraph", "Python", "OpenAI", "QDrant"]
-        }
-      ]
-    },
-    {
-      company: "Curator.to",
-      href: "https://curator.to/",
-      badges: [],
-      tag: "agentic retrieval + data ingestion + e-commerce infrastructure",
-      location: "New York, NY",
-      title: "Head of Engineering / Founding Engineer",
-      logoUrl: curator,
-      start: "Jan 2024",
-      end: "Dec 2025",
-      description:
-        "First founding engineer; built agentic e-commerce OS and no-code framework used by 4+ enterprise clients.",
-      backedBy: [
-        { name: "Intel", logoUrl: intel, href: "https://www.intel.com/" },
-        { name: "UpHonest Capital", logoUrl: uphonest, href: "https://www.uphonestcapital.com/" },
-        { name: "UpScaleX", logoUrl: upscale, href: "https://www.upscalex.ai/" },
-      ],
-      tasks: [
-        {
-          description: "Built TypeScript backend (Bun + Hono + Postgres) with unified data layer, multi-tenant model, and tool-based agent system with WebSocket streaming.",
-          skills: ["TypeScript", "Bun", "Hono", "PostgreSQL", "AI Agents"]
-        },
-        {
-          description: "Enabled 4+ enterprise clients processing $2M+ GMV, helped raise $1.0M seed round, and created extensible system for cross-tool automation.",
-          skills: ["System Design", "Scalability", "Enterprise Architecture", "Business Impact"]
         }
       ]
     },
@@ -457,15 +423,42 @@ export const DATA = {
       start: "Dec 2024",
       end: "Jun 2025",
       description:
-        "Built ETL insights dashboard for oncology research teams, reducing document processing time 80% across 120k+ reports.",
+        "Large-scale ETL + semantic search over oncology research documents (FastAPI, FAISS, Postgres).",
       tasks: [
         {
-          description: "Built full-stack ETL dashboard processing 120k+ clinical trial reports, reducing document analysis time from 4 hours to 45 minutes per batch (80% reduction) with automated extraction.",
+          description:
+            "Developed ETL dashboard processing 120k+ clinical trial reports, cutting batch analysis from 4h to 45m (~80%).",
           skills: ["FastAPI", "Python", "React", "PostgreSQL"]
         },
         {
-          description: "Implemented semantic search using OpenAI embeddings and FAISS vector database, improving R&D team productivity by 3x for finding relevant trials and adverse event reports.",
+          description:
+            "Implemented semantic search with OpenAI embeddings + FAISS, improving R&D lookup productivity ~3x.",
           skills: ["OpenAI Embeddings", "FAISS", "Python", "PostgreSQL"]
+        }
+      ]
+    },
+    {
+      company: "Rumor",
+      href: "https://www.therumor.com/",
+      badges: [],
+      tag: "real-time systems + recommendations + event infrastructure",
+      location: "New York, NY",
+      title: "Software Engineer Intern",
+      logoUrl: rumorLogo,
+      start: "Oct 2025",
+      end: "Jan 2026",
+      description:
+        "Real-time event platform backend and mobile systems for 50k+ users.",
+      tasks: [
+        {
+          description:
+            "Optimized event-search queries and Redis caching, cutting API latency from 800ms to 120ms (~85%) under 500+ concurrent users.",
+          skills: ["Redis", "PostgreSQL", "SQL", "Node.js"]
+        },
+        {
+          description:
+            "Shipped React Native features (guest lists, RSVPs, discovery) used by 50k+ users with ~30% mobile performance gain.",
+          skills: ["React Native", "TypeScript", "Redux", "React Navigation"]
         }
       ]
     },
