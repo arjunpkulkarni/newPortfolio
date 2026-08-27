@@ -170,7 +170,7 @@ export const DATA = {
       start: "Aug 2026",
       end: "Present",
       description:
-        "Built the retrieval, permissions, and orchestration infrastructure behind Brekfuz's enterprise AI knowledge agent — connecting Slack, GitHub, Linear, Gmail, calendar, and internal memory into a system that answers across company tools while preserving source-level ACLs.",
+        "Built retrieval, permissions, and orchestration for Brekfuz's enterprise knowledge agent across Slack, GitHub, Linear, Gmail, calendar, and internal memory with source-level ACLs.",
       partneredWith: [
         { name: "Whop", href: "https://whop.com/" },
         { name: "Terac API", href: "https://terac.com/" },
@@ -188,12 +188,12 @@ export const DATA = {
       tasks: [
         {
           description:
-            "Built core infrastructure for Brekfuz's enterprise knowledge agent across Slack, GitHub, Linear, Gmail, calendar, and internal memory — with ACL-aware retrieval, vector/lexical search, graph context, reranking, and conversation memory.",
+            "Built ACL-aware retrieval across workspace tools with vector/lexical search, graph context, reranking, and conversation memory.",
           skills: ["Go", "RAG", "Vector Search", "Graph Context", "ACL", "Agentic AI"]
         },
         {
           description:
-            "Designed agent orchestration and production reliability: intent routing, tool selection, bounded agent loops, evidence packing, citations, grounding checks — plus Node services, Redis, Postgres, deployments, and end-to-end request tracing.",
+            "Owned agent orchestration and production stack: tool routing, bounded loops, citations, grounding checks, and end-to-end request tracing on Node, Redis, and Postgres.",
           skills: ["Agent Orchestration", "Node.js", "Redis", "PostgreSQL", "Observability", "Production Systems"]
         }
       ]
