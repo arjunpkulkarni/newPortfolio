@@ -163,17 +163,20 @@ export const DATA = {
       company: "Brekfuz",
       href: "https://brekfuz.com/",
       badges: [],
-      tag: "organizational knowledge + retrieval infrastructure",
+      tag: "enterprise AI agents + retrieval + permissions + orchestration",
       location: "New York, NY",
-      title: "Head of Engineering",
+      title: "Head of Engineering / Agent Infrastructure",
       logoUrl: brekfuz,
       start: "Aug 2026",
       end: "Present",
       description:
-        "Head of Engineering at Brekfuz, building infrastructure for institutional intelligence - the retrieval, observability, and agent-access layer that makes an entire organization legible.",
+        "Built the retrieval, permissions, and orchestration infrastructure behind Brekfuz's enterprise AI knowledge agent — connecting Slack, GitHub, Linear, Gmail, calendar, and internal memory into a system that answers across company tools while preserving source-level ACLs.",
       partneredWith: [
         { name: "Whop", href: "https://whop.com/" },
         { name: "Terac API", href: "https://terac.com/" },
+        { name: "pump.co", href: "https://www.pump.co/" },
+        { name: "Mozilla", href: "https://www.mozilla.org/" },
+        { name: "Luma Labs", href: "https://lumalabs.ai/" },
       ],
       backedBy: [
         { name: "Pareto Holdings", logoUrl: paretoHoldings },
@@ -185,13 +188,13 @@ export const DATA = {
       tasks: [
         {
           description:
-            "Built the extraction engine that answers from what a company already knows and routes unwritten questions to the person who holds the answer, capturing it so no one has to ask twice.",
-          skills: ["Go", "RAG", "Retrieval", "Vector Search", "Distributed Systems"]
+            "Built core infrastructure for Brekfuz's enterprise knowledge agent across Slack, GitHub, Linear, Gmail, calendar, and internal memory — with ACL-aware retrieval, vector/lexical search, graph context, reranking, and conversation memory.",
+          skills: ["Go", "RAG", "Vector Search", "Graph Context", "ACL", "Agentic AI"]
         },
         {
           description:
-            "Designed an MCP endpoint that lets any agent query company knowledge under the same ACLs as people - permission-checked, source-attributed, and fully audit-logged.",
-          skills: ["MCP", "Go", "Access Control", "Agentic AI"]
+            "Designed agent orchestration and production reliability: intent routing, tool selection, bounded agent loops, evidence packing, citations, grounding checks — plus Node services, Redis, Postgres, deployments, and end-to-end request tracing.",
+          skills: ["Agent Orchestration", "Node.js", "Redis", "PostgreSQL", "Observability", "Production Systems"]
         }
       ]
     },
