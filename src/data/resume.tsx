@@ -162,14 +162,14 @@ export const DATA = {
       company: "Brekfuz",
       href: "https://brekfuz.com/",
       badges: [],
-      tag: "enterprise AI agents + retrieval + permissions + orchestration",
+      tag: "enterprise AI agents + retrieval + AWS infrastructure",
       location: "New York, NY",
       title: "Agent Infrastructure Engineer / Engineering Lead",
       logoUrl: brekfuz,
       start: "Aug 2026",
       end: "Present",
       description:
-        "Production enterprise knowledge agent with ACL-aware retrieval and tool orchestration across Slack, GitHub, Linear, Gmail, calendar, and internal memory.",
+        "Production enterprise knowledge agent with ACL-aware retrieval, tool orchestration, and AWS infrastructure across Slack, GitHub, Linear, Gmail, calendar, and internal memory.",
       partneredWith: [
         { name: "Whop", href: "https://whop.com/" },
         { name: "Terac API", href: "https://terac.com/" },
@@ -197,8 +197,13 @@ export const DATA = {
         },
         {
           description:
-            "Owned production reliability of the agent stack (Node, Redis, Postgres) with end-to-end request tracing across workers, queues, and LLM execution.",
-          skills: ["Node.js", "Redis", "PostgreSQL", "Observability", "Production Systems"]
+            "Managed AWS infrastructure with Terraform, ECS, RDS, Redis, and ALB; ran zero-downtime ECS rollouts, migrations, health checks, and rollbacks.",
+          skills: ["Terraform", "AWS", "ECS", "RDS", "Redis", "ALB"]
+        },
+        {
+          description:
+            "Built guarded GitHub Actions CI/CD with deployment safety checks; debugged IAM, networking, capacity, observability, and production deployment failures.",
+          skills: ["GitHub Actions", "CI/CD", "IAM", "Observability", "Production Systems"]
         }
       ]
     },
