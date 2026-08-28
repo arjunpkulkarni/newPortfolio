@@ -104,11 +104,15 @@ export const DATA = {
     ],
     "Cloud/DevOps": [
       "AWS",
+      "ECS",
+      "Fargate",
+      "DigitalOcean",
       "Docker",
+      "Terraform",
+      "Kubernetes",
       "GitHub Actions",
       "Linux",
       "CI/CD",
-      "Kubernetes",
       "Jenkins",
       "GitLab CI/CD",
     ],
@@ -116,6 +120,11 @@ export const DATA = {
       "Postgres",
       "MongoDB",
       "Redis",
+      "Kafka",
+      "Temporal",
+      "ClickHouse",
+      "Pinecone",
+      "Turbopuffer",
       "ROS",
       "SUMO",
       "COMSOL",
@@ -187,18 +196,18 @@ export const DATA = {
       tasks: [
         {
           description:
-            "Architected ACL-aware retrieval over workspace sources using vector + lexical search, graph context, reranking, and conversation memory.",
-          skills: ["Go", "RAG", "Vector Search", "Graph Context", "ACL", "Agentic AI"]
+            "Architected ACL-aware retrieval over workspace sources using vector + lexical search (Pinecone/Turbopuffer), ClickHouse analytics, graph context, reranking, and conversation memory.",
+          skills: ["FastAPI", "Pinecone", "Turbopuffer", "ClickHouse", "RAG", "Vector Search", "ACL"]
         },
         {
           description:
-            "Designed agent orchestration for intent routing, tool selection, bounded loops, evidence packing, citations, and grounding checks.",
-          skills: ["Agent Orchestration", "Tool Routing", "Citations", "Grounding"]
+            "Designed agent orchestration with Temporal and Kafka for intent routing, tool selection, bounded loops, evidence packing, citations, and grounding checks.",
+          skills: ["Temporal", "Kafka", "Agent Orchestration", "Tool Routing", "Citations", "Grounding"]
         },
         {
           description:
-            "Managed AWS infrastructure with Terraform, ECS, RDS, Redis, and ALB; ran zero-downtime ECS rollouts, migrations, health checks, and rollbacks.",
-          skills: ["Terraform", "AWS", "ECS", "RDS", "Redis", "ALB"]
+            "Managed infrastructure with Terraform, Kubernetes, ECS/Fargate, Redis, and DigitalOcean; ran zero-downtime ECS rollouts, migrations, health checks, and rollbacks.",
+          skills: ["Terraform", "Kubernetes", "ECS", "Fargate", "Redis", "DigitalOcean"]
         },
         {
           description:
