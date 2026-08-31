@@ -11,6 +11,7 @@ import React from "react";
 import { BackedBy, type Investor } from "@/components/backed-by";
 import { ExperienceTag } from "@/components/experience-tag";
 import { PartneredWith, type Partner } from "@/components/partnered-with";
+import { ExperienceLinks, type ExperienceLink } from "@/components/experience-links";
 
 interface Role {
   title: string;
@@ -29,6 +30,7 @@ interface PromotionCardProps {
   altText: string;
   company: string;
   href?: string;
+  productLinks?: readonly ExperienceLink[];
   badges?: readonly string[];
   roles: Role[];
   tag?: string;
@@ -75,6 +77,7 @@ export const PromotionCard = ({
   altText,
   company,
   href,
+  productLinks,
   badges,
   roles,
   tag,
@@ -130,7 +133,7 @@ export const PromotionCard = ({
           <div className="flex-grow ml-4 items-center flex-col group">
             <CardHeader>
               <div className="flex items-center justify-between gap-x-2 text-base">
-                <h3 className={cn("inline-flex items-center mr-4 justify-center font-semibold leading-none text-xs sm:text-sm", titleClassName)}>
+                <h3 className={cn("inline-flex flex-wrap items-center gap-x-2 gap-y-1 mr-4 justify-center font-semibold leading-none text-xs sm:text-sm", titleClassName)}>
                   {href && href !== "#" ? (
                     <Link href={href} className="inline-flex items-center gap-1 hover:underline">
                       {company}
@@ -138,6 +141,9 @@ export const PromotionCard = ({
                     </Link>
                   ) : (
                     <span>{company}</span>
+                  )}
+                  {productLinks && productLinks.length > 0 && (
+                    <ExperienceLinks links={productLinks} />
                   )}
                   {badges && (
                     <span className="inline-flex gap-x-1 ml-2">

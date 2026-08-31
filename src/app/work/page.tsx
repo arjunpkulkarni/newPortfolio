@@ -109,6 +109,7 @@ export default function WorkPage() {
                   altText={work.company}
                   company={work.company}
                   href={work.href}
+                  productLinks={work.productLinks}
                   badges={work.badges}
                   roles={roles}
                   tag={work.tag}

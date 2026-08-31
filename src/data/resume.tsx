@@ -170,15 +170,16 @@ export const DATA = {
     {
       company: "Brekfuz",
       href: "https://brekfuz.com/",
+      productLinks: [{ name: "Breken", href: "https://breken.ai" }],
       badges: [],
-      tag: "enterprise AI agents + retrieval + AWS infrastructure",
+      tag: "AI support engineering + enterprise agents + observability",
       location: "New York, NY",
       title: "Agent Infrastructure Engineer / Engineering Lead",
       logoUrl: brekfuz,
       start: "Aug 2026",
       end: "Present",
       description:
-        "Production enterprise knowledge agent with ACL-aware retrieval, tool orchestration, and AWS infrastructure across Slack, GitHub, Linear, Gmail, calendar, and internal memory.",
+        "Built Breken, an AI support engineering platform within Brekfuz that correlates customer issues with production signals for automated RCA and remediation. Also led agent infrastructure for Brekfuz's enterprise knowledge product.",
       partneredWith: [
         { name: "Whop", href: "https://whop.com/" },
         { name: "Terac API", href: "https://terac.com/" },
@@ -196,23 +197,28 @@ export const DATA = {
       tasks: [
         {
           description:
-            "Architected ACL-aware retrieval over workspace sources using vector + lexical search (Pinecone/Turbopuffer), ClickHouse analytics, graph context, reranking, and conversation memory.",
-          skills: ["FastAPI", "Pinecone", "Turbopuffer", "ClickHouse", "RAG", "Vector Search", "ACL"]
+            "Built Breken, an AI support engineering platform that turns customer issues into root-cause investigations by correlating Zendesk tickets with Sentry, PostHog, infrastructure logs, and GitHub.",
+          skills: ["Zendesk", "Sentry", "PostHog", "GitHub", "RCA", "Support Engineering"]
         },
         {
           description:
-            "Designed agent orchestration with Temporal and Kafka for intent routing, tool selection, bounded loops, evidence packing, citations, and grounding checks.",
-          skills: ["Temporal", "Kafka", "Agent Orchestration", "Tool Routing", "Citations", "Grounding"]
+            "Designed a standardized observability layer that normalizes multi-source production data into a unified event model, enabling automated incident timelines, hypothesis generation, and RCA dossiers.",
+          skills: ["Observability", "Event Modeling", "Incident Timelines", "RCA"]
         },
         {
           description:
-            "Managed infrastructure with Terraform, Kubernetes, ECS/Fargate, Redis, and DigitalOcean; ran zero-downtime ECS rollouts, migrations, health checks, and rollbacks.",
-          skills: ["Terraform", "Kubernetes", "ECS", "Fargate", "Redis", "DigitalOcean"]
+            "Built an agentic remediation workflow from support ticket to production evidence, root cause, human approval, and automatically generated GitHub fix PRs.",
+          skills: ["Agent Workflows", "GitHub", "Remediation", "Human-in-the-Loop"]
         },
         {
           description:
-            "Built guarded GitHub Actions CI/CD with deployment safety checks; debugged IAM, networking, capacity, observability, and production deployment failures.",
-          skills: ["GitHub Actions", "CI/CD", "IAM", "Observability", "Production Systems"]
+            "Architected ACL-aware retrieval and agent orchestration (Temporal, Kafka) for Brekfuz's enterprise knowledge agent across Slack, GitHub, Linear, Gmail, and internal memory.",
+          skills: ["FastAPI", "Temporal", "Kafka", "Pinecone", "Turbopuffer", "ClickHouse", "RAG", "ACL"]
+        },
+        {
+          description:
+            "Managed infrastructure with Terraform, Kubernetes, ECS/Fargate, and Redis; ran zero-downtime rollouts, guarded CI/CD, and production deployment safety checks.",
+          skills: ["Terraform", "Kubernetes", "ECS", "Fargate", "Redis", "GitHub Actions", "CI/CD"]
         }
       ]
     },
