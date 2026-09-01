@@ -179,7 +179,7 @@ export const DATA = {
       start: "Aug 2026",
       end: "Present",
       description:
-        "Built Breken, an AI support engineering platform within Brekfuz that correlates customer issues with production signals for automated RCA and remediation. Also led agent infrastructure for Brekfuz's enterprise knowledge product.",
+        "Built Breken for support RCA. Led agent infrastructure for Brekfuz's knowledge product.",
       partneredWith: [
         { name: "Whop", href: "https://whop.com/" },
         { name: "Terac API", href: "https://terac.com/" },
