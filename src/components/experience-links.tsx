@@ -16,25 +16,24 @@ export function ExperienceLinks({ links, className }: ExperienceLinksProps) {
   if (!links || links.length === 0) return null;
 
   return (
-    <div className={cn("flex flex-wrap items-center gap-x-1.5 gap-y-1 text-xs sm:text-sm", className)}>
-      {links.map((link, index) => (
-        <span key={`${link.name}-${index}`} className="inline-flex items-center gap-1.5">
-          {index > 0 && (
-            <span className="text-muted-foreground/40 select-none" aria-hidden>
-              ·
-            </span>
-          )}
+    <div className={cn("mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1.5", className)}>
+      <span className="text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+        {links.length === 1 ? "Product" : "Products"}
+      </span>
+      <div className="flex flex-wrap items-center gap-1.5">
+        {links.map((link, index) => (
           <Link
+            key={`${link.name}-${index}`}
             href={link.href}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-0.5 font-semibold hover:underline"
+            className="inline-flex items-center gap-1 rounded-full border border-border/50 bg-muted/20 px-2.5 py-0.5 text-[11px] font-medium text-muted-foreground transition-colors hover:border-border hover:bg-muted/40 hover:text-foreground"
           >
             {link.name}
-            <ArrowUpRight className="size-3.5" />
+            <ArrowUpRight className="size-3 opacity-60" />
           </Link>
-        </span>
-      ))}
+        ))}
+      </div>
     </div>
   );
 }

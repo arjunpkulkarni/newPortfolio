@@ -142,9 +142,6 @@ export const PromotionCard = ({
                   ) : (
                     <span>{company}</span>
                   )}
-                  {productLinks && productLinks.length > 0 && (
-                    <ExperienceLinks links={productLinks} />
-                  )}
                   {badges && (
                     <span className="inline-flex gap-x-1 ml-2">
                       {badges.map((badge, index) => (
@@ -174,6 +171,9 @@ export const PromotionCard = ({
                   </span>
                 ))}
               </div>
+              {productLinks && productLinks.length > 0 && (
+                <ExperienceLinks links={productLinks} />
+              )}
               {tag && <ExperienceTag tag={tag} />}
             </CardHeader>
           </div>
