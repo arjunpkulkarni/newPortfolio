@@ -118,12 +118,13 @@ export default function EducationPage() {
   const filteredCourses = getFilteredCourses();
 
   return (
-    <main className="container mx-auto px-4 py-8 max-w-7xl">
+    <main className="px-5 py-8 sm:px-8">
       <section id="education" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 7}>
-          <div className="space-y-0.5 mb-6 mt-20">
-            <h2 className="text-2xl font-medium tracking-tighter">Education</h2>
-            <p className="text-sm text-muted-foreground">Academic background and coursework.</p>
+          <div className="mb-6 space-y-0.5">
+            <h2 className="section-label">Education</h2>
+            <div className="section-rule !mb-0" />
+            <p className="pt-4 text-sm text-muted-foreground">Academic background and coursework.</p>
           </div>
         </BlurFade>
         <div className="flex min-h-0 flex-col gap-y-3">

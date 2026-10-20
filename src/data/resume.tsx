@@ -36,7 +36,7 @@ import sideshift from "../app/work/pictures/sideshift.jpeg";
 import fitfoLogo from "../app/projects/pictures/fitfo/fitfo-logo-dark.png";
 import ibm from "../app/work/pictures/ibm.png";
 import nestle from "../app/work/pictures/nestle.png";
-import brekfuz from "../app/work/pictures/brekfuz.png";
+import breken from "../app/work/pictures/breken.png";
 import paretoHoldings from "../app/work/pictures/venture-capital/paretoHoldings.png";
 import pearVC from "../app/work/pictures/venture-capital/pearVC.png";
 import zFellows from "../app/work/pictures/venture-capital/zFellows.png";
@@ -65,9 +65,9 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "AI Systems Engineer building production agent infrastructure: retrieval, permissions, orchestration, and reliability.",
+    "Applied AI systems with a focus on agent reliability, evals, and production remediation.",
   summary:
-    "I build production AI systems at the intersection of retrieval, agent orchestration, and backend infrastructure - spanning ACL-aware knowledge agents, multimodal evaluation, and clinical/enterprise RAG optimized for latency, correctness, and scale.",
+    "I build applied AI systems that make agents reliable in production. Across Breken, IBM, and FitFo the thread is the same: turn promising AI into systems people can use and trust.",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [
@@ -168,24 +168,19 @@ export const DATA = {
 
   work: [
     {
-      company: "Brekfuz",
-      href: "https://brekfuz.com/",
-      productLinks: [{ name: "Breken", href: "https://breken.ai" }],
+      company: "Breken",
+      href: "https://breken.ai/",
       badges: [],
-      tag: "AI support engineering + enterprise agents + observability",
+      tag: "production simulation + synthetic agents + failure reproduction",
       location: "San Francisco, CA",
       title: "Founding Engineer",
-      logoUrl: brekfuz,
+      logoUrl: breken,
       start: "Aug 2026",
       end: "Present",
       description:
-        "Built Breken for support RCA. Led agent infrastructure for Brekfuz's knowledge product.",
+        "A production before production: Breken simulates the world around your software to find the failures customers would otherwise hit.",
       partneredWith: [
-        { name: "Whop", href: "https://whop.com/" },
-        { name: "Terac API", href: "https://terac.com/" },
-        { name: "pump.co", href: "https://www.pump.co/" },
-        { name: "Mozilla", href: "https://www.mozilla.org/" },
-        { name: "Luma Labs", href: "https://lumalabs.ai/" },
+        { name: "Greptile", href: "https://www.greptile.com/" },
       ],
       backedBy: [
         { name: "Pareto Holdings", logoUrl: paretoHoldings },
@@ -197,23 +192,28 @@ export const DATA = {
       tasks: [
         {
           description:
-            "Built Breken, an AI support engineering platform that turns customer issues into root-cause investigations by correlating Zendesk tickets with Sentry, PostHog, infrastructure logs, and GitHub.",
-          skills: ["Zendesk", "Sentry", "PostHog", "GitHub", "RCA", "Support Engineering"]
+            "Built the environment layer that rebuilds a customer's entire system on isolated machines, answering external services (payments, mail, database, queue) inside the sandbox with nothing mocked or exposed.",
+          skills: ["Sandboxing", "Environment Reconstruction", "Distributed Systems"]
         },
         {
           description:
-            "Designed a standardized observability layer that normalizes multi-source production data into a unified event model, enabling automated incident timelines, hypothesis generation, and RCA dossiers.",
-          skills: ["Observability", "Event Modeling", "Incident Timelines", "RCA"]
+            "Accelerated the simulation clock to 4,000x so months of realistic production state (accounts, records, pending work, open sessions) grow from use instead of fixtures.",
+          skills: ["Simulation", "Time Virtualization", "State Generation"]
         },
         {
           description:
-            "Built an agentic remediation workflow from support ticket to production evidence, root cause, human approval, and automatically generated GitHub fix PRs.",
-          skills: ["Agent Workflows", "GitHub", "Remediation", "Human-in-the-Loop"]
+            "Designed a population of synthetic users and AI agents with intent, habits, and limited patience, with every run fully reproducible.",
+          skills: ["AI Agents", "Synthetic Users", "Deterministic Replay"]
         },
         {
           description:
-            "Architected ACL-aware retrieval and agent orchestration (Temporal, Kafka) for Brekfuz's enterprise knowledge agent across Slack, GitHub, Linear, Gmail, and internal memory.",
-          skills: ["FastAPI", "Temporal", "Kafka", "Pinecone", "Turbopuffer", "ClickHouse", "RAG", "ACL"]
+            "Built the exploration engine that turns expected product properties into hypotheses and tests them by varying one condition at a time: retries, lost responses, clock jumps, and mid-job deploys.",
+          skills: ["Property-Based Testing", "Fault Injection", "Evals"]
+        },
+        {
+          description:
+            "Shipped failure reproduction against a never-failing control run, outputting the exact state, a trace, and a draft GitHub pull request with the fix.",
+          skills: ["GitHub", "Tracing", "PR Generation"]
         },
         {
           description:
@@ -276,24 +276,19 @@ export const DATA = {
       company: "FitFo",
       href: "https://www.fitfo.app/",
       badges: [],
-      tag: "agentic product engineering + scale + business impact",
+      tag: "agent reliability + product systems + scale",
       location: "New York, NY",
-      title: "Founding Engineer / AI Systems",
+      title: "CTO / AI Systems",
       logoUrl: fitfoLogo,
       start: "Feb 2026",
       end: "June 2026",
       description:
-        "Agentic coaching platform (Flask, DigitalOcean, TypeScript) from architecture through production scale. Built in the Sisu incubator.",
+        "Agentic coaching platform from architecture through production scale. Now at $350K GMV. Built in the Sisu incubator.",
       tasks: [
         {
           description:
-            "Shipped an agentic coaching platform to 27K users and $200K ARR on Flask + TypeScript.",
+            "Shipped an agentic coaching platform to 40K users and $350K GMV on Flask + TypeScript.",
           skills: ["Flask", "DigitalOcean", "TypeScript", "Agentic AI", "Product"]
-        },
-        {
-          description:
-            "Redesigned core architecture, onboarding, and RevenueCat subscription systems; scaled to 5,850+ active customers and 532 trials.",
-          skills: ["Swift", "iOS", "RevenueCat", "Architecture", "Growth"]
         },
         {
           description:
@@ -759,60 +754,60 @@ export const DATA = {
       href: "https://www.pareto.holdings/",
       badges: ["Investor"],
       location: "",
-      title: "Investor in Brekfuz",
+      title: "Investor in Breken",
       logoUrl: paretoHoldings,
       start: "",
       end: "",
       description:
-        "Investor backing Brekfuz's infrastructure for institutional intelligence.",
+        "Investor backing Breken.",
     },
     {
       company: "Pear VC",
       href: "https://pear.vc/",
       badges: ["Investor"],
       location: "",
-      title: "Investor in Brekfuz",
+      title: "Investor in Breken",
       logoUrl: pearVC,
       start: "",
       end: "",
       description:
-        "Early-stage venture firm backing Brekfuz's retrieval, observability, and agent-access layer.",
+        "Early-stage venture firm backing Breken.",
     },
     {
       company: "Cory Levy",
       href: "https://www.corylevy.com/",
       badges: ["Investor"],
       location: "",
-      title: "Investor in Brekfuz",
+      title: "Investor in Breken",
       logoUrl: coryLevy,
       start: "",
       end: "",
       description:
-        "Angel investor and founder of Z Fellows, backing Brekfuz.",
+        "Angel investor and founder of Z Fellows, backing Breken.",
     },
     {
       company: "Z Fellows",
       href: "https://www.zfellows.com/",
       badges: ["Investor"],
       location: "",
-      title: "Investor in Brekfuz",
+      title: "Investor in Breken",
       logoUrl: zFellows,
       start: "",
       end: "",
       description:
-        "Fellowship and investor program backing Brekfuz.",
+        "Fellowship and investor program backing Breken.",
     },
     {
       company: "Collective Global",
       href: "https://www.collective.global/",
       badges: ["Investor"],
       location: "",
-      title: "Investor in Brekfuz",
+      title: "Investor in Breken",
       logoUrl: collectiveGlobal,
       start: "",
       end: "",
       description:
-        "Investor supporting Brekfuz's build-out of institutional intelligence infrastructure.",
+        "Investor backing Breken.",
     },
   ],
   education: [

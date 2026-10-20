@@ -21,11 +21,11 @@ Here's how I trained deep learning models to understand musical structure and ge
 
 Music has unique challenges that make it harder than text generation:
 
-* **Polyphony** — Multiple notes play simultaneously (chords, harmonies)
-* **Temporal dependencies** — Notes depend on what came 8-16 bars ago
-* **Hierarchical structure** — Phrases → sections → full songs
-* **Style consistency** — Must maintain genre, mood, key throughout
-* **Rhythmic patterns** — Timing matters as much as pitch
+* **Polyphony**: Multiple notes play simultaneously (chords, harmonies)
+* **Temporal dependencies**: Notes depend on what came 8-16 bars ago
+* **Hierarchical structure**: Phrases → sections → full songs
+* **Style consistency**: Must maintain genre, mood, key throughout
+* **Rhythmic patterns**: Timing matters as much as pitch
 
 Early attempts at music generation produced:
 * Dissonant, random-sounding sequences
@@ -1070,10 +1070,10 @@ After training on **5,000 MIDI files** for **50 epochs** (~12 hours on V100):
 
 I evaluated generated music on:
 
-1. **Harmonic Coherence** — Does it stay in key?
-2. **Rhythmic Consistency** — Are patterns recognizable?
-3. **Melodic Contour** — Does it have pleasing shape?
-4. **Structural Repetition** — Does it repeat motifs?
+1. **Harmonic Coherence**: Does it stay in key?
+2. **Rhythmic Consistency**: Are patterns recognizable?
+3. **Melodic Contour**: Does it have pleasing shape?
+4. **Structural Repetition**: Does it repeat motifs?
 
 **Human Evaluation** (50 producers rating 1-5):
 
@@ -1147,10 +1147,10 @@ The model powers Loophaus's AI music enhancement:
 ```
 
 **Deployed on AWS**:
-* **ECS Fargate** — Containerized Flask API
-* **TensorFlow Serving** — Model inference
-* **S3** — MIDI file storage
-* **CloudFront** — CDN for audio delivery
+* **ECS Fargate**: Containerized Flask API
+* **TensorFlow Serving**: Model inference
+* **S3**: MIDI file storage
+* **CloudFront**: CDN for audio delivery
 
 **Latency**:
 * Model inference: 180ms
@@ -1305,7 +1305,7 @@ Multiple users jam with AI in real-time:
 Building an **AI music generation engine** with LSTMs achieved impressive results:
 
 * **5,000 MIDI files** processed and learned
-* **3.16 perplexity** — high-quality generations
+* **3.16 perplexity**: high-quality generations
 * **4.1/5 user rating** from professional producers
 * **<500ms latency** for real-time generation
 

@@ -1,7 +1,7 @@
 ---
 title: "How I Cut p95 Latency by 30% Using Redis, Postgres, and Predictive Caching"
 publishedAt: "2024-12-07"
-summary: "Deep dive into optimizing vector search latency at Siramai through Redis caching, predictive query patterns, and pipeline batching — cutting p95 latency by 30%."
+summary: "Deep dive into optimizing vector search latency at Siramai through Redis caching, predictive query patterns, and pipeline batching, cutting p95 latency by 30%."
 company: "Siramai"
 role: "Founding Engineer"
 technologies: ["Redis", "Postgres", "Python", "Vector Search", "Caching"]
@@ -20,7 +20,7 @@ Our system had three latency contributors:
 2. Ranking model calls
 3. Product metadata joins in Postgres
 
-Requests took wildly different paths depending on user history, availability of embeddings, and cache state — leading to unpredictable spikes.
+Requests took wildly different paths depending on user history, availability of embeddings, and cache state, leading to unpredictable spikes.
 
 ## Architecture Before Optimization
 
@@ -82,9 +82,9 @@ This provided ~18% efficiency improvement during peak hours.
 
 ## Key Lessons
 
-* **Predictive caching is far more powerful than static caching** — understanding user behavior patterns can guide intelligent pre-fetching
-* **Redis hashes outperform Postgres for repeated metadata fetches** — denormalization has its place in high-throughput systems
-* **Small batching windows give enormous wins at scale** — even 8ms windows can aggregate multiple requests
+* **Predictive caching is far more powerful than static caching**: understanding user behavior patterns can guide intelligent pre-fetching
+* **Redis hashes outperform Postgres for repeated metadata fetches**: denormalization has its place in high-throughput systems
+* **Small batching windows give enormous wins at scale**: even 8ms windows can aggregate multiple requests
 
 ## Future Work
 

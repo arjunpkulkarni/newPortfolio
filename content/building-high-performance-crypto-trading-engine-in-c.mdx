@@ -1172,7 +1172,7 @@ Building a high-performance crypto trading engine in C++ has been an incredible 
 - Compiler flags (`-O3`, `-flto`, PGO) can yield 20%+ speedups
 
 **Concurrent Programming:**
-- Multi-threading isn't just about spawning threads—synchronization is key
+- Multi-threading isn't just about spawning threads, synchronization is key
 - Mutexes protect shared state but introduce contention
 - Lock-free data structures (using atomics) can eliminate bottlenecks
 - Thread sanitizers (`TSan`) catch race conditions that manual testing misses
@@ -1204,7 +1204,7 @@ The final system achieves latencies that rival professional trading platforms:
 
 ### Real-World Application
 
-This trading engine isn't just a toy project—it's a foundation for real trading strategies:
+This trading engine isn't just a toy project, it's a foundation for real trading strategies:
 
 1. **Arbitrage Detection** - Identify price discrepancies across exchanges (sub-second execution required)
 2. **Market Making** - Provide liquidity by placing bid/ask orders (requires high throughput)

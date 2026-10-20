@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import BlurFade from "@/components/magicui/blur-fade";
 import { PromotionCard } from "@/components/promotion-card";
 import { DATA } from "@/data/resume";
@@ -8,73 +7,17 @@ import { DATA } from "@/data/resume";
 const BLUR_FADE_DELAY = 0.04;
 
 export default function WorkPage() {
-  const [scrollProgress, setScrollProgress] = useState(0);
-
-  // Calculate total items for timeline
-  const allItems = [
-    ...DATA.work,
-    ...DATA.research,
-    ...DATA.clubs,
-  ];
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollTop = window.scrollY;
-      const progress = (scrollTop / (documentHeight - windowHeight)) * 100;
-      setScrollProgress(Math.min(progress, 100));
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <main className="container mx-auto px-4 py-8 max-w-7xl relative">
-      {/* Single Timeline for entire page */}
-      <div className="absolute right-4 top-32 bottom-8 w-px hidden md:block">
-        {/* Background line */}
-        <div className="absolute inset-0 bg-border/40"></div>
-        
-        {/* Animated line that grows with scroll */}
-        <div 
-          className="absolute top-0 left-0 w-full bg-primary transition-all duration-700 ease-out"
-          style={{ height: `${scrollProgress}%` }}
-        ></div>
-        
-        {/* Dots for all items */}
-        {allItems.map((_, index) => {
-          const isFirst = index === 0;
-          const dotPosition = (index / (allItems.length - 1)) * 100;
-          const isPassed = scrollProgress >= dotPosition;
-          
-          return (
-            <div
-              key={index}
-              className="absolute left-1/2 transform -translate-x-1/2 transition-all duration-700"
-              style={{ top: `${dotPosition}%` }}
-            >
-              <div 
-                className={`w-3 h-3 rounded-full border-2 transition-all duration-700 ${
-                  isPassed
-                    ? 'bg-primary border-primary'
-                    : 'bg-background border-border/40'
-                } ${isFirst ? 'scale-125' : ''}`}
-              />
-            </div>
-          );
-        })}
-      </div>
-
+    <main className="relative px-5 py-8 sm:px-8">
       <section id="work" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 7}>
-          <div className="space-y-0.5 mb-8 mt-20">
-            <h2 className="text-2xl font-medium tracking-tighter">Experience</h2>
-            <p className="text-sm text-muted-foreground">Professional experience and contributions.</p>
+          <div className="mb-8 space-y-0.5">
+            <h2 className="section-label">Experience</h2>
+            <div className="section-rule !mb-0" />
+            <p className="pt-4 text-sm text-muted-foreground">Professional experience and contributions.</p>
           </div>
         </BlurFade>
-        <div className="flex min-h-0 flex-col divide-y divide-border/60 md:pr-16">
+        <div className="flex min-h-0 flex-col divide-y divide-border/60">
           {DATA.work.map((work: any, id) => {
             // Handle both single role and multiple roles format
             const roles = work.roles ? work.roles.map((role: any) => {
@@ -125,12 +68,13 @@ export default function WorkPage() {
       {/* Research */}
       <section id="research" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 11}>
-          <div className="space-y-0.5 mb-8 mt-16">
-            <h2 className="text-2xl font-medium tracking-tighter">Research Experience</h2>
-            <p className="text-sm text-muted-foreground">Academic and laboratory research work.</p>
+          <div className="mb-8 space-y-0.5">
+            <h2 className="section-label">Research</h2>
+            <div className="section-rule !mb-0" />
+            <p className="pt-4 text-sm text-muted-foreground">Academic and laboratory research work.</p>
           </div>
         </BlurFade>
-        <div className="flex min-h-0 flex-col divide-y divide-border/60 md:pr-16">
+        <div className="flex min-h-0 flex-col divide-y divide-border/60">
           {DATA.research.map((research: any, id) => (
             <BlurFade
               key={research.company}
@@ -160,12 +104,13 @@ export default function WorkPage() {
       {/* Clubs */}
       <section id="clubs" className="w-full">
         <BlurFade delay={BLUR_FADE_DELAY * 13}>
-          <div className="space-y-0.5 mb-8 mt-16">
-            <h2 className="text-2xl font-medium tracking-tighter">Clubs & Organizations</h2>
-            <p className="text-sm text-muted-foreground">Student organizations and teams.</p>
+          <div className="mb-8 space-y-0.5">
+            <h2 className="section-label">Clubs & Organizations</h2>
+            <div className="section-rule !mb-0" />
+            <p className="pt-4 text-sm text-muted-foreground">Student organizations and teams.</p>
           </div>
         </BlurFade>
-        <div className="flex min-h-0 flex-col divide-y divide-border/60 md:pr-16">
+        <div className="flex min-h-0 flex-col divide-y divide-border/60">
           {DATA.clubs.map((club: any, id) => (
             <BlurFade
               key={club.company}

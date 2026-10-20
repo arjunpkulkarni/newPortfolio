@@ -9,7 +9,7 @@ category: "Full-Stack & FinTech"
 type: "project"
 ---
 
-Managing investments across multiple platforms is painful. Stocks in Robinhood, crypto in Coinbase and Binance, retirement accounts in Vanguard—your portfolio is fragmented, and calculating true performance is impossible without manual spreadsheets.
+Managing investments across multiple platforms is painful. Stocks in Robinhood, crypto in Coinbase and Binance, retirement accounts in Vanguard, your portfolio is fragmented, and calculating true performance is impossible without manual spreadsheets.
 
 I built **quantDesk**, a unified investment dashboard that aggregates holdings across stocks and crypto, calculates advanced portfolio analytics (**VaR, Sharpe ratio, Beta, Max Drawdown**), and provides AI-generated trade suggestions. The platform uses **MySQL stored procedures** for fast calculations, **Pandas** for time-series analysis, and **Plotly** for interactive visualizations.
 
@@ -21,10 +21,10 @@ I built **quantDesk**, a unified investment dashboard that aggregates holdings a
 
 Most investors have holdings spread across:
 
-* **Stock brokers** — Robinhood, E*TRADE, Fidelity
-* **Crypto exchanges** — Coinbase, Binance, Kraken
-* **Retirement accounts** — 401k, IRA
-* **Alternative assets** — Real estate, P2P lending
+* **Stock brokers**: Robinhood, E*TRADE, Fidelity
+* **Crypto exchanges**: Coinbase, Binance, Kraken
+* **Retirement accounts**: 401k, IRA
+* **Alternative assets**: Real estate, P2P lending
 
 **Pain points**:
 * No unified view of total portfolio
@@ -77,7 +77,7 @@ Most investors have holdings spread across:
 
 ### 1. Unified Holdings Schema
 
-The key insight: **stocks and crypto are just assets**. Don't duplicate logic—use one table:
+The key insight: **stocks and crypto are just assets**. Don't duplicate logic, use one table:
 
 ```sql
 -- schema.sql
@@ -1218,10 +1218,8 @@ Validated against Bloomberg Terminal and Morningstar:
 
 ### User Feedback
 
-> "Finally, I can see my entire portfolio in one place. The Sharpe ratio calculation saved me hours in Excel." — Quantitative Analyst
-
-> "The editable grid makes it easy to play with 'what-if' scenarios. Love the CSV upload feature." — Day Trader
-
+> "Finally, I can see my entire portfolio in one place. The Sharpe ratio calculation saved me hours in Excel." (Quantitative Analyst)
+> "The editable grid makes it easy to play with 'what-if' scenarios. Love the CSV upload feature." (Day Trader)
 ## Challenges & Solutions
 
 ### Challenge 1: API Rate Limits

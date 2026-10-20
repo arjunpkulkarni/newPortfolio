@@ -2,168 +2,165 @@
 @tailwind components;
 @tailwind utilities;
 
-  @layer base {
-    :root {
-      --background: 0 0% 100%;
-      --foreground: 210 11.1% 3.53%;
+@layer base {
+  :root {
+    /* Warm cream portfolio surface, matching clean single-page resume sites */
+    --background: 40 20% 97%;
+    --foreground: 40 8% 10%;
 
-      --card: 0 0% 100%;
-      --card-foreground: 210 11.1% 3.53%;
+    --card: 0 0% 100%;
+    --card-foreground: 40 8% 10%;
 
-      --popover: 0 0% 100%;
-      --popover-foreground: 210 11.1% 3.53%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 40 8% 10%;
 
-      --primary: 0 0% 9%;
-      --primary-foreground: 0 0% 98%;
+    --primary: 40 8% 10%;
+    --primary-foreground: 40 20% 97%;
 
-      --secondary: 0 0% 96.1%;
-      --secondary-foreground: 0 0% 9%;
+    --secondary: 40 10% 94%;
+    --secondary-foreground: 40 8% 10%;
 
-      --muted: 0 0% 96.1%;
-      --muted-foreground: 0 0% 45.1%;
+    --muted: 40 10% 94%;
+    --muted-foreground: 40 6% 42%;
 
-      --accent: 0 0% 96.1%;
-    --accent-foreground: 0 0% 9%;
+    --accent: 40 10% 94%;
+    --accent-foreground: 40 8% 10%;
 
-      --destructive: 0 84.2% 60.2%;
-      --destructive-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
 
-      --border: 0 0% 89.8%;
-      --input: 0 0% 89.8%;
-      --ring: 0 0% 3.9%;
+    --border: 40 12% 88%;
+    --input: 40 12% 88%;
+    --ring: 40 8% 10%;
 
-      --radius: 0.5rem;
-      
-      /* Design tokens */
-      --surface-subtle: 0 0% 98%;
-      --surface-muted: 0 0% 96.1%;
-    }
+    --radius: 0.75rem;
 
-    .dark {
-      --background: 210 11.1% 3.53%;
-      --foreground: 0 0% 98%;
-
-      --card: 210 11.1% 3.53%;
-      --card-foreground: 0 0% 98%;
-
-      --popover: 210 11.1% 3.53%;
-      --popover-foreground: 0 0% 98%;
-
-      --primary: 0 0% 98%;
-      --primary-foreground: 0 0% 9%;
-
-      --secondary: 0 0% 14.9%;
-      --secondary-foreground: 0 0% 98%;
-
-      --muted: 0 0% 14.9%;
-      --muted-foreground: 0 0% 63.9%;
-
-      --accent: 0 0% 14.9%;
-      --accent-foreground: 0 0% 98%;
-
-      --destructive: 0 62.8% 30.6%;
-      --destructive-foreground: 0 0% 98%;
-
-      --border: 0 0% 14.9%;
-      --input: 0 0% 14.9%;
-      --ring: 0 0% 83.1%;
-      
-      /* Design tokens - improved dark mode */
-      --surface-subtle: 210 11.1% 6%;
-      --surface-muted: 0 0% 10%;
-    }
+    --surface-subtle: 40 16% 96%;
+    --surface-muted: 40 10% 94%;
+    --label: 40 5% 52%;
   }
 
-  @layer base {
-    * {
-      @apply border-border;
-    }
-    body {
-      @apply bg-background text-foreground;
-    }
+  .dark {
+    --background: 40 6% 7%;
+    --foreground: 40 10% 96%;
+
+    --card: 40 6% 10%;
+    --card-foreground: 40 10% 96%;
+
+    --popover: 40 6% 10%;
+    --popover-foreground: 40 10% 96%;
+
+    --primary: 40 10% 96%;
+    --primary-foreground: 40 6% 7%;
+
+    --secondary: 40 5% 16%;
+    --secondary-foreground: 40 10% 96%;
+
+    --muted: 40 5% 16%;
+    --muted-foreground: 40 5% 62%;
+
+    --accent: 40 5% 16%;
+    --accent-foreground: 40 10% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 40 5% 18%;
+    --input: 40 5% 18%;
+    --ring: 40 10% 80%;
+
+    --surface-subtle: 40 6% 9%;
+    --surface-muted: 40 5% 14%;
+    --label: 40 5% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+}
+
+@layer components {
+  .section-label {
+    @apply font-mono text-[11px] sm:text-xs uppercase tracking-[0.08em] text-[hsl(var(--label))];
   }
 
-  h3 code {
-    @apply !text-lg md:!text-xl;
-  }
-  
-  pre {
-    @apply !px-0 rounded-lg overflow-x-auto py-4
-  }
-   
-  pre [data-line] {
-    @apply px-4
+  .section-rule {
+    @apply mt-2 mb-8 h-px w-full bg-border;
   }
 
-  code {
-    @apply text-sm md:text-base !leading-loose;
+  .pill {
+    @apply inline-flex items-center justify-center rounded-full border border-border bg-card px-3.5 py-1.5 text-[13px] text-foreground/80 transition-colors hover:bg-secondary hover:text-foreground;
   }
-  
-  pre > code {
-    counter-reset: line;
+
+  .pill-primary {
+    @apply border-foreground/15 bg-foreground text-background hover:bg-foreground/90 hover:text-background;
   }
-  
+
+  .chip {
+    @apply inline-flex items-center rounded-md border border-border/70 bg-secondary/60 px-2 py-0.5 text-[11px] text-foreground/75;
+  }
+}
+
+h3 code {
+  @apply !text-lg md:!text-xl;
+}
+
+pre {
+  @apply !px-0 rounded-lg overflow-x-auto py-4;
+}
+
+pre [data-line] {
+  @apply px-4;
+}
+
+code {
+  @apply text-sm md:text-base !leading-loose;
+}
+
+pre > code {
+  counter-reset: line;
+}
+
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+  color: var(--shiki-light);
+  background-color: var(--shiki-light-bg);
+}
+
+@media (prefers-color-scheme: dark) {
   code[data-theme*=" "],
   code[data-theme*=" "] span {
-    color: var(--shiki-light);
-    background-color: var(--shiki-light-bg);
+    color: var(--shiki-dark);
+    background-color: var(--shiki-dark-bg);
   }
-   
-  @media (prefers-color-scheme: dark) {
-    code[data-theme*=" "],
-    code[data-theme*=" "] span {
-      color: var(--shiki-dark);
-      background-color: var(--shiki-dark-bg);
-    }
-  }
-  
-  code[data-line-numbers] {
-    counter-reset: line;
-  }
-  
-  code[data-line-numbers] > [data-line]::before {
-    counter-increment: line;
-    content: counter(line);
-    @apply inline-block w-4 mr-4 text-right text-gray-500;
-  }
- 
-  code {
-    counter-reset: line;
-  }
- 
-  code > [data-line]::before {
+}
+
+code[data-line-numbers] {
+  counter-reset: line;
+}
+
+code[data-line-numbers] > [data-line]::before {
   counter-increment: line;
   content: counter(line);
- 
-  /* Other styling */
-  display: inline-block;
-  width: 1rem;
-  margin-right: 2rem;
-  text-align: right;
-  color: gray;
+  @apply inline-block w-4 mr-4 text-right text-gray-500;
 }
- 
+
 code[data-line-numbers-max-digits="2"] > [data-line]::before {
-  width: 2rem;
+  width: 1.25rem;
 }
- 
+
 code[data-line-numbers-max-digits="3"] > [data-line]::before {
-  width: 3rem;
+  width: 1.75rem;
 }
 
-/* Animated gradient background */
-@keyframes gradient-x {
-  0%, 100% {
-    background-size: 200% 200%;
-    background-position: 0% 50%;
-  }
-  50% {
-    background-size: 200% 200%;
-    background-position: 100% 50%;
-  }
-}
-
-.animate-gradient-x {
-  animation: gradient-x 8s ease infinite;
-  background-size: 200% 200%;
+code[data-line-numbers-max-digits="4"] > [data-line]::before {
+  width: 2.25rem;
 }

@@ -1,152 +1,342 @@
-"use client";
-
-import BlurFade from "@/components/magicui/blur-fade";
-import BlurFadeText from "@/components/magicui/blur-fade-text";
-import { DATA } from "@/data/resume";
-import BackgroundPaths from "@/components/background";
-import { motion } from "framer-motion";
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import { ArrowUpRight, MapPin } from "lucide-react";
+import { DATA } from "@/data/resume";
+import { CASE_STUDIES } from "@/data/case-studies";
+import { CopyEmail } from "@/components/home/copy-email";
+import { ExperienceItem } from "@/components/home/experience-item";
+import { GithubHeatmap } from "@/components/home/github-heatmap";
+import { Section } from "@/components/home/section";
+import { WorkCard } from "@/components/home/work-card";
+import FitFoHero from "@/app/projects/pictures/fitfo/hero.png";
+import BrekenHero from "@/app/work/pictures/breken-hero.png";
+import CuratorHero from "@/app/work/pictures/curator-hero.png";
 
-const BLUR_FADE_DELAY = 0.04;
+const HERO_BULLETS = [
+  "Breken: simulating production to catch failures before customers do",
+  "IBM: reliable agent workflows under Fellow Dr. Kush R. Varshney",
+  "FitFo: CTO; agentic coaching now at $350K GMV",
+];
+
+const TECH_STACK = [
+  "Python",
+  "TypeScript",
+  "FastAPI",
+  "Temporal",
+  "Kafka",
+  "PostgreSQL",
+  "Redis",
+  "AWS",
+  "Kubernetes",
+];
+
+// Bold one-liners shown under each role in Experience.
+const METRICS: Record<string, string> = {
+  Breken: "Backed by Pear VC, Z Fellows, Pareto Holdings, and Collective Global",
+  IBM: "Under IBM Fellow Dr. Kush R. Varshney",
+  "Nestlé": "2M+ recipe co-occurrence corpus",
+  FitFo: "40K users · $350K GMV · $500K raised",
+};
+
+// Product previews for experience entries that ship a product.
+const EXPERIENCE_IMAGES: Record<string, StaticImageData> = {
+  Breken: BrekenHero,
+  FitFo: FitFoHero,
+  "Curator.to": CuratorHero,
+};
+
+function uniqueSkills(skills: string[][], limit = 5) {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const group of skills) {
+    for (const skill of group) {
+      if (!seen.has(skill)) {
+        seen.add(skill);
+        out.push(skill);
+      }
+      if (out.length >= limit) return out;
+    }
+  }
+  return out;
+}
+
+// Upper-level course names from the nested { dept: { level: course[] } } shape.
+function coursework(classes: any, limit = 10): string[] {
+  if (!classes) return [];
+  const courses: { code: string; name: string }[] = Object.values(classes).flatMap(
+    (levels: any) => Object.values(levels).flat() as any[]
+  );
+  return courses
+    .filter((c) => /[34]\d\d/.test(c.code))
+    .map((c) => c.name)
+    .slice(0, limit);
+}
 
 export default function HomePage() {
-  const words = ["Arjun", "Kulkarni"];
+  const experience = DATA.work.slice(0, 8).map((work: any) => {
+    const bullets = (work.tasks ?? [])
+      .slice(0, 3)
+      .map((t: any) => t.description as string);
+    const skills = uniqueSkills(
+      (work.tasks ?? []).map((t: any) => t.skills as string[])
+    );
+    const description = work.description as string | undefined;
+    const company = work.company as string;
+    return {
+      company,
+      href: work.href as string | undefined,
+      title: work.title as string,
+      metric: METRICS[company],
+      meta: description && description.length <= 90 ? description : undefined,
+      start: work.start as string | undefined,
+      end: work.end as string | undefined,
+      bullets,
+      skills,
+      image: EXPERIENCE_IMAGES[company],
+    };
+  });
+
+  const uiuc: any = DATA.education.find((e) =>
+    e.school.toLowerCase().includes("illinois")
+  );
+  const gatech = DATA.education.find((e) =>
+    e.school.toLowerCase().includes("georgia")
+  );
+  const courses = coursework(uiuc?.classes);
 
   return (
-    <div className="relative w-full">
-      {/* Hero Section with Background */}
-      <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <BackgroundPaths />
-        </div>
-        {/* Gradient overlays for depth and readability */}
-        <div className="absolute inset-0 z-5 bg-gradient-to-b from-background/5 via-transparent to-background/80"></div>
-        {/* Improved contrast overlay for text readability */}
-        <div className="absolute inset-0 z-8 bg-gradient-to-r from-background/85 via-background/40 to-transparent"></div>
-        {/* Soft blur overlay above BG, keeps BG intact */}
-        <div className="absolute inset-0 z-10 backdrop-blur-sm"></div>
+    <main id="main">
+      {/* Intro */}
+      <section
+        id="intro"
+        aria-label="Introduction"
+        className="scroll-mt-24 px-5 pb-10 pt-8 sm:px-8 sm:pb-12 sm:pt-10"
+      >
+        <Image
+          src={DATA.avatarUrl}
+          alt={DATA.name}
+          width={176}
+          height={176}
+          className="h-24 w-24 rounded-[22px] object-cover shadow-[0_8px_24px_-12px_rgba(27,26,23,0.35)] sm:h-28 sm:w-28 sm:rounded-[26px]"
+          priority
+        />
+        <h1 className="mt-6 text-[32px] font-normal leading-[1.1] tracking-[-0.025em] text-foreground sm:text-[44px]">
+          {DATA.name}
+        </h1>
+        <p className="mt-3 max-w-xl text-[16px] leading-relaxed text-foreground/90 sm:text-[17px]">
+          I build applied AI systems, focused on making agents reliable in production.
+        </p>
+        <ul className="mt-5 space-y-2">
+          {HERO_BULLETS.map((bullet) => (
+            <li
+              key={bullet}
+              className="flex gap-2.5 text-[13px] leading-relaxed text-foreground/80 sm:text-sm"
+            >
+              <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-foreground/40" />
+              <span>{bullet}</span>
+            </li>
+          ))}
+        </ul>
 
-        <div className="relative z-20 w-full max-w-7xl mx-auto px-6 md:px-16 lg:px-24 py-16 md:py-20">
-          <header>
-            <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-12 lg:gap-16 items-start md:items-center">
-              {/* Profile Image - Left */}
-              <BlurFade delay={BLUR_FADE_DELAY * 1} blur="12px" duration={0.6}>
-                <div className="relative md:ml-12 lg:ml-16">
-                  <Image
-                    alt={DATA.name}
-                    src={DATA.avatarUrl}
-                    width={200}
-                    height={200}
-                    className="h-36 w-36 md:h-48 md:w-48 lg:h-56 lg:w-56 object-cover rounded-2xl shadow-lg ring-2 ring-border"
-                  />
-                </div>
-              </BlurFade>
-              
-              {/* Content - Right */}
-              <div className="flex flex-col">
-                {/* Name */}
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-normal mb-6 tracking-tight">
-                {words.map((word: string, wordIndex: number) => (
-                  <span key={wordIndex} className="inline-block mr-3 last:mr-0">
-                    {word.split("").map((letter: string, letterIndex: number) => (
-                      <motion.span
-                        key={`${wordIndex}-${letterIndex}`}
-                        initial={{ y: 100, opacity: 0 }}
-                        animate={{ y: 0, opacity: 1 }}
-                        transition={{
-                          delay: wordIndex * 0.1 + letterIndex * 0.03,
-                          type: "spring",
-                          stiffness: 150,
-                          damping: 25,
-                        }}
-                        className="inline-block"
-                      >
-                        {letter}
-                      </motion.span>
-                    ))}
+        <div className="mt-8">
+          <p className="section-label mb-2.5">Tech stack</p>
+          <div className="flex flex-wrap gap-1.5">
+            {TECH_STACK.map((tech) => (
+              <span key={tech} className="chip">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-6 flex flex-wrap gap-2">
+          <CopyEmail email={DATA.contact.email} />
+          <a href="#experience" className="pill">
+            Experience
+          </a>
+          <a
+            href="/RESUME_ARJUNK_SEPT25.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pill"
+          >
+            Resume
+          </a>
+          <a
+            href={DATA.contact.social.GitHub.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pill"
+          >
+            GitHub
+          </a>
+        </div>
+
+        <p className="mt-6 flex items-center gap-2 text-[12px] text-muted-foreground sm:text-[13px]">
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+          </span>
+          <MapPin className="h-3.5 w-3.5" />
+          {DATA.location} · Open to NYC / SF / Remote
+        </p>
+      </section>
+
+      {/* Experience */}
+      <Section id="experience" label="Experience" className="border-t border-border/60">
+        <ul className="divide-y divide-border/60">
+          {experience.map((item) => (
+            <ExperienceItem key={item.company} {...item} />
+          ))}
+        </ul>
+        <Link
+          href="/work"
+          className="mt-8 inline-flex items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Full experience, research, and clubs
+          <ArrowUpRight className="h-3.5 w-3.5" />
+        </Link>
+      </Section>
+
+      {/* Selected work */}
+      <Section id="work" label="Selected work" className="border-t border-border/60">
+        <div className="space-y-5">
+          {CASE_STUDIES.map((study, i) => (
+            <WorkCard key={study.slug} study={study} priority={i === 0} />
+          ))}
+        </div>
+      </Section>
+
+      {/* Education */}
+      <Section id="education" label="Education" className="border-t border-border/60">
+        <div className="space-y-6">
+          {[gatech, uiuc].filter(Boolean).map((school) => (
+            <div key={school!.school} className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+              <div>
+                <a
+                  href={school!.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[15px] font-medium text-foreground hover:underline underline-offset-2"
+                >
+                  {school!.school}
+                </a>
+                <p className="text-[13px] text-foreground/80 sm:text-sm">
+                  {school!.degree}
+                </p>
+              </div>
+              <p className="shrink-0 text-[12px] tabular-nums text-muted-foreground sm:text-[13px]">
+                {school!.start} – {school!.end}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {courses.length > 0 && (
+          <>
+            <h3 className="mb-2 mt-8 text-[13px] font-medium text-foreground">
+              Coursework
+            </h3>
+            <div className="flex flex-wrap gap-1.5">
+              {courses.map((c) => (
+                <span key={c} className="chip">
+                  {c}
+                </span>
+              ))}
+            </div>
+          </>
+        )}
+
+        <h3 className="mb-2 mt-8 text-[13px] font-medium text-foreground">
+          Activities
+        </h3>
+        <ul className="space-y-1.5">
+          {DATA.clubs.slice(0, 3).map((club: any) => (
+            <li key={club.company} className="flex gap-2.5 text-[13px] text-muted-foreground sm:text-sm">
+              <span className="mt-[8px] h-1 w-1 shrink-0 rounded-full bg-muted-foreground/50" />
+              <span>
+                {club.company} · {club.title}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      {/* Skills */}
+      <Section id="skills" label="Skills" className="border-t border-border/60">
+        <div className="space-y-5">
+          {Object.entries(DATA.skills).map(([group, items]) => (
+            <div key={group}>
+              <p className="mb-2 text-[13px] font-medium text-foreground">{group}</p>
+              <div className="flex flex-wrap gap-1.5">
+                {Array.from(new Set(items as readonly string[])).map((skill) => (
+                  <span key={skill} className="chip">
+                    {skill}
                   </span>
                 ))}
-                </h1>
-
-                {/* Headline - Sharp & Authoritative */}
-                <BlurFadeText
-                  className="text-xl md:text-2xl font-medium mb-3 leading-relaxed text-foreground tracking-tight"
-                  delay={BLUR_FADE_DELAY * 2}
-                  text="I architect and deploy production AI systems."
-                />              
-
-                {/* System Capabilities - 3 High-Level Bullets */}
-                <BlurFade delay={BLUR_FADE_DELAY * 2.2} blur="12px">
-                  <div className="mb-6 space-y-2 text-sm md:text-base text-foreground/80">
-                    <div className="flex items-start gap-2.5">
-                      <span className="text-primary mt-[0.5] text-base">•</span>
-                      <span>Retrieval and inference systems</span>
-                    </div>
-                    <div className="flex items-start gap-2.5">
-                      <span className="text-primary mt-[0.5] text-base">•</span>
-                      <span>Distributed APIs with real observability</span>
-                    </div>
-                    <div className="flex items-start gap-2.5">
-                      <span className="text-primary mt-[0.5] text-base">•</span>
-                      <span>Performance and cost discipline in production</span>
-                    </div>
-                  </div>
-                </BlurFade>
-
-                {/* Research Background - Inline */}
-                <BlurFade delay={BLUR_FADE_DELAY * 2.6} blur="12px">
-                  <p className="text-xs leading-relaxed text-muted-foreground/85 mb-6 max-w-2xl">
-                    Research background in electronic materials, hardware optimization, and quantum systems research.
-                  </p>
-                </BlurFade>
-
-                {/* Tech Stack */}
-                <BlurFade delay={BLUR_FADE_DELAY * 2.8} blur="12px">
-                  <div className="mb-6">
-                    <h3 className="text-xs font-medium text-muted-foreground/70 mb-2.5 uppercase tracking-wider">Tech Stack</h3>
-                    <div className="flex flex-wrap gap-2">
-                      {["Node.js", "TypeScript", "Python", "React", "PostgreSQL", "Redis", "AWS", "Docker", "Kubernetes"].map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-2.5 py-1 text-xs font-medium bg-secondary/50 text-foreground/80 rounded-md border border-border/50 hover:bg-secondary/70 transition-colors"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </BlurFade>
-
-                {/* CTA Buttons - Products First */}
-                <BlurFade delay={BLUR_FADE_DELAY * 3.2} blur="12px">
-                  <div className="flex flex-wrap gap-3 mb-5">
-                    <Link href="/products">
-                      <Button size="default" className="font-medium">
-                        View Products
-                      </Button>
-                    </Link>
-                    <Link href={DATA.contact.social.GitHub.url} target="_blank">
-                      <Button variant="outline" size="default">
-                        GitHub
-                      </Button>
-                    </Link>
-                  </div>
-                </BlurFade>
-
-                {/* Availability & Education - Minimal */}
-                <BlurFade delay={BLUR_FADE_DELAY * 3.6} blur="12px">
-                  <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground/75">
-                    <span>Open to NYC / SF / Remote</span>
-                  </div>
-                </BlurFade>
               </div>
             </div>
-          </header>
+          ))}
         </div>
-      </div>
+      </Section>
 
-    </div>
+      {/* About */}
+      <Section id="about" label="About" className="border-t border-border/60">
+        <div className="space-y-4 text-[14px] leading-relaxed text-foreground/85 sm:text-[15px]">
+          <p>
+            Hi, I&apos;m {DATA.name}. I build applied AI systems, with a focus on
+            making agents reliable in production.
+          </p>
+          <p>{DATA.summary}</p>
+        </div>
+        <GithubHeatmap username="arjunpkulkarni" profileUrl={DATA.contact.social.GitHub.url} />
+      </Section>
+
+      {/* Contact */}
+      <footer
+        id="contact"
+        aria-label="Contact and social links"
+        className="scroll-mt-24 border-t border-border/60 px-5 py-10 sm:px-8 sm:py-12"
+      >
+        <a
+          href={`mailto:${DATA.contact.email}`}
+          className="group inline-flex items-center gap-1.5 text-[26px] font-normal tracking-[-0.02em] text-foreground sm:text-[32px]"
+        >
+          Let&apos;s talk
+          <ArrowUpRight className="h-6 w-6 text-muted-foreground transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-foreground" />
+        </a>
+        <p className="mt-4 text-[13px] text-muted-foreground sm:text-sm">
+          You can also find me on{" "}
+          <a
+            href={DATA.contact.social.GitHub.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline-offset-2 hover:underline"
+          >
+            GitHub
+          </a>
+          ,{" "}
+          <a
+            href={DATA.contact.social.LinkedIn.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-foreground underline-offset-2 hover:underline"
+          >
+            LinkedIn
+          </a>
+          , or{" "}
+          <a
+            href={`mailto:${DATA.contact.email}`}
+            className="text-foreground underline-offset-2 hover:underline"
+          >
+            Email
+          </a>{" "}
+          me directly.
+        </p>
+        <p className="mt-10 text-[12px] text-muted-foreground">
+          © {new Date().getFullYear()}, {DATA.name}
+        </p>
+      </footer>
+    </main>
   );
 }

@@ -16,13 +16,14 @@ export default function ProductsPage() {
     .sort((a, b) => b.impactScore - a.impactScore);
 
   return (
-    <main className="container mx-auto px-4 py-8 max-w-7xl">
+    <main className="px-5 py-8 sm:px-8">
       <section id="products" className="w-full">
         {/* Header */}
         <BlurFade delay={BLUR_FADE_DELAY}>
-          <div className="space-y-0.5 mb-8 mt-20">
-            <h2 className="text-2xl font-medium tracking-tighter">Products</h2>
-            <p className="text-sm text-muted-foreground">
+          <div className="mb-8 space-y-0.5">
+            <h2 className="section-label">Products</h2>
+            <div className="section-rule !mb-0" />
+            <p className="pt-4 text-sm text-muted-foreground">
               Production systems I&apos;ve built and shipped end-to-end with complete ownership. Focus on measurable impact.
             </p>
           </div>

@@ -21,10 +21,10 @@ I integrated **Gemini multimodal models** with vector search pipelines to create
 
 Traditional e-commerce search handles text well but struggles with:
 
-* **Visual similarity** — "Find shoes like this image"
-* **Cross-modal queries** — "A red jacket similar to the one in this photo"
-* **Conversational context** — "Something more casual"
-* **Personalization** — Adapting to user preferences
+* **Visual similarity**: "Find shoes like this image"
+* **Cross-modal queries**: "A red jacket similar to the one in this photo"
+* **Conversational context**: "Something more casual"
+* **Personalization**: Adapting to user preferences
 
 We needed a system that could understand and retrieve across all these dimensions.
 
@@ -50,9 +50,9 @@ Personalized Results
 
 Gemini generates embeddings that capture:
 
-* **Visual features** — colors, patterns, shapes, styles
-* **Semantic content** — object categories, attributes
-* **Cross-modal alignment** — shared representation space
+* **Visual features**: colors, patterns, shapes, styles
+* **Semantic content**: object categories, attributes
+* **Cross-modal alignment**: shared representation space
 
 ```python
 from vertexai.vision_models import MultiModalEmbeddingModel
@@ -141,7 +141,7 @@ We handle this by:
 
 1. **Generating separate embeddings** for image and text
 2. **Weighted fusion** based on query analysis
-3. **Multi-stage retrieval** — broad recall, then refinement
+3. **Multi-stage retrieval**: broad recall, then refinement
 
 ```python
 def process_multimodal_query(image, text, weights=None):
@@ -170,9 +170,9 @@ Users refine searches through dialogue:
 
 We maintain **conversation context** using:
 
-* **Session embeddings** — accumulating query history
-* **Contrastive refinement** — moving away from rejected items
-* **Preference learning** — adapting to implicit signals
+* **Session embeddings**: accumulating query history
+* **Contrastive refinement**: moving away from rejected items
+* **Preference learning**: adapting to implicit signals
 
 ```python
 class ConversationalSearch:
@@ -201,9 +201,9 @@ class ConversationalSearch:
 
 **Solution:** Three-tier caching strategy:
 
-1. **Embedding cache** — Store embeddings for common queries
-2. **Result cache** — Cache top-K results for popular queries
-3. **Precomputation** — Generate embeddings for catalog offline
+1. **Embedding cache**: Store embeddings for common queries
+2. **Result cache**: Cache top-K results for popular queries
+3. **Precomputation**: Generate embeddings for catalog offline
 
 ```python
 # Embedding cache with TTL
@@ -269,17 +269,17 @@ Multimodal search represents the future of e-commerce because:
 
 ### What Worked
 
-* **Unified vector space** — Single embedding space simplifies architecture
-* **Adaptive reranking** — Small model captures user preferences effectively
-* **Three-tier caching** — Dramatically reduced API costs and latency
-* **Conversational context** — Users love iterative refinement
+* **Unified vector space**: Single embedding space simplifies architecture
+* **Adaptive reranking**: Small model captures user preferences effectively
+* **Three-tier caching**: Dramatically reduced API costs and latency
+* **Conversational context**: Users love iterative refinement
 
 ### What Didn't
 
-* **Naive fusion** — Simple averaging of embeddings performed poorly
-* **Over-personalization** — Too aggressive filtering hurt discovery
-* **Synchronous processing** — Had to move to async pipeline
-* **Large batch sizes** — Increased latency unacceptably
+* **Naive fusion**: Simple averaging of embeddings performed poorly
+* **Over-personalization**: Too aggressive filtering hurt discovery
+* **Synchronous processing**: Had to move to async pipeline
+* **Large batch sizes**: Increased latency unacceptably
 
 ## Future Directions
 

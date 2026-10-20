@@ -1,66 +1,28 @@
-import { Header } from "@/components/header";
+import { SiteShell } from "@/components/site-shell";
 import { ThemeProvider } from "@/components/theme-provider";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Instrument_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const fontSans = localFont({
-  src: [
-    {
-      path: "../fonts/Cal_Sans/CalSans-Regular.ttf",
-      weight: "400",
-      style: "normal",
-    },
-  ],
+const fontSans = Instrument_Sans({
+  subsets: ["latin"],
   variable: "--font-sans",
+  display: "swap",
 });
 
-const fontOutfit = localFont({
-  src: [
-    {
-      path: "../fonts/Outfit/static/Outfit-Medium.ttf",
-      weight: "500",
-      style: "normal",
-    },
-  ],
-  variable: "--font-outfit",
-});
-
-const fontRadioCanada = localFont({
-  src: [
-    {
-      path: "../fonts/Radio_Canada/RadioCanada-VariableFont_wdth,wght.ttf",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Radio_Canada/RadioCanada-Italic-VariableFont_wdth,wght.ttf",
-      style: "italic",
-    },
-  ],
-  variable: "--font-radio-canada",
-});
-
-const fontOpenSans = localFont({
-  src: [
-    {
-      path: "../fonts/Open_Sans/OpenSans-VariableFont_wdth,wght.ttf",
-      style: "normal",
-    },
-    {
-      path: "../fonts/Open_Sans/OpenSans-Italic-VariableFont_wdth,wght.ttf",
-      style: "italic",
-    },
-  ],
-  variable: "--font-open-sans",
+const fontMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
-    default: DATA.name,
+    default: `${DATA.name}, Software Engineer`,
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,
@@ -107,16 +69,12 @@ export default function RootLayout({
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
           fontSans.variable,
-          fontOutfit.variable,
-          fontRadioCanada.variable,
-          fontOpenSans.variable
+          fontMono.variable
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <TooltipProvider delayDuration={0}>
-            <Header />
-            {children}
-            
+            <SiteShell>{children}</SiteShell>
           </TooltipProvider>
         </ThemeProvider>
       </body>

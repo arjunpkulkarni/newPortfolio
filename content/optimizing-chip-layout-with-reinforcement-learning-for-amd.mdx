@@ -21,11 +21,11 @@ Here's how I applied **Proximal Policy Optimization (PPO)** and custom reward sh
 
 Floorplanning is the process of arranging functional blocks (macros, standard cells, I/O pads) on a 2D chip canvas to optimize:
 
-* **Wire Length** — Shorter wires = faster signals, lower power
-* **Area Utilization** — Maximize density without congestion
-* **Timing Constraints** — Meet clock frequency requirements
-* **Thermal Management** — Prevent hotspots that degrade performance
-* **Power Distribution** — Ensure adequate power delivery
+* **Wire Length**: Shorter wires = faster signals, lower power
+* **Area Utilization**: Maximize density without congestion
+* **Timing Constraints**: Meet clock frequency requirements
+* **Thermal Management**: Prevent hotspots that degrade performance
+* **Power Distribution**: Ensure adequate power delivery
 
 Traditional EDA (Electronic Design Automation) tools use **simulated annealing** or **genetic algorithms**, but they:
 
@@ -971,9 +971,9 @@ After training for **1000 episodes** (~6 hours on RTX 3090):
 
 The agent learned several interesting strategies:
 
-1. **Clustering highly-connected blocks** — Reduced wire length by placing blocks with many connections close together
-2. **Thermal-aware placement** — Distributed high-power blocks to avoid hotspots
-3. **Critical path optimization** — Placed timing-critical blocks close together
+1. **Clustering highly-connected blocks**: Reduced wire length by placing blocks with many connections close together
+2. **Thermal-aware placement**: Distributed high-power blocks to avoid hotspots
+3. **Critical path optimization**: Placed timing-critical blocks close together
 
 Here's a comparison of manual vs RL-optimized layout:
 
@@ -1090,10 +1090,10 @@ Presented this work at the **KPMG Ideation Challenge** for AMD:
 
 To deploy this in a real EDA tool:
 
-1. **Train on real AMD designs** — Transfer learning from simulated designs
-2. **Human-in-the-loop** — Let engineers override agent decisions
-3. **Multi-fidelity optimization** — Use fast approximate simulators during training, accurate simulators for final validation
-4. **Distributed training** — Parallelize environment rollouts across GPU cluster
+1. **Train on real AMD designs**: Transfer learning from simulated designs
+2. **Human-in-the-loop**: Let engineers override agent decisions
+3. **Multi-fidelity optimization**: Use fast approximate simulators during training, accurate simulators for final validation
+4. **Distributed training**: Parallelize environment rollouts across GPU cluster
 
 ## Future Enhancements
 

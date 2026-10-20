@@ -402,11 +402,11 @@ export const PRODUCTS: Product[] = [
     slug: "vmax",
     name: "Vmax",
     oneLiner:
-      "Manager for coding agents: Claude, Codex, and Cursor in one local-first macOS workspace — live logs, human gates, isolated worktrees, and a written recap after every run.",
+      "Manager for coding agents: Claude, Codex, and Cursor in one local-first macOS workspace: live logs, human gates, isolated worktrees, and a written recap after every run.",
     problem:
       "Teams run multiple coding agents across terminals, editors, and browsers. Context fragments, risky Git moves lack a consistent approval path, and understanding what actually shipped means manual log and diff archaeology.",
     solution:
-      "Vmax is a local-first macOS app that routes Claude, Codex, and Cursor through one workspace: live run output, policy-driven human approvals, dedicated Git worktrees per run, and structured recaps with intent, pipeline, files touched, and cost. Bring your own provider keys — orchestration is the product surface.",
+      "Vmax is a local-first macOS app that routes Claude, Codex, and Cursor through one workspace: live run output, policy-driven human approvals, dedicated Git worktrees per run, and structured recaps with intent, pipeline, files touched, and cost. Bring your own provider keys, orchestration is the product surface.",
     impact:
       "Private beta (macOS). Public marketing site with download and waitlist; built for engineers running several agents without tab sprawl.",
     whyBuilt:

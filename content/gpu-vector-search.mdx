@@ -8,7 +8,7 @@ technologies: ["FAISS", "Triton", "CUDA", "Python", "GPU", "PyTorch"]
 category: "AI Infrastructure"
 ---
 
-At Siramai, vector search powered everything — recommendations, agents, ranking, conversational search. But CPU-only retrieval was expensive and capped throughput.
+At Siramai, vector search powered everything, recommendations, agents, ranking, conversational search. But CPU-only retrieval was expensive and capped throughput.
 
 So I built a **GPU-accelerated vector search engine** using **FAISS**, **Triton**, and custom GPU kernels. Here's how it worked and why it dramatically improved performance.
 
@@ -16,10 +16,10 @@ So I built a **GPU-accelerated vector search engine** using **FAISS**, **Triton*
 
 Vector search workloads are:
 
-* **Dense** — operating on high-dimensional embeddings (768-D, 1024-D)
-* **Highly parallelizable** — thousands of distance computations can happen simultaneously
-* **Memory-bandwidth intensive** — perfect for GPU memory architecture
-* **Latency-critical** — users expect sub-100ms response times
+* **Dense**: operating on high-dimensional embeddings (768-D, 1024-D)
+* **Highly parallelizable**: thousands of distance computations can happen simultaneously
+* **Memory-bandwidth intensive**: perfect for GPU memory architecture
+* **Latency-critical**: users expect sub-100ms response times
 
 CPU FAISS couldn't keep up as we scaled, especially for 768-D embeddings from our transformer models.
 
@@ -104,17 +104,17 @@ This eliminated CPU → GPU transfer latency for 85% of queries.
 
 GPUs have limited memory compared to CPUs. We solved this with:
 
-* **Index sharding** — splitting large indices across multiple GPUs
-* **Dynamic loading** — swapping cold indices to CPU when not in use
-* **Embedding compression** — using product quantization for very large indices
+* **Index sharding**: splitting large indices across multiple GPUs
+* **Dynamic loading**: swapping cold indices to CPU when not in use
+* **Embedding compression**: using product quantization for very large indices
 
 ### Batching Strategy
 
 Single-query latency can be suboptimal on GPUs. We implemented:
 
-* **Request batching** — accumulating 8-16 queries before GPU execution
-* **Adaptive batch sizes** — adjusting based on load
-* **Priority queuing** — low-latency path for critical queries
+* **Request batching**: accumulating 8-16 queries before GPU execution
+* **Adaptive batch sizes**: adjusting based on load
+* **Priority queuing**: low-latency path for critical queries
 
 ## Real-World Impact
 
@@ -127,8 +127,8 @@ After deploying GPU vector search:
 
 ## Future Work
 
-* **Multi-GPU sharding** — distributing indices across GPU cluster
-* **GPU-side reranking** — moving the entire retrieval pipeline to GPU
-* **CUDA-accelerated semantic filtering** — pre-filtering with custom kernels
-* **Dynamic quantization** — adjusting precision based on query complexity
+* **Multi-GPU sharding**: distributing indices across GPU cluster
+* **GPU-side reranking**: moving the entire retrieval pipeline to GPU
+* **CUDA-accelerated semantic filtering**: pre-filtering with custom kernels
+* **Dynamic quantization**: adjusting precision based on query complexity
 

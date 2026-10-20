@@ -69,7 +69,7 @@ export default function CTEPreventPage() {
             polycarbonate, and graded foam layers  -  validated through FEA simulation and physical impact testing.
           </p>
           <p className="text-sm text-muted-foreground/70">
-            Andrew Scarnavack, Arjun Kulkarni, Jackson Cole &mdash; Department of Materials Engineering, College of Engineering
+            Andrew Scarnavack, Arjun Kulkarni, Jackson Cole · Department of Materials Engineering, College of Engineering
           </p>
         </div>
       </div>

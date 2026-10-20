@@ -13,18 +13,18 @@ Manual purchase order processing is a nightmare. Staff spend 15-20 minutes per o
 
 I built a **full-stack web application** that automates this entire workflow using **OCR (Optical Character Recognition)** and **fuzzy string matching**. The system extracts line items from uploaded PO documents, automatically matches them to a product catalog, and lets users quickly verify matches before saving to PostgreSQL.
 
-**Result**: Verification time reduced from **15 minutes to <30 seconds per order** — a **30x speedup**.
+**Result**: Verification time reduced from **15 minutes to <30 seconds per order**, a **30x speedup**.
 
 ## The Problem: Manual PO Processing is Broken
 
 ### Current Workflow
 
-1. **Receive PO** — PDF/image via email
-2. **Manual extraction** — Staff type each line item into spreadsheet
-3. **Product lookup** — Search catalog for matching product codes
-4. **Cross-reference** — Verify quantities, prices, descriptions match
-5. **Data entry** — Enter confirmed matches into database
-6. **Quality check** — Manager reviews for errors
+1. **Receive PO**: PDF/image via email
+2. **Manual extraction**: Staff type each line item into spreadsheet
+3. **Product lookup**: Search catalog for matching product codes
+4. **Cross-reference**: Verify quantities, prices, descriptions match
+5. **Data entry**: Enter confirmed matches into database
+6. **Quality check**: Manager reviews for errors
 
 **Time**: 15-20 minutes per PO  
 **Error rate**: 8-12% (typos, wrong product codes)  
@@ -32,10 +32,10 @@ I built a **full-stack web application** that automates this entire workflow usi
 
 ### Why This Fails
 
-* **OCR is hard** — Scanned POs have varying formats, quality, layouts
-* **Product matching is ambiguous** — "Widget Pro 2000" vs "Widget Professional 2000 v2"
-* **No single source of truth** — Product codes, descriptions, SKUs all slightly different
-* **Human fatigue** — After 20 POs, accuracy drops significantly
+* **OCR is hard**: Scanned POs have varying formats, quality, layouts
+* **Product matching is ambiguous**: "Widget Pro 2000" vs "Widget Professional 2000 v2"
+* **No single source of truth**: Product codes, descriptions, SKUs all slightly different
+* **Human fatigue**: After 20 POs, accuracy drops significantly
 
 **The opportunity**: Automate extraction and matching, keep humans in the loop only for verification.
 
@@ -1092,10 +1092,8 @@ After deploying to production:
 
 ### User Feedback
 
-> "This tool saved us 20 hours per week. What used to take an entire day now takes 30 minutes." — Operations Manager
-
-> "The fuzzy matching is surprisingly accurate. Even with typos in the PO, it finds the right product 9 times out of 10." — Data Entry Specialist
-
+> "This tool saved us 20 hours per week. What used to take an entire day now takes 30 minutes." (Operations Manager)
+> "The fuzzy matching is surprisingly accurate. Even with typos in the PO, it finds the right product 9 times out of 10." (Data Entry Specialist)
 ## Challenges & Solutions
 
 ### Challenge 1: Variable PO Formats

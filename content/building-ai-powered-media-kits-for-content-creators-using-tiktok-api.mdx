@@ -17,11 +17,11 @@ Here's how I integrated **TikTok API**, **Instagram Graph API**, **GPT-4**, and 
 
 Content creators need media kits to land brand deals, but the process is broken:
 
-* **Time-consuming** — 2-3 hours in Canva per kit
-* **Outdated data** — Manual stat updates every week
-* **Writer's block** — Struggling to write compelling bios
-* **Low conversion** — Generic kits don't stand out to brands
-* **Expensive** — Hiring designers costs $200-500 per kit
+* **Time-consuming**: 2-3 hours in Canva per kit
+* **Outdated data**: Manual stat updates every week
+* **Writer's block**: Struggling to write compelling bios
+* **Low conversion**: Generic kits don't stand out to brands
+* **Expensive**: Hiring designers costs $200-500 per kit
 
 **The opportunity**: 50M+ creators worldwide need media kits. If we can automate this with AI, we can capture a massive market.
 
@@ -267,10 +267,10 @@ async function getTikTokVideoInsights(
 
 **Key Optimizations**:
 
-* **Redis caching** — Cache user info for 1 hour to reduce API calls
-* **Batch insights fetching** — Use `Promise.all` for parallel requests
-* **Exponential backoff** — Retry failed requests with increasing delays
-* **Rate limit tracking** — Monitor remaining quota per endpoint
+* **Redis caching**: Cache user info for 1 hour to reduce API calls
+* **Batch insights fetching**: Use `Promise.all` for parallel requests
+* **Exponential backoff**: Retry failed requests with increasing delays
+* **Rate limit tracking**: Monitor remaining quota per endpoint
 
 ### 2. Instagram Graph API Integration
 
@@ -689,10 +689,10 @@ Response (one category only):
 
 **Why GPT-4 Works**:
 
-* **Contextual understanding** — Analyzes captions to extract themes
-* **Professional tone** — Writes in brand-friendly language
-* **Personalization** — Tailors bio to creator's unique style
-* **Consistent quality** — Every bio is grammatically perfect
+* **Contextual understanding**: Analyzes captions to extract themes
+* **Professional tone**: Writes in brand-friendly language
+* **Personalization**: Tailors bio to creator's unique style
+* **Consistent quality**: Every bio is grammatically perfect
 
 ### 4. PDF Generation with Puppeteer
 
@@ -1072,11 +1072,11 @@ export function renderMediaKitHTML(
 
 **Template Features**:
 
-* **3-page PDF** — Hero, Top Content, Highlights & CTA
-* **Responsive layout** — Looks professional on all devices
-* **Custom branding** — Gradient themes, modern typography
-* **Data visualization** — Stats cards, engagement metrics
-* **Image optimization** — Lazy loading, proper sizing
+* **3-page PDF**: Hero, Top Content, Highlights & CTA
+* **Responsive layout**: Looks professional on all devices
+* **Custom branding**: Gradient themes, modern typography
+* **Data visualization**: Stats cards, engagement metrics
+* **Image optimization**: Lazy loading, proper sizing
 
 ### 5. Rate Limiting & Caching with Redis
 
@@ -1418,10 +1418,10 @@ if (!insights) {
 **Problem**: Puppeteer consumed 500MB+ RAM per PDF generation, causing crashes on Vercel serverless functions (1GB limit).
 
 **Solution**:
-* **Optimized images** — Compress images before embedding in HTML
-* **Lazy loading** — Load assets on demand instead of preloading
-* **Reduced page count** — Consolidated from 5 pages to 3
-* **Reuse browser instances** — Pool Puppeteer instances instead of launching new ones
+* **Optimized images**: Compress images before embedding in HTML
+* **Lazy loading**: Load assets on demand instead of preloading
+* **Reduced page count**: Consolidated from 5 pages to 3
+* **Reuse browser instances**: Pool Puppeteer instances instead of launching new ones
 
 ```typescript
 // Puppeteer connection pooling
@@ -1476,16 +1476,14 @@ if (!stateData) {
 * **After KitGen**: Generated kit in 30 seconds, sent same day, got brand reply in 1 hour
 * **Result**: Landed $5,000 brand deal with fashion company
 
-> "I sent this exact PDF to a brand and they said yes within 1 hour. This has never happened before." — Sarah J
-
+> "I sent this exact PDF to a brand and they said yes within 1 hour. This has never happened before." (Sarah J)
 **Case Study: David L, Tech Reviewer**
 
 * **Problem**: Stats were outdated by the time media kit was finalized
 * **Solution**: KitGen's real-time API fetching always showed current numbers
 * **Result**: Closed 3 brand deals in one week with auto-updated kits
 
-> "I used to spend 2 hours in Canva. Now I just click one button. If I knew about this 3 years ago I'd be making so much more money." — David L
-
+> "I used to spend 2 hours in Canva. Now I just click one button. If I knew about this 3 years ago I'd be making so much more money." (David L)
 ## Future Enhancements
 
 ### 1. YouTube Integration
@@ -1516,9 +1514,9 @@ Allow brands to search creators by niche, follower count, engagement rate:
 
 Track media kit performance:
 
-* **Views** — How many brands opened your PDF
-* **Click-through rate** — Links clicked in media kit
-* **Conversion rate** — Opened → replied → deal closed
+* **Views**: How many brands opened your PDF
+* **Click-through rate**: Links clicked in media kit
+* **Conversion rate**: Opened → replied → deal closed
 
 ### 4. A/B Testing Templates
 
@@ -1538,15 +1536,15 @@ Offer white-label media kit generation for agencies:
 
 ## Conclusion
 
-Building **KitGen** required integrating multiple APIs, AI models, and complex PDF generation—all optimized for speed and cost efficiency.
+Building **KitGen** required integrating multiple APIs, AI models, and complex PDF generation, all optimized for speed and cost efficiency.
 
 **Key Takeaways**:
 
-* **API parallelization** — Reduced latency by 44% using `Promise.all`
-* **Caching strategy** — Redis cut API costs by 75%
-* **AI-powered content** — GPT-4 writes bios that convert
-* **Puppeteer optimization** — Reduced memory usage from 500MB to 180MB
-* **Real-time data** — Always-fresh analytics impress brands
+* **API parallelization**: Reduced latency by 44% using `Promise.all`
+* **Caching strategy**: Redis cut API costs by 75%
+* **AI-powered content**: GPT-4 writes bios that convert
+* **Puppeteer optimization**: Reduced memory usage from 500MB to 180MB
+* **Real-time data**: Always-fresh analytics impress brands
 
 **Technologies**: Next.js, TikTok API, Instagram API, GPT-4, Puppeteer, PostgreSQL, Redis, Prisma, Vercel, TypeScript
 
