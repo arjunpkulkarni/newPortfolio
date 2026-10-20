@@ -579,3 +579,211 @@ export function CuratorDemo() {
     </Frame>
   );
 }
+
+/* UC San Diego Health: a patient's history and allergies flow through a LangGraph agent into a safe meal plan. */
+export function UcsdDemo() {
+  const { ref, step } = useLoop(11, 1000);
+  const nodes = ["retrieve", "check allergies", "reason", "recommend"];
+  const node = Math.min(nodes.length - 1, Math.max(0, step - 2));
+  const meals: [string, boolean, string][] = [
+    ["Grilled salmon, quinoa, greens", true, "low sodium"],
+    ["Peanut satay noodles", false, "peanut allergy"],
+    ["Lentil soup, whole-grain toast", true, "fiber · A1c"],
+  ];
+  return (
+    <Frame frameRef={ref} bg="linear-gradient(135deg,#e3eef8,#b9d3ea)" title="clinical RAG · dietitian agent">
+      <div className="grid h-full grid-cols-[34%_1fr] gap-[1.6cqw]">
+        <div className="flex flex-col gap-[0.8cqw]">
+          <Label>patient</Label>
+          {[
+            ["history", "type 2 diabetes · hypertension"],
+            ["allergies", "peanuts, shellfish"],
+            ["goal", "lower A1c"],
+          ].map(([k, v], i) => (
+            <Show key={k} on={step > i}>
+              <p className="rounded-[0.7cqw] bg-[#00629b]/[0.07] px-[1cqw] py-[0.5cqw]">
+                <span className="block text-[length:1.15cqw] uppercase tracking-wider text-[#00629b]/70">{k}</span>
+                {v}
+              </p>
+            </Show>
+          ))}
+          <Show on={step > 1}>
+            <p className="font-mono text-[length:1.3cqw] text-black/50">qdrant · 6 chunks retrieved</p>
+          </Show>
+        </div>
+        <div className="flex flex-col gap-[1.1cqw]">
+          <Label>langgraph</Label>
+          <div className="flex items-center gap-[0.6cqw]">
+            {nodes.map((n, i) => (
+              <div key={n} className="flex items-center gap-[0.6cqw]">
+                <span
+                  className={cn(
+                    "rounded-full border px-[1cqw] py-[0.3cqw] transition-colors duration-500",
+                    step > 1 && i === node
+                      ? "border-[#00629b] bg-[#00629b] text-white"
+                      : step > 1 && i < node
+                        ? "border-[#00629b]/40 text-[#00629b]"
+                        : "border-black/10 text-black/40"
+                  )}
+                >
+                  {n}
+                </span>
+                {i < nodes.length - 1 && <span className="opacity-30">→</span>}
+              </div>
+            ))}
+          </div>
+          <div className="space-y-[0.6cqw] rounded-[0.9cqw] border border-black/10 p-[1.2cqw]">
+            <Label>recommendations</Label>
+            {meals.map(([meal, ok, why], i) => (
+              <Show key={meal} on={step > 4 + i}>
+                <p className="flex items-center gap-[0.8cqw]">
+                  <span className={cn(!ok && "text-black/40 line-through")}>{meal}</span>
+                  <span
+                    className={cn(
+                      "ml-auto shrink-0 rounded-full px-[0.8cqw]",
+                      ok ? "bg-emerald-100 text-emerald-700" : "bg-red-100 text-red-600"
+                    )}
+                  >
+                    {why}
+                  </span>
+                </p>
+              </Show>
+            ))}
+          </div>
+          <Show on={step > 8}>
+            <span className="rounded-full bg-emerald-50 px-[1.2cqw] py-[0.4cqw] font-medium text-emerald-700">
+              ✓ +22% accuracy vs. baseline
+            </span>
+          </Show>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+/* AbbVie: ETL over 120K+ oncology reports into FAISS, then a semantic query returns ranked trials. */
+export function AbbvieDemo() {
+  const { ref, step } = useLoop(12, 1000);
+  const ingested = Math.min(120, step * 30);
+  const query = "EGFR-mutant NSCLC · second line";
+  const typed = query.slice(0, Math.max(0, Math.min(query.length, (step - 4) * 12)));
+  const hits: [string, string, number][] = [
+    ["NCT-0421", "Osimertinib after progression, phase II", 0.94],
+    ["NCT-1187", "EGFR TKI + chemo combination", 0.89],
+    ["RPT-55302", "Resistance mechanisms, T790M", 0.83],
+  ];
+  return (
+    <Frame frameRef={ref} bg="linear-gradient(135deg,#e6e9f2,#bcc4da)" title="oncology search · R&D">
+      <div className="grid h-full grid-cols-[30%_1fr] gap-[1.6cqw]">
+        <div className="flex flex-col gap-[0.9cqw]">
+          <Label>etl</Label>
+          {["extract pdfs", "chunk + clean", "embed", "index faiss"].map((s, i) => (
+            <p key={s} className="flex items-center gap-[0.8cqw]">
+              <span
+                className={cn(
+                  "h-[0.9cqw] w-[0.9cqw] shrink-0 rounded-full transition-colors duration-500",
+                  step > i ? "bg-[#071d49]" : "bg-black/10"
+                )}
+              />
+              <span className={cn("transition-opacity", step > i ? "opacity-100" : "opacity-40")}>{s}</span>
+            </p>
+          ))}
+          <div className="mt-auto rounded-[0.8cqw] border border-black/10 p-[1cqw]">
+            <p className="text-[length:2.4cqw] font-semibold tabular-nums text-[#071d49]">{ingested}K+</p>
+            <p className="text-black/50">reports indexed</p>
+          </div>
+        </div>
+        <div className="flex flex-col gap-[1.1cqw]">
+          <div className="flex items-center gap-[1cqw] rounded-[0.9cqw] border border-black/10 px-[1.4cqw] py-[0.9cqw]">
+            <span className="opacity-40">search</span>
+            <span className="font-medium">
+              {typed}
+              <span
+                className={cn(
+                  "ml-[0.2cqw] inline-block h-[1.8cqw] w-[0.15cqw] translate-y-[0.3cqw] bg-black",
+                  step > 3 && typed.length < query.length ? "animate-pulse" : "opacity-0"
+                )}
+              />
+            </span>
+            <Show on={step > 7} className="ml-auto">
+              <span className="rounded-full bg-[#071d49] px-[0.9cqw] text-white">~3× faster</span>
+            </Show>
+          </div>
+          <div className="space-y-[0.8cqw]">
+            {hits.map(([id, title, score], i) => (
+              <Show key={id} on={step > 6 + i}>
+                <div className="flex items-center gap-[1cqw] rounded-[0.8cqw] bg-black/[0.03] px-[1.2cqw] py-[0.6cqw]">
+                  <span className="shrink-0 whitespace-nowrap font-mono text-[#071d49]">{id}</span>
+                  <span className="min-w-0 truncate">{title}</span>
+                  <span className="ml-auto shrink-0 tabular-nums opacity-60">{score.toFixed(2)}</span>
+                </div>
+              </Show>
+            ))}
+          </div>
+        </div>
+      </div>
+    </Frame>
+  );
+}
+
+/* Rumor: event search misses, then the same search hits Redis and latency drops ~85%. */
+export function RumorDemo() {
+  const { ref, step } = useLoop(11, 1000);
+  const cached = step > 5;
+  const events: [string, string][] = [
+    ["Rooftop set · DJ Kova", "tonight · 0.4 mi"],
+    ["Warehouse open air", "fri · 1.2 mi"],
+    ["Late-night jazz", "sat · 0.8 mi"],
+  ];
+  const query = cached ? "rooftop tonight" : "rooftop tonight".slice(0, Math.min(15, step * 6));
+  return (
+    <Frame frameRef={ref} dark bg="linear-gradient(135deg,#141414,#3a3a3f)" title="rumor · event search">
+      <div className="grid h-full grid-cols-[46%_1fr] gap-[1.6cqw]">
+        <div className="flex flex-col gap-[0.8cqw]">
+          <div className="rounded-full bg-white/10 px-[1.4cqw] py-[0.7cqw] text-white/80">⌕ {query}</div>
+          {events.map(([name, meta], i) => (
+            <Show key={name} on={(step > 2 + i && step < 6) || step > 6}>
+              <div className="flex items-center gap-[1cqw] rounded-[0.9cqw] bg-white/[0.06] px-[1.2cqw] py-[0.7cqw]">
+                <span className="h-[3cqw] w-[3cqw] shrink-0 rounded-[0.6cqw] bg-gradient-to-br from-fuchsia-500 to-amber-400" />
+                <span className="min-w-0">
+                  <span className="block truncate">{name}</span>
+                  <span className="block text-[length:1.3cqw] text-white/50">{meta}</span>
+                </span>
+              </div>
+            </Show>
+          ))}
+        </div>
+        <div className="flex flex-col gap-[1.2cqw] font-mono">
+          <Label className="font-sans">request</Label>
+          <p className="flex items-center gap-[1cqw]">
+            <span className="text-white/50">GET /events/search</span>
+            <span
+              className={cn(
+                "ml-auto rounded-full px-[0.8cqw] transition-colors",
+                step < 2 ? "opacity-0" : cached ? "bg-emerald-500/20 text-emerald-400" : "bg-amber-500/20 text-amber-400"
+              )}
+            >
+              {cached ? "redis hit" : "cache miss"}
+            </span>
+          </p>
+          <div>
+            <Label className="font-sans">latency</Label>
+            <div className="mt-[0.6cqw] h-[1.4cqw] rounded-full bg-white/10">
+              <div
+                className={cn("h-full rounded-full transition-all duration-700", cached ? "bg-emerald-400" : "bg-amber-400")}
+                style={{ width: step < 2 ? "0%" : cached ? "15%" : "100%" }}
+              />
+            </div>
+            <p className="mt-[0.5cqw] tabular-nums text-white/70">{step < 2 ? "—" : cached ? "62 ms" : "410 ms"}</p>
+          </div>
+          <Show on={step > 6} className="mt-auto">
+            <p className="font-sans">
+              <span className="block text-[length:2.6cqw] font-semibold text-emerald-400">−85%</span>
+              <span className="text-white/60">search latency · 50K+ users</span>
+            </p>
+          </Show>
+        </div>
+      </div>
+    </Frame>
+  );
+}

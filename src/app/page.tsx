@@ -8,13 +8,16 @@ import {
   type ExperienceRoute,
 } from "@/components/home/experience-list";
 import {
+  AbbvieDemo,
   BrekenDemo,
   CuratorDemo,
   FitfoDemo,
   HandshakeDemo,
   IbmDemo,
   NestleDemo,
+  RumorDemo,
   SideshiftDemo,
+  UcsdDemo,
   UcsfDemo,
 } from "@/components/home/demos";
 import { GithubHeatmap } from "@/components/home/github-heatmap";
@@ -194,6 +197,9 @@ const DEMOS: Record<string, React.ReactNode> = {
   SideShift: <SideshiftDemo />,
   "UCSF Health": <UcsfDemo />,
   "Curator.to": <CuratorDemo />,
+  "UC San Diego Health": <UcsdDemo />,
+  AbbVie: <AbbvieDemo />,
+  Rumor: <RumorDemo />,
 };
 
 const EXPERIENCE_VIDEOS: Record<string, { src: string; poster?: string }> = {
