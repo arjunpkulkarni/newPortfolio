@@ -4,6 +4,16 @@ import { DATA } from "@/data/resume";
 import { CASE_STUDIES } from "@/data/case-studies";
 import { CopyEmail } from "@/components/home/copy-email";
 import { ExperienceItem } from "@/components/home/experience-item";
+import {
+  BrekenDemo,
+  CuratorDemo,
+  FitfoDemo,
+  HandshakeDemo,
+  IbmDemo,
+  NestleDemo,
+  SideshiftDemo,
+  UcsfDemo,
+} from "@/components/home/demos";
 import { GithubHeatmap } from "@/components/home/github-heatmap";
 import { Section } from "@/components/home/section";
 import { WorkCard } from "@/components/home/work-card";
@@ -141,6 +151,18 @@ const BRANDS: Record<string, { name: string; accent: string }> = {
   "Curator.to": { name: "Curator", accent: "#1e88e5" },
 };
 
+// Animated demo of what each product actually does.
+const DEMOS: Record<string, React.ReactNode> = {
+  Breken: <BrekenDemo />,
+  IBM: <IbmDemo />,
+  "Nestlé": <NestleDemo />,
+  FitFo: <FitfoDemo />,
+  Handshake: <HandshakeDemo />,
+  SideShift: <SideshiftDemo />,
+  "UCSF Health": <UcsfDemo />,
+  "Curator.to": <CuratorDemo />,
+};
+
 const EXPERIENCE_VIDEOS: Record<string, { src: string; poster?: string }> = {
   Breken: { src: "/videos/breken.mp4", poster: "/videos/breken-poster.jpg" },
   FitFo: { src: "/videos/fitfo.mp4", poster: "/videos/fitfo-poster.jpg" },
@@ -184,6 +206,7 @@ export default function HomePage() {
       video: EXPERIENCE_VIDEOS[company]?.src,
       videoPoster: EXPERIENCE_VIDEOS[company]?.poster,
       brand: BRANDS[company],
+      demo: DEMOS[company],
       backedBy: work.backedBy,
     };
   });
@@ -302,11 +325,15 @@ export default function HomePage() {
 
       {/* Research */}
       <Section id="research" label="Research" className="border-t border-border/60">
-        <ul className="flex flex-col gap-3">
-          {RESEARCH.map((item) => {
+        <ul className="flex flex-col gap-5">
+          {RESEARCH.map((item, i) => {
             const logo = logoFor(item.org);
             return (
-              <li key={item.title} className="rounded-2xl border border-border/70 p-4 sm:p-5">
+              <li
+                key={item.title}
+                className="stack-card rounded-2xl border border-border/70 bg-card p-4 sm:p-5"
+                style={{ top: `calc(5rem + ${i * 10}px)` }}
+              >
                 <div className="flex items-center gap-3">
                   {logo && (
                     <Image

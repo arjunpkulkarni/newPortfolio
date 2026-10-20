@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Image, { type StaticImageData } from "next/image";
 import { LogoReveal } from "@/components/home/logo-reveal";
 import { HighlightSkills } from "@/lib/highlight-skills";
@@ -21,6 +22,7 @@ type ExperienceItemProps = {
   videoPoster?: string;
   stackIndex?: number; // position in a sticky stack of cards
   brand?: { name: string; accent: string }; // drives the logo animation when there's no video or image
+  demo?: ReactNode; // animated product demo; shown instead of any other media
   backedBy?: readonly Investor[];
 };
 
@@ -41,6 +43,7 @@ export function ExperienceItem({
   videoPoster,
   stackIndex,
   brand,
+  demo,
   backedBy,
 }: ExperienceItemProps) {
   const dates =
@@ -48,7 +51,7 @@ export function ExperienceItem({
       ? `${start || ""}${start && end ? " – " : ""}${end || ""}`.trim()
       : "";
 
-  const hasMedia = Boolean(video || image || brand);
+  const hasMedia = Boolean(demo || video || image || brand);
 
   const name = href ? (
     <a
@@ -74,7 +77,9 @@ export function ExperienceItem({
     >
       {hasMedia && (
         <div className="overflow-hidden bg-secondary/40">
-          {video ? (
+          {demo ? (
+            demo
+          ) : video ? (
             <div className="relative aspect-[2/1] w-full bg-white">
               <video
                 src={video}
