@@ -8,26 +8,6 @@ import { GithubHeatmap } from "@/components/home/github-heatmap";
 import { Section } from "@/components/home/section";
 import { WorkCard } from "@/components/home/work-card";
 
-// Career arc only. Research/lab roles live in RESEARCH below.
-const STORY = [
-  { when: "2022", title: "Illinois", org: "University of Illinois at Urbana-Champaign", line: "CS + Materials Engineering." },
-  { when: "2023", title: "NOBE Tech Lab", org: "NOBE Tech Lab", line: "Shipped for 30+ clients." },
-  { when: "2023", title: "Illinois Business Consulting", org: "Illinois Business Consulting", line: "Go-to-market with CIOs and CTOs." },
-  { when: "2023", title: "SIGPwny", org: "sigPWNY Component Team", line: "Secure medical-device firmware in Rust." },
-  { when: "2024", title: "Curator", org: "Curator.to", line: "First founding role. $500K preseed." },
-  { when: "2024", title: "AbbVie", org: "AbbVie", line: "Search over 120K+ oncology reports." },
-  { when: "2025", title: "UC San Diego Health", org: "UC San Diego Health", line: "Clinical RAG for 200+ patients." },
-  { when: "2025", title: "Rumor", org: "Rumor", line: "~85% faster search, 50K+ users." },
-  { when: "2026", title: "FitFo", org: "FitFo", line: "CTO. 40K users, $350K GMV." },
-  { when: "2026", title: "Handshake", org: "Handshake", line: "Multimodal evals for vision models." },
-  { when: "2026", title: "SideShift", org: "SideShift", line: "~95% less messaging DB load." },
-  { when: "2026", title: "UCSF Health", org: "UCSF Health", line: "Clinical agents, 20+ patients a day." },
-  { when: "2026", title: "IBM", org: "IBM", line: "Reliable agents under Dr. Kush Varshney." },
-  { when: "2026", title: "Nestlé", org: "Nestlé", line: "Retrieval over 2M+ recipes." },
-  { when: "Now", title: "Breken", org: "Breken", line: "Founding engineer. Catching bugs before customers do." },
-];
-
-// Labs, teaching, and research — one line: field + credentials.
 const RESEARCH = [
   {
     when: "2023",
@@ -279,46 +259,25 @@ export default function HomePage() {
         </ul>
       </Section>
 
-      {/* Story */}
-      <Section id="story" label="Story" className="border-t border-border/60">
-        <ol className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
-          {STORY.map((chapter, i) => {
-            const logo = logoFor(chapter.org);
-            const isNow = i === STORY.length - 1;
-            return (
-              <li
-                key={`${chapter.title}-${i}`}
-                className={
-                  isNow
-                    ? "flex items-center gap-3 rounded-2xl border border-emerald-500/40 bg-emerald-500/[0.06] p-3 sm:col-span-2"
-                    : "flex items-center gap-3 rounded-2xl border border-border/70 p-3"
-                }
-              >
-                {logo && (
-                  <Image
-                    src={logo}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 shrink-0 rounded-xl border border-border/60 bg-white object-contain p-1"
-                  />
-                )}
-                <div className="min-w-0">
-                  <p className="flex items-baseline gap-2">
-                    <span className="truncate text-[14px] font-medium text-foreground">{chapter.title}</span>
-                    <span className="shrink-0 font-mono text-[11px] text-muted-foreground">{chapter.when}</span>
-                  </p>
-                  <p className="truncate text-[12px] text-muted-foreground sm:text-[13px]">{chapter.line}</p>
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+      {/* Experience */}
+      <Section id="experience" label="Experience" className="border-t border-border/60">
+        <ul className="flex flex-col gap-5">
+          {experience.map((item, i) => (
+            <ExperienceItem key={item.company} {...item} stackIndex={i} />
+          ))}
+        </ul>
+        <a
+          href="/work"
+          className="mt-8 inline-flex items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Full experience and research
+          <ArrowUpRight className="h-3.5 w-3.5" />
+        </a>
       </Section>
 
       {/* Research */}
       <Section id="research" label="Research" className="border-t border-border/60">
-        <ol className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+        <ol className="grid grid-cols-1 gap-2.5">
           {RESEARCH.map((chapter, i) => {
             const logo = logoFor(chapter.org);
             return (
@@ -346,22 +305,6 @@ export default function HomePage() {
             );
           })}
         </ol>
-      </Section>
-
-      {/* Experience */}
-      <Section id="experience" label="Experience" className="border-t border-border/60">
-        <ul className="flex flex-col gap-5">
-          {experience.map((item, i) => (
-            <ExperienceItem key={item.company} {...item} stackIndex={i} />
-          ))}
-        </ul>
-        <a
-          href="/work"
-          className="mt-8 inline-flex items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Full experience and research
-          <ArrowUpRight className="h-3.5 w-3.5" />
-        </a>
       </Section>
 
       {/* Selected work */}
