@@ -270,6 +270,9 @@ export default function HomePage() {
           Product / agent engineer building AI systems you can trust in production.
         </p>
         <p className="mt-2 text-[14px] leading-snug text-muted-foreground sm:text-[15px]">
+          Works best in a product role at a fast-moving startup.
+        </p>
+        <p className="mt-1.5 text-[14px] leading-snug text-muted-foreground sm:text-[15px]">
           Interests · trustworthy and secure AI, physical AI, nanotechnology
         </p>
 

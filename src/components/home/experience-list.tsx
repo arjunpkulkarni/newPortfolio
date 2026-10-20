@@ -61,7 +61,9 @@ export function ExperienceList({ items }: { items: ExperienceEntry[] }) {
           const count =
             r.id === "all"
               ? items.length
-              : items.filter((item) => item.routes.includes(r.id)).length;
+              : items.filter((item) =>
+                  item.routes.includes(r.id as ExperienceRoute)
+                ).length;
           if (r.id !== "all" && count === 0) return null;
           const active = route === r.id;
           return (
