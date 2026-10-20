@@ -24,24 +24,55 @@ const STORY = [
   { when: "2026", title: "UCSF Health", org: "UCSF Health", line: "Clinical agents, 20+ patients a day." },
   { when: "2026", title: "IBM", org: "IBM", line: "Reliable agents under Dr. Kush Varshney." },
   { when: "2026", title: "Nestlé", org: "Nestlé", line: "Retrieval over 2M+ recipes." },
-  { when: "Now", title: "Breken", org: "Breken", line: "Founding engineer. Production at 4,000x." },
+  { when: "Now", title: "Breken", org: "Breken", line: "Founding engineer. Catching bugs before customers do." },
 ];
 
-// Labs, teaching, and research roles — same card style as Story.
+// Labs, teaching, and research — one line: field + credentials.
 const RESEARCH = [
-  { when: "2023", title: "Teaching Assistant", org: "Siebel School of Computing and Data Science", line: "Taught CS124 and CS128." },
-  { when: "2024", title: "CEE + ECE AI labs", org: "Civil and Environmental Engineering at Illinois", line: "ML for concrete, RL for EV routing." },
-  { when: "2024", title: "CSL", org: "Coordinated Science Laboratory at University of Illinois", line: "AI dietitian with RAG + LangGraph." },
-  { when: "2025", title: "Beckman Institute", org: "Beckman Institute for Advanced Science and Technology", line: "Live LLM platform, 40+ subjects." },
-  { when: "2025", title: "IQUIST", org: "Illinois Quantum Information Science and Technology Center", line: "Nanofluidic energy harvesting." },
+  {
+    when: "2023",
+    title: "Teaching Assistant",
+    org: "Siebel School of Computing and Data Science",
+    line: "CS systems · TA for CS124 (Java) and CS128 (C++) at Siebel.",
+  },
+  {
+    when: "2024",
+    title: "CEE Materials Lab",
+    org: "Civil and Environmental Engineering at Illinois",
+    line: "ML for materials · Random Forest mix design, 10% lower cement carbon.",
+  },
+  {
+    when: "2024",
+    title: "ECE AI Group",
+    org: "Illinois Artificial Intelligence Group (ECE Department)",
+    line: "RL + control · EV routing in SUMO, 18% less delay, 25% better control.",
+  },
+  {
+    when: "2024",
+    title: "CSL",
+    org: "Coordinated Science Laboratory at University of Illinois",
+    line: "Clinical AI · RAG + LangGraph dietitian with Chef Briscione & Lav Varshney, +22% accuracy.",
+  },
+  {
+    when: "2025",
+    title: "Beckman Institute",
+    org: "Beckman Institute for Advanced Science and Technology",
+    line: "Human–AI interaction · Real-time multi-user LLM platform for 40+ subjects.",
+  },
+  {
+    when: "2025",
+    title: "IQUIST",
+    org: "Illinois Quantum Information Science and Technology Center",
+    line: "Nanofluidics · CNT energy harvesting on ionic Coulomb drag (Nano Energy, 2023).",
+  },
 ];
 
 // One line each: the field, the outcome, what I did.
-const EXPERIENCE: Record<string, { field: string; outcome: string; did: string }> = {
+const EXPERIENCE: Record<string, { field: string; outcome?: string; did: string }> = {
   Breken: {
     field: "Production simulation",
     outcome: "Production simulation that finds failures before customers do",
-    did: "Built the engine that replays production at 4,000x and turns reproduced failures into draft PRs.",
+    did: "Built a simulator that recreates a company's software, finds the bugs customers would hit, and drafts the fix.",
   },
   IBM: {
     field: "Agent reliability research",
@@ -75,7 +106,6 @@ const EXPERIENCE: Record<string, { field: string; outcome: string; did: string }
   },
   "Curator.to": {
     field: "Agentic e-commerce",
-    outcome: "4+ enterprise clients · $2M+ GMV · $500K preseed",
     did: "Architected the multi-tenant TypeScript backend and its tool-based agents.",
   },
 };
@@ -294,7 +324,7 @@ export default function HomePage() {
             return (
               <li
                 key={`${chapter.title}-${i}`}
-                className="flex items-center gap-3 rounded-2xl border border-border/70 p-3"
+                className="flex items-start gap-3 rounded-2xl border border-border/70 p-3"
               >
                 {logo && (
                   <Image
@@ -310,7 +340,7 @@ export default function HomePage() {
                     <span className="truncate text-[14px] font-medium text-foreground">{chapter.title}</span>
                     <span className="shrink-0 font-mono text-[11px] text-muted-foreground">{chapter.when}</span>
                   </p>
-                  <p className="truncate text-[12px] text-muted-foreground sm:text-[13px]">{chapter.line}</p>
+                  <p className="text-[12px] leading-snug text-muted-foreground sm:text-[13px]">{chapter.line}</p>
                 </div>
               </li>
             );
