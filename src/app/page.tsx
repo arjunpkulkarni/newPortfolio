@@ -3,7 +3,10 @@ import { ArrowUpRight, MapPin } from "lucide-react";
 import { DATA } from "@/data/resume";
 import { CASE_STUDIES } from "@/data/case-studies";
 import { CopyEmail } from "@/components/home/copy-email";
-import { ExperienceItem } from "@/components/home/experience-item";
+import {
+  ExperienceList,
+  type ExperienceRoute,
+} from "@/components/home/experience-list";
 import {
   BrekenDemo,
   CuratorDemo,
@@ -18,6 +21,21 @@ import { GithubHeatmap } from "@/components/home/github-heatmap";
 import { Section } from "@/components/home/section";
 import { WorkCard } from "@/components/home/work-card";
 import { HighlightSkills } from "@/lib/highlight-skills";
+
+// Real routes through the work — every role lands in at least one.
+const COMPANY_ROUTES: Record<string, ExperienceRoute[]> = {
+  Breken: ["agents", "systems", "product"],
+  IBM: ["agents"],
+  Nestlé: ["data"],
+  FitFo: ["product"],
+  Handshake: ["data"],
+  SideShift: ["systems"],
+  "UCSF Health": ["healthcare", "agents"],
+  "Curator.to": ["agents", "product"],
+  "UC San Diego Health": ["healthcare", "data"],
+  AbbVie: ["healthcare", "data"],
+  Rumor: ["systems"],
+};
 
 const RESEARCH = [
   {
@@ -123,6 +141,21 @@ const EXPERIENCE: Record<string, { field: string; outcome?: string; did: string 
     field: "Agentic e-commerce",
     did: "Architected the multi-tenant TypeScript backend and its tool-based agents.",
   },
+  "UC San Diego Health": {
+    field: "Clinical RAG",
+    outcome: "Dietary recommendations +22% more accurate for 200+ patients",
+    did: "Built LangGraph + QDrant clinical reasoning over patient history and allergies.",
+  },
+  AbbVie: {
+    field: "Oncology search",
+    outcome: "ETL over 120K+ reports · R&D lookup ~3x faster",
+    did: "Built FastAPI + FAISS semantic search for clinical trial documents.",
+  },
+  Rumor: {
+    field: "Real-time events",
+    outcome: "~85% faster search for 50K+ users",
+    did: "Cut event-search latency with Redis caching and shipped React Native features.",
+  },
 };
 
 // One line each.
@@ -191,7 +224,7 @@ function logoFor(org: string): StaticImageData | undefined {
 }
 
 export default function HomePage() {
-  const experience = DATA.work.slice(0, 8).map((work: any) => {
+  const experience = DATA.work.map((work: any) => {
     const company = work.company as string;
     return {
       company,
@@ -208,6 +241,7 @@ export default function HomePage() {
       brand: BRANDS[company],
       demo: DEMOS[company],
       backedBy: work.backedBy,
+      routes: COMPANY_ROUTES[company] ?? [],
     };
   });
 
@@ -312,18 +346,7 @@ export default function HomePage() {
 
       {/* Experience */}
       <Section id="experience" label="Experience" className="border-t border-border/60">
-        <ul className="flex flex-col gap-5">
-          {experience.map((item, i) => (
-            <ExperienceItem key={item.company} {...item} stackIndex={i} />
-          ))}
-        </ul>
-        <a
-          href="/work"
-          className="mt-8 inline-flex items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Full experience and research
-          <ArrowUpRight className="h-3.5 w-3.5" />
-        </a>
+        <ExperienceList items={experience} />
       </Section>
 
       {/* Research */}
