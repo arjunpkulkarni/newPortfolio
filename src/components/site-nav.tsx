@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 import { DATA } from "@/data/resume";
 
 const LINKS = [
+  { id: "story", label: "Story" },
   { id: "experience", label: "Experience" },
   { id: "work", label: "Work" },
-  { id: "about", label: "About" },
   { id: "contact", label: "Contact" },
 ];
 
