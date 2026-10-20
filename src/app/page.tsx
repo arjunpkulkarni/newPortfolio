@@ -235,6 +235,9 @@ export default function HomePage() {
         <p className="mt-3 text-[16px] leading-snug text-foreground/90 sm:text-[17px]">
           Product / agent engineer building AI systems you can trust in production.
         </p>
+        <p className="mt-2 text-[14px] leading-snug text-muted-foreground sm:text-[15px]">
+          Interests · trustworthy and secure AI, physical AI, nanotechnology
+        </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
           <CopyEmail email={DATA.contact.email} />
