@@ -7,35 +7,109 @@ import { ExperienceItem } from "@/components/home/experience-item";
 import { GithubHeatmap } from "@/components/home/github-heatmap";
 import { Section } from "@/components/home/section";
 import { WorkCard } from "@/components/home/work-card";
-import BrekenHero from "@/app/work/pictures/breken-hero.png";
 import CuratorHero from "@/app/work/pictures/curator-hero.png";
 
-// The arc of the page, oldest to newest.
+// Full arc, oldest to newest. Each move says what I did and why I took it.
 const STORY = [
   {
     when: "2022",
     title: "Illinois",
-    line: "Started in CS and Materials Engineering. Shipped for 30+ clients at NOBE and secured medical-device firmware with SIGPwny.",
+    line: "Started CS and Materials Engineering. Wanted both systems and the physical world, not just one.",
+  },
+  {
+    when: "2023",
+    title: "Teaching Assistant",
+    line: "TA for CS124/CS128. Took it to harden fundamentals by teaching them.",
+  },
+  {
+    when: "2023",
+    title: "NOBE Tech Lab",
+    line: "Shipped sites and tools for 30+ clients. Moved here to learn shipping for real users, not class projects.",
+  },
+  {
+    when: "2023",
+    title: "Illinois Business Consulting",
+    line: "Tech consulting with CIOs and CTOs on go-to-market. Needed the business side, not only the build.",
+  },
+  {
+    when: "2023",
+    title: "SIGPwny",
+    line: "Embedded engineer on medical-device firmware: secure UART and memory-safe Rust. Reliability starts at the metal.",
+  },
+  {
+    when: "2024",
+    title: "CEE + ECE AI labs",
+    line: "ML for sustainable concrete, then RL + MPC for EV routing. Bridged materials and control into applied ML.",
+  },
+  {
+    when: "2024",
+    title: "CSL / clinical nutrition",
+    line: "RAG + LangGraph for an AI dietitian with Chef Briscione and Lav Varshney. First step into clinical agents.",
   },
   {
     when: "2024",
     title: "Curator",
-    line: "First founding role. Built an agentic commerce OS for 4+ enterprise clients and helped raise a $500K preseed.",
+    line: "First founding role. Built an agentic commerce OS for 4+ enterprise clients and helped raise a $500K preseed. Left academia-first work to own a product end to end.",
+  },
+  {
+    when: "2024",
+    title: "AbbVie",
+    line: "ETL and semantic search over 120k+ oncology reports. Took it to learn retrieval at pharma scale.",
+  },
+  {
+    when: "2025",
+    title: "UC San Diego Health",
+    line: "Clinical RAG serving 200+ patients. Moved deeper into production healthcare AI after Curator and CSL.",
+  },
+  {
+    when: "2025",
+    title: "Beckman Institute",
+    line: "Real-time multi-user LLM platform for 40+ subjects. Wanted human-AI interaction under experimental constraints.",
+  },
+  {
+    when: "2025",
+    title: "IQUIST",
+    line: "Nanofluidic energy harvesting with CNT channels. Kept the materials/physics thread alive next to AI work.",
+  },
+  {
+    when: "2025",
+    title: "Rumor",
+    line: "Cut event-search latency ~85% for 50k+ users. Needed a pure product-infra lap between research and founding again.",
   },
   {
     when: "2026",
     title: "FitFo",
-    line: "CTO. Took an agentic coach to 40K users and $350K GMV, and raised $500K.",
+    line: "CTO. Agentic coaching to 40K users and $350K GMV, raised $500K. Took it to run the full agentic product stack.",
   },
   {
     when: "2026",
-    title: "IBM & Nestlé",
-    line: "Research on agent reliability at IBM and AI retrieval for food R&D at Nestlé.",
+    title: "Handshake",
+    line: "Multimodal eval and vision-model training-data QA. Moved here to get serious about evals, not only shipping agents.",
+  },
+  {
+    when: "2026",
+    title: "SideShift",
+    line: "Redis + TanStack Query cut messaging DB load ~95%. A short stint to sharpen production performance instincts.",
+  },
+  {
+    when: "2026",
+    title: "UCSF Health",
+    line: "Agentic EHR / Congruence for 20+ patients a day. Put clinical agents into a real hospital workflow.",
+  },
+  {
+    when: "2026",
+    title: "IBM",
+    line: "Agent reliability under Fellow Dr. Kush R. Varshney. Chose research depth on composable, reliable agent skills.",
+  },
+  {
+    when: "2026",
+    title: "Nestlé",
+    line: "LLM retrieval over 2M+ recipe co-occurrence data for R&D. Parallel bet on retrieval systems in a hard domain.",
   },
   {
     when: "Now",
     title: "Breken",
-    line: "Founding engineer. Simulating production so failures surface before customers find them.",
+    line: "Founding engineer. Simulating production at 4,000x so failures surface before customers. The move that joins reliability, evals, and founding into one product.",
   },
 ];
 
@@ -87,7 +161,7 @@ const EXPERIENCE: Record<string, { field: string; outcome: string; did: string }
 const CLUB_STORY: Record<string, string> = {
   "NOBE Tech Lab": "Where I learned to ship for real users: sites and tools for 30+ clients.",
   "Illinois Business Consulting": "Where I learned the business side, working with CIOs and CTOs on go-to-market.",
-  "sigPWNY Component Team": "Where reliability started: memory-safe Rust for an embedded medical device.",
+  "sigPWNY Component Team": "Embedded on the Component Team: secure UART and memory-safe Rust firmware for a medical device.",
   "Institute of Electrical and Electronics Engineers": "Keeps the hardware side close: talks on hardware, quantum computing, and ML.",
 };
 
@@ -98,11 +172,11 @@ const CLUB_NAMES: Record<string, string> = {
 
 // Product previews for experience entries that ship a product.
 const EXPERIENCE_IMAGES: Record<string, StaticImageData> = {
-  Breken: BrekenHero,
   "Curator.to": CuratorHero,
 };
 
 const EXPERIENCE_VIDEOS: Record<string, { src: string; poster?: string }> = {
+  Breken: { src: "/videos/breken.mp4", poster: "/videos/breken-poster.jpg" },
   FitFo: { src: "/videos/fitfo.mp4", poster: "/videos/fitfo-poster.jpg" },
 };
 
@@ -206,7 +280,7 @@ export default function HomePage() {
       <Section id="story" label="Story" className="border-t border-border/60">
         <ol className="relative space-y-6 border-l border-border pl-6">
           {STORY.map((chapter, i) => (
-            <li key={chapter.title} className="relative">
+            <li key={`${chapter.title}-${chapter.when}-${i}`} className="relative">
               <span
                 className={
                   i === STORY.length - 1
@@ -247,7 +321,7 @@ export default function HomePage() {
 
       {/* Selected work */}
       <Section id="work" label="Selected work" className="border-t border-border/60">
-        <div className="space-y-5">
+        <div className="flex flex-col gap-5">
           {CASE_STUDIES.map((study, i) => (
             <WorkCard key={study.slug} study={study} priority={i === 0} />
           ))}

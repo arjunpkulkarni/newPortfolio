@@ -671,7 +671,7 @@ export const DATA = {
       badges: [],
       tag: "embedded security + firmware + memory safety",
       location: "Urbana-Champaign",
-      title: "Software Engineer",
+      title: "Embedded Engineer",
       logoUrl: sigpwny,
       start: "Dec 2023",
       end: "Mar 2024",
