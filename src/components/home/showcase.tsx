@@ -84,7 +84,7 @@ export function Showcase({
     return (
       <div
         className={cn(
-          "relative flex w-full flex-col items-center gap-4 overflow-hidden px-8 py-6 sm:px-10 sm:py-8",
+          "relative flex aspect-[16/10] w-full items-center justify-center gap-[3%] overflow-hidden",
           className
         )}
         style={{ background: spec.background }}
@@ -92,14 +92,14 @@ export function Showcase({
         {spec.panels.map((panel, i) => (
           <div
             key={i}
-            className="relative aspect-[9/19.5] w-[48%] max-w-[220px] overflow-hidden rounded-[11%/5%] bg-white shadow-[0_18px_40px_-18px_rgba(60,45,25,0.35)] ring-1 ring-black/5 transition-transform duration-700 ease-out group-hover:-translate-y-1"
+            className="relative aspect-[9/19.5] h-[86%] overflow-hidden rounded-[11%/5%] bg-white shadow-[0_18px_40px_-18px_rgba(60,45,25,0.35)] ring-1 ring-black/5 transition-transform duration-700 ease-out group-hover:-translate-y-1"
           >
             <Image
               src={panel}
               alt={i === 1 ? alt : ""}
               fill
               priority={priority}
-              sizes="(max-width: 760px) 48vw, 220px"
+              sizes="(max-width: 760px) 30vw, 220px"
               className="object-contain"
             />
           </div>

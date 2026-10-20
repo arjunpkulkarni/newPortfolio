@@ -7,117 +7,40 @@ import { ExperienceItem } from "@/components/home/experience-item";
 import { GithubHeatmap } from "@/components/home/github-heatmap";
 import { Section } from "@/components/home/section";
 import { WorkCard } from "@/components/home/work-card";
-import CuratorHero from "@/app/work/pictures/curator-hero.png";
 
-// Full arc, oldest to newest. Each move says what I did and why I took it.
+// Career arc only. Research/lab roles live in RESEARCH below.
 const STORY = [
-  {
-    when: "2022",
-    title: "Illinois",
-    line: "Started CS and Materials Engineering. Wanted both systems and the physical world, not just one.",
-  },
-  {
-    when: "2023",
-    title: "Teaching Assistant",
-    line: "TA for CS124/CS128. Took it to harden fundamentals by teaching them.",
-  },
-  {
-    when: "2023",
-    title: "NOBE Tech Lab",
-    line: "Shipped sites and tools for 30+ clients. Moved here to learn shipping for real users, not class projects.",
-  },
-  {
-    when: "2023",
-    title: "Illinois Business Consulting",
-    line: "Tech consulting with CIOs and CTOs on go-to-market. Needed the business side, not only the build.",
-  },
-  {
-    when: "2023",
-    title: "SIGPwny",
-    line: "Embedded engineer on medical-device firmware: secure UART and memory-safe Rust. Reliability starts at the metal.",
-  },
-  {
-    when: "2024",
-    title: "CEE + ECE AI labs",
-    line: "ML for sustainable concrete, then RL + MPC for EV routing. Bridged materials and control into applied ML.",
-  },
-  {
-    when: "2024",
-    title: "CSL / clinical nutrition",
-    line: "RAG + LangGraph for an AI dietitian with Chef Briscione and Lav Varshney. First step into clinical agents.",
-  },
-  {
-    when: "2024",
-    title: "Curator",
-    line: "First founding role. Built an agentic commerce OS for 4+ enterprise clients and helped raise a $500K preseed. Left academia-first work to own a product end to end.",
-  },
-  {
-    when: "2024",
-    title: "AbbVie",
-    line: "ETL and semantic search over 120k+ oncology reports. Took it to learn retrieval at pharma scale.",
-  },
-  {
-    when: "2025",
-    title: "UC San Diego Health",
-    line: "Clinical RAG serving 200+ patients. Moved deeper into production healthcare AI after Curator and CSL.",
-  },
-  {
-    when: "2025",
-    title: "Beckman Institute",
-    line: "Real-time multi-user LLM platform for 40+ subjects. Wanted human-AI interaction under experimental constraints.",
-  },
-  {
-    when: "2025",
-    title: "IQUIST",
-    line: "Nanofluidic energy harvesting with CNT channels. Kept the materials/physics thread alive next to AI work.",
-  },
-  {
-    when: "2025",
-    title: "Rumor",
-    line: "Cut event-search latency ~85% for 50k+ users. Needed a pure product-infra lap between research and founding again.",
-  },
-  {
-    when: "2026",
-    title: "FitFo",
-    line: "CTO. Agentic coaching to 40K users and $350K GMV, raised $500K. Took it to run the full agentic product stack.",
-  },
-  {
-    when: "2026",
-    title: "Handshake",
-    line: "Multimodal eval and vision-model training-data QA. Moved here to get serious about evals, not only shipping agents.",
-  },
-  {
-    when: "2026",
-    title: "SideShift",
-    line: "Redis + TanStack Query cut messaging DB load ~95%. A short stint to sharpen production performance instincts.",
-  },
-  {
-    when: "2026",
-    title: "UCSF Health",
-    line: "Agentic EHR / Congruence for 20+ patients a day. Put clinical agents into a real hospital workflow.",
-  },
-  {
-    when: "2026",
-    title: "IBM",
-    line: "Agent reliability under Fellow Dr. Kush R. Varshney. Chose research depth on composable, reliable agent skills.",
-  },
-  {
-    when: "2026",
-    title: "Nestlé",
-    line: "LLM retrieval over 2M+ recipe co-occurrence data for R&D. Parallel bet on retrieval systems in a hard domain.",
-  },
-  {
-    when: "Now",
-    title: "Breken",
-    line: "Founding engineer. Simulating production at 4,000x so failures surface before customers. The move that joins reliability, evals, and founding into one product.",
-  },
+  { when: "2022", title: "Illinois", org: "University of Illinois at Urbana-Champaign", line: "CS + Materials Engineering." },
+  { when: "2023", title: "NOBE Tech Lab", org: "NOBE Tech Lab", line: "Shipped for 30+ clients." },
+  { when: "2023", title: "Illinois Business Consulting", org: "Illinois Business Consulting", line: "Go-to-market with CIOs and CTOs." },
+  { when: "2023", title: "SIGPwny", org: "sigPWNY Component Team", line: "Secure medical-device firmware in Rust." },
+  { when: "2024", title: "Curator", org: "Curator.to", line: "First founding role. $500K preseed." },
+  { when: "2024", title: "AbbVie", org: "AbbVie", line: "Search over 120K+ oncology reports." },
+  { when: "2025", title: "UC San Diego Health", org: "UC San Diego Health", line: "Clinical RAG for 200+ patients." },
+  { when: "2025", title: "Rumor", org: "Rumor", line: "~85% faster search, 50K+ users." },
+  { when: "2026", title: "FitFo", org: "FitFo", line: "CTO. 40K users, $350K GMV." },
+  { when: "2026", title: "Handshake", org: "Handshake", line: "Multimodal evals for vision models." },
+  { when: "2026", title: "SideShift", org: "SideShift", line: "~95% less messaging DB load." },
+  { when: "2026", title: "UCSF Health", org: "UCSF Health", line: "Clinical agents, 20+ patients a day." },
+  { when: "2026", title: "IBM", org: "IBM", line: "Reliable agents under Dr. Kush Varshney." },
+  { when: "2026", title: "Nestlé", org: "Nestlé", line: "Retrieval over 2M+ recipes." },
+  { when: "Now", title: "Breken", org: "Breken", line: "Founding engineer. Production at 4,000x." },
+];
+
+// Labs, teaching, and research roles — same card style as Story.
+const RESEARCH = [
+  { when: "2023", title: "Teaching Assistant", org: "Siebel School of Computing and Data Science", line: "Taught CS124 and CS128." },
+  { when: "2024", title: "CEE + ECE AI labs", org: "Civil and Environmental Engineering at Illinois", line: "ML for concrete, RL for EV routing." },
+  { when: "2024", title: "CSL", org: "Coordinated Science Laboratory at University of Illinois", line: "AI dietitian with RAG + LangGraph." },
+  { when: "2025", title: "Beckman Institute", org: "Beckman Institute for Advanced Science and Technology", line: "Live LLM platform, 40+ subjects." },
+  { when: "2025", title: "IQUIST", org: "Illinois Quantum Information Science and Technology Center", line: "Nanofluidic energy harvesting." },
 ];
 
 // One line each: the field, the outcome, what I did.
 const EXPERIENCE: Record<string, { field: string; outcome: string; did: string }> = {
   Breken: {
     field: "Production simulation",
-    outcome: "Backed by Pear VC, Z Fellows, Pareto Holdings, and Collective Global",
+    outcome: "Production simulation that finds failures before customers do",
     did: "Built the engine that replays production at 4,000x and turns reproduced failures into draft PRs.",
   },
   IBM: {
@@ -157,12 +80,12 @@ const EXPERIENCE: Record<string, { field: string; outcome: string; did: string }
   },
 };
 
-// How each club fits the story above.
+// One line each.
 const CLUB_STORY: Record<string, string> = {
-  "NOBE Tech Lab": "Where I learned to ship for real users: sites and tools for 30+ clients.",
-  "Illinois Business Consulting": "Where I learned the business side, working with CIOs and CTOs on go-to-market.",
-  "sigPWNY Component Team": "Embedded on the Component Team: secure UART and memory-safe Rust firmware for a medical device.",
-  "Institute of Electrical and Electronics Engineers": "Keeps the hardware side close: talks on hardware, quantum computing, and ML.",
+  "NOBE Tech Lab": "Shipped sites and tools for 30+ clients.",
+  "Illinois Business Consulting": "Go-to-market with CIOs and CTOs.",
+  "sigPWNY Component Team": "Secure UART and Rust firmware for a medical device.",
+  "Institute of Electrical and Electronics Engineers": "Talks on hardware, quantum, and ML.",
 };
 
 const CLUB_NAMES: Record<string, string> = {
@@ -171,8 +94,16 @@ const CLUB_NAMES: Record<string, string> = {
 };
 
 // Product previews for experience entries that ship a product.
-const EXPERIENCE_IMAGES: Record<string, StaticImageData> = {
-  "Curator.to": CuratorHero,
+const EXPERIENCE_IMAGES: Record<string, StaticImageData> = {};
+
+// Wordmark and accent color for each role's logo animation.
+const BRANDS: Record<string, { name: string; accent: string }> = {
+  IBM: { name: "IBM", accent: "#0f62fe" },
+  "Nestlé": { name: "Nestlé", accent: "#63513d" },
+  Handshake: { name: "Handshake", accent: "#b4e33d" },
+  SideShift: { name: "SideShift", accent: "#111111" },
+  "UCSF Health": { name: "UCSF Health", accent: "#052049" },
+  "Curator.to": { name: "Curator", accent: "#1e88e5" },
 };
 
 const EXPERIENCE_VIDEOS: Record<string, { src: string; poster?: string }> = {
@@ -195,6 +126,13 @@ function uniqueSkills(skills: string[][], limit = 6) {
   return out;
 }
 
+// Logo for any company, lab, club, or school in DATA.
+function logoFor(org: string): StaticImageData | undefined {
+  const all: any[] = [...DATA.work, ...DATA.research, ...DATA.clubs];
+  const hit = all.find((x) => x.company === org) ?? DATA.education.find((e: any) => e.school === org);
+  return hit?.logoUrl;
+}
+
 export default function HomePage() {
   const experience = DATA.work.slice(0, 8).map((work: any) => {
     const company = work.company as string;
@@ -210,6 +148,8 @@ export default function HomePage() {
       image: EXPERIENCE_IMAGES[company],
       video: EXPERIENCE_VIDEOS[company]?.src,
       videoPoster: EXPERIENCE_VIDEOS[company]?.poster,
+      brand: BRANDS[company],
+      backedBy: work.backedBy,
     };
   });
 
@@ -234,8 +174,8 @@ export default function HomePage() {
         <h1 className="mt-6 text-[32px] font-normal leading-[1.1] tracking-[-0.025em] text-foreground sm:text-[44px]">
           {DATA.name}
         </h1>
-        <p className="mt-3 max-w-xl text-[16px] leading-relaxed text-foreground/90 sm:text-[17px]">
-          Product / agent engineer. I build AI systems people can trust in production.
+        <p className="mt-3 text-[16px] leading-snug text-foreground/90 sm:text-[17px]">
+          Product / agent engineer building AI systems you can trust in production.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
@@ -276,103 +216,6 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* Story */}
-      <Section id="story" label="Story" className="border-t border-border/60">
-        <ol className="relative space-y-6 border-l border-border pl-6">
-          {STORY.map((chapter, i) => (
-            <li key={`${chapter.title}-${chapter.when}-${i}`} className="relative">
-              <span
-                className={
-                  i === STORY.length - 1
-                    ? "absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-4 ring-card"
-                    : "absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full bg-foreground/25 ring-4 ring-card"
-                }
-              />
-              <p className="flex items-baseline gap-2">
-                <span className="text-[15px] font-medium text-foreground">{chapter.title}</span>
-                <span className="font-mono text-[11px] text-muted-foreground">{chapter.when}</span>
-              </p>
-              <p className="mt-1 text-[13px] leading-relaxed text-foreground/75 sm:text-sm">
-                {chapter.line}
-              </p>
-            </li>
-          ))}
-        </ol>
-        <p className="mt-8 text-[14px] text-foreground sm:text-[15px]">
-          The thread: turn promising AI into systems people can use and trust.
-        </p>
-      </Section>
-
-      {/* Experience */}
-      <Section id="experience" label="Experience" className="border-t border-border/60">
-        <ul className="flex flex-col gap-5">
-          {experience.map((item) => (
-            <ExperienceItem key={item.company} {...item} />
-          ))}
-        </ul>
-        <a
-          href="/work"
-          className="mt-8 inline-flex items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
-        >
-          Full experience and research
-          <ArrowUpRight className="h-3.5 w-3.5" />
-        </a>
-      </Section>
-
-      {/* Selected work */}
-      <Section id="work" label="Selected work" className="border-t border-border/60">
-        <div className="flex flex-col gap-5">
-          {CASE_STUDIES.map((study, i) => (
-            <WorkCard key={study.slug} study={study} priority={i === 0} />
-          ))}
-        </div>
-      </Section>
-
-      {/* Skills */}
-      <Section id="skills" label="Skills" className="border-t border-border/60">
-        <dl className="space-y-4">
-          {Object.entries(DATA.skills).map(([group, items]) => (
-            <div key={group} className="grid gap-2 sm:grid-cols-[140px_1fr] sm:gap-4">
-              <dt className="pt-0.5 text-[13px] font-medium text-foreground">{group}</dt>
-              <dd className="flex flex-wrap gap-1.5">
-                {Array.from(new Set(items as readonly string[])).map((skill) => (
-                  <span key={skill} className="chip">
-                    {skill}
-                  </span>
-                ))}
-              </dd>
-            </div>
-          ))}
-        </dl>
-        <GithubHeatmap username="arjunpkulkarni" profileUrl={DATA.contact.social.GitHub.url} />
-      </Section>
-
-      {/* Clubs */}
-      <Section id="clubs" label="Clubs & community" className="border-t border-border/60">
-        <ul className="space-y-5">
-          {clubs.map((club: any) => (
-            <li key={club.company} className="flex gap-3">
-              <Image
-                src={club.logoUrl}
-                alt=""
-                width={40}
-                height={40}
-                className="h-10 w-10 shrink-0 rounded-xl border border-border/70 bg-white object-contain p-1"
-              />
-              <div className="min-w-0">
-                <p className="text-[15px] text-foreground">
-                  <span className="font-medium">{CLUB_NAMES[club.company] ?? club.company}</span>
-                  <span className="text-muted-foreground"> · {club.title}</span>
-                </p>
-                <p className="mt-0.5 text-[13px] leading-relaxed text-foreground/75 sm:text-sm">
-                  {CLUB_STORY[club.company]}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
       {/* Education */}
       <Section id="education" label="Education" className="border-t border-border/60">
         <ul className="space-y-5">
@@ -401,6 +244,146 @@ export default function HomePage() {
                 </div>
                 <p className="text-[13px] text-muted-foreground">{school.degree}</p>
               </div>
+            </li>
+          ))}
+        </ul>
+      </Section>
+
+      {/* Story */}
+      <Section id="story" label="Story" className="border-t border-border/60">
+        <ol className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+          {STORY.map((chapter, i) => {
+            const logo = logoFor(chapter.org);
+            const isNow = i === STORY.length - 1;
+            return (
+              <li
+                key={`${chapter.title}-${i}`}
+                className={
+                  isNow
+                    ? "flex items-center gap-3 rounded-2xl border border-emerald-500/40 bg-emerald-500/[0.06] p-3 sm:col-span-2"
+                    : "flex items-center gap-3 rounded-2xl border border-border/70 p-3"
+                }
+              >
+                {logo && (
+                  <Image
+                    src={logo}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 shrink-0 rounded-xl border border-border/60 bg-white object-contain p-1"
+                  />
+                )}
+                <div className="min-w-0">
+                  <p className="flex items-baseline gap-2">
+                    <span className="truncate text-[14px] font-medium text-foreground">{chapter.title}</span>
+                    <span className="shrink-0 font-mono text-[11px] text-muted-foreground">{chapter.when}</span>
+                  </p>
+                  <p className="truncate text-[12px] text-muted-foreground sm:text-[13px]">{chapter.line}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </Section>
+
+      {/* Research */}
+      <Section id="research" label="Research" className="border-t border-border/60">
+        <ol className="grid grid-cols-1 gap-2.5 sm:grid-cols-2">
+          {RESEARCH.map((chapter, i) => {
+            const logo = logoFor(chapter.org);
+            return (
+              <li
+                key={`${chapter.title}-${i}`}
+                className="flex items-center gap-3 rounded-2xl border border-border/70 p-3"
+              >
+                {logo && (
+                  <Image
+                    src={logo}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className="h-10 w-10 shrink-0 rounded-xl border border-border/60 bg-white object-contain p-1"
+                  />
+                )}
+                <div className="min-w-0">
+                  <p className="flex items-baseline gap-2">
+                    <span className="truncate text-[14px] font-medium text-foreground">{chapter.title}</span>
+                    <span className="shrink-0 font-mono text-[11px] text-muted-foreground">{chapter.when}</span>
+                  </p>
+                  <p className="truncate text-[12px] text-muted-foreground sm:text-[13px]">{chapter.line}</p>
+                </div>
+              </li>
+            );
+          })}
+        </ol>
+      </Section>
+
+      {/* Experience */}
+      <Section id="experience" label="Experience" className="border-t border-border/60">
+        <ul className="flex flex-col gap-5">
+          {experience.map((item, i) => (
+            <ExperienceItem key={item.company} {...item} stackIndex={i} />
+          ))}
+        </ul>
+        <a
+          href="/work"
+          className="mt-8 inline-flex items-center gap-1 text-[13px] text-muted-foreground transition-colors hover:text-foreground"
+        >
+          Full experience and research
+          <ArrowUpRight className="h-3.5 w-3.5" />
+        </a>
+      </Section>
+
+      {/* Selected work */}
+      <Section id="work" label="Selected work" className="border-t border-border/60">
+        <div className="flex flex-col gap-5">
+          {CASE_STUDIES.map((study, i) => (
+            <div
+              key={study.slug}
+              className="stack-card rounded-2xl"
+              style={{ top: `calc(5rem + ${i * 10}px)` }}
+            >
+              <WorkCard study={study} priority={i === 0} />
+            </div>
+          ))}
+        </div>
+      </Section>
+
+      {/* Skills */}
+      <Section id="skills" label="Skills" className="border-t border-border/60">
+        <dl className="space-y-4">
+          {Object.entries(DATA.skills).map(([group, items]) => (
+            <div key={group} className="grid gap-2 sm:grid-cols-[140px_1fr] sm:gap-4">
+              <dt className="pt-0.5 text-[13px] font-medium text-foreground">{group}</dt>
+              <dd className="flex flex-wrap gap-1.5">
+                {Array.from(new Set(items as readonly string[])).map((skill) => (
+                  <span key={skill} className="chip">
+                    {skill}
+                  </span>
+                ))}
+              </dd>
+            </div>
+          ))}
+        </dl>
+        <GithubHeatmap username="arjunpkulkarni" profileUrl={DATA.contact.social.GitHub.url} />
+      </Section>
+
+      {/* Clubs */}
+      <Section id="clubs" label="Clubs & community" className="border-t border-border/60">
+        <ul className="space-y-3">
+          {clubs.map((club: any) => (
+            <li key={club.company} className="flex items-center gap-3">
+              <Image
+                src={club.logoUrl}
+                alt=""
+                width={40}
+                height={40}
+                className="h-10 w-10 shrink-0 rounded-xl border border-border/70 bg-white object-contain p-1"
+              />
+              <p className="min-w-0 truncate text-[14px] text-foreground">
+                <span className="font-medium">{CLUB_NAMES[club.company] ?? club.company}</span>
+                <span className="text-muted-foreground"> · {CLUB_STORY[club.company]}</span>
+              </p>
             </li>
           ))}
         </ul>

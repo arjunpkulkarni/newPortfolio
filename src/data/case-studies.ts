@@ -112,9 +112,9 @@ export const CASE_STUDIES: CaseStudy[] = [
     stack: ["CLIP", "FastAPI", "PostgreSQL", "Pinecone", "Redis", "Docker", "Vercel Edge"],
     links: [{ label: "Live demo", href: "https://www.hanger.live/" }],
     showcase: {
-      kind: "phones",
-      screens: [HangerChat, HangerDiscovery, HangerVisual],
-      background: "#ffffff",
+      kind: "panels",
+      panels: [HangerChat, HangerDiscovery, HangerVisual],
+      background: "linear-gradient(180deg, #f4efe7 0%, #e8dfd2 100%)",
     },
     hero: {
       kind: "image",

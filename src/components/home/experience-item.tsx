@@ -1,4 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
+import { LogoReveal } from "@/components/home/logo-reveal";
+import { BackedBy, type Investor } from "@/components/backed-by";
 import { cn } from "@/lib/utils";
 
 type ExperienceItemProps = {
@@ -16,6 +18,9 @@ type ExperienceItemProps = {
   imageAlt?: string;
   video?: string;
   videoPoster?: string;
+  stackIndex?: number; // position in a sticky stack of cards
+  brand?: { name: string; accent: string }; // drives the logo animation when there's no video or image
+  backedBy?: readonly Investor[];
 };
 
 export function ExperienceItem({
@@ -33,13 +38,16 @@ export function ExperienceItem({
   imageAlt,
   video,
   videoPoster,
+  stackIndex,
+  brand,
+  backedBy,
 }: ExperienceItemProps) {
   const dates =
     start || end
       ? `${start || ""}${start && end ? " – " : ""}${end || ""}`.trim()
       : "";
 
-  const hasMedia = Boolean(video || image);
+  const hasMedia = Boolean(video || image || brand);
 
   const name = href ? (
     <a
@@ -58,13 +66,15 @@ export function ExperienceItem({
     <li
       className={cn(
         "overflow-hidden rounded-2xl border border-border/70 bg-card",
+        stackIndex !== undefined && "stack-card",
         !hasMedia && "px-4 py-4 sm:px-5 sm:py-5"
       )}
+      style={stackIndex !== undefined ? { top: `calc(5rem + ${stackIndex * 10}px)` } : undefined}
     >
       {hasMedia && (
         <div className="overflow-hidden bg-secondary/40">
           {video ? (
-            <div className="relative aspect-[16/10] w-full">
+            <div className="relative aspect-[2/1] w-full bg-white">
               <video
                 src={video}
                 poster={videoPoster}
@@ -74,9 +84,11 @@ export function ExperienceItem({
                 playsInline
                 preload="metadata"
                 aria-label={imageAlt || `${company} product`}
-                className="absolute inset-0 h-full w-full object-cover object-top"
+                className="absolute inset-0 h-full w-full object-cover object-center"
               />
             </div>
+          ) : brand ? (
+            <LogoReveal logo={logo} name={brand.name} accent={brand.accent} />
           ) : (
             <Image
               src={image!}
@@ -134,6 +146,10 @@ export function ExperienceItem({
               </span>
             ))}
           </div>
+        )}
+
+        {backedBy && backedBy.length > 0 && (
+          <BackedBy investors={backedBy} className="mt-4" />
         )}
       </div>
     </li>

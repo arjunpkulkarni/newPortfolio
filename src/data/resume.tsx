@@ -65,9 +65,9 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Product / agent engineer building applied AI systems: reliability, evals, and production remediation.",
+    "Product / agent engineer building AI systems you can trust in production.",
   summary:
-    "Product / agent engineer. I build applied AI systems that make agents reliable in production. Across Breken, IBM, and FitFo the thread is the same: turn promising AI into systems people can use and trust.",
+    "Product / agent engineer building AI systems you can trust in production. Across Breken, IBM, and FitFo the thread is the same: turn promising AI into systems people can use and trust.",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [
@@ -228,7 +228,7 @@ export const DATA = {
       badges: [],
       tag: "agent reliability + structured generation + MCP",
       location: "Thomas J. Watson Research Center",
-      title: "Software Engineer, Applied AI",
+      title: "Applied AI Engineer",
       logoUrl: ibm,
       start: "June 2026",
       end: "Aug 2026",
@@ -253,7 +253,7 @@ export const DATA = {
       badges: [],
       tag: "vector retrieval + food discovery + co-occurrence data",
       location: "Vevey, Switzerland",
-      title: "Software Engineer, AI Systems",
+      title: "Applied AI Engineer",
       logoUrl: nestle,
       start: "June 2026",
       end: "Aug 2026",
@@ -718,12 +718,12 @@ export const DATA = {
       href: "https://www.uphonestcapital.com/",
       badges: ["Investor"],
       location: "",
-      title: "Investor in Hanger",
+      title: "Investor in Curator",
       logoUrl: uphonest,
       start: "",
       end: "",
       description:
-        "Investor supporting Hanger's AI-powered centralized shopping platform.",
+        "Investor supporting Curator's agentic e-commerce platform.",
     },
     {
       company: "UpScaleX",
@@ -742,7 +742,7 @@ export const DATA = {
       href: "https://www.intel.com/",
       badges: ["Investor"],
       location: "",
-      title: "Investor in Hanger",
+      title: "Investor in Curator",
       logoUrl: intel,
       start: "",
       end: "",

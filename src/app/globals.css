@@ -104,6 +104,11 @@
     @apply border-foreground/15 bg-foreground text-background hover:bg-foreground/90 hover:text-background;
   }
 
+  /* Cards that pile up on each other while scrolling. */
+  .stack-card {
+    @apply sticky shadow-[0_-10px_30px_-18px_rgba(27,26,23,0.35)];
+  }
+
   .chip {
     @apply inline-flex items-center rounded-md border border-border/70 bg-secondary/60 px-2 py-0.5 text-[11px] text-foreground/75;
   }
@@ -163,4 +168,41 @@ code[data-line-numbers-max-digits="3"] > [data-line]::before {
 
 code[data-line-numbers-max-digits="4"] > [data-line]::before {
   width: 2.25rem;
+}
+
+/* Logo reveal: a 5s loop. Mark wipes in, letters rise, accent line draws, everything fades and repeats. */
+.logo-reveal-mark {
+  animation: logo-mark 5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+.logo-reveal-letter {
+  animation: logo-letter 5s cubic-bezier(0.22, 1, 0.36, 1) infinite both;
+}
+.logo-reveal-line {
+  animation: logo-line 5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+/* Letter delays are set inline, so the letter keyframes start at 0 and finish fading with the rest. */
+@keyframes logo-mark {
+  0%, 6% { opacity: 0; transform: scale(0.6) rotate(-8deg); clip-path: inset(0 100% 0 0); }
+  22% { opacity: 1; transform: scale(1.08) rotate(0deg); clip-path: inset(0 0 0 0); }
+  28%, 86% { opacity: 1; transform: scale(1); clip-path: inset(0 0 0 0); }
+  96%, 100% { opacity: 0; transform: scale(1); }
+}
+@keyframes logo-letter {
+  0% { opacity: 0; transform: translateY(60%); filter: blur(4px); }
+  8%, 64% { opacity: 1; transform: translateY(0); filter: blur(0); }
+  72%, 100% { opacity: 0; transform: translateY(0); }
+}
+@keyframes logo-line {
+  0%, 40% { transform: scaleX(0); opacity: 1; }
+  54%, 86% { transform: scaleX(1); opacity: 1; }
+  96%, 100% { transform: scaleX(1); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-reveal-mark,
+  .logo-reveal-letter,
+  .logo-reveal-line {
+    animation: none;
+  }
 }
