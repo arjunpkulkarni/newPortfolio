@@ -367,7 +367,7 @@ export default function HomePage() {
               <li
                 key={item.title}
                 className="stack-card rounded-2xl border border-border/70 bg-card p-4 sm:p-5"
-                style={{ top: `calc(5rem + ${i * 10}px)` }}
+                style={{ top: `calc(6.5rem + ${i * 10}px)` }}
               >
                 <div className="flex items-center gap-3">
                   {logo && (
@@ -419,7 +419,7 @@ export default function HomePage() {
             <div
               key={study.slug}
               className="stack-card rounded-2xl"
-              style={{ top: `calc(5rem + ${i * 10}px)` }}
+              style={{ top: `calc(6.5rem + ${i * 10}px)` }}
             >
               <WorkCard study={study} priority={i === 0} />
             </div>

@@ -73,7 +73,11 @@ export function ExperienceItem({
         stackIndex !== undefined && "stack-card",
         !hasMedia && "px-4 py-4 sm:px-5 sm:py-5"
       )}
-      style={stackIndex !== undefined ? { top: `calc(5rem + ${stackIndex * 10}px)` } : undefined}
+      style={
+        stackIndex !== undefined
+          ? { top: `calc(6.5rem + ${stackIndex * 10}px)` }
+          : undefined
+      }
     >
       {hasMedia && (
         <div className="overflow-hidden bg-secondary/40">
