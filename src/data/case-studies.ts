@@ -1,14 +1,5 @@
 import type { StaticImageData } from "next/image";
 
-import FitFo1 from "../app/projects/pictures/fitfo/IMG_4966.PNG";
-import FitFo2 from "../app/projects/pictures/fitfo/IMG_4967.PNG";
-import FitFo3 from "../app/projects/pictures/fitfo/IMG_4968.PNG";
-import FitFo4 from "../app/projects/pictures/fitfo/IMG_4969.PNG";
-import FitFo5 from "../app/projects/pictures/fitfo/IMG_4970.PNG";
-import FitFo6 from "../app/projects/pictures/fitfo/IMG_4971.PNG";
-import FitFoCoach from "../app/projects/pictures/fitfo/fitfoCoach.png";
-import FitFoHero from "../app/projects/pictures/fitfo/hero.png";
-
 import CongruenceDashboard from "../app/projects/pictures/congruence/Dashboard.png";
 import CongruenceRecordings from "../app/projects/pictures/congruence/PatientPageRecordings.png";
 import CongruenceReport from "../app/projects/pictures/congruence/ClinicalDocumentationReport.png";
@@ -53,75 +44,6 @@ export type CaseStudy = {
 };
 
 export const CASE_STUDIES: CaseStudy[] = [
-  {
-    slug: "fitfo",
-    name: "FitFo",
-    role: "CTO",
-    category: "creator fitness coaching",
-    blurb: "Share a TikTok or Reel, get a structured workout. Agentic coaching at 40K users.",
-    tagline:
-      "Turns fitness videos into workouts you can follow, edit, and log, plus an AI coach grounded in creators' own content.",
-    timeline: "Feb 2026 – Jun 2026",
-    team: "4 builders",
-    stack: ["Flask", "TypeScript", "Swift", "Supabase", "pgvector", "Whisper", "RevenueCat", "DigitalOcean"],
-    links: [{ label: "Live site", href: "https://www.fitfo.app/" }],
-    showcase: {
-      kind: "video",
-      src: "/videos/fitfo.mp4",
-      poster: "/videos/fitfo-poster.jpg",
-      background: "#eda27c",
-    },
-    hero: {
-      kind: "video",
-      src: "/videos/fitfo.mp4",
-      poster: "/videos/fitfo-poster.jpg",
-      background: "#eda27c",
-    },
-    stats: [
-      { value: "40K", label: "users" },
-      { value: "$350K", label: "GMV" },
-      { value: "$500K", label: "raised" },
-    ],
-    overview: [
-      "People save hundreds of workout videos and never train them. FitFo closes that gap: hit share on any public TikTok or Reel, and FitFo pulls the audio and on-screen text into a clean session with exercises, sets, reps, and rest.",
-      "As CTO I owned the system from architecture through production scale, then built the creator coaching layer on top. FitFo was built in the Sisu incubator.",
-    ],
-    built: [
-      "Shipped an agentic coaching platform to 40K users and $350K GMV on Flask + TypeScript.",
-      "Built a creator-content RAG pipeline that grounds every coaching answer in a cited chunk of the creator's own videos.",
-      "Raised $500K from Airbnb's CMO, Credit Acceptance's CEO, and an a16z angel investor.",
-    ],
-    architecture: [
-      { label: "Mobile", value: "Swift (iOS)" },
-      { label: "API", value: "Flask + TypeScript" },
-      { label: "Data", value: "Supabase Postgres + pgvector (HNSW)" },
-      { label: "Ingest", value: "Apify, TikWM, ffmpeg, Whisper" },
-      { label: "LLM", value: "gpt-4.1-mini, text-embedding-3-small" },
-      { label: "Billing", value: "RevenueCat" },
-      { label: "Infra", value: "DigitalOcean" },
-    ],
-    steps: [
-      { title: "Discover", body: "Apify crawls a creator's TikTok profile and upserts videos by platform ID for deduped ingestion." },
-      { title: "Transcribe", body: "TikWM, ffmpeg, and Whisper turn each video into reusable transcript text with capped async concurrency." },
-      { title: "Chunk", body: "gpt-4.1-mini splits transcripts into self-contained training snippets and strips sponsor reads and pure CTAs." },
-      { title: "Tag", body: "A batched LLM pass assigns locked muscle, goal, exercise, and equipment tags that match SQL constraints." },
-      { title: "Embed", body: "text-embedding-3-small vectors land in pgvector, with the model stored per row for future re-embedding." },
-    ],
-    decisions: [
-      { title: "Postgres-native retrieval", body: "Supabase Postgres + pgvector keeps storage, tag filters, approval status, HNSW cosine search, and citations in one source of truth." },
-      { title: "Filter before ranking", body: "The match_content_chunks RPC narrows by creator, approval status, muscle groups, and goals before ranking top-K chunks by vector distance." },
-      { title: "Grounded generation", body: "Weak matches are dropped, empty retrieval skips the LLM, and every coaching claim must cite a retrieved chunk." },
-    ],
-    gallery: [
-      { image: FitFo1, caption: "Home", phone: true },
-      { image: FitFo2, caption: "Imported workout", phone: true },
-      { image: FitFo3, caption: "Workout library", phone: true },
-      { image: FitFo4, caption: "Session", phone: true },
-      { image: FitFo5, caption: "Logging", phone: true },
-      { image: FitFoCoach, caption: "Creator coach", phone: true },
-      { image: FitFo6, caption: "Progress", phone: true },
-    ],
-  },
   {
     slug: "congruence",
     name: "Congruence",

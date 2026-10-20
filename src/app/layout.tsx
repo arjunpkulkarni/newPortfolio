@@ -22,7 +22,7 @@ const fontMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(DATA.url),
   title: {
-    default: `${DATA.name}, Software Engineer`,
+    default: `${DATA.name}, Product / Agent Engineer`,
     template: `%s | ${DATA.name}`,
   },
   description: DATA.description,

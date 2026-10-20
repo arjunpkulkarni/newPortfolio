@@ -20,7 +20,7 @@ const STORY = [
   {
     when: "2024",
     title: "Curator",
-    line: "First founding role. Built an agentic commerce OS for 4+ enterprise clients and helped raise a $1.0M seed.",
+    line: "First founding role. Built an agentic commerce OS for 4+ enterprise clients and helped raise a $500K preseed.",
   },
   {
     when: "2026",
@@ -78,7 +78,7 @@ const EXPERIENCE: Record<string, { field: string; outcome: string; did: string }
   },
   "Curator.to": {
     field: "Agentic e-commerce",
-    outcome: "4+ enterprise clients · $2M+ GMV · $1.0M seed",
+    outcome: "4+ enterprise clients · $2M+ GMV · $500K preseed",
     did: "Architected the multi-tenant TypeScript backend and its tool-based agents.",
   },
 };
@@ -161,7 +161,7 @@ export default function HomePage() {
           {DATA.name}
         </h1>
         <p className="mt-3 max-w-xl text-[16px] leading-relaxed text-foreground/90 sm:text-[17px]">
-          I build AI systems people can trust in production.
+          Product / agent engineer. I build AI systems people can trust in production.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">

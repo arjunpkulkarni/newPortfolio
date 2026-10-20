@@ -65,9 +65,9 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Applied AI systems with a focus on agent reliability, evals, and production remediation.",
+    "Product / agent engineer building applied AI systems: reliability, evals, and production remediation.",
   summary:
-    "I build applied AI systems that make agents reliable in production. Across Breken, IBM, and FitFo the thread is the same: turn promising AI into systems people can use and trust.",
+    "Product / agent engineer. I build applied AI systems that make agents reliable in production. Across Breken, IBM, and FitFo the thread is the same: turn promising AI into systems people can use and trust.",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [
@@ -397,7 +397,7 @@ export const DATA = {
         },
         {
           description:
-            "Scaled system to 4+ enterprise clients processing $2M+ GMV with extensible cross-tool automation; helped raise $1.0M seed.",
+            "Scaled system to 4+ enterprise clients processing $2M+ GMV with extensible cross-tool automation; helped raise a $500K preseed.",
           skills: ["System Design", "Scalability", "Enterprise Architecture", "Fundraising"]
         }
       ]
