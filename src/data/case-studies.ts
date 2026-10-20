@@ -27,7 +27,8 @@ export type ShowcaseSpec =
   | { kind: "phones"; screens: [Img, Img, Img]; background: string }
   | { kind: "browser"; screen: Img; background: string }
   | { kind: "panels"; panels: [Img, Img, Img]; background: string }
-  | { kind: "image"; image: Img; background?: string; fit?: "cover" | "contain" };
+  | { kind: "image"; image: Img; background?: string; fit?: "cover" | "contain" }
+  | { kind: "video"; src: string; poster?: string; background?: string };
 
 export type CaseStudy = {
   slug: string;
@@ -65,11 +66,17 @@ export const CASE_STUDIES: CaseStudy[] = [
     stack: ["Flask", "TypeScript", "Swift", "Supabase", "pgvector", "Whisper", "RevenueCat", "DigitalOcean"],
     links: [{ label: "Live site", href: "https://www.fitfo.app/" }],
     showcase: {
-      kind: "phones",
-      screens: [FitFo1, FitFoCoach, FitFo2],
-      background: "linear-gradient(160deg, #f3b896 0%, #eda27c 45%, #e8926a 100%)",
+      kind: "video",
+      src: "/videos/fitfo.mp4",
+      poster: "/videos/fitfo-poster.jpg",
+      background: "#eda27c",
     },
-    hero: { kind: "image", image: FitFoHero, background: "#eda27c", fit: "cover" },
+    hero: {
+      kind: "video",
+      src: "/videos/fitfo.mp4",
+      poster: "/videos/fitfo-poster.jpg",
+      background: "#eda27c",
+    },
     stats: [
       { value: "40K", label: "users" },
       { value: "$350K", label: "GMV" },

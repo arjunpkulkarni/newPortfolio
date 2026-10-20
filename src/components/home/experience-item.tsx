@@ -12,6 +12,8 @@ type ExperienceItemProps = {
   skills?: string[];
   image?: StaticImageData | string;
   imageAlt?: string;
+  video?: string;
+  videoPoster?: string;
 };
 
 export function ExperienceItem({
@@ -26,6 +28,8 @@ export function ExperienceItem({
   skills,
   image,
   imageAlt,
+  video,
+  videoPoster,
 }: ExperienceItemProps) {
   const dates =
     start || end
@@ -34,16 +38,30 @@ export function ExperienceItem({
 
   return (
     <li className="py-6 first:pt-0 last:pb-0">
-      {image && (
+      {(video || image) && (
         <div className="mb-4 overflow-hidden rounded-2xl border border-border/70 bg-secondary/40">
           <div className="relative aspect-[16/10] w-full">
-            <Image
-              src={image}
-              alt={imageAlt || `${company} product`}
-              fill
-              sizes="(max-width: 760px) 100vw, 720px"
-              className="object-cover object-top"
-            />
+            {video ? (
+              <video
+                src={video}
+                poster={videoPoster}
+                autoPlay
+                muted
+                loop
+                playsInline
+                preload="metadata"
+                aria-label={imageAlt || `${company} product`}
+                className="absolute inset-0 h-full w-full object-cover object-top"
+              />
+            ) : (
+              <Image
+                src={image!}
+                alt={imageAlt || `${company} product`}
+                fill
+                sizes="(max-width: 760px) 100vw, 720px"
+                className="object-cover object-top"
+              />
+            )}
           </div>
         </div>
       )}

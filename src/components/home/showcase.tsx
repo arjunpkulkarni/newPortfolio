@@ -14,6 +14,27 @@ export function Showcase({
   priority?: boolean;
   className?: string;
 }) {
+  if (spec.kind === "video") {
+    return (
+      <div
+        className={cn("relative aspect-[16/10] w-full overflow-hidden", className)}
+        style={{ background: spec.background }}
+      >
+        <video
+          src={spec.src}
+          poster={spec.poster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload={priority ? "auto" : "metadata"}
+          aria-label={alt}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]"
+        />
+      </div>
+    );
+  }
+
   if (spec.kind === "image") {
     return (
       <div

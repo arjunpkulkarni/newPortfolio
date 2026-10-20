@@ -8,7 +8,6 @@ import { ExperienceItem } from "@/components/home/experience-item";
 import { GithubHeatmap } from "@/components/home/github-heatmap";
 import { Section } from "@/components/home/section";
 import { WorkCard } from "@/components/home/work-card";
-import FitFoHero from "@/app/projects/pictures/fitfo/hero.png";
 import BrekenHero from "@/app/work/pictures/breken-hero.png";
 import CuratorHero from "@/app/work/pictures/curator-hero.png";
 
@@ -41,8 +40,11 @@ const METRICS: Record<string, string> = {
 // Product previews for experience entries that ship a product.
 const EXPERIENCE_IMAGES: Record<string, StaticImageData> = {
   Breken: BrekenHero,
-  FitFo: FitFoHero,
   "Curator.to": CuratorHero,
+};
+
+const EXPERIENCE_VIDEOS: Record<string, { src: string; poster?: string }> = {
+  FitFo: { src: "/videos/fitfo.mp4", poster: "/videos/fitfo-poster.jpg" },
 };
 
 function uniqueSkills(skills: string[][], limit = 5) {
@@ -93,6 +95,8 @@ export default function HomePage() {
       bullets,
       skills,
       image: EXPERIENCE_IMAGES[company],
+      video: EXPERIENCE_VIDEOS[company]?.src,
+      videoPoster: EXPERIENCE_VIDEOS[company]?.poster,
     };
   });
 
