@@ -9,6 +9,7 @@ import { ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import React from "react";
 import { BackedBy, type Investor } from "@/components/backed-by";
+import { HighlightSkills } from "@/lib/highlight-skills";
 import { ExperienceTag } from "@/components/experience-tag";
 import { PartneredWith, type Partner } from "@/components/partnered-with";
 import { ExperienceLinks, type ExperienceLink } from "@/components/experience-links";
@@ -220,7 +221,7 @@ export const PromotionCard = ({
                         <div className="flex gap-2">
                           <span className="text-primary">•</span>
                           <p className="flex-1 text-foreground leading-relaxed">
-                            {task.description}
+                            <HighlightSkills text={task.description} />
                           </p>
                         </div>
                       </li>

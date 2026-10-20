@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Showcase } from "@/components/home/showcase";
 import { CASE_STUDIES, getCaseStudy } from "@/data/case-studies";
+import { HighlightSkills } from "@/lib/highlight-skills";
 
 export function generateStaticParams() {
   return CASE_STUDIES.map((c) => ({ slug: c.slug }));
@@ -121,7 +122,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
           <Heading>Overview</Heading>
           <div className="space-y-4 text-[14px] leading-relaxed text-foreground/85 sm:text-[15px]">
             {study.overview.map((p) => (
-              <p key={p}>{p}</p>
+              <p key={p}><HighlightSkills text={p} /></p>
             ))}
           </div>
         </section>
@@ -132,7 +133,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             {study.built.map((b) => (
               <li key={b} className="flex gap-2.5 text-[14px] leading-relaxed text-foreground/85 sm:text-[15px]">
                 <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-foreground/40" />
-                <span>{b}</span>
+                <span><HighlightSkills text={b} /></span>
               </li>
             ))}
           </ul>
@@ -163,7 +164,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                   </span>
                   <div>
                     <h3 className="text-[15px] font-medium text-foreground">{s.title}</h3>
-                    <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground sm:text-sm">{s.body}</p>
+                    <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground sm:text-sm"><HighlightSkills text={s.body} /></p>
                   </div>
                 </li>
               ))}
@@ -180,7 +181,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-1.5 text-[15px] font-medium text-foreground">{d.title}</h3>
-                <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground">{d.body}</p>
+                <p className="mt-1 text-[13px] leading-relaxed text-muted-foreground"><HighlightSkills text={d.body} /></p>
               </div>
             ))}
           </div>

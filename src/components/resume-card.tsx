@@ -1,6 +1,7 @@
 "use client";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { HighlightSkills } from "@/lib/highlight-skills";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
@@ -121,14 +122,14 @@ export const ResumeCard = ({
                       <span className="text-primary mt-1">•</span>
                       <div className="flex-1">
                         <p className="text-foreground leading-relaxed mb-2">
-                          {task.description}
+                          <HighlightSkills text={task.description} />
                         </p>
                         <div className="flex flex-wrap gap-1.5">
                           {task.skills.map((skill, skillIndex) => (
                             <Badge
                               key={skillIndex}
                               variant="outline"
-                              className="text-[10px] sm:text-xs px-2 py-0.5"
+                              className="text-[10px] sm:text-xs px-2 py-0.5 font-semibold"
                             >
                               {skill}
                             </Badge>

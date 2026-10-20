@@ -110,7 +110,7 @@
   }
 
   .chip {
-    @apply inline-flex items-center rounded-md border border-border/70 bg-secondary/60 px-2 py-0.5 text-[11px] text-foreground/75;
+    @apply inline-flex items-center rounded-md border border-border/70 bg-secondary/60 px-2 py-0.5 text-[11px] font-semibold text-foreground/85;
   }
 }
 

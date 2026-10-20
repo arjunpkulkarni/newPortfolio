@@ -1,5 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
 import { LogoReveal } from "@/components/home/logo-reveal";
+import { HighlightSkills } from "@/lib/highlight-skills";
 import { BackedBy, type Investor } from "@/components/backed-by";
 import { cn } from "@/lib/utils";
 
@@ -129,12 +130,12 @@ export function ExperienceItem({
 
         {outcome && (
           <p className="mt-3 text-[14px] font-medium text-foreground sm:text-[15px]">
-            {outcome}
+            <HighlightSkills text={outcome} />
           </p>
         )}
         {did && (
           <p className="mt-1 text-[13px] leading-relaxed text-foreground/75 sm:text-sm">
-            {did}
+            <HighlightSkills text={did} />
           </p>
         )}
 

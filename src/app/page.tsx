@@ -7,43 +7,68 @@ import { ExperienceItem } from "@/components/home/experience-item";
 import { GithubHeatmap } from "@/components/home/github-heatmap";
 import { Section } from "@/components/home/section";
 import { WorkCard } from "@/components/home/work-card";
+import { HighlightSkills } from "@/lib/highlight-skills";
 
 const RESEARCH = [
   {
-    when: "2023",
-    title: "Teaching Assistant",
+    title: "Undergraduate Teaching Assistant",
     org: "Siebel School of Computing and Data Science",
-    line: "CS systems · TA for CS124 (Java) and CS128 (C++) at Siebel.",
+    partOf: "Siebel School of Computing and Data Science, University of Illinois",
+    when: "Jan 2023 – Apr 2023",
+    project:
+      "TA for CS124 (Java Programming) and CS128 (Introduction to C++). Held office hours, gave one-on-one help, and graded assignments with detailed feedback.",
+    skills: ["Java", "C++", "Data Structures", "Algorithms", "Code Review"],
+    outcome: "Helped students through coursework and projects in two intro CS courses.",
   },
   {
-    when: "2024",
-    title: "CEE Materials Lab",
+    title: "Sustainable Concrete with ML",
     org: "Civil and Environmental Engineering at Illinois",
-    line: "ML for materials · Random Forest mix design, 10% lower cement carbon.",
+    partOf: "Civil and Environmental Engineering, University of Illinois",
+    when: "Jan 2024 – May 2024",
+    project:
+      "Analyzed lab data and designed a new concrete mixture with less clinker in the cement, using Random Forest models to predict how composition affects durability.",
+    skills: ["Python", "Random Forest", "Scikit-learn", "Pandas", "NumPy"],
+    outcome: "10% lower carbon emissions.",
   },
   {
-    when: "2024",
-    title: "ECE AI Group",
+    title: "Autonomous EV Routing",
     org: "Illinois Artificial Intelligence Group (ECE Department)",
-    line: "RL + control · EV routing in SUMO, 18% less delay, 25% better control.",
+    partOf: "Illinois AI Group, Electrical & Computer Engineering, University of Illinois",
+    when: "Jan 2024 – Jan 2025",
+    project:
+      "Put a reinforcement learning agent inside a model predictive control (MPC) system that routes electric vehicles, tested in SUMO traffic simulations.",
+    skills: ["RL", "MPC", "SUMO", "ROS", "C++", "Python"],
+    outcome: "18% less traffic delay and 25% better control accuracy.",
   },
   {
-    when: "2024",
-    title: "CSL",
+    title: "AI Dietitian",
     org: "Coordinated Science Laboratory at University of Illinois",
-    line: "Clinical AI · RAG + LangGraph dietitian with Chef Briscione & Lav Varshney, +22% accuracy.",
+    partOf: "Coordinated Science Laboratory (CSL), University of Illinois",
+    when: "Jan 2024 – Jan 2025",
+    project:
+      "Led DevOps and ML for an AI dietitian with Food Network Chef James Briscione and White House Fellow Lav Varshney: a LangGraph + RAG pipeline over a QDrant vector database. Later merged into the UC San Diego Health project.",
+    skills: ["LangChain", "LangGraph", "RAG", "QDrant", "OpenAI", "Flask", "Python"],
+    outcome: "22% more accurate dietary recommendations.",
   },
   {
-    when: "2025",
-    title: "Beckman Institute",
+    title: "Human–AI Interaction Platform",
     org: "Beckman Institute for Advanced Science and Technology",
-    line: "Human–AI interaction · Real-time multi-user LLM platform for 40+ subjects.",
+    partOf: "Beckman Institute for Advanced Science and Technology, University of Illinois",
+    when: "Feb 2025 – Apr 2025",
+    project:
+      "Built a real-time React + Flask platform where multiple people talk to an LLM at once, with WebSockets and analytics logging for research experiments.",
+    skills: ["React", "Flask", "WebSockets", "PostgreSQL", "LLM"],
+    outcome: "Ran studies with 40+ subjects and zero lost messages.",
   },
   {
-    when: "2025",
-    title: "IQUIST",
+    title: "Nanofluidic Energy Harvesting",
     org: "Illinois Quantum Information Science and Technology Center",
-    line: "Nanofluidics · CNT energy harvesting on ionic Coulomb drag (Nano Energy, 2023).",
+    partOf: "Illinois Quantum Information Science and Technology Center (IQUIST), University of Illinois",
+    when: "Sep 2025 – Dec 2025",
+    project:
+      "Modeled ion-electron Coulomb drag to predict voltage and current in silicon nanochannels, then designed carbon nanotube channels to harvest more energy.",
+    skills: ["Python", "COMSOL", "MATLAB", "Nanofluidics", "Device Physics"],
+    outcome: "Channel designs aimed at higher energy-harvesting efficiency, building on work published in Nano Energy (2023).",
   },
 ];
 
@@ -277,34 +302,52 @@ export default function HomePage() {
 
       {/* Research */}
       <Section id="research" label="Research" className="border-t border-border/60">
-        <ol className="grid grid-cols-1 gap-2.5">
-          {RESEARCH.map((chapter, i) => {
-            const logo = logoFor(chapter.org);
+        <ul className="flex flex-col gap-3">
+          {RESEARCH.map((item) => {
+            const logo = logoFor(item.org);
             return (
-              <li
-                key={`${chapter.title}-${i}`}
-                className="flex items-start gap-3 rounded-2xl border border-border/70 p-3"
-              >
-                {logo && (
-                  <Image
-                    src={logo}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className="h-10 w-10 shrink-0 rounded-xl border border-border/60 bg-white object-contain p-1"
-                  />
-                )}
-                <div className="min-w-0">
-                  <p className="flex items-baseline gap-2">
-                    <span className="truncate text-[14px] font-medium text-foreground">{chapter.title}</span>
-                    <span className="shrink-0 font-mono text-[11px] text-muted-foreground">{chapter.when}</span>
-                  </p>
-                  <p className="text-[12px] leading-snug text-muted-foreground sm:text-[13px]">{chapter.line}</p>
+              <li key={item.title} className="rounded-2xl border border-border/70 p-4 sm:p-5">
+                <div className="flex items-center gap-3">
+                  {logo && (
+                    <Image
+                      src={logo}
+                      alt=""
+                      width={40}
+                      height={40}
+                      className="h-10 w-10 shrink-0 rounded-xl border border-border/60 bg-white object-contain p-1"
+                    />
+                  )}
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <p className="text-[15px] font-medium text-foreground">{item.title}</p>
+                      <p className="shrink-0 text-[12px] tabular-nums text-muted-foreground">{item.when}</p>
+                    </div>
+                    <p className="text-[13px] text-muted-foreground">{item.partOf}</p>
+                  </div>
+                </div>
+                <dl className="mt-3 space-y-2 text-[13px] leading-relaxed sm:text-sm">
+                  <div>
+                    <dt className="section-label inline">Project</dt>
+                    <dd className="mt-0.5 text-foreground/80">
+                      <HighlightSkills text={item.project} />
+                    </dd>
+                  </div>
+                  <div>
+                    <dt className="section-label inline">Outcome</dt>
+                    <dd className="mt-0.5 font-medium text-foreground">{item.outcome}</dd>
+                  </div>
+                </dl>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  {item.skills.map((skill) => (
+                    <span key={skill} className="chip">
+                      {skill}
+                    </span>
+                  ))}
                 </div>
               </li>
             );
           })}
-        </ol>
+        </ul>
       </Section>
 
       {/* Selected work */}
@@ -355,7 +398,7 @@ export default function HomePage() {
               />
               <p className="min-w-0 truncate text-[14px] text-foreground">
                 <span className="font-medium">{CLUB_NAMES[club.company] ?? club.company}</span>
-                <span className="text-muted-foreground"> · {CLUB_STORY[club.company]}</span>
+                <span className="text-muted-foreground"> · <HighlightSkills text={CLUB_STORY[club.company]} /></span>
               </p>
             </li>
           ))}
