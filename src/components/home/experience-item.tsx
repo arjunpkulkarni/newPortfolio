@@ -1,4 +1,5 @@
 import Image, { type StaticImageData } from "next/image";
+import { cn } from "@/lib/utils";
 
 type ExperienceItemProps = {
   company: string;
@@ -38,6 +39,8 @@ export function ExperienceItem({
       ? `${start || ""}${start && end ? " – " : ""}${end || ""}`.trim()
       : "";
 
+  const hasMedia = Boolean(video || image);
+
   const name = href ? (
     <a
       href={href}
@@ -52,9 +55,14 @@ export function ExperienceItem({
   );
 
   return (
-    <li className="py-7 first:pt-0 last:pb-0">
-      {(video || image) && (
-        <div className="mb-5 overflow-hidden rounded-2xl border border-border/70 bg-secondary/40">
+    <li
+      className={cn(
+        "overflow-hidden rounded-2xl border border-border/70 bg-card",
+        !hasMedia && "px-4 py-4 sm:px-5 sm:py-5"
+      )}
+    >
+      {hasMedia && (
+        <div className="overflow-hidden bg-secondary/40">
           {video ? (
             <div className="relative aspect-[16/10] w-full">
               <video
@@ -70,7 +78,6 @@ export function ExperienceItem({
               />
             </div>
           ) : (
-            // Still images keep their own aspect ratio so nothing gets cropped.
             <Image
               src={image!}
               alt={imageAlt || `${company} product`}
@@ -81,48 +88,54 @@ export function ExperienceItem({
         </div>
       )}
 
-      <div className="flex items-center gap-3">
-        {logo && (
-          <Image
-            src={logo}
-            alt=""
-            width={40}
-            height={40}
-            className="h-10 w-10 shrink-0 rounded-xl border border-border/70 bg-white object-contain p-1"
-          />
-        )}
-        <div className="min-w-0 flex-1">
-          <div className="flex items-baseline justify-between gap-3">
-            {name}
-            {dates && (
-              <p className="shrink-0 text-[12px] tabular-nums text-muted-foreground">
-                {dates}
-              </p>
-            )}
+      <div className={cn(hasMedia && "border-t border-border/60 px-4 py-4 sm:px-5 sm:py-5")}>
+        <div className="flex items-center gap-3">
+          {logo && (
+            <Image
+              src={logo}
+              alt=""
+              width={40}
+              height={40}
+              className="h-10 w-10 shrink-0 rounded-xl border border-border/70 bg-white object-contain p-1"
+            />
+          )}
+          <div className="min-w-0 flex-1">
+            <div className="flex items-baseline justify-between gap-3">
+              {name}
+              {dates && (
+                <p className="shrink-0 text-[12px] tabular-nums text-muted-foreground">
+                  {dates}
+                </p>
+              )}
+            </div>
+            <p className="text-[13px] text-muted-foreground">
+              {title}
+              {field && <> · {field}</>}
+            </p>
           </div>
-          <p className="text-[13px] text-muted-foreground">
-            {title}
-            {field && <> · {field}</>}
+        </div>
+
+        {outcome && (
+          <p className="mt-3 text-[14px] font-medium text-foreground sm:text-[15px]">
+            {outcome}
           </p>
-        </div>
+        )}
+        {did && (
+          <p className="mt-1 text-[13px] leading-relaxed text-foreground/75 sm:text-sm">
+            {did}
+          </p>
+        )}
+
+        {skills && skills.length > 0 && (
+          <div className="mt-3 flex flex-nowrap gap-1.5 overflow-x-auto pb-0.5 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {skills.map((skill) => (
+              <span key={skill} className="chip shrink-0">
+                {skill}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
-
-      {outcome && (
-        <p className="mt-3 text-[14px] font-medium text-foreground sm:text-[15px]">{outcome}</p>
-      )}
-      {did && (
-        <p className="mt-1 text-[13px] leading-relaxed text-foreground/75 sm:text-sm">{did}</p>
-      )}
-
-      {skills && skills.length > 0 && (
-        <div className="mt-3 flex flex-wrap gap-1.5">
-          {skills.map((skill) => (
-            <span key={skill} className="chip">
-              {skill}
-            </span>
-          ))}
-        </div>
-      )}
     </li>
   );
 }

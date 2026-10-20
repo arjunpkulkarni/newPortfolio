@@ -231,7 +231,7 @@ export default function HomePage() {
 
       {/* Experience */}
       <Section id="experience" label="Experience" className="border-t border-border/60">
-        <ul className="divide-y divide-border/60">
+        <ul className="flex flex-col gap-5">
           {experience.map((item) => (
             <ExperienceItem key={item.company} {...item} />
           ))}
