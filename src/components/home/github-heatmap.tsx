@@ -1,6 +1,5 @@
 type Day = { date: string; count: number; level: 0 | 1 | 2 | 3 | 4 };
 
-const WEEKS = 30;
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 const LEVEL_CLASS = [
   "bg-secondary",
@@ -24,23 +23,26 @@ async function getContributions(username: string): Promise<Day[] | null> {
   }
 }
 
-// Recent GitHub activity grid. Renders nothing if the data can't be fetched.
+// Full-year GitHub activity grid (same window GitHub shows on your profile).
 export async function GithubHeatmap({ username, profileUrl }: { username: string; profileUrl: string }) {
   const all = await getContributions(username);
   if (!all) return null;
 
   const today = new Date().toISOString().slice(0, 10);
   const days = all.filter((d) => d.date <= today);
+  if (!days.length) return null;
 
-  // Start on a Sunday so each column is one week.
-  let start = Math.max(0, days.length - WEEKS * 7);
-  while (start > 0 && new Date(days[start].date + "T00:00:00Z").getUTCDay() !== 0) start--;
-  const recent = days.slice(start);
+  // Align to a Sunday so each column is one week, matching GitHub's grid.
+  let start = 0;
+  while (start < days.length && new Date(days[start].date + "T00:00:00Z").getUTCDay() !== 0) {
+    start++;
+  }
+  const year = days.slice(start);
 
   const weeks: Day[][] = [];
-  for (let i = 0; i < recent.length; i += 7) weeks.push(recent.slice(i, i + 7));
+  for (let i = 0; i < year.length; i += 7) weeks.push(year.slice(i, i + 7));
 
-  const total = recent.reduce((sum, d) => sum + d.count, 0);
+  const total = year.reduce((sum, d) => sum + d.count, 0);
 
   let lastMonth = -1;
   const monthLabels = weeks.map((week) => {
@@ -59,24 +61,27 @@ export async function GithubHeatmap({ username, profileUrl }: { username: string
           rel="noopener noreferrer"
           className="text-[13px] font-medium text-foreground underline-offset-2 hover:underline"
         >
-          {total.toLocaleString()} contributions
+          {total.toLocaleString()} contributions in the last year
         </a>
-        <span className="text-[12px] text-muted-foreground">last {WEEKS} weeks</span>
+        <span className="shrink-0 text-[12px] text-muted-foreground">@{username}</span>
       </div>
 
       <div className="overflow-x-auto">
-        <div className="inline-flex flex-col gap-1">
+        <div className="inline-flex min-w-full flex-col gap-1">
           <div className="flex gap-[3px] pl-7">
             {monthLabels.map((label, i) => (
-              <span key={i} className="w-[11px] overflow-visible whitespace-nowrap text-[10px] text-muted-foreground">
+              <span
+                key={i}
+                className="w-[10px] overflow-visible whitespace-nowrap text-[10px] text-muted-foreground sm:w-[11px]"
+              >
                 {label}
               </span>
             ))}
           </div>
           <div className="flex gap-[3px]">
-            <div className="flex w-6 flex-col gap-[3px] text-[10px] leading-[11px] text-muted-foreground">
+            <div className="flex w-6 flex-col gap-[3px] text-[10px] leading-[10px] text-muted-foreground sm:leading-[11px]">
               {["", "Mon", "", "Wed", "", "Fri", ""].map((d, i) => (
-                <span key={i} className="h-[11px]">
+                <span key={i} className="h-[10px] sm:h-[11px]">
                   {d}
                 </span>
               ))}
@@ -87,7 +92,7 @@ export async function GithubHeatmap({ username, profileUrl }: { username: string
                   <span
                     key={day.date}
                     title={`${day.count} contribution${day.count === 1 ? "" : "s"} on ${day.date}`}
-                    className={`h-[11px] w-[11px] rounded-[3px] ${LEVEL_CLASS[day.level]}`}
+                    className={`h-[10px] w-[10px] rounded-[2px] sm:h-[11px] sm:w-[11px] sm:rounded-[3px] ${LEVEL_CLASS[day.level]}`}
                   />
                 ))}
               </div>
@@ -99,7 +104,7 @@ export async function GithubHeatmap({ username, profileUrl }: { username: string
       <div className="mt-3 flex items-center justify-end gap-1 text-[10px] text-muted-foreground">
         <span className="mr-1">Less</span>
         {LEVEL_CLASS.map((c, i) => (
-          <span key={i} className={`h-[11px] w-[11px] rounded-[3px] ${c}`} />
+          <span key={i} className={`h-[10px] w-[10px] rounded-[2px] sm:h-[11px] sm:w-[11px] sm:rounded-[3px] ${c}`} />
         ))}
         <span className="ml-1">More</span>
       </div>

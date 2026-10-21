@@ -285,14 +285,6 @@ export default function HomePage() {
         <div className="mt-6 flex flex-wrap gap-2">
           <CopyEmail email={DATA.contact.email} />
           <a
-            href="/RESUME_ARJUNK_SEPT25.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="pill"
-          >
-            Resume
-          </a>
-          <a
             href={DATA.contact.social.GitHub.url}
             target="_blank"
             rel="noopener noreferrer"
