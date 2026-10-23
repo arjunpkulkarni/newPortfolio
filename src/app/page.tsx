@@ -29,13 +29,13 @@ const COMPANY_ROUTES: Record<string, ExperienceRoute[]> = {
   Breken: ["agents", "systems", "product"],
   IBM: ["agents"],
   FitFo: ["product"],
-  Handshake: ["data"],
+  Handshake: ["agents", "data"],
   SideShift: ["systems"],
   "UCSF Health": ["healthcare", "agents"],
   "Curator.to": ["agents", "product"],
   "UC San Diego Health": ["healthcare", "data"],
   AbbVie: ["healthcare", "data"],
-  Rumor: ["systems"],
+  Rumor: ["product", "systems"],
 };
 
 const RESEARCH = [
@@ -96,25 +96,25 @@ const EXPERIENCE: Record<string, { field: string; outcome?: string; did: string 
   Breken: {
     field: "Production simulation",
     outcome: "Production simulation that finds failures before customers do",
-    did: "Built a simulator that recreates a company's software, finds the bugs customers would hit, and drafts the fix.",
+    did: "Built the sandbox that rebuilds a customer's whole system in isolation, and the eval engine that finds the bugs customers would hit and drafts the fix.",
   },
   IBM: {
     field: "Agent reliability research",
     outcome: "Composable agent skills under IBM Fellow Dr. Kush R. Varshney",
-    did: "Built reusable AI skills with the Mellea Skills Compiler and prototyped reliable agent workflows.",
+    did: "Wrote reusable Python skills with the Mellea Skills Compiler, each validated and repaired against its own requirements, and composed them into agent workflows.",
   },
   FitFo: {
-    field: "Creator fitness coaching",
+    field: "Mobile fitness app",
     outcome: "40K users · $350K GMV · $500K raised",
-    did: "Led the platform as CTO, from architecture to an AI coach grounded in creator content.",
+    did: "Led the mobile app and backend as CTO: share any workout video, get a structured plan, and train with an AI coach grounded in the creator's content.",
   },
   Handshake: {
-    field: "Multimodal AI evaluation",
+    field: "Video model evals",
     outcome: "Training-data QA for state-of-the-art vision models",
-    did: "Built Kubricks for video ingestion and transcription, and evaluated models against gold annotations.",
+    did: "Built Kubricks, an eval platform for video models: Celery ingestion and Whisper transcription, then scoring against gold annotations for hallucinations and temporal errors.",
   },
   SideShift: {
-    field: "Messaging and contracts",
+    field: "Caching",
     outcome: "~95% fewer database reads and writes on messaging",
     did: "Added Redis + TanStack Query caching and built in-app contract signing.",
   },
@@ -124,8 +124,9 @@ const EXPERIENCE: Record<string, { field: string; outcome?: string; did: string 
     did: "Built the Flask pipelines behind Congruence's SOAP notes and patient context.",
   },
   "Curator.to": {
-    field: "Agentic e-commerce",
-    did: "Architected the multi-tenant TypeScript backend and its tool-based agents.",
+    field: "Agent infrastructure",
+    outcome: "4+ enterprise brands · $2M+ GMV",
+    did: "Built the early agent infrastructure (multi-tenant Bun + Hono backend, tool-calling agents streamed over WebSocket) and the web dashboard brands run it from.",
   },
   "UC San Diego Health": {
     field: "Clinical RAG",
@@ -133,14 +134,14 @@ const EXPERIENCE: Record<string, { field: string; outcome?: string; did: string 
     did: "Built LangGraph + QDrant clinical reasoning over patient history and allergies.",
   },
   AbbVie: {
-    field: "Oncology search",
-    outcome: "ETL over 120K+ reports · R&D lookup ~3x faster",
-    did: "Built FastAPI + FAISS semantic search for clinical trial documents.",
+    field: "ETL",
+    outcome: "ETL over 120K+ reports · batch runs 4h → 45m",
+    did: "Built the ETL pipeline and dashboard that extracts, validates and embeds clinical trial reports, plus FastAPI + FAISS search that made R&D lookup ~3x faster.",
   },
   Rumor: {
-    field: "Real-time events",
-    outcome: "~85% faster search for 50K+ users",
-    did: "Cut event-search latency with Redis caching and shipped React Native features.",
+    field: "Mobile full stack",
+    outcome: "800ms → 120ms search for 50K+ users",
+    did: "Shipped guest lists, RSVPs and discovery end to end in React Native and Node, and cut event-search latency ~85% with indexing and Redis caching.",
   },
 };
 
@@ -257,7 +258,7 @@ export default function HomePage() {
           Product / agent engineer building AI systems you can trust in production.
         </p>
         <p className="mt-2 text-[14px] leading-snug text-muted-foreground sm:text-[15px]">
-          Works best in a product role at a fast-moving startup.
+          Looking for a founding or early engineering role at a Seed or Series A startup.
         </p>
         <p className="mt-1.5 text-[14px] leading-snug text-muted-foreground sm:text-[15px]">
           Interests · trustworthy and secure AI, physical AI, nanotechnology
