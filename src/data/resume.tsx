@@ -35,7 +35,6 @@ import ucsf from "../app/work/pictures/ucsf.png";
 import sideshift from "../app/work/pictures/sideshift.jpeg";
 import fitfoLogo from "../app/projects/pictures/fitfo/fitfo-logo-dark.png";
 import ibm from "../app/work/pictures/ibm.png";
-import nestle from "../app/work/pictures/nestle.png";
 import breken from "../app/work/pictures/breken.png";
 import paretoHoldings from "../app/work/pictures/venture-capital/paretoHoldings.png";
 import pearVC from "../app/work/pictures/venture-capital/pearVC.png";
@@ -244,31 +243,6 @@ export const DATA = {
           description:
             "Prototyped agent workflow patterns focused on reliability and reusable skill composition for enterprise agent systems.",
           skills: ["Agentic AI", "Workflow Orchestration", "Applied Research"]
-        }
-      ]
-    },
-    {
-      company: "Nestlé",
-      href: "https://www.nestle.com/",
-      badges: [],
-      tag: "vector retrieval + food discovery + co-occurrence data",
-      location: "Vevey, Switzerland",
-      title: "Applied AI Research",
-      logoUrl: nestle,
-      start: "June 2026",
-      end: "Aug 2026",
-      description:
-        "LLM retrieval and R&D data platform for product ideation and formulation over flavor compounds, regional cuisine, and 2M+ recipe co-occurrence data.",
-      tasks: [
-        {
-          description:
-            "Designed LLM retrieval pipelines over large co-occurrence corpora for adaptive product ideation pilots.",
-          skills: ["LLM Systems", "Retrieval", "Python", "Applied Research"]
-        },
-        {
-          description:
-            "Implemented data pipelines combining structured food and formulation signals with semantic retrieval for R&D workflows.",
-          skills: ["Python", "RAG", "Knowledge Graphs", "Data Engineering"]
         }
       ]
     },

@@ -233,54 +233,6 @@ export function IbmDemo() {
   );
 }
 
-/* Nestlé: a product brief retrieves flavor pairings from recipe co-occurrence, then a concept. */
-export function NestleDemo() {
-  const { ref, step } = useLoop(12, 1000);
-  const query = "creamy plant-based dessert · Southeast Asian";
-  const typed = query.slice(0, Math.min(query.length, step * 16));
-  const pairs: [string, number][] = [
-    ["coconut + pandan", 0.91],
-    ["mango + lime", 0.86],
-    ["jackfruit + vanilla", 0.81],
-    ["sesame + palm sugar", 0.77],
-  ];
-  return (
-    <Frame frameRef={ref} bg="linear-gradient(135deg,#f3ece3,#e5d8c6)" title="R&D retrieval · 2M+ recipes">
-      <div className="flex items-center gap-[1cqw] rounded-[0.9cqw] border border-black/10 px-[1.4cqw] py-[0.9cqw]">
-        <span className="opacity-40">brief</span>
-        <span className="font-medium">
-          {typed}
-          <span className={cn("ml-[0.2cqw] inline-block h-[1.8cqw] w-[0.15cqw] translate-y-[0.3cqw] bg-black", typed.length < query.length ? "animate-pulse" : "opacity-0")} />
-        </span>
-      </div>
-      <div className="mt-[1.4cqw] grid grid-cols-[1fr_38%] gap-[1.6cqw]">
-        <div className="space-y-[0.8cqw]">
-          <Label>co-occurring pairs</Label>
-          {pairs.map(([name, score], i) => (
-            <div key={name} className="flex items-center gap-[1cqw]">
-              <span className="w-[17cqw] shrink-0 truncate">{name}</span>
-              <div className="h-[1.1cqw] flex-1 rounded-full bg-black/5">
-                <div
-                  className="h-full rounded-full bg-[#8a6a45] transition-all duration-700"
-                  style={{ width: step > 3 + i ? `${score * 100}%` : "0%" }}
-                />
-              </div>
-              <span className={cn("w-[4.4cqw] text-right tabular-nums transition-opacity", step > 3 + i ? "opacity-60" : "opacity-0")}>
-                {score.toFixed(2)}
-              </span>
-            </div>
-          ))}
-        </div>
-        <Show on={step > 8} className="rounded-[0.9cqw] border border-[#8a6a45]/30 bg-[#8a6a45]/[0.07] p-[1.3cqw]">
-          <Label>concept</Label>
-          <p className="mt-[0.4cqw] text-[length:1.7cqw] font-semibold leading-tight">Pandan-coconut frozen dessert</p>
-          <p className="mt-[0.5cqw] text-black/60">Plant-based base, top regional pairing.</p>
-        </Show>
-      </div>
-    </Frame>
-  );
-}
-
 /* FitFo: share a fitness video, get a structured workout, ask the creator coach. */
 export function FitfoDemo() {
   const { ref, step } = useLoop(13, 1000);

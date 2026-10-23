@@ -14,7 +14,6 @@ import {
   FitfoDemo,
   HandshakeDemo,
   IbmDemo,
-  NestleDemo,
   RumorDemo,
   SideshiftDemo,
   UcsdDemo,
@@ -29,7 +28,6 @@ import { HighlightSkills } from "@/lib/highlight-skills";
 const COMPANY_ROUTES: Record<string, ExperienceRoute[]> = {
   Breken: ["agents", "systems", "product"],
   IBM: ["agents"],
-  Nestlé: ["data"],
   FitFo: ["product"],
   Handshake: ["data"],
   SideShift: ["systems"],
@@ -105,11 +103,6 @@ const EXPERIENCE: Record<string, { field: string; outcome?: string; did: string 
     outcome: "Composable agent skills under IBM Fellow Dr. Kush R. Varshney",
     did: "Built reusable AI skills with the Mellea Skills Compiler and prototyped reliable agent workflows.",
   },
-  "Nestlé": {
-    field: "AI for food R&D",
-    outcome: "LLM retrieval over a 2M+ recipe co-occurrence corpus",
-    did: "Built retrieval and data pipelines pairing formulation signals with semantic search.",
-  },
   FitFo: {
     field: "Creator fitness coaching",
     outcome: "40K users · $350K GMV · $500K raised",
@@ -170,7 +163,6 @@ const EXPERIENCE_IMAGES: Record<string, StaticImageData> = {};
 // Wordmark and accent color for each role's logo animation.
 const BRANDS: Record<string, { name: string; accent: string }> = {
   IBM: { name: "IBM", accent: "#0f62fe" },
-  "Nestlé": { name: "Nestlé", accent: "#63513d" },
   Handshake: { name: "Handshake", accent: "#b4e33d" },
   SideShift: { name: "SideShift", accent: "#111111" },
   "UCSF Health": { name: "UCSF Health", accent: "#052049" },
@@ -181,7 +173,6 @@ const BRANDS: Record<string, { name: string; accent: string }> = {
 const DEMOS: Record<string, React.ReactNode> = {
   Breken: <BrekenDemo />,
   IBM: <IbmDemo />,
-  "Nestlé": <NestleDemo />,
   FitFo: <FitfoDemo />,
   Handshake: <HandshakeDemo />,
   SideShift: <SideshiftDemo />,
