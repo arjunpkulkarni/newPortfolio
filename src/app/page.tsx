@@ -72,16 +72,6 @@ const RESEARCH = [
     outcome: "18% less traffic delay and 25% better control accuracy.",
   },
   {
-    title: "AI Dietitian",
-    org: "Coordinated Science Laboratory at University of Illinois",
-    partOf: "Coordinated Science Laboratory (CSL), University of Illinois",
-    when: "Jan 2024 – Jan 2025",
-    project:
-      "Led DevOps and ML for an AI dietitian with Food Network Chef James Briscione and White House Fellow Lav Varshney: a LangGraph + RAG pipeline over a QDrant vector database. Later merged into the UC San Diego Health project.",
-    skills: ["LangChain", "LangGraph", "RAG", "QDrant", "OpenAI", "Flask", "Python"],
-    outcome: "22% more accurate dietary recommendations.",
-  },
-  {
     title: "Human–AI Interaction Platform",
     org: "Beckman Institute for Advanced Science and Technology",
     partOf: "Beckman Institute for Advanced Science and Technology, University of Illinois",

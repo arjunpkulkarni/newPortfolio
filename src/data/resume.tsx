@@ -503,29 +503,6 @@ export const DATA = {
       ]
     },
     {
-      company: "Coordinated Science Laboratory at University of Illinois",
-      href: "https://csl.illinois.edu/",
-      badges: [],
-      tag: "RAG pipelines + clinical AI + DevOps",
-      location: "In-Person",
-      title: "Software Engineer Intern",
-      logoUrl: uiuc,
-      start: "Jan 2024",
-      end: "Jan 2025",
-      description:
-        "Led DevOps + ML workflows for AI dietician platform (merged with UCSD Health project above).",
-      tasks: [
-        {
-          description: "Built subgraph DAG + RAG pipeline (LangChain, QDrant vector DB), improving dietary recommendation accuracy by 22%.",
-          skills: ["LangChain", "RAG", "Vector Databases", "LangGraph"]
-        },
-        {
-          description: "Collaborated with Food Network Chef James Briscione & White House Fellow Lav Varshney on clinical AI nutrition engine.",
-          skills: ["Python", "OpenAI", "Flask"]
-        }
-      ]
-    },
-    {
       company: "Beckman Institute for Advanced Science and Technology",
       href: "https://beckman.illinois.edu/",
       badges: [],
