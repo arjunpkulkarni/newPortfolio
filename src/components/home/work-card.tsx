@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Showcase } from "@/components/home/showcase";
@@ -12,7 +13,16 @@ export function WorkCard({ study, priority }: { study: CaseStudy; priority?: boo
     >
       <Showcase spec={study.showcase} alt={`${study.name} product screenshots`} priority={priority} />
       <div className="flex items-start justify-between gap-4 border-t border-border/60 px-4 py-4 sm:px-5">
-        <div className="min-w-0 space-y-1">
+        {study.logo && (
+          <Image
+            src={study.logo}
+            alt=""
+            width={40}
+            height={40}
+            className="h-10 w-10 shrink-0 rounded-xl border border-border/70 bg-white object-contain p-1"
+          />
+        )}
+        <div className="min-w-0 flex-1 space-y-1">
           <p className="text-[15px] leading-snug text-foreground">
             <span className="font-medium">{study.name}</span>
             <span className="text-muted-foreground">

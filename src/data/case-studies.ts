@@ -6,6 +6,8 @@ import CongruenceReport from "../app/projects/pictures/congruence/ClinicalDocume
 import CongruenceInsurance from "../app/projects/pictures/congruence/GenerateInsurancePacket.png";
 import CongruenceAgent from "../app/projects/pictures/congruence/Agent.png";
 
+import UcsfLogo from "../app/work/pictures/ucsf.png";
+
 import HangerDiscovery from "../app/projects/pictures/hanger/discovery.jpg";
 import HangerChat from "../app/projects/pictures/hanger/chat.jpg";
 import HangerVisual from "../app/projects/pictures/hanger/visual.jpg";
@@ -24,6 +26,7 @@ export type ShowcaseSpec =
 export type CaseStudy = {
   slug: string;
   name: string;
+  logo?: Img; // org the project was built with
   role: string; // short role for cards, e.g. "Full-stack"
   category: string;
   blurb: string; // one line for cards
@@ -47,6 +50,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "congruence",
     name: "Congruence",
+    logo: UcsfLogo,
     role: "AI pipeline & backend",
     category: "clinical documentation",
     blurb: "Session recordings to insurance-ready progress notes in under a minute.",
