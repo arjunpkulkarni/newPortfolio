@@ -238,7 +238,7 @@ export default function HomePage() {
           {DATA.name}
         </h1>
         <p className="mt-3 text-[16px] leading-snug text-foreground/90 sm:text-[17px]">
-          Agent engineer. AI you can trust in production.
+          I build AI you can trust in production.
         </p>
         <p className="mt-2 text-[14px] leading-snug text-muted-foreground sm:text-[15px]">
           Looking for Seed / Series A roles.

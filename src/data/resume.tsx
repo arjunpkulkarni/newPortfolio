@@ -62,9 +62,9 @@ export const DATA = {
   location: "New York City",
   locationLink: "https://www.google.com/maps/place/University+of+Illinois+Urbana-Champaign",
   description:
-    "Product / agent engineer building AI systems you can trust in production.",
+    "I build AI you can trust in production.",
   summary:
-    "Product / agent engineer building AI systems you can trust in production. Across Breken, IBM, and FitFo the thread is the same: turn promising AI into systems people can use and trust.",
+    "I build AI you can trust in production. Across Breken, IBM, and FitFo the thread is the same: turn promising AI into systems people can use and trust.",
   avatarUrl: "/pfp.jpeg",
   skills: {
     "Languages (Core)": [
