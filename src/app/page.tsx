@@ -11,18 +11,16 @@ import {
   AbbvieDemo,
   BrekenDemo,
   CuratorDemo,
-  FitfoDemo,
   HandshakeDemo,
   IbmDemo,
   RumorDemo,
   SideshiftDemo,
-  UcsdDemo,
-  UcsfDemo,
 } from "@/components/home/demos";
 import { GithubHeatmap } from "@/components/home/github-heatmap";
 import { Section } from "@/components/home/section";
 import { WorkCard } from "@/components/home/work-card";
 import { HighlightSkills } from "@/lib/highlight-skills";
+import fitfoLanding from "@/app/work/pictures/fitfo-landing.png";
 
 // Real routes through the work — every role lands in at least one.
 const COMPANY_ROUTES: Record<string, ExperienceRoute[]> = {
@@ -31,9 +29,7 @@ const COMPANY_ROUTES: Record<string, ExperienceRoute[]> = {
   FitFo: ["product"],
   Handshake: ["agents", "data"],
   SideShift: ["systems"],
-  "UCSF Health": ["healthcare", "agents"],
   "Curator.to": ["agents", "product"],
-  "UC San Diego Health": ["healthcare", "data"],
   AbbVie: ["healthcare", "data"],
   Rumor: ["product", "systems"],
 };
@@ -118,20 +114,10 @@ const EXPERIENCE: Record<string, { field: string; outcome?: string; did: string 
     outcome: "~95% fewer database reads and writes on messaging",
     did: "Added Redis + TanStack Query caching and built in-app contract signing.",
   },
-  "UCSF Health": {
-    field: "Clinical AI",
-    outcome: "Agentic EHR supporting 20+ patients daily",
-    did: "Built the Flask pipelines behind Congruence's SOAP notes and patient context.",
-  },
   "Curator.to": {
     field: "Agent infrastructure",
     outcome: "4+ enterprise brands · $2M+ GMV",
     did: "Built the early agent infrastructure (multi-tenant Bun + Hono backend, tool-calling agents streamed over WebSocket) and the web dashboard brands run it from.",
-  },
-  "UC San Diego Health": {
-    field: "Clinical RAG",
-    outcome: "Dietary recommendations +22% more accurate for 200+ patients",
-    did: "Built LangGraph + QDrant clinical reasoning over patient history and allergies.",
   },
   AbbVie: {
     field: "ETL",
@@ -159,14 +145,15 @@ const CLUB_NAMES: Record<string, string> = {
 };
 
 // Product previews for experience entries that ship a product.
-const EXPERIENCE_IMAGES: Record<string, StaticImageData> = {};
+const EXPERIENCE_IMAGES: Record<string, StaticImageData> = {
+  FitFo: fitfoLanding,
+};
 
 // Wordmark and accent color for each role's logo animation.
 const BRANDS: Record<string, { name: string; accent: string }> = {
   IBM: { name: "IBM", accent: "#0f62fe" },
   Handshake: { name: "Handshake", accent: "#b4e33d" },
   SideShift: { name: "SideShift", accent: "#111111" },
-  "UCSF Health": { name: "UCSF Health", accent: "#052049" },
   "Curator.to": { name: "Curator", accent: "#1e88e5" },
 };
 
@@ -174,19 +161,15 @@ const BRANDS: Record<string, { name: string; accent: string }> = {
 const DEMOS: Record<string, React.ReactNode> = {
   Breken: <BrekenDemo />,
   IBM: <IbmDemo />,
-  FitFo: <FitfoDemo />,
   Handshake: <HandshakeDemo />,
   SideShift: <SideshiftDemo />,
-  "UCSF Health": <UcsfDemo />,
   "Curator.to": <CuratorDemo />,
-  "UC San Diego Health": <UcsdDemo />,
   AbbVie: <AbbvieDemo />,
   Rumor: <RumorDemo />,
 };
 
 const EXPERIENCE_VIDEOS: Record<string, { src: string; poster?: string }> = {
   Breken: { src: "/videos/breken.mp4", poster: "/videos/breken-poster.jpg" },
-  FitFo: { src: "/videos/fitfo.mp4", poster: "/videos/fitfo-poster.jpg" },
 };
 
 function uniqueSkills(skills: string[][], limit = 6) {
@@ -255,13 +238,10 @@ export default function HomePage() {
           {DATA.name}
         </h1>
         <p className="mt-3 text-[16px] leading-snug text-foreground/90 sm:text-[17px]">
-          Product / agent engineer building AI systems you can trust in production.
+          Agent engineer. AI you can trust in production.
         </p>
         <p className="mt-2 text-[14px] leading-snug text-muted-foreground sm:text-[15px]">
-          Looking for a founding or early engineering role at a Seed or Series A startup.
-        </p>
-        <p className="mt-1.5 text-[14px] leading-snug text-muted-foreground sm:text-[15px]">
-          Interests · trustworthy and secure AI, physical AI, nanotechnology
+          Looking for Seed / Series A roles.
         </p>
 
         <div className="mt-6 flex flex-wrap gap-2">
@@ -386,8 +366,8 @@ export default function HomePage() {
         </ul>
       </Section>
 
-      {/* Selected work */}
-      <Section id="work" label="Selected work" className="border-t border-border/60">
+      {/* Projects */}
+      <Section id="work" label="Projects" className="border-t border-border/60">
         <div className="flex flex-col gap-5">
           {CASE_STUDIES.map((study, i) => (
             <div

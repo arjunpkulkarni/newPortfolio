@@ -18,7 +18,6 @@ import KitGen from "../app/projects/pictures/kitgen.png";
 import rydberg from "../app/projects/pictures/rydberg.png";
 import QuantDesk from "../app/projects/pictures/quantDesk.png";
 import Purchasing from "../app/projects/pictures/purchasing.png";
-import ucsd from "../app/projects/pictures/ucsd.png";
 import uphonest from "../app/projects/pictures/uphonest.png";
 import upscale from "../app/work/pictures/upscale.png";
 import handshake from "../app/projects/pictures/handshake.png";
@@ -31,7 +30,6 @@ import sigpwny from "../app/work/pictures/sigpwny.png";
 import curator from "../app/work/pictures/curator.png";
 import ieee from "../app/work/pictures/ieee.png";
 import intel from "../app/work/pictures/intel.jpg";
-import ucsf from "../app/work/pictures/ucsf.png";
 import sideshift from "../app/work/pictures/sideshift.jpeg";
 import fitfoLogo from "../app/projects/pictures/fitfo/fitfo-logo-dark.png";
 import ibm from "../app/work/pictures/ibm.png";
@@ -322,31 +320,6 @@ export const DATA = {
       ]
     },
     {
-      company: "UCSF Health",
-      href: "https://www.ucsfhealth.org/",
-      badges: [],
-      tag: "production clinical agents + EHR automation",
-      location: "San Francisco, CA",
-      title: "Software Engineer Intern",
-      logoUrl: ucsf,
-      start: "Apr 2026",
-      end: "May 2026",
-      description:
-        "Agentic EHR workflows for therapist operations (LangChain, Redis, Celery, Flask).",
-      tasks: [
-        {
-          description:
-            "Implemented Congruence, an agentic EHR system supporting 20+ daily patients and therapist workflow orchestration.",
-          skills: ["Python", "Clinical AI", "LangChain", "EHR", "HIPAA"]
-        },
-        {
-          description:
-            "Developed Flask pipelines for SOAP note generation and patient-context storage with LangChain, Redis, and Celery.",
-          skills: ["Flask", "LangChain", "Redis", "Celery", "Python"]
-        }
-      ]
-    },
-    {
       company: "Curator.to",
       href: "https://curator.to/",
       badges: [],
@@ -373,31 +346,6 @@ export const DATA = {
           description:
             "Scaled system to 4+ enterprise clients processing $2M+ GMV with extensible cross-tool automation; helped raise a $500K preseed.",
           skills: ["System Design", "Scalability", "Enterprise Architecture", "Fundraising"]
-        }
-      ]
-    },
-    {
-      company: "UC San Diego Health",
-      href: "https://health.ucsd.edu/",
-      badges: [],
-      tag: "RAG + medical nutrition + clinical retrieval",
-      location: "San Diego, CA",
-      title: "Software Engineer Intern",
-      logoUrl: ucsd,
-      start: "Jan 2025",
-      end: "Aug 2025",
-      description:
-        "Clinical RAG + agentic nutrition system (LangChain, QDrant, LangGraph) serving 200+ patients.",
-      tasks: [
-        {
-          description:
-            "Designed subgraph DAG + RAG pipeline (LangChain, QDrant), improving dietary recommendation accuracy by 22%.",
-          skills: ["LangChain", "RAG", "QDrant", "Python"]
-        },
-        {
-          description:
-            "Implemented LangGraph multi-step clinical reasoning (history, allergies, meal generation), reducing manual review time by 65%.",
-          skills: ["LangGraph", "Python", "OpenAI", "QDrant"]
         }
       ]
     },
