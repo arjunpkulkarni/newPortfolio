@@ -1054,67 +1054,99 @@ function KubricksScore({ step }: { step: number }) {
   );
 }
 
-/* ───────────────────────── SideShift: messaging cache ───────────────────────── */
+/* ───────────────────────── SideShift: creator inbox, cache + contracts ───────────────────────── */
 
 export function SideshiftDemo() {
   const p = useScenes([
     {
-      label: "Before",
+      label: "Inbox",
       steps: 7,
-      caption: "Every open, poll and re-render of a message thread went straight to Postgres, so DB load grew with every active chat.",
+      caption:
+        "Brands message hundreds of creators per campaign. Every open, poll and re-render of a thread went straight to Postgres, so DB load grew with every applicant.",
     },
     {
       label: "Cache",
       steps: 9,
       caption:
-        "TanStack Query serves threads from the client cache, Redis answers across devices, and sends write through and invalidate only the thread that changed.",
+        "TanStack Query serves threads from the client cache, Redis answers across devices and teammates, and sends write through and invalidate only the thread that changed.",
     },
     {
-      label: "After",
-      steps: 6,
-      caption: "Same product, same traffic: database reads and writes on messaging dropped about 95%.",
+      label: "Contract",
+      steps: 7,
+      caption:
+        "Once a creator is picked, the brand sends deliverables, usage rights and pay in the thread, and both sides sign without leaving SideShift.",
+    },
+    {
+      label: "Result",
+      steps: 5,
+      caption: "Same campaigns, same traffic: database reads and writes on messaging dropped about 95%.",
     },
   ]);
   return (
-    <Frame player={p} bg="linear-gradient(135deg,#eef0f4,#d9dee7)" title="sideshift · messaging">
+    <Frame player={p} bg="linear-gradient(135deg,#eef0f4,#d9dee7)" title="sideshift · creator inbox">
       <SceneFade k={p.scene}>
-        {p.scene === 0 && <SideshiftBefore step={p.step} />}
+        {p.scene === 0 && <SideshiftInbox step={p.step} />}
         {p.scene === 1 && <SideshiftCache step={p.step} />}
-        {p.scene === 2 && <SideshiftAfter step={p.step} />}
+        {p.scene === 2 && <SideshiftContract step={p.step} />}
+        {p.scene === 3 && <SideshiftAfter step={p.step} />}
       </SceneFade>
     </Frame>
   );
 }
 
+const SIDESHIFT_CREATORS: [string, string, string][] = [
+  ["Maya C.", "TikTok · 48K", "#f97316"],
+  ["Andre D.", "Reels · 112K", "#6366f1"],
+  ["Grace O.", "Shorts · 23K", "#10b981"],
+];
+
 function SideshiftThread({ step }: { step: number }) {
   const msgs: [string, boolean][] = [
-    ["Can you cover Saturday's shift?", false],
-    ["Yes, 9am works", true],
-    ["Sending the agreement now", false],
+    ["Loved your morning-routine hook. Want in on the spring launch?", true],
+    ["Yes! 3 TikToks this month works", false],
+    ["Sending the contract now", true],
   ];
   return (
     <div className="flex flex-col gap-[0.7cqw]">
-      <Label>thread #42</Label>
+      <Label>glowlab · spring launch</Label>
+      <div className="flex flex-col gap-[0.4cqw]">
+        {SIDESHIFT_CREATORS.map(([name, meta, color], i) => (
+          <div
+            key={name}
+            className={cn(
+              "flex items-center gap-[0.7cqw] rounded-[0.7cqw] px-[0.8cqw] py-[0.4cqw]",
+              i === 0 ? "bg-black/[0.06]" : "opacity-55"
+            )}
+          >
+            <span className="h-[1.8cqw] w-[1.8cqw] shrink-0 rounded-full" style={{ background: color }} />
+            <span className="font-medium">{name}</span>
+            <span className="ml-auto text-[length:1.15cqw] text-black/45">{meta}</span>
+          </div>
+        ))}
+        <p className="px-[0.8cqw] text-[length:1.15cqw] text-black/40">+ 281 more applicants</p>
+      </div>
       {msgs.map(([m, mine], i) => (
         <Show key={m} on={step >= i} className={mine ? "self-end" : "self-start"}>
-          <p className={cn("rounded-[1cqw] px-[1.1cqw] py-[0.55cqw]", mine ? "bg-[#141414] text-white" : "bg-black/5")}>{m}</p>
+          <p className={cn("max-w-[24cqw] rounded-[1cqw] px-[1.1cqw] py-[0.55cqw]", mine ? "bg-[#141414] text-white" : "bg-black/5")}>
+            {m}
+          </p>
         </Show>
       ))}
     </div>
   );
 }
 
-function SideshiftBefore({ step }: { step: number }) {
+function SideshiftInbox({ step }: { step: number }) {
   const reqs = [
-    "GET /threads/42/messages",
-    "GET /threads/42/messages",
+    "GET /campaigns/88/threads",
+    "GET /threads/maya/messages",
     "GET /threads?unread",
-    "GET /threads/42/messages",
-    "POST /threads/42/messages",
-    "GET /threads/42/messages",
+    "GET /threads/maya/messages",
+    "POST /threads/maya/messages",
+    "GET /threads/maya/messages",
   ];
   return (
-    <div className="grid h-full grid-cols-[40%_1fr] gap-[1.8cqw]">
+    <div className="grid h-full grid-cols-[42%_1fr] gap-[1.8cqw]">
       <SideshiftThread step={step} />
       <div className="flex flex-col gap-[0.9cqw]">
         <Label>request log</Label>
@@ -1131,7 +1163,7 @@ function SideshiftBefore({ step }: { step: number }) {
             <Label>db reads / min</Label>
             <p className="text-[length:2.6cqw] font-semibold tabular-nums text-red-500">{fmt(2100 + step * 1720)}</p>
           </div>
-          <p className="pb-[0.5cqw] text-black/50">and climbing with every open chat</p>
+          <p className="pb-[0.5cqw] text-black/50">and climbing with every applicant thread</p>
         </Panel>
       </div>
     </div>
@@ -1141,10 +1173,10 @@ function SideshiftBefore({ step }: { step: number }) {
 function SideshiftCache({ step }: { step: number }) {
   const nodes = ["client · TanStack Query", "api", "redis", "postgres"];
   const events: [string, number[], string, Tone][] = [
-    ["open thread #42", [0], "client cache · fresh · 0 ms", "ok"],
-    ["open on second device", [0, 1, 2], "redis hit · 3 ms", "ok"],
-    ["send a message", [0, 1, 2, 3], "optimistic update · write-through · invalidate ['thread', 42]", "info"],
-    ["open cold thread #7", [0, 1, 2, 3], "miss → postgres → fill redis · 38 ms", "warn"],
+    ["brand re-opens Maya's thread", [0], "client cache · fresh · 0 ms", "ok"],
+    ["teammate opens it on another seat", [0, 1, 2], "redis hit · 3 ms", "ok"],
+    ["brand sends the brief", [0, 1, 2, 3], "optimistic update · write-through · invalidate ['thread', 'maya']", "info"],
+    ["open a new applicant's thread", [0, 1, 2, 3], "miss → postgres → fill redis · 38 ms", "warn"],
   ];
   const e = Math.min(events.length - 1, Math.floor(step / 2));
   const path = events[e][1];
@@ -1206,6 +1238,65 @@ function SideshiftCache({ step }: { step: number }) {
   );
 }
 
+function SideshiftContract({ step }: { step: number }) {
+  const terms: [string, string][] = [
+    ["Deliverables", "3 TikToks · 1 hook test each"],
+    ["Usage rights", "Organic + paid ads · 90 days"],
+    ["Pay", "$182.49 per video · held in wallet"],
+  ];
+  const signers: [string, string, number][] = [
+    ["GlowLab", "brand", 4],
+    ["Maya C.", "creator", 5],
+  ];
+  return (
+    <div className="grid h-full grid-cols-[1fr_34%] gap-[1.8cqw]">
+      <Panel className="flex flex-col gap-[0.8cqw]">
+        <div className="flex items-center">
+          <Label>creator agreement · spring launch</Label>
+          <Tag tone={step >= 6 ? "ok" : step >= 4 ? "warn" : "muted"} className="ml-auto">
+            {step >= 6 ? "executed" : step >= 4 ? "awaiting signatures" : "draft"}
+          </Tag>
+        </div>
+        {terms.map(([k, v], i) => (
+          <Show key={k} on={step >= i + 1}>
+            <div className="flex gap-[1cqw] border-b border-black/5 pb-[0.5cqw]">
+              <span className="w-[11cqw] shrink-0 text-black/45">{k}</span>
+              <span className="font-medium">{v}</span>
+            </div>
+          </Show>
+        ))}
+        <div className="mt-auto grid grid-cols-2 gap-[1cqw]">
+          {signers.map(([name, role, at]) => (
+            <div key={name} className="rounded-[0.7cqw] border border-dashed border-black/15 px-[1cqw] py-[0.6cqw]">
+              <p
+                className={cn(
+                  "h-[2.6cqw] font-serif text-[length:2cqw] italic transition-opacity duration-500",
+                  step >= at ? "opacity-100" : "opacity-0"
+                )}
+              >
+                {name}
+              </p>
+              <p className="text-[length:1.15cqw] text-black/45">{role}</p>
+            </div>
+          ))}
+        </div>
+      </Panel>
+      <div className="flex flex-col gap-[1cqw]">
+        <Panel>
+          <Label>in the thread</Label>
+          <p className="text-black/70">Contract sent with the brief. No PDFs, no outside e-sign tool.</p>
+        </Panel>
+        <Show on={step >= 6}>
+          <Panel>
+            <p className="text-[length:2.2cqw] font-semibold text-emerald-600">Signed ✓</p>
+            <p className="text-black/55">Maya can start filming. Pay releases when the brand approves.</p>
+          </Panel>
+        </Show>
+      </div>
+    </div>
+  );
+}
+
 function SideshiftAfter({ step }: { step: number }) {
   const before = [62, 70, 78, 74, 82, 88];
   const after = [62, 70, 4, 4, 5, 4];
@@ -1242,7 +1333,7 @@ function SideshiftAfter({ step }: { step: number }) {
         <Show on={step >= 3}>
           <Panel>
             <p className="text-[length:2.2cqw] font-semibold">0 ms</p>
-            <p className="text-black/55">re-opening a thread you just saw</p>
+            <p className="text-black/55">re-opening a creator thread you just saw</p>
           </Panel>
         </Show>
       </div>
