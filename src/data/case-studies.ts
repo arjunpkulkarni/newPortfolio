@@ -7,6 +7,14 @@ import CongruenceInsurance from "../app/projects/pictures/congruence/GenerateIns
 import CongruenceAgent from "../app/projects/pictures/congruence/Agent.png";
 
 import UcsfLogo from "../app/work/pictures/ucsf.png";
+import UcsdLogo from "../app/projects/pictures/ucsd.png";
+import NestleLogo from "../app/work/pictures/nestle.png";
+
+import Culin1 from "../app/projects/pictures/culin/image1.png";
+import Culin2 from "../app/projects/pictures/culin/image2.png";
+import Culin3 from "../app/projects/pictures/culin/image3.png";
+import Culin4 from "../app/projects/pictures/culin/image4.png";
+import Culin5 from "../app/projects/pictures/culin/image5.png";
 
 import HangerDiscovery from "../app/projects/pictures/hanger/discovery.jpg";
 import HangerChat from "../app/projects/pictures/hanger/chat.jpg";
@@ -21,12 +29,13 @@ export type ShowcaseSpec =
   | { kind: "browser"; screen: Img; background: string }
   | { kind: "panels"; panels: [Img, Img, Img]; background: string }
   | { kind: "image"; image: Img; background?: string; fit?: "cover" | "contain" }
-  | { kind: "video"; src: string; poster?: string; background?: string };
+  | { kind: "video"; src: string; poster?: string; background?: string }
+  | { kind: "demo"; demo: "culin" };
 
 export type CaseStudy = {
   slug: string;
   name: string;
-  logo?: Img; // org the project was built with
+  orgs?: { name: string; logo?: Img }[]; // organizations the project was built with or piloted at
   role: string; // short role for cards, e.g. "Full-stack"
   category: string;
   blurb: string; // one line for cards
@@ -50,7 +59,7 @@ export const CASE_STUDIES: CaseStudy[] = [
   {
     slug: "congruence",
     name: "Congruence",
-    logo: UcsfLogo,
+    orgs: [{ name: "UCSF Health", logo: UcsfLogo }],
     role: "AI pipeline & backend",
     category: "clinical documentation",
     blurb: "Session recordings to insurance-ready progress notes in under a minute.",
@@ -103,6 +112,61 @@ export const CASE_STUDIES: CaseStudy[] = [
       { image: CongruenceReport, caption: "Clinical documentation report" },
       { image: CongruenceInsurance, caption: "Insurance packet generation" },
       { image: CongruenceAgent, caption: "Clinical agent" },
+    ],
+  },
+  {
+    slug: "culin",
+    name: "Culin",
+    orgs: [
+      { name: "UC San Diego Health", logo: UcsdLogo },
+      { name: "Nestlé", logo: NestleLogo },
+      { name: "Riverside Health" },
+    ],
+    role: "Full-stack",
+    category: "nutrition",
+    blurb: "Decides your next meal from your macros, goals and health conditions, then gets you to food.",
+    tagline: "A food decision engine: one next meal, cooked or ordered, that fits your macros and your health.",
+    timeline: "2025 – Present",
+    stack: ["React Native", "Expo Router", "TypeScript", "Next.js", "FastAPI", "PostgreSQL", "OpenAI", "USDA/FatSecret"],
+    links: [{ label: "Live site", href: "https://culin.ai" }],
+    showcase: { kind: "demo", demo: "culin" },
+    hero: { kind: "image", image: Culin1, fit: "cover" },
+    stats: [
+      { value: "200+", label: "pilot patients" },
+      { value: "+22%", label: "recommendation accuracy" },
+      { value: "<3s", label: "p95 decision" },
+      { value: "1", label: "decision, not a list" },
+    ],
+    overview: [
+      "People know their nutrition goals; the hard part is deciding what to eat next. Trackers log after the fact, delivery apps add endless choice, and meal plans don't react to schedule, budget or health conditions.",
+      "Culin takes macro targets, goals and conditions and commits to one next meal across cook or order paths, with grounded macros and a clear action.",
+    ],
+    built: [
+      "Built a mobile-first decision flow that turns macro targets, preferences, schedule and food context into one recommended next meal.",
+      "Designed a nutrition layer on structured food data (USDA, FatSecret) with fuzzy matching and macro estimation, so numbers come from data rather than the model.",
+      "Treated health conditions as hard constraints in scoring, piloted clinically with 200+ patients for +22% accuracy over a GPT-4 baseline.",
+      "Shipped across React Native/Expo, Next.js API routes, FastAPI services, Cognito/OIDC auth, PostgreSQL and Docker.",
+    ],
+    architecture: [
+      { label: "Client", value: "React Native + Expo Router" },
+      { label: "API", value: "Next.js API routes + FastAPI" },
+      { label: "Food data", value: "USDA + FatSecret" },
+      { label: "LLM", value: "OpenAI meal reasoning" },
+      { label: "Data", value: "PostgreSQL" },
+      { label: "Auth", value: "Cognito / OIDC" },
+      { label: "Infra", value: "Docker" },
+    ],
+    decisions: [
+      { title: "One decision, not a feed", body: "The engine commits to a single meal so the user acts instead of scrolling. Alternatives are a tap away, not the default." },
+      { title: "Data for numbers, LLM for reasoning", body: "Macros come from matched food data; the model only explains and composes, which keeps estimates trustworthy." },
+      { title: "Conditions are constraints", body: "Diabetes, blood pressure and allergies filter candidates before scoring, so taste never outranks safety." },
+    ],
+    gallery: [
+      { image: Culin1, caption: "Daily dashboard and next meal" },
+      { image: Culin2, caption: "Goals and health conditions" },
+      { image: Culin3, caption: "Recipe detail with macros" },
+      { image: Culin4, caption: "Meal generation" },
+      { image: Culin5, caption: "Decision flow" },
     ],
   },
   {

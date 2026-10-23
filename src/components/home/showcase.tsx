@@ -1,6 +1,9 @@
 import Image, { type StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
 import type { ShowcaseSpec } from "@/data/case-studies";
+import { CulinDemo } from "@/components/home/demos";
+
+const DEMOS = { culin: CulinDemo };
 
 // Product imagery on a backdrop: three phones, a browser window, or a full-bleed shot.
 export function Showcase({
@@ -14,6 +17,15 @@ export function Showcase({
   priority?: boolean;
   className?: string;
 }) {
+  if (spec.kind === "demo") {
+    const Demo = DEMOS[spec.demo];
+    return (
+      <div className={cn("w-full", className)}>
+        <Demo />
+      </div>
+    );
+  }
+
   if (spec.kind === "video") {
     return (
       <div

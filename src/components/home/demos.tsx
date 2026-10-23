@@ -124,7 +124,12 @@ function Frame({
                   key={s.label}
                   type="button"
                   tabIndex={-1}
-                  onClick={() => player.jump(i)}
+                  onClick={(e) => {
+                    // demos can sit inside a link card; switch chapters without navigating
+                    e.preventDefault();
+                    e.stopPropagation();
+                    player.jump(i);
+                  }}
                   className={cn(
                     "relative overflow-hidden rounded-full px-[1cqw] py-[0.35cqw] text-[length:1.2cqw] font-medium transition-colors",
                     i === player.scene
@@ -1885,6 +1890,366 @@ function RumorScalePanel({ step }: { step: number }) {
             <Panel key={k} dark className="py-[0.8cqw]">
               <p className="text-[length:2.2cqw] font-semibold text-emerald-400">{v}</p>
               <p className="text-white/55">{k}</p>
+            </Panel>
+          ))}
+        </div>
+      </Show>
+    </div>
+  );
+}
+
+/* ───────────────────────── Culin: next-meal decision engine ───────────────────────── */
+
+export function CulinDemo() {
+  const p = useScenes([
+    {
+      label: "Goals",
+      steps: 7,
+      caption: "Set body metrics, goals and health conditions once. Culin turns them into daily macro targets and constraints.",
+    },
+    {
+      label: "Decide",
+      steps: 9,
+      caption:
+        "At the moment you're hungry, the engine scores order and cook options against what's left today and your conditions, then commits to one meal.",
+    },
+    {
+      label: "Cook or order",
+      steps: 7,
+      caption: "Every pick comes with grounded macros from USDA/FatSecret data, the full recipe, and a one-tap grocery or delivery handoff.",
+    },
+    {
+      label: "Track",
+      steps: 6,
+      caption: "Log it and the day rebalances, so the next decision already knows what you ate.",
+    },
+  ]);
+  const { scene, step } = p;
+  return (
+    <Frame player={p} bare bg="linear-gradient(135deg,#f6faf1,#dcefcc)" title="culin · iOS">
+      <div className="grid h-full grid-cols-[auto_1fr] gap-[2.4cqw]">
+        <Phone>
+          <SceneFade k={scene}>
+            {scene === 0 && <CulinGoalsScreen step={step} />}
+            {scene === 1 && <CulinHomeScreen step={step} logged={false} />}
+            {scene === 2 && <CulinRecipeScreen step={step} />}
+            {scene === 3 && <CulinHomeScreen step={step} logged />}
+          </SceneFade>
+        </Phone>
+        <SceneFade k={scene}>
+          {scene === 0 && <CulinGoalsPanel step={step} />}
+          {scene === 1 && <CulinDecidePanel step={step} />}
+          {scene === 2 && <CulinRecipePanel step={step} />}
+          {scene === 3 && <CulinTrackPanel step={step} />}
+        </SceneFade>
+      </div>
+    </Frame>
+  );
+}
+
+const CULIN = "#4caf2a";
+
+const Chip = ({ on, children }: { on: boolean; children: ReactNode }) => (
+  <span
+    className={cn(
+      "inline-block rounded-full border px-[0.8cqw] py-[0.15cqw] text-[length:1.1cqw] transition-colors duration-500",
+      on ? "border-[#4caf2a] bg-[#4caf2a] text-white" : "border-black/10 text-black/55"
+    )}
+  >
+    {on && "✓ "}
+    {children}
+  </span>
+);
+
+function CulinGoalsScreen({ step }: { step: number }) {
+  return (
+    <div className="flex h-full flex-col gap-[0.8cqw]">
+      <p className="text-center font-semibold">Profile</p>
+      <div className="grid grid-cols-2 gap-[0.5cqw] text-center">
+        {[
+          ["22", "age"],
+          ["176 cm", "height"],
+          ["75 kg", "weight"],
+          ["M", "sex"],
+        ].map(([v, k]) => (
+          <div key={k} className="rounded-[0.7cqw] bg-white py-[0.4cqw] shadow-sm">
+            <p className="font-semibold">{v}</p>
+            <p className="text-[length:1cqw] uppercase text-black/40">{k}</p>
+          </div>
+        ))}
+      </div>
+      <p className="text-[length:1.15cqw] font-semibold">Goals</p>
+      <div className="flex flex-wrap gap-[0.4cqw]">
+        <Chip on={step >= 1}>Lose weight</Chip>
+        <Chip on={step >= 2}>Gain muscle</Chip>
+        <Chip on={false}>Gut health</Chip>
+      </div>
+      <p className="text-[length:1.15cqw] font-semibold">Health conditions</p>
+      <div className="flex flex-wrap gap-[0.4cqw]">
+        <Chip on={step >= 3}>Type 2 diabetes</Chip>
+        <Chip on={step >= 4}>High blood pressure</Chip>
+        <Chip on={false}>PCOS</Chip>
+      </div>
+    </div>
+  );
+}
+
+function CulinGoalsPanel({ step }: { step: number }) {
+  const rows: [string, string, number][] = [
+    ["calories", "2,000 kcal", 2],
+    ["protein", "150 g", 2],
+    ["carbs", "≤ 180 g · low glycemic", 3],
+    ["sodium", "≤ 1,500 mg", 4],
+    ["budget", "$15 / meal", 5],
+  ];
+  return (
+    <div className="flex h-full flex-col gap-[1.1cqw]">
+      <Label>targets + constraints</Label>
+      <Panel className="space-y-[0.5cqw] font-mono text-[length:1.35cqw]">
+        {rows.map(([k, v, at]) => (
+          <Show key={k} on={step >= at}>
+            <p className="flex gap-[1cqw]">
+              <span className="w-[10cqw] text-black/45">{k}</span>
+              <span style={{ color: CULIN }}>{v}</span>
+            </p>
+          </Show>
+        ))}
+      </Panel>
+      <Show on={step >= 6}>
+        <p className="text-black/60">Conditions become hard rules the engine can&apos;t trade away for taste.</p>
+      </Show>
+    </div>
+  );
+}
+
+function CulinRing({ pct, left }: { pct: number; left: number }) {
+  return (
+    <div className="relative h-[6.5cqw] w-[6.5cqw] shrink-0">
+      <svg viewBox="0 0 36 36" className="h-full w-full -rotate-90">
+        <circle cx="18" cy="18" r="15" fill="none" stroke="rgba(0,0,0,0.08)" strokeWidth="3.5" />
+        <circle
+          cx="18"
+          cy="18"
+          r="15"
+          fill="none"
+          stroke={CULIN}
+          strokeWidth="3.5"
+          strokeLinecap="round"
+          pathLength={100}
+          strokeDasharray={`${pct} 100`}
+          style={{ transition: "stroke-dasharray 0.8s ease" }}
+        />
+      </svg>
+      <p className="absolute inset-0 flex flex-col items-center justify-center font-semibold leading-none">
+        {fmt(left)}
+        <span className="text-[length:0.9cqw] font-normal text-black/45">left</span>
+      </p>
+    </div>
+  );
+}
+
+function CulinHomeScreen({ step, logged }: { step: number; logged: boolean }) {
+  const done = logged && step >= 2;
+  const left = done ? 947 - 1275 + 600 : 947;
+  return (
+    <div className="flex h-full flex-col gap-[0.8cqw]">
+      <p className="text-[length:1.5cqw] font-semibold">Good evening, Arjun</p>
+      <p className="text-[length:1.1cqw] text-black/50">
+        You&apos;re <span style={{ color: CULIN }}>low on protein</span> · {fmt(left)} kcal to go
+      </p>
+      <div className="flex items-center gap-[0.8cqw] rounded-[1cqw] bg-white p-[0.8cqw] shadow-sm">
+        <CulinRing pct={done ? 82 : 53} left={left} />
+        <div className="flex-1 space-y-[0.4cqw] text-[length:1.05cqw]">
+          {[
+            ["Protein", done ? 92 : 30],
+            ["Carbs", done ? 70 : 64],
+            ["Fat", done ? 80 : 48],
+          ].map(([k, v]) => (
+            <div key={k as string}>
+              <p className="text-black/55">{k}</p>
+              <Bar pct={v as number} className="bg-[#4caf2a]" />
+            </div>
+          ))}
+        </div>
+      </div>
+      <p className="text-[length:1.15cqw] font-semibold">Eat next</p>
+      {!logged && step < 5 ? (
+        <div className="space-y-[0.4cqw] rounded-[1cqw] bg-white p-[0.8cqw] shadow-sm">
+          <span className="block h-[1cqw] w-[80%] animate-pulse rounded-full bg-black/10" />
+          <span className="block h-[1cqw] w-[55%] animate-pulse rounded-full bg-black/10" />
+          <p className="text-[length:1cqw] text-black/45">deciding…</p>
+        </div>
+      ) : (
+        <div className="rounded-[1cqw] bg-white p-[0.8cqw] shadow-sm duration-500 animate-in fade-in">
+          <Tag tone="ok">{done ? "✓ logged" : "high protein"}</Tag>
+          <p className="mt-[0.3cqw] font-medium">High-Protein Lemon Herb Grilled Chicken</p>
+          <p className="text-[length:1.05cqw] text-black/50">179g protein · 1,275 kcal · 15 min</p>
+        </div>
+      )}
+      <span
+        className={cn(
+          "mt-auto rounded-full py-[0.5cqw] text-center font-medium text-white transition-transform",
+          logged && step === 1 && "scale-105"
+        )}
+        style={{ background: CULIN }}
+      >
+        + Log a meal
+      </span>
+    </div>
+  );
+}
+
+function CulinDecidePanel({ step }: { step: number }) {
+  const cands: [string, string, number, string | null][] = [
+    ["Lemon herb grilled chicken", "cook · 15 min", 0.93, null],
+    ["Chicken burrito bowl", "order · 1.1 mi", 0.81, null],
+    ["Teriyaki salmon", "order · 2.4 mi", 0.74, "sodium over limit"],
+    ["Pasta carbonara", "cook · 25 min", 0.41, "carbs + glycemic load"],
+  ];
+  return (
+    <div className="flex h-full flex-col gap-[1cqw]">
+      <Label>decision engine</Label>
+      <div className="flex flex-wrap gap-[0.5cqw] font-mono text-[length:1.2cqw]">
+        {["remaining: 947 kcal · 120g protein", "time: 7:40pm · tired", "near: 14 restaurants"].map((c, i) => (
+          <Show key={c} on={step >= i}>
+            <span className="rounded-[0.5cqw] bg-white px-[0.7cqw] py-[0.2cqw] text-black/65">{c}</span>
+          </Show>
+        ))}
+      </div>
+      <div className="space-y-[0.45cqw]">
+        {cands.map(([n, path, s, why], i) => (
+          <Show key={n} on={step >= 3 + i * 0.5}>
+            <div
+              className={cn(
+                "flex items-center gap-[1cqw] rounded-[0.7cqw] px-[1cqw] py-[0.45cqw] transition-colors",
+                step >= 5 && i === 0 ? "bg-white ring-[0.2cqw] ring-[#4caf2a]" : "bg-white/60",
+                why && step >= 5 && "opacity-50"
+              )}
+            >
+              <span className={cn("min-w-0 truncate", why && step >= 5 && "line-through")}>{n}</span>
+              <span className="shrink-0 text-[length:1.15cqw] text-black/45">{path}</span>
+              {why && step >= 5 ? (
+                <Tag tone="bad" className="ml-auto">
+                  {why}
+                </Tag>
+              ) : (
+                <span className="ml-auto font-mono tabular-nums text-black/50">{s.toFixed(2)}</span>
+              )}
+            </div>
+          </Show>
+        ))}
+      </div>
+      <Show on={step >= 6}>
+        <p className="font-medium" style={{ color: CULIN }}>
+          → one decision: cook the chicken · in 2.1s
+        </p>
+      </Show>
+    </div>
+  );
+}
+
+function CulinRecipeScreen({ step }: { step: number }) {
+  const ing = ["2 chicken breasts", "1 lemon", "2 cloves garlic", "fresh rosemary", "1 cup quinoa"];
+  return (
+    <div className="flex h-full flex-col gap-[0.7cqw]">
+      <Tag tone="ok" className="self-center">
+        AI generated
+      </Tag>
+      <p className="text-[length:1.5cqw] font-semibold italic leading-tight">High-Protein Lemon Herb Grilled Chicken</p>
+      <div className="grid grid-cols-3 gap-[0.4cqw] text-center">
+        {[
+          ["179g", "protein"],
+          ["3g", "carbs"],
+          ["56g", "fat"],
+        ].map(([v, k]) => (
+          <div key={k} className="rounded-[0.7cqw] bg-white py-[0.3cqw] shadow-sm">
+            <p className="font-semibold">{v}</p>
+            <p className="text-[length:1cqw] text-black/45">{k}</p>
+          </div>
+        ))}
+      </div>
+      <p className="text-[length:1.15cqw] font-semibold">Ingredients</p>
+      {ing.map((x, i) => (
+        <Show key={x} on={step >= Math.min(i, 3)}>
+          <p className="flex items-center gap-[0.5cqw] text-[length:1.15cqw]">
+            <span className="h-[0.6cqw] w-[0.6cqw] rounded-full" style={{ background: CULIN }} />
+            {x}
+          </p>
+        </Show>
+      ))}
+      <span
+        className={cn("mt-auto rounded-full py-[0.5cqw] text-center font-medium text-white transition-transform", step === 4 && "scale-105")}
+        style={{ background: CULIN }}
+      >
+        {step >= 5 ? "✓ Cart ready" : "Order ingredients"}
+      </span>
+    </div>
+  );
+}
+
+function CulinRecipePanel({ step }: { step: number }) {
+  const rows: [string, string][] = [
+    ["chicken breast, raw", "usda 171477 · 31g protein / 100g"],
+    ["lemon juice", "usda 167747"],
+    ["quinoa, cooked", "fatsecret · fuzzy match 0.92"],
+  ];
+  return (
+    <div className="flex h-full flex-col gap-[1cqw]">
+      <Label>nutrition layer</Label>
+      <div className="space-y-[0.5cqw] font-mono text-[length:1.25cqw]">
+        {rows.map(([k, v], i) => (
+          <Show key={k} on={step >= i}>
+            <p className="flex gap-[1cqw]">
+              <span className="w-[16cqw] shrink-0 truncate">{k}</span>
+              <span className="truncate text-black/50">{v}</span>
+            </p>
+          </Show>
+        ))}
+      </div>
+      <Show on={step >= 3}>
+        <p className="text-black/60">Macros are computed from matched food data, not guessed by the model.</p>
+      </Show>
+      <Show on={step >= 5}>
+        <Panel className="flex items-center gap-[1cqw]">
+          <Label>grocery cart</Label>
+          <span>5 items</span>
+          <span className="ml-auto font-semibold">$13.40</span>
+          <Tag tone="ok">under budget</Tag>
+        </Panel>
+      </Show>
+    </div>
+  );
+}
+
+function CulinTrackPanel({ step }: { step: number }) {
+  return (
+    <div className="flex h-full flex-col gap-[1cqw]">
+      <Label>after logging</Label>
+      <Show on={step >= 2}>
+        <Panel className="space-y-[0.5cqw]">
+          <p className="flex justify-between">
+            <span className="text-black/55">protein</span>
+            <span className="font-mono">30% → 92%</span>
+          </p>
+          <p className="flex justify-between">
+            <span className="text-black/55">next suggestion</span>
+            <span className="font-mono">light, low-carb snack</span>
+          </p>
+        </Panel>
+      </Show>
+      <Show on={step >= 3} className="mt-auto">
+        <p className="mb-[0.5cqw] text-black/50">clinical pilot · UC San Diego Health</p>
+        <div className="grid grid-cols-3 gap-[1cqw]">
+          {[
+            ["200+", "patients"],
+            ["+22%", "accuracy"],
+            ["<3s", "p95 decision"],
+          ].map(([v, k]) => (
+            <Panel key={k} className="py-[0.8cqw]">
+              <p className="text-[length:2.2cqw] font-semibold" style={{ color: CULIN }}>
+                {v}
+              </p>
+              <p className="text-black/50">{k}</p>
             </Panel>
           ))}
         </div>
