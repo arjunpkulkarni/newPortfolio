@@ -101,7 +101,7 @@ const EXPERIENCE: Record<string, { field: string; outcome?: string; did: string 
   },
   FitFo: {
     field: "Mobile fitness app",
-    outcome: "40K users · $350K GMV · $500K raised",
+    outcome: "40K users · $350K GMV · $50K raised",
     did: "Led the mobile app and backend as CTO: share any workout video, get a structured plan, and train with an AI coach grounded in the creator's content.",
   },
   Handshake: {

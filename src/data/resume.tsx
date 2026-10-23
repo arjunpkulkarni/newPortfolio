@@ -264,7 +264,7 @@ export const DATA = {
         },
         {
           description:
-            "Raised $500K from Airbnb's CMO, Credit Acceptance's CEO, and an a16z angel investor.",
+            "Raised $50K from Airbnb's CMO, Credit Acceptance's CEO, and an a16z angel investor.",
           skills: ["Fundraising", "Leadership", "Go-to-Market", "Product"]
         }
       ]
