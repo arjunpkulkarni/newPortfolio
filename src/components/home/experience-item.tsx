@@ -118,7 +118,7 @@ export function ExperienceItem({
               alt=""
               width={40}
               height={40}
-              className="h-10 w-10 shrink-0 rounded-xl border border-border/70 bg-white object-contain p-1"
+              className="h-10 w-10 shrink-0 rounded-xl bg-white object-cover shadow-sm ring-1 ring-black/5 dark:ring-white/10"
             />
           )}
           <div className="min-w-0 flex-1">
