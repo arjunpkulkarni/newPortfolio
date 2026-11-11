@@ -41,6 +41,8 @@ export type ExperienceEntry = {
   brand?: { name: string; accent: string };
   demo?: ReactNode;
   backedBy?: readonly Investor[];
+  stats?: string[];
+  launch?: { src: string; poster?: string; href: string; views?: string };
   routes: ExperienceRoute[];
 };
 

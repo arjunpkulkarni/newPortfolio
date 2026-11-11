@@ -183,6 +183,20 @@ const DEMOS: Record<string, React.ReactNode> = {
   Rumor: <RumorDemo />,
 };
 
+// Headline numbers and launch videos, attached under a role's copy.
+const EXPERIENCE_STATS: Record<string, string[]> = {
+  Breken: ["7,500+ repos connected", "2.2M launch views"],
+};
+
+const EXPERIENCE_LAUNCH: Record<string, { src: string; poster?: string; href: string; views?: string }> = {
+  Breken: {
+    src: "/videos/breken-launch.mp4",
+    poster: "/videos/breken-launch-poster.jpg",
+    href: "https://x.com/brekenai/status/2112936781087973732",
+    views: "2.2M",
+  },
+};
+
 const EXPERIENCE_VIDEOS: Record<string, { src: string; poster?: string }> = {
   Breken: { src: "/videos/breken.mp4", poster: "/videos/breken-poster.jpg" },
 };
@@ -227,6 +241,8 @@ export default function HomePage() {
       brand: BRANDS[company],
       demo: DEMOS[company],
       backedBy: work.backedBy,
+      stats: EXPERIENCE_STATS[company],
+      launch: EXPERIENCE_LAUNCH[company],
       routes: COMPANY_ROUTES[company] ?? [],
     };
   });

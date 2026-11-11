@@ -4,6 +4,7 @@ import { LogoReveal } from "@/components/home/logo-reveal";
 import { HighlightSkills } from "@/lib/highlight-skills";
 import { BackedBy, type Investor } from "@/components/backed-by";
 import { cn } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
 
 type ExperienceItemProps = {
   company: string;
@@ -24,6 +25,8 @@ type ExperienceItemProps = {
   brand?: { name: string; accent: string }; // drives the logo animation when there's no video or image
   demo?: ReactNode; // animated product demo; shown instead of any other media
   backedBy?: readonly Investor[];
+  stats?: string[]; // headline numbers, e.g. "7,500+ repos connected"
+  launch?: { src: string; poster?: string; href: string; views?: string }; // launch video, attached under the copy
 };
 
 export function ExperienceItem({
@@ -45,6 +48,8 @@ export function ExperienceItem({
   brand,
   demo,
   backedBy,
+  stats,
+  launch,
 }: ExperienceItemProps) {
   const dates =
     start || end
@@ -146,6 +151,48 @@ export function ExperienceItem({
           <p className="mt-1 text-[13px] leading-relaxed text-foreground/75 sm:text-sm">
             <HighlightSkills text={did} />
           </p>
+        )}
+
+        {stats && stats.length > 0 && (
+          <div className="mt-3 flex flex-wrap gap-1.5">
+            {stats.map((stat) => (
+              <span
+                key={stat}
+                className="rounded-full bg-emerald-500/10 px-2.5 py-0.5 text-[12px] font-medium tabular-nums text-emerald-700 dark:text-emerald-400"
+              >
+                {stat}
+              </span>
+            ))}
+          </div>
+        )}
+
+        {launch && (
+          <figure className="mt-4 overflow-hidden rounded-xl border border-border/70 bg-black">
+            <video
+              src={launch.src}
+              poster={launch.poster}
+              controls
+              playsInline
+              preload="none"
+              aria-label={`${company} launch video`}
+              className="aspect-video w-full bg-black object-cover"
+            />
+            <figcaption className="flex items-center justify-between gap-3 border-t border-border/60 bg-card px-3 py-2">
+              <span className="min-w-0 text-[12px] text-muted-foreground sm:text-[13px]">
+                <span className="font-medium text-foreground">Launch video</span>
+                {launch.views && <> · {launch.views} views on X</>}
+              </span>
+              <a
+                href={launch.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex shrink-0 items-center gap-1 text-[12px] text-muted-foreground transition-colors hover:text-foreground sm:text-[13px]"
+              >
+                View on X
+                <ArrowUpRight className="h-3.5 w-3.5" />
+              </a>
+            </figcaption>
+          </figure>
         )}
 
         {skills && skills.length > 0 && (
