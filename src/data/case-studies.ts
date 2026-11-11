@@ -36,6 +36,7 @@ export type CaseStudy = {
   slug: string;
   name: string;
   orgs?: { name: string; logo?: Img }[]; // organizations the project was built with or piloted at
+  orgsLabel?: string; // label shown before the org chips, e.g. "Design partners"
   role: string; // short role for cards, e.g. "Full-stack"
   category: string;
   blurb: string; // one line for cards
@@ -122,6 +123,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { name: "Nestlé", logo: NestleLogo },
       { name: "Riverside Health" },
     ],
+    orgsLabel: "Design partners",
     role: "Full-stack",
     category: "nutrition",
     blurb: "Decides your next meal from your macros, goals and health conditions, then gets you to food.",

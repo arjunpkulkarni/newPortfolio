@@ -26,6 +26,11 @@ export function WorkCard({ study, priority }: { study: CaseStudy; priority?: boo
           </p>
           {study.orgs && study.orgs.length > 0 && (
             <div className="flex flex-wrap items-center gap-1.5 pt-2">
+              {study.orgsLabel && (
+                <span className="mr-0.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground">
+                  {study.orgsLabel}
+                </span>
+              )}
               {study.orgs.map((org) => (
                 <span
                   key={org.name}

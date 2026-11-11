@@ -17,6 +17,7 @@ import {
   SideshiftDemo,
 } from "@/components/home/demos";
 import { GithubHeatmap } from "@/components/home/github-heatmap";
+import { ResearchList, type ResearchArea } from "@/components/home/research-list";
 import { Section } from "@/components/home/section";
 import { WorkCard } from "@/components/home/work-card";
 import { HighlightSkills } from "@/lib/highlight-skills";
@@ -34,9 +35,19 @@ const COMPANY_ROUTES: Record<string, ExperienceRoute[]> = {
   Rumor: ["product", "systems"],
 };
 
-const RESEARCH = [
+const RESEARCH: {
+  title: string;
+  org: string;
+  partOf: string;
+  when: string;
+  project: string;
+  skills: string[];
+  outcome: string;
+  areas: ResearchArea[];
+}[] = [
   {
     title: "Undergraduate Teaching Assistant",
+    areas: ["teaching"],
     org: "Siebel School of Computing and Data Science",
     partOf: "Siebel School of Computing and Data Science, University of Illinois",
     when: "Jan 2023 – Apr 2023",
@@ -47,6 +58,7 @@ const RESEARCH = [
   },
   {
     title: "Sustainable Concrete with ML",
+    areas: ["ml", "science"],
     org: "Civil and Environmental Engineering at Illinois",
     partOf: "Civil and Environmental Engineering, University of Illinois",
     when: "Jan 2024 – May 2024",
@@ -57,6 +69,7 @@ const RESEARCH = [
   },
   {
     title: "Autonomous EV Routing",
+    areas: ["ml", "systems"],
     org: "Illinois Artificial Intelligence Group (ECE Department)",
     partOf: "Illinois AI Group, Electrical & Computer Engineering, University of Illinois",
     when: "Jan 2024 – Jan 2025",
@@ -67,6 +80,7 @@ const RESEARCH = [
   },
   {
     title: "Human–AI Interaction Platform",
+    areas: ["ml", "systems"],
     org: "Beckman Institute for Advanced Science and Technology",
     partOf: "Beckman Institute for Advanced Science and Technology, University of Illinois",
     when: "Feb 2025 – Apr 2025",
@@ -77,6 +91,7 @@ const RESEARCH = [
   },
   {
     title: "Nanofluidic Energy Harvesting",
+    areas: ["science"],
     org: "Illinois Quantum Information Science and Technology Center",
     partOf: "Illinois Quantum Information Science and Technology Center (IQUIST), University of Illinois",
     when: "Sep 2025 – Dec 2025",
@@ -226,25 +241,34 @@ export default function HomePage() {
         aria-label="Introduction"
         className="scroll-mt-24 px-5 pb-10 pt-8 sm:px-8 sm:pb-12 sm:pt-10"
       >
-        <Image
-          src={DATA.avatarUrl}
-          alt={DATA.name}
-          width={176}
-          height={176}
-          className="h-24 w-24 rounded-[22px] object-cover shadow-[0_8px_24px_-12px_rgba(27,26,23,0.35)] sm:h-28 sm:w-28 sm:rounded-[26px]"
-          priority
-        />
-        <h1 className="mt-6 text-[32px] font-normal leading-[1.1] tracking-[-0.025em] text-foreground sm:text-[44px]">
-          {DATA.name}
-        </h1>
-        <p className="mt-3 text-[16px] leading-snug text-foreground/90 sm:text-[17px]">
-          I build AI you can trust in production.
-        </p>
-        <p className="mt-2 text-[14px] leading-snug text-muted-foreground sm:text-[15px]">
-          Looking for Seed / Series A roles.
-        </p>
+        {/* Row 1: photo | name + headline */}
+        <div className="flex items-center gap-5 sm:gap-7">
+          <div className="shrink-0 rounded-full p-[3px] ring-1 ring-border">
+            <Image
+              src={DATA.avatarUrl}
+              alt={DATA.name}
+              width={256}
+              height={256}
+              className="h-20 w-20 rounded-full object-cover object-[50%_20%] sm:h-32 sm:w-32"
+              priority
+            />
+          </div>
+          <div className="min-w-0 flex-1">
+            <h1 className="text-[28px] font-normal leading-[1.1] tracking-[-0.025em] text-foreground sm:text-[44px]">
+              {DATA.name}
+            </h1>
+            <p className="mt-2 text-[15px] leading-snug text-foreground/90 sm:text-[17px]">
+              I build AI you can trust in production.
+            </p>
+            <p className="mt-1 text-[13px] leading-snug text-muted-foreground sm:text-[15px]">
+              Looking for Seed / Series A roles.
+            </p>
+          </div>
+        </div>
 
-        <div className="mt-6 flex flex-wrap gap-2">
+        {/* Row 2: actions | location */}
+        <div className="mt-7 flex flex-col gap-4 border-t border-border/60 pt-5 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-wrap gap-2">
           <CopyEmail email={DATA.contact.email} />
           <a
             href={DATA.contact.social.GitHub.url}
@@ -264,7 +288,7 @@ export default function HomePage() {
           </a>
         </div>
 
-        <p className="mt-6 flex items-center gap-2 text-[12px] text-muted-foreground sm:text-[13px]">
+        <p className="flex items-center gap-2 text-[12px] text-muted-foreground sm:text-[13px]">
           <span className="relative flex h-2 w-2">
             <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-500 opacity-60" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
@@ -272,6 +296,7 @@ export default function HomePage() {
           <MapPin className="h-3.5 w-3.5" />
           {DATA.location} · Open to NYC / SF / Remote
         </p>
+        </div>
       </section>
 
       {/* Education */}
@@ -314,15 +339,14 @@ export default function HomePage() {
 
       {/* Research */}
       <Section id="research" label="Research" className="border-t border-border/60">
-        <ul className="flex flex-col gap-5">
-          {RESEARCH.map((item, i) => {
+        <ResearchList
+          items={RESEARCH.map((item) => {
             const logo = logoFor(item.org);
-            return (
-              <li
-                key={item.title}
-                className="stack-card rounded-2xl border border-border/70 bg-card p-4 sm:p-5"
-                style={{ top: `calc(6.5rem + ${i * 10}px)` }}
-              >
+            return {
+              key: item.title,
+              areas: item.areas,
+              card: (
+              <>
                 <div className="flex items-center gap-3">
                   {logo && (
                     <Image
@@ -360,10 +384,11 @@ export default function HomePage() {
                     </span>
                   ))}
                 </div>
-              </li>
-            );
+              </>
+              ),
+            };
           })}
-        </ul>
+        />
       </Section>
 
       {/* Projects */}
